@@ -1,0 +1,14 @@
+Build/
+DerivedData/
+*.pbxuser
+*.xcuserstate
+xcuserdata
+*.xccheckout
+#OneStoreLibs
+BundleRes/
+Libs/
+
+*.DS_Store
+
+Pods/
+Podfile.lock
