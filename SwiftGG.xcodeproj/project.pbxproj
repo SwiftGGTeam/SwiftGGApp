@@ -100,7 +100,7 @@
 		F29C8C031BEAF40E0078DE69 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				F29C8C0D1BEAFB720078DE69 /* UIViews */,
+				F29C8C0D1BEAFB720078DE69 /* Views */,
 				F29C8C041BEAF40E0078DE69 /* Cells */,
 				F29C8C051BEAF40E0078DE69 /* ViewControllers */,
 			);
@@ -124,7 +124,7 @@
 		F29C8C061BEAF40E0078DE69 /* UserCenter */ = {
 			isa = PBXGroup;
 			children = (
-				F29C8C0E1BEAFB7B0078DE69 /* UIViews */,
+				F29C8C0E1BEAFB7B0078DE69 /* Views */,
 				F29C8C071BEAF40E0078DE69 /* Cells */,
 				F29C8C081BEAF40E0078DE69 /* ViewControllers */,
 			);
@@ -152,17 +152,19 @@
 			path = Utility;
 			sourceTree = "<group>";
 		};
-		F29C8C0D1BEAFB720078DE69 /* UIViews */ = {
+		F29C8C0D1BEAFB720078DE69 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 			);
+			name = Views;
 			path = UIViews;
 			sourceTree = "<group>";
 		};
-		F29C8C0E1BEAFB7B0078DE69 /* UIViews */ = {
+		F29C8C0E1BEAFB7B0078DE69 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 			);
+			name = Views;
 			path = UIViews;
 			sourceTree = "<group>";
 		};
