@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		5D69B2E4252F1CF060474E3E /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 169B335AE274C1F0FA40683B /* Pods.framework */; };
+		963697BC1C0CA8A400C579CF /* SGLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963697BA1C0CA8A400C579CF /* SGLoginViewController.swift */; };
+		963697BD1C0CA8A400C579CF /* SGLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 963697BB1C0CA8A400C579CF /* SGLoginViewController.xib */; };
 		F2C7844F1BE7544D00A36BFE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C7844E1BE7544D00A36BFE /* AppDelegate.swift */; };
 		F2C784581BE7544D00A36BFE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2C784571BE7544D00A36BFE /* Assets.xcassets */; };
 		F2C7845B1BE7544D00A36BFE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2C784591BE7544D00A36BFE /* LaunchScreen.storyboard */; };
@@ -27,6 +29,8 @@
 /* Begin PBXFileReference section */
 		169B335AE274C1F0FA40683B /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D5BC1627FE4EBE8F760AFEF /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		963697BA1C0CA8A400C579CF /* SGLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGLoginViewController.swift; sourceTree = "<group>"; };
+		963697BB1C0CA8A400C579CF /* SGLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SGLoginViewController.xib; sourceTree = "<group>"; };
 		B13FCBA15080C960586CA615 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		F2C7844B1BE7544D00A36BFE /* SwiftGG.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftGG.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2C7844E1BE7544D00A36BFE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -74,6 +78,31 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		963697B71C0CA87500C579CF /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				963697B81C0CA87500C579CF /* Login */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		963697B81C0CA87500C579CF /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				963697B91C0CA88F00C579CF /* ViewControllers */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		963697B91C0CA88F00C579CF /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				963697BA1C0CA8A400C579CF /* SGLoginViewController.swift */,
+				963697BB1C0CA8A400C579CF /* SGLoginViewController.xib */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
 		F29C8C001BEAF40E0078DE69 /* Library */ = {
 			isa = PBXGroup;
 			children = (
@@ -88,84 +117,11 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		F29C8C021BEAF40E0078DE69 /* Modules */ = {
-			isa = PBXGroup;
-			children = (
-				F29C8C031BEAF40E0078DE69 /* Home */,
-				F29C8C061BEAF40E0078DE69 /* UserCenter */,
-			);
-			path = Modules;
-			sourceTree = "<group>";
-		};
-		F29C8C031BEAF40E0078DE69 /* Home */ = {
-			isa = PBXGroup;
-			children = (
-				F29C8C0D1BEAFB720078DE69 /* Views */,
-				F29C8C041BEAF40E0078DE69 /* Cells */,
-				F29C8C051BEAF40E0078DE69 /* ViewControllers */,
-			);
-			path = Home;
-			sourceTree = "<group>";
-		};
-		F29C8C041BEAF40E0078DE69 /* Cells */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Cells;
-			sourceTree = "<group>";
-		};
-		F29C8C051BEAF40E0078DE69 /* ViewControllers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewControllers;
-			sourceTree = "<group>";
-		};
-		F29C8C061BEAF40E0078DE69 /* UserCenter */ = {
-			isa = PBXGroup;
-			children = (
-				F29C8C0E1BEAFB7B0078DE69 /* Views */,
-				F29C8C071BEAF40E0078DE69 /* Cells */,
-				F29C8C081BEAF40E0078DE69 /* ViewControllers */,
-			);
-			path = UserCenter;
-			sourceTree = "<group>";
-		};
-		F29C8C071BEAF40E0078DE69 /* Cells */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Cells;
-			sourceTree = "<group>";
-		};
-		F29C8C081BEAF40E0078DE69 /* ViewControllers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewControllers;
-			sourceTree = "<group>";
-		};
 		F29C8C091BEAF40E0078DE69 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = Utility;
-			sourceTree = "<group>";
-		};
-		F29C8C0D1BEAFB720078DE69 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Views;
-			path = UIViews;
-			sourceTree = "<group>";
-		};
-		F29C8C0E1BEAFB7B0078DE69 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Views;
-			path = UIViews;
 			sourceTree = "<group>";
 		};
 		F2C784421BE7544D00A36BFE = {
@@ -193,7 +149,7 @@
 			children = (
 				F29C8C001BEAF40E0078DE69 /* Library */,
 				F29C8C011BEAF40E0078DE69 /* Models */,
-				F29C8C021BEAF40E0078DE69 /* Modules */,
+				963697B71C0CA87500C579CF /* Modules */,
 				F29C8C091BEAF40E0078DE69 /* Utility */,
 				F2C7844E1BE7544D00A36BFE /* AppDelegate.swift */,
 				F2C784571BE7544D00A36BFE /* Assets.xcassets */,
@@ -298,6 +254,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F2C7845B1BE7544D00A36BFE /* LaunchScreen.storyboard in Resources */,
+				963697BD1C0CA8A400C579CF /* SGLoginViewController.xib in Resources */,
 				F2C784581BE7544D00A36BFE /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -364,6 +321,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				963697BC1C0CA8A400C579CF /* SGLoginViewController.swift in Sources */,
 				F2C7844F1BE7544D00A36BFE /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
