@@ -8,8 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		5D69B2E4252F1CF060474E3E /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 169B335AE274C1F0FA40683B /* Pods.framework */; };
-		963697BC1C0CA8A400C579CF /* SGLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963697BA1C0CA8A400C579CF /* SGLoginViewController.swift */; };
-		963697BD1C0CA8A400C579CF /* SGLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 963697BB1C0CA8A400C579CF /* SGLoginViewController.xib */; };
+		F25D29FE1C47DF39000E5EEE /* SGLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25D29F91C47DF39000E5EEE /* SGLoginViewController.swift */; };
+		F25D29FF1C47DF39000E5EEE /* SGLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25D29F91C47DF39000E5EEE /* SGLoginViewController.swift */; };
+		F25D2A001C47DF39000E5EEE /* SGLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F25D29FA1C47DF39000E5EEE /* SGLoginViewController.xib */; };
+		F25D2A011C47DF39000E5EEE /* SGLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F25D29FA1C47DF39000E5EEE /* SGLoginViewController.xib */; };
+		F25D2A061C47DF75000E5EEE /* SGHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25D2A051C47DF75000E5EEE /* SGHomeViewController.swift */; };
+		F25D2A071C47DF75000E5EEE /* SGHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25D2A051C47DF75000E5EEE /* SGHomeViewController.swift */; };
+		F25D2A0A1C47DF80000E5EEE /* SGCategoryHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25D2A091C47DF80000E5EEE /* SGCategoryHomeViewController.swift */; };
+		F25D2A0B1C47DF80000E5EEE /* SGCategoryHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25D2A091C47DF80000E5EEE /* SGCategoryHomeViewController.swift */; };
+		F25D2A0F1C47E0BF000E5EEE /* SGTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25D2A0E1C47E0BF000E5EEE /* SGTabBarController.swift */; };
+		F25D2A101C47E0BF000E5EEE /* SGTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25D2A0E1C47E0BF000E5EEE /* SGTabBarController.swift */; };
+		F25D2A121C47E2B9000E5EEE /* SGUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25D2A111C47E2B9000E5EEE /* SGUserViewController.swift */; };
+		F25D2A131C47E2B9000E5EEE /* SGUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25D2A111C47E2B9000E5EEE /* SGUserViewController.swift */; };
 		F2C7844F1BE7544D00A36BFE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C7844E1BE7544D00A36BFE /* AppDelegate.swift */; };
 		F2C784581BE7544D00A36BFE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2C784571BE7544D00A36BFE /* Assets.xcassets */; };
 		F2C7845B1BE7544D00A36BFE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2C784591BE7544D00A36BFE /* LaunchScreen.storyboard */; };
@@ -29,9 +39,13 @@
 /* Begin PBXFileReference section */
 		169B335AE274C1F0FA40683B /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D5BC1627FE4EBE8F760AFEF /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
-		963697BA1C0CA8A400C579CF /* SGLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGLoginViewController.swift; sourceTree = "<group>"; };
-		963697BB1C0CA8A400C579CF /* SGLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SGLoginViewController.xib; sourceTree = "<group>"; };
 		B13FCBA15080C960586CA615 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		F25D29F91C47DF39000E5EEE /* SGLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGLoginViewController.swift; sourceTree = "<group>"; };
+		F25D29FA1C47DF39000E5EEE /* SGLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SGLoginViewController.xib; sourceTree = "<group>"; };
+		F25D2A051C47DF75000E5EEE /* SGHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGHomeViewController.swift; sourceTree = "<group>"; };
+		F25D2A091C47DF80000E5EEE /* SGCategoryHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGCategoryHomeViewController.swift; sourceTree = "<group>"; };
+		F25D2A0E1C47E0BF000E5EEE /* SGTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGTabBarController.swift; sourceTree = "<group>"; };
+		F25D2A111C47E2B9000E5EEE /* SGUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGUserViewController.swift; sourceTree = "<group>"; };
 		F2C7844B1BE7544D00A36BFE /* SwiftGG.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftGG.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2C7844E1BE7544D00A36BFE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F2C784571BE7544D00A36BFE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -81,26 +95,77 @@
 		963697B71C0CA87500C579CF /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				963697B81C0CA87500C579CF /* Login */,
+				F25D29F71C47DF39000E5EEE /* Account */,
+				F25D29FB1C47DF39000E5EEE /* ArticleCategory */,
+				F25D29FC1C47DF39000E5EEE /* Home */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
 		};
-		963697B81C0CA87500C579CF /* Login */ = {
+		F25D29F71C47DF39000E5EEE /* Account */ = {
 			isa = PBXGroup;
 			children = (
-				963697B91C0CA88F00C579CF /* ViewControllers */,
+				F25D29F81C47DF39000E5EEE /* ViewControllers */,
 			);
-			path = Login;
+			path = Account;
 			sourceTree = "<group>";
 		};
-		963697B91C0CA88F00C579CF /* ViewControllers */ = {
+		F25D29F81C47DF39000E5EEE /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				963697BA1C0CA8A400C579CF /* SGLoginViewController.swift */,
-				963697BB1C0CA8A400C579CF /* SGLoginViewController.xib */,
+				F25D2A111C47E2B9000E5EEE /* SGUserViewController.swift */,
+				F25D29F91C47DF39000E5EEE /* SGLoginViewController.swift */,
+				F25D29FA1C47DF39000E5EEE /* SGLoginViewController.xib */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		F25D29FB1C47DF39000E5EEE /* ArticleCategory */ = {
+			isa = PBXGroup;
+			children = (
+				F25D2A081C47DF80000E5EEE /* ViewControllers */,
+			);
+			path = ArticleCategory;
+			sourceTree = "<group>";
+		};
+		F25D29FC1C47DF39000E5EEE /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				F25D2A041C47DF75000E5EEE /* ViewControllers */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		F25D2A041C47DF75000E5EEE /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				F25D2A051C47DF75000E5EEE /* SGHomeViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		F25D2A081C47DF80000E5EEE /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				F25D2A091C47DF80000E5EEE /* SGCategoryHomeViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		F25D2A0C1C47E096000E5EEE /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				F25D2A0D1C47E096000E5EEE /* TabBar */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		F25D2A0D1C47E096000E5EEE /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				F25D2A0E1C47E0BF000E5EEE /* SGTabBarController.swift */,
+			);
+			path = TabBar;
 			sourceTree = "<group>";
 		};
 		F29C8C001BEAF40E0078DE69 /* Library */ = {
@@ -147,6 +212,7 @@
 		F2C7844D1BE7544D00A36BFE /* SwiftGG */ = {
 			isa = PBXGroup;
 			children = (
+				F25D2A0C1C47E096000E5EEE /* Core */,
 				F29C8C001BEAF40E0078DE69 /* Library */,
 				F29C8C011BEAF40E0078DE69 /* Models */,
 				963697B71C0CA87500C579CF /* Modules */,
@@ -254,7 +320,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F2C7845B1BE7544D00A36BFE /* LaunchScreen.storyboard in Resources */,
-				963697BD1C0CA8A400C579CF /* SGLoginViewController.xib in Resources */,
+				F25D2A001C47DF39000E5EEE /* SGLoginViewController.xib in Resources */,
 				F2C784581BE7544D00A36BFE /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -263,6 +329,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F25D2A011C47DF39000E5EEE /* SGLoginViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -321,8 +388,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				963697BC1C0CA8A400C579CF /* SGLoginViewController.swift in Sources */,
+				F25D29FE1C47DF39000E5EEE /* SGLoginViewController.swift in Sources */,
+				F25D2A0A1C47DF80000E5EEE /* SGCategoryHomeViewController.swift in Sources */,
+				F25D2A0F1C47E0BF000E5EEE /* SGTabBarController.swift in Sources */,
 				F2C7844F1BE7544D00A36BFE /* AppDelegate.swift in Sources */,
+				F25D2A061C47DF75000E5EEE /* SGHomeViewController.swift in Sources */,
+				F25D2A121C47E2B9000E5EEE /* SGUserViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -330,7 +401,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F25D29FF1C47DF39000E5EEE /* SGLoginViewController.swift in Sources */,
+				F25D2A0B1C47DF80000E5EEE /* SGCategoryHomeViewController.swift in Sources */,
+				F25D2A101C47E0BF000E5EEE /* SGTabBarController.swift in Sources */,
 				F2C784661BE7544D00A36BFE /* SwiftGGTests.swift in Sources */,
+				F25D2A071C47DF75000E5EEE /* SGHomeViewController.swift in Sources */,
+				F25D2A131C47E2B9000E5EEE /* SGUserViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
