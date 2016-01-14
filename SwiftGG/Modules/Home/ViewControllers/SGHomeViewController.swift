@@ -12,5 +12,7 @@ class SGHomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        title = "首页"
     }
 }

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		23DB6FA41C47F29F00865B65 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C7844E1BE7544D00A36BFE /* AppDelegate.swift */; };
+		23DB6FA51C47F2A000865B65 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C7844E1BE7544D00A36BFE /* AppDelegate.swift */; };
 		5D69B2E4252F1CF060474E3E /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 169B335AE274C1F0FA40683B /* Pods.framework */; };
 		F25D2A231C47E4D7000E5EEE /* SGLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25D2A161C47E4D7000E5EEE /* SGLoginViewController.swift */; };
 		F25D2A241C47E4D7000E5EEE /* SGLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25D2A161C47E4D7000E5EEE /* SGLoginViewController.swift */; };
@@ -24,7 +26,6 @@
 		F25D2A301C47E4D7000E5EEE /* SGHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25D2A201C47E4D7000E5EEE /* SGHomeViewController.swift */; };
 		F25D2A341C47E4F4000E5EEE /* SGTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25D2A331C47E4F4000E5EEE /* SGTabBarController.swift */; };
 		F25D2A351C47E4F4000E5EEE /* SGTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25D2A331C47E4F4000E5EEE /* SGTabBarController.swift */; };
-		F2C7844F1BE7544D00A36BFE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C7844E1BE7544D00A36BFE /* AppDelegate.swift */; };
 		F2C784581BE7544D00A36BFE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2C784571BE7544D00A36BFE /* Assets.xcassets */; };
 		F2C7845B1BE7544D00A36BFE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2C784591BE7544D00A36BFE /* LaunchScreen.storyboard */; };
 		F2C784661BE7544D00A36BFE /* SwiftGGTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C784651BE7544D00A36BFE /* SwiftGGTests.swift */; };
@@ -104,7 +105,6 @@
 				F25D2A141C47E4D7000E5EEE /* Account */,
 				F25D2A1B1C47E4D7000E5EEE /* ArticleCategory */,
 				F25D2A1E1C47E4D7000E5EEE /* Home */,
-				F25D2A211C47E4D7000E5EEE /* Login */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -157,21 +157,6 @@
 			isa = PBXGroup;
 			children = (
 				F25D2A201C47E4D7000E5EEE /* SGHomeViewController.swift */,
-			);
-			path = ViewControllers;
-			sourceTree = "<group>";
-		};
-		F25D2A211C47E4D7000E5EEE /* Login */ = {
-			isa = PBXGroup;
-			children = (
-				F25D2A221C47E4D7000E5EEE /* ViewControllers */,
-			);
-			path = Login;
-			sourceTree = "<group>";
-		};
-		F25D2A221C47E4D7000E5EEE /* ViewControllers */ = {
-			isa = PBXGroup;
-			children = (
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -418,8 +403,8 @@
 				F25D2A341C47E4F4000E5EEE /* SGTabBarController.swift in Sources */,
 				F25D2A231C47E4D7000E5EEE /* SGLoginViewController.swift in Sources */,
 				F25D2A2B1C47E4D7000E5EEE /* SGUserViewController.swift in Sources */,
+				23DB6FA51C47F2A000865B65 /* AppDelegate.swift in Sources */,
 				F25D2A271C47E4D7000E5EEE /* SGRegisterViewController.swift in Sources */,
-				F2C7844F1BE7544D00A36BFE /* AppDelegate.swift in Sources */,
 				F25D2A2F1C47E4D7000E5EEE /* SGHomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -428,6 +413,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				23DB6FA41C47F29F00865B65 /* AppDelegate.swift in Sources */,
 				F25D2A2E1C47E4D7000E5EEE /* SGCategoryHomeViewController.swift in Sources */,
 				F25D2A351C47E4F4000E5EEE /* SGTabBarController.swift in Sources */,
 				F25D2A241C47E4D7000E5EEE /* SGLoginViewController.swift in Sources */,

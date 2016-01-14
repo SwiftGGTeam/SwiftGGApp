@@ -12,9 +12,17 @@ class SGLoginViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
     }
     
-    override func preferredStatusBarStyle() -> UIStatusBarStyle {
-        return .LightContent
+    // MARK: Actions
+    @IBAction func loginButtonTapped() {
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        appDelegate.showHomePage()
+    }
+    
+    @IBAction func registerButtonTapped() {
+        let registerController = SGRegisterViewController()
+        presentViewController(registerController, animated: true, completion: nil)
     }
 }
