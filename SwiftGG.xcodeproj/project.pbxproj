@@ -8,18 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		5D69B2E4252F1CF060474E3E /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 169B335AE274C1F0FA40683B /* Pods.framework */; };
-		F25D29FE1C47DF39000E5EEE /* SGLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25D29F91C47DF39000E5EEE /* SGLoginViewController.swift */; };
-		F25D29FF1C47DF39000E5EEE /* SGLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25D29F91C47DF39000E5EEE /* SGLoginViewController.swift */; };
-		F25D2A001C47DF39000E5EEE /* SGLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F25D29FA1C47DF39000E5EEE /* SGLoginViewController.xib */; };
-		F25D2A011C47DF39000E5EEE /* SGLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F25D29FA1C47DF39000E5EEE /* SGLoginViewController.xib */; };
-		F25D2A061C47DF75000E5EEE /* SGHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25D2A051C47DF75000E5EEE /* SGHomeViewController.swift */; };
-		F25D2A071C47DF75000E5EEE /* SGHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25D2A051C47DF75000E5EEE /* SGHomeViewController.swift */; };
-		F25D2A0A1C47DF80000E5EEE /* SGCategoryHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25D2A091C47DF80000E5EEE /* SGCategoryHomeViewController.swift */; };
-		F25D2A0B1C47DF80000E5EEE /* SGCategoryHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25D2A091C47DF80000E5EEE /* SGCategoryHomeViewController.swift */; };
-		F25D2A0F1C47E0BF000E5EEE /* SGTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25D2A0E1C47E0BF000E5EEE /* SGTabBarController.swift */; };
-		F25D2A101C47E0BF000E5EEE /* SGTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25D2A0E1C47E0BF000E5EEE /* SGTabBarController.swift */; };
-		F25D2A121C47E2B9000E5EEE /* SGUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25D2A111C47E2B9000E5EEE /* SGUserViewController.swift */; };
-		F25D2A131C47E2B9000E5EEE /* SGUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25D2A111C47E2B9000E5EEE /* SGUserViewController.swift */; };
+		F25D2A231C47E4D7000E5EEE /* SGLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25D2A161C47E4D7000E5EEE /* SGLoginViewController.swift */; };
+		F25D2A241C47E4D7000E5EEE /* SGLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25D2A161C47E4D7000E5EEE /* SGLoginViewController.swift */; };
+		F25D2A251C47E4D7000E5EEE /* SGLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F25D2A171C47E4D7000E5EEE /* SGLoginViewController.xib */; };
+		F25D2A261C47E4D7000E5EEE /* SGLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F25D2A171C47E4D7000E5EEE /* SGLoginViewController.xib */; };
+		F25D2A271C47E4D7000E5EEE /* SGRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25D2A181C47E4D7000E5EEE /* SGRegisterViewController.swift */; };
+		F25D2A281C47E4D7000E5EEE /* SGRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25D2A181C47E4D7000E5EEE /* SGRegisterViewController.swift */; };
+		F25D2A291C47E4D7000E5EEE /* SGRegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F25D2A191C47E4D7000E5EEE /* SGRegisterViewController.xib */; };
+		F25D2A2A1C47E4D7000E5EEE /* SGRegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F25D2A191C47E4D7000E5EEE /* SGRegisterViewController.xib */; };
+		F25D2A2B1C47E4D7000E5EEE /* SGUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25D2A1A1C47E4D7000E5EEE /* SGUserViewController.swift */; };
+		F25D2A2C1C47E4D7000E5EEE /* SGUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25D2A1A1C47E4D7000E5EEE /* SGUserViewController.swift */; };
+		F25D2A2D1C47E4D7000E5EEE /* SGCategoryHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25D2A1D1C47E4D7000E5EEE /* SGCategoryHomeViewController.swift */; };
+		F25D2A2E1C47E4D7000E5EEE /* SGCategoryHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25D2A1D1C47E4D7000E5EEE /* SGCategoryHomeViewController.swift */; };
+		F25D2A2F1C47E4D7000E5EEE /* SGHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25D2A201C47E4D7000E5EEE /* SGHomeViewController.swift */; };
+		F25D2A301C47E4D7000E5EEE /* SGHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25D2A201C47E4D7000E5EEE /* SGHomeViewController.swift */; };
+		F25D2A341C47E4F4000E5EEE /* SGTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25D2A331C47E4F4000E5EEE /* SGTabBarController.swift */; };
+		F25D2A351C47E4F4000E5EEE /* SGTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25D2A331C47E4F4000E5EEE /* SGTabBarController.swift */; };
 		F2C7844F1BE7544D00A36BFE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C7844E1BE7544D00A36BFE /* AppDelegate.swift */; };
 		F2C784581BE7544D00A36BFE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2C784571BE7544D00A36BFE /* Assets.xcassets */; };
 		F2C7845B1BE7544D00A36BFE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2C784591BE7544D00A36BFE /* LaunchScreen.storyboard */; };
@@ -40,12 +44,14 @@
 		169B335AE274C1F0FA40683B /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D5BC1627FE4EBE8F760AFEF /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		B13FCBA15080C960586CA615 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
-		F25D29F91C47DF39000E5EEE /* SGLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGLoginViewController.swift; sourceTree = "<group>"; };
-		F25D29FA1C47DF39000E5EEE /* SGLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SGLoginViewController.xib; sourceTree = "<group>"; };
-		F25D2A051C47DF75000E5EEE /* SGHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGHomeViewController.swift; sourceTree = "<group>"; };
-		F25D2A091C47DF80000E5EEE /* SGCategoryHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGCategoryHomeViewController.swift; sourceTree = "<group>"; };
-		F25D2A0E1C47E0BF000E5EEE /* SGTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGTabBarController.swift; sourceTree = "<group>"; };
-		F25D2A111C47E2B9000E5EEE /* SGUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGUserViewController.swift; sourceTree = "<group>"; };
+		F25D2A161C47E4D7000E5EEE /* SGLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGLoginViewController.swift; sourceTree = "<group>"; };
+		F25D2A171C47E4D7000E5EEE /* SGLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SGLoginViewController.xib; sourceTree = "<group>"; };
+		F25D2A181C47E4D7000E5EEE /* SGRegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGRegisterViewController.swift; sourceTree = "<group>"; };
+		F25D2A191C47E4D7000E5EEE /* SGRegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SGRegisterViewController.xib; sourceTree = "<group>"; };
+		F25D2A1A1C47E4D7000E5EEE /* SGUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGUserViewController.swift; sourceTree = "<group>"; };
+		F25D2A1D1C47E4D7000E5EEE /* SGCategoryHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGCategoryHomeViewController.swift; sourceTree = "<group>"; };
+		F25D2A201C47E4D7000E5EEE /* SGHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGHomeViewController.swift; sourceTree = "<group>"; };
+		F25D2A331C47E4F4000E5EEE /* SGTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGTabBarController.swift; sourceTree = "<group>"; };
 		F2C7844B1BE7544D00A36BFE /* SwiftGG.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftGG.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2C7844E1BE7544D00A36BFE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F2C784571BE7544D00A36BFE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -95,75 +101,93 @@
 		963697B71C0CA87500C579CF /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				F25D29F71C47DF39000E5EEE /* Account */,
-				F25D29FB1C47DF39000E5EEE /* ArticleCategory */,
-				F25D29FC1C47DF39000E5EEE /* Home */,
+				F25D2A141C47E4D7000E5EEE /* Account */,
+				F25D2A1B1C47E4D7000E5EEE /* ArticleCategory */,
+				F25D2A1E1C47E4D7000E5EEE /* Home */,
+				F25D2A211C47E4D7000E5EEE /* Login */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
 		};
-		F25D29F71C47DF39000E5EEE /* Account */ = {
+		F25D2A141C47E4D7000E5EEE /* Account */ = {
 			isa = PBXGroup;
 			children = (
-				F25D29F81C47DF39000E5EEE /* ViewControllers */,
+				F25D2A151C47E4D7000E5EEE /* ViewControllers */,
 			);
 			path = Account;
 			sourceTree = "<group>";
 		};
-		F25D29F81C47DF39000E5EEE /* ViewControllers */ = {
+		F25D2A151C47E4D7000E5EEE /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				F25D2A111C47E2B9000E5EEE /* SGUserViewController.swift */,
-				F25D29F91C47DF39000E5EEE /* SGLoginViewController.swift */,
-				F25D29FA1C47DF39000E5EEE /* SGLoginViewController.xib */,
+				F25D2A161C47E4D7000E5EEE /* SGLoginViewController.swift */,
+				F25D2A171C47E4D7000E5EEE /* SGLoginViewController.xib */,
+				F25D2A181C47E4D7000E5EEE /* SGRegisterViewController.swift */,
+				F25D2A191C47E4D7000E5EEE /* SGRegisterViewController.xib */,
+				F25D2A1A1C47E4D7000E5EEE /* SGUserViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
 		};
-		F25D29FB1C47DF39000E5EEE /* ArticleCategory */ = {
+		F25D2A1B1C47E4D7000E5EEE /* ArticleCategory */ = {
 			isa = PBXGroup;
 			children = (
-				F25D2A081C47DF80000E5EEE /* ViewControllers */,
+				F25D2A1C1C47E4D7000E5EEE /* ViewControllers */,
 			);
 			path = ArticleCategory;
 			sourceTree = "<group>";
 		};
-		F25D29FC1C47DF39000E5EEE /* Home */ = {
+		F25D2A1C1C47E4D7000E5EEE /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				F25D2A041C47DF75000E5EEE /* ViewControllers */,
+				F25D2A1D1C47E4D7000E5EEE /* SGCategoryHomeViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		F25D2A1E1C47E4D7000E5EEE /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				F25D2A1F1C47E4D7000E5EEE /* ViewControllers */,
 			);
 			path = Home;
 			sourceTree = "<group>";
 		};
-		F25D2A041C47DF75000E5EEE /* ViewControllers */ = {
+		F25D2A1F1C47E4D7000E5EEE /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				F25D2A051C47DF75000E5EEE /* SGHomeViewController.swift */,
+				F25D2A201C47E4D7000E5EEE /* SGHomeViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
 		};
-		F25D2A081C47DF80000E5EEE /* ViewControllers */ = {
+		F25D2A211C47E4D7000E5EEE /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				F25D2A091C47DF80000E5EEE /* SGCategoryHomeViewController.swift */,
+				F25D2A221C47E4D7000E5EEE /* ViewControllers */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		F25D2A221C47E4D7000E5EEE /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
 		};
-		F25D2A0C1C47E096000E5EEE /* Core */ = {
+		F25D2A311C47E4F4000E5EEE /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				F25D2A0D1C47E096000E5EEE /* TabBar */,
+				F25D2A321C47E4F4000E5EEE /* TabBar */,
 			);
 			path = Core;
 			sourceTree = "<group>";
 		};
-		F25D2A0D1C47E096000E5EEE /* TabBar */ = {
+		F25D2A321C47E4F4000E5EEE /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
-				F25D2A0E1C47E0BF000E5EEE /* SGTabBarController.swift */,
+				F25D2A331C47E4F4000E5EEE /* SGTabBarController.swift */,
 			);
 			path = TabBar;
 			sourceTree = "<group>";
@@ -212,7 +236,7 @@
 		F2C7844D1BE7544D00A36BFE /* SwiftGG */ = {
 			isa = PBXGroup;
 			children = (
-				F25D2A0C1C47E096000E5EEE /* Core */,
+				F25D2A311C47E4F4000E5EEE /* Core */,
 				F29C8C001BEAF40E0078DE69 /* Library */,
 				F29C8C011BEAF40E0078DE69 /* Models */,
 				963697B71C0CA87500C579CF /* Modules */,
@@ -320,8 +344,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				F2C7845B1BE7544D00A36BFE /* LaunchScreen.storyboard in Resources */,
-				F25D2A001C47DF39000E5EEE /* SGLoginViewController.xib in Resources */,
+				F25D2A251C47E4D7000E5EEE /* SGLoginViewController.xib in Resources */,
 				F2C784581BE7544D00A36BFE /* Assets.xcassets in Resources */,
+				F25D2A291C47E4D7000E5EEE /* SGRegisterViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -329,7 +354,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F25D2A011C47DF39000E5EEE /* SGLoginViewController.xib in Resources */,
+				F25D2A261C47E4D7000E5EEE /* SGLoginViewController.xib in Resources */,
+				F25D2A2A1C47E4D7000E5EEE /* SGRegisterViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -388,12 +414,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F25D29FE1C47DF39000E5EEE /* SGLoginViewController.swift in Sources */,
-				F25D2A0A1C47DF80000E5EEE /* SGCategoryHomeViewController.swift in Sources */,
-				F25D2A0F1C47E0BF000E5EEE /* SGTabBarController.swift in Sources */,
+				F25D2A2D1C47E4D7000E5EEE /* SGCategoryHomeViewController.swift in Sources */,
+				F25D2A341C47E4F4000E5EEE /* SGTabBarController.swift in Sources */,
+				F25D2A231C47E4D7000E5EEE /* SGLoginViewController.swift in Sources */,
+				F25D2A2B1C47E4D7000E5EEE /* SGUserViewController.swift in Sources */,
+				F25D2A271C47E4D7000E5EEE /* SGRegisterViewController.swift in Sources */,
 				F2C7844F1BE7544D00A36BFE /* AppDelegate.swift in Sources */,
-				F25D2A061C47DF75000E5EEE /* SGHomeViewController.swift in Sources */,
-				F25D2A121C47E2B9000E5EEE /* SGUserViewController.swift in Sources */,
+				F25D2A2F1C47E4D7000E5EEE /* SGHomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -401,12 +428,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F25D29FF1C47DF39000E5EEE /* SGLoginViewController.swift in Sources */,
-				F25D2A0B1C47DF80000E5EEE /* SGCategoryHomeViewController.swift in Sources */,
-				F25D2A101C47E0BF000E5EEE /* SGTabBarController.swift in Sources */,
+				F25D2A2E1C47E4D7000E5EEE /* SGCategoryHomeViewController.swift in Sources */,
+				F25D2A351C47E4F4000E5EEE /* SGTabBarController.swift in Sources */,
+				F25D2A241C47E4D7000E5EEE /* SGLoginViewController.swift in Sources */,
+				F25D2A2C1C47E4D7000E5EEE /* SGUserViewController.swift in Sources */,
+				F25D2A281C47E4D7000E5EEE /* SGRegisterViewController.swift in Sources */,
 				F2C784661BE7544D00A36BFE /* SwiftGGTests.swift in Sources */,
-				F25D2A071C47DF75000E5EEE /* SGHomeViewController.swift in Sources */,
-				F25D2A131C47E2B9000E5EEE /* SGUserViewController.swift in Sources */,
+				F25D2A301C47E4D7000E5EEE /* SGHomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
