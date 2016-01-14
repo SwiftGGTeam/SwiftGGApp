@@ -12,9 +12,7 @@ class SGUserViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-    }
-    
-    override func preferredStatusBarStyle() -> UIStatusBarStyle {
-        return .LightContent
+        
+        title = "我"
     }
 }
