@@ -19,6 +19,8 @@
 		23167EBC1C48EBD600A83F64 /* ArticleCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23167EB31C48E8B900A83F64 /* ArticleCategory.swift */; };
 		23167EBD1C48EBD900A83F64 /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23167EB61C48E99900A83F64 /* CategoryCell.swift */; };
 		23167EBE1C48EBDF00A83F64 /* CategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23167EB81C48E9B500A83F64 /* CategoryCell.xib */; };
+		23167EC01C491D8500A83F64 /* SGRegisterInformationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23167EBF1C491D8500A83F64 /* SGRegisterInformationController.swift */; };
+		23167EC11C491DA000A83F64 /* SGRegisterInformationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23167EBF1C491D8500A83F64 /* SGRegisterInformationController.swift */; };
 		5D69B2E4252F1CF060474E3E /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 169B335AE274C1F0FA40683B /* Pods.framework */; };
 		F25D2A231C47E4D7000E5EEE /* SGLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25D2A161C47E4D7000E5EEE /* SGLoginViewController.swift */; };
 		F25D2A241C47E4D7000E5EEE /* SGLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25D2A161C47E4D7000E5EEE /* SGLoginViewController.swift */; };
@@ -60,6 +62,7 @@
 		23167EB31C48E8B900A83F64 /* ArticleCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleCategory.swift; sourceTree = "<group>"; };
 		23167EB61C48E99900A83F64 /* CategoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
 		23167EB81C48E9B500A83F64 /* CategoryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CategoryCell.xib; sourceTree = "<group>"; };
+		23167EBF1C491D8500A83F64 /* SGRegisterInformationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGRegisterInformationController.swift; sourceTree = "<group>"; };
 		5D5BC1627FE4EBE8F760AFEF /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		B13FCBA15080C960586CA615 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		F25D2A161C47E4D7000E5EEE /* SGLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGLoginViewController.swift; sourceTree = "<group>"; };
@@ -203,6 +206,7 @@
 				F25D2A171C47E4D7000E5EEE /* SGLoginViewController.xib */,
 				F25D2A181C47E4D7000E5EEE /* SGRegisterViewController.swift */,
 				F25D2A191C47E4D7000E5EEE /* SGRegisterViewController.xib */,
+				23167EBF1C491D8500A83F64 /* SGRegisterInformationController.swift */,
 				F25D2A1A1C47E4D7000E5EEE /* SGUserViewController.swift */,
 			);
 			path = ViewControllers;
@@ -470,6 +474,7 @@
 				F25D2A271C47E4D7000E5EEE /* SGRegisterViewController.swift in Sources */,
 				F25D2A2F1C47E4D7000E5EEE /* SGHomeViewController.swift in Sources */,
 				23167EB71C48E99900A83F64 /* CategoryCell.swift in Sources */,
+				23167EC01C491D8500A83F64 /* SGRegisterInformationController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -487,6 +492,7 @@
 				F2C784661BE7544D00A36BFE /* SwiftGGTests.swift in Sources */,
 				F25D2A301C47E4D7000E5EEE /* SGHomeViewController.swift in Sources */,
 				23167EBD1C48EBD900A83F64 /* CategoryCell.swift in Sources */,
+				23167EC11C491DA000A83F64 /* SGRegisterInformationController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

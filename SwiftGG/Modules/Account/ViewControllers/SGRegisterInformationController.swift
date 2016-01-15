@@ -1,0 +1,83 @@
+//
+//  SGRegisterInformationController.swift
+//  SwiftGG
+//
+//  Created by 杨志超 on 16/1/15.
+//  Copyright © 2016年 swiftgg. All rights reserved.
+//
+
+import UIKit
+
+let RegisterInformationCellIdentifier = "RegisterInformationCell"
+
+class SGRegisterInformationController: UIViewController {
+
+    var tableView: UITableView!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        view.backgroundColor = UIColor(rgba: "#F7F7F7")
+        
+        setupNavigationBar()
+        
+        setupTableView()
+    }
+    
+    // MARK: - Helper Methods
+    
+    func setupNavigationBar() {
+        
+        title = "注册 SwiftGo"
+        
+        navigationController!.navigationBar.translucent = false
+        navigationController!.navigationBar.barTintColor = UIColor(rgba: "#FCFCFC")
+        navigationController!.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor(rgba: "#303030"), NSFontAttributeName: UIFont.systemFontOfSize(17)]
+        
+        let backImage = UIImage(named: "back_gray")?.imageWithRenderingMode(.AlwaysOriginal)
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: backImage, style: .Plain, target: self, action: Selector("back"))
+        
+    }
+    
+    func setupTableView() {
+        tableView = UITableView(frame: view.frame, style: .Grouped)
+        tableView.dataSource = self
+        view.addSubview(tableView)
+    }
+    
+    func back() {
+        navigationController!.popViewControllerAnimated(true)
+    }
+    
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return .Default
+    }
+}
+
+// MARK: - UITableViewDataSource
+extension SGRegisterInformationController: UITableViewDataSource {
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 2
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
+        var cell: UITableViewCell! = tableView.dequeueReusableCellWithIdentifier(RegisterInformationCellIdentifier)
+        
+        if cell == nil {
+            cell = UITableViewCell(style: .Default, reuseIdentifier: RegisterInformationCellIdentifier)
+        }
+        
+        if indexPath.section == 0 {
+            if indexPath.row == 0 {
+                cell.imageView?.image = UIImage(named: "toolbar")
+                cell.textLabel?.text = "微博关注我们"
+            } else if indexPath.row == 1 {
+                cell.imageView?.image = UIImage(named: "toolbar")
+                cell.textLabel?.text = "鼓励一下我们"
+            }
+        }
+        
+        return cell
+    }
+}
