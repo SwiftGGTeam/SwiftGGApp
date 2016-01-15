@@ -11,6 +11,7 @@
 		23167EA71C48D6D600A83F64 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 23167EA31C48D6D600A83F64 /* Assets.xcassets */; };
 		23167EA81C48D6D600A83F64 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23167EA41C48D6D600A83F64 /* LaunchScreen.storyboard */; };
 		23167EA91C48D6D600A83F64 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 23167EA61C48D6D600A83F64 /* Info.plist */; };
+		23167EAF1C48D8EF00A83F64 /* CategoryList.json in Resources */ = {isa = PBXBuildFile; fileRef = 23167EAE1C48D8EF00A83F64 /* CategoryList.json */; };
 		5D69B2E4252F1CF060474E3E /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 169B335AE274C1F0FA40683B /* Pods.framework */; };
 		F25D2A231C47E4D7000E5EEE /* SGLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25D2A161C47E4D7000E5EEE /* SGLoginViewController.swift */; };
 		F25D2A241C47E4D7000E5EEE /* SGLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25D2A161C47E4D7000E5EEE /* SGLoginViewController.swift */; };
@@ -47,6 +48,7 @@
 		23167EA31C48D6D600A83F64 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		23167EA51C48D6D600A83F64 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		23167EA61C48D6D600A83F64 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		23167EAE1C48D8EF00A83F64 /* CategoryList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = CategoryList.json; sourceTree = "<group>"; };
 		5D5BC1627FE4EBE8F760AFEF /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		B13FCBA15080C960586CA615 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		F25D2A161C47E4D7000E5EEE /* SGLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGLoginViewController.swift; sourceTree = "<group>"; };
@@ -121,11 +123,20 @@
 		23167EA21C48D6D600A83F64 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				23167EAD1C48D8E500A83F64 /* Stubbed Responses */,
 				23167EA31C48D6D600A83F64 /* Assets.xcassets */,
 				23167EA41C48D6D600A83F64 /* LaunchScreen.storyboard */,
 				23167EA61C48D6D600A83F64 /* Info.plist */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		23167EAD1C48D8E500A83F64 /* Stubbed Responses */ = {
+			isa = PBXGroup;
+			children = (
+				23167EAE1C48D8EF00A83F64 /* CategoryList.json */,
+			);
+			name = "Stubbed Responses";
 			sourceTree = "<group>";
 		};
 		678CDB1499F2BD2C8F727586 /* Frameworks */ = {
@@ -353,6 +364,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F25D2A251C47E4D7000E5EEE /* SGLoginViewController.xib in Resources */,
+				23167EAF1C48D8EF00A83F64 /* CategoryList.json in Resources */,
 				23167EA81C48D6D600A83F64 /* LaunchScreen.storyboard in Resources */,
 				F25D2A291C47E4D7000E5EEE /* SGRegisterViewController.xib in Resources */,
 				23167EA71C48D6D600A83F64 /* Assets.xcassets in Resources */,
