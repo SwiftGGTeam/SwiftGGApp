@@ -55,13 +55,13 @@ class SGCategoryHomeViewController: UIViewController {
         collectionView = UICollectionView(frame: view.frame, collectionViewLayout: UICollectionViewFlowLayout())
         collectionView.backgroundColor = UIColor.whiteColor()
         collectionView.dataSource = self
+        collectionView.delegate = self
         view.addSubview(collectionView)
         
         let cellWidth = CGRectGetWidth(view.frame) / CGFloat(2)
         let flowLayout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
         flowLayout.itemSize = CGSize(width: cellWidth, height: cellWidth)
         flowLayout.minimumInteritemSpacing = 0.0
-        flowLayout.minimumLineSpacing = 0.0
         
         collectionView.registerNib(UINib(nibName: "CategoryCell", bundle: nil), forCellWithReuseIdentifier: CategoryCellIdentifier)
     }
@@ -79,5 +79,11 @@ extension SGCategoryHomeViewController: UICollectionViewDataSource {
         cell.configureCell(category)
         
         return cell
+    }
+}
+
+extension SGCategoryHomeViewController: UICollectionViewDelegate {
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        print("cell row: \(indexPath.row) item: \(indexPath.item) selected")
     }
 }

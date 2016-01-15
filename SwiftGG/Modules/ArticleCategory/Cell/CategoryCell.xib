@@ -14,31 +14,27 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="toolbar" translatesAutoresizingMaskIntoConstraints="NO" id="Dg0-fZ-Tc5">
-                        <rect key="frame" x="84" y="32" width="29" height="29"/>
+                        <rect key="frame" x="84" y="24" width="29" height="29"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swift 入门" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j09-C0-UWY">
-                        <rect key="frame" x="60" y="77" width="77" height="20.5"/>
+                        <rect key="frame" x="60" y="69" width="77" height="20.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="46 篇" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="naU-rR-ABK">
-                        <rect key="frame" x="77.5" y="105.5" width="42.5" height="20.5"/>
+                        <rect key="frame" x="77" y="97" width="42.5" height="20.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9CJ-F5-poR">
-                        <rect key="frame" x="46" y="18" width="240" height="128"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>
             <constraints>
                 <constraint firstItem="j09-C0-UWY" firstAttribute="top" secondItem="Dg0-fZ-Tc5" secondAttribute="bottom" constant="16" id="6bR-0S-Qn1"/>
                 <constraint firstItem="naU-rR-ABK" firstAttribute="centerX" secondItem="PDU-uR-rdc" secondAttribute="centerX" id="LgT-By-9jy"/>
-                <constraint firstItem="Dg0-fZ-Tc5" firstAttribute="top" secondItem="PDU-uR-rdc" secondAttribute="top" constant="32" id="fLH-y5-sBp"/>
+                <constraint firstItem="Dg0-fZ-Tc5" firstAttribute="top" secondItem="PDU-uR-rdc" secondAttribute="top" constant="24" id="fLH-y5-sBp"/>
                 <constraint firstItem="naU-rR-ABK" firstAttribute="top" secondItem="j09-C0-UWY" secondAttribute="bottom" constant="8" id="jnf-HC-tfy"/>
                 <constraint firstItem="Dg0-fZ-Tc5" firstAttribute="centerX" secondItem="PDU-uR-rdc" secondAttribute="centerX" id="wZd-n3-TuM"/>
                 <constraint firstItem="j09-C0-UWY" firstAttribute="centerX" secondItem="PDU-uR-rdc" secondAttribute="centerX" id="xse-yu-ocm"/>
