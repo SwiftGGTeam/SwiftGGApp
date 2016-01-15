@@ -10,8 +10,15 @@
 		23167EA11C48D6B200A83F64 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23167EA01C48D6B200A83F64 /* AppDelegate.swift */; };
 		23167EA71C48D6D600A83F64 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 23167EA31C48D6D600A83F64 /* Assets.xcassets */; };
 		23167EA81C48D6D600A83F64 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23167EA41C48D6D600A83F64 /* LaunchScreen.storyboard */; };
-		23167EA91C48D6D600A83F64 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 23167EA61C48D6D600A83F64 /* Info.plist */; };
 		23167EAF1C48D8EF00A83F64 /* CategoryList.json in Resources */ = {isa = PBXBuildFile; fileRef = 23167EAE1C48D8EF00A83F64 /* CategoryList.json */; };
+		23167EB11C48DAD200A83F64 /* SwiftGGAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23167EB01C48DAD200A83F64 /* SwiftGGAPI.swift */; };
+		23167EB21C48DF2600A83F64 /* SwiftGGAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23167EB01C48DAD200A83F64 /* SwiftGGAPI.swift */; };
+		23167EB41C48E8B900A83F64 /* ArticleCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23167EB31C48E8B900A83F64 /* ArticleCategory.swift */; };
+		23167EB71C48E99900A83F64 /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23167EB61C48E99900A83F64 /* CategoryCell.swift */; };
+		23167EB91C48E9B500A83F64 /* CategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23167EB81C48E9B500A83F64 /* CategoryCell.xib */; };
+		23167EBC1C48EBD600A83F64 /* ArticleCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23167EB31C48E8B900A83F64 /* ArticleCategory.swift */; };
+		23167EBD1C48EBD900A83F64 /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23167EB61C48E99900A83F64 /* CategoryCell.swift */; };
+		23167EBE1C48EBDF00A83F64 /* CategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23167EB81C48E9B500A83F64 /* CategoryCell.xib */; };
 		5D69B2E4252F1CF060474E3E /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 169B335AE274C1F0FA40683B /* Pods.framework */; };
 		F25D2A231C47E4D7000E5EEE /* SGLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25D2A161C47E4D7000E5EEE /* SGLoginViewController.swift */; };
 		F25D2A241C47E4D7000E5EEE /* SGLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25D2A161C47E4D7000E5EEE /* SGLoginViewController.swift */; };
@@ -49,6 +56,10 @@
 		23167EA51C48D6D600A83F64 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		23167EA61C48D6D600A83F64 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		23167EAE1C48D8EF00A83F64 /* CategoryList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = CategoryList.json; sourceTree = "<group>"; };
+		23167EB01C48DAD200A83F64 /* SwiftGGAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftGGAPI.swift; sourceTree = "<group>"; };
+		23167EB31C48E8B900A83F64 /* ArticleCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleCategory.swift; sourceTree = "<group>"; };
+		23167EB61C48E99900A83F64 /* CategoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
+		23167EB81C48E9B500A83F64 /* CategoryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CategoryCell.xib; sourceTree = "<group>"; };
 		5D5BC1627FE4EBE8F760AFEF /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		B13FCBA15080C960586CA615 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		F25D2A161C47E4D7000E5EEE /* SGLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGLoginViewController.swift; sourceTree = "<group>"; };
@@ -87,6 +98,7 @@
 		23167E9B1C48D65E00A83F64 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				23167EB01C48DAD200A83F64 /* SwiftGGAPI.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -101,6 +113,7 @@
 		23167E9D1C48D68F00A83F64 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				23167EB31C48E8B900A83F64 /* ArticleCategory.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -137,6 +150,15 @@
 				23167EAE1C48D8EF00A83F64 /* CategoryList.json */,
 			);
 			name = "Stubbed Responses";
+			sourceTree = "<group>";
+		};
+		23167EB51C48E98D00A83F64 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				23167EB61C48E99900A83F64 /* CategoryCell.swift */,
+				23167EB81C48E9B500A83F64 /* CategoryCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		678CDB1499F2BD2C8F727586 /* Frameworks */ = {
@@ -189,6 +211,7 @@
 		F25D2A1B1C47E4D7000E5EEE /* ArticleCategory */ = {
 			isa = PBXGroup;
 			children = (
+				23167EB51C48E98D00A83F64 /* Cell */,
 				F25D2A1C1C47E4D7000E5EEE /* ViewControllers */,
 			);
 			path = ArticleCategory;
@@ -364,11 +387,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				F25D2A251C47E4D7000E5EEE /* SGLoginViewController.xib in Resources */,
+				23167EB91C48E9B500A83F64 /* CategoryCell.xib in Resources */,
 				23167EAF1C48D8EF00A83F64 /* CategoryList.json in Resources */,
 				23167EA81C48D6D600A83F64 /* LaunchScreen.storyboard in Resources */,
 				F25D2A291C47E4D7000E5EEE /* SGRegisterViewController.xib in Resources */,
 				23167EA71C48D6D600A83F64 /* Assets.xcassets in Resources */,
-				23167EA91C48D6D600A83F64 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -377,6 +400,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F25D2A261C47E4D7000E5EEE /* SGLoginViewController.xib in Resources */,
+				23167EBE1C48EBDF00A83F64 /* CategoryCell.xib in Resources */,
 				F25D2A2A1C47E4D7000E5EEE /* SGRegisterViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -436,13 +460,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				23167EB11C48DAD200A83F64 /* SwiftGGAPI.swift in Sources */,
 				23167EA11C48D6B200A83F64 /* AppDelegate.swift in Sources */,
 				F25D2A2D1C47E4D7000E5EEE /* SGCategoryHomeViewController.swift in Sources */,
+				23167EB41C48E8B900A83F64 /* ArticleCategory.swift in Sources */,
 				F25D2A341C47E4F4000E5EEE /* SGTabBarController.swift in Sources */,
 				F25D2A231C47E4D7000E5EEE /* SGLoginViewController.swift in Sources */,
 				F25D2A2B1C47E4D7000E5EEE /* SGUserViewController.swift in Sources */,
 				F25D2A271C47E4D7000E5EEE /* SGRegisterViewController.swift in Sources */,
 				F25D2A2F1C47E4D7000E5EEE /* SGHomeViewController.swift in Sources */,
+				23167EB71C48E99900A83F64 /* CategoryCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -450,13 +477,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				23167EB21C48DF2600A83F64 /* SwiftGGAPI.swift in Sources */,
 				F25D2A2E1C47E4D7000E5EEE /* SGCategoryHomeViewController.swift in Sources */,
 				F25D2A351C47E4F4000E5EEE /* SGTabBarController.swift in Sources */,
+				23167EBC1C48EBD600A83F64 /* ArticleCategory.swift in Sources */,
 				F25D2A241C47E4D7000E5EEE /* SGLoginViewController.swift in Sources */,
 				F25D2A2C1C47E4D7000E5EEE /* SGUserViewController.swift in Sources */,
 				F25D2A281C47E4D7000E5EEE /* SGRegisterViewController.swift in Sources */,
 				F2C784661BE7544D00A36BFE /* SwiftGGTests.swift in Sources */,
 				F25D2A301C47E4D7000E5EEE /* SGHomeViewController.swift in Sources */,
+				23167EBD1C48EBD900A83F64 /* CategoryCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
