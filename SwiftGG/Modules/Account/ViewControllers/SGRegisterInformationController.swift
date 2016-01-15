@@ -24,9 +24,16 @@ class SGRegisterInformationController: UIViewController {
         setupTableView()
     }
     
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        UIApplication.sharedApplication().statusBarStyle = .LightContent
+    }
+    
     // MARK: - Helper Methods
     
     func setupNavigationBar() {
+        UIApplication.sharedApplication().statusBarStyle = .Default
         
         title = "注册 SwiftGo"
         
@@ -36,21 +43,17 @@ class SGRegisterInformationController: UIViewController {
         
         let backImage = UIImage(named: "back_gray")?.imageWithRenderingMode(.AlwaysOriginal)
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: backImage, style: .Plain, target: self, action: Selector("back"))
-        
     }
     
     func setupTableView() {
         tableView = UITableView(frame: view.frame, style: .Grouped)
         tableView.dataSource = self
+        tableView.delegate = self
         view.addSubview(tableView)
     }
     
     func back() {
         navigationController!.popViewControllerAnimated(true)
-    }
-    
-    override func preferredStatusBarStyle() -> UIStatusBarStyle {
-        return .Default
     }
 }
 
@@ -79,5 +82,12 @@ extension SGRegisterInformationController: UITableViewDataSource {
         }
         
         return cell
+    }
+}
+
+extension SGRegisterInformationController: UITableViewDelegate {
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
 }

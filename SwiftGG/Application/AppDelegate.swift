@@ -17,6 +17,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
+        application.statusBarHidden = false
+        application.statusBarStyle = .LightContent
+        
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
         
         let loginController = SGLoginViewController()
