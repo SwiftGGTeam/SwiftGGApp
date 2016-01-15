@@ -15,8 +15,8 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WDC-RK-koj">
-                    <rect key="frame" x="123.5" y="521" width="73" height="27"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <rect key="frame" x="118" y="519" width="83" height="29"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <state key="normal" title="注册 SwiftGo">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -25,8 +25,8 @@
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="登录 SwiftGo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RhR-cj-XNX">
-                    <rect key="frame" x="118.5" y="32" width="83" height="17"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <rect key="frame" x="110" y="32" width="99" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -91,8 +91,20 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Wf-Qm-Tam" userLabel="用户名容器">
-                    <rect key="frame" x="20" y="173" width="280" height="44"/>
+                    <rect key="frame" x="20" y="174" width="280" height="44"/>
                     <subviews>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="您的用户名" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="e3j-eQ-bT8">
+                            <rect key="frame" x="82" y="0.0" width="186" height="44"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P8p-Gi-eKD">
+                            <rect key="frame" x="0.0" y="43" width="280" height="1"/>
+                            <color key="backgroundColor" red="0.7803921568627451" green="0.7803921568627451" blue="0.7803921568627451" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="1" id="0XI-gP-6vg"/>
+                            </constraints>
+                        </view>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="用户名" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WoW-JY-Jay">
                             <rect key="frame" x="12" y="0.0" width="50" height="44"/>
                             <constraints>
@@ -102,20 +114,18 @@
                             <color key="textColor" red="0.28235294117647058" green="0.28235294117647058" blue="0.28235294117647058" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="您的用户名" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="e3j-eQ-bT8">
-                            <rect key="frame" x="82" y="0.0" width="186" height="44"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits"/>
-                        </textField>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="e3j-eQ-bT8" secondAttribute="trailing" constant="12" id="0Xf-XT-xQE"/>
                         <constraint firstItem="WoW-JY-Jay" firstAttribute="centerY" secondItem="0Wf-Qm-Tam" secondAttribute="centerY" id="56b-vy-rQb"/>
+                        <constraint firstItem="P8p-Gi-eKD" firstAttribute="leading" secondItem="0Wf-Qm-Tam" secondAttribute="leading" id="9AV-HH-VyY"/>
                         <constraint firstItem="e3j-eQ-bT8" firstAttribute="height" secondItem="WoW-JY-Jay" secondAttribute="height" id="JLG-OG-z6b"/>
+                        <constraint firstAttribute="bottom" secondItem="P8p-Gi-eKD" secondAttribute="bottom" id="QG3-MN-eGX"/>
                         <constraint firstItem="WoW-JY-Jay" firstAttribute="top" secondItem="0Wf-Qm-Tam" secondAttribute="top" id="UPu-Ka-5b9"/>
                         <constraint firstItem="e3j-eQ-bT8" firstAttribute="leading" secondItem="WoW-JY-Jay" secondAttribute="trailing" constant="20" id="heH-TU-Bqv"/>
                         <constraint firstItem="WoW-JY-Jay" firstAttribute="leading" secondItem="0Wf-Qm-Tam" secondAttribute="leading" constant="12" id="kkT-mW-MFW"/>
+                        <constraint firstAttribute="trailing" secondItem="P8p-Gi-eKD" secondAttribute="trailing" id="qvT-NI-2s8"/>
                         <constraint firstItem="e3j-eQ-bT8" firstAttribute="centerY" secondItem="WoW-JY-Jay" secondAttribute="centerY" id="wqw-fQ-hDF"/>
                     </constraints>
                 </view>
@@ -129,7 +139,7 @@
                 <constraint firstItem="TWB-tk-u03" firstAttribute="leading" secondItem="e3j-eQ-bT8" secondAttribute="leading" id="B6k-2G-Sbm"/>
                 <constraint firstItem="L9q-Ea-7fO" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="FvL-QI-vfw"/>
                 <constraint firstItem="zBS-5a-asw" firstAttribute="leading" secondItem="WoW-JY-Jay" secondAttribute="leading" id="Hb4-RX-Ugx"/>
-                <constraint firstItem="BJm-mg-s1H" firstAttribute="top" secondItem="0Wf-Qm-Tam" secondAttribute="bottom" constant="1" id="ID2-F5-ZZM"/>
+                <constraint firstItem="BJm-mg-s1H" firstAttribute="top" secondItem="0Wf-Qm-Tam" secondAttribute="bottom" id="ID2-F5-ZZM"/>
                 <constraint firstAttribute="bottom" secondItem="WDC-RK-koj" secondAttribute="bottom" constant="20" id="LFV-ff-WvG"/>
                 <constraint firstItem="zBS-5a-asw" firstAttribute="trailing" secondItem="WoW-JY-Jay" secondAttribute="trailing" id="UOt-yJ-uXL"/>
                 <constraint firstItem="BJm-mg-s1H" firstAttribute="trailing" secondItem="L9q-Ea-7fO" secondAttribute="trailing" id="W1W-Ld-ki9"/>

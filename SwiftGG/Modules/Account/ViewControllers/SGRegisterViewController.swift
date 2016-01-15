@@ -13,19 +13,39 @@ class SGRegisterViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let closeButton = UIButton(type: .System)
-        closeButton.translatesAutoresizingMaskIntoConstraints = false
-        closeButton.setTitle("关闭", forState: .Normal)
-        closeButton.addTarget(self, action: Selector("dismiss"), forControlEvents: .TouchUpInside)
-        view.addSubview(closeButton)
-        
-        let horizontalCenterConstraint = NSLayoutConstraint(item: closeButton, attribute: .CenterX, relatedBy: .Equal, toItem: view, attribute: .CenterX, multiplier: 1.0, constant: 0)
-        let verticalCenterConstraint = NSLayoutConstraint(item: closeButton, attribute: .CenterY, relatedBy: .Equal, toItem: view, attribute: .CenterY, multiplier: 1.0, constant: 0)
-        NSLayoutConstraint.activateConstraints([horizontalCenterConstraint, verticalCenterConstraint])
-        
     }
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        setupNavigationBar()
+    }
+    
+    func setupNavigationBar() {
+        title = "注册 SwiftGo"
+        
+        navigationController!.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: .Default)
+        navigationController!.navigationBar.shadowImage = UIImage()
+        navigationController!.navigationBar.translucent = true
+        
+        navigationController!.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont.systemFontOfSize(17),
+            NSForegroundColorAttributeName: UIColor.whiteColor()]
+        
+        let backImage = UIImage(named: "back_white")?.imageWithRenderingMode(.AlwaysOriginal)
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: backImage, style: .Plain, target: self, action: Selector("dismiss"))
+    }
+    
+    // MARK: - Actions
     func dismiss() {
         dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    @IBAction func registerInfomationButtonTapped() {
+        let controller = SGRegisterInformationController()
+        navigationController!.pushViewController(controller, animated: true)
+    }
+    
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return .LightContent
     }
 }

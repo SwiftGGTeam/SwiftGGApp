@@ -11,18 +11,11 @@ import UIColor_Hex_Swift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-    
-    class var appDelegate: AppDelegate {
-        return UIApplication.sharedApplication().delegate as! AppDelegate
-    }
 
     var window: UIWindow?
     var tabbarController: SGTabBarController?
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        
-        application.statusBarHidden = false
-        application.statusBarStyle = .LightContent
         
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
         
