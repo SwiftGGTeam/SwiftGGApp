@@ -1,4 +1,6 @@
 language: objective-c
 osx_image: xcode7.2
+before_install:
+  - gem install cocoapods --pre
 script:
   - xctool -workspace SwiftGG.xcworkspace -scheme SwiftGG -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
