@@ -1,4 +1,4 @@
 language: objective-c
 osx_image: xcode7.2
-xcode_workspace: SwiftGG.xcworkspace
-xcode_scheme: SwiftGG
+script:
+  - xctool -workspace SwiftGG.xcworkspace -scheme SwiftGG -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
