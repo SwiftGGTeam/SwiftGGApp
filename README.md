@@ -1,5 +1,7 @@
 # SwiftGG App相关说明
 
+![Travis CI](https://travis-ci.org/SwiftGGTeam/SwiftGGApp.svg?branch=master)
+
 ### 目录结构说明
 
 1、如果使用的第三方库不需要修改源文件，就放到Podfile里面，用cocoapods进行自动管理
