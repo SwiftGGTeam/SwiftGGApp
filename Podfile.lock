@@ -1,0 +1,42 @@
+PODS:
+  - Alamofire (3.1.4)
+  - Kingfisher (1.9.2)
+  - Moya (6.0.0):
+    - Moya/Core (= 6.0.0)
+  - Moya/Core (6.0.0):
+    - Alamofire (~> 3.0)
+    - Result (~> 1.0)
+  - Neon (0.0.3)
+  - Result (1.0.1)
+  - SwiftyJSON (2.3.2)
+  - UIColor_Hex_Swift (1.8)
+
+DEPENDENCIES:
+  - Alamofire (~> 3.0)
+  - Kingfisher (~> 1.9)
+  - Moya
+  - Neon (~> 0.0.1)
+  - SwiftyJSON (from `https://github.com/SwiftyJSON/SwiftyJSON.git`)
+  - UIColor_Hex_Swift (~> 1.8)
+
+EXTERNAL SOURCES:
+  SwiftyJSON:
+    :git: https://github.com/SwiftyJSON/SwiftyJSON.git
+
+CHECKOUT OPTIONS:
+  SwiftyJSON:
+    :commit: 929539eb6a3304eaa9153ca44041a78b85bf2ee5
+    :git: https://github.com/SwiftyJSON/SwiftyJSON.git
+
+SPEC CHECKSUMS:
+  Alamofire: fbc829692f351fa1d8a31dd75fd7f7f56fea31fb
+  Kingfisher: 7b6df0fa9d211807152c32c46494f9bc08f0e07b
+  Moya: 9bd9f20e6451c820c17ca40e1b3f6489757fa821
+  Neon: 589d3d217d326abe09726bf81add106cff685bf2
+  Result: caef80340451e1f07492fa1e89117f83613bce24
+  SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
+  UIColor_Hex_Swift: a66b9d5f6e8fddbd9fe32996504f0b7e9d20d680
+
+PODFILE CHECKSUM: df27a2864c1168a5a154ef81a192bd3e54665c75
+
+COCOAPODS: 1.0.0.beta.2
