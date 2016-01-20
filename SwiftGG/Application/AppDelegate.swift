@@ -11,10 +11,10 @@ import UIColor_Hex_Swift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+    
     var window: UIWindow?
     var tabbarController: SGTabBarController?
-
+    
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
         application.statusBarHidden = false
@@ -29,10 +29,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window!.makeKeyAndVisible()
         
         setDefaultAppearance()
+        JPushHelper.setupJPushWithLaunchOptions(launchOptions)
+        if let info = launchOptions where info[UIApplicationLaunchOptionsRemoteNotificationKey] != nil {
+            // 代表应用从通知启动，需要处理通知
+            JPushHelper.handleRemoteAPNMessage(info)
+        }
         
         return true
     }
-
+    
     func setDefaultAppearance(){
         let navBar = UINavigationBar.appearance()
         
@@ -44,5 +49,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         tabbarController = SGTabBarController()
         window!.rootViewController = tabbarController
     }
+    
+    // MARK: Remote Notification
+    
+    func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
+        JPushHelper.registerDeviceToken(deviceToken)
+    }
+    
+    func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError) {
+        NSLog("【推送】推送服务注册失败，错误原因：\(error)")
+    }
+    
+    func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
+        JPushHelper.handleRemoteNotification(userInfo)
+    }
 }
-
