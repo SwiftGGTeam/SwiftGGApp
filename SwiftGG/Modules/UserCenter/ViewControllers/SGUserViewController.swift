@@ -28,6 +28,9 @@ extension SGUserViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! SGUserReadingTableViewCell
         
+        // configure cell
+//        cell.setArticleTitle(title: "")
+//        cell.setArticleProgress(10)
         return cell
     }
 }

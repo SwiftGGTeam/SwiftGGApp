@@ -9,17 +9,25 @@
 import UIKit
 
 class SGUserReadingTableViewCell: UITableViewCell {
+    
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var progressLabel: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()
         
         separatorInset = UIEdgeInsetsZero
     }
+}
 
-    override func setSelected(selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+// MARK: - public API
+extension SGUserReadingTableViewCell {
+    func setArticleTitle(title: String) {
+        titleLabel.text = title
     }
     
+    /// 文章阅读进度，传入两位整数
+    func setArticleProgress(progress: Int) {
+        progressLabel.text = "已读 \(progress)%"
+    }
 }
