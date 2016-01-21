@@ -35,8 +35,8 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="progress" destination="YK4-VP-CGj" id="RbO-oC-zg7"/>
-                <outlet property="title" destination="4s0-AX-s2i" id="R2Q-VU-41N"/>
+                <outlet property="progressLabel" destination="YK4-VP-CGj" id="1Km-Zw-4XH"/>
+                <outlet property="titleLabel" destination="4s0-AX-s2i" id="thJ-v5-yHV"/>
             </connections>
             <point key="canvasLocation" x="158" y="245"/>
         </tableViewCell>
