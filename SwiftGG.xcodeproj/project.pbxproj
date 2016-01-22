@@ -27,6 +27,12 @@
 		23167EC01C491D8500A83F64 /* SGRegisterInformationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23167EBF1C491D8500A83F64 /* SGRegisterInformationController.swift */; };
 		23167EC11C491DA000A83F64 /* SGRegisterInformationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23167EBF1C491D8500A83F64 /* SGRegisterInformationController.swift */; };
 		925939141C4BBFEB009CCA1D /* Pods_SwiftGG.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 925939131C4BBFEB009CCA1D /* Pods_SwiftGG.framework */; };
+		D8D37CDA1C4FA9610024E331 /* jpush-ios-2.1.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D8D37CD71C4FA9610024E331 /* jpush-ios-2.1.0.a */; };
+		D8D37CDB1C4FA9610024E331 /* JPushHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D37CD81C4FA9610024E331 /* JPushHelper.swift */; };
+		D8D37CDE1C4FAAE50024E331 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8D37CDD1C4FAAE50024E331 /* CoreTelephony.framework */; };
+		D8D37CE01C4FAAF30024E331 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D8D37CDF1C4FAAF30024E331 /* libz.tbd */; };
+		D8D37CE21C4FAAFD0024E331 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8D37CE11C4FAAFD0024E331 /* CFNetwork.framework */; };
+		D8D37CE41C4FAB0A0024E331 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8D37CE31C4FAB0A0024E331 /* SystemConfiguration.framework */; };
 		F25D2A231C47E4D7000E5EEE /* SGLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25D2A161C47E4D7000E5EEE /* SGLoginViewController.swift */; };
 		F25D2A241C47E4D7000E5EEE /* SGLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25D2A161C47E4D7000E5EEE /* SGLoginViewController.swift */; };
 		F25D2A251C47E4D7000E5EEE /* SGLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F25D2A171C47E4D7000E5EEE /* SGLoginViewController.xib */; };
@@ -79,6 +85,14 @@
 		925939111C4BBFB0009CCA1D /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = build/Debug/Result.framework; sourceTree = "<group>"; };
 		925939131C4BBFEB009CCA1D /* Pods_SwiftGG.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods_SwiftGG.framework; path = "Pods/../build/Debug-iphoneos/Pods_SwiftGG.framework"; sourceTree = "<group>"; };
 		B13FCBA15080C960586CA615 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		D8D37CD71C4FA9610024E331 /* jpush-ios-2.1.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "jpush-ios-2.1.0.a"; sourceTree = "<group>"; };
+		D8D37CD81C4FA9610024E331 /* JPushHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JPushHelper.swift; sourceTree = "<group>"; };
+		D8D37CD91C4FA9610024E331 /* JPUSHService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPUSHService.h; sourceTree = "<group>"; };
+		D8D37CDC1C4FA9720024E331 /* SwiftGG-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SwiftGG-Bridging-Header.h"; sourceTree = "<group>"; };
+		D8D37CDD1C4FAAE50024E331 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		D8D37CDF1C4FAAF30024E331 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		D8D37CE11C4FAAFD0024E331 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		D8D37CE31C4FAB0A0024E331 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		F25D2A161C47E4D7000E5EEE /* SGLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGLoginViewController.swift; sourceTree = "<group>"; };
 		F25D2A171C47E4D7000E5EEE /* SGLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SGLoginViewController.xib; sourceTree = "<group>"; };
 		F25D2A181C47E4D7000E5EEE /* SGRegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGRegisterViewController.swift; sourceTree = "<group>"; };
@@ -97,6 +111,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8D37CE21C4FAAFD0024E331 /* CFNetwork.framework in Frameworks */,
+				D8D37CDE1C4FAAE50024E331 /* CoreTelephony.framework in Frameworks */,
+				D8D37CE41C4FAB0A0024E331 /* SystemConfiguration.framework in Frameworks */,
+				D8D37CE01C4FAAF30024E331 /* libz.tbd in Frameworks */,
+				D8D37CDA1C4FA9610024E331 /* jpush-ios-2.1.0.a in Frameworks */,
 				925939141C4BBFEB009CCA1D /* Pods_SwiftGG.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -173,6 +192,7 @@
 		23167E9E1C48D6A200A83F64 /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				D8D37CD61C4FA9610024E331 /* JPush */,
 			);
 			path = Library;
 			sourceTree = "<group>";
@@ -180,6 +200,7 @@
 		23167E9F1C48D6B200A83F64 /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				D8D37CDC1C4FA9720024E331 /* SwiftGG-Bridging-Header.h */,
 				23167EA01C48D6B200A83F64 /* AppDelegate.swift */,
 			);
 			path = Application;
@@ -216,6 +237,10 @@
 		678CDB1499F2BD2C8F727586 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D8D37CE31C4FAB0A0024E331 /* SystemConfiguration.framework */,
+				D8D37CE11C4FAAFD0024E331 /* CFNetwork.framework */,
+				D8D37CDF1C4FAAF30024E331 /* libz.tbd */,
+				D8D37CDD1C4FAAE50024E331 /* CoreTelephony.framework */,
 				925939131C4BBFEB009CCA1D /* Pods_SwiftGG.framework */,
 				925939111C4BBFB0009CCA1D /* Result.framework */,
 				9259390F1C4BBFAF009CCA1D /* Alamofire.framework */,
@@ -245,6 +270,16 @@
 				F25D2A1E1C47E4D7000E5EEE /* Home */,
 			);
 			path = Modules;
+			sourceTree = "<group>";
+		};
+		D8D37CD61C4FA9610024E331 /* JPush */ = {
+			isa = PBXGroup;
+			children = (
+				D8D37CD71C4FA9610024E331 /* jpush-ios-2.1.0.a */,
+				D8D37CD81C4FA9610024E331 /* JPushHelper.swift */,
+				D8D37CD91C4FA9610024E331 /* JPUSHService.h */,
+			);
+			path = JPush;
 			sourceTree = "<group>";
 		};
 		F25D2A141C47E4D7000E5EEE /* Account */ = {
@@ -523,6 +558,7 @@
 			files = (
 				23167EB11C48DAD200A83F64 /* SwiftGGAPI.swift in Sources */,
 				23167EA11C48D6B200A83F64 /* AppDelegate.swift in Sources */,
+				D8D37CDB1C4FA9610024E331 /* JPushHelper.swift in Sources */,
 				F25D2A2D1C47E4D7000E5EEE /* SGCategoryHomeViewController.swift in Sources */,
 				23167EB41C48E8B900A83F64 /* ArticleCategory.swift in Sources */,
 				18B5FBF71C4E35950089EFCC /* SGUserReadingTableViewCell.swift in Sources */,
@@ -672,8 +708,14 @@
 				INFOPLIST_FILE = SwiftGG/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SwiftGG/Library/JPush",
+				);
+				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -D DEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = org.swiftgg.SwiftGG;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(PROJECT_DIR)/SwiftGG/Application/SwiftGG-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -691,8 +733,14 @@
 				INFOPLIST_FILE = SwiftGG/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SwiftGG/Library/JPush",
+				);
+				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -D DEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = org.swiftgg.SwiftGG;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(PROJECT_DIR)/SwiftGG/Application/SwiftGG-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
