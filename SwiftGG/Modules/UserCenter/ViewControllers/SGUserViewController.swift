@@ -17,6 +17,12 @@ class SGUserViewController: UITableViewController {
         
         setupViews()
     }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        setupNavigationBar()
+    }
 }
 
 // MARK: - UITableViewDataSource
@@ -62,8 +68,11 @@ extension SGUserViewController {
 
 // MARK: - Target-Action
 extension SGUserViewController {
-    func setting() {
-        print("setting clicked")
+    func settingButtonTapped(sender: UIBarButtonItem) {
+        let settingViewController = SGSettingViewController()
+        if let navigationController = navigationController {
+            navigationController.pushViewController(settingViewController, animated: true)
+        }
     }
 }
 
@@ -72,17 +81,19 @@ extension SGUserViewController {
     private func setupViews() {
         tableView.registerNib(UINib(nibName: "SGUserReadingTableViewCell", bundle: nil), forCellReuseIdentifier: cellIdentifier)
         tableView.tableHeaderView = NSBundle.mainBundle().loadNibNamed("SGUserTableHeaderView", owner: self, options: nil).first as! SGUSerTableHeaderView
-        
+    }
+    
+    private func setupNavigationBar() {
         navigationController?.navigationBar.barTintColor = tableView.tableHeaderView?.backgroundColor
         navigationController?.navigationBar.translucent = false
         tableView.backgroundColor = UIColor(red:0.97, green:0.97, blue:0.97, alpha:1)
-
+        
         // remove navigation bar shadow
         navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: .Default)
         navigationController?.navigationBar.shadowImage = UIImage()
         
         // add setting barItem
-        let settingBarItem = UIBarButtonItem(image: UIImage(named: "setting_nav_item"), style: .Plain, target: self, action: "setting")
+        let settingBarItem = UIBarButtonItem(image: UIImage(named: "setting_nav_item"), style: .Plain, target: self, action: "settingButtonTapped:")
         settingBarItem.tintColor = UIColor.whiteColor()
         navigationItem.rightBarButtonItem = settingBarItem
     }
