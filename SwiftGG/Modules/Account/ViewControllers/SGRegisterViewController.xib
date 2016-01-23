@@ -107,16 +107,6 @@
                         <constraint firstItem="7CT-HV-Cg2" firstAttribute="centerY" secondItem="QEN-hK-TLz" secondAttribute="centerY" id="fmY-nZ-AVY"/>
                     </constraints>
                 </view>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aad-84-DRA">
-                    <rect key="frame" x="20" y="376" width="280" height="44"/>
-                    <color key="backgroundColor" red="0.21568627450980393" green="0.65490196078431373" blue="0.87450980392156863" alpha="1" colorSpace="calibratedRGB"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="44" id="RBq-VB-3I7"/>
-                    </constraints>
-                    <state key="normal" title="注册">
-                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0ST-41-N11">
                     <rect key="frame" x="136" y="533" width="48" height="27"/>
                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
@@ -126,6 +116,16 @@
                     <connections>
                         <action selector="registerInfomationButtonTapped" destination="-1" eventType="touchUpInside" id="dfb-PG-zl8"/>
                     </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aad-84-DRA">
+                    <rect key="frame" x="20" y="376" width="280" height="44"/>
+                    <color key="backgroundColor" red="0.21568627450980393" green="0.65490196078431373" blue="0.87450980392156863" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="RBq-VB-3I7"/>
+                    </constraints>
+                    <state key="normal" title="注册">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
                 </button>
             </subviews>
             <color key="backgroundColor" red="0.20784313725490194" green="0.58431372549019611" blue="0.74901960784313726" alpha="1" colorSpace="calibratedRGB"/>

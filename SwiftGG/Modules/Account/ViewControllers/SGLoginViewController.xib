@@ -11,19 +11,9 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WDC-RK-koj">
-                    <rect key="frame" x="118" y="519" width="83" height="29"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <state key="normal" title="注册 SwiftGo">
-                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <connections>
-                        <action selector="registerButtonTapped" destination="-1" eventType="touchUpInside" id="6hK-oc-B3l"/>
-                    </connections>
-                </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="登录 SwiftGo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RhR-cj-XNX">
                     <rect key="frame" x="110" y="32" width="99" height="20.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -31,7 +21,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L9q-Ea-7fO">
-                    <rect key="frame" x="20" y="272" width="280" height="44"/>
+                    <rect key="frame" x="20" y="228" width="280" height="44"/>
                     <color key="backgroundColor" red="0.21568627450980393" green="0.65490196078431373" blue="0.87450980392156863" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="44" id="DAF-1t-1bF"/>
@@ -50,7 +40,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6kw-Qr-kze">
-                    <rect key="frame" x="20" y="316" width="80" height="30"/>
+                    <rect key="frame" x="20" y="272" width="80" height="30"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="80" id="gEA-ny-rV9"/>
                         <constraint firstAttribute="height" constant="30" id="i12-v2-H8B"/>
@@ -61,14 +51,14 @@
                     </state>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nOc-Ks-ecI">
-                    <rect key="frame" x="220" y="316" width="80" height="30"/>
+                    <rect key="frame" x="220" y="272" width="80" height="30"/>
                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                     <state key="normal" title="忘了密码 ?">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                 </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BJm-mg-s1H" userLabel="密码容器">
-                    <rect key="frame" x="20" y="218" width="280" height="44"/>
+                    <rect key="frame" x="20" y="174" width="280" height="44"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="密码" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zBS-5a-asw">
                             <rect key="frame" x="12" y="0.0" width="50" height="44"/>
@@ -91,7 +81,7 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Wf-Qm-Tam" userLabel="用户名容器">
-                    <rect key="frame" x="20" y="174" width="280" height="44"/>
+                    <rect key="frame" x="20" y="130" width="280" height="44"/>
                     <subviews>
                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="您的用户名" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="e3j-eQ-bT8">
                             <rect key="frame" x="82" y="0.0" width="186" height="44"/>
@@ -129,6 +119,16 @@
                         <constraint firstItem="e3j-eQ-bT8" firstAttribute="centerY" secondItem="WoW-JY-Jay" secondAttribute="centerY" id="wqw-fQ-hDF"/>
                     </constraints>
                 </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WDC-RK-koj">
+                    <rect key="frame" x="118" y="431" width="83" height="29"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <state key="normal" title="注册 SwiftGo">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="registerButtonTapped" destination="-1" eventType="touchUpInside" id="6hK-oc-B3l"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="0.20784313725490197" green="0.58431372549019611" blue="0.74901960784313726" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
@@ -159,7 +159,7 @@
                 <constraint firstItem="0Wf-Qm-Tam" firstAttribute="leading" secondItem="BJm-mg-s1H" secondAttribute="leading" id="z4N-Gp-Gjw"/>
             </constraints>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
-            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
         </view>
     </objects>
 </document>
