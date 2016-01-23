@@ -70,9 +70,7 @@ extension SGUserViewController {
 extension SGUserViewController {
     func settingButtonTapped(sender: UIBarButtonItem) {
         let settingViewController = SGSettingViewController()
-        if let navigationController = navigationController {
-            navigationController.pushViewController(settingViewController, animated: true)
-        }
+        navigationController!.pushViewController(settingViewController, animated: true)
     }
 }
 
@@ -84,6 +82,8 @@ extension SGUserViewController {
     }
     
     private func setupNavigationBar() {
+        UIApplication.sharedApplication().statusBarStyle = .LightContent
+        
         navigationController?.navigationBar.barTintColor = tableView.tableHeaderView?.backgroundColor
         navigationController?.navigationBar.translucent = false
         tableView.backgroundColor = UIColor(red:0.97, green:0.97, blue:0.97, alpha:1)

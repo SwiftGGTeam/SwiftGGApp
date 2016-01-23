@@ -13,6 +13,8 @@
 		18B5FBF71C4E35950089EFCC /* SGUserReadingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B5FBF51C4E35950089EFCC /* SGUserReadingTableViewCell.swift */; };
 		18B5FBF81C4E35950089EFCC /* SGUserReadingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18B5FBF61C4E35950089EFCC /* SGUserReadingTableViewCell.xib */; };
 		230671111C5390B7003C06C6 /* SGSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230671101C5390B7003C06C6 /* SGSettingViewController.swift */; };
+		230671131C539CED003C06C6 /* SGAboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230671121C539CED003C06C6 /* SGAboutViewController.swift */; };
+		230671151C539D0C003C06C6 /* SGAboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 230671141C539D0C003C06C6 /* SGAboutViewController.xib */; };
 		23167EA11C48D6B200A83F64 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23167EA01C48D6B200A83F64 /* AppDelegate.swift */; };
 		23167EA71C48D6D600A83F64 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 23167EA31C48D6D600A83F64 /* Assets.xcassets */; };
 		23167EA81C48D6D600A83F64 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23167EA41C48D6D600A83F64 /* LaunchScreen.storyboard */; };
@@ -70,6 +72,8 @@
 		18B5FBF61C4E35950089EFCC /* SGUserReadingTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SGUserReadingTableViewCell.xib; sourceTree = "<group>"; };
 		1E544B8C9F15F4D9BB858DB4 /* Pods-SwiftGG.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftGG.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftGG/Pods-SwiftGG.debug.xcconfig"; sourceTree = "<group>"; };
 		230671101C5390B7003C06C6 /* SGSettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGSettingViewController.swift; sourceTree = "<group>"; };
+		230671121C539CED003C06C6 /* SGAboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGAboutViewController.swift; sourceTree = "<group>"; };
+		230671141C539D0C003C06C6 /* SGAboutViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SGAboutViewController.xib; sourceTree = "<group>"; };
 		23167EA01C48D6B200A83F64 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		23167EA31C48D6D600A83F64 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		23167EA51C48D6D600A83F64 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -147,6 +151,8 @@
 			children = (
 				18B5FBEB1C4E34F40089EFCC /* SGUserViewController.swift */,
 				230671101C5390B7003C06C6 /* SGSettingViewController.swift */,
+				230671121C539CED003C06C6 /* SGAboutViewController.swift */,
+				230671141C539D0C003C06C6 /* SGAboutViewController.xib */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -491,6 +497,7 @@
 				18B5FBF81C4E35950089EFCC /* SGUserReadingTableViewCell.xib in Resources */,
 				F25D2A291C47E4D7000E5EEE /* SGRegisterViewController.xib in Resources */,
 				23167EA71C48D6D600A83F64 /* Assets.xcassets in Resources */,
+				230671151C539D0C003C06C6 /* SGAboutViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -569,6 +576,7 @@
 				18B5FBEF1C4E34F40089EFCC /* SGUserViewController.swift in Sources */,
 				F25D2A341C47E4F4000E5EEE /* SGTabBarController.swift in Sources */,
 				F25D2A231C47E4D7000E5EEE /* SGLoginViewController.swift in Sources */,
+				230671131C539CED003C06C6 /* SGAboutViewController.swift in Sources */,
 				18B5FBF01C4E34F40089EFCC /* SGUSerTableHeaderView.swift in Sources */,
 				F25D2A271C47E4D7000E5EEE /* SGRegisterViewController.swift in Sources */,
 				F25D2A2F1C47E4D7000E5EEE /* SGHomeViewController.swift in Sources */,

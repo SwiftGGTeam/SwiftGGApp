@@ -16,18 +16,11 @@ class SGSettingViewController: UIViewController {
     
     // MARK: - Life cycle
     override func viewDidLoad() {
+        super.viewDidLoad()
         
         setupNavigationBar()
+        setupTableView()
         
-        tableView = UITableView(frame: view.frame, style: .Grouped)
-        tableView.dataSource = self
-        tableView.delegate = self
-        view.addSubview(tableView)
-    }
-    
-    override func viewWillDisappear(animated: Bool) {
-        super.viewWillAppear(animated)
-        UIApplication.sharedApplication().statusBarStyle = .LightContent
     }
     
     // MARK: - Helper methods
@@ -46,6 +39,15 @@ class SGSettingViewController: UIViewController {
     
     func back() {
         navigationController!.popViewControllerAnimated(true)
+    }
+    
+    func setupTableView() {
+        tableView = UITableView(frame: view.frame, style: .Grouped)
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.backgroundColor = UIColor(rgba: "#F7F7F7")
+        tableView.scrollEnabled = false
+        view.addSubview(tableView)
     }
 }
 
@@ -81,6 +83,10 @@ extension SGSettingViewController: UITableViewDataSource {
 
 // MARK: - UITableViewDelegate
 extension SGSettingViewController: UITableViewDelegate {
+    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 16
+    }
+    
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
@@ -91,7 +97,8 @@ extension SGSettingViewController: UITableViewDelegate {
         case 1: // 反馈问题
             print("反馈问题")
         case 2:
-            print("关于我们")
+            let aboutViewController = SGAboutViewController()
+            navigationController!.pushViewController(aboutViewController, animated: true)
         default: ()
         }
     }

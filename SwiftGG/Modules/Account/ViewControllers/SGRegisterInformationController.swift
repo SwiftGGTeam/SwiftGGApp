@@ -49,6 +49,7 @@ class SGRegisterInformationController: UIViewController {
         tableView = UITableView(frame: view.frame, style: .Grouped)
         tableView.dataSource = self
         tableView.delegate = self
+        tableView.scrollEnabled = false
         view.addSubview(tableView)
     }
     
@@ -85,7 +86,12 @@ extension SGRegisterInformationController: UITableViewDataSource {
     }
 }
 
+// MARK: - UITableViewDelegate
 extension SGRegisterInformationController: UITableViewDelegate {
+    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 16
+    }
+    
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
