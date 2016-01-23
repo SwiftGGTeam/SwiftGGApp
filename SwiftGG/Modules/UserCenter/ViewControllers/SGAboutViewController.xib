@@ -20,8 +20,8 @@
                     <rect key="frame" x="98" y="16" width="124" height="124"/>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我们是一群热爱翻译并且热爱 Swift 的人，希望通过自己的努力让不懂英语的程序员也能第一时间学习到国外的先进技术。" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Try-Qc-UHy">
-                    <rect key="frame" x="20" y="177.5" width="280" height="76.5"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <rect key="frame" x="20" y="169" width="280" height="50.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -40,7 +40,7 @@ swift.gg</string>
                     <nil key="highlightedColor"/>
                 </label>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="cPN-g7-nCh">
-                    <rect key="frame" x="0.0" y="254" width="320" height="156"/>
+                    <rect key="frame" x="0.0" y="220" width="320" height="190"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="ZLs-PK-AUe"/>
@@ -58,7 +58,7 @@ swift.gg</string>
                 <constraint firstItem="cPN-g7-nCh" firstAttribute="leading" secondItem="yfC-k0-s13" secondAttribute="leading" id="Ujd-ck-Jmd"/>
                 <constraint firstItem="Ack-ri-BSp" firstAttribute="top" secondItem="d3g-ft-KrC" secondAttribute="bottom" constant="7" id="VxT-u8-mMS"/>
                 <constraint firstAttribute="bottom" secondItem="0W3-cY-ndh" secondAttribute="bottom" constant="57" id="cnl-qh-L6W"/>
-                <constraint firstItem="Try-Qc-UHy" firstAttribute="top" secondItem="Ack-ri-BSp" secondAttribute="bottom" constant="16" id="gLp-xr-fIW"/>
+                <constraint firstItem="Try-Qc-UHy" firstAttribute="top" secondItem="Ack-ri-BSp" secondAttribute="bottom" constant="8" id="gLp-xr-fIW"/>
                 <constraint firstItem="0W3-cY-ndh" firstAttribute="top" secondItem="cPN-g7-nCh" secondAttribute="bottom" constant="8" id="lBN-Zm-JcA"/>
                 <constraint firstAttribute="trailing" secondItem="Try-Qc-UHy" secondAttribute="trailing" constant="20" symbolic="YES" id="qE3-UK-HXf"/>
                 <constraint firstItem="cPN-g7-nCh" firstAttribute="top" secondItem="Try-Qc-UHy" secondAttribute="bottom" id="s37-tl-i8T"/>
