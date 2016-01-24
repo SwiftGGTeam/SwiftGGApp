@@ -28,8 +28,14 @@ class SGLoginViewController: UIViewController {
         navigationController?.pushViewController(registerController, animated: true)
     }
     
-    override func preferredStatusBarStyle() -> UIStatusBarStyle {
-        return .LightContent
+    // MARK: Helper Methods
+    func showAlertWithMessage(message: String) {
+        let alertController = UIAlertController(title: "提示", message: message, preferredStyle: .Alert)
+
+        let cancelAction = UIAlertAction(title: "确定", style: .Cancel, handler: nil)
+        alertController.addAction(cancelAction)
+        
+        presentViewController(alertController, animated: true, completion: nil)
     }
 }
 
@@ -38,10 +44,12 @@ extension SGLoginViewController {
         let username = usernameTextField.text!
         let password = passwordTextField.text!
         
-        guard username == "" else {
+        guard username != "" else {
+            showAlertWithMessage("用户名不能为空")
             return
         }
-        guard password == "" else {
+        guard password != "" else {
+            showAlertWithMessage("密码不能为空")
             return
         }
         
@@ -54,7 +62,13 @@ extension SGLoginViewController {
                     let code = resultData["ret"] as! Int
                     
                     if code == 0 {
-                        self.loginSuccess()
+                        
+                        if username == "swiftgg" && password == "swiftgg" {
+                            self.loginSuccess()
+                        } else {
+                            self.showAlertWithMessage("用户名或密码错误")
+                        }
+                        
                     } else {
                         print("Error")
                     }
