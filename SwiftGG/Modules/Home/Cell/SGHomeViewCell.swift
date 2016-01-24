@@ -16,9 +16,15 @@ class SGHomeViewCell: UITableViewCell {
     @IBOutlet weak var avatarImageView: UIImageView!
     @IBOutlet weak var authorLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var categoryLabel: UILabel!
+    @IBOutlet weak var translatorLabel: UILabel!
+    @IBOutlet weak var commentCountLabel: UILabel!
+    @IBOutlet weak var likeButton: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        avatarImageView.layer.cornerRadius = avatarImageView.frame.size.width/2.0
+        avatarImageView.layer.masksToBounds = true
         // Initialization code
     }
 
@@ -34,9 +40,13 @@ class SGHomeViewCell: UITableViewCell {
         }
         titleLabel.text = cellModel.title
         descriptionLabel.text = cellModel.description
-        // Todo
+        categoryLabel.text = cellModel.category
+        translatorLabel.text = cellModel.translator
+        commentCountLabel.text = String(cellModel.commentCount)
+        
         authorLabel.text = cellModel.author
         dateLabel.text = cellModel.date
+        
     }
     
     

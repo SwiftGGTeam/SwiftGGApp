@@ -23,6 +23,18 @@ class SGHomeViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(cellId,forIndexPath: indexPath) as! SGHomeViewCell
+        let model = HomeViewCellModel.init(dict: [
+            "title": "3D Touch介绍：电子秤App与快捷操作",
+            "description": "本文是一篇详细且具有实战意义的教程，涵盖几乎所有枚举知识点，为你解答 Swift 中枚举的应用场合以及使用方法。",
+            "category": "Swift进阶",
+            "translator": "小锅 | PPT",
+            "commentCount": 123,
+            "likeCount": 321,
+            "author": "Maxime Defauw",
+            "date": "2分钟前",
+            "avatarUrl": "http://e.hiphotos.baidu.com/image/h%3D200/sign=a0901680a3c27d1eba263cc42bd4adaf/b21bb051f819861842d54ba04ded2e738bd4e600.jpg"
+            ])
+        cell.configureCell(model)
         return cell;
     }
     
