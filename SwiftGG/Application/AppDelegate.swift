@@ -23,7 +23,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
         
         let loginController = SGLoginViewController()
-        window!.rootViewController = loginController
+        let navigationViewController = UINavigationController(rootViewController: loginController)
+        window!.rootViewController = navigationViewController
+        setClearNavigationBar()
         
         window!.backgroundColor = UIColor.whiteColor()
         window!.makeKeyAndVisible()
@@ -36,6 +38,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         return true
+    }
+    
+    func setClearNavigationBar() {
+        let navigationController = window?.rootViewController as! UINavigationController
+        navigationController.navigationBar.tintColor = UIColor.clearColor()
+        navigationController.navigationBar.setBackgroundImage(UIImage.st_imageWithColor(UIColor.clearColor()), forBarMetrics: .Default)
+        navigationController.navigationBar.clipsToBounds = true
     }
     
     func setDefaultAppearance(){

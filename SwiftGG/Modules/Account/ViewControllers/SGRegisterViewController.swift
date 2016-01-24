@@ -37,7 +37,7 @@ class SGRegisterViewController: UIViewController {
     
     // MARK: - Actions
     func dismiss() {
-        dismissViewControllerAnimated(true, completion: nil)
+        navigationController?.popViewControllerAnimated(true)
     }
     
     @IBAction func registerInfomationButtonTapped() {

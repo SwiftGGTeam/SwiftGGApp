@@ -12,6 +12,7 @@ class SGLoginViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
     }
     
     // MARK: Actions
@@ -22,8 +23,7 @@ class SGLoginViewController: UIViewController {
     
     @IBAction func registerButtonTapped() {
         let registerController = SGRegisterViewController()
-        let navigationController = UINavigationController(rootViewController: registerController)
-        presentViewController(navigationController, animated: true, completion: nil)
+        navigationController?.pushViewController(registerController, animated: true)
     }
     
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
