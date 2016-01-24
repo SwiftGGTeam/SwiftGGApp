@@ -37,7 +37,6 @@ class SGRegisterInformationController: UIViewController {
         
         title = "注册 SwiftGo"
         
-        navigationController!.navigationBar.translucent = false
         navigationController!.navigationBar.barTintColor = UIColor(rgba: "#FCFCFC")
         navigationController!.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor(rgba: "#303030"), NSFontAttributeName: UIFont.systemFontOfSize(17)]
         
