@@ -29,6 +29,12 @@
 		23167EBE1C48EBDF00A83F64 /* CategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23167EB81C48E9B500A83F64 /* CategoryCell.xib */; };
 		23167EC01C491D8500A83F64 /* SGRegisterInformationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23167EBF1C491D8500A83F64 /* SGRegisterInformationController.swift */; };
 		23167EC11C491DA000A83F64 /* SGRegisterInformationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23167EBF1C491D8500A83F64 /* SGRegisterInformationController.swift */; };
+		7A3CB20C1C55023000579593 /* SGHomeViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3CB20A1C55023000579593 /* SGHomeViewCell.swift */; };
+		7A3CB20D1C55023000579593 /* SGHomeViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A3CB20B1C55023000579593 /* SGHomeViewCell.xib */; };
+		7A3CB20E1C550D2E00579593 /* SGHomeViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3CB20A1C55023000579593 /* SGHomeViewCell.swift */; };
+		7A3CB20F1C550D3600579593 /* SGHomeViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A3CB20B1C55023000579593 /* SGHomeViewCell.xib */; };
+		7A3CB2111C551B1C00579593 /* HomeViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3CB2101C551B1C00579593 /* HomeViewCellModel.swift */; };
+		7A3CB2121C551C6D00579593 /* HomeViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3CB2101C551B1C00579593 /* HomeViewCellModel.swift */; };
 		925939141C4BBFEB009CCA1D /* Pods_SwiftGG.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 925939131C4BBFEB009CCA1D /* Pods_SwiftGG.framework */; };
 		D8D37CDA1C4FA9610024E331 /* jpush-ios-2.1.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D8D37CD71C4FA9610024E331 /* jpush-ios-2.1.0.a */; };
 		D8D37CDB1C4FA9610024E331 /* JPushHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D37CD81C4FA9610024E331 /* JPushHelper.swift */; };
@@ -87,6 +93,9 @@
 		47B8E46D060162E350045F27 /* Pods-SwiftGG.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftGG.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftGG/Pods-SwiftGG.release.xcconfig"; sourceTree = "<group>"; };
 		5D5BC1627FE4EBE8F760AFEF /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		676084FFEBF5B5FEC8F5E7DA /* Pods_SwiftGG.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftGG.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7A3CB20A1C55023000579593 /* SGHomeViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SGHomeViewCell.swift; path = Cell/SGHomeViewCell.swift; sourceTree = "<group>"; };
+		7A3CB20B1C55023000579593 /* SGHomeViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SGHomeViewCell.xib; path = Cell/SGHomeViewCell.xib; sourceTree = "<group>"; };
+		7A3CB2101C551B1C00579593 /* HomeViewCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewCellModel.swift; sourceTree = "<group>"; };
 		9259390F1C4BBFAF009CCA1D /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = build/Debug/Alamofire.framework; sourceTree = "<group>"; };
 		925939111C4BBFB0009CCA1D /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = build/Debug/Result.framework; sourceTree = "<group>"; };
 		925939131C4BBFEB009CCA1D /* Pods_SwiftGG.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods_SwiftGG.framework; path = "Pods/../build/Debug-iphoneos/Pods_SwiftGG.framework"; sourceTree = "<group>"; };
@@ -194,6 +203,7 @@
 			isa = PBXGroup;
 			children = (
 				23167EB31C48E8B900A83F64 /* ArticleCategory.swift */,
+				7A3CB2101C551B1C00579593 /* HomeViewCellModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -270,6 +280,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		7A3CB2091C55020D00579593 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				7A3CB20A1C55023000579593 /* SGHomeViewCell.swift */,
+				7A3CB20B1C55023000579593 /* SGHomeViewCell.xib */,
+			);
+			name = Cell;
+			sourceTree = "<group>";
+		};
 		963697B71C0CA87500C579CF /* Modules */ = {
 			isa = PBXGroup;
 			children = (
@@ -331,6 +350,7 @@
 		F25D2A1E1C47E4D7000E5EEE /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				7A3CB2091C55020D00579593 /* Cell */,
 				F25D2A1F1C47E4D7000E5EEE /* ViewControllers */,
 			);
 			path = Home;
@@ -498,6 +518,7 @@
 				F25D2A291C47E4D7000E5EEE /* SGRegisterViewController.xib in Resources */,
 				23167EA71C48D6D600A83F64 /* Assets.xcassets in Resources */,
 				230671151C539D0C003C06C6 /* SGAboutViewController.xib in Resources */,
+				7A3CB20D1C55023000579593 /* SGHomeViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -506,6 +527,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F25D2A261C47E4D7000E5EEE /* SGLoginViewController.xib in Resources */,
+				7A3CB20F1C550D3600579593 /* SGHomeViewCell.xib in Resources */,
 				23167EBE1C48EBDF00A83F64 /* CategoryCell.xib in Resources */,
 				F25D2A2A1C47E4D7000E5EEE /* SGRegisterViewController.xib in Resources */,
 			);
@@ -567,6 +589,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				23167EB11C48DAD200A83F64 /* SwiftGGAPI.swift in Sources */,
+				7A3CB2111C551B1C00579593 /* HomeViewCellModel.swift in Sources */,
 				23167EA11C48D6B200A83F64 /* AppDelegate.swift in Sources */,
 				D8D37CDB1C4FA9610024E331 /* JPushHelper.swift in Sources */,
 				230671111C5390B7003C06C6 /* SGSettingViewController.swift in Sources */,
@@ -574,6 +597,7 @@
 				23167EB41C48E8B900A83F64 /* ArticleCategory.swift in Sources */,
 				18B5FBF71C4E35950089EFCC /* SGUserReadingTableViewCell.swift in Sources */,
 				18B5FBEF1C4E34F40089EFCC /* SGUserViewController.swift in Sources */,
+				7A3CB20C1C55023000579593 /* SGHomeViewCell.swift in Sources */,
 				F25D2A341C47E4F4000E5EEE /* SGTabBarController.swift in Sources */,
 				F25D2A231C47E4D7000E5EEE /* SGLoginViewController.swift in Sources */,
 				230671131C539CED003C06C6 /* SGAboutViewController.swift in Sources */,
@@ -593,12 +617,14 @@
 				F25D2A2E1C47E4D7000E5EEE /* SGCategoryHomeViewController.swift in Sources */,
 				F25D2A351C47E4F4000E5EEE /* SGTabBarController.swift in Sources */,
 				23167EBC1C48EBD600A83F64 /* ArticleCategory.swift in Sources */,
+				7A3CB20E1C550D2E00579593 /* SGHomeViewCell.swift in Sources */,
 				F25D2A241C47E4D7000E5EEE /* SGLoginViewController.swift in Sources */,
 				F25D2A281C47E4D7000E5EEE /* SGRegisterViewController.swift in Sources */,
 				F2C784661BE7544D00A36BFE /* SwiftGGTests.swift in Sources */,
 				F25D2A301C47E4D7000E5EEE /* SGHomeViewController.swift in Sources */,
 				23167EBD1C48EBD900A83F64 /* CategoryCell.swift in Sources */,
 				23167EC11C491DA000A83F64 /* SGRegisterInformationController.swift in Sources */,
+				7A3CB2121C551C6D00579593 /* HomeViewCellModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
