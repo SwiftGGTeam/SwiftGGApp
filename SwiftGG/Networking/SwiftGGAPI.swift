@@ -22,6 +22,7 @@ let SwiftGGProvider = MoyaProvider<SwiftGGAPI>(endpointClosure: endpointClosure,
 
 enum SwiftGGAPI {
     case CategoryListings
+    case Login(String, String)
 }
 
 extension SwiftGGAPI: TargetType {
@@ -32,11 +33,15 @@ extension SwiftGGAPI: TargetType {
         switch self {
         case .CategoryListings:
             return "api/v1/article/getCategoryList"
+        case .Login:
+            return ""
         }
     }
     
     var parameters: [String: AnyObject]? {
         switch self {
+        case .Login(let username, let password):
+            return ["username": username, "password": password]
         default:
             return nil
         }
@@ -50,6 +55,8 @@ extension SwiftGGAPI: TargetType {
         switch self {
         case .CategoryListings:
             return stubbedResponse("CategoryList")
+        case .Login:
+            return stubbedResponse("Login")
         }
     }
 }

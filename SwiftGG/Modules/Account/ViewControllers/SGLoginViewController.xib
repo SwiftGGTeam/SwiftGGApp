@@ -6,6 +6,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SGLoginViewController" customModule="SwiftGG" customModuleProvider="target">
             <connections>
+                <outlet property="passwordTextField" destination="TWB-tk-u03" id="Isr-MD-ecy"/>
+                <outlet property="usernameTextField" destination="e3j-eQ-bT8" id="pr6-Cy-ud8"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

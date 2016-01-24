@@ -30,6 +30,7 @@
 		23167EC01C491D8500A83F64 /* SGRegisterInformationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23167EBF1C491D8500A83F64 /* SGRegisterInformationController.swift */; };
 		23167EC11C491DA000A83F64 /* SGRegisterInformationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23167EBF1C491D8500A83F64 /* SGRegisterInformationController.swift */; };
 		925939141C4BBFEB009CCA1D /* Pods_SwiftGG.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 925939131C4BBFEB009CCA1D /* Pods_SwiftGG.framework */; };
+		9627EFE61C55148C0021451E /* Login.json in Resources */ = {isa = PBXBuildFile; fileRef = 9627EFE51C55148C0021451E /* Login.json */; };
 		96C6A98F1C54DF04000F253F /* UIImage+STCreation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C6A98E1C54DF04000F253F /* UIImage+STCreation.swift */; };
 		D8D37CDA1C4FA9610024E331 /* jpush-ios-2.1.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D8D37CD71C4FA9610024E331 /* jpush-ios-2.1.0.a */; };
 		D8D37CDB1C4FA9610024E331 /* JPushHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D37CD81C4FA9610024E331 /* JPushHelper.swift */; };
@@ -91,6 +92,7 @@
 		9259390F1C4BBFAF009CCA1D /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = build/Debug/Alamofire.framework; sourceTree = "<group>"; };
 		925939111C4BBFB0009CCA1D /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = build/Debug/Result.framework; sourceTree = "<group>"; };
 		925939131C4BBFEB009CCA1D /* Pods_SwiftGG.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods_SwiftGG.framework; path = "Pods/../build/Debug-iphoneos/Pods_SwiftGG.framework"; sourceTree = "<group>"; };
+		9627EFE51C55148C0021451E /* Login.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Login.json; sourceTree = "<group>"; };
 		96C6A98E1C54DF04000F253F /* UIImage+STCreation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+STCreation.swift"; sourceTree = "<group>"; };
 		B13FCBA15080C960586CA615 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		D8D37CD71C4FA9610024E331 /* jpush-ios-2.1.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "jpush-ios-2.1.0.a"; sourceTree = "<group>"; };
@@ -225,6 +227,7 @@
 			isa = PBXGroup;
 			children = (
 				23167EAE1C48D8EF00A83F64 /* CategoryList.json */,
+				9627EFE51C55148C0021451E /* Login.json */,
 			);
 			name = "Stubbed Responses";
 			sourceTree = "<group>";
@@ -493,6 +496,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F25D2A251C47E4D7000E5EEE /* SGLoginViewController.xib in Resources */,
+				9627EFE61C55148C0021451E /* Login.json in Resources */,
 				23167EB91C48E9B500A83F64 /* CategoryCell.xib in Resources */,
 				23167EAF1C48D8EF00A83F64 /* CategoryList.json in Resources */,
 				18B5FBF11C4E34F40089EFCC /* SGUserTableHeaderView.xib in Resources */,
