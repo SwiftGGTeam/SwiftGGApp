@@ -38,6 +38,11 @@
 		925939141C4BBFEB009CCA1D /* Pods_SwiftGG.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 925939131C4BBFEB009CCA1D /* Pods_SwiftGG.framework */; };
 		9627EFE61C55148C0021451E /* Login.json in Resources */ = {isa = PBXBuildFile; fileRef = 9627EFE51C55148C0021451E /* Login.json */; };
 		96C6A98F1C54DF04000F253F /* UIImage+STCreation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C6A98E1C54DF04000F253F /* UIImage+STCreation.swift */; };
+		C21313581C55C72D0092642E /* SGArticleDetailInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21313511C55C72D0092642E /* SGArticleDetailInfo.swift */; };
+		C21313591C55C72D0092642E /* SGArticleDetailPagingTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21313531C55C72D0092642E /* SGArticleDetailPagingTool.swift */; };
+		C213135A1C55C72D0092642E /* SGArticleDetailToolBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21313541C55C72D0092642E /* SGArticleDetailToolBar.swift */; };
+		C213135B1C55C72D0092642E /* SGArticleDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21313561C55C72D0092642E /* SGArticleDetailViewController.swift */; };
+		C213135C1C55C72D0092642E /* SGArticleDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C21313571C55C72D0092642E /* SGArticleDetailViewController.xib */; };
 		D8D37CDA1C4FA9610024E331 /* jpush-ios-2.1.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D8D37CD71C4FA9610024E331 /* jpush-ios-2.1.0.a */; };
 		D8D37CDB1C4FA9610024E331 /* JPushHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D37CD81C4FA9610024E331 /* JPushHelper.swift */; };
 		D8D37CDE1C4FAAE50024E331 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8D37CDD1C4FAAE50024E331 /* CoreTelephony.framework */; };
@@ -104,6 +109,11 @@
 		9627EFE51C55148C0021451E /* Login.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Login.json; sourceTree = "<group>"; };
 		96C6A98E1C54DF04000F253F /* UIImage+STCreation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+STCreation.swift"; sourceTree = "<group>"; };
 		B13FCBA15080C960586CA615 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		C21313511C55C72D0092642E /* SGArticleDetailInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGArticleDetailInfo.swift; sourceTree = "<group>"; };
+		C21313531C55C72D0092642E /* SGArticleDetailPagingTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGArticleDetailPagingTool.swift; sourceTree = "<group>"; };
+		C21313541C55C72D0092642E /* SGArticleDetailToolBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGArticleDetailToolBar.swift; sourceTree = "<group>"; };
+		C21313561C55C72D0092642E /* SGArticleDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGArticleDetailViewController.swift; sourceTree = "<group>"; };
+		C21313571C55C72D0092642E /* SGArticleDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SGArticleDetailViewController.xib; sourceTree = "<group>"; };
 		D8D37CD71C4FA9610024E331 /* jpush-ios-2.1.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "jpush-ios-2.1.0.a"; sourceTree = "<group>"; };
 		D8D37CD81C4FA9610024E331 /* JPushHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JPushHelper.swift; sourceTree = "<group>"; };
 		D8D37CD91C4FA9610024E331 /* JPUSHService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPUSHService.h; sourceTree = "<group>"; };
@@ -290,6 +300,7 @@
 		963697B71C0CA87500C579CF /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				C213134F1C55C72D0092642E /* ArticleDetail */,
 				18B5FBE91C4E34F40089EFCC /* UserCenter */,
 				F25D2A141C47E4D7000E5EEE /* Account */,
 				F25D2A1B1C47E4D7000E5EEE /* ArticleCategory */,
@@ -304,6 +315,42 @@
 				96C6A98E1C54DF04000F253F /* UIImage+STCreation.swift */,
 			);
 			path = Utility;
+			sourceTree = "<group>";
+		};
+		C213134F1C55C72D0092642E /* ArticleDetail */ = {
+			isa = PBXGroup;
+			children = (
+				C21313501C55C72D0092642E /* Model */,
+				C21313521C55C72D0092642E /* View */,
+				C21313551C55C72D0092642E /* ViewContoller */,
+			);
+			path = ArticleDetail;
+			sourceTree = "<group>";
+		};
+		C21313501C55C72D0092642E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C21313511C55C72D0092642E /* SGArticleDetailInfo.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C21313521C55C72D0092642E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C21313531C55C72D0092642E /* SGArticleDetailPagingTool.swift */,
+				C21313541C55C72D0092642E /* SGArticleDetailToolBar.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C21313551C55C72D0092642E /* ViewContoller */ = {
+			isa = PBXGroup;
+			children = (
+				C21313561C55C72D0092642E /* SGArticleDetailViewController.swift */,
+				C21313571C55C72D0092642E /* SGArticleDetailViewController.xib */,
+			);
+			path = ViewContoller;
 			sourceTree = "<group>";
 		};
 		D8D37CD61C4FA9610024E331 /* JPush */ = {
@@ -525,6 +572,7 @@
 				F25D2A291C47E4D7000E5EEE /* SGRegisterViewController.xib in Resources */,
 				23167EA71C48D6D600A83F64 /* Assets.xcassets in Resources */,
 				230671151C539D0C003C06C6 /* SGAboutViewController.xib in Resources */,
+				C213135C1C55C72D0092642E /* SGArticleDetailViewController.xib in Resources */,
 				7A3CB20D1C55023000579593 /* SGHomeViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -600,16 +648,20 @@
 				23167EA11C48D6B200A83F64 /* AppDelegate.swift in Sources */,
 				D8D37CDB1C4FA9610024E331 /* JPushHelper.swift in Sources */,
 				230671111C5390B7003C06C6 /* SGSettingViewController.swift in Sources */,
+				C21313581C55C72D0092642E /* SGArticleDetailInfo.swift in Sources */,
 				F25D2A2D1C47E4D7000E5EEE /* SGCategoryHomeViewController.swift in Sources */,
+				C213135A1C55C72D0092642E /* SGArticleDetailToolBar.swift in Sources */,
 				23167EB41C48E8B900A83F64 /* ArticleCategory.swift in Sources */,
 				18B5FBF71C4E35950089EFCC /* SGUserReadingTableViewCell.swift in Sources */,
 				18B5FBEF1C4E34F40089EFCC /* SGUserViewController.swift in Sources */,
 				7A3CB20C1C55023000579593 /* SGHomeViewCell.swift in Sources */,
 				F25D2A341C47E4F4000E5EEE /* SGTabBarController.swift in Sources */,
+				C21313591C55C72D0092642E /* SGArticleDetailPagingTool.swift in Sources */,
 				F25D2A231C47E4D7000E5EEE /* SGLoginViewController.swift in Sources */,
 				230671131C539CED003C06C6 /* SGAboutViewController.swift in Sources */,
 				18B5FBF01C4E34F40089EFCC /* SGUSerTableHeaderView.swift in Sources */,
 				F25D2A271C47E4D7000E5EEE /* SGRegisterViewController.swift in Sources */,
+				C213135B1C55C72D0092642E /* SGArticleDetailViewController.swift in Sources */,
 				96C6A98F1C54DF04000F253F /* UIImage+STCreation.swift in Sources */,
 				F25D2A2F1C47E4D7000E5EEE /* SGHomeViewController.swift in Sources */,
 				23167EB71C48E99900A83F64 /* CategoryCell.swift in Sources */,

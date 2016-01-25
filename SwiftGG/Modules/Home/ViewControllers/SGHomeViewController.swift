@@ -10,7 +10,10 @@ import UIKit
 
 let cellId = "HomeViewCell"
 
-class SGHomeViewController: UITableViewController {
+class SGHomeViewController: UITableViewController, SGArticleDetailInfoProtocol {
+    
+    // TODO 需要具体的文章数据源
+    var articleDetailInfo:SGArticleDetailInfo?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,5 +49,16 @@ class SGHomeViewController: UITableViewController {
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
         return 10;
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let articleDetailVC = SGArticleDetailViewController(nibName: "SGArticleDetailViewController", bundle: nil);
+        self.navigationController?.pushViewController(articleDetailVC, animated: true)
+        articleDetailVC.articleDetailInfoProtocol = self
+    }
+    
+    func getSGArticleDetailInfo()->SGArticleDetailInfo! {
+        self.articleDetailInfo = SGArticleDetailInfo(title: "为什么 Swift 中的 String API 如此难用？", url: "http://swift.gg/2016/01/25/friday-qa-2015-11-06-why-is-swifts-string-api-so-hard/")
+        return self.articleDetailInfo!
     }
 }
