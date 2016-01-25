@@ -10,10 +10,10 @@ import UIKit
 
 let cellId = "HomeViewCell"
 
-class SGHomeViewController: UITableViewController, SGArticleDetailInfoProtocol {
+class SGHomeViewController: UITableViewController {
     
     // TODO 需要具体的文章数据源
-    var articleDetailInfo:SGArticleDetailInfo?
+    var articleDetailInfo: SGArticleDetailInfo!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,9 +56,12 @@ class SGHomeViewController: UITableViewController, SGArticleDetailInfoProtocol {
         self.navigationController?.pushViewController(articleDetailVC, animated: true)
         articleDetailVC.articleDetailInfoProtocol = self
     }
-    
-    func getSGArticleDetailInfo()->SGArticleDetailInfo! {
+}
+
+// MARK: - SGArticleDetailInfoProtocol
+extension SGHomeViewController: SGArticleDetailInfoProtocol {
+    func getSGArticleDetailInfo() -> SGArticleDetailInfo {
         self.articleDetailInfo = SGArticleDetailInfo(title: "为什么 Swift 中的 String API 如此难用？", url: "http://swift.gg/2016/01/25/friday-qa-2015-11-06-why-is-swifts-string-api-so-hard/")
-        return self.articleDetailInfo!
+        return self.articleDetailInfo
     }
 }
