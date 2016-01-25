@@ -6,6 +6,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SGRegisterViewController" customModule="SwiftGG" customModuleProvider="target">
             <connections>
+                <outlet property="confirmPasswordTextField" destination="v3T-rn-IqB" id="k2E-Ht-ZVA"/>
+                <outlet property="passwordTextField" destination="8Bi-v0-5Jl" id="gUU-6j-9Nz"/>
+                <outlet property="usernameTextField" destination="mIM-Z9-liW" id="GLf-he-9ui"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -126,6 +129,9 @@
                     <state key="normal" title="注册">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="registerButtonTapped:" destination="-1" eventType="touchUpInside" id="55G-4c-Ot1"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" red="0.20784313725490194" green="0.58431372549019611" blue="0.74901960784313726" alpha="1" colorSpace="calibratedRGB"/>

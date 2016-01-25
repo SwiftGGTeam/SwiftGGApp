@@ -38,6 +38,7 @@
 		925939141C4BBFEB009CCA1D /* Pods_SwiftGG.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 925939131C4BBFEB009CCA1D /* Pods_SwiftGG.framework */; };
 		9627EFE61C55148C0021451E /* Login.json in Resources */ = {isa = PBXBuildFile; fileRef = 9627EFE51C55148C0021451E /* Login.json */; };
 		96323D9A1C55C73A00299439 /* UIViewController+STExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96323D991C55C73A00299439 /* UIViewController+STExtension.swift */; };
+		96323D9C1C55D25900299439 /* Register.json in Resources */ = {isa = PBXBuildFile; fileRef = 96323D9B1C55D25900299439 /* Register.json */; };
 		96C6A98F1C54DF04000F253F /* UIImage+STCreation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C6A98E1C54DF04000F253F /* UIImage+STCreation.swift */; };
 		D8D37CDA1C4FA9610024E331 /* jpush-ios-2.1.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D8D37CD71C4FA9610024E331 /* jpush-ios-2.1.0.a */; };
 		D8D37CDB1C4FA9610024E331 /* JPushHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D37CD81C4FA9610024E331 /* JPushHelper.swift */; };
@@ -104,6 +105,7 @@
 		925939131C4BBFEB009CCA1D /* Pods_SwiftGG.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods_SwiftGG.framework; path = "Pods/../build/Debug-iphoneos/Pods_SwiftGG.framework"; sourceTree = "<group>"; };
 		9627EFE51C55148C0021451E /* Login.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Login.json; sourceTree = "<group>"; };
 		96323D991C55C73A00299439 /* UIViewController+STExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+STExtension.swift"; sourceTree = "<group>"; };
+		96323D9B1C55D25900299439 /* Register.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Register.json; sourceTree = "<group>"; };
 		96C6A98E1C54DF04000F253F /* UIImage+STCreation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+STCreation.swift"; sourceTree = "<group>"; };
 		B13FCBA15080C960586CA615 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		D8D37CD71C4FA9610024E331 /* jpush-ios-2.1.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "jpush-ios-2.1.0.a"; sourceTree = "<group>"; };
@@ -240,6 +242,7 @@
 			children = (
 				23167EAE1C48D8EF00A83F64 /* CategoryList.json */,
 				9627EFE51C55148C0021451E /* Login.json */,
+				96323D9B1C55D25900299439 /* Register.json */,
 			);
 			name = "Stubbed Responses";
 			sourceTree = "<group>";
@@ -524,6 +527,7 @@
 				23167EAF1C48D8EF00A83F64 /* CategoryList.json in Resources */,
 				18B5FBF11C4E34F40089EFCC /* SGUserTableHeaderView.xib in Resources */,
 				23167EA81C48D6D600A83F64 /* LaunchScreen.storyboard in Resources */,
+				96323D9C1C55D25900299439 /* Register.json in Resources */,
 				18B5FBF81C4E35950089EFCC /* SGUserReadingTableViewCell.xib in Resources */,
 				F25D2A291C47E4D7000E5EEE /* SGRegisterViewController.xib in Resources */,
 				23167EA71C48D6D600A83F64 /* Assets.xcassets in Resources */,
