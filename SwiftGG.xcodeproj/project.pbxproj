@@ -37,6 +37,7 @@
 		7A3CB2121C551C6D00579593 /* HomeViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3CB2101C551B1C00579593 /* HomeViewCellModel.swift */; };
 		925939141C4BBFEB009CCA1D /* Pods_SwiftGG.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 925939131C4BBFEB009CCA1D /* Pods_SwiftGG.framework */; };
 		9627EFE61C55148C0021451E /* Login.json in Resources */ = {isa = PBXBuildFile; fileRef = 9627EFE51C55148C0021451E /* Login.json */; };
+		96323D9A1C55C73A00299439 /* UIViewController+STExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96323D991C55C73A00299439 /* UIViewController+STExtension.swift */; };
 		96C6A98F1C54DF04000F253F /* UIImage+STCreation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C6A98E1C54DF04000F253F /* UIImage+STCreation.swift */; };
 		D8D37CDA1C4FA9610024E331 /* jpush-ios-2.1.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D8D37CD71C4FA9610024E331 /* jpush-ios-2.1.0.a */; };
 		D8D37CDB1C4FA9610024E331 /* JPushHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D37CD81C4FA9610024E331 /* JPushHelper.swift */; };
@@ -102,6 +103,7 @@
 		925939111C4BBFB0009CCA1D /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = build/Debug/Result.framework; sourceTree = "<group>"; };
 		925939131C4BBFEB009CCA1D /* Pods_SwiftGG.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods_SwiftGG.framework; path = "Pods/../build/Debug-iphoneos/Pods_SwiftGG.framework"; sourceTree = "<group>"; };
 		9627EFE51C55148C0021451E /* Login.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Login.json; sourceTree = "<group>"; };
+		96323D991C55C73A00299439 /* UIViewController+STExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+STExtension.swift"; sourceTree = "<group>"; };
 		96C6A98E1C54DF04000F253F /* UIImage+STCreation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+STCreation.swift"; sourceTree = "<group>"; };
 		B13FCBA15080C960586CA615 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		D8D37CD71C4FA9610024E331 /* jpush-ios-2.1.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "jpush-ios-2.1.0.a"; sourceTree = "<group>"; };
@@ -302,6 +304,7 @@
 			isa = PBXGroup;
 			children = (
 				96C6A98E1C54DF04000F253F /* UIImage+STCreation.swift */,
+				96323D991C55C73A00299439 /* UIViewController+STExtension.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -604,6 +607,7 @@
 				23167EB41C48E8B900A83F64 /* ArticleCategory.swift in Sources */,
 				18B5FBF71C4E35950089EFCC /* SGUserReadingTableViewCell.swift in Sources */,
 				18B5FBEF1C4E34F40089EFCC /* SGUserViewController.swift in Sources */,
+				96323D9A1C55C73A00299439 /* UIViewController+STExtension.swift in Sources */,
 				7A3CB20C1C55023000579593 /* SGHomeViewCell.swift in Sources */,
 				F25D2A341C47E4F4000E5EEE /* SGTabBarController.swift in Sources */,
 				F25D2A231C47E4D7000E5EEE /* SGLoginViewController.swift in Sources */,

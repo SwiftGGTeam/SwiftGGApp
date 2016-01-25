@@ -24,13 +24,6 @@ class SGRegisterViewController: UIViewController {
     func setupNavigationBar() {
         title = "注册 SwiftGo"
         
-        navigationController!.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: .Default)
-        navigationController!.navigationBar.shadowImage = UIImage()
-        navigationController!.navigationBar.translucent = true
-        
-        navigationController!.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont.systemFontOfSize(17),
-            NSForegroundColorAttributeName: UIColor.whiteColor()]
-        
         let backImage = UIImage(named: "back_white")?.imageWithRenderingMode(.AlwaysOriginal)
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: backImage, style: .Plain, target: self, action: Selector("dismiss"))
     }
