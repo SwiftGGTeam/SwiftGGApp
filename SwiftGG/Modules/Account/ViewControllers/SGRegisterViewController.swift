@@ -7,9 +7,14 @@
 //
 
 import UIKit
+import Moya
 
 class SGRegisterViewController: UIViewController {
 
+    @IBOutlet weak var usernameTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var confirmPasswordTextField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -23,13 +28,6 @@ class SGRegisterViewController: UIViewController {
     
     func setupNavigationBar() {
         title = "注册 SwiftGo"
-        
-        navigationController!.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: .Default)
-        navigationController!.navigationBar.shadowImage = UIImage()
-        navigationController!.navigationBar.translucent = true
-        
-        navigationController!.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont.systemFontOfSize(17),
-            NSForegroundColorAttributeName: UIColor.whiteColor()]
         
         let backImage = UIImage(named: "back_white")?.imageWithRenderingMode(.AlwaysOriginal)
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: backImage, style: .Plain, target: self, action: Selector("dismiss"))
@@ -45,7 +43,56 @@ class SGRegisterViewController: UIViewController {
         navigationController!.pushViewController(controller, animated: true)
     }
     
+    @IBAction func registerButtonTapped(sender: UIButton) {
+        registerRequest()
+    }
+    
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
         return .LightContent
+    }
+}
+
+extension SGRegisterViewController {
+    private func registerRequest() {
+        let username = usernameTextField.text!
+        let password = passwordTextField.text!
+        let confirmPassword = confirmPasswordTextField.text!
+        
+        guard username != "" else {
+            st_showAlertWithMessgae("用户名不能为空")
+            return
+        }
+        
+        guard password != "" else {
+            st_showAlertWithMessgae("密码不能为空")
+            return
+        }
+        
+        guard confirmPassword == password else {
+            st_showAlertWithMessgae("两次密码不同")
+            return
+        }
+        
+        SwiftGGProvider.request(.Register(username, password)) { result in
+            switch result {
+            case .Success(let response):
+                do {
+                    let resultData = try response.mapJSON() as! [String : AnyObject]
+                    let code = resultData["ret"] as! Int
+                    
+                    if code == 0 {
+                        print("注册成功")
+                    } else {
+                        print("ERROR")
+                    }
+                } catch Error.Underlying(let error) {
+                    print(error)
+                } catch {
+                    print("Unknow error")
+                }
+            case .Failure(let error):
+                print(error)
+            }
+        }
     }
 }
