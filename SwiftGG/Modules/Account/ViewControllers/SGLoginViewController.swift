@@ -16,6 +16,7 @@ class SGLoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupNavigationBar()
     }
     
     // MARK: Actions
@@ -27,15 +28,16 @@ class SGLoginViewController: UIViewController {
         let registerController = SGRegisterViewController()
         navigationController?.pushViewController(registerController, animated: true)
     }
-    
-    // MARK: Helper Methods
-    func showAlertWithMessage(message: String) {
-        let alertController = UIAlertController(title: "提示", message: message, preferredStyle: .Alert)
+}
 
-        let cancelAction = UIAlertAction(title: "确定", style: .Cancel, handler: nil)
-        alertController.addAction(cancelAction)
-        
-        presentViewController(alertController, animated: true, completion: nil)
+extension SGLoginViewController {
+    private func setupNavigationBar() {
+        title = "登录 SwiftGo"
+        navigationController?.navigationBar.tintColor = UIColor.clearColor()
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: .Default)
+        navigationController?.navigationBar.clipsToBounds = true
+        navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont.systemFontOfSize(17),
+            NSForegroundColorAttributeName: UIColor.whiteColor()]
     }
 }
 
@@ -45,11 +47,11 @@ extension SGLoginViewController {
         let password = passwordTextField.text!
         
         guard username != "" else {
-            showAlertWithMessage("用户名不能为空")
+            st_showAlertWithMessgae("用户名不能为空")
             return
         }
         guard password != "" else {
-            showAlertWithMessage("密码不能为空")
+            st_showAlertWithMessgae("密码不能为空")
             return
         }
         
@@ -66,9 +68,8 @@ extension SGLoginViewController {
                         if username == "swiftgg" && password == "swiftgg" {
                             self.loginSuccess()
                         } else {
-                            self.showAlertWithMessage("用户名或密码错误")
+                            self.st_showAlertWithMessgae("用户名或密码错误")
                         }
-                        
                     } else {
                         print("Error")
                     }
