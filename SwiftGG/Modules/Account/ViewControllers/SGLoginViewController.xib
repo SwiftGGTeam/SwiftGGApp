@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
@@ -16,12 +16,6 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="登录 SwiftGo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RhR-cj-XNX">
-                    <rect key="frame" x="110" y="32" width="99" height="20.5"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <nil key="highlightedColor"/>
-                </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L9q-Ea-7fO">
                     <rect key="frame" x="20" y="228" width="280" height="44"/>
                     <color key="backgroundColor" red="0.21568627450980393" green="0.65490196078431373" blue="0.87450980392156863" alpha="1" colorSpace="calibratedRGB"/>
@@ -151,11 +145,9 @@
                 <constraint firstItem="WDC-RK-koj" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="edO-XG-L0V"/>
                 <constraint firstItem="0Wf-Qm-Tam" firstAttribute="height" secondItem="BJm-mg-s1H" secondAttribute="height" id="gcq-AI-y3P"/>
                 <constraint firstItem="BJm-mg-s1H" firstAttribute="leading" secondItem="L9q-Ea-7fO" secondAttribute="leading" id="hhC-XQ-X3A"/>
-                <constraint firstItem="RhR-cj-XNX" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="hvd-zu-Qpv"/>
                 <constraint firstItem="0Wf-Qm-Tam" firstAttribute="trailing" secondItem="BJm-mg-s1H" secondAttribute="trailing" id="ieT-NC-kDz"/>
                 <constraint firstItem="6kw-Qr-kze" firstAttribute="leading" secondItem="L9q-Ea-7fO" secondAttribute="leading" id="jxa-dK-g4H"/>
                 <constraint firstItem="L9q-Ea-7fO" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="q1J-dT-5Oh"/>
-                <constraint firstItem="RhR-cj-XNX" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="32" id="sBY-Nr-mEj"/>
                 <constraint firstItem="6kw-Qr-kze" firstAttribute="top" secondItem="L9q-Ea-7fO" secondAttribute="bottom" id="sUN-mO-01z"/>
                 <constraint firstItem="nOc-Ks-ecI" firstAttribute="trailing" secondItem="L9q-Ea-7fO" secondAttribute="trailing" id="v5S-lq-iiw"/>
                 <constraint firstItem="0Wf-Qm-Tam" firstAttribute="leading" secondItem="BJm-mg-s1H" secondAttribute="leading" id="z4N-Gp-Gjw"/>
