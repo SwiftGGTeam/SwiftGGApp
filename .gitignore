@@ -146,3 +146,5 @@ fastlane/screenshots
 
 ### Objective-C Patch ###
 *.xcscmblueprint
+
+.DS_Store
