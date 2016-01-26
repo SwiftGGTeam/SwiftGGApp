@@ -15,23 +15,26 @@ class SGUSerTableHeaderView: UIView {
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var readNumberLabel: UILabel!
     
+    @IBOutlet weak var statusContainer: UIView!
+    @IBOutlet weak var statusAlreadReadContainer: UIView!
     @IBOutlet weak var statusContainerFavCountLabel: UILabel!
     @IBOutlet weak var statusContainerAlreadyReadCountLabel: UILabel!
     @IBOutlet weak var statusContainerUnreadLabel: UILabel!
     
     @IBOutlet weak var userInfoContainer: UIView!
-    @IBOutlet weak var middleViewLeadingConstraint: NSLayoutConstraint!
-    @IBOutlet weak var middleViewTrailingConstraint: NSLayoutConstraint!
     @IBOutlet weak var favView: UIView!
     @IBOutlet weak var alreadyReadView: UIView!
     @IBOutlet weak var unreadView: UIView!
     
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        
+        let containerView = UINib(nibName: "SGUserTableHeaderView", bundle: nil).instantiateWithOwner(self, options: nil).first as! UIView
+        addSubview(containerView)
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-        // 添加线条
-        middleViewLeadingConstraint.constant = 0.5
-        middleViewTrailingConstraint.constant = 0.5
         
         // add target-action
         userInfoContainer.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "onUserInfoContainerClicked"))
@@ -42,6 +45,9 @@ class SGUSerTableHeaderView: UIView {
         avatarImageView.layer.borderWidth = 1.5
         avatarImageView.layer.borderColor = UIColor.whiteColor().CGColor
         avatarImageView.image = UIImage(named: "setting_nav_item")
+        
+        statusContainer.layer.addBorder([.Bottom], color: UIColor(rgba: "#C7C7C7"), thickness: 0.5)
+        statusAlreadReadContainer.layer.addBorder([UIRectEdge.Left, UIRectEdge.Right], color: UIColor(rgba: "#C7C7C7"), thickness: 0.5)
     }
     
     func onUserInfoContainerClicked() {

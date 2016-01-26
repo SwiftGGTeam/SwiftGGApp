@@ -7,7 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+<<<<<<< HEAD
 		16C9E58F2CBC74DA984BA23E /* Pods_SwiftGG.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1595B0A746752B38BADE7448 /* Pods_SwiftGG.framework */; };
+=======
+		18100FE61C570CBA0026BFAF /* SGUserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18100FE51C570CBA0026BFAF /* SGUserViewController.xib */; };
+>>>>>>> SwiftGGTeam/master
 		18B5FBEF1C4E34F40089EFCC /* SGUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B5FBEB1C4E34F40089EFCC /* SGUserViewController.swift */; };
 		18B5FBF01C4E34F40089EFCC /* SGUSerTableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B5FBED1C4E34F40089EFCC /* SGUSerTableHeaderView.swift */; };
 		18B5FBF11C4E34F40089EFCC /* SGUserTableHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18B5FBEE1C4E34F40089EFCC /* SGUserTableHeaderView.xib */; };
@@ -81,6 +85,7 @@
 /* Begin PBXFileReference section */
 		1595B0A746752B38BADE7448 /* Pods_SwiftGG.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftGG.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		169B335AE274C1F0FA40683B /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		18100FE51C570CBA0026BFAF /* SGUserViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SGUserViewController.xib; sourceTree = "<group>"; };
 		18B5FBEB1C4E34F40089EFCC /* SGUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGUserViewController.swift; sourceTree = "<group>"; };
 		18B5FBED1C4E34F40089EFCC /* SGUSerTableHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGUSerTableHeaderView.swift; sourceTree = "<group>"; };
 		18B5FBEE1C4E34F40089EFCC /* SGUserTableHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SGUserTableHeaderView.xib; sourceTree = "<group>"; };
@@ -174,6 +179,7 @@
 			isa = PBXGroup;
 			children = (
 				18B5FBEB1C4E34F40089EFCC /* SGUserViewController.swift */,
+				18100FE51C570CBA0026BFAF /* SGUserViewController.xib */,
 				230671101C5390B7003C06C6 /* SGSettingViewController.swift */,
 				230671121C539CED003C06C6 /* SGAboutViewController.swift */,
 				230671141C539D0C003C06C6 /* SGAboutViewController.xib */,
@@ -566,6 +572,7 @@
 				F25D2A251C47E4D7000E5EEE /* SGLoginViewController.xib in Resources */,
 				9627EFE61C55148C0021451E /* Login.json in Resources */,
 				23167EB91C48E9B500A83F64 /* CategoryCell.xib in Resources */,
+				18100FE61C570CBA0026BFAF /* SGUserViewController.xib in Resources */,
 				23167EAF1C48D8EF00A83F64 /* CategoryList.json in Resources */,
 				18B5FBF11C4E34F40089EFCC /* SGUserTableHeaderView.xib in Resources */,
 				23167EA81C48D6D600A83F64 /* LaunchScreen.storyboard in Resources */,
