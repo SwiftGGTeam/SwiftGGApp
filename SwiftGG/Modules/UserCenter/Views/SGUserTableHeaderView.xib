@@ -19,6 +19,7 @@
                 <outlet property="statusContainerAlreadyReadCountLabel" destination="Ed2-Aq-lGW" id="Os8-6H-Ibc"/>
                 <outlet property="statusContainerFavCountLabel" destination="NPZ-fh-n8R" id="eu7-tH-eNk"/>
                 <outlet property="statusContainerUnreadLabel" destination="V8p-Rg-gqf" id="e7B-NT-wDJ"/>
+                <outlet property="statusUnreadContainer" destination="PN7-Vd-vN6" id="DDK-Sl-inL"/>
                 <outlet property="unreadView" destination="PN7-Vd-vN6" id="uaU-Q9-4Xk"/>
                 <outlet property="userInfoContainer" destination="sVV-Mt-le8" id="Q7N-XM-2Uf"/>
             </connections>
@@ -45,7 +46,7 @@
                             </userDefinedRuntimeAttributes>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我是小读者" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="90L-S5-08f">
-                            <rect key="frame" x="85" y="47" width="60" height="14"/>
+                            <rect key="frame" x="85" y="46" width="60" height="15"/>
                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
@@ -62,7 +63,7 @@
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o25-FO-4Ko">
+                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o25-FO-4Ko">
                             <rect key="frame" x="291" y="37" width="9" height="22"/>
                             <state key="normal" image="forward"/>
                         </button>
@@ -96,7 +97,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="25 篇" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NPZ-fh-n8R">
-                                    <rect key="frame" x="33" y="41" width="42" height="20"/>
+                                    <rect key="frame" x="33" y="40" width="42" height="21"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
@@ -120,7 +121,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="99 篇" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ed2-Aq-lGW">
-                                    <rect key="frame" x="33" y="41" width="42" height="20"/>
+                                    <rect key="frame" x="33" y="40" width="43" height="21"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
@@ -138,7 +139,7 @@
                             <rect key="frame" x="214" y="0.0" width="106" height="70"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9 篇" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V8p-Rg-gqf">
-                                    <rect key="frame" x="37" y="41" width="32" height="20"/>
+                                    <rect key="frame" x="37" y="40" width="32" height="21"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
@@ -188,7 +189,7 @@
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="2" y="6"/>
+            <point key="canvasLocation" x="-145" y="-292"/>
         </view>
     </objects>
     <resources>
