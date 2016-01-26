@@ -6,9 +6,25 @@
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SGUSerTableHeaderView" customModule="SwiftGG" customModuleProvider="target">
+            <connections>
+                <outlet property="alreadyReadView" destination="DnT-TZ-3ed" id="bK0-Jf-WY2"/>
+                <outlet property="avatarImageView" destination="pWD-Yc-oco" id="BzA-64-oC5"/>
+                <outlet property="descriptionLabel" destination="90L-S5-08f" id="WTg-4n-TlE"/>
+                <outlet property="favView" destination="nk8-dk-PKD" id="lWv-L5-9Tu"/>
+                <outlet property="nameLabel" destination="8wI-jJ-6rp" id="cmo-8D-fwf"/>
+                <outlet property="readNumberLabel" destination="IdF-0v-Th8" id="RYs-En-SI7"/>
+                <outlet property="statusAlreadReadContainer" destination="DnT-TZ-3ed" id="UjT-P5-rfN"/>
+                <outlet property="statusContainer" destination="qmc-QN-fqO" id="P52-2r-11P"/>
+                <outlet property="statusContainerAlreadyReadCountLabel" destination="Ed2-Aq-lGW" id="Os8-6H-Ibc"/>
+                <outlet property="statusContainerFavCountLabel" destination="NPZ-fh-n8R" id="eu7-tH-eNk"/>
+                <outlet property="statusContainerUnreadLabel" destination="V8p-Rg-gqf" id="e7B-NT-wDJ"/>
+                <outlet property="unreadView" destination="PN7-Vd-vN6" id="uaU-Q9-4Xk"/>
+                <outlet property="userInfoContainer" destination="sVV-Mt-le8" id="Q7N-XM-2Uf"/>
+            </connections>
+        </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="SGUSerTableHeaderView" customModule="SwiftGG" customModuleProvider="target">
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="320" height="166"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
@@ -51,7 +67,7 @@
                             <state key="normal" image="forward"/>
                         </button>
                     </subviews>
-                    <color key="backgroundColor" red="0.25490196078431371" green="0.5725490196078431" blue="0.74509803921568629" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" red="0.20784313725490194" green="0.58431372549019611" blue="0.74901960784313726" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstItem="90L-S5-08f" firstAttribute="leading" secondItem="8wI-jJ-6rp" secondAttribute="leading" id="Aie-59-Emx"/>
                         <constraint firstAttribute="trailing" secondItem="o25-FO-4Ko" secondAttribute="trailing" constant="20" id="D6B-3E-ZFs"/>
@@ -76,13 +92,13 @@
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="收藏" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IvP-pV-epP">
                                     <rect key="frame" x="37" y="15" width="34" height="21"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="25 篇" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NPZ-fh-n8R">
                                     <rect key="frame" x="33" y="41" width="42" height="20"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
@@ -100,13 +116,13 @@
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="已读" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jXf-Ui-1Ds">
                                     <rect key="frame" x="37" y="15" width="34" height="21"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="99 篇" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ed2-Aq-lGW">
                                     <rect key="frame" x="33" y="41" width="42" height="20"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
@@ -124,13 +140,13 @@
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9 篇" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V8p-Rg-gqf">
                                     <rect key="frame" x="37" y="41" width="32" height="20"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="未读" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cwc-H1-PaF">
                                     <rect key="frame" x="36" y="15" width="34" height="21"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
@@ -161,7 +177,6 @@
                     </constraints>
                 </view>
             </subviews>
-            <color key="backgroundColor" red="0.25490196078431371" green="0.5725490196078431" blue="0.74509803921568629" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="qmc-QN-fqO" secondAttribute="trailing" id="1kb-73-E55"/>
                 <constraint firstItem="qmc-QN-fqO" firstAttribute="top" secondItem="sVV-Mt-le8" secondAttribute="bottom" id="8Rh-qb-Tbr"/>
@@ -173,22 +188,7 @@
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <connections>
-                <outlet property="alreadyReadView" destination="DnT-TZ-3ed" id="ZbF-Yu-ULY"/>
-                <outlet property="avatarImageView" destination="pWD-Yc-oco" id="cbH-qc-Ygq"/>
-                <outlet property="descriptionLabel" destination="90L-S5-08f" id="QSd-MC-OPQ"/>
-                <outlet property="favView" destination="nk8-dk-PKD" id="N26-SN-fdz"/>
-                <outlet property="middleViewLeadingConstraint" destination="i6N-dM-xnC" id="iz5-tN-NqR"/>
-                <outlet property="middleViewTrailingConstraint" destination="133-gk-j9A" id="AEu-4B-bAf"/>
-                <outlet property="nameLabel" destination="8wI-jJ-6rp" id="yWj-dH-aVD"/>
-                <outlet property="readNumberLabel" destination="IdF-0v-Th8" id="atC-zc-TcX"/>
-                <outlet property="statusContainerAlreadyReadCountLabel" destination="Ed2-Aq-lGW" id="fMG-2x-63w"/>
-                <outlet property="statusContainerFavCountLabel" destination="NPZ-fh-n8R" id="XrK-SG-ibj"/>
-                <outlet property="statusContainerUnreadLabel" destination="V8p-Rg-gqf" id="2O5-PU-bs4"/>
-                <outlet property="unreadView" destination="PN7-Vd-vN6" id="QEJ-ML-zuu"/>
-                <outlet property="userInfoContainer" destination="sVV-Mt-le8" id="lPx-Q7-vT8"/>
-            </connections>
-            <point key="canvasLocation" x="179" y="3"/>
+            <point key="canvasLocation" x="2" y="6"/>
         </view>
     </objects>
     <resources>
