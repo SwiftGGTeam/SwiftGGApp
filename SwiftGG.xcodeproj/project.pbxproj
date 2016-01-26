@@ -7,11 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-<<<<<<< HEAD
 		16C9E58F2CBC74DA984BA23E /* Pods_SwiftGG.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1595B0A746752B38BADE7448 /* Pods_SwiftGG.framework */; };
-=======
 		18100FE61C570CBA0026BFAF /* SGUserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18100FE51C570CBA0026BFAF /* SGUserViewController.xib */; };
->>>>>>> SwiftGGTeam/master
 		18B5FBEF1C4E34F40089EFCC /* SGUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B5FBEB1C4E34F40089EFCC /* SGUserViewController.swift */; };
 		18B5FBF01C4E34F40089EFCC /* SGUSerTableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B5FBED1C4E34F40089EFCC /* SGUSerTableHeaderView.swift */; };
 		18B5FBF11C4E34F40089EFCC /* SGUserTableHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18B5FBEE1C4E34F40089EFCC /* SGUserTableHeaderView.xib */; };
