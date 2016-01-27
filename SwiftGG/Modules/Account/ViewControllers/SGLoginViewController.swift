@@ -21,7 +21,10 @@ class SGLoginViewController: UIViewController {
     
     // MARK: Actions
     @IBAction func loginButtonTapped() {
-        loginRequest()
+        
+        loginSuccess()
+        
+//        loginRequest()
     }
     
     @IBAction func registerButtonTapped() {
@@ -64,7 +67,6 @@ extension SGLoginViewController {
                     let code = resultData["ret"] as! Int
                     
                     if code == 0 {
-                        
                         if username == "swiftgg" && password == "swiftgg" {
                             self.loginSuccess()
                         } else {

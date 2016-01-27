@@ -18,6 +18,6 @@ class ArticleCategory {
         id = dict["id"] as! String
         name = dict["name"] as! String
         coverUrl = dict["coverUrl"] as! String
-        articlesCount = dict["sum"] as! Int
+        articlesCount = Int(dict["sum"] as! String)
     }
 }
