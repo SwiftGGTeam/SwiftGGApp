@@ -96,7 +96,7 @@ extension SGSettingViewController: UITableViewDelegate {
             print("清理缓存")
         case 1: // 反馈问题
             print("反馈问题")
-        case 2:
+        case 2: // 关于我们
             let aboutViewController = SGAboutViewController()
             navigationController!.pushViewController(aboutViewController, animated: true)
         default: ()
