@@ -32,7 +32,7 @@ class SGLoginViewController: UIViewController {
 
 extension SGLoginViewController {
     private func setupNavigationBar() {
-        title = "登录 SwiftGo"
+        title = "登录 SwiftGG"
         navigationController?.navigationBar.tintColor = UIColor.clearColor()
         navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: .Default)
         navigationController?.navigationBar.clipsToBounds = true
