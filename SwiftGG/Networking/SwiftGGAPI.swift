@@ -15,7 +15,7 @@ let endpointClosure = { (target: SwiftGGAPI) -> Endpoint<SwiftGGAPI> in
 }
 
 let stubClosure = { (target: SwiftGGAPI) -> StubBehavior in
-    return .Immediate
+    return .Never
 }
 
 let SwiftGGProvider = MoyaProvider<SwiftGGAPI>(endpointClosure: endpointClosure, stubClosure: stubClosure )
@@ -27,17 +27,17 @@ enum SwiftGGAPI {
 }
 
 extension SwiftGGAPI: TargetType {
-    var base: String { return "http://www.swiftgg.com/" }
+    var base: String { return "http://123.57.250.194/" }
     var baseURL: NSURL { return NSURL(string: base)! }
     
     var path: String {
         switch self {
         case .CategoryListings:
-            return "api/v1/article/getCategoryList"
+            return "v1/article/getCategoryList"
         case .Login:
-            return "api/v1/user/userLogin"
+            return "v1/user/userLogin"
         case .Register:
-            return "api/v1/user/userRegister"
+            return "v1/user/userRegister"
         }
     }
     

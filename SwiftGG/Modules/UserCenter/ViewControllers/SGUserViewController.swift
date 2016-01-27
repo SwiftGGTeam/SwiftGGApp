@@ -85,6 +85,8 @@ extension SGUserViewController {
     }
     
     private func setupNavigationBar() {
+        UIApplication.sharedApplication().statusBarStyle = .LightContent
+        
         // remove navigation bar shadow
         navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: .Default)
         navigationController?.navigationBar.shadowImage = UIImage()
