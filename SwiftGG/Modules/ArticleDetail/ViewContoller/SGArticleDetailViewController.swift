@@ -11,12 +11,26 @@ import Neon
 import WebKit
 
 protocol SGArticleDetailInfoProtocol: class {
-    func getSGArticleDetailInfo() -> SGArticleDetailInfo
+    func openArticle() -> SGArticleDetailInfo
+    func closeArticle(articleDetailInfo:SGArticleDetailInfo)
 }
 
-class SGArticleDetailViewController: UIViewController {
+extension SGArticleDetailViewController {
+    func webView(webView: WKWebView, didFinishNavigation navigation: WKNavigation!) {
+//        self.articleContentView.scrollView.setContentOffset(CGPoint(x: 0.0, y: self.articleDetailInfo!.offset), animated: false)
+        let js = "$('body').scrollTop(" + (self.articleDetailInfo?.getOffset())! + ")"
+        articleContentView.evaluateJavaScript(js, completionHandler: { (AnyObject, NSError) -> Void in
+            print(AnyObject)
+            print(NSError)
+        })
+    }
+}
+
+class SGArticleDetailViewController: UIViewController, WKNavigationDelegate {
     
     weak var articleDetailInfoProtocol : SGArticleDetailInfoProtocol?
+    
+    var articleDetailInfo:SGArticleDetailInfo?
     
     var articleContentView: WKWebView!
 
@@ -33,14 +47,17 @@ class SGArticleDetailViewController: UIViewController {
         articleContentView = WKWebView()
         view.insertSubview(articleContentView, atIndex: 0)
         articleContentView.allowsBackForwardNavigationGestures = true
+        articleContentView.navigationDelegate = self
         
-        if let articleInfo = articleDetailInfoProtocol?.getSGArticleDetailInfo() {
-            let url = NSURL(string: articleInfo.url)
+        if let articleDetail = articleDetailInfoProtocol?.openArticle() {
+            articleDetailInfo = articleDetail
+            
+            title = articleDetail.title
+            
+            let url = NSURL(string: articleDetail.url)
 //            let request = NSURLRequest(URL: url!, cachePolicy: NSURLRequestCachePolicy.ReloadRevalidatingCacheData, timeoutInterval: NSTimeInterval(30))
             let request = NSURLRequest(URL: url!)
             articleContentView.loadRequest(request)
-            
-            title = articleInfo.title
         }
         
         
@@ -53,6 +70,10 @@ class SGArticleDetailViewController: UIViewController {
         articleContentView.fillSuperview()
     }
     
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+    }
+    
     private func setupNavigationBar() {
         let backImage = UIImage(named: "back_white")?.imageWithRenderingMode(.AlwaysOriginal)
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: backImage, style: .Plain, target: self, action: Selector("back"))
@@ -63,6 +84,14 @@ class SGArticleDetailViewController: UIViewController {
         if articleContentView.canGoBack {
             articleContentView.goBack()
         } else {
+            articleContentView.evaluateJavaScript("$('body').scrollTop()", completionHandler: { (AnyObject, NSError) -> Void in
+                if let offset:Double = AnyObject as? Double {
+                    self.articleDetailInfo?.offset = offset
+                    self.articleDetailInfo?.height = Double(self.articleContentView.scrollView.contentSize.height)
+                    self.articleDetailInfoProtocol?.closeArticle(self.articleDetailInfo!)
+                }
+            })
+
             navigationController!.popViewControllerAnimated(true)
         }
     }

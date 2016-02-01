@@ -7,6 +7,11 @@ PODS:
     - Alamofire (~> 3.0)
     - Result (~> 1.0)
   - Neon (0.0.3)
+  - Realm (0.96.3):
+    - Realm/Headers (= 0.96.3)
+  - Realm/Headers (0.96.3)
+  - RealmSwift (0.96.3):
+    - Realm (= 0.96.3)
   - Result (1.0.1)
   - SwiftyJSON (2.3.2)
   - UIColor_Hex_Swift (1.8)
@@ -16,6 +21,7 @@ DEPENDENCIES:
   - Kingfisher (~> 1.9)
   - Moya
   - Neon (~> 0.0.1)
+  - RealmSwift (~> 0.96.0)
   - SwiftyJSON (from `https://github.com/SwiftyJSON/SwiftyJSON.git`)
   - UIColor_Hex_Swift (~> 1.8)
 
@@ -33,6 +39,8 @@ SPEC CHECKSUMS:
   Kingfisher: 7b6df0fa9d211807152c32c46494f9bc08f0e07b
   Moya: 9bd9f20e6451c820c17ca40e1b3f6489757fa821
   Neon: 589d3d217d326abe09726bf81add106cff685bf2
+  Realm: 145d3cdf78a03aee71bde5381ad7e542bd541720
+  RealmSwift: aab84968aad662f61f36473d1aea019f63481505
   Result: caef80340451e1f07492fa1e89117f83613bce24
   SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
   UIColor_Hex_Swift: a66b9d5f6e8fddbd9fe32996504f0b7e9d20d680

@@ -7,13 +7,11 @@
 //
 
 import UIKit
+import RealmSwift
 
 let cellId = "HomeViewCell"
 
 class SGHomeViewController: UITableViewController {
-    
-    // TODO 需要具体的文章数据源
-    var articleDetailInfo: SGArticleDetailInfo!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,8 +58,23 @@ class SGHomeViewController: UITableViewController {
 
 // MARK: - SGArticleDetailInfoProtocol
 extension SGHomeViewController: SGArticleDetailInfoProtocol {
-    func getSGArticleDetailInfo() -> SGArticleDetailInfo {
-        self.articleDetailInfo = SGArticleDetailInfo(title: "为什么 Swift 中的 String API 如此难用？", url: "http://swift.gg/2016/01/25/friday-qa-2015-11-06-why-is-swifts-string-api-so-hard/")
-        return self.articleDetailInfo
+    
+    func openArticle() -> SGArticleDetailInfo {
+        var articleDetailInfo = SGArticleDetailInfo(id:"10", title: "为什么 Swift 中的 String API 如此难用？", url: "http://swift.gg/2016/01/25/friday-qa-2015-11-06-why-is-swifts-string-api-so-hard/", offset: 0.0, height: 0.0)
+        let realm = try! Realm()
+        if let articleDetailMetaData = realm.objects(SGAriticleDetailMetaData).filter("id == '10'").first {
+            articleDetailInfo = articleDetailMetaData.getSGArticleDetailInfo()
+        }
+        
+        return articleDetailInfo
+    }
+    
+    func closeArticle(articleDetailInfo:SGArticleDetailInfo) {
+        let realm = try! Realm()
+        let articleDetailMetaData = SGAriticleDetailMetaData()
+        articleDetailMetaData.setSGArticleDetailInfo(articleDetailInfo)
+        try! realm.write {
+            realm.add(articleDetailMetaData, update: true)
+        }
     }
 }
