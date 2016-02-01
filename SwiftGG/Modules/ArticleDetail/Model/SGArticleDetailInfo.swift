@@ -9,11 +9,21 @@
 import Foundation
 
 struct SGArticleDetailInfo {
-    var url:String!
-    var title:String!
+    var id:String = ""
+    var url = ""
+    var title = ""
+    var offset = 0.0
+    var height = 0.0
     
-    init(title:String, url:String) {
+    func getOffset()->String! {
+        return String(offset)
+    }
+    
+    init(id:String, title:String, url:String, offset:Double, height:Double) {
+        self.id = id
         self.url = url
         self.title = title
+        self.offset = offset
+        self.height = height
     }
 }
