@@ -9,6 +9,11 @@
 import Foundation
 import Moya
 
+enum SGError: String, ErrorType {
+    case TimeOut = "请求超时"
+    case Failure = "请求失败"
+}
+
 let endpointClosure = { (target: SwiftGGAPI) -> Endpoint<SwiftGGAPI> in
     let endpoint: Endpoint<SwiftGGAPI> = Endpoint<SwiftGGAPI>(URL: url(target), sampleResponseClosure: {.NetworkResponse(200, target.sampleData)}, method: target.method, parameters: target.parameters, parameterEncoding: .JSON)
     return endpoint

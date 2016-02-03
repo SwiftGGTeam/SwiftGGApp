@@ -40,6 +40,8 @@
 		96323D9A1C55C73A00299439 /* UIViewController+STExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96323D991C55C73A00299439 /* UIViewController+STExtension.swift */; };
 		96323D9C1C55D25900299439 /* Register.json in Resources */ = {isa = PBXBuildFile; fileRef = 96323D9B1C55D25900299439 /* Register.json */; };
 		96C6A98F1C54DF04000F253F /* UIImage+STCreation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C6A98E1C54DF04000F253F /* UIImage+STCreation.swift */; };
+		96CEE3EA1C62493A00A78A81 /* SGAccountAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96CEE3E91C62493A00A78A81 /* SGAccountAPI.swift */; };
+		96CEE3EC1C624DC800A78A81 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96CEE3EB1C624DC800A78A81 /* UserModel.swift */; };
 		C21313581C55C72D0092642E /* SGArticleDetailInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21313511C55C72D0092642E /* SGArticleDetailInfo.swift */; };
 		C21313591C55C72D0092642E /* SGArticleDetailPagingTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21313531C55C72D0092642E /* SGArticleDetailPagingTool.swift */; };
 		C213135A1C55C72D0092642E /* SGArticleDetailToolBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21313541C55C72D0092642E /* SGArticleDetailToolBar.swift */; };
@@ -113,6 +115,8 @@
 		96323D991C55C73A00299439 /* UIViewController+STExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+STExtension.swift"; sourceTree = "<group>"; };
 		96323D9B1C55D25900299439 /* Register.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Register.json; sourceTree = "<group>"; };
 		96C6A98E1C54DF04000F253F /* UIImage+STCreation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+STCreation.swift"; sourceTree = "<group>"; };
+		96CEE3E91C62493A00A78A81 /* SGAccountAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGAccountAPI.swift; sourceTree = "<group>"; };
+		96CEE3EB1C624DC800A78A81 /* UserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		C21313511C55C72D0092642E /* SGArticleDetailInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGArticleDetailInfo.swift; sourceTree = "<group>"; };
 		C21313531C55C72D0092642E /* SGArticleDetailPagingTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGArticleDetailPagingTool.swift; sourceTree = "<group>"; };
 		C21313541C55C72D0092642E /* SGArticleDetailToolBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGArticleDetailToolBar.swift; sourceTree = "<group>"; };
@@ -208,6 +212,7 @@
 			isa = PBXGroup;
 			children = (
 				23167EB01C48DAD200A83F64 /* SwiftGGAPI.swift */,
+				96CEE3E91C62493A00A78A81 /* SGAccountAPI.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -217,6 +222,7 @@
 			children = (
 				23167EB31C48E8B900A83F64 /* ArticleCategory.swift */,
 				7A3CB2101C551B1C00579593 /* HomeViewCellModel.swift */,
+				96CEE3EB1C624DC800A78A81 /* UserModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -657,6 +663,7 @@
 				D8D37CDB1C4FA9610024E331 /* JPushHelper.swift in Sources */,
 				C2459A111C5F330300F0B5B3 /* SGAriticleDetailMetaData.swift in Sources */,
 				230671111C5390B7003C06C6 /* SGSettingViewController.swift in Sources */,
+				96CEE3EA1C62493A00A78A81 /* SGAccountAPI.swift in Sources */,
 				C21313581C55C72D0092642E /* SGArticleDetailInfo.swift in Sources */,
 				F25D2A2D1C47E4D7000E5EEE /* SGCategoryHomeViewController.swift in Sources */,
 				C213135A1C55C72D0092642E /* SGArticleDetailToolBar.swift in Sources */,
@@ -666,6 +673,7 @@
 				96323D9A1C55C73A00299439 /* UIViewController+STExtension.swift in Sources */,
 				7A3CB20C1C55023000579593 /* SGHomeViewCell.swift in Sources */,
 				F25D2A341C47E4F4000E5EEE /* SGTabBarController.swift in Sources */,
+				96CEE3EC1C624DC800A78A81 /* UserModel.swift in Sources */,
 				C21313591C55C72D0092642E /* SGArticleDetailPagingTool.swift in Sources */,
 				F25D2A231C47E4D7000E5EEE /* SGLoginViewController.swift in Sources */,
 				230671131C539CED003C06C6 /* SGAboutViewController.swift in Sources */,
