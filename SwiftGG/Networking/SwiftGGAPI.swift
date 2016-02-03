@@ -9,9 +9,18 @@
 import Foundation
 import Moya
 
-enum SGError: String, ErrorType {
-    case TimeOut = "请求超时"
-    case Failure = "请求失败"
+enum SGError: CustomStringConvertible {
+    case TimeOut
+    case Failure
+    
+    var description: String {
+        switch self {
+        case .TimeOut:
+            return "请求超时"
+        case .Failure:
+            return "请求失败"
+        }
+    }
 }
 
 let endpointClosure = { (target: SwiftGGAPI) -> Endpoint<SwiftGGAPI> in

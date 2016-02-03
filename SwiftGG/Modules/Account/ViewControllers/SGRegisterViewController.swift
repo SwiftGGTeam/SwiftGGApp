@@ -83,7 +83,7 @@ extension SGRegisterViewController {
                 print(userModel)
             },
             failure: { error in
-                print(error.rawValue)
+                print(error)
         })
     }
 }
