@@ -12,8 +12,17 @@ protocol SGArticleDetailToolBarStyleProtocol {
     
 }
 
+protocol SGArticleDetailToolBarProtocol: class {
+    func backPressed()
+    func forwardPressed()
+}
+
 class SGArticleDetailToolBar: NSObject {
 
+    @IBOutlet var backButton: UIButton!
+    @IBOutlet var forwardButton: UIButton!
+    
+    weak var delegate: SGArticleDetailToolBarProtocol?
     /*
     // Only override drawRect: if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
@@ -21,5 +30,16 @@ class SGArticleDetailToolBar: NSObject {
         // Drawing code
     }
     */
+    @IBAction func backPressed(sender: AnyObject) {
+        self.delegate?.backPressed()
+    }
 
+    @IBAction func forwardPressed(sender: AnyObject) {
+        self.delegate?.forwardPressed()
+    }
+    
+    override init() {
+        super.init()
+        NSBundle.mainBundle().loadNibNamed("SGArticleDetailToolBar", owner: self, options: nil)
+    }
 }

@@ -51,6 +51,7 @@ class SGHomeViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let articleDetailVC = SGArticleDetailViewController(nibName: "SGArticleDetailViewController", bundle: nil);
+        articleDetailVC.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(articleDetailVC, animated: true)
         articleDetailVC.articleDetailInfoProtocol = self
     }

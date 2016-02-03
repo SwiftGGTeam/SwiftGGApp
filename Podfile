@@ -10,4 +10,7 @@ target 'SwiftGG' do
 	pod 'UIColor_Hex_Swift', '~> 1.8'
 	pod 'Kingfisher', '~> 1.9'
 	pod 'RealmSwift', '~>0.96.0'
+	pod 'RxSwift',    '~> 2.0'
+	pod 'RxCocoa',    '~> 2.0'
+	pod 'RxBlocking', '~> 2.0'
 end
