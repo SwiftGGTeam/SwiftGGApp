@@ -78,26 +78,12 @@ extension SGRegisterViewController {
             return
         }
         
-        SwiftGGProvider.request(.Register(username, password)) { result in
-            switch result {
-            case .Success(let response):
-                do {
-                    let resultData = try response.mapJSON() as! [String : AnyObject]
-                    let code = resultData["ret"] as! Int
-                    
-                    if code == 0 {
-                        print("注册成功")
-                    } else {
-                        print("ERROR")
-                    }
-                } catch Error.Underlying(let error) {
-                    print(error)
-                } catch {
-                    print("Unknow error")
-                }
-            case .Failure(let error):
-                print(error)
-            }
-        }
+        SGAccountAPI.sendRegisterRequest(username, password: password,
+            success: { userModel in
+                print(userModel)
+            },
+            failure: { error in
+                print(error.rawValue)
+        })
     }
 }
