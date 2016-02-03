@@ -22,9 +22,9 @@ class SGLoginViewController: UIViewController {
     // MARK: Actions
     @IBAction func loginButtonTapped() {
         
-        loginSuccess()
+//        loginSuccess()
         
-//        loginRequest()
+        loginRequest()
     }
     
     @IBAction func registerButtonTapped() {
@@ -50,11 +50,11 @@ extension SGLoginViewController {
         let password = passwordTextField.text!
         
         guard username != "" else {
-            st_showAlertWithMessgae("用户名不能为空")
+            st_showErrorWithMessgae("用户名不能为空")
             return
         }
         guard password != "" else {
-            st_showAlertWithMessgae("密码不能为空")
+            st_showErrorWithMessgae("密码不能为空")
             return
         }
         
@@ -70,7 +70,7 @@ extension SGLoginViewController {
                         if username == "swiftgg" && password == "swiftgg" {
                             self.loginSuccess()
                         } else {
-                            self.st_showAlertWithMessgae("用户名或密码错误")
+                            self.st_showErrorWithMessgae("用户名或密码错误")
                         }
                     } else {
                         print("Error")
