@@ -64,17 +64,17 @@ extension SGRegisterViewController {
         let confirmPassword = confirmPasswordTextField.text!
         
         guard username != "" else {
-            st_showAlertWithMessgae("用户名不能为空")
+            st_showErrorWithMessgae("用户名不能为空")
             return
         }
         
         guard password != "" else {
-            st_showAlertWithMessgae("密码不能为空")
+            st_showErrorWithMessgae("密码不能为空")
             return
         }
         
         guard confirmPassword == password else {
-            st_showAlertWithMessgae("两次密码不同")
+            st_showErrorWithMessgae("两次密码不同")
             return
         }
         

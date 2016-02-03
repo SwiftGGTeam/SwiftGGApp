@@ -10,4 +10,6 @@ target 'SwiftGG' do
 	pod 'UIColor_Hex_Swift', '~> 1.8'
 	pod 'Kingfisher', '~> 1.9'
 	pod 'RealmSwift', '~>0.96.0'
+	pod 'JGProgressHUD'
+	pod 'Gloss', '~> 0.6'
 end
