@@ -50,6 +50,11 @@ class SGRegisterViewController: UIViewController {
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
         return .LightContent
     }
+    
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        super.touchesBegan(touches, withEvent: event)
+        view.endEditing(true)
+    }
 }
 
 extension SGRegisterViewController {

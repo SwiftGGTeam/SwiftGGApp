@@ -31,6 +31,11 @@ class SGLoginViewController: UIViewController {
         let registerController = SGRegisterViewController()
         navigationController?.pushViewController(registerController, animated: true)
     }
+    
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        super.touchesBegan(touches, withEvent: event)
+        view.endEditing(true)
+    }
 }
 
 extension SGLoginViewController {
