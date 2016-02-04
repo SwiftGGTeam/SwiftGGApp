@@ -16,6 +16,7 @@
 		230671111C5390B7003C06C6 /* SGSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230671101C5390B7003C06C6 /* SGSettingViewController.swift */; };
 		230671131C539CED003C06C6 /* SGAboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230671121C539CED003C06C6 /* SGAboutViewController.swift */; };
 		230671151C539D0C003C06C6 /* SGAboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 230671141C539D0C003C06C6 /* SGAboutViewController.xib */; };
+		230AA7181C639A8F0077E662 /* SGNetworkLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230AA7171C639A8F0077E662 /* SGNetworkLogger.swift */; };
 		23167EA11C48D6B200A83F64 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23167EA01C48D6B200A83F64 /* AppDelegate.swift */; };
 		23167EA71C48D6D600A83F64 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 23167EA31C48D6D600A83F64 /* Assets.xcassets */; };
 		23167EA81C48D6D600A83F64 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23167EA41C48D6D600A83F64 /* LaunchScreen.storyboard */; };
@@ -93,6 +94,7 @@
 		230671101C5390B7003C06C6 /* SGSettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGSettingViewController.swift; sourceTree = "<group>"; };
 		230671121C539CED003C06C6 /* SGAboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGAboutViewController.swift; sourceTree = "<group>"; };
 		230671141C539D0C003C06C6 /* SGAboutViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SGAboutViewController.xib; sourceTree = "<group>"; };
+		230AA7171C639A8F0077E662 /* SGNetworkLogger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGNetworkLogger.swift; sourceTree = "<group>"; };
 		23167EA01C48D6B200A83F64 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		23167EA31C48D6D600A83F64 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		23167EA51C48D6D600A83F64 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -213,6 +215,7 @@
 			children = (
 				23167EB01C48DAD200A83F64 /* SwiftGGAPI.swift */,
 				96CEE3E91C62493A00A78A81 /* SGAccountAPI.swift */,
+				230AA7171C639A8F0077E662 /* SGNetworkLogger.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -665,6 +668,7 @@
 				230671111C5390B7003C06C6 /* SGSettingViewController.swift in Sources */,
 				96CEE3EA1C62493A00A78A81 /* SGAccountAPI.swift in Sources */,
 				C21313581C55C72D0092642E /* SGArticleDetailInfo.swift in Sources */,
+				230AA7181C639A8F0077E662 /* SGNetworkLogger.swift in Sources */,
 				F25D2A2D1C47E4D7000E5EEE /* SGCategoryHomeViewController.swift in Sources */,
 				C213135A1C55C72D0092642E /* SGArticleDetailToolBar.swift in Sources */,
 				23167EB41C48E8B900A83F64 /* ArticleCategory.swift in Sources */,

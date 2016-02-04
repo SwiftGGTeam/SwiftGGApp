@@ -12,4 +12,5 @@ target 'SwiftGG' do
 	pod 'RealmSwift', '~>0.96.0'
 	pod 'JGProgressHUD'
 	pod 'Gloss', '~> 0.6'
+	pod 'XCGLogger', '~> 3.2'
 end
