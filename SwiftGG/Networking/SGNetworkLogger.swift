@@ -9,7 +9,6 @@
 import Moya
 import Result
 import XCGLogger
-import Async
 
 class SGNetworkLogger: PluginType {
     let log: XCGLogger = {
