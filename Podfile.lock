@@ -17,6 +17,7 @@ PODS:
   - Result (1.0.1)
   - SwiftyJSON (2.3.2)
   - UIColor_Hex_Swift (1.8)
+  - XCGLogger (3.2)
 
 DEPENDENCIES:
   - Alamofire (~> 3.0)
@@ -28,6 +29,7 @@ DEPENDENCIES:
   - RealmSwift (~> 0.96.0)
   - SwiftyJSON (from `https://github.com/SwiftyJSON/SwiftyJSON.git`)
   - UIColor_Hex_Swift (~> 1.8)
+  - XCGLogger (~> 3.2)
 
 EXTERNAL SOURCES:
   SwiftyJSON:
@@ -50,5 +52,6 @@ SPEC CHECKSUMS:
   Result: caef80340451e1f07492fa1e89117f83613bce24
   SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
   UIColor_Hex_Swift: a66b9d5f6e8fddbd9fe32996504f0b7e9d20d680
+  XCGLogger: da1f341f4bb8979db6e1df64232f04d9698402d4
 
 COCOAPODS: 0.39.0

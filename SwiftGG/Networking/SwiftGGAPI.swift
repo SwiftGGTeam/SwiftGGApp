@@ -28,11 +28,7 @@ let endpointClosure = { (target: SwiftGGAPI) -> Endpoint<SwiftGGAPI> in
     return endpoint
 }
 
-let stubClosure = { (target: SwiftGGAPI) -> StubBehavior in
-    return .Never
-}
-
-let SwiftGGProvider = MoyaProvider<SwiftGGAPI>(endpointClosure: endpointClosure, stubClosure: stubClosure )
+let SwiftGGProvider = MoyaProvider<SwiftGGAPI>(endpointClosure: endpointClosure, plugins: [SGNetworkLogger()])
 
 enum SwiftGGAPI {
     case CategoryListings
