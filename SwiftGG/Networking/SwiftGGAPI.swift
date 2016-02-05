@@ -24,10 +24,9 @@ enum SGError: CustomStringConvertible {
 }
 
 let endpointClosure = { (target: SwiftGGAPI) -> Endpoint<SwiftGGAPI> in
-    let endpoint: Endpoint<SwiftGGAPI> = Endpoint<SwiftGGAPI>(URL: url(target), sampleResponseClosure: {.NetworkResponse(200, target.sampleData)}, method: target.method, parameters: target.parameters, parameterEncoding: .JSON)
+    let endpoint: Endpoint<SwiftGGAPI> = Endpoint<SwiftGGAPI>(URL: url(target), sampleResponseClosure: {.NetworkResponse(200, target.sampleData)}, method: target.method, parameters: target.parameters, parameterEncoding: .URL)
     
     let headerFields = [
-        "Content-Type": "application/x-www-form-urlencoded",
         "Accept": "application/json"
     ]
     
