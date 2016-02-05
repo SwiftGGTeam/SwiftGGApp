@@ -24,8 +24,13 @@ enum SGError: CustomStringConvertible {
 }
 
 let endpointClosure = { (target: SwiftGGAPI) -> Endpoint<SwiftGGAPI> in
-    let endpoint: Endpoint<SwiftGGAPI> = Endpoint<SwiftGGAPI>(URL: url(target), sampleResponseClosure: {.NetworkResponse(200, target.sampleData)}, method: target.method, parameters: target.parameters, parameterEncoding: .JSON)
-    return endpoint
+    let endpoint: Endpoint<SwiftGGAPI> = Endpoint<SwiftGGAPI>(URL: url(target), sampleResponseClosure: {.NetworkResponse(200, target.sampleData)}, method: target.method, parameters: target.parameters, parameterEncoding: .URL)
+    
+    let headerFields = [
+        "Accept": "application/json"
+    ]
+    
+    return endpoint.endpointByAddingHTTPHeaderFields(headerFields)
 }
 
 let SwiftGGProvider = MoyaProvider<SwiftGGAPI>(endpointClosure: endpointClosure, plugins: [SGNetworkLogger()])

@@ -10,12 +10,8 @@ import Foundation
 
 class UserModel {
     var userId: String!
-    var username: String!
-    var password: String!
     
     init(jsonDict: [String: AnyObject]) {
         userId = jsonDict["userId"] as! String
-        username = jsonDict["username"] as! String
-        password = jsonDict["password"] as! String
     }
 }
