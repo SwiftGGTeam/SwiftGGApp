@@ -21,15 +21,31 @@ class SGLoginViewController: UIViewController {
     
     // MARK: Actions
     @IBAction func loginButtonTapped() {
-        
-//        loginSuccess()
-        
         loginRequest()
     }
     
     @IBAction func registerButtonTapped() {
         let registerController = SGRegisterViewController()
         navigationController?.pushViewController(registerController, animated: true)
+    }
+    
+    @IBAction func thirdPartyLoginButtonTapped() {
+        let thirdPartyLoginController = SGThirdPartyLoginViewController()
+        
+        addChildViewController(thirdPartyLoginController)
+        view.addSubview(thirdPartyLoginController.view)
+        
+        
+        
+        thirdPartyLoginController.view.translatesAutoresizingMaskIntoConstraints = false
+        view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|[view]|", options: [], metrics: nil, views: ["view": thirdPartyLoginController.view]))
+        view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|[view]|", options: [], metrics: nil, views: ["view": thirdPartyLoginController.view]))
+        thirdPartyLoginController.didMoveToParentViewController(self)
+        
+        thirdPartyLoginController.view.alpha = 0.0
+        UIView.animateWithDuration(0.33) {
+            thirdPartyLoginController.view.alpha = 1.0
+        }
     }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {

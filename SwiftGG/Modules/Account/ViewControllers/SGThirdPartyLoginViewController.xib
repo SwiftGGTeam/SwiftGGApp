@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SGThirdPartyLoginViewController" customModule="SwiftGG" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="NrN-Pn-wIE" id="D1o-qB-z8d"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="NrN-Pn-wIE">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2X2-KZ-9hy">
+                    <rect key="frame" x="20" y="240.5" width="280" height="44"/>
+                    <color key="backgroundColor" red="0.85490196078431369" green="0.27843137254901962" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="pkW-bn-a0D"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <state key="normal" title="微博登录" image="ic_Weibo">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EmO-24-H7h">
+                    <rect key="frame" x="20" y="292.5" width="280" height="44"/>
+                    <color key="backgroundColor" red="0.43529411764705883" green="0.8901960784313725" blue="0.26666666666666666" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="ZMc-Gq-y3u"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <state key="normal" title="微信登录" image="ic_Wechat">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cia-x2-iF1">
+                    <rect key="frame" x="20" y="345" width="280" height="44"/>
+                    <color key="backgroundColor" red="0.29019607843137252" green="0.29019607843137252" blue="0.29019607843137252" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="hLW-6t-rtw"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <state key="normal" title="Github 登录" image="ic_QQ">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DNL-Kc-svl">
+                    <rect key="frame" x="282" y="214.5" width="18" height="18"/>
+                    <state key="normal" backgroundImage="third_party_close"/>
+                    <connections>
+                        <action selector="closeButtonTapped:" destination="-1" eventType="touchUpInside" id="Ypg-kL-diH"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="您可以用以下方式登录" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O8z-b1-lKD">
+                    <rect key="frame" x="20" y="216" width="120" height="14.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="0.094117647058823528" green="0.094117647058823528" blue="0.094117647058823528" alpha="0.69999999999999996" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="Cia-x2-iF1" firstAttribute="trailing" secondItem="2X2-KZ-9hy" secondAttribute="trailing" id="AfA-lC-j0N"/>
+                <constraint firstItem="EmO-24-H7h" firstAttribute="leading" secondItem="2X2-KZ-9hy" secondAttribute="leading" id="C9v-qC-362"/>
+                <constraint firstItem="EmO-24-H7h" firstAttribute="trailing" secondItem="2X2-KZ-9hy" secondAttribute="trailing" id="DoF-Dq-Tis"/>
+                <constraint firstItem="O8z-b1-lKD" firstAttribute="leading" secondItem="NrN-Pn-wIE" secondAttribute="leading" constant="20" symbolic="YES" id="GIS-Od-g0n"/>
+                <constraint firstItem="O8z-b1-lKD" firstAttribute="centerY" secondItem="NrN-Pn-wIE" secondAttribute="centerY" constant="-60" id="KWs-Ff-hcq"/>
+                <constraint firstItem="Cia-x2-iF1" firstAttribute="top" secondItem="EmO-24-H7h" secondAttribute="bottom" constant="8" id="a9r-NU-qlg"/>
+                <constraint firstItem="O8z-b1-lKD" firstAttribute="centerY" secondItem="DNL-Kc-svl" secondAttribute="centerY" id="aTQ-Es-Xw2"/>
+                <constraint firstAttribute="trailing" secondItem="2X2-KZ-9hy" secondAttribute="trailing" constant="20" symbolic="YES" id="c0e-dX-Nbz"/>
+                <constraint firstItem="2X2-KZ-9hy" firstAttribute="leading" secondItem="NrN-Pn-wIE" secondAttribute="leading" constant="20" symbolic="YES" id="eWs-PZ-Izo"/>
+                <constraint firstItem="EmO-24-H7h" firstAttribute="top" secondItem="2X2-KZ-9hy" secondAttribute="bottom" constant="8" symbolic="YES" id="eks-52-mHV"/>
+                <constraint firstItem="2X2-KZ-9hy" firstAttribute="top" secondItem="DNL-Kc-svl" secondAttribute="bottom" constant="8" id="g78-tu-gg3"/>
+                <constraint firstItem="Cia-x2-iF1" firstAttribute="leading" secondItem="2X2-KZ-9hy" secondAttribute="leading" id="kES-zW-Rbh"/>
+                <constraint firstItem="DNL-Kc-svl" firstAttribute="trailing" secondItem="2X2-KZ-9hy" secondAttribute="trailing" id="pCD-Ur-KrY"/>
+            </constraints>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+            <point key="canvasLocation" x="346" y="244"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="ic_QQ" width="22" height="25"/>
+        <image name="ic_Wechat" width="25" height="22"/>
+        <image name="ic_Weibo" width="24" height="20"/>
+        <image name="third_party_close" width="18" height="18"/>
+    </resources>
+</document>
