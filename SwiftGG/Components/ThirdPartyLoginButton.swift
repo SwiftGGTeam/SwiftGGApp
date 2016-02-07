@@ -8,7 +8,6 @@
 
 import UIKit
 
-@IBDesignable
 class ThirdPartyLoginButton: UIControl {
     private var imageView: UIImageView = {
         let iv = UIImageView()
@@ -19,7 +18,6 @@ class ThirdPartyLoginButton: UIControl {
         let l = UILabel()
         l.translatesAutoresizingMaskIntoConstraints = false
         l.font = UIFont.systemFontOfSize(14)
-        l.textColor = UIColor.whiteColor()
         return l
     }()
     
@@ -43,7 +41,7 @@ extension ThirdPartyLoginButton {
         }
         
         set(newImage) {
-            imageView.image = newImage?.imageWithRenderingMode(.AlwaysOriginal)
+            imageView.image = newImage?.imageWithRenderingMode(.AlwaysTemplate)
         }
     }
     
@@ -63,8 +61,15 @@ extension ThirdPartyLoginButton {
         translatesAutoresizingMaskIntoConstraints = false
         addSubview(imageView)
         addSubview(label)
+        addTapGestureRecognizer()
         
-        NSLayoutConstraint(item: imageView, attribute: .Leading, relatedBy: .Equal, toItem: self, attribute: .LeadingMargin, multiplier: 1.0, constant: 0.0).active = true
+        label.textColor = tintColor
+        
+        let views = ["imageView": imageView]
+        
+        NSLayoutConstraint.activateConstraints(
+            NSLayoutConstraint.constraintsWithVisualFormat("H:|-[imageView]", options: [], metrics: nil, views: views)
+        )
         NSLayoutConstraint(item: imageView, attribute: .CenterY, relatedBy: .Equal, toItem: self, attribute: .CenterY, multiplier: 1.0, constant: 0.0).active = true
         
         NSLayoutConstraint(item: label, attribute: .CenterX, relatedBy: .Equal, toItem: self, attribute: .CenterX, multiplier: 1.0, constant: 0.0).active = true
@@ -75,5 +80,40 @@ extension ThirdPartyLoginButton {
         imageView.setContentHuggingPriority(UILayoutPriorityDefaultHigh, forAxis: .Horizontal)
         label.setContentHuggingPriority(UILayoutPriorityDefaultHigh, forAxis: .Horizontal)
         setContentHuggingPriority(UILayoutPriorityDefaultHigh, forAxis: .Horizontal)
+    }
+}
+
+extension ThirdPartyLoginButton {
+    override func tintColorDidChange() {
+        super.tintColorDidChange()
+        label.textColor = tintColor
+    }
+    
+    private func addTapGestureRecognizer() {
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: Selector("handleButtonTapped:"))
+        addGestureRecognizer(tapGestureRecognizer)
+    }
+    
+    func handleButtonTapped(tapGestureRecoginzer: UITapGestureRecognizer) {
+        sendActionsForControlEvents(.TouchUpInside)
+    }
+    
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        animateTintAdjustmentMode(.Dimmed)
+    }
+    
+    override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        animateTintAdjustmentMode(.Normal)
+    }
+    
+    override func touchesCancelled(touches: Set<UITouch>?, withEvent event: UIEvent?) {
+        animateTintAdjustmentMode(.Normal)
+    }
+    
+    private func animateTintAdjustmentMode(mode: UIViewTintAdjustmentMode) {
+        let duration = (mode == .Normal ? 0.33 : 0.05)
+        UIView.animateWithDuration(duration) {
+            self.tintAdjustmentMode = mode
+        }
     }
 }
