@@ -19,7 +19,7 @@
                     <rect key="frame" x="282" y="214" width="18" height="18"/>
                     <state key="normal" backgroundImage="third_party_close"/>
                     <connections>
-                        <action selector="closeButtonTapped:" destination="-1" eventType="touchUpInside" id="Ypg-kL-diH"/>
+                        <action selector="closeButtonTapped" destination="-1" eventType="touchUpInside" id="4q4-mG-e82"/>
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="您可以用以下方式登录" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O8z-b1-lKD">
@@ -28,20 +28,10 @@
                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7MV-JI-e4R" customClass="ThirdPartyLoginButton" customModule="SwiftGG" customModuleProvider="target">
-                    <rect key="frame" x="20" y="240" width="280" height="44"/>
-                    <color key="backgroundColor" red="0.85490196080000003" green="0.2784313725" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="44" id="sAf-VY-ART"/>
-                    </constraints>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="image" keyPath="image" value="ic_Weibo"/>
-                        <userDefinedRuntimeAttribute type="string" keyPath="text" value="微博登录"/>
-                    </userDefinedRuntimeAttributes>
-                </view>
-                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ddE-u1-Sut" customClass="ThirdPartyLoginButton" customModule="SwiftGG" customModuleProvider="target">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ddE-u1-Sut" customClass="ThirdPartyLoginButton" customModule="SwiftGG" customModuleProvider="target">
                     <rect key="frame" x="20" y="344" width="280" height="44"/>
                     <color key="backgroundColor" red="0.29019607843137252" green="0.29019607843137252" blue="0.29019607843137252" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="44" id="DCc-UA-lqT"/>
                     </constraints>
@@ -49,10 +39,14 @@
                         <userDefinedRuntimeAttribute type="image" keyPath="image" value="ic_QQ"/>
                         <userDefinedRuntimeAttribute type="string" keyPath="text" value="Github 登录"/>
                     </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="githubLoginButtonTapped:" destination="-1" eventType="touchUpInside" id="HBp-Za-igg"/>
+                    </connections>
                 </view>
-                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hJy-xE-0wh" customClass="ThirdPartyLoginButton" customModule="SwiftGG" customModuleProvider="target">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hJy-xE-0wh" customClass="ThirdPartyLoginButton" customModule="SwiftGG" customModuleProvider="target">
                     <rect key="frame" x="20" y="292" width="280" height="44"/>
                     <color key="backgroundColor" red="0.43529411764705883" green="0.8901960784313725" blue="0.26666666666666666" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="44" id="tVG-1k-g3k"/>
                     </constraints>
@@ -60,9 +54,27 @@
                         <userDefinedRuntimeAttribute type="image" keyPath="image" value="ic_Wechat"/>
                         <userDefinedRuntimeAttribute type="string" keyPath="text" value="微信登录"/>
                     </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="wechatLoginButtonTapped:" destination="-1" eventType="touchUpInside" id="nde-Qp-Uqo"/>
+                    </connections>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7MV-JI-e4R" customClass="ThirdPartyLoginButton" customModule="SwiftGG" customModuleProvider="target">
+                    <rect key="frame" x="20" y="240" width="280" height="44"/>
+                    <color key="backgroundColor" red="0.85490196080000003" green="0.2784313725" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="sAf-VY-ART"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="image" keyPath="image" value="ic_Weibo"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="text" value="微博登录"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="weiboLoginButtonTapped:" destination="-1" eventType="touchUpInside" id="CNM-72-4gH"/>
+                    </connections>
                 </view>
             </subviews>
-            <color key="backgroundColor" red="0.094117647058823528" green="0.094117647058823528" blue="0.094117647058823528" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
+            <color key="backgroundColor" red="0.094117647058823528" green="0.094117647058823528" blue="0.094117647058823528" alpha="0.69999999999999996" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstItem="hJy-xE-0wh" firstAttribute="trailing" secondItem="7MV-JI-e4R" secondAttribute="trailing" id="1zX-T1-qJ4"/>
                 <constraint firstItem="DNL-Kc-svl" firstAttribute="trailing" secondItem="7MV-JI-e4R" secondAttribute="trailing" id="5hA-Ab-oEd"/>

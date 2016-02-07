@@ -14,7 +14,7 @@ class SGThirdPartyLoginViewController: UIViewController {
     }
     
     // MARK: Actions
-    @IBAction func closeButtonTapped(sender: UIButton) {
+    @IBAction func closeButtonTapped() {
         willMoveToParentViewController(nil)
         
         UIView.animateWithDuration(0.33,
@@ -25,5 +25,20 @@ class SGThirdPartyLoginViewController: UIViewController {
             self.view.removeFromSuperview()
             self.removeFromParentViewController()
         })
+    }
+    
+    @IBAction func weiboLoginButtonTapped(sender: ThirdPartyLoginButton) {
+        print("微博登录")
+        closeButtonTapped()
+    }
+    
+    @IBAction func wechatLoginButtonTapped(sender: ThirdPartyLoginButton) {
+        print("微信登录")
+        closeButtonTapped()
+    }
+    
+    @IBAction func githubLoginButtonTapped(sender: ThirdPartyLoginButton) {
+        print("Github 登录")
+        closeButtonTapped()
     }
 }
