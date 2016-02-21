@@ -17,6 +17,9 @@ class SGLoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavigationBar()
+        // FIXME: 登录用户名密码暂时写死
+        passwordTextField.text = "swiftgg"
+        usernameTextField.text = "swiftgg"
     }
     
     // MARK: Actions
@@ -34,8 +37,6 @@ class SGLoginViewController: UIViewController {
         
         addChildViewController(thirdPartyLoginController)
         view.addSubview(thirdPartyLoginController.view)
-        
-        
         
         thirdPartyLoginController.view.translatesAutoresizingMaskIntoConstraints = false
         view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|[view]|", options: [], metrics: nil, views: ["view": thirdPartyLoginController.view]))
