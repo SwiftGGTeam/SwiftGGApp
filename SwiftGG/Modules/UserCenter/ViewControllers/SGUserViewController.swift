@@ -8,7 +8,6 @@
 
 import UIKit
 
-private let cellIdentifier = "SGUserReadingTableViewCell"
 
 class SGUserViewController: UIViewController {
 
@@ -35,7 +34,7 @@ extension SGUserViewController: UITableViewDataSource {
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! SGUserReadingTableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier(String(SGUserReadingTableViewCell), forIndexPath: indexPath) as! SGUserReadingTableViewCell
         
         // configure cell
         return cell
@@ -79,7 +78,7 @@ extension SGUserViewController {
 extension SGUserViewController {
     private func setupViews() {
         view.backgroundColor = UIColor(rgba: "#3595BF")
-        tableView.registerNib(UINib(nibName: "SGUserReadingTableViewCell", bundle: nil), forCellReuseIdentifier: cellIdentifier)
+        tableView.registerNib(UINib(nibName: "SGUserReadingTableViewCell", bundle: nil), forCellReuseIdentifier: String(SGUserReadingTableViewCell))
         tableView.dataSource = self
         tableView.delegate = self
     }
