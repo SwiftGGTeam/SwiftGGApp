@@ -17,6 +17,18 @@ class SGAboutViewController: UIViewController {
         super.viewDidLoad()
         setupNavigationBar()
     }
+
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+
+        UIApplication.sharedApplication().statusBarStyle = .Default
+    }
+
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+
+        UIApplication.sharedApplication().statusBarStyle = .LightContent
+    }
     
     // MARK: - Helper Methods
     func setupNavigationBar() {

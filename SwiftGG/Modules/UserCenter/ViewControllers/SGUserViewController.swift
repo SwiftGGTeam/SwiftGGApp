@@ -81,19 +81,17 @@ extension SGUserViewController {
         tableView.registerNib(UINib(nibName: "SGUserReadingTableViewCell", bundle: nil), forCellReuseIdentifier: String(SGUserReadingTableViewCell))
         tableView.dataSource = self
         tableView.delegate = self
-    }
-    
-    private func setupNavigationBar() {
-        UIApplication.sharedApplication().statusBarStyle = .LightContent
-        
-        // remove navigation bar shadow
-        navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: .Default)
-        navigationController?.navigationBar.shadowImage = UIImage()
         
         // add setting barItem
         let settingBarItem = UIBarButtonItem(image: UIImage(named: "setting_nav_item"), style: .Plain, target: self, action: "settingButtonTapped:")
         settingBarItem.tintColor = UIColor.whiteColor()
         navigationItem.rightBarButtonItem = settingBarItem
+    }
+    
+    private func setupNavigationBar() {
+        // remove navigation bar shadow
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: .Default)
+        navigationController?.navigationBar.shadowImage = UIImage()
     }
     
 }
