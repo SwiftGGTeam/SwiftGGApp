@@ -70,6 +70,7 @@ extension SGUserViewController: UITableViewDelegate {
 extension SGUserViewController {
     func settingButtonTapped(sender: UIBarButtonItem) {
         let settingViewController = SGSettingViewController()
+        settingViewController.hidesBottomBarWhenPushed = true
         navigationController!.pushViewController(settingViewController, animated: true)
     }
 }
