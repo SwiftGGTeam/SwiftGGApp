@@ -66,6 +66,15 @@ extension SGUserViewController: UITableViewDelegate {
     }
 }
 
+// MARK: - SGUSerTableHeaderViewDelegate
+extension SGUserViewController: SGUSerTableHeaderViewDelegate {
+    func didUserInfoContainerPressed() {
+        let userInfoViewController = SGUserInfoViewController()
+        userInfoViewController.hidesBottomBarWhenPushed = true
+        navigationController!.pushViewController(userInfoViewController, animated: true)
+    }
+}
+
 // MARK: - Target-Action
 extension SGUserViewController {
     func settingButtonTapped(sender: UIBarButtonItem) {
@@ -82,6 +91,7 @@ extension SGUserViewController {
         tableView.registerNib(UINib(nibName: "SGUserReadingTableViewCell", bundle: nil), forCellReuseIdentifier: String(SGUserReadingTableViewCell))
         tableView.dataSource = self
         tableView.delegate = self
+        pinnedHeaderView.delegate = self
         
         // add setting barItem
         let settingBarItem = UIBarButtonItem(image: UIImage(named: "setting_nav_item"), style: .Plain, target: self, action: "settingButtonTapped:")

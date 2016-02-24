@@ -8,7 +8,13 @@
 
 import UIKit
 
+protocol SGUSerTableHeaderViewDelegate {
+    func didUserInfoContainerPressed()
+}
+
 class SGUSerTableHeaderView: UIView {
+    
+    var delegate: SGUSerTableHeaderViewDelegate?
     
     @IBOutlet weak var avatarImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
@@ -47,7 +53,7 @@ class SGUSerTableHeaderView: UIView {
     }
     
     func onUserInfoContainerClicked() {
-        print("container")
+        self.delegate?.didUserInfoContainerPressed()
     }
     
     func onFavButtonClicked() {
