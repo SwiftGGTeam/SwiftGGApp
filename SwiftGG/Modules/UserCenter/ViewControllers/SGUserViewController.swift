@@ -23,8 +23,9 @@ class SGUserViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
-        setupNavigationBar()
+        navigationController?.setNavigationBarHidden(true, animated: false)
     }
+
 }
 
 // MARK: - UITableViewDataSource
@@ -93,16 +94,28 @@ extension SGUserViewController {
         tableView.delegate = self
         pinnedHeaderView.delegate = self
         
+        addCustomNavigationBar()
+    }
+
+    private func addCustomNavigationBar() {
+        let customNavigationBar = UINavigationBar(frame: CGRectMake(0, 0, CGRectGetWidth(self.navigationController!.navigationBar.bounds), 64))
+        customNavigationBar.tintColor = UIColor.whiteColor()
+        customNavigationBar.tintAdjustmentMode = .Normal
+        customNavigationBar.alpha = 1
+        let customNavigationItem = UINavigationItem(title: "")
+        customNavigationBar.setItems([customNavigationItem], animated: false)
+        view.addSubview(customNavigationBar)
+
+        customNavigationBar.backgroundColor = UIColor.clearColor()
+        customNavigationBar.translucent = true
+        customNavigationBar.shadowImage = UIImage()
+        customNavigationBar.barStyle = UIBarStyle.BlackTranslucent
+        customNavigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
+
         // add setting barItem
         let settingBarItem = UIBarButtonItem(image: UIImage(named: "setting_nav_item"), style: .Plain, target: self, action: "settingButtonTapped:")
         settingBarItem.tintColor = UIColor.whiteColor()
-        navigationItem.rightBarButtonItem = settingBarItem
-    }
-    
-    private func setupNavigationBar() {
-        // remove navigation bar shadow
-        navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: .Default)
-        navigationController?.navigationBar.shadowImage = UIImage()
+        customNavigationItem.rightBarButtonItem = settingBarItem
     }
     
 }

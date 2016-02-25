@@ -195,11 +195,11 @@
 			children = (
 				18B5FBEB1C4E34F40089EFCC /* SGUserViewController.swift */,
 				18100FE51C570CBA0026BFAF /* SGUserViewController.xib */,
+				184EABAC1C7C7C520049CBB7 /* SGUserInfoViewController.swift */,
+				184EABAD1C7C7C520049CBB7 /* SGUserInfoViewController.xib */,
 				230671101C5390B7003C06C6 /* SGSettingViewController.swift */,
 				230671121C539CED003C06C6 /* SGAboutViewController.swift */,
 				230671141C539D0C003C06C6 /* SGAboutViewController.xib */,
-				184EABAC1C7C7C520049CBB7 /* SGUserInfoViewController.swift */,
-				184EABAD1C7C7C520049CBB7 /* SGUserInfoViewController.xib */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
