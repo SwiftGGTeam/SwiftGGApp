@@ -33,7 +33,7 @@ class SGUserInfoViewController: UIViewController {
 }
 
 // MARK: - Helper
-extension SGUserInfoViewController {
+extension SGUserInfoViewController: TransparentNavBarProtocol {
     private func setupViews() {
         avatarImageView.layer.borderWidth = 1.5
         avatarImageView.layer.borderColor = UIColor.whiteColor().CGColor
@@ -44,28 +44,13 @@ extension SGUserInfoViewController {
         shareButton.layer.borderColor = UIColor.whiteColor().CGColor
         shareButton.layer.cornerRadius = 8.0
 
-        addCustomNavigationBar()
-    }
-
-    private func addCustomNavigationBar() {
-        let customNavigationBar = UINavigationBar(frame: CGRectMake(0, 0, CGRectGetWidth(self.navigationController!.navigationBar.bounds), 64))
-        customNavigationBar.tintColor = UIColor.whiteColor()
-        customNavigationBar.tintAdjustmentMode = .Normal
-        customNavigationBar.alpha = 1
+        let transparentNavBar = transparentNavigationBar()
+        view.addSubview(transparentNavBar)
         let customNavigationItem = UINavigationItem(title: "")
-        customNavigationBar.setItems([customNavigationItem], animated: false)
-        view.addSubview(customNavigationBar)
-
-        customNavigationBar.backgroundColor = UIColor.clearColor()
-        customNavigationBar.translucent = true
-        customNavigationBar.shadowImage = UIImage()
-        customNavigationBar.barStyle = UIBarStyle.BlackTranslucent
-        customNavigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
-
-        // add setting barItem
-        let backBarItem = UIBarButtonItem(image: UIImage(named: "back_gray"), style: .Plain, target: self, action: "back")
-        backBarItem.tintColor = UIColor.whiteColor()
-        customNavigationItem.leftBarButtonItem = backBarItem
+        transparentNavBar.setItems([customNavigationItem], animated: false)
+        let settingBarItem = UIBarButtonItem(image: UIImage(named: "back_gray"), style: .Plain, target: self, action: "back")
+        settingBarItem.tintColor = UIColor.whiteColor()
+        customNavigationItem.leftBarButtonItem = settingBarItem
     }
     
     func back() {

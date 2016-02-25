@@ -15,6 +15,7 @@
 		18B5FBF11C4E34F40089EFCC /* SGUserTableHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18B5FBEE1C4E34F40089EFCC /* SGUserTableHeaderView.xib */; };
 		18B5FBF71C4E35950089EFCC /* SGUserReadingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B5FBF51C4E35950089EFCC /* SGUserReadingTableViewCell.swift */; };
 		18B5FBF81C4E35950089EFCC /* SGUserReadingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18B5FBF61C4E35950089EFCC /* SGUserReadingTableViewCell.xib */; };
+		18FC59161C7EF406003D36DE /* TransparentNavBarProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FC59151C7EF406003D36DE /* TransparentNavBarProtocol.swift */; };
 		230671111C5390B7003C06C6 /* SGSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230671101C5390B7003C06C6 /* SGSettingViewController.swift */; };
 		230671131C539CED003C06C6 /* SGAboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230671121C539CED003C06C6 /* SGAboutViewController.swift */; };
 		230671151C539D0C003C06C6 /* SGAboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 230671141C539D0C003C06C6 /* SGAboutViewController.xib */; };
@@ -98,6 +99,7 @@
 		18B5FBEE1C4E34F40089EFCC /* SGUserTableHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SGUserTableHeaderView.xib; sourceTree = "<group>"; };
 		18B5FBF51C4E35950089EFCC /* SGUserReadingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGUserReadingTableViewCell.swift; sourceTree = "<group>"; };
 		18B5FBF61C4E35950089EFCC /* SGUserReadingTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SGUserReadingTableViewCell.xib; sourceTree = "<group>"; };
+		18FC59151C7EF406003D36DE /* TransparentNavBarProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransparentNavBarProtocol.swift; sourceTree = "<group>"; };
 		230671101C5390B7003C06C6 /* SGSettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGSettingViewController.swift; sourceTree = "<group>"; };
 		230671121C539CED003C06C6 /* SGAboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGAboutViewController.swift; sourceTree = "<group>"; };
 		230671141C539D0C003C06C6 /* SGAboutViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SGAboutViewController.xib; sourceTree = "<group>"; };
@@ -347,6 +349,7 @@
 			children = (
 				96C6A98E1C54DF04000F253F /* UIImage+STCreation.swift */,
 				96323D991C55C73A00299439 /* UIViewController+STExtension.swift */,
+				18FC59151C7EF406003D36DE /* TransparentNavBarProtocol.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -711,6 +714,7 @@
 				F25D2A231C47E4D7000E5EEE /* SGLoginViewController.swift in Sources */,
 				230671131C539CED003C06C6 /* SGAboutViewController.swift in Sources */,
 				184EABAE1C7C7C520049CBB7 /* SGUserInfoViewController.swift in Sources */,
+				18FC59161C7EF406003D36DE /* TransparentNavBarProtocol.swift in Sources */,
 				18B5FBF01C4E34F40089EFCC /* SGUSerTableHeaderView.swift in Sources */,
 				F25D2A271C47E4D7000E5EEE /* SGRegisterViewController.swift in Sources */,
 				C213135B1C55C72D0092642E /* SGArticleDetailViewController.swift in Sources */,
