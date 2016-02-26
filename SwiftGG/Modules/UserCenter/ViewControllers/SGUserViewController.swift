@@ -10,7 +10,10 @@ import UIKit
 
 private let cellIdentifier = "SGUserReadingTableViewCell"
 
-class SGUserViewController: UITableViewController {
+class SGUserViewController: UIViewController {
+
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var pinnedHeaderView: SGUSerTableHeaderView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,23 +29,23 @@ class SGUserViewController: UITableViewController {
 }
 
 // MARK: - UITableViewDataSource
-extension SGUserViewController {
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10;
+extension SGUserViewController: UITableViewDataSource {
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 10
     }
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! SGUserReadingTableViewCell
         
         // configure cell
         return cell
     }
     
-    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return "正在阅读"
     }
     
-    override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let header = UIView(frame: CGRectMake(0, 0, tableView.frame.size.width, 28))
         let label = UILabel(frame: CGRectMake(5, 5, tableView.frame.size.width, 18))
         label.font = UIFont.systemFontOfSize(12)
@@ -50,9 +53,7 @@ extension SGUserViewController {
         label.textColor = UIColor(rgba: "#696969")
         header.addSubview(label)
         header.backgroundColor = UIColor(red:0.97, green:0.97, blue:0.97, alpha:1)
-        
-        // 添加上下两条分界线
-        addBorderToLayer(header.layer, edges: [UIRectEdge.Top, UIRectEdge.Bottom], color: UIColor(rgba: "#C7C7C7"), thickness: 0.5)
+        header.layer.addBorder([UIRectEdge.Bottom], color: UIColor(rgba: "#C7C7C7"), thickness: 0.5)
         
         return header
     }
@@ -60,8 +61,8 @@ extension SGUserViewController {
 }
 
 // MARK: - UITableViewDelegate
-extension SGUserViewController {
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+extension SGUserViewController: UITableViewDelegate {
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
 }
@@ -77,16 +78,14 @@ extension SGUserViewController {
 // MARK: - Helper
 extension SGUserViewController {
     private func setupViews() {
+        view.backgroundColor = UIColor(rgba: "#3595BF")
         tableView.registerNib(UINib(nibName: "SGUserReadingTableViewCell", bundle: nil), forCellReuseIdentifier: cellIdentifier)
-        tableView.tableHeaderView = NSBundle.mainBundle().loadNibNamed("SGUserTableHeaderView", owner: self, options: nil).first as! SGUSerTableHeaderView
+        tableView.dataSource = self
+        tableView.delegate = self
     }
     
     private func setupNavigationBar() {
         UIApplication.sharedApplication().statusBarStyle = .LightContent
-        
-        navigationController?.navigationBar.barTintColor = tableView.tableHeaderView?.backgroundColor
-        navigationController?.navigationBar.translucent = false
-        tableView.backgroundColor = UIColor(red:0.97, green:0.97, blue:0.97, alpha:1)
         
         // remove navigation bar shadow
         navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: .Default)
@@ -98,23 +97,33 @@ extension SGUserViewController {
         navigationItem.rightBarButtonItem = settingBarItem
     }
     
-    private func addBorderToLayer(layer: CALayer, edges: [UIRectEdge], color: UIColor, thickness: CGFloat) {
+}
+
+extension CALayer {
+    /**
+     Add border to layer
+     
+     - parameter edges:     which side to add border
+     - parameter color:     corlor of border to add
+     - parameter thickness: border width
+     */
+    func addBorder(edges: [UIRectEdge], color: UIColor, thickness: CGFloat) {
         for edge in edges {
             let border = CALayer()
             switch edge {
             case UIRectEdge.Top:
-                border.frame = CGRectMake(0, 0, CGRectGetWidth(layer.frame), thickness)
+                border.frame = CGRectMake(0, 0, CGRectGetWidth(self.frame), thickness)
             case UIRectEdge.Bottom:
-                border.frame = CGRectMake(0, CGRectGetHeight(layer.frame) - thickness, CGRectGetWidth(layer.frame), thickness)
+                border.frame = CGRectMake(0, CGRectGetHeight(self.frame) - thickness, CGRectGetWidth(self.frame), thickness)
             case UIRectEdge.Left:
-                border.frame = CGRectMake(0, 0, thickness, CGRectGetHeight(layer.frame))
+                border.frame = CGRectMake(0, 0, thickness, CGRectGetHeight(self.frame))
             case UIRectEdge.Right:
-                border.frame = CGRectMake(0, CGRectGetWidth(layer.frame) - thickness, thickness, CGRectGetHeight(layer.frame))
+                border.frame = CGRectMake(CGRectGetWidth(self.frame) - thickness, 0, thickness, CGRectGetHeight(self.frame))
             default:
                 break
             }
             border.backgroundColor = color.CGColor
-            layer.addSublayer(border)
+            self.addSublayer(border)
         }
     }
 }

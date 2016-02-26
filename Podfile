@@ -13,4 +13,7 @@ target 'SwiftGG' do
 	pod 'RxSwift',    '~> 2.0'
 	pod 'RxCocoa',    '~> 2.0'
 	pod 'RxBlocking', '~> 2.0'
+	pod 'JGProgressHUD'
+	pod 'Gloss', '~> 0.6'
+	pod 'XCGLogger', '~> 3.2'
 end
