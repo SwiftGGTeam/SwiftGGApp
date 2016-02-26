@@ -50,6 +50,11 @@ class SGRegisterViewController: UIViewController {
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
         return .LightContent
     }
+    
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        super.touchesBegan(touches, withEvent: event)
+        view.endEditing(true)
+    }
 }
 
 extension SGRegisterViewController {
@@ -59,40 +64,26 @@ extension SGRegisterViewController {
         let confirmPassword = confirmPasswordTextField.text!
         
         guard username != "" else {
-            st_showAlertWithMessgae("用户名不能为空")
+            st_showErrorWithMessgae("用户名不能为空")
             return
         }
         
         guard password != "" else {
-            st_showAlertWithMessgae("密码不能为空")
+            st_showErrorWithMessgae("密码不能为空")
             return
         }
         
         guard confirmPassword == password else {
-            st_showAlertWithMessgae("两次密码不同")
+            st_showErrorWithMessgae("两次密码不同")
             return
         }
         
-        SwiftGGProvider.request(.Register(username, password)) { result in
-            switch result {
-            case .Success(let response):
-                do {
-                    let resultData = try response.mapJSON() as! [String : AnyObject]
-                    let code = resultData["ret"] as! Int
-                    
-                    if code == 0 {
-                        print("注册成功")
-                    } else {
-                        print("ERROR")
-                    }
-                } catch Error.Underlying(let error) {
-                    print(error)
-                } catch {
-                    print("Unknow error")
-                }
-            case .Failure(let error):
+        SGAccountAPI.sendRegisterRequest(username, password: password,
+            success: { userModel in
+                print(userModel)
+            },
+            failure: { error in
                 print(error)
-            }
-        }
+        })
     }
 }

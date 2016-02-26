@@ -17,6 +17,9 @@ class SGLoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavigationBar()
+        // FIXME: 登录用户名密码暂时写死
+        passwordTextField.text = "swiftgg"
+        usernameTextField.text = "swiftgg"
     }
     
     // MARK: Actions
@@ -28,11 +31,33 @@ class SGLoginViewController: UIViewController {
         let registerController = SGRegisterViewController()
         navigationController?.pushViewController(registerController, animated: true)
     }
+    
+    @IBAction func thirdPartyLoginButtonTapped() {
+        let thirdPartyLoginController = SGThirdPartyLoginViewController()
+        
+        addChildViewController(thirdPartyLoginController)
+        view.addSubview(thirdPartyLoginController.view)
+        
+        thirdPartyLoginController.view.translatesAutoresizingMaskIntoConstraints = false
+        view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|[view]|", options: [], metrics: nil, views: ["view": thirdPartyLoginController.view]))
+        view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|[view]|", options: [], metrics: nil, views: ["view": thirdPartyLoginController.view]))
+        thirdPartyLoginController.didMoveToParentViewController(self)
+        
+        thirdPartyLoginController.view.alpha = 0.0
+        UIView.animateWithDuration(0.33) {
+            thirdPartyLoginController.view.alpha = 1.0
+        }
+    }
+    
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        super.touchesBegan(touches, withEvent: event)
+        view.endEditing(true)
+    }
 }
 
 extension SGLoginViewController {
     private func setupNavigationBar() {
-        title = "登录 SwiftGo"
+        title = "登录 SwiftGG"
         navigationController?.navigationBar.tintColor = UIColor.clearColor()
         navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: .Default)
         navigationController?.navigationBar.clipsToBounds = true
@@ -47,11 +72,11 @@ extension SGLoginViewController {
         let password = passwordTextField.text!
         
         guard username != "" else {
-            st_showAlertWithMessgae("用户名不能为空")
+            st_showErrorWithMessgae("用户名不能为空")
             return
         }
         guard password != "" else {
-            st_showAlertWithMessgae("密码不能为空")
+            st_showErrorWithMessgae("密码不能为空")
             return
         }
         
@@ -64,11 +89,10 @@ extension SGLoginViewController {
                     let code = resultData["ret"] as! Int
                     
                     if code == 0 {
-                        
                         if username == "swiftgg" && password == "swiftgg" {
                             self.loginSuccess()
                         } else {
-                            self.st_showAlertWithMessgae("用户名或密码错误")
+                            self.st_showErrorWithMessgae("用户名或密码错误")
                         }
                     } else {
                         print("Error")

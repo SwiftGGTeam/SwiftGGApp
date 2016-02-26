@@ -9,16 +9,31 @@
 import Foundation
 import Moya
 
+enum SGError: CustomStringConvertible {
+    case TimeOut
+    case Failure
+    
+    var description: String {
+        switch self {
+        case .TimeOut:
+            return "请求超时"
+        case .Failure:
+            return "请求失败"
+        }
+    }
+}
+
 let endpointClosure = { (target: SwiftGGAPI) -> Endpoint<SwiftGGAPI> in
-    let endpoint: Endpoint<SwiftGGAPI> = Endpoint<SwiftGGAPI>(URL: url(target), sampleResponseClosure: {.NetworkResponse(200, target.sampleData)}, method: target.method, parameters: target.parameters, parameterEncoding: .JSON)
-    return endpoint
+    let endpoint: Endpoint<SwiftGGAPI> = Endpoint<SwiftGGAPI>(URL: url(target), sampleResponseClosure: {.NetworkResponse(200, target.sampleData)}, method: target.method, parameters: target.parameters, parameterEncoding: .URL)
+    
+    let headerFields = [
+        "Accept": "application/json"
+    ]
+    
+    return endpoint.endpointByAddingHTTPHeaderFields(headerFields)
 }
 
-let stubClosure = { (target: SwiftGGAPI) -> StubBehavior in
-    return .Immediate
-}
-
-let SwiftGGProvider = MoyaProvider<SwiftGGAPI>(endpointClosure: endpointClosure, stubClosure: stubClosure )
+let SwiftGGProvider = MoyaProvider<SwiftGGAPI>(endpointClosure: endpointClosure, plugins: [SGNetworkLogger()])
 
 enum SwiftGGAPI {
     case CategoryListings
@@ -27,17 +42,17 @@ enum SwiftGGAPI {
 }
 
 extension SwiftGGAPI: TargetType {
-    var base: String { return "http://www.swiftgg.com/" }
+    var base: String { return "http://123.57.250.194/" }
     var baseURL: NSURL { return NSURL(string: base)! }
     
     var path: String {
         switch self {
         case .CategoryListings:
-            return "api/v1/article/getCategoryList"
+            return "v1/article/getCategoryList"
         case .Login:
-            return "api/v1/user/userLogin"
+            return "v1/user/userLogin"
         case .Register:
-            return "api/v1/user/userRegister"
+            return "v1/user/userRegister"
         }
     }
     

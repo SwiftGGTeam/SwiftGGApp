@@ -7,14 +7,14 @@
 //
 
 import UIKit
+import JGProgressHUD
 
 extension UIViewController {
-    func st_showAlertWithMessgae(message: String) {
-        let alertController = UIAlertController(title: "提示", message: message, preferredStyle: .Alert)
-        
-        let cancelAction = UIAlertAction(title: "确定", style: .Cancel, handler: nil)
-        alertController.addAction(cancelAction)
-        
-        presentViewController(alertController, animated: true, completion: nil)
+    func st_showErrorWithMessgae(message: String) {
+        let HUD = JGProgressHUD(style: .Dark)
+        HUD.textLabel.text = message
+        HUD.indicatorView = JGProgressHUDErrorIndicatorView()
+        HUD.showInView(view)
+        HUD.dismissAfterDelay(1.0)
     }
 }

@@ -28,6 +28,8 @@ class SGRegisterInformationController: UIViewController {
         super.viewWillDisappear(animated)
         
         UIApplication.sharedApplication().statusBarStyle = .LightContent
+        
+        navigationController!.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
     }
     
     // MARK: - Helper Methods
