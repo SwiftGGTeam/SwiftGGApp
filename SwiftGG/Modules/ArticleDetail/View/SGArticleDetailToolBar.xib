@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SGArticleDetailToolBar" customModule="SwiftGG" customModuleProvider="target">
+            <connections>
+                <outlet property="backButton" destination="6AB-3l-cqj" id="2GM-8V-vxk"/>
+                <outlet property="forwardButton" destination="HIv-AG-e8t" id="nkB-Fb-du0"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6AB-3l-cqj">
+            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstAttribute="height" constant="50" id="2ZM-v5-POv"/>
+                <constraint firstAttribute="width" secondItem="6AB-3l-cqj" secondAttribute="height" multiplier="1:1" id="4Xg-fE-5ne"/>
+                <constraint firstAttribute="height" constant="50" id="9ib-4l-RpG"/>
+                <constraint firstAttribute="width" constant="50" id="KWc-9S-HQJ"/>
+                <constraint firstAttribute="width" constant="50" id="vlF-eR-Vxv"/>
+            </constraints>
+            <state key="normal" image="back_white"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                    <integer key="value" value="5"/>
+                </userDefinedRuntimeAttribute>
+            </userDefinedRuntimeAttributes>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="2ZM-v5-POv"/>
+                    <exclude reference="4Xg-fE-5ne"/>
+                    <exclude reference="9ib-4l-RpG"/>
+                    <exclude reference="KWc-9S-HQJ"/>
+                    <exclude reference="vlF-eR-Vxv"/>
+                </mask>
+            </variation>
+            <connections>
+                <action selector="backPressed:" destination="-1" eventType="touchUpInside" id="BAQ-uC-O2r"/>
+            </connections>
+        </button>
+        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HIv-AG-e8t">
+            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstAttribute="width" constant="50" id="9h4-rm-qRo"/>
+                <constraint firstAttribute="width" secondItem="HIv-AG-e8t" secondAttribute="height" multiplier="1:1" id="Efg-tN-k5k"/>
+                <constraint firstAttribute="width" constant="50" id="IdR-be-8OO"/>
+                <constraint firstAttribute="height" constant="50" id="Rlc-u8-exY"/>
+                <constraint firstAttribute="height" constant="50" id="wDQ-kP-wo6"/>
+            </constraints>
+            <state key="normal" image="forward"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                    <integer key="value" value="5"/>
+                </userDefinedRuntimeAttribute>
+            </userDefinedRuntimeAttributes>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="9h4-rm-qRo"/>
+                    <exclude reference="Efg-tN-k5k"/>
+                    <exclude reference="IdR-be-8OO"/>
+                    <exclude reference="Rlc-u8-exY"/>
+                    <exclude reference="wDQ-kP-wo6"/>
+                </mask>
+            </variation>
+            <connections>
+                <action selector="forwardPressed:" destination="-1" eventType="touchUpInside" id="0cG-Wl-Fhk"/>
+            </connections>
+            <point key="canvasLocation" x="268" y="258"/>
+        </button>
+    </objects>
+    <resources>
+        <image name="back_white" width="9" height="16"/>
+        <image name="forward" width="9" height="16"/>
+    </resources>
+</document>

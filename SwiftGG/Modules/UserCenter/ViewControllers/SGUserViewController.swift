@@ -35,6 +35,7 @@ extension SGUserViewController: UITableViewDataSource {
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+
         let cell = tableView.dequeueReusableCellWithIdentifier(String(SGUserReadingTableViewCell), forIndexPath: indexPath) as! SGUserReadingTableViewCell
         
         // configure cell
@@ -89,6 +90,7 @@ extension SGUserViewController {
 extension SGUserViewController: TransparentNavBarProtocol {
     private func setupViews() {
         view.backgroundColor = UIColor(rgba: "#3595BF")
+
         tableView.registerNib(UINib(nibName: "SGUserReadingTableViewCell", bundle: nil), forCellReuseIdentifier: String(SGUserReadingTableViewCell))
         tableView.dataSource = self
         tableView.delegate = self
