@@ -20,13 +20,23 @@ class SGSettingViewController: UIViewController {
         
         setupNavigationBar()
         setupTableView()
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+    
+        navigationController?.setNavigationBarHidden(false, animated: true)
+        UIApplication.sharedApplication().statusBarStyle = .Default
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
         
+        UIApplication.sharedApplication().statusBarStyle = .LightContent
     }
     
     // MARK: - Helper methods
     func setupNavigationBar() {
-        UIApplication.sharedApplication().statusBarStyle = .Default
-        
         title = "设置"
         
         navigationController!.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.blackColor()]
