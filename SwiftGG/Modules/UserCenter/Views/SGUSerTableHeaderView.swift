@@ -22,7 +22,7 @@ class SGUSerTableHeaderView: UIView {
     @IBOutlet weak var readNumberLabel: UILabel!
     
     @IBOutlet weak var userInfoContainer: UIView!
-
+    
     @IBOutlet weak var statusFavContainer: UIView!
     @IBOutlet weak var statusAlreadReadContainer: UIView!
     @IBOutlet weak var statusUnreadContainer: UIView!
