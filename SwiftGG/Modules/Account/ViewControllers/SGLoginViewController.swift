@@ -80,36 +80,19 @@ extension SGLoginViewController {
             return
         }
         
-        SwiftGGProvider.request(.Login(username, password)) { result in
-            switch result {
-            case .Success(let response):
-                do {
-                    
-                    let resultData = try response.mapJSON() as! [String: AnyObject]
-                    let code = resultData["ret"] as! Int
-                    
-                    if code == 0 {
-                        if username == "swiftgg" && password == "swiftgg" {
-                            self.loginSuccess()
-                        } else {
-                            self.st_showErrorWithMessgae("用户名或密码错误")
-                        }
-                    } else {
-                        print("Error")
-                    }
-                } catch Error.Underlying(let error) {
-                    print(error)
-                } catch {
-                    print("Unknow error")
-                }
-            case .Failure(let error):
+        SGAccountAPI.sendLoginRequest(username, password: password,
+            success: { userModel in
+                self.loginSuccess(userModel)
+            },
+            failure: { error in
                 print(error)
-            }
-        }
+        })
     }
     
-    func loginSuccess() {
+    func loginSuccess(userModel: UserModel) {
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         appDelegate.showHomePage()
+        UserSingleton.shareInstence.userModel = userModel
+        NSNotificationCenter.defaultCenter().postNotificationName(SGNotificationNameConst.LoginSuccess, object: self)
     }
 }

@@ -46,6 +46,11 @@
 		9627EFE61C55148C0021451E /* Login.json in Resources */ = {isa = PBXBuildFile; fileRef = 9627EFE51C55148C0021451E /* Login.json */; };
 		96323D9A1C55C73A00299439 /* UIViewController+STExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96323D991C55C73A00299439 /* UIViewController+STExtension.swift */; };
 		96323D9C1C55D25900299439 /* Register.json in Resources */ = {isa = PBXBuildFile; fileRef = 96323D9B1C55D25900299439 /* Register.json */; };
+		96795E981C82E5A3008F2886 /* SGOAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96795E961C82E5A3008F2886 /* SGOAuthViewController.swift */; };
+		96795E991C82E5A3008F2886 /* SGOAuthViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96795E971C82E5A3008F2886 /* SGOAuthViewController.xib */; };
+		96795E9B1C82E634008F2886 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96795E9A1C82E634008F2886 /* WebKit.framework */; };
+		96795E9D1C82E86E008F2886 /* SGConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96795E9C1C82E86E008F2886 /* SGConst.swift */; };
+		96795E9F1C82EF9C008F2886 /* UserSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96795E9E1C82EF9C008F2886 /* UserSingleton.swift */; };
 		96C6A98F1C54DF04000F253F /* UIImage+STCreation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C6A98E1C54DF04000F253F /* UIImage+STCreation.swift */; };
 		96CEE3EA1C62493A00A78A81 /* SGAccountAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96CEE3E91C62493A00A78A81 /* SGAccountAPI.swift */; };
 		96CEE3EC1C624DC800A78A81 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96CEE3EB1C624DC800A78A81 /* UserModel.swift */; };
@@ -128,6 +133,11 @@
 		9627EFE51C55148C0021451E /* Login.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Login.json; sourceTree = "<group>"; };
 		96323D991C55C73A00299439 /* UIViewController+STExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+STExtension.swift"; sourceTree = "<group>"; };
 		96323D9B1C55D25900299439 /* Register.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Register.json; sourceTree = "<group>"; };
+		96795E961C82E5A3008F2886 /* SGOAuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGOAuthViewController.swift; sourceTree = "<group>"; };
+		96795E971C82E5A3008F2886 /* SGOAuthViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SGOAuthViewController.xib; sourceTree = "<group>"; };
+		96795E9A1C82E634008F2886 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		96795E9C1C82E86E008F2886 /* SGConst.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGConst.swift; sourceTree = "<group>"; };
+		96795E9E1C82EF9C008F2886 /* UserSingleton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSingleton.swift; sourceTree = "<group>"; };
 		96C6A98E1C54DF04000F253F /* UIImage+STCreation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+STCreation.swift"; sourceTree = "<group>"; };
 		96CEE3E91C62493A00A78A81 /* SGAccountAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGAccountAPI.swift; sourceTree = "<group>"; };
 		96CEE3EB1C624DC800A78A81 /* UserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
@@ -163,6 +173,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96795E9B1C82E634008F2886 /* WebKit.framework in Frameworks */,
 				D8D37CE21C4FAAFD0024E331 /* CFNetwork.framework in Frameworks */,
 				D8D37CDE1C4FAAE50024E331 /* CoreTelephony.framework in Frameworks */,
 				D8D37CE41C4FAB0A0024E331 /* SystemConfiguration.framework in Frameworks */,
@@ -240,6 +251,7 @@
 				23167EB31C48E8B900A83F64 /* ArticleCategory.swift */,
 				7A3CB2101C551B1C00579593 /* HomeViewCellModel.swift */,
 				96CEE3EB1C624DC800A78A81 /* UserModel.swift */,
+				96795E9E1C82EF9C008F2886 /* UserSingleton.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -311,6 +323,7 @@
 		678CDB1499F2BD2C8F727586 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				96795E9A1C82E634008F2886 /* WebKit.framework */,
 				D8D37CE31C4FAB0A0024E331 /* SystemConfiguration.framework */,
 				D8D37CE11C4FAAFD0024E331 /* CFNetwork.framework */,
 				D8D37CDF1C4FAAF30024E331 /* libz.tbd */,
@@ -347,6 +360,7 @@
 		96C6A98D1C54DEFB000F253F /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				96795E9C1C82E86E008F2886 /* SGConst.swift */,
 				96C6A98E1C54DF04000F253F /* UIImage+STCreation.swift */,
 				96323D991C55C73A00299439 /* UIViewController+STExtension.swift */,
 				18FC59151C7EF406003D36DE /* TransparentNavBarProtocol.swift */,
@@ -419,6 +433,8 @@
 				F25D2A181C47E4D7000E5EEE /* SGRegisterViewController.swift */,
 				F25D2A191C47E4D7000E5EEE /* SGRegisterViewController.xib */,
 				23167EBF1C491D8500A83F64 /* SGRegisterInformationController.swift */,
+				96795E961C82E5A3008F2886 /* SGOAuthViewController.swift */,
+				96795E971C82E5A3008F2886 /* SGOAuthViewController.xib */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -610,6 +626,7 @@
 				F25D2A251C47E4D7000E5EEE /* SGLoginViewController.xib in Resources */,
 				9627EFE61C55148C0021451E /* Login.json in Resources */,
 				23167EB91C48E9B500A83F64 /* CategoryCell.xib in Resources */,
+				96795E991C82E5A3008F2886 /* SGOAuthViewController.xib in Resources */,
 				18100FE61C570CBA0026BFAF /* SGUserViewController.xib in Resources */,
 				23167EAF1C48D8EF00A83F64 /* CategoryList.json in Resources */,
 				18B5FBF11C4E34F40089EFCC /* SGUserTableHeaderView.xib in Resources */,
@@ -699,7 +716,9 @@
 				23A95F341C6638FC00107B2B /* ThirdPartyLoginButton.swift in Sources */,
 				96CEE3EA1C62493A00A78A81 /* SGAccountAPI.swift in Sources */,
 				C21313581C55C72D0092642E /* SGArticleDetailInfo.swift in Sources */,
+				96795E9D1C82E86E008F2886 /* SGConst.swift in Sources */,
 				230AA7181C639A8F0077E662 /* SGNetworkLogger.swift in Sources */,
+				96795E9F1C82EF9C008F2886 /* UserSingleton.swift in Sources */,
 				F25D2A2D1C47E4D7000E5EEE /* SGCategoryHomeViewController.swift in Sources */,
 				C213135A1C55C72D0092642E /* SGArticleDetailToolBar.swift in Sources */,
 				23A95F2F1C662ABE00107B2B /* SGThirdPartyLoginViewController.swift in Sources */,
@@ -720,6 +739,7 @@
 				C213135B1C55C72D0092642E /* SGArticleDetailViewController.swift in Sources */,
 				96C6A98F1C54DF04000F253F /* UIImage+STCreation.swift in Sources */,
 				F25D2A2F1C47E4D7000E5EEE /* SGHomeViewController.swift in Sources */,
+				96795E981C82E5A3008F2886 /* SGOAuthViewController.swift in Sources */,
 				23167EB71C48E99900A83F64 /* CategoryCell.swift in Sources */,
 				23167EC01C491D8500A83F64 /* SGRegisterInformationController.swift in Sources */,
 			);
