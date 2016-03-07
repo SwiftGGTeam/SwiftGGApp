@@ -53,10 +53,9 @@
 		96795E9D1C82E86E008F2886 /* SGConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96795E9C1C82E86E008F2886 /* SGConst.swift */; };
 		96795E9F1C82EF9C008F2886 /* UserSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96795E9E1C82EF9C008F2886 /* UserSingleton.swift */; };
 		96C6A98F1C54DF04000F253F /* UIImage+STCreation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C6A98E1C54DF04000F253F /* UIImage+STCreation.swift */; };
-
-		C211BB4E1C619DAC00CDF716 /* SGArticleDetailToolBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = C211BB4D1C619DAC00CDF716 /* SGArticleDetailToolBar.xib */; };
 		96CEE3EA1C62493A00A78A81 /* SGAccountAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96CEE3E91C62493A00A78A81 /* SGAccountAPI.swift */; };
 		96CEE3EC1C624DC800A78A81 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96CEE3EB1C624DC800A78A81 /* UserModel.swift */; };
+		C211BB4E1C619DAC00CDF716 /* SGArticleDetailToolBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = C211BB4D1C619DAC00CDF716 /* SGArticleDetailToolBar.xib */; };
 		C21313581C55C72D0092642E /* SGArticleDetailInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21313511C55C72D0092642E /* SGArticleDetailInfo.swift */; };
 		C21313591C55C72D0092642E /* SGArticleDetailPagingTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21313531C55C72D0092642E /* SGArticleDetailPagingTool.swift */; };
 		C213135A1C55C72D0092642E /* SGArticleDetailToolBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21313541C55C72D0092642E /* SGArticleDetailToolBar.swift */; };
@@ -121,16 +120,12 @@
 		23167EB61C48E99900A83F64 /* CategoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
 		23167EB81C48E9B500A83F64 /* CategoryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CategoryCell.xib; sourceTree = "<group>"; };
 		23167EBF1C491D8500A83F64 /* SGRegisterInformationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGRegisterInformationController.swift; sourceTree = "<group>"; };
+		23A95F2E1C662ABE00107B2B /* SGThirdPartyLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGThirdPartyLoginViewController.swift; sourceTree = "<group>"; };
+		23A95F301C662B3100107B2B /* SGThirdPartyLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SGThirdPartyLoginViewController.xib; sourceTree = "<group>"; };
+		23A95F331C6638FC00107B2B /* ThirdPartyLoginButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdPartyLoginButton.swift; sourceTree = "<group>"; };
 		43000F9D81FC909579387DD1 /* Pods-SwiftGG.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftGG.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftGG/Pods-SwiftGG.debug.xcconfig"; sourceTree = "<group>"; };
 		4B9ADD9517D3753E05696B7D /* Pods_SwiftGG.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftGG.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		51461FAD55B869964D8E5C50 /* Pods-SwiftGG.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftGG.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftGG/Pods-SwiftGG.release.xcconfig"; sourceTree = "<group>"; };
-		23A95F2E1C662ABE00107B2B /* SGThirdPartyLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGThirdPartyLoginViewController.swift; sourceTree = "<group>"; };
-		23A95F301C662B3100107B2B /* SGThirdPartyLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SGThirdPartyLoginViewController.xib; sourceTree = "<group>"; };
-		23A95F331C6638FC00107B2B /* ThirdPartyLoginButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdPartyLoginButton.swift; sourceTree = "<group>"; };
-		23A95F2E1C662ABE00107B2B /* SGThirdPartyLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGThirdPartyLoginViewController.swift; sourceTree = "<group>"; };
-		23A95F301C662B3100107B2B /* SGThirdPartyLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SGThirdPartyLoginViewController.xib; sourceTree = "<group>"; };
-		23A95F331C6638FC00107B2B /* ThirdPartyLoginButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdPartyLoginButton.swift; sourceTree = "<group>"; };
-		54652B34B394B9B56520294D /* Pods-SwiftGG.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftGG.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftGG/Pods-SwiftGG.release.xcconfig"; sourceTree = "<group>"; };
 		7A3CB20A1C55023000579593 /* SGHomeViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SGHomeViewCell.swift; path = Cell/SGHomeViewCell.swift; sourceTree = "<group>"; };
 		7A3CB20B1C55023000579593 /* SGHomeViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SGHomeViewCell.xib; path = Cell/SGHomeViewCell.xib; sourceTree = "<group>"; };
 		7A3CB2101C551B1C00579593 /* HomeViewCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewCellModel.swift; sourceTree = "<group>"; };
@@ -145,9 +140,9 @@
 		96795E9C1C82E86E008F2886 /* SGConst.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGConst.swift; sourceTree = "<group>"; };
 		96795E9E1C82EF9C008F2886 /* UserSingleton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSingleton.swift; sourceTree = "<group>"; };
 		96C6A98E1C54DF04000F253F /* UIImage+STCreation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+STCreation.swift"; sourceTree = "<group>"; };
-		C211BB4D1C619DAC00CDF716 /* SGArticleDetailToolBar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SGArticleDetailToolBar.xib; sourceTree = "<group>"; };
 		96CEE3E91C62493A00A78A81 /* SGAccountAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGAccountAPI.swift; sourceTree = "<group>"; };
 		96CEE3EB1C624DC800A78A81 /* UserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		C211BB4D1C619DAC00CDF716 /* SGArticleDetailToolBar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SGArticleDetailToolBar.xib; sourceTree = "<group>"; };
 		C21313511C55C72D0092642E /* SGArticleDetailInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGArticleDetailInfo.swift; sourceTree = "<group>"; };
 		C21313531C55C72D0092642E /* SGArticleDetailPagingTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGArticleDetailPagingTool.swift; sourceTree = "<group>"; };
 		C21313541C55C72D0092642E /* SGArticleDetailToolBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGArticleDetailToolBar.swift; sourceTree = "<group>"; };
@@ -325,15 +320,6 @@
 				23A95F331C6638FC00107B2B /* ThirdPartyLoginButton.swift */,
 			);
 			path = Components;
-			sourceTree = "<group>";
-		};
-		2E5B04AB4149AB35490C7C8D /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				877504E835FB534A39CBD4E8 /* Pods-SwiftGG.debug.xcconfig */,
-				54652B34B394B9B56520294D /* Pods-SwiftGG.release.xcconfig */,
-			);
-			name = Pods;
 			sourceTree = "<group>";
 		};
 		678CDB1499F2BD2C8F727586 /* Frameworks */ = {
@@ -607,6 +593,7 @@
 				TargetAttributes = {
 					F2C7844A1BE7544D00A36BFE = {
 						CreatedOnToolsVersion = 7.1;
+						DevelopmentTeam = 4YTCUNCXVD;
 					};
 					F2C784601BE7544D00A36BFE = {
 						CreatedOnToolsVersion = 7.1;
@@ -892,6 +879,7 @@
 			baseConfigurationReference = 43000F9D81FC909579387DD1 /* Pods-SwiftGG.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug",
@@ -917,6 +905,7 @@
 			baseConfigurationReference = 51461FAD55B869964D8E5C50 /* Pods-SwiftGG.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug",
