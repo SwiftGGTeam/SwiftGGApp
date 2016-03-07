@@ -8,7 +8,6 @@
 
 import UIKit
 
-private let cellIdentifier = "SGUserReadingTableViewCell"
 
 class SGUserViewController: UIViewController {
 
@@ -24,8 +23,9 @@ class SGUserViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
-        setupNavigationBar()
+        navigationController?.setNavigationBarHidden(true, animated: false)
     }
+
 }
 
 // MARK: - UITableViewDataSource
@@ -35,7 +35,8 @@ extension SGUserViewController: UITableViewDataSource {
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! SGUserReadingTableViewCell
+
+        let cell = tableView.dequeueReusableCellWithIdentifier(String(SGUserReadingTableViewCell), forIndexPath: indexPath) as! SGUserReadingTableViewCell
         
         // configure cell
         return cell
@@ -67,34 +68,41 @@ extension SGUserViewController: UITableViewDelegate {
     }
 }
 
+// MARK: - SGUSerTableHeaderViewDelegate
+extension SGUserViewController: SGUSerTableHeaderViewDelegate {
+    func didUserInfoContainerPressed() {
+        let userInfoViewController = SGUserInfoViewController()
+        userInfoViewController.hidesBottomBarWhenPushed = true
+        navigationController!.pushViewController(userInfoViewController, animated: true)
+    }
+}
+
 // MARK: - Target-Action
 extension SGUserViewController {
     func settingButtonTapped(sender: UIBarButtonItem) {
         let settingViewController = SGSettingViewController()
+        settingViewController.hidesBottomBarWhenPushed = true
         navigationController!.pushViewController(settingViewController, animated: true)
     }
 }
 
 // MARK: - Helper
-extension SGUserViewController {
+extension SGUserViewController: TransparentNavBarProtocol {
     private func setupViews() {
         view.backgroundColor = UIColor(rgba: "#3595BF")
-        tableView.registerNib(UINib(nibName: "SGUserReadingTableViewCell", bundle: nil), forCellReuseIdentifier: cellIdentifier)
+
+        tableView.registerNib(UINib(nibName: "SGUserReadingTableViewCell", bundle: nil), forCellReuseIdentifier: String(SGUserReadingTableViewCell))
         tableView.dataSource = self
         tableView.delegate = self
-    }
-    
-    private func setupNavigationBar() {
-        UIApplication.sharedApplication().statusBarStyle = .LightContent
+        pinnedHeaderView.delegate = self
         
-        // remove navigation bar shadow
-        navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: .Default)
-        navigationController?.navigationBar.shadowImage = UIImage()
-        
-        // add setting barItem
+        let transparentNavBar = transparentNavigationBar()
+        view.addSubview(transparentNavBar)
+        let customNavigationItem = UINavigationItem(title: "")
+        transparentNavBar.setItems([customNavigationItem], animated: false)
         let settingBarItem = UIBarButtonItem(image: UIImage(named: "setting_nav_item"), style: .Plain, target: self, action: "settingButtonTapped:")
         settingBarItem.tintColor = UIColor.whiteColor()
-        navigationItem.rightBarButtonItem = settingBarItem
+        customNavigationItem.rightBarButtonItem = settingBarItem
     }
     
 }

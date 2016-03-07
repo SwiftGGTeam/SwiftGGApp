@@ -39,6 +39,9 @@ class SGThirdPartyLoginViewController: UIViewController {
     
     @IBAction func githubLoginButtonTapped(sender: ThirdPartyLoginButton) {
         print("Github 登录")
+        let OAuthController = SGOAuthViewController()
+        let navigationController = UINavigationController(rootViewController: OAuthController)
+        presentViewController(navigationController, animated: true, completion: nil)
         closeButtonTapped()
     }
 }

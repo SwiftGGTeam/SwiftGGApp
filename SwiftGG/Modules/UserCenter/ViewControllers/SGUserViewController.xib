@@ -1,48 +1,48 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
-    <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
-    </dependencies>
-    <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SGUserViewController" customModule="SwiftGG" customModuleProvider="target">
-            <connections>
-                <outlet property="pinnedHeaderView" destination="hQa-cm-C3d" id="Fl0-dM-MVC"/>
-                <outlet property="tableView" destination="uTG-UL-fEl" id="oRl-yC-lHR"/>
-                <outlet property="view" destination="iN0-l3-epB" id="fRz-rs-GB1"/>
-            </connections>
-        </placeholder>
-        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hQa-cm-C3d" customClass="SGUSerTableHeaderView" customModule="SwiftGG" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="64" width="320" height="166"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="166" id="z5F-Dq-5vv"/>
-                    </constraints>
-                </view>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="uTG-UL-fEl">
-                    <rect key="frame" x="0.0" y="230" width="320" height="289"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                </tableView>
-            </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-            <constraints>
-                <constraint firstItem="uTG-UL-fEl" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="2K3-Ej-YFM"/>
-                <constraint firstItem="hQa-cm-C3d" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="64" id="Au3-eQ-8yI"/>
-                <constraint firstAttribute="trailing" secondItem="hQa-cm-C3d" secondAttribute="trailing" id="GM5-fj-PzX"/>
-                <constraint firstAttribute="bottom" secondItem="uTG-UL-fEl" secondAttribute="bottom" constant="49" id="YgB-hs-iWe"/>
-                <constraint firstItem="hQa-cm-C3d" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="gPC-8G-I4t"/>
-                <constraint firstAttribute="trailing" secondItem="uTG-UL-fEl" secondAttribute="trailing" id="iXz-x2-Mgt"/>
-                <constraint firstItem="uTG-UL-fEl" firstAttribute="top" secondItem="hQa-cm-C3d" secondAttribute="bottom" id="mRW-Sa-AJc"/>
-            </constraints>
-            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
-            <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-            <point key="canvasLocation" x="398.5" y="325.5"/>
-        </view>
-    </objects>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<dependencies>
+<deployment identifier="iOS"/>
+<plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+</dependencies>
+<objects>
+<placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SGUserViewController" customModule="SwiftGG" customModuleProvider="target">
+<connections>
+<outlet property="pinnedHeaderView" destination="hQa-cm-C3d" id="Fl0-dM-MVC"/>
+<outlet property="tableView" destination="uTG-UL-fEl" id="oRl-yC-lHR"/>
+<outlet property="view" destination="iN0-l3-epB" id="fRz-rs-GB1"/>
+</connections>
+</placeholder>
+<placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+<view contentMode="scaleToFill" id="iN0-l3-epB">
+<rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+<autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+<subviews>
+<view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hQa-cm-C3d" customClass="SGUSerTableHeaderView" customModule="SwiftGG" customModuleProvider="target">
+<rect key="frame" x="0.0" y="64" width="320" height="166"/>
+<color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+<constraints>
+<constraint firstAttribute="height" constant="166" id="z5F-Dq-5vv"/>
+</constraints>
+</view>
+<tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="uTG-UL-fEl">
+<rect key="frame" x="0.0" y="230" width="320" height="289"/>
+<color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+</tableView>
+</subviews>
+<color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+<constraints>
+<constraint firstItem="uTG-UL-fEl" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="2K3-Ej-YFM"/>
+<constraint firstItem="hQa-cm-C3d" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="64" id="Au3-eQ-8yI"/>
+<constraint firstAttribute="trailing" secondItem="hQa-cm-C3d" secondAttribute="trailing" id="GM5-fj-PzX"/>
+<constraint firstAttribute="bottom" secondItem="uTG-UL-fEl" secondAttribute="bottom" constant="49" id="YgB-hs-iWe"/>
+<constraint firstItem="hQa-cm-C3d" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="gPC-8G-I4t"/>
+<constraint firstAttribute="trailing" secondItem="uTG-UL-fEl" secondAttribute="trailing" id="iXz-x2-Mgt"/>
+<constraint firstItem="uTG-UL-fEl" firstAttribute="top" secondItem="hQa-cm-C3d" secondAttribute="bottom" id="mRW-Sa-AJc"/>
+</constraints>
+<simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+<simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+<simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+<point key="canvasLocation" x="398.5" y="325.5"/>
+</view>
+</objects>
 </document>

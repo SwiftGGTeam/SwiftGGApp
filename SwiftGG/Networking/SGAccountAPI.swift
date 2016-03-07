@@ -33,4 +33,28 @@ class SGAccountAPI {
             }
         }
     }
+    
+    static func sendLoginRequest(username: String, password: String, success: (userModel: UserModel) -> Void, failure: (error: SGError) -> Void) -> Void {
+        SwiftGGProvider.request(.Login(username, password)) { result in
+            switch result {
+            case .Success(let response):
+                do {
+                    
+                    let resultData = try response.mapJSON() as! [String: AnyObject]
+                    let code = resultData["ret"] as! Int
+                    
+                    if code == 0 {
+                        let userModel = UserModel(jsonDict: resultData["data"] as! [String: AnyObject])
+                        success(userModel: userModel)
+                    } else {
+                        failure(error: .Failure)
+                    }
+                } catch {
+                    failure(error: .Failure)
+                }
+            case .Failure:
+                failure(error: .Failure)
+            }
+        }
+    }
 }

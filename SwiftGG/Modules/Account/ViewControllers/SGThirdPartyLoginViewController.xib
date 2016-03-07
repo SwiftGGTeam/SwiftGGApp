@@ -15,7 +15,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DNL-Kc-svl">
+                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DNL-Kc-svl">
                     <rect key="frame" x="282" y="214" width="18" height="18"/>
                     <state key="normal" backgroundImage="third_party_close"/>
                     <connections>
@@ -28,7 +28,7 @@
                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ddE-u1-Sut" customClass="ThirdPartyLoginButton" customModule="SwiftGG" customModuleProvider="target">
+                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ddE-u1-Sut" customClass="ThirdPartyLoginButton" customModule="SwiftGG" customModuleProvider="target">
                     <rect key="frame" x="20" y="344" width="280" height="44"/>
                     <color key="backgroundColor" red="0.29019607843137252" green="0.29019607843137252" blue="0.29019607843137252" alpha="1" colorSpace="calibratedRGB"/>
                     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -43,7 +43,7 @@
                         <action selector="githubLoginButtonTapped:" destination="-1" eventType="touchUpInside" id="HBp-Za-igg"/>
                     </connections>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hJy-xE-0wh" customClass="ThirdPartyLoginButton" customModule="SwiftGG" customModuleProvider="target">
+                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hJy-xE-0wh" customClass="ThirdPartyLoginButton" customModule="SwiftGG" customModuleProvider="target">
                     <rect key="frame" x="20" y="292" width="280" height="44"/>
                     <color key="backgroundColor" red="0.43529411764705883" green="0.8901960784313725" blue="0.26666666666666666" alpha="1" colorSpace="calibratedRGB"/>
                     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -58,7 +58,7 @@
                         <action selector="wechatLoginButtonTapped:" destination="-1" eventType="touchUpInside" id="nde-Qp-Uqo"/>
                     </connections>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7MV-JI-e4R" customClass="ThirdPartyLoginButton" customModule="SwiftGG" customModuleProvider="target">
+                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7MV-JI-e4R" customClass="ThirdPartyLoginButton" customModule="SwiftGG" customModuleProvider="target">
                     <rect key="frame" x="20" y="240" width="280" height="44"/>
                     <color key="backgroundColor" red="0.85490196080000003" green="0.2784313725" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
