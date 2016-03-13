@@ -16,7 +16,6 @@ class SGAccountAPI {
             case .Success(let response):
                 do {
                     let resultData = try NSJSONSerialization.JSONObjectWithData(response.data, options: .AllowFragments) as! [String: AnyObject]
-//                    let resultData = try response. as! [String : AnyObject]
                     let code = resultData["ret"] as! Int
                     
                     if code == 0 {
@@ -40,7 +39,7 @@ class SGAccountAPI {
             case .Success(let response):
                 do {
                     
-                    let resultData = try response.mapJSON() as! [String: AnyObject]
+                    let resultData = try NSJSONSerialization.JSONObjectWithData(response.data, options: .AllowFragments) as! [String: AnyObject]
                     let code = resultData["ret"] as! Int
                     
                     if code == 0 {
@@ -56,5 +55,9 @@ class SGAccountAPI {
                 failure(error: .Failure)
             }
         }
+    }
+    
+    static func sendOAuthGitHubRequest(token: String) {
+        
     }
 }
