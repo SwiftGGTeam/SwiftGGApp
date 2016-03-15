@@ -22,8 +22,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
         
-        let loginController = SGLoginViewController()
-        let navigationViewController = UINavigationController(rootViewController: loginController)
+        let rootViewController = SGTabBarController()
+        let navigationViewController = UINavigationController(rootViewController: rootViewController)
         window!.rootViewController = navigationViewController
         
         window!.backgroundColor = UIColor.whiteColor()
