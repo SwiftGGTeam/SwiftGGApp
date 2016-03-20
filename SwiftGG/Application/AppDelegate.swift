@@ -23,8 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
         
         let rootViewController = SGTabBarController()
-        let navigationViewController = UINavigationController(rootViewController: rootViewController)
-        window!.rootViewController = navigationViewController
+        window!.rootViewController = rootViewController
         
         window!.backgroundColor = UIColor.whiteColor()
         window!.makeKeyAndVisible()
