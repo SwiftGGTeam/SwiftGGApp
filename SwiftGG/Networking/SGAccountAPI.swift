@@ -9,16 +9,15 @@
 import Foundation
 import Moya
 
-class SGAccountAPI {
-    static func sendRegisterRequest(username: String, password: String, success: (userModel: UserModel) -> Void, failure: (error: SGError) -> Void) -> Void {
+struct SGAccountAPI {
+    static func sendRegisterRequest(username: String, password: String, success: (userModel: UserModel) -> Void, failure: (error: SGError) -> Void) {
         SwiftGGProvider.request(.Register(username, password)) { result in
             switch result {
             case .Success(let response):
                 do {
-                    let resultData = try NSJSONSerialization.JSONObjectWithData(response.data, options: .AllowFragments) as! [String: AnyObject]
-                    let code = resultData["ret"] as! Int
-                    
-                    if code == 0 {
+                    let resultData = try response.mapJSON() as! [String: AnyObject]
+
+                    if let code = resultData["ret"] as? Int where code == 0 {
                         let userModel = UserModel(jsonDict: resultData["data"] as! [String: AnyObject])
                         success(userModel: userModel)
                     } else {
@@ -33,16 +32,15 @@ class SGAccountAPI {
         }
     }
     
-    static func sendLoginRequest(username: String, password: String, success: (userModel: UserModel) -> Void, failure: (error: SGError) -> Void) -> Void {
+    static func sendLoginRequest(username: String, password: String, success: (userModel: UserModel) -> Void, failure: (error: SGError) -> Void) {
         SwiftGGProvider.request(.Login(username, password)) { result in
             switch result {
             case .Success(let response):
                 do {
                     
-                    let resultData = try NSJSONSerialization.JSONObjectWithData(response.data, options: .AllowFragments) as! [String: AnyObject]
-                    let code = resultData["ret"] as! Int
-                    
-                    if code == 0 {
+                    let resultData = try response.mapJSON() as! [String: AnyObject]
+
+                    if let code = resultData["ret"] as? Int where code == 0 {
                         let userModel = UserModel(jsonDict: resultData["data"] as! [String: AnyObject])
                         success(userModel: userModel)
                     } else {
