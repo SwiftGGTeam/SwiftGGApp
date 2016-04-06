@@ -185,7 +185,7 @@ class SGArticleDetailViewController: UIViewController {
     
     private func setupNavigationBar() {
         let backImage = UIImage(named: "back_white")?.imageWithRenderingMode(.AlwaysOriginal)
-        navigationItem.leftBarButtonItem = UIBarButtonItem(image: backImage, style: .Plain, target: self, action: Selector("back"))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: backImage, style: .Plain, target: self, action: #selector(SGArticleDetailViewController.back))
     }
     
     

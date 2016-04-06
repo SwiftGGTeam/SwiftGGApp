@@ -90,7 +90,7 @@ extension ThirdPartyLoginButton {
     }
     
     private func addTapGestureRecognizer() {
-        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: Selector("handleButtonTapped:"))
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(ThirdPartyLoginButton.handleButtonTapped(_:)))
         addGestureRecognizer(tapGestureRecognizer)
     }
     

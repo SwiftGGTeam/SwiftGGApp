@@ -30,7 +30,7 @@ class SGRegisterViewController: UIViewController {
         title = "注册 SwiftGo"
         
         let backImage = UIImage(named: "back_white")?.imageWithRenderingMode(.AlwaysOriginal)
-        navigationItem.leftBarButtonItem = UIBarButtonItem(image: backImage, style: .Plain, target: self, action: Selector("dismiss"))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: backImage, style: .Plain, target: self, action: #selector(SGRegisterViewController.dismiss))
     }
     
     // MARK: - Actions
