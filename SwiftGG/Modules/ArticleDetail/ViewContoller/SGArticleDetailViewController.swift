@@ -33,7 +33,7 @@ public extension WKWebView {
 
 extension SGArticleDetailViewController:UIScrollViewDelegate {
     private func setupScrollView() {
-        self.articleContentWebView.scrollView.delegate = self
+        articleContentWebView.scrollView.delegate = self
     }
     
     func scrollViewWillBeginDragging(scrollView: UIScrollView) {
@@ -42,9 +42,9 @@ extension SGArticleDetailViewController:UIScrollViewDelegate {
 
     func scrollViewDidEndDragging(scrollView: UIScrollView, willDecelerate decelerate: Bool) {
         if scrollView.contentOffset.y > lastContentOffset && scrollView.contentOffset.y >= 40.0 {
-            self.navigationController?.setNavigationBarHidden(true, animated: true)
+            navigationController?.setNavigationBarHidden(true, animated: true)
         } else {
-            self.navigationController?.setNavigationBarHidden(false, animated: true)
+            navigationController?.setNavigationBarHidden(false, animated: true)
         }
     }
 }
@@ -52,12 +52,12 @@ extension SGArticleDetailViewController:UIScrollViewDelegate {
 extension SGArticleDetailViewController:SFSafariViewControllerDelegate,WKNavigationDelegate {
     
     func webView(webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
-        self.recordOffset()
-        if webView.URL?.absoluteString != self.articleDetailInfo?.url {
+        recordOffset()
+        if webView.URL?.absoluteString != articleDetailInfo?.url {
             if #available(iOS 9.0, *) {
                 let svc = SFSafariViewController(URL:webView.URL!, entersReaderIfAvailable:true)
                 svc.delegate = self
-                self.presentViewController(svc, animated:true, completion: nil)
+                presentViewController(svc, animated:true, completion: nil)
             } else {
                 // Fallback on earlier versions
                 UIApplication.sharedApplication().openURL(webView.URL!)
@@ -72,7 +72,7 @@ extension SGArticleDetailViewController:SFSafariViewControllerDelegate,WKNavigat
     }
     
     func webView(webView: WKWebView, decidePolicyForNavigationResponse navigationResponse: WKNavigationResponse, decisionHandler: (WKNavigationResponsePolicy) -> Void) {
-        if webView.URL?.absoluteString == self.articleDetailInfo?.url {
+        if webView.URL?.absoluteString == articleDetailInfo?.url {
             decisionHandler(WKNavigationResponsePolicy.Allow)
         } else {
             decisionHandler(WKNavigationResponsePolicy.Cancel)
@@ -80,8 +80,8 @@ extension SGArticleDetailViewController:SFSafariViewControllerDelegate,WKNavigat
     }
     
     func webView(webView: WKWebView, didFinishNavigation navigation: WKNavigation!) {
-        if webView.URL?.absoluteString == self.articleDetailInfo?.url {
-            let js = "$('body').scrollTop(" + self.articleDetailInfo!.getOffset() + ")"
+        if webView.URL?.absoluteString == articleDetailInfo?.url {
+            let js = "$('body').scrollTop(" + articleDetailInfo!.getOffset() + ")"
             articleContentWebView.evaluateJavaScript(js, completionHandler: nil)
         }
     }
@@ -98,7 +98,7 @@ extension SGArticleDetailViewController:SFSafariViewControllerDelegate,WKNavigat
     }
     
     private func recordOffset() {
-        if articleContentWebView.URL?.absoluteString == self.articleDetailInfo?.url {
+        if articleContentWebView.URL?.absoluteString == articleDetailInfo?.url {
             articleContentWebView.evaluateJavaScript("$('body').scrollTop()", completionHandler: { [unowned self] (AnyObject, NSError) -> Void in
                 if let offset:Double = AnyObject as? Double {
                     self.articleDetailInfo?.offset = offset
@@ -194,11 +194,11 @@ class SGArticleDetailViewController: UIViewController {
     }
 
     func back() {
-        self.recordOffset()
+        recordOffset()
         navigationController!.popViewControllerAnimated(true)
     }
 
     deinit {
-        self.articleContentWebView.scrollView.delegate = nil
+        articleContentWebView.scrollView.delegate = nil
     }
 }

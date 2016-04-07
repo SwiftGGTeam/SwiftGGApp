@@ -54,7 +54,7 @@ class SGHomeViewController: UITableViewController {
         articleDetailVC.hidesBottomBarWhenPushed = true
         articleDetailVC.dataSource = self
         articleDetailVC.delegate = self
-        self.navigationController?.pushViewController(articleDetailVC, animated: true)
+        navigationController?.pushViewController(articleDetailVC, animated: true)
     }
 }
 
