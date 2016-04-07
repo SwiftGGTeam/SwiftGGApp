@@ -13,9 +13,12 @@ import RxSwift
 import RxCocoa
 import SafariServices
 
-protocol SGArticleDetailInfoProtocol: class {
-    func openArticle() -> SGArticleDetailInfo
-    func closeArticle(articleDetailInfo:SGArticleDetailInfo)
+protocol SGArticleDetailDataSource: class {
+    func articleDetailModel() -> SGArticleDetailInfo
+}
+
+protocol SGArticleDetailDelegate: class {
+    func didCloseArticle(article:SGArticleDetailInfo)
 }
 
 public extension WKWebView {
@@ -100,7 +103,7 @@ extension SGArticleDetailViewController:SFSafariViewControllerDelegate,WKNavigat
                 if let offset:Double = AnyObject as? Double {
                     self.articleDetailInfo?.offset = offset
                     self.articleDetailInfo?.height = Double(self.articleContentView.scrollView.contentSize.height)
-                    self.articleDetailInfoProtocol?.closeArticle(self.articleDetailInfo!)
+                    self.delegate?.didCloseArticle(self.articleDetailInfo!)
                 }
             })
         }
@@ -114,7 +117,7 @@ extension SGArticleDetailViewController:SFSafariViewControllerDelegate,WKNavigat
         articleContentView.allowsBackForwardNavigationGestures = true
         articleContentView.navigationDelegate = self
         
-        if let articleDetail = articleDetailInfoProtocol?.openArticle() {
+        if let articleDetail = dataSource?.articleDetailModel() {
             articleDetailInfo = articleDetail
             
             title = articleDetail.title
@@ -146,8 +149,10 @@ extension SGArticleDetailViewController: SGArticleDetailToolBarProtocol {
 
 class SGArticleDetailViewController: UIViewController {
     
-    weak var articleDetailInfoProtocol : SGArticleDetailInfoProtocol?
-    
+    weak var dataSource : SGArticleDetailDataSource?
+
+    weak var delegate : SGArticleDetailDelegate?
+
     var articleDetailInfo: SGArticleDetailInfo?
     
     var articleContentView: WKWebView!
