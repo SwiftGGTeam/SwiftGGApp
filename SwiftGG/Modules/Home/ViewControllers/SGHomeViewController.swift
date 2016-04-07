@@ -52,15 +52,16 @@ class SGHomeViewController: UITableViewController {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let articleDetailVC = SGArticleDetailViewController(nibName: "SGArticleDetailViewController", bundle: nil);
         articleDetailVC.hidesBottomBarWhenPushed = true
-        self.navigationController?.pushViewController(articleDetailVC, animated: true)
-        articleDetailVC.articleDetailInfoProtocol = self
+        articleDetailVC.dataSource = self
+        articleDetailVC.delegate = self
+        navigationController?.pushViewController(articleDetailVC, animated: true)
     }
 }
 
-// MARK: - SGArticleDetailInfoProtocol
-extension SGHomeViewController: SGArticleDetailInfoProtocol {
+// MARK: - SGArticleDetailDataSource & SGArticleDetailDelegate
+extension SGHomeViewController: SGArticleDetailDataSource, SGArticleDetailDelegate {
     
-    func openArticle() -> SGArticleDetailInfo {
+    func articleDetailModel() -> SGArticleDetailInfo {
         var articleDetailInfo = SGArticleDetailInfo(id:"10", title: "为什么 Swift 中的 String API 如此难用？", url: "http://swift.gg/2016/01/25/friday-qa-2015-11-06-why-is-swifts-string-api-so-hard/", offset: 0.0, height: 0.0)
         let realm = try! Realm()
         if let articleDetailMetaData = realm.objects(SGAriticleDetailMetaData).filter("id == '10'").first {
@@ -70,7 +71,7 @@ extension SGHomeViewController: SGArticleDetailInfoProtocol {
         return articleDetailInfo
     }
     
-    func closeArticle(articleDetailInfo:SGArticleDetailInfo) {
+    func didCloseArticle(articleDetailInfo:SGArticleDetailInfo) {
         let realm = try! Realm()
         let articleDetailMetaData = SGAriticleDetailMetaData()
         articleDetailMetaData.setSGArticleDetailInfo(articleDetailInfo)

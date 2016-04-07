@@ -9,10 +9,12 @@
 import Foundation
 import Moya
 
-enum SGError: CustomStringConvertible {
+enum SGError: ErrorType {
     case TimeOut
     case Failure
-    
+}
+
+extension SGError: CustomStringConvertible, CustomDebugStringConvertible {
     var description: String {
         switch self {
         case .TimeOut:
@@ -20,6 +22,10 @@ enum SGError: CustomStringConvertible {
         case .Failure:
             return "请求失败"
         }
+    }
+
+    var debugDescription: String {
+        return description
     }
 }
 
