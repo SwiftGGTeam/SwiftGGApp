@@ -96,7 +96,7 @@ extension SGArticleDetailViewController:SFSafariViewControllerDelegate,WKNavigat
     
     private func recordOffset() {
         if articleContentView.URL?.absoluteString == self.articleDetailInfo?.url {
-            articleContentView.evaluateJavaScript("$('body').scrollTop()", completionHandler: { (AnyObject, NSError) -> Void in
+            articleContentView.evaluateJavaScript("$('body').scrollTop()", completionHandler: { [unowned self] (AnyObject, NSError) -> Void in
                 if let offset:Double = AnyObject as? Double {
                     self.articleDetailInfo?.offset = offset
                     self.articleDetailInfo?.height = Double(self.articleContentView.scrollView.contentSize.height)
@@ -187,10 +187,13 @@ class SGArticleDetailViewController: UIViewController {
         let backImage = UIImage(named: "back_white")?.imageWithRenderingMode(.AlwaysOriginal)
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: backImage, style: .Plain, target: self, action: #selector(SGArticleDetailViewController.back))
     }
-    
-    
+
     func back() {
         self.recordOffset()
         navigationController!.popViewControllerAnimated(true)
+    }
+
+    deinit {
+        self.articleContentView.scrollView.delegate = nil
     }
 }
