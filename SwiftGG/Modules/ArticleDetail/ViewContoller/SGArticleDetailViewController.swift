@@ -33,7 +33,7 @@ public extension WKWebView {
 
 extension SGArticleDetailViewController:UIScrollViewDelegate {
     private func setupScrollView() {
-        self.articleContentView.scrollView.delegate = self
+        self.articleContentWebView.scrollView.delegate = self
     }
     
     func scrollViewWillBeginDragging(scrollView: UIScrollView) {
@@ -82,27 +82,27 @@ extension SGArticleDetailViewController:SFSafariViewControllerDelegate,WKNavigat
     func webView(webView: WKWebView, didFinishNavigation navigation: WKNavigation!) {
         if webView.URL?.absoluteString == self.articleDetailInfo?.url {
             let js = "$('body').scrollTop(" + self.articleDetailInfo!.getOffset() + ")"
-            articleContentView.evaluateJavaScript(js, completionHandler: nil)
+            articleContentWebView.evaluateJavaScript(js, completionHandler: nil)
         }
     }
     
     func backPressed() {
-        if articleContentView.canGoBack {
-            articleContentView.goBack()
+        if articleContentWebView.canGoBack {
+            articleContentWebView.goBack()
         }
     }
     func forwardPressed() {
-        if articleContentView.canGoForward {
-            articleContentView.goForward()
+        if articleContentWebView.canGoForward {
+            articleContentWebView.goForward()
         }
     }
     
     private func recordOffset() {
-        if articleContentView.URL?.absoluteString == self.articleDetailInfo?.url {
-            articleContentView.evaluateJavaScript("$('body').scrollTop()", completionHandler: { [unowned self] (AnyObject, NSError) -> Void in
+        if articleContentWebView.URL?.absoluteString == self.articleDetailInfo?.url {
+            articleContentWebView.evaluateJavaScript("$('body').scrollTop()", completionHandler: { [unowned self] (AnyObject, NSError) -> Void in
                 if let offset:Double = AnyObject as? Double {
                     self.articleDetailInfo?.offset = offset
-                    self.articleDetailInfo?.height = Double(self.articleContentView.scrollView.contentSize.height)
+                    self.articleDetailInfo?.height = Double(self.articleContentWebView.scrollView.contentSize.height)
                     self.delegate?.didCloseArticle(self.articleDetailInfo!)
                 }
             })
@@ -112,10 +112,10 @@ extension SGArticleDetailViewController:SFSafariViewControllerDelegate,WKNavigat
     // MARK: Helper Methods
     private func setupArticleContentView() {
         // 设置webView
-        articleContentView = WKWebView()
-        view.insertSubview(articleContentView, atIndex: 0)
-        articleContentView.allowsBackForwardNavigationGestures = true
-        articleContentView.navigationDelegate = self
+        articleContentWebView = WKWebView()
+        view.insertSubview(articleContentWebView, atIndex: 0)
+        articleContentWebView.allowsBackForwardNavigationGestures = true
+        articleContentWebView.navigationDelegate = self
         
         if let articleDetail = dataSource?.articleDetailModel() {
             articleDetailInfo = articleDetail
@@ -125,7 +125,7 @@ extension SGArticleDetailViewController:SFSafariViewControllerDelegate,WKNavigat
             let url = NSURL(string: articleDetail.url)
             //            let request = NSURLRequest(URL: url!, cachePolicy: NSURLRequestCachePolicy.ReloadRevalidatingCacheData, timeoutInterval: NSTimeInterval(30))
             let request = NSURLRequest(URL: url!)
-            articleContentView.loadRequest(request)
+            articleContentWebView.loadRequest(request)
         }
     }
 
@@ -138,10 +138,10 @@ extension SGArticleDetailViewController: SGArticleDetailToolBarProtocol {
         view.addSubview(articleDetailToolBar!.backButton)
         view.addSubview(articleDetailToolBar!.forwardButton)
         
-        articleContentView.rx_canGoBack
+        articleContentWebView.rx_canGoBack
             .bindTo(articleDetailToolBar!.backButton.rx_enabled)
             .addDisposableTo(disposeBag)
-        articleContentView.rx_canGoForward
+        articleContentWebView.rx_canGoForward
             .bindTo(articleDetailToolBar!.forwardButton.rx_enabled)
             .addDisposableTo(disposeBag)
     }
@@ -155,7 +155,7 @@ class SGArticleDetailViewController: UIViewController {
 
     var articleDetailInfo: SGArticleDetailInfo?
     
-    var articleContentView: WKWebView!
+    var articleContentWebView: WKWebView!
     
     var articleDetailToolBar: SGArticleDetailToolBar?
     
@@ -179,7 +179,7 @@ class SGArticleDetailViewController: UIViewController {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
-        articleContentView.fillSuperview()
+        articleContentWebView.fillSuperview()
         articleDetailToolBar?.backButton.anchorToEdge(.Left, padding: 0, width: 50, height: 50)
         articleDetailToolBar?.forwardButton.anchorToEdge(.Right, padding: 0, width: 50, height: 50)
     }
@@ -199,6 +199,6 @@ class SGArticleDetailViewController: UIViewController {
     }
 
     deinit {
-        self.articleContentView.scrollView.delegate = nil
+        self.articleContentWebView.scrollView.delegate = nil
     }
 }
