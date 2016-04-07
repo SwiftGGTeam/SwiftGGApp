@@ -48,7 +48,7 @@ extension SGUserInfoViewController: TransparentNavBarProtocol {
         view.addSubview(transparentNavBar)
         let customNavigationItem = UINavigationItem(title: "")
         transparentNavBar.setItems([customNavigationItem], animated: false)
-        let settingBarItem = UIBarButtonItem(image: UIImage(named: "back_gray"), style: .Plain, target: self, action: "back")
+        let settingBarItem = UIBarButtonItem(image: UIImage(named: "back_gray"), style: .Plain, target: self, action: #selector(SGUserInfoViewController.back))
         settingBarItem.tintColor = UIColor.whiteColor()
         customNavigationItem.leftBarButtonItem = settingBarItem
     }

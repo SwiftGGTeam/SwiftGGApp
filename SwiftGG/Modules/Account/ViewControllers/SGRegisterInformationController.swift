@@ -43,7 +43,7 @@ class SGRegisterInformationController: UIViewController {
         navigationController!.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor(rgba: "#303030"), NSFontAttributeName: UIFont.systemFontOfSize(17)]
         
         let backImage = UIImage(named: "back_gray")?.imageWithRenderingMode(.AlwaysOriginal)
-        navigationItem.leftBarButtonItem = UIBarButtonItem(image: backImage, style: .Plain, target: self, action: Selector("back"))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: backImage, style: .Plain, target: self, action: #selector(SGRegisterInformationController.back))
     }
     
     func setupTableView() {

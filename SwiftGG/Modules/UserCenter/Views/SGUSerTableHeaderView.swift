@@ -42,10 +42,10 @@ class SGUSerTableHeaderView: UIView {
         super.awakeFromNib()
         
         // add target-action
-        userInfoContainer.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "onUserInfoContainerClicked"))
-        statusFavContainer.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "onFavButtonClicked"))
-        statusAlreadReadContainer.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "onAlreadyReadButtonClicked"))
-        statusUnreadContainer.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "onUnreadButtonClicked"))
+        userInfoContainer.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(SGUSerTableHeaderView.onUserInfoContainerClicked)))
+        statusFavContainer.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(SGUSerTableHeaderView.onFavButtonClicked)))
+        statusAlreadReadContainer.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(SGUSerTableHeaderView.onAlreadyReadButtonClicked)))
+        statusUnreadContainer.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(SGUSerTableHeaderView.onUnreadButtonClicked)))
         
         avatarImageView.layer.borderWidth = 1.5
         avatarImageView.layer.borderColor = UIColor.whiteColor().CGColor
