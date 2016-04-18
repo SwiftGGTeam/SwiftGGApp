@@ -1,42 +1,72 @@
 PODS:
-  - Alamofire (3.1.4)
-  - Kingfisher (1.9.2)
-  - Moya (6.0.0):
-    - Moya/Core (= 6.0.0)
-  - Moya/Core (6.0.0):
+  - Alamofire (3.3.1)
+  - MoyaX (0.0.4):
     - Alamofire (~> 3.0)
-    - Result (~> 1.0)
-  - Neon (0.0.3)
-  - Result (1.0.1)
+  - NSObject+Rx (1.2.1):
+    - RxSwift (~> 2.1)
+  - R.swift (2.1.0):
+    - R.swift.Library (~> 2.0.0)
+  - R.swift.Library (2.0.0)
+  - Realm (0.98.8):
+    - Realm/Headers (= 0.98.8)
+  - Realm/Headers (0.98.8)
+  - RealmSwift (0.98.8):
+    - Realm (= 0.98.8)
+  - RxBlocking (2.4):
+    - RxSwift (~> 2.4)
+  - RxCocoa (2.4):
+    - RxSwift (~> 2.4)
+  - RxDataSources (0.6.2):
+    - RxCocoa (~> 2.2)
+    - RxSwift (~> 2.2)
+  - RxGesture (0.1.2):
+    - RxCocoa
+    - RxSwift
+  - RxOptional (2.0.0):
+    - RxCocoa (~> 2.0)
+    - RxSwift (~> 2.0)
+  - RxSwift (2.4)
+  - RxTests (2.4):
+    - RxSwift (~> 2.4)
+  - SwiftDate (3.0.8)
   - SwiftyJSON (2.3.2)
-  - UIColor_Hex_Swift (1.8)
+  - XCGLogger (3.3)
 
 DEPENDENCIES:
-  - Alamofire (~> 3.0)
-  - Kingfisher (~> 1.9)
-  - Moya
-  - Neon (~> 0.0.1)
-  - SwiftyJSON (from `https://github.com/SwiftyJSON/SwiftyJSON.git`)
-  - UIColor_Hex_Swift (~> 1.8)
-
-EXTERNAL SOURCES:
-  SwiftyJSON:
-    :git: https://github.com/SwiftyJSON/SwiftyJSON.git
-
-CHECKOUT OPTIONS:
-  SwiftyJSON:
-    :commit: 929539eb6a3304eaa9153ca44041a78b85bf2ee5
-    :git: https://github.com/SwiftyJSON/SwiftyJSON.git
+  - MoyaX
+  - NSObject+Rx
+  - R.swift
+  - RealmSwift
+  - RxBlocking (~> 2.4)
+  - RxCocoa (~> 2.4)
+  - RxDataSources
+  - RxGesture
+  - RxOptional
+  - RxSwift (~> 2.4)
+  - RxTests (~> 2.4)
+  - SwiftDate
+  - SwiftyJSON
+  - XCGLogger (~> 3.3)
 
 SPEC CHECKSUMS:
-  Alamofire: fbc829692f351fa1d8a31dd75fd7f7f56fea31fb
-  Kingfisher: 7b6df0fa9d211807152c32c46494f9bc08f0e07b
-  Moya: 9bd9f20e6451c820c17ca40e1b3f6489757fa821
-  Neon: 589d3d217d326abe09726bf81add106cff685bf2
-  Result: caef80340451e1f07492fa1e89117f83613bce24
+  Alamofire: 369bc67b6f5ac33ded3648d7bd21c5bfb91c2ecc
+  MoyaX: 23c2bb39d66417a715bfe72f3fd44f76092a8b9b
+  NSObject+Rx: 5d032a7f161602dec6b82dcf12731e91ce15b8da
+  R.swift: efff131531b5cf142e28fd94957806ff71ccbcf2
+  R.swift.Library: 9f4b2d12040daa1ffe336d8f7e1574f73721fd01
+  Realm: 0e293bb62999730599efc3048896bbd4f2e43bcd
+  RealmSwift: 064262d38113f23ff3508fb20a0a922e696bec01
+  RxBlocking: 1226c1fa0ca1e0ca5f964d4330ca3649f2128680
+  RxCocoa: 7d6cd877de99f5640306b3d6cf87f580c1d91b61
+  RxDataSources: 9ae26211019e6afb7391125940d719b4326e94a4
+  RxGesture: 5a5d7ee565fb24b1dbede801e7a98d4169ac5818
+  RxOptional: b77fb47a0190213cf8a37c7a2b7fda28160b4563
+  RxSwift: 67b9ef4e8b34fb394e200e754c6a09cc16559f94
+  RxTests: 8b9691e6476dfa6025fae9a69f449bf4cb5e5cfc
+  SwiftDate: 971f8b9394f664f2226b9c3ab64e801a7291c612
   SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
-  UIColor_Hex_Swift: a66b9d5f6e8fddbd9fe32996504f0b7e9d20d680
+  XCGLogger: d6e196e78940ff6daab17d6917107876f973fa31
 
-PODFILE CHECKSUM: df27a2864c1168a5a154ef81a192bd3e54665c75
+PODFILE CHECKSUM: 9995538014b304067a238f83dc216bff7e814b89
 
-COCOAPODS: 1.0.0.beta.2
+COCOAPODS: 1.0.0.beta.8
