@@ -77,18 +77,34 @@ final class HomeViewController: UIViewController, SegueHandlerType {
 		tabBarController?
 			.rx_didSelectViewController
 			.map { [unowned self] in $0 == self.navigationController } // 选择了"自己"
-		.buffer(timeSpan: 0.6, count: 2, scheduler: MainScheduler.instance) // buffer 两个
-		.filter { $0.count >= 2 } // 确保是在 0.6s 内点击两次
-		.map { $0[0] == $0[1] } // 两次都是点击"自己"
-		.subscribeNext { [unowned self] doubleClick in
-			if doubleClick {
-				let ip = NSIndexPath(forItem: 0, inSection: 0)
-				self.collectionView.scrollToItemAtIndexPath(ip, atScrollPosition: .CenteredHorizontally, animated: true)
-			}
-		}
+            .buffer(timeSpan: 0.6, count: 2, scheduler: MainScheduler.instance) // buffer 两个
+            .filter { $0.count >= 2 } // 确保是在 0.6s 内点击两次
+            .map { $0[0] == $0[1] } // 两次都是点击"自己"
+            .subscribeNext { [unowned self] doubleClick in
+                if doubleClick {
+                    let ip = NSIndexPath(forItem: 0, inSection: 0)
+                    self.collectionView.scrollToItemAtIndexPath(ip, atScrollPosition: .CenteredHorizontally, animated: true)
+                }
+            }
 			.addDisposableTo(rx_disposeBag)
 
 		registerForPreviewingWithDelegate(self, sourceView: collectionView)
+        
+        navigationItem.leftBarButtonItem?.rx_tap
+            .subscribeNext { [unowned self] in
+            let alert = UIAlertController(title: nil, message: nil, preferredStyle: .ActionSheet)
+            let action1 = UIAlertAction(title: "全部显示", style: .Default, handler: nil)
+            let action2 = UIAlertAction(title: "显示未读完", style: .Default, handler: nil)
+            let action3 = UIAlertAction(title: "取消", style: .Cancel, handler: nil)
+            
+            alert.addAction(action1)
+            alert.addAction(action2)
+            alert.addAction(action3)
+                
+            self.presentViewController(alert, animated: true, completion: nil)
+        }.addDisposableTo(rx_disposeBag)
+        
+        
 	}
 
 	override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -108,6 +124,10 @@ final class HomeViewController: UIViewController, SegueHandlerType {
 				.addDisposableTo(rx_disposeBag)
 		}
 	}
+    
+    override func viewWillAppear(animated: Bool) {
+        navigationController?.setNavigationBarHidden(false, animated: true)
+    }
 }
 
 // MARK: - UIViewControllerPreviewingDelegate
