@@ -149,3 +149,5 @@ fastlane/screenshots
 
 .DS_Store
 .idea/
+
+R.generated.swift
