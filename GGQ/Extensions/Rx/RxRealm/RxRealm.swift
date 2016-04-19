@@ -9,6 +9,7 @@
 import Foundation
 import RealmSwift
 import RxSwift
+import RxCocoa
 
 // MARK: - Realm extension that adds a reactive interface to Realm
 public extension Realm {
@@ -327,6 +328,21 @@ public extension Realm {
         return { (observable: Observable<Results<T>>) -> Observable<Results<T>> in
             return observable
                 .map { $0.sorted(key, ascending: ascending) }
+        }
+    }
+}
+
+extension Realm {
+    var rx_notification: Observable<(notification: Notification, realm: Realm)> {
+        return Observable.create { observer in
+            let realmNotificationToken = self.addNotificationBlock { notification, realm in
+                    observer.onNext((notification: notification, realm: realm))
+                }
+        
+            return AnonymousDisposable {
+                realmNotificationToken.stop()
+            }
+            
         }
     }
 }
