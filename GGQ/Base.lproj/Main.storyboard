@@ -208,6 +208,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="首页" id="9lQ-UG-zA0">
+                        <barButtonItem key="leftBarButtonItem" image="btn_list" id="j5r-Xb-Cfd">
+                            <color key="tintColor" red="0.1764705882" green="0.1764705882" blue="0.1764705882" alpha="1" colorSpace="calibratedRGB"/>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="btn_search" id="3Gg-KW-Tdx">
                             <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
@@ -269,6 +272,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="btn_list" width="28" height="18"/>
         <image name="btn_search" width="24" height="24"/>
         <image name="icon_articles" width="26" height="27"/>
         <image name="icon_home" width="30" height="27"/>

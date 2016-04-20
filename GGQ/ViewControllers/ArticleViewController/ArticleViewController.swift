@@ -16,8 +16,13 @@ import RxGesture
 
 private typealias ArticleSectionModel = AnimatableSectionModel<Int, NSAttributedString>
 
-final class ArticleViewController: UIViewController {
+private enum CellType {
+	case Article(NSAttributedString)
+	case Loading
+	case Footer
+}
 
+final class ArticleViewController: UIViewController {
 	@IBOutlet private weak var collectionView: UICollectionView!
 
 	var articleInfo: ArticleInfoObject!
@@ -25,7 +30,6 @@ final class ArticleViewController: UIViewController {
 	private var viewModel: ArticleViewModel!
 
 	override func viewDidLoad() {
-
 		title = articleInfo.title
 		let width = UIScreen.mainScreen().bounds.width - 60
 		let height = UIScreen.mainScreen().bounds.height - 60 - 44
@@ -42,8 +46,14 @@ final class ArticleViewController: UIViewController {
 
 		viewModel = ArticleViewModel(articleInfo: articleInfo, contentSize: size)
 
-		viewModel.elements.asObservable()
+		let articles = viewModel.elements.asObservable()
 			.map { [ArticleSectionModel(model: $0.count, items: $0)] }
+
+//		let footer = viewModel
+
+//		Observable.combineLatest(articles,)
+
+		articles
 			.observeOn(.Main)
 			.bindTo(collectionView.rx_itemsWithDataSource(ds))
 			.addDisposableTo(rx_disposeBag)
@@ -61,6 +71,7 @@ final class ArticleViewController: UIViewController {
 	}
 
 	override func viewWillAppear(animated: Bool) {
+		super.viewWillAppear(animated)
 		navigationController?.setNavigationBarHidden(true, animated: true)
 	}
 }
@@ -68,7 +79,6 @@ final class ArticleViewController: UIViewController {
 // MARK: - Preview Action
 
 extension ArticleViewController {
-
 	override func previewActionItems() -> [UIPreviewActionItem] {
 		let afterPreviewAction = UIPreviewAction(title: "稍后阅读", style: .Default) { previewAction, viewController in
 		}
@@ -79,13 +89,12 @@ extension ArticleViewController {
 
 // MARK: - Status Bar
 
-extension ArticleViewController {
-
-	override func prefersStatusBarHidden() -> Bool {
-		return navigationController?.navigationBarHidden ?? true
-	}
-
-	override func preferredStatusBarUpdateAnimation() -> UIStatusBarAnimation {
-		return .Slide
-	}
-}
+//extension ArticleViewController {
+//	override func prefersStatusBarHidden() -> Bool {
+//		return navigationController?.navigationBarHidden ?? true
+//	}
+//
+//	override func preferredStatusBarUpdateAnimation() -> UIStatusBarAnimation {
+//		return .None
+//	}
+//}

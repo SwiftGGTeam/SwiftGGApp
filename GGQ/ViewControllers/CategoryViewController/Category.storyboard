@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Category View Controller-->
@@ -35,35 +34,35 @@
                                         <rect key="frame" x="0.0" y="228" width="600" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JHN-gp-bVb" id="hS8-pF-DjX">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="60"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="59.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="ccX-4K-8y3">
-                                                    <rect key="frame" x="8" y="8" width="584" height="44"/>
-                                                    <subviews>
-                                                        <label userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="如何使用闭包初始化来加速 Swift 的 playground" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IQL-JB-hUa">
-                                                            <rect key="frame" x="15" y="0.0" width="270" height="44"/>
-                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                            <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="17"/>
-                                                            <color key="textColor" red="0.1764705882" green="0.1764705882" blue="0.1764705882" alpha="1" colorSpace="calibratedRGB"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="3 / 5" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uD9-gg-QWL">
-                                                            <rect key="frame" x="299" y="0.0" width="270" height="44"/>
-                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                            <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="14"/>
-                                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                    </subviews>
-                                                    <edgeInsets key="layoutMargins" top="0.0" left="15" bottom="0.0" right="15"/>
-                                                </stackView>
+                                                <label userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3 / 5" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uD9-gg-QWL">
+                                                    <rect key="frame" x="519.5" y="20" width="50" height="20"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="e9g-WN-hwa"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="14"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="如何使用闭包初始化来加速 Swift 的 playground" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IQL-JB-hUa">
+                                                    <rect key="frame" x="27" y="15" width="365.5" height="29.5"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="17"/>
+                                                    <color key="textColor" red="0.1764705882" green="0.1764705882" blue="0.1764705882" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="ccX-4K-8y3" firstAttribute="leading" secondItem="hS8-pF-DjX" secondAttribute="leadingMargin" id="GFW-yA-AdU"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="ccX-4K-8y3" secondAttribute="trailing" id="LIr-Si-abX"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="ccX-4K-8y3" secondAttribute="bottom" id="QbK-bJ-vwJ"/>
-                                                <constraint firstItem="ccX-4K-8y3" firstAttribute="top" secondItem="hS8-pF-DjX" secondAttribute="topMargin" id="uhO-lz-hWd"/>
+                                                <constraint firstItem="uD9-gg-QWL" firstAttribute="centerY" secondItem="hS8-pF-DjX" secondAttribute="centerY" id="DiT-OD-xft"/>
+                                                <constraint firstItem="IQL-JB-hUa" firstAttribute="leading" secondItem="hS8-pF-DjX" secondAttribute="leading" constant="27" id="Pdz-N8-i5P"/>
+                                                <constraint firstAttribute="trailing" secondItem="uD9-gg-QWL" secondAttribute="trailing" constant="30" id="UJ4-NF-xPi"/>
+                                                <constraint firstAttribute="bottom" secondItem="IQL-JB-hUa" secondAttribute="bottom" constant="15" id="WUO-eX-aEl"/>
+                                                <constraint firstItem="IQL-JB-hUa" firstAttribute="top" secondItem="hS8-pF-DjX" secondAttribute="top" constant="15" id="hx2-Bl-T4s"/>
+                                                <constraint firstItem="uD9-gg-QWL" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="IQL-JB-hUa" secondAttribute="trailing" constant="5" id="kmU-kk-7IE"/>
+                                                <constraint firstItem="IQL-JB-hUa" firstAttribute="centerY" secondItem="hS8-pF-DjX" secondAttribute="centerY" id="mYW-VJ-43u"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -76,7 +75,7 @@
                                         <rect key="frame" x="0.0" y="288" width="600" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OI8-Q2-2pc" id="HbK-iH-0Vb">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="60"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="59.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <activityIndicatorView contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="dvg-Ee-ouQ">
@@ -86,8 +85,9 @@
                                                 </activityIndicatorView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="dvg-Ee-ouQ" firstAttribute="centerX" secondItem="HbK-iH-0Vb" secondAttribute="centerX" id="ZWQ-h6-0AU"/>
-                                                <constraint firstItem="dvg-Ee-ouQ" firstAttribute="centerY" secondItem="HbK-iH-0Vb" secondAttribute="centerY" id="egY-X1-NH1"/>
+                                                <constraint firstAttribute="bottom" secondItem="dvg-Ee-ouQ" secondAttribute="bottom" constant="20" id="chP-1P-QWK"/>
+                                                <constraint firstItem="dvg-Ee-ouQ" firstAttribute="top" secondItem="HbK-iH-0Vb" secondAttribute="top" constant="20" id="ePf-k9-BQN"/>
+                                                <constraint firstItem="dvg-Ee-ouQ" firstAttribute="centerX" secondItem="HbK-iH-0Vb" secondAttribute="centerX" id="vBf-fN-1JW"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -109,7 +109,7 @@
                     <connections>
                         <outlet property="headerImageView" destination="X3T-Ig-wh9" id="NlF-lh-VXL"/>
                         <outlet property="tableView" destination="1Xx-6m-PLx" id="Xad-gU-f7i"/>
-                        <segue destination="qJ6-Dw-Npw" kind="show" id="Cpl-WD-xAa"/>
+                        <segue destination="qJ6-Dw-Npw" kind="show" identifier="ShowArticle" id="Cpl-WD-xAa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CI4-mo-Mtc" userLabel="First Responder" sceneMemberID="firstResponder"/>

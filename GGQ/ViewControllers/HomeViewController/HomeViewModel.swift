@@ -43,7 +43,7 @@ final class HomeViewModel {
         let loadMoreResult = loadMoreRequest
             .flatMapLatest { GGProvider.request(GGAPI.Articles(pageIndex: $0, pageSize: GGConfig.Home.pageSize)) }
         // TODO: - 在这里加判断，是否需要更新 Model
-        .gg_storeArray(ArticleInfoObject)
+            .gg_storeArray(ArticleInfoObject)
             .flatMapLatest { Realm.rx_objects(ArticleInfoObject) }
             .map { $0.map { $0 } }
             .shareReplay(1)

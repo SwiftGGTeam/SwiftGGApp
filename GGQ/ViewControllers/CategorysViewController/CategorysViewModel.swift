@@ -10,38 +10,50 @@ import RxSwift
 import RxCocoa
 import Realm
 import RealmSwift
-import RxOptional
 
 final class CategorysViewModel {
+	let elements = Variable<[CategoryObject]>([])
 
-    let elements = Variable<[CategoryObject]>([])
+	let errorMessage = Variable<ErrorType?>(nil)
 
-    let isLoading = Variable(true)
-    
-    private var realmNotificationToken: NotificationToken?
+	let isRefreshing = Variable(true)
 
-    private let disposeBag = DisposeBag()
+	private var realmNotificationToken: NotificationToken?
 
-    init() {
+	private let disposeBag = DisposeBag()
 
-        if let realm = try? Realm() {
-            let list = realm.objects(CategoryObject.self)
-            realmNotificationToken = list.realm?.addNotificationBlock { [weak self] notification, realm in
-                if let strongSelf = self {
-                    strongSelf.elements.value = list.map { $0 }
-                    strongSelf.isLoading.value = false
-                }
-            }
-        }
+	init(refreshTrigger: Driver<Void>) {
+		if let realm = try? Realm() {
+			let list = realm.objects(CategoryObject.self)
+			elements.value = list.map { $0 }
+			realm
+				.rx_notification
+				.withLatestFrom(Observable.just(list))
+				.map { $0.map { $0 } }
+				.bindTo(elements)
+				.addDisposableTo(disposeBag)
+		}
 
-        GGProvider.request(GGAPI.CategoryList)
-            .gg_storeArray(CategoryObject).debug("储存完毕")
-            .subscribeNext {
-                
-            }.addDisposableTo(disposeBag)
-//            .flatMapLatest { Realm.rx_objects(CategoryObject) }.debug("读取结果")
-//            .map { $0.map { $0 } }.debug("转换结果")
-//            .observeOn(.Main)
-//            .bindTo(elements).addDisposableTo(disposeBag)
-    }
+		let refreshResult = [refreshTrigger, Driver.just(())].toObservable()
+		// TODO: - 换一个合适的位置
+		.merge()
+			.asDriver(onErrorJustReturn: ())
+			.flatMapLatest { GGProvider.request(GGAPI.CategoryList)
+					.gg_storeArray(CategoryObject)
+					.asResultDriver() }
+
+		refreshResult
+			.driveNext { [unowned self] result in
+				switch result {
+				case .Result:
+					break
+//                    self.isRefreshing.value = false
+				case .Error(let error):
+//                    self.isRefreshing.value = false
+					self.errorMessage.value = error
+				}
+		}
+			.addDisposableTo(disposeBag)
+		[refreshTrigger.map { _ in true }, refreshResult.map { _ in false }].toObservable().merge().bindTo(isRefreshing).addDisposableTo(disposeBag)
+	}
 }

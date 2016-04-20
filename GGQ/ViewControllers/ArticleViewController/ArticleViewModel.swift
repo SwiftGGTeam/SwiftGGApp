@@ -73,6 +73,7 @@ final class ArticleViewModel {
 				}
 
 				self.elements.value = result // == 先放这里 == 困
+				self.isLoading.value = false
 
 				return realmRangesStr
 		}.shareReplay(1)
@@ -86,7 +87,7 @@ final class ArticleViewModel {
 			realmNotificationToken = articles.realm?.addNotificationBlock { [weak self] notification, realm in
 				if let strongSelf = self, article = articles.first {
 					strongSelf.content.value = article.content
-					strongSelf.isLoading.value = false
+//					strongSelf.isLoading.value = false
 				}
 			}
 		}

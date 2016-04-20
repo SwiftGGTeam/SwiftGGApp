@@ -14,31 +14,42 @@
                         <viewControllerLayoutGuide type="bottom" id="PDs-cx-Sjb"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="LNc-xQ-waa">
-                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cxg-sm-3C8">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="96"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="140"/>
                                 <subviews>
-                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="Avatar" translatesAutoresizingMaskIntoConstraints="NO" id="cOA-if-aLr">
-                                        <rect key="frame" x="270" y="18" width="60" height="60"/>
+                                    <imageView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="Avatar" translatesAutoresizingMaskIntoConstraints="NO" id="cOA-if-aLr">
+                                        <rect key="frame" x="270" y="60" width="60" height="60"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="3LA-4Q-BGX"/>
                                             <constraint firstAttribute="width" constant="60" id="kPV-cY-rg5"/>
                                         </constraints>
                                     </imageView>
                                     <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pVY-kj-q0d">
-                                        <rect key="frame" x="576" y="37" width="9" height="22"/>
+                                        <rect key="frame" x="576" y="59" width="9" height="22"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <color key="tintColor" red="0.1764705882" green="0.1764705882" blue="0.1764705882" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" image="btn_go"/>
                                     </button>
+                                    <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C9W-qd-Y3x">
+                                        <rect key="frame" x="560" y="30" width="25" height="25"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <state key="normal" image="btn_settings"/>
+                                        <connections>
+                                            <segue destination="aTd-gD-4MV" kind="show" identifier="ShowSetting" id="vSL-PA-si2"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="96" id="1Sk-ve-VQo"/>
+                                    <constraint firstAttribute="height" constant="140" id="1Sk-ve-VQo"/>
                                     <constraint firstAttribute="trailing" secondItem="pVY-kj-q0d" secondAttribute="trailing" constant="15" id="Dxk-8V-QEm"/>
-                                    <constraint firstItem="cOA-if-aLr" firstAttribute="centerY" secondItem="Cxg-sm-3C8" secondAttribute="centerY" id="b7Z-Ye-FPv"/>
+                                    <constraint firstItem="C9W-qd-Y3x" firstAttribute="top" secondItem="Cxg-sm-3C8" secondAttribute="top" constant="30" id="FPf-gM-O6t"/>
+                                    <constraint firstAttribute="trailing" secondItem="C9W-qd-Y3x" secondAttribute="trailing" constant="15" id="YKY-uT-qus"/>
+                                    <constraint firstItem="cOA-if-aLr" firstAttribute="top" secondItem="Cxg-sm-3C8" secondAttribute="top" constant="60" id="to7-AT-pyx"/>
                                     <constraint firstItem="pVY-kj-q0d" firstAttribute="centerY" secondItem="Cxg-sm-3C8" secondAttribute="centerY" id="xLd-hO-Nob"/>
                                     <constraint firstItem="cOA-if-aLr" firstAttribute="centerX" secondItem="Cxg-sm-3C8" secondAttribute="centerX" id="zVM-6i-aVe"/>
                                 </constraints>
@@ -46,20 +57,17 @@
                         </subviews>
                         <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="Cxg-sm-3C8" firstAttribute="top" secondItem="6gh-YS-d70" secondAttribute="bottom" id="K60-UM-ANH"/>
                             <constraint firstItem="Cxg-sm-3C8" firstAttribute="leading" secondItem="LNc-xQ-waa" secondAttribute="leading" id="dBl-cK-np4"/>
+                            <constraint firstItem="Cxg-sm-3C8" firstAttribute="top" secondItem="LNc-xQ-waa" secondAttribute="top" id="iCa-Ee-5Al"/>
                             <constraint firstAttribute="trailing" secondItem="Cxg-sm-3C8" secondAttribute="trailing" id="pNU-br-CnM"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="我" id="jtY-Tc-Skd">
                         <barButtonItem key="rightBarButtonItem" image="btn_settings" id="sQe-v0-l6T">
                             <color key="tintColor" red="0.1764705882" green="0.1764705882" blue="0.1764705882" alpha="1" colorSpace="calibratedRGB"/>
-                            <connections>
-                                <segue destination="aTd-gD-4MV" kind="show" id="zL6-Ut-wbV"/>
-                            </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <nil key="simulatedTopBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hco-VW-u2u" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

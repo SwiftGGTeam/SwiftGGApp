@@ -31,7 +31,9 @@ class ArticleDetailModel: Object {
     dynamic var commentsNumber: Int = 0
     dynamic var content: String = ""
 //    dynamic var comments: RLMArray = RLMArray(objectClassName: "String")
-    dynamic var updateDate: String = ""
+    dynamic var updateDate: String = "" // 通过 updateDate 判断是否是最新版本文章
+    
+//    dynamic var 
 
     override static func primaryKey() -> String? {
         return "id"

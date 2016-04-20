@@ -9,7 +9,6 @@
 import UIKit
 
 extension ArticleTableViewCell {
-
 	var title: String? {
 		get {
 			return contentTitleLabel.text
@@ -30,7 +29,6 @@ extension ArticleTableViewCell {
 }
 
 class ArticleTableViewCell: UITableViewCell {
-
 	@IBOutlet weak var contentTitleLabel: UILabel!
 
 	@IBOutlet weak var readPageInfoLabel: UILabel!

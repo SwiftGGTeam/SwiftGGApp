@@ -25,7 +25,7 @@ struct R: Rswift.Validatable {
     private init() {}
   }
   
-  /// This `R.image` struct is generated, and contains static references to 14 images.
+  /// This `R.image` struct is generated, and contains static references to 15 images.
   struct image {
     /// Image `Avatar`.
     static let avatar = ImageResource(bundle: _R.hostingBundle, name: "Avatar")
@@ -33,6 +33,8 @@ struct R: Rswift.Validatable {
     static let btn_back = ImageResource(bundle: _R.hostingBundle, name: "btn_back")
     /// Image `btn_go`.
     static let btn_go = ImageResource(bundle: _R.hostingBundle, name: "btn_go")
+    /// Image `btn_list`.
+    static let btn_list = ImageResource(bundle: _R.hostingBundle, name: "btn_list")
     /// Image `btn_search`.
     static let btn_search = ImageResource(bundle: _R.hostingBundle, name: "btn_search")
     /// Image `btn_settings`.
@@ -69,6 +71,11 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "btn_go", bundle: ..., traitCollection: ...)`
     static func btn_go(compatibleWithTraitCollection traitCollection: UITraitCollection? = nil) -> UIImage? {
       return UIImage(resource: R.image.btn_go, compatibleWithTraitCollection: traitCollection)
+    }
+    
+    /// `UIImage(named: "btn_list", bundle: ..., traitCollection: ...)`
+    static func btn_list(compatibleWithTraitCollection traitCollection: UITraitCollection? = nil) -> UIImage? {
+      return UIImage(resource: R.image.btn_list, compatibleWithTraitCollection: traitCollection)
     }
     
     /// `UIImage(named: "btn_search", bundle: ..., traitCollection: ...)`
@@ -142,12 +149,16 @@ struct R: Rswift.Validatable {
     private init() {}
   }
   
-  /// This `R.reuseIdentifier` struct is generated, and contains static references to 11 reuse identifiers.
+  /// This `R.reuseIdentifier` struct is generated, and contains static references to 13 reuse identifiers.
   struct reuseIdentifier {
     /// Reuse identifier `ArticleCollectionViewCell`.
     static let articleCollectionViewCell: ReuseIdentifier<ArticleCollectionViewCell> = ReuseIdentifier(identifier: "ArticleCollectionViewCell")
+    /// Reuse identifier `ArticleFooterCollectionViewCell`.
+    static let articleFooterCollectionViewCell: ReuseIdentifier<ArticleLoadingCollectionViewCell> = ReuseIdentifier(identifier: "ArticleFooterCollectionViewCell")
     /// Reuse identifier `ArticleLoadMoreTableViewCell`.
     static let articleLoadMoreTableViewCell: ReuseIdentifier<ArticleLoadMoreTableViewCell> = ReuseIdentifier(identifier: "ArticleLoadMoreTableViewCell")
+    /// Reuse identifier `ArticleLoadingCollectionViewCell`.
+    static let articleLoadingCollectionViewCell: ReuseIdentifier<ArticleLoadingCollectionViewCell> = ReuseIdentifier(identifier: "ArticleLoadingCollectionViewCell")
     /// Reuse identifier `ArticleTableViewCell`.
     static let articleTableViewCell: ReuseIdentifier<ArticleTableViewCell> = ReuseIdentifier(identifier: "ArticleTableViewCell")
     /// Reuse identifier `biu`.
@@ -170,8 +181,23 @@ struct R: Rswift.Validatable {
     private init() {}
   }
   
-  /// This `R.segue` struct is generated, and contains static references to 3 view controllers.
+  /// This `R.segue` struct is generated, and contains static references to 5 view controllers.
   struct segue {
+    /// This struct is generated for `CategoryViewController`, and contains static references to 1 segues.
+    struct categoryViewController {
+      /// Segue identifier `ShowArticle`.
+      static let showArticle: StoryboardSegueIdentifier<UIStoryboardSegue, CategoryViewController, ArticleViewController> = StoryboardSegueIdentifier(identifier: "ShowArticle")
+      
+      /// Optionally returns a typed version of segue `ShowArticle`.
+      /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.
+      /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
+      static func showArticle(segue segue: UIStoryboardSegue) -> TypedStoryboardSegueInfo<UIStoryboardSegue, CategoryViewController, ArticleViewController>? {
+        return TypedStoryboardSegueInfo(segueIdentifier: R.segue.categoryViewController.showArticle, segue: segue)
+      }
+      
+      private init() {}
+    }
+    
     /// This struct is generated for `CategorysViewController`, and contains static references to 1 segues.
     struct categorysViewController {
       /// Segue identifier `ShowCategory`.
@@ -206,6 +232,21 @@ struct R: Rswift.Validatable {
       /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
       static func showSearch(segue segue: UIStoryboardSegue) -> TypedStoryboardSegueInfo<UIStoryboardSegue, HomeViewController, SearchViewController>? {
         return TypedStoryboardSegueInfo(segueIdentifier: R.segue.homeViewController.showSearch, segue: segue)
+      }
+      
+      private init() {}
+    }
+    
+    /// This struct is generated for `ProfileViewController`, and contains static references to 1 segues.
+    struct profileViewController {
+      /// Segue identifier `ShowSetting`.
+      static let showSetting: StoryboardSegueIdentifier<UIStoryboardSegue, ProfileViewController, SettingViewController> = StoryboardSegueIdentifier(identifier: "ShowSetting")
+      
+      /// Optionally returns a typed version of segue `ShowSetting`.
+      /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.
+      /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
+      static func showSetting(segue segue: UIStoryboardSegue) -> TypedStoryboardSegueInfo<UIStoryboardSegue, ProfileViewController, SettingViewController>? {
+        return TypedStoryboardSegueInfo(segueIdentifier: R.segue.profileViewController.showSetting, segue: segue)
       }
       
       private init() {}
@@ -397,6 +438,7 @@ struct _R: Rswift.Validatable {
       static func validate() throws {
         if UIImage(named: "btn_search") == nil { throw ValidationError(description: "[R.swift] Image named 'btn_search' is used in storyboard 'Main', but couldn't be loaded.") }
         if UIImage(named: "icon_articles") == nil { throw ValidationError(description: "[R.swift] Image named 'icon_articles' is used in storyboard 'Main', but couldn't be loaded.") }
+        if UIImage(named: "btn_list") == nil { throw ValidationError(description: "[R.swift] Image named 'btn_list' is used in storyboard 'Main', but couldn't be loaded.") }
         if UIImage(named: "icon_home") == nil { throw ValidationError(description: "[R.swift] Image named 'icon_home' is used in storyboard 'Main', but couldn't be loaded.") }
         if UIImage(named: "icon_user") == nil { throw ValidationError(description: "[R.swift] Image named 'icon_user' is used in storyboard 'Main', but couldn't be loaded.") }
         if _R.storyboard.main().homeViewController() == nil { throw ValidationError(description:"[R.swift] ViewController with identifier 'homeViewController' could not be loaded from storyboard 'Main' as 'HomeViewController'.") }
@@ -430,7 +472,7 @@ struct _R: Rswift.Validatable {
     }
     
     struct setting: StoryboardResourceWithInitialControllerType {
-      typealias InitialController = UITableViewController
+      typealias InitialController = SettingViewController
       
       let bundle = _R.hostingBundle
       let name = "Setting"

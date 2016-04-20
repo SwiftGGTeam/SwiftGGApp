@@ -18,6 +18,8 @@
 		2622326E1CB7DD37009133D7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2622326C1CB7DD37009133D7 /* Main.storyboard */; };
 		262232701CB7DD37009133D7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2622326F1CB7DD37009133D7 /* Assets.xcassets */; };
 		262232731CB7DD37009133D7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 262232711CB7DD37009133D7 /* LaunchScreen.storyboard */; };
+		2632F82F1CC5E59800CC9A75 /* ArticleLoadingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2632F82E1CC5E59800CC9A75 /* ArticleLoadingCollectionViewCell.swift */; };
+		2632F8301CC5E59800CC9A75 /* ArticleLoadingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2632F82E1CC5E59800CC9A75 /* ArticleLoadingCollectionViewCell.swift */; };
 		265395E81CC09B2800E6239C /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265395E71CC09B2800E6239C /* R.generated.swift */; };
 		265395EA1CC09B2800E6239C /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265395E71CC09B2800E6239C /* R.generated.swift */; };
 		265395EC1CC0D3EF00E6239C /* Version.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265395EB1CC0D3EF00E6239C /* Version.swift */; };
@@ -30,12 +32,10 @@
 		267312861CBE8DD600036DB9 /* CategorysCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267312851CBE8DD600036DB9 /* CategorysCollectionViewFlowLayout.swift */; };
 		2673129B1CBEAA1400036DB9 /* MarkdownParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267312981CBEAA1400036DB9 /* MarkdownParser.swift */; };
 		2673129C1CBEAA1400036DB9 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267312991CBEAA1400036DB9 /* Parser.swift */; };
-		2673129D1CBEAA1400036DB9 /* Syntax.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2673129A1CBEAA1400036DB9 /* Syntax.swift */; };
 		2698DFE61CBFD25100B7E8C7 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E4CDD61CBA270E0013AD29 /* SearchViewModel.swift */; };
 		2698DFE71CBFD25100B7E8C7 /* HomeLoadMoreCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E4CDC21CB8ECA40013AD29 /* HomeLoadMoreCollectionViewCell.swift */; };
 		2698DFE81CBFD25100B7E8C7 /* Observable+Object.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E4CDBC1CB8E0FF0013AD29 /* Observable+Object.swift */; };
 		2698DFE91CBFD25100B7E8C7 /* CategorysCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267312851CBE8DD600036DB9 /* CategorysCollectionViewFlowLayout.swift */; };
-		2698DFEA1CBFD25100B7E8C7 /* Syntax.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2673129A1CBEAA1400036DB9 /* Syntax.swift */; };
 		2698DFEB1CBFD25100B7E8C7 /* UITabBar+IB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E4CDA61CB8A93D0013AD29 /* UITabBar+IB.swift */; };
 		2698DFEC1CBFD25100B7E8C7 /* CategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F734901CBF480300CEA2DE /* CategoryModel.swift */; };
 		2698DFED1CBFD25100B7E8C7 /* UITabBar+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E4CDC91CBA0E190013AD29 /* UITabBar+Rx.swift */; };
@@ -130,6 +130,14 @@
 		26E8725F1CC11677006C5A0F /* ServerInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E8725C1CC11677006C5A0F /* ServerInfoModel.swift */; };
 		26E872611CC12A55006C5A0F /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E872601CC12A55006C5A0F /* Logger.swift */; };
 		26E872631CC12B34006C5A0F /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E872601CC12A55006C5A0F /* Logger.swift */; };
+		26F343CB1CC5386F00476533 /* RxDriver+GG.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F343CA1CC5386F00476533 /* RxDriver+GG.swift */; };
+		26F343CC1CC5387300476533 /* RxDriver+GG.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F343CA1CC5386F00476533 /* RxDriver+GG.swift */; };
+		26F343CE1CC53D6200476533 /* RxObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F343CD1CC53D6200476533 /* RxObject.swift */; };
+		26F343CF1CC53D6200476533 /* RxObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F343CD1CC53D6200476533 /* RxObject.swift */; };
+		26F343D21CC54A2C00476533 /* GGServiceSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F343D11CC54A2C00476533 /* GGServiceSync.swift */; };
+		26F343D31CC54A2C00476533 /* GGServiceSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F343D11CC54A2C00476533 /* GGServiceSync.swift */; };
+		26F343D51CC554D600476533 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F343D41CC554D600476533 /* SettingViewController.swift */; };
+		26F343D61CC554D600476533 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F343D41CC554D600476533 /* SettingViewController.swift */; };
 		26F734911CBF480300CEA2DE /* CategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F734901CBF480300CEA2DE /* CategoryModel.swift */; };
 		2D4EF605DB251033F750D653 /* Pods_GGQ_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59CFD679D60907F10BEB6C4C /* Pods_GGQ_Tests.framework */; };
 		EECC4AECDB395E1AC8B49B5E /* Pods_GGQ_Dev.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CCF96009375EFC5C02DA86E /* Pods_GGQ_Dev.framework */; };
@@ -171,6 +179,7 @@
 		2622326F1CB7DD37009133D7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		262232721CB7DD37009133D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		262232741CB7DD37009133D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2632F82E1CC5E59800CC9A75 /* ArticleLoadingCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleLoadingCollectionViewCell.swift; sourceTree = "<group>"; };
 		265395E71CC09B2800E6239C /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		265395EB1CC0D3EF00E6239C /* Version.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Version.swift; sourceTree = "<group>"; };
 		267312711CBA96BC00036DB9 /* ArticleDetailModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleDetailModel.swift; sourceTree = "<group>"; };
@@ -181,7 +190,6 @@
 		267312851CBE8DD600036DB9 /* CategorysCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategorysCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
 		267312981CBEAA1400036DB9 /* MarkdownParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarkdownParser.swift; sourceTree = "<group>"; };
 		267312991CBEAA1400036DB9 /* Parser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
-		2673129A1CBEAA1400036DB9 /* Syntax.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Syntax.swift; sourceTree = "<group>"; };
 		2698E0211CBFD25100B7E8C7 /* GGQ-Dev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GGQ-Dev.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2698E0271CBFD3E500B7E8C7 /* GGQ-Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "GGQ-Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2698E0291CBFD3E500B7E8C7 /* GGQTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GGQTests.swift; sourceTree = "<group>"; };
@@ -231,6 +239,10 @@
 		26E872581CC109D8006C5A0F /* RxRealm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxRealm.swift; sourceTree = "<group>"; };
 		26E8725C1CC11677006C5A0F /* ServerInfoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerInfoModel.swift; sourceTree = "<group>"; };
 		26E872601CC12A55006C5A0F /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		26F343CA1CC5386F00476533 /* RxDriver+GG.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RxDriver+GG.swift"; sourceTree = "<group>"; };
+		26F343CD1CC53D6200476533 /* RxObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxObject.swift; sourceTree = "<group>"; };
+		26F343D11CC54A2C00476533 /* GGServiceSync.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GGServiceSync.swift; sourceTree = "<group>"; };
+		26F343D41CC554D600476533 /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		26F734901CBF480300CEA2DE /* CategoryModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryModel.swift; sourceTree = "<group>"; };
 		59CFD679D60907F10BEB6C4C /* Pods_GGQ_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GGQ_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CCF96009375EFC5C02DA86E /* Pods_GGQ_Dev.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GGQ_Dev.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -325,6 +337,7 @@
 		262232671CB7DD37009133D7 /* GGQ */ = {
 			isa = PBXGroup;
 			children = (
+				26F343D01CC54A1B00476533 /* Services */,
 				267312961CBEAA1400036DB9 /* Tools */,
 				26E4CDE21CBB5C400013AD29 /* Cache */,
 				26E4CDAF1CB8B0680013AD29 /* Configs */,
@@ -355,6 +368,7 @@
 			isa = PBXGroup;
 			children = (
 				2673127D1CBE890E00036DB9 /* Setting.storyboard */,
+				26F343D41CC554D600476533 /* SettingViewController.swift */,
 			);
 			path = SettingViewController;
 			sourceTree = "<group>";
@@ -382,7 +396,6 @@
 			children = (
 				267312981CBEAA1400036DB9 /* MarkdownParser.swift */,
 				267312991CBEAA1400036DB9 /* Parser.swift */,
-				2673129A1CBEAA1400036DB9 /* Syntax.swift */,
 			);
 			path = Markdown;
 			sourceTree = "<group>";
@@ -447,6 +460,7 @@
 				267312711CBA96BC00036DB9 /* ArticleDetailModel.swift */,
 				26F734901CBF480300CEA2DE /* CategoryModel.swift */,
 				26E8725C1CC11677006C5A0F /* ServerInfoModel.swift */,
+				26F343CD1CC53D6200476533 /* RxObject.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -487,6 +501,7 @@
 				267312831CBE8DB900036DB9 /* CategoryCollectionViewCell.swift */,
 				261A27A21CC1ED3B00EF3A9C /* ArticleTableViewCell.swift */,
 				261A27A61CC1EF0B00EF3A9C /* ArticleLoadMoreTableViewCell.swift */,
+				2632F82E1CC5E59800CC9A75 /* ArticleLoadingCollectionViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -561,6 +576,7 @@
 				26E4CDC71CBA0D890013AD29 /* RxUITabBarDelegateProxy.swift */,
 				26E4CDC91CBA0E190013AD29 /* UITabBar+Rx.swift */,
 				26E4CDDA1CBA298E0013AD29 /* UISearchBar+Rx.swift */,
+				26F343CA1CC5386F00476533 /* RxDriver+GG.swift */,
 			);
 			path = Rx;
 			sourceTree = "<group>";
@@ -607,6 +623,14 @@
 				26E872581CC109D8006C5A0F /* RxRealm.swift */,
 			);
 			path = RxRealm;
+			sourceTree = "<group>";
+		};
+		26F343D01CC54A1B00476533 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				26F343D11CC54A2C00476533 /* GGServiceSync.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		D7FB5010C8E9386140854E57 /* Frameworks */ = {
@@ -993,7 +1017,6 @@
 				267312861CBE8DD600036DB9 /* CategorysCollectionViewFlowLayout.swift in Sources */,
 				26E872611CC12A55006C5A0F /* Logger.swift in Sources */,
 				261A27A31CC1ED3B00EF3A9C /* ArticleTableViewCell.swift in Sources */,
-				2673129D1CBEAA1400036DB9 /* Syntax.swift in Sources */,
 				26E4CDA71CB8A93D0013AD29 /* UITabBar+IB.swift in Sources */,
 				26F734911CBF480300CEA2DE /* CategoryModel.swift in Sources */,
 				26E872541CC107A2006C5A0F /* CategoryViewModel.swift in Sources */,
@@ -1021,6 +1044,8 @@
 				2673129B1CBEAA1400036DB9 /* MarkdownParser.swift in Sources */,
 				26E4CDE11CBB50D30013AD29 /* ArticleCollectionViewFlowLayout.swift in Sources */,
 				261A27A71CC1EF0B00EF3A9C /* ArticleLoadMoreTableViewCell.swift in Sources */,
+				26F343CB1CC5386F00476533 /* RxDriver+GG.swift in Sources */,
+				2632F82F1CC5E59800CC9A75 /* ArticleLoadingCollectionViewCell.swift in Sources */,
 				26E4CDB71CB8BAF60013AD29 /* GGWebProvider.swift in Sources */,
 				26E4CDCD1CBA15860013AD29 /* ArticleViewController.swift in Sources */,
 				267312821CBE8AC200036DB9 /* AboutViewController.swift in Sources */,
@@ -1028,6 +1053,8 @@
 				26E4CDC51CBA08970013AD29 /* UIView+GG.swift in Sources */,
 				26E8725D1CC11677006C5A0F /* ServerInfoModel.swift in Sources */,
 				26BF77641CBF8A8400117854 /* Cast.swift in Sources */,
+				26F343D51CC554D600476533 /* SettingViewController.swift in Sources */,
+				26F343CE1CC53D6200476533 /* RxObject.swift in Sources */,
 				26E4CDAC1CB8AF960013AD29 /* HomeViewController.swift in Sources */,
 				26E4CDB51CB8B4530013AD29 /* HomeCollectionViewCell.swift in Sources */,
 				26E872591CC109D8006C5A0F /* RxRealm.swift in Sources */,
@@ -1036,6 +1063,7 @@
 				26E4CDD21CBA18EA0013AD29 /* SegueHandlerType.swift in Sources */,
 				26E261071CBC90EA00B34645 /* CategorysViewController.swift in Sources */,
 				267312721CBA96BC00036DB9 /* ArticleDetailModel.swift in Sources */,
+				26F343D21CC54A2C00476533 /* GGServiceSync.swift in Sources */,
 				269B55001CB954CC00375FEB /* TScheduler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1050,7 +1078,6 @@
 				2698DFE91CBFD25100B7E8C7 /* CategorysCollectionViewFlowLayout.swift in Sources */,
 				26E872631CC12B34006C5A0F /* Logger.swift in Sources */,
 				261A27A51CC1ED3B00EF3A9C /* ArticleTableViewCell.swift in Sources */,
-				2698DFEA1CBFD25100B7E8C7 /* Syntax.swift in Sources */,
 				2698DFEB1CBFD25100B7E8C7 /* UITabBar+IB.swift in Sources */,
 				2698DFEC1CBFD25100B7E8C7 /* CategoryModel.swift in Sources */,
 				26E872561CC107A6006C5A0F /* CategoryViewModel.swift in Sources */,
@@ -1078,6 +1105,8 @@
 				2698DFFF1CBFD25100B7E8C7 /* MarkdownParser.swift in Sources */,
 				2698E0001CBFD25100B7E8C7 /* ArticleCollectionViewFlowLayout.swift in Sources */,
 				261A27A91CC1EF0B00EF3A9C /* ArticleLoadMoreTableViewCell.swift in Sources */,
+				26F343CC1CC5387300476533 /* RxDriver+GG.swift in Sources */,
+				2632F8301CC5E59800CC9A75 /* ArticleLoadingCollectionViewCell.swift in Sources */,
 				2698E0011CBFD25100B7E8C7 /* GGWebProvider.swift in Sources */,
 				2698E0021CBFD25100B7E8C7 /* ArticleViewController.swift in Sources */,
 				2698E0031CBFD25100B7E8C7 /* AboutViewController.swift in Sources */,
@@ -1085,6 +1114,8 @@
 				2698E0051CBFD25100B7E8C7 /* UIView+GG.swift in Sources */,
 				26E8725F1CC11677006C5A0F /* ServerInfoModel.swift in Sources */,
 				2698E0061CBFD25100B7E8C7 /* Cast.swift in Sources */,
+				26F343D61CC554D600476533 /* SettingViewController.swift in Sources */,
+				26F343CF1CC53D6200476533 /* RxObject.swift in Sources */,
 				2698E0071CBFD25100B7E8C7 /* HomeViewController.swift in Sources */,
 				2698E0081CBFD25100B7E8C7 /* HomeCollectionViewCell.swift in Sources */,
 				26E8725B1CC109D8006C5A0F /* RxRealm.swift in Sources */,
@@ -1093,6 +1124,7 @@
 				2698E00A1CBFD25100B7E8C7 /* SegueHandlerType.swift in Sources */,
 				2698E00B1CBFD25100B7E8C7 /* CategorysViewController.swift in Sources */,
 				2698E00C1CBFD25100B7E8C7 /* ArticleDetailModel.swift in Sources */,
+				26F343D31CC54A2C00476533 /* GGServiceSync.swift in Sources */,
 				2698E00D1CBFD25100B7E8C7 /* TScheduler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

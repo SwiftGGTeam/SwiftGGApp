@@ -33,6 +33,12 @@ final class CategoryViewController: UIViewController {
 
 	override func viewDidLoad() {
 		title = category.name
+        
+        tableView.estimatedRowHeight = 60
+        tableView.rowHeight = UITableViewAutomaticDimension
+        
+        let refresh = UIRefreshControl()
+        tableView.addSubview(refresh)
 
 		viewModel = CategoryViewModel(category: category)
 
@@ -51,5 +57,6 @@ final class CategoryViewController: UIViewController {
 				}
 		}
 			.addDisposableTo(rx_disposeBag)
+        
 	}
 }

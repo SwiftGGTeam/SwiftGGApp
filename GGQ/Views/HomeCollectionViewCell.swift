@@ -11,62 +11,60 @@ import SwiftDate
 
 extension HomeCollectionViewCell {
 
-	var title: String? {
-		get {
-			return contentTitleLabel.text
-		}
-		set {
-			contentTitleLabel.text = newValue
-		}
-	}
+    var title: String? {
+        get {
+            return contentTitleLabel.text
+        }
+        set {
+            contentTitleLabel.text = newValue
+        }
+    }
 
-	var time: NSDate? {
-		get {
-			return contentTimeLabel.text?.toDate(DateFormat.ISO8601Format(.Extended))
-		}
-		set {
-			contentTimeLabel.text = newValue?.toString()
-		}
-	}
+    var time: NSDate? {
+        get {
+            return contentTimeLabel.text?.toDate(DateFormat.ISO8601Format(.Extended))
+        }
+        set {
+            contentTimeLabel.text = newValue?.toString()
+        }
+    }
 
-	var timeString: String? {
-		get {
-			return contentTimeLabel.text
-		}
-		set {
-			contentTimeLabel.text = newValue
-		}
-	}
+    var timeString: String? {
+        get {
+            return contentTimeLabel.text
+        }
+        set {
+            contentTimeLabel.text = newValue
+        }
+    }
 
-	var info: String? {
-		get {
-			return contentInfoLabel.text
-		}
-		set {
-			contentInfoLabel.text = newValue
-		}
-	}
+    var info: String? {
+        get {
+            return contentInfoLabel.text
+        }
+        set {
+            contentInfoLabel.text = newValue
+        }
+    }
 
-	var preview: String? {
-		get {
-			return contentPreviewLabel.text
-		}
-		set {
-			contentPreviewLabel.text = newValue
-		}
-	}
+    var preview: String? {
+        get {
+            return contentPreviewLabel.text
+        }
+        set {
+            contentPreviewLabel.text = newValue
+        }
+    }
 }
 
 class HomeCollectionViewCell: UICollectionViewCell {
 
-	@IBOutlet private weak var contentTitleLabel: UILabel!
-	@IBOutlet private weak var contentTimeLabel: UILabel!
+    @IBOutlet private weak var contentTitleLabel: UILabel!
+    @IBOutlet private weak var contentTimeLabel: UILabel!
+    @IBOutlet private weak var contentInfoLabel: UILabel!
+    @IBOutlet private weak var contentPreviewLabel: UILabel!
 
-	@IBOutlet weak var contentInfoLabel: UILabel!
-
-	@IBOutlet private weak var contentPreviewLabel: UILabel!
-
-	override func awakeFromNib() {
-		gg_addShadow()
-	}
+    override func awakeFromNib() {
+        gg_addShadow()
+    }
 }
