@@ -12,26 +12,17 @@ import RealmSwift
 //import RxRealm
 import SwiftyJSON
 //import SwiftyDown
+import CocoaMarkdown
 
 final class ArticleManagerViewModel {
 
-    let content = Variable<String>("")
-
     let elements = Variable<[NSAttributedString]>([])
-
-    let contentAttributedString = Variable<NSAttributedString?>(nil)
-
-    private let range = Variable<String?>(nil)
 
     let isLoading = Variable(true)
 
     let pagerTotal = Variable(0)
 
     let disposeBag = DisposeBag()
-
-    private let articleDetail = PublishSubject<ArticleDetailModel>()
-
-    private var realmNotificationToken: NotificationToken?
 
     init(articleInfo: ArticleInfoObject, nextPageTrigger: Driver<Void>, contentSize: CGSize) {
 
@@ -43,12 +34,28 @@ final class ArticleManagerViewModel {
         /// 获取 NSAttributedString ，如果有 Cache ，直接拿
         .flatMapLatest { article -> Observable<NSAttributedString> in
             if let cache = article.cacheData {
-                let attributedString = try! NSAttributedString(data: cache, options: [:], documentAttributes: nil)
-                return Observable.just(attributedString)
+                return Observable.just(cache)
+                    .observeOn(.Serial(.Background))
+                    .map { data in
+                        let document = CMDocument(data: data, options: .Normalize)
+                        let renderer = CMAttributedStringRenderer(document: document, attributes: CMTextAttributes())
+                        renderer.registerHTMLElementTransformer(CMHTMLStrikethroughTransformer())
+                        renderer.registerHTMLElementTransformer(CMHTMLSuperscriptTransformer())
+                        renderer.registerHTMLElementTransformer(CMHTMLUnderlineTransformer())
+                        return renderer.render()
+                }
             } else {
                 return Observable.just(article.content)
                     .observeOn(.Serial(.Background))
-                    .map(MarkdownParser().convert)
+                    .map { str in
+                        let data = str.dataUsingEncoding(NSUTF8StringEncoding)!
+                        let document = CMDocument(data: data, options: .Normalize)
+                        let renderer = CMAttributedStringRenderer(document: document, attributes: CMTextAttributes())
+                        renderer.registerHTMLElementTransformer(CMHTMLStrikethroughTransformer())
+                        renderer.registerHTMLElementTransformer(CMHTMLSuperscriptTransformer())
+                        renderer.registerHTMLElementTransformer(CMHTMLUnderlineTransformer())
+                        return renderer.render()
+                }
                 // TODO: - 在这里做 Cache 处理
 //                    .observeOn(.Main)
             }

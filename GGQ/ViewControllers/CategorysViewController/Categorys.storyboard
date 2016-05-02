@@ -8,17 +8,17 @@
         <!--分类-->
         <scene sceneID="BeZ-F6-ieG">
             <objects>
-                <viewController id="zl5-uJ-EnJ" customClass="CategorysViewController" customModule="GGQ" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="zl5-uJ-EnJ" customClass="CategorysViewController" customModule="GGQ" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="91i-Eu-dyq"/>
                         <viewControllerLayoutGuide type="bottom" id="O49-Je-LN8"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="K6k-pd-KLh">
-                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="jh9-L9-oyK">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                                 <color key="backgroundColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="20" minimumInteritemSpacing="20" id="wwr-5Z-Aq3" customClass="CategorysCollectionViewFlowLayout" customModule="GGQ" customModuleProvider="target">
                                     <size key="itemSize" width="476" height="120"/>
@@ -90,7 +90,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="icon_articles" id="b0z-Fi-mhI"/>
                     <navigationItem key="navigationItem" title="分类" id="LtP-Ex-F6O"/>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="categorysCollectionView" destination="jh9-L9-oyK" id="Ehg-U0-Aci"/>
                         <segue destination="jva-Ir-zwv" kind="show" identifier="ShowCategory" id="pX9-DY-Qet"/>

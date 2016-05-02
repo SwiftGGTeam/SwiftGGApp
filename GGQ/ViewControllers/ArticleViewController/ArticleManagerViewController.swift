@@ -27,7 +27,7 @@ class ArticleManagerViewController: UIPageViewController {
         
         let mainScreenSize = UIScreen.mainScreen().bounds.size
         
-        viewModel = ArticleManagerViewModel(articleInfo: articleInfo, nextPageTrigger: Driver.empty(), contentSize: CGSize(width: mainScreenSize.width - 30, height: mainScreenSize.height - 80))
+        viewModel = ArticleManagerViewModel(articleInfo: articleInfo, nextPageTrigger: Driver.empty(), contentSize: CGSize(width: mainScreenSize.width - 40, height: mainScreenSize.height - 90))
         
         for vc in vcs.withoutNil() {
             
