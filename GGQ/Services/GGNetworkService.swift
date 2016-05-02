@@ -60,6 +60,7 @@ enum GGAPI {
 	case ArticleDetail(articleId: Int)
 	case CategoryList
 	case ArticlesByCategory(categoryId: Int, pageIndex: Int, pageSize: Int)
+    case ServerInfo
 }
 
 extension GGAPI: Target {
@@ -82,11 +83,16 @@ extension GGAPI: Target {
 			return "/v1/article/categoryList"
 		case .ArticlesByCategory:
 			return "/v1/article/getArticlesByCategory"
+        case .ServerInfo:
+            return "/v1/app/info"
 		}
 	}
 
 	var headerFields: [String: String] {
-		return ["Accept": "application/json"]
+		return [
+            "Accept": "application/json",
+            "SwiftGG": "GG"
+        ]
 	}
 
 	var parameters: [String: AnyObject] {
@@ -105,6 +111,8 @@ extension GGAPI: Target {
 			return [:]
 		case let .ArticlesByCategory(categoryId, pageIndex, pageSize):
 			return ["categoryId": categoryId, "pageIndex": pageIndex, "pageSize": pageSize]
+        case .ServerInfo:
+            return [:]
 		}
 	}
 
