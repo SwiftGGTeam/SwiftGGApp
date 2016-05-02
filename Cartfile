@@ -9,3 +9,4 @@ github "jasl/RouterX"
 github "matthewpalmer/Locksmith"
 github "ReactiveX/RxSwift" ~> 2.4
 github "RxSwiftCommunity/RxDataSources"
+github "indragiek/CocoaMarkdown" "master"
