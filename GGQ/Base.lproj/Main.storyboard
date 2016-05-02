@@ -10,7 +10,7 @@
             <objects>
                 <navigationController id="ceJ-ND-El7" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="icon_articles" id="FNi-yP-b2A"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="LuG-co-n1o">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="LuG-co-n1o">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
