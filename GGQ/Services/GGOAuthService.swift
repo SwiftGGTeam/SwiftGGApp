@@ -40,12 +40,12 @@ class OAuthService {
 //let GGProvider = RxMoyaXProvider()
 #endif
 
-enum GitHubAPI {
+enum GitHubOAuthAPI {
     case Authorize
     case AccessToken(code: String)
 }
 
-extension GitHubAPI: Target {
+extension GitHubOAuthAPI: Target {
     private static let client_id = "742321c546e7cc39e53c"
     private static let client_secret = "dfc142761f571be5abd0368dfd6e7864fd56c943"
     private static let redirect_uri = "swiftgg://swift.gg/oauth/github"
@@ -74,17 +74,17 @@ extension GitHubAPI: Target {
     var parameters: [String: AnyObject] {
         switch self {
         case .Authorize:
-            return ["client_id": GitHubAPI.client_id,
-                    "redirect_uri": GitHubAPI.redirect_uri,
-                    "scope": GitHubAPI.scope,
-                    "response_type": GitHubAPI.response_type,
+            return ["client_id": GitHubOAuthAPI.client_id,
+                    "redirect_uri": GitHubOAuthAPI.redirect_uri,
+                    "scope": GitHubOAuthAPI.scope,
+                    "response_type": GitHubOAuthAPI.response_type,
                     "state": generateStateWithLength(20)]
             
         case .AccessToken(let code):
-            return ["client_id": GitHubAPI.client_id,
-                    "client_secret": GitHubAPI.client_secret,
-                    "grant_type": GitHubAPI.grant_type,
-                    "redirect_uri": GitHubAPI.redirect_uri,
+            return ["client_id": GitHubOAuthAPI.client_id,
+                    "client_secret": GitHubOAuthAPI.client_secret,
+                    "grant_type": GitHubOAuthAPI.grant_type,
+                    "redirect_uri": GitHubOAuthAPI.redirect_uri,
                     "code": code]
         }
     }
@@ -95,6 +95,50 @@ extension GitHubAPI: Target {
             return .GET
         case .AccessToken:
             return .POST
+        }
+    }
+    
+    var parameterEncoding: ParameterEncoding {
+        return .URL // GET
+    }
+    
+    var sampleData: NSData {
+        fatalError("都比你忘了写 Mock")
+    }
+}
+
+enum GitHubAPI {
+    case User
+}
+
+extension GitHubAPI: Target {
+    
+    var baseURL: NSURL { return NSURL(string: "https://api.github.com")! }
+    
+    var path: String {
+        switch self {
+        case User:
+            return "/user"
+        }
+    }
+    
+    var headerFields: [String: String] {
+        var header = ["Accept": "application/json"]
+        if let token = KeychainService.read(.GitHub) {
+            header["Authorization"] = "token \(token)"
+        }
+        return header
+    }
+    
+    
+    var parameters: [String: AnyObject] {
+        return [:]
+    }
+    
+    var method: HTTPMethod {
+        switch self {
+        case .User:
+            return .GET
         }
     }
     
