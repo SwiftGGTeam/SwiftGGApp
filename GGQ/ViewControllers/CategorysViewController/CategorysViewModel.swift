@@ -8,7 +8,6 @@
 
 import RxSwift
 import RxCocoa
-import Realm
 import RealmSwift
 
 final class CategorysViewModel {
@@ -30,27 +29,22 @@ final class CategorysViewModel {
 				.bindTo(elements)
 				.addDisposableTo(disposeBag)
 		}
+        
+        let updated = SyncService.sharedInstance.articlesUpdated
+            .filter { $0 }.map { _ in }
 
-		let refreshResult = [refreshTrigger, Driver.just(())].toObservable()
+		let refreshResult = [refreshTrigger.asObservable(), updated].toObservable()
 		// TODO: - 换一个合适的位置
 		.merge()
-			.asDriver(onErrorJustReturn: ())
 			.flatMapLatest { GGProvider.request(GGAPI.CategoryList)
-					.gg_storeArray(CategoryObject)
-					.asResultDriver() }
+					.gg_storeArray(CategoryObject) }
 
-		refreshResult
-			.driveNext { [unowned self] result in
-				switch result {
-				case .Result:
-					break
-//                    self.isRefreshing.value = false
-				case .Error(let error):
-//                    self.isRefreshing.value = false
-					self.errorMessage.value = error
-				}
-		}
-			.addDisposableTo(disposeBag)
-		[refreshTrigger.map { _ in true }, refreshResult.map { _ in false }].toObservable().merge().bindTo(isRefreshing).addDisposableTo(disposeBag)
+        refreshResult.subscribe().addDisposableTo(disposeBag)
+        
+        
+		[refreshTrigger.asObservable().map { _ in true }, refreshResult.map { _ in false }].toObservable()
+            .merge()
+            .bindTo(isRefreshing)
+            .addDisposableTo(disposeBag)
 	}
 }

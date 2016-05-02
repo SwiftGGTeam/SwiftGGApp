@@ -15,21 +15,21 @@ import RxDataSources
 import NSObject_Rx
 import RxOptional
 
-//private typealias CategoryList = AnimatableSectionModel<String, ArticleInfoModel>
+private typealias CategoryList = AnimatableSectionModel<String, ArticleInfoObject>
 
-final class CategoryViewController: UIViewController {
+final class CategoryViewController: UIViewController, SegueHandlerType {
+    
 	var category: CategoryObject!
 
 	var viewModel: CategoryViewModel!
 
-	private enum CategoryListType {
-		case Element(ArticleInfoObject)
-		case LoadMore
-	}
+    enum SegueIdentifier: String {
+        case ShowArticle
+    }
 
-	@IBOutlet weak var tableView: UITableView!
-
-	@IBOutlet weak var headerImageView: UIImageView!
+	@IBOutlet private weak var tableView: UITableView!
+	@IBOutlet private weak var headerImageView: UIImageView!
+    @IBOutlet private weak var indicatorView: UIActivityIndicatorView!
 
 	override func viewDidLoad() {
 		title = category.name
@@ -40,23 +40,39 @@ final class CategoryViewController: UIViewController {
         let refresh = UIRefreshControl()
         tableView.addSubview(refresh)
 
-		viewModel = CategoryViewModel(category: category)
+        let refreshTrigger = refresh.rx_controlEvent(.ValueChanged).asObservable()
+        
+        let datasource = RxTableViewSectionedReloadDataSource<CategoryList>()
+        datasource.configureCell = { ds, tb, ip, v in
+            let cell = tb.dequeueReusableCellWithIdentifier(R.reuseIdentifier.articleTableViewCell, forIndexPath: ip)!
+            cell.title = v.identity.title
+            return cell
+        }
+        
+		viewModel = CategoryViewModel(refreshTrigger: refreshTrigger, loadMoreTrigger: tableView.rx_reachedBottom, category: category)
 
-		viewModel.elements.asObservable()
-			.map { $0.map { CategoryListType.Element($0) } + [CategoryListType.LoadMore] }
-			.bindTo(tableView.rx_itemsWithCellFactory) { tb, i, v in
-				let indexPath = NSIndexPath(forRow: i, inSection: 0)
-				switch v {
-				case .Element(let info):
-					let cell = tb.dequeueReusableCellWithIdentifier(R.reuseIdentifier.articleTableViewCell, forIndexPath: indexPath)!
-					cell.title = info.title
-					return cell
-				case .LoadMore:
-					let cell = tb.dequeueReusableCellWithIdentifier(R.reuseIdentifier.articleLoadMoreTableViewCell, forIndexPath: indexPath)!
-					return cell
-				}
-		}
-			.addDisposableTo(rx_disposeBag)
+		viewModel.elements.asDriver()
+            .map { [CategoryList(model: "", items: $0)] }
+            .drive(tableView.rx_itemsWithDataSource(datasource))
+            .addDisposableTo(rx_disposeBag)
+        
+        viewModel.isLoading.asDriver()
+            .drive(indicatorView.rx_animating)
+            .addDisposableTo(rx_disposeBag)
+        
+        tableView.rx_modelSelected(IdentifiableValue<ArticleInfoObject>)
+            .map { $0.identity }
+            .subscribeNext(performSegueWithIdentifier(.ShowArticle))
+            .addDisposableTo(rx_disposeBag)
         
 	}
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        switch segueIdentifierForSegue(segue) {
+        case .ShowArticle:
+            let articleManagerViewController = segue.destinationViewController.gg_castOrFatalError(ArticleManagerViewController.self)
+            let articleInfo: ArticleInfoObject = castOrFatalError(sender)
+            articleManagerViewController.articleInfo = articleInfo
+        }
+    }
 }
