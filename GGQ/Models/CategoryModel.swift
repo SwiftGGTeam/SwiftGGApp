@@ -6,7 +6,7 @@
 //  Copyright © 2016年 org.dianqk. All rights reserved.
 //
 
-import Realm
+import Foundation
 import RealmSwift
 
 /// 真实的分类 Model

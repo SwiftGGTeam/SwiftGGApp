@@ -15,6 +15,7 @@ import NSObject_Rx
 import SwiftDate
 
 final class HomeViewController: UIViewController, SegueHandlerType {
+    
 	@IBOutlet weak var collectionView: UICollectionView!
 
 	var viewModel: HomeViewModel!
@@ -108,7 +109,6 @@ final class HomeViewController: UIViewController, SegueHandlerType {
 			let articleManagerViewController = segue.destinationViewController.gg_castOrFatalError(ArticleManagerViewController.self)
 			let articleInfo: ArticleInfoObject = castOrFatalError(sender)
 			articleManagerViewController.articleInfo = articleInfo
-            break
 		case .ShowSearch:
 			let searchViewController = segue.destinationViewController.gg_castOrFatalError(SearchViewController.self)
 			searchViewController.snapshotView = tabBarController?.view.snapshotViewAfterScreenUpdates(false)
@@ -121,7 +121,6 @@ final class HomeViewController: UIViewController, SegueHandlerType {
 	}
 
 	override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
 		navigationController?.setNavigationBarHidden(false, animated: true)
 	}
 }

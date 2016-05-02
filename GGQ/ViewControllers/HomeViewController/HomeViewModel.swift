@@ -23,8 +23,6 @@ final class HomeViewModel {
 
     let disposeBag = DisposeBag()
 
-    private var realmNotificationToken: NotificationToken?
-
     init(loadMoreTrigger: Observable<Void>) {
 
         let realm = try! Realm()
@@ -47,13 +45,6 @@ final class HomeViewModel {
             .merge()
             .bindTo(isLoading)
             .addDisposableTo(disposeBag)
-
-        loadMoreResult
-            .observeOn(.Main)
-            .subscribeNext { [unowned self] result in
-//                self.currentPage.value += 1
-//                self.elements.value = result
-        }
-            .addDisposableTo(disposeBag)
+        
     }
 }

@@ -9,6 +9,7 @@
 import UIKit
 import RealmSwift
 import RouterX
+import SwiftyJSON
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -98,30 +99,30 @@ extension UIApplication {
         return base
     }
 
-    class func findViewController(base: UIViewController? = UIApplication.sharedApplication().keyWindow?.rootViewController, identifity: String) -> Routerable? {
-        if let vc = base as? Routerable {
-            print(vc.routerIdentifier)
-        }
+    class func findViewController(base: UIViewController? = UIApplication.sharedApplication().windows.first?.rootViewController, identifity: String) -> Routerable? {
         if let vc = base as? Routerable where vc.routerIdentifier == identifity {
             return vc
         }
         if let nav = base as? UINavigationController {
-            return findViewController(nav.viewControllers, identifity: identifity)
+            if let vc = findViewController(nav.viewControllers, identifity: identifity) {
+                return vc
+            }
         }
         if let tab = base as? UITabBarController, let vcs = tab.viewControllers {
-            return findViewController(vcs, identifity: identifity)
+            if let vc = findViewController(vcs, identifity: identifity) {
+                return vc
+            }
         }
         if let presented = base?.presentedViewController {
-            return findViewController(presented, identifity: identifity)
+            if let vc = findViewController(presented, identifity: identifity) {
+                return vc
+            }
         }
-        return base as? Routerable
+        return nil
     }
 
     class func findViewController(bases: [UIViewController], identifity: String) -> Routerable? {
         for base in bases {
-            if let vc = base as? Routerable {
-                print(vc.routerIdentifier)
-            }
             if let vc = base as? Routerable where vc.routerIdentifier == identifity {
                 return vc
             }
@@ -136,9 +137,10 @@ extension UIApplication {
                 }
             }
             if let presented = base.presentedViewController {
-                return findViewController(presented, identifity: identifity)
+                if let vc = findViewController(presented, identifity: identifity) {
+                    return vc
+                }
             }
-            return base as? Routerable
         }
         return nil
     }
@@ -157,7 +159,7 @@ extension AppDelegate {
             let vc = UIApplication.findViewController(identifity: "oauth")
             print(vc)
 
-            vc?.post(url, sender: nil)
+            vc?.post(url, sender: JSON(parameters))
         }
 
 //        let patternArticle = "/:year/:month/:day/:pattern"
@@ -187,7 +189,7 @@ extension AppDelegate {
             let vc = UIApplication.findViewController(identifity: "profile")
             print(vc)
             
-            vc?.post(url, sender: nil)
+            vc?.post(url, sender: JSON(parameters))
         }
     }
 }

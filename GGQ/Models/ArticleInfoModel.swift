@@ -6,7 +6,7 @@
 //  Copyright © 2016年 org.dianqk. All rights reserved.
 //
 
-import Realm
+import Foundation
 import RealmSwift
 
 class ArticleInfoObject: Object {
@@ -35,26 +35,3 @@ extension ArticleInfoObject: Hashable { }
 func == (lhs: ArticleInfoObject, rhs: ArticleInfoObject) -> Bool {
 	return lhs.id == rhs.id
 }
-
-struct ArticleInfoModel {
-
-	let id: Int
-	let typeId: Int
-	let typeName: String
-	let coverUrl: String
-	let authoerImageUrl: String
-	let submitDate: String
-	let title: String
-	let articleUrl: String
-	let translator: String
-	let articleDescription: String
-	let starsNumber: Int
-	let commentsNumber: Int
-	let updateDate: String
-}
-
-//extension ArticleInfoModel: Hashable { }
-//
-//func == (lhs: ArticleInfoModel, rhs: ArticleInfoModel) -> Bool {
-//	return lhs.id == rhs.id
-//}

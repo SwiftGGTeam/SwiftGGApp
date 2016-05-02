@@ -28,7 +28,7 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         
         githubButton.rx_tap.doOnNext { HUD.show(.Label("请求 GitHub 认证…")) }
-            .flatMap { GGProvider.request(GitHubAPI.Authorize) }.doOnNext { _ in HUD.hide(afterDelay: 0.3) }
+            .flatMap { GGProvider.request(GitHubOAuthAPI.Authorize) }.doOnNext { _ in HUD.hide(afterDelay: 0.3) }
             .subscribeNext { [unowned self] in
                 if let url = $0.response?.URL {
                     let sf = SFSafariViewController(URL: url)
@@ -58,12 +58,11 @@ extension LoginViewController: Routerable {
         dismissViewControllerAnimated(true, completion: nil)
         print(url, sender)
         if let code = url.query?.componentsSeparatedByString("&").first?.componentsSeparatedByString("=")[1] {
-            GGProvider.request(GitHubAPI.AccessToken(code: code)).mapJSON()
-                .subscribeNext { [unowned self] json in
+            GGProvider.request(GitHubOAuthAPI.AccessToken(code: code)).mapJSON()
+                .subscribeNext { json in
                 print(json)
                     if let token = json["access_token"].string {
                         HUD.flash(.Label("请求成功"), delay: 0.6)
-//                        self.dismissViewControllerAnimated(true, completion: nil)
                         let url = NSURL(string: "swiftgg://swift.gg/profile/github/\(token)")!
                         UIApplication.sharedApplication().openURL(url)
                     }
