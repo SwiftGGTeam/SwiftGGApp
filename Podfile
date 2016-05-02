@@ -6,15 +6,12 @@ def release_pods
     pod 'RxSwift', '~>2.4'
     pod 'RxCocoa', '~>2.4'
     pod 'RxDataSources'
-    pod 'MoyaX'
-    pod 'RealmSwift'
     pod 'RxOptional'
     pod 'NSObject+Rx'
-    pod 'SwiftDate'
-    pod 'SwiftyJSON'
     pod 'R.swift'
     pod 'RxGesture'#, '~>0.1.6'
-#    pod 'SwiftyDown',git: 'https://github.com/aaaron7/SwiftyDown.git'
+#    pod 'SwiftyDown'
+    # pod 'RxRealm'
 end
 
 def dev_pods
