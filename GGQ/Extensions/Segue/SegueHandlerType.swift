@@ -20,6 +20,12 @@ extension SegueHandlerType where Self: UIViewController, SegueIdentifier.RawValu
 
             performSegueWithIdentifier(segueIdentifier.rawValue, sender: sender)
     }
+    
+    func performSegueWithIdentifier(segueIdentifier: SegueIdentifier) -> AnyObject -> Void {
+        return { [unowned self] sender in
+            self.performSegueWithIdentifier(segueIdentifier.rawValue, sender: sender)
+        }
+    }
 
     func segueIdentifierForSegue(segue: UIStoryboardSegue) -> SegueIdentifier {
 
