@@ -82,7 +82,7 @@ extension GGAPI: Target {
 		case .CategoryList:
 			return "/v1/article/categoryList"
 		case .ArticlesByCategory:
-			return "/v1/article/getArticlesByCategory"
+			return "/v1/article"
         case .ServerInfo:
             return "/v1/app/info"
 		}
