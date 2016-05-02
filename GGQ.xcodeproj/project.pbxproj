@@ -183,8 +183,6 @@
 		26E872631CC12B34006C5A0F /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E872601CC12A55006C5A0F /* Logger.swift */; };
 		26F343CB1CC5386F00476533 /* RxDriver+GG.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F343CA1CC5386F00476533 /* RxDriver+GG.swift */; };
 		26F343CC1CC5387300476533 /* RxDriver+GG.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F343CA1CC5386F00476533 /* RxDriver+GG.swift */; };
-		26F343CE1CC53D6200476533 /* RxObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F343CD1CC53D6200476533 /* RxObject.swift */; };
-		26F343CF1CC53D6200476533 /* RxObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F343CD1CC53D6200476533 /* RxObject.swift */; };
 		26F343D21CC54A2C00476533 /* GGSyncService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F343D11CC54A2C00476533 /* GGSyncService.swift */; };
 		26F343D31CC54A2C00476533 /* GGSyncService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F343D11CC54A2C00476533 /* GGSyncService.swift */; };
 		26F343D51CC554D600476533 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F343D41CC554D600476533 /* SettingViewController.swift */; };
@@ -354,7 +352,6 @@
 		26E8725C1CC11677006C5A0F /* ServerInfoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerInfoModel.swift; sourceTree = "<group>"; };
 		26E872601CC12A55006C5A0F /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		26F343CA1CC5386F00476533 /* RxDriver+GG.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RxDriver+GG.swift"; sourceTree = "<group>"; };
-		26F343CD1CC53D6200476533 /* RxObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxObject.swift; sourceTree = "<group>"; };
 		26F343D11CC54A2C00476533 /* GGSyncService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GGSyncService.swift; sourceTree = "<group>"; };
 		26F343D41CC554D600476533 /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		26F734901CBF480300CEA2DE /* CategoryModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryModel.swift; sourceTree = "<group>"; };
@@ -633,7 +630,6 @@
 				267312711CBA96BC00036DB9 /* ArticleDetailModel.swift */,
 				26F734901CBF480300CEA2DE /* CategoryModel.swift */,
 				26E8725C1CC11677006C5A0F /* ServerInfoModel.swift */,
-				26F343CD1CC53D6200476533 /* RxObject.swift */,
 				26FB5D2E1CD63BD800790942 /* UserModel.swift */,
 			);
 			path = Models;
@@ -823,6 +819,7 @@
 				5DCE34F25142D4D63F583B61 /* 📦 Embed Pods Frameworks */,
 				CAA847BF9A9BC2553C5FCF36 /* 📦 Copy Pods Resources */,
 				265877C71CD7409E00E6B6A0 /* Embed Frameworks */,
+				265877E11CD753D200E6B6A0 /* Run Carthage */,
 			);
 			buildRules = (
 			);
@@ -1024,6 +1021,30 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
+		265877E11CD753D200E6B6A0 /* Run Carthage */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Realm.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RealmSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Kingfisher.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/MoyaX.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SwiftyJSON.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SwiftDate.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RouterX.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/PKHUD.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Locksmith.framework",
+			);
+			name = "Run Carthage";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
 		2698DFE31CBFD25100B7E8C7 /* 📦 Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1224,7 +1245,6 @@
 				26E8725D1CC11677006C5A0F /* ServerInfoModel.swift in Sources */,
 				26BF77641CBF8A8400117854 /* Cast.swift in Sources */,
 				26F343D51CC554D600476533 /* SettingViewController.swift in Sources */,
-				26F343CE1CC53D6200476533 /* RxObject.swift in Sources */,
 				26BCE3921CC93FD800115D04 /* LoginViewController.swift in Sources */,
 				26E4CDAC1CB8AF960013AD29 /* HomeViewController.swift in Sources */,
 				26E4CDB51CB8B4530013AD29 /* HomeCollectionViewCell.swift in Sources */,
@@ -1292,7 +1312,6 @@
 				26E8725F1CC11677006C5A0F /* ServerInfoModel.swift in Sources */,
 				2698E0061CBFD25100B7E8C7 /* Cast.swift in Sources */,
 				26F343D61CC554D600476533 /* SettingViewController.swift in Sources */,
-				26F343CF1CC53D6200476533 /* RxObject.swift in Sources */,
 				26BCE3931CC93FD800115D04 /* LoginViewController.swift in Sources */,
 				2698E0071CBFD25100B7E8C7 /* HomeViewController.swift in Sources */,
 				2698E0081CBFD25100B7E8C7 /* HomeCollectionViewCell.swift in Sources */,
