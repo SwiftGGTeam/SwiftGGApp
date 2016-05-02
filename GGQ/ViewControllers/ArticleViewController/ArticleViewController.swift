@@ -23,69 +23,41 @@ private enum CellType {
 }
 
 final class ArticleViewController: UIViewController {
-	@IBOutlet private weak var collectionView: UICollectionView!
-
-	var articleInfo: ArticleInfoObject!
-
-	private var viewModel: ArticleViewModel!
-
-	override func viewDidLoad() {
-		title = articleInfo.title
-		let width = UIScreen.mainScreen().bounds.width - 60
-		let height = UIScreen.mainScreen().bounds.height - 60 - 44
-		let size = CGSize(width: width, height: height)
-
-		let ds = RxCollectionViewSectionedReloadDataSource<ArticleSectionModel>()
-		ds.cellFactory = { [unowned self] ds, cv, ip, i in
-			let cell = cv.dequeueReusableCellWithReuseIdentifier(R.reuseIdentifier.articleCollectionViewCell, forIndexPath: ip)!
-			cell.title = self.articleInfo.title
-			cell.pageInfo = "\(ip.row + 1)/\(ds.sectionAtIndex(ip.section).model)"
-			cell.contentText = i.identity
-			return cell
-		}
-
-		viewModel = ArticleViewModel(articleInfo: articleInfo, contentSize: size)
-
-		let articles = viewModel.elements.asObservable()
-			.map { [ArticleSectionModel(model: $0.count, items: $0)] }
-
-//		let footer = viewModel
-
-//		Observable.combineLatest(articles,)
-
-		articles
-			.observeOn(.Main)
-			.bindTo(collectionView.rx_itemsWithDataSource(ds))
-			.addDisposableTo(rx_disposeBag)
-
-		let ges = UITapGestureRecognizer()
-		ges.rx_event
-			.filter { $0.state == .Ended }
-			.subscribeNext { [unowned self] _ in
-				if let hidden = self.navigationController?.navigationBarHidden {
-					self.navigationController?.setNavigationBarHidden(!hidden, animated: true)
-				}
-		}.addDisposableTo(rx_disposeBag)
-
-		collectionView.addGestureRecognizer(ges)
-	}
-
-	override func viewWillAppear(animated: Bool) {
-		super.viewWillAppear(animated)
-		navigationController?.setNavigationBarHidden(true, animated: true)
-	}
+    
+    @IBOutlet private weak var contentTitleLabel: UILabel!
+    @IBOutlet private weak var contentTextView: UITextView!
+    @IBOutlet private weak var pageInfoLabel: UILabel!
+    
+    override func viewDidLoad() {
+        
+        rx_articleTitle.asObservable().observeOn(.Main).bindTo(contentTitleLabel.rx_text).addDisposableTo(rx_disposeBag)
+        
+        Observable.combineLatest(rx_currentPage.asObservable(), rx_pagerTotal.asObservable()) { "\($0)/\($1)" }.observeOn(.Main).bindTo(pageInfoLabel.rx_text).addDisposableTo(rx_disposeBag)
+        
+        rx_contentText.asObservable().observeOn(.Main).debug("ContentText").bindTo(contentTextView.rx_attributedText).addDisposableTo(rx_disposeBag)
+        
+    }
+    
+    let rx_currentPage = Variable(1)
+    
+    let rx_contentText = Variable(NSAttributedString(string: ""))
+    
+    let rx_pagerTotal = Variable(1)
+    
+    let rx_articleTitle = Variable("")
+    
 }
 
 // MARK: - Preview Action
 
-extension ArticleViewController {
-	override func previewActionItems() -> [UIPreviewActionItem] {
-		let afterPreviewAction = UIPreviewAction(title: "稍后阅读", style: .Default) { previewAction, viewController in
-		}
-
-		return [afterPreviewAction]
-	}
-}
+//extension ArticleViewController {
+//	override func previewActionItems() -> [UIPreviewActionItem] {
+//		let afterPreviewAction = UIPreviewAction(title: "稍后阅读", style: .Default) { previewAction, viewController in
+//		}
+//
+//		return [afterPreviewAction]
+//	}
+//}
 
 // MARK: - Status Bar
 

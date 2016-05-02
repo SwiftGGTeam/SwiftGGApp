@@ -8,7 +8,7 @@
         <!--我-->
         <scene sceneID="HbY-ci-4Vw">
             <objects>
-                <viewController id="BWh-1b-I9o" customClass="ProfileViewController" customModule="GGQ" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProfileViewController" id="BWh-1b-I9o" customClass="ProfileViewController" customModule="GGQ" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="6gh-YS-d70"/>
                         <viewControllerLayoutGuide type="bottom" id="PDs-cx-Sjb"/>
@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cxg-sm-3C8">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="140"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="160"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="Avatar" translatesAutoresizingMaskIntoConstraints="NO" id="cOA-if-aLr">
                                         <rect key="frame" x="270" y="60" width="60" height="60"/>
@@ -29,7 +29,7 @@
                                         </constraints>
                                     </imageView>
                                     <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pVY-kj-q0d">
-                                        <rect key="frame" x="576" y="59" width="9" height="22"/>
+                                        <rect key="frame" x="576" y="69" width="9" height="22"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <color key="tintColor" red="0.1764705882" green="0.1764705882" blue="0.1764705882" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" image="btn_go"/>
@@ -45,7 +45,7 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="140" id="1Sk-ve-VQo"/>
+                                    <constraint firstAttribute="height" constant="160" id="1Sk-ve-VQo"/>
                                     <constraint firstAttribute="trailing" secondItem="pVY-kj-q0d" secondAttribute="trailing" constant="15" id="Dxk-8V-QEm"/>
                                     <constraint firstItem="C9W-qd-Y3x" firstAttribute="top" secondItem="Cxg-sm-3C8" secondAttribute="top" constant="30" id="FPf-gM-O6t"/>
                                     <constraint firstAttribute="trailing" secondItem="C9W-qd-Y3x" secondAttribute="trailing" constant="15" id="YKY-uT-qus"/>
@@ -54,12 +54,21 @@
                                     <constraint firstItem="cOA-if-aLr" firstAttribute="centerX" secondItem="Cxg-sm-3C8" secondAttribute="centerX" id="zVM-6i-aVe"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mWW-CH-BlV">
+                                <rect key="frame" x="283" y="283" width="35" height="35"/>
+                                <state key="normal" image="icon_github"/>
+                                <connections>
+                                    <segue destination="WUE-yb-0Se" kind="presentation" identifier="PresentLogin" id="5ZG-ao-4gs"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="Cxg-sm-3C8" firstAttribute="leading" secondItem="LNc-xQ-waa" secondAttribute="leading" id="dBl-cK-np4"/>
                             <constraint firstItem="Cxg-sm-3C8" firstAttribute="top" secondItem="LNc-xQ-waa" secondAttribute="top" id="iCa-Ee-5Al"/>
+                            <constraint firstItem="mWW-CH-BlV" firstAttribute="centerX" secondItem="LNc-xQ-waa" secondAttribute="centerX" id="oEI-bL-o51"/>
                             <constraint firstAttribute="trailing" secondItem="Cxg-sm-3C8" secondAttribute="trailing" id="pNU-br-CnM"/>
+                            <constraint firstItem="mWW-CH-BlV" firstAttribute="centerY" secondItem="LNc-xQ-waa" secondAttribute="centerY" id="w0g-9t-wVA"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="我" id="jtY-Tc-Skd">
@@ -79,12 +88,21 @@
                 <viewControllerPlaceholder storyboardName="Setting" id="aTd-gD-4MV" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EWl-X3-Jlr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1436" y="123"/>
+            <point key="canvasLocation" x="1436" y="87"/>
+        </scene>
+        <!--Login-->
+        <scene sceneID="C4R-54-fQx">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Login" id="WUE-yb-0Se" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2H7-26-UTv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1441.5" y="160"/>
         </scene>
     </scenes>
     <resources>
         <image name="Avatar" width="100" height="100"/>
         <image name="btn_go" width="9" height="16"/>
         <image name="btn_settings" width="25" height="25"/>
+        <image name="icon_github" width="35" height="35"/>
     </resources>
 </document>

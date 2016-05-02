@@ -71,10 +71,9 @@
             <objects>
                 <navigationController id="DaK-aY-Fl2" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="icon_home" id="7zo-x4-aMK"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="qnb-A1-2eP">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="qnb-A1-2eP">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </navigationBar>
                     <connections>
@@ -88,17 +87,17 @@
         <!--首页-->
         <scene sceneID="bT6-mx-6vy">
             <objects>
-                <viewController storyboardIdentifier="HomeViewController" id="t4y-NO-3qL" customClass="HomeViewController" customModule="GGQ" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeViewController" automaticallyAdjustsScrollViewInsets="NO" id="t4y-NO-3qL" customClass="HomeViewController" customModule="GGQ" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="PmX-XQ-oZG"/>
                         <viewControllerLayoutGuide type="bottom" id="U4G-ZN-806"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="9tf-XM-P3Y">
-                        <rect key="frame" x="0.0" y="64" width="600" height="487"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" alwaysBounceHorizontal="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="A33-Nq-7fC">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="487"/>
+                                <rect key="frame" x="0.0" y="64" width="600" height="487"/>
                                 <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="40" minimumInteritemSpacing="40" id="rvN-eI-m6i" customClass="HomeCollectionViewFlowLayout" customModule="GGQ" customModuleProvider="target">
                                     <size key="itemSize" width="558" height="427"/>

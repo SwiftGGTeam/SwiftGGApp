@@ -1,18 +1,24 @@
 //
 //  Observable+ObjectMapper.swift
-//  PalmCivet
+//  SwiftGGQing
 //
 //  Created by DianQK on 16/2/4.
 //  Copyright © 2016年 DianQK. All rights reserved.
 //
 
 import RxSwift
-import Realm
 import RealmSwift
 import MoyaX
 import SwiftyJSON
 // TODO: - 错误处理
 extension ObservableType where E == Response {
+    
+    func mapJSON() -> Observable<JSON> {
+        return flatMap { response -> Observable<JSON> in
+            let json = JSON(data: response.data)
+            return Observable.just(json)
+        }
+    }
 
     func gg_mapJSON() -> Observable<JSON> {
         return flatMap { response -> Observable<JSON> in

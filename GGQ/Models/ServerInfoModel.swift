@@ -17,9 +17,8 @@ class ServerInfoModel: Object {
     dynamic var articlesSum: Int = 0
     dynamic var message: String = ""
 
-// Specify properties to ignore (Realm won't persist these)
-
-//  override static func ignoredProperties() -> [String] {
-//    return []
-//  }
+    override static func primaryKey() -> String? {
+        return "appVersion"
+    }
+    
 }

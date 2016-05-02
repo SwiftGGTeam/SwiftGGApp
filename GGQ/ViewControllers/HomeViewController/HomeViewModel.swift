@@ -8,8 +8,8 @@
 
 import RxSwift
 import RxCocoa
-import Realm
 import RealmSwift
+//import RxRealm
 
 final class HomeViewModel {
 
@@ -27,16 +27,12 @@ final class HomeViewModel {
 
     init(loadMoreTrigger: Observable<Void>) {
 
-        if let realm = try? Realm() {
-            let list = realm.objects(ArticleInfoObject)
-            realmNotificationToken = list.realm?.addNotificationBlock { [weak self] notification, realm in
-                if let strongSelf = self {
-                    strongSelf.elements.value = list.map { $0 }
-                    strongSelf.isLoading.value = false
-                    strongSelf.currentPage.value = strongSelf.elements.value.count / GGConfig.Home.pageSize + 1
-                }
-            }
-        }
+        let realm = try! Realm()
+        realm.objects(ArticleInfoObject).asObservable().subscribeNext { [unowned self] objects in
+            self.elements.value = objects.map { $0 }
+            self.isLoading.value = false
+            self.currentPage.value = self.elements.value.count / GGConfig.Home.pageSize + 1
+        }.addDisposableTo(disposeBag)
 
         let loadMoreRequest = loadMoreTrigger.withLatestFrom(currentPage.asObservable()).shareReplay(1)
 
@@ -44,8 +40,6 @@ final class HomeViewModel {
             .flatMapLatest { GGProvider.request(GGAPI.Articles(pageIndex: $0, pageSize: GGConfig.Home.pageSize)) }
         // TODO: - 在这里加判断，是否需要更新 Model
             .gg_storeArray(ArticleInfoObject)
-            .flatMapLatest { Realm.rx_objects(ArticleInfoObject) }
-            .map { $0.map { $0 } }
             .shareReplay(1)
 
         [loadMoreRequest.map { _ in true }, loadMoreResult.map { _ in false }]

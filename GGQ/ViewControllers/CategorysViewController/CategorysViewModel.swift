@@ -24,11 +24,8 @@ final class CategorysViewModel {
 
 	init(refreshTrigger: Driver<Void>) {
 		if let realm = try? Realm() {
-			let list = realm.objects(CategoryObject.self)
-			elements.value = list.map { $0 }
-			realm
-				.rx_notification
-				.withLatestFrom(Observable.just(list))
+			realm.objects(CategoryObject.self)
+                .asObservable()
 				.map { $0.map { $0 } }
 				.bindTo(elements)
 				.addDisposableTo(disposeBag)

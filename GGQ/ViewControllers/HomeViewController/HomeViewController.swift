@@ -13,10 +13,8 @@ import RxDataSources
 import RxOptional
 import NSObject_Rx
 import SwiftDate
-//import Rswift
 
 final class HomeViewController: UIViewController, SegueHandlerType {
-
 	@IBOutlet weak var collectionView: UICollectionView!
 
 	var viewModel: HomeViewModel!
@@ -32,7 +30,6 @@ final class HomeViewController: UIViewController, SegueHandlerType {
 	}
 
 	override func viewDidLoad() {
-
 		let loadMore = rx_sentMessage(#selector(HomeViewController.collectionView(_: willDisplayCell: forItemAtIndexPath:)))
 			.flatMapLatest { objects -> Observable<Void> in
 				let objects = objects as [AnyObject]
@@ -54,9 +51,9 @@ final class HomeViewController: UIViewController, SegueHandlerType {
 					let cell = cv.dequeueReusableCellWithReuseIdentifier(R.reuseIdentifier.homeCollectionViewCell, forIndexPath: indexPath)!
 					cell.title = e.title
 					cell.time = e.submitDate.toDateFromISO8601()
-                    cell.info = e.typeName + " " + e.translator
+					cell.info = e.typeName + " " + e.translator
 					cell.preview = e.articleDescription
-                    cell.layoutIfNeeded()
+					cell.layoutIfNeeded()
 					return cell
 				case .LoadMore:
 					let cell = cv.dequeueReusableCellWithReuseIdentifier(R.reuseIdentifier.homeLoadMoreCollectionViewCell, forIndexPath: indexPath)!
@@ -77,43 +74,41 @@ final class HomeViewController: UIViewController, SegueHandlerType {
 		tabBarController?
 			.rx_didSelectViewController
 			.map { [unowned self] in $0 == self.navigationController } // 选择了"自己"
-            .buffer(timeSpan: 0.6, count: 2, scheduler: MainScheduler.instance) // buffer 两个
-            .filter { $0.count >= 2 } // 确保是在 0.6s 内点击两次
-            .map { $0[0] == $0[1] } // 两次都是点击"自己"
-            .subscribeNext { [unowned self] doubleClick in
-                if doubleClick {
-                    let ip = NSIndexPath(forItem: 0, inSection: 0)
-                    self.collectionView.scrollToItemAtIndexPath(ip, atScrollPosition: .CenteredHorizontally, animated: true)
-                }
-            }
+		.buffer(timeSpan: 0.6, count: 2, scheduler: MainScheduler.instance) // buffer 两个
+		.filter { $0.count >= 2 } // 确保是在 0.6s 内点击两次
+		.map { $0[0] == $0[1] } // 两次都是点击"自己"
+		.subscribeNext { [unowned self] doubleClick in
+			if doubleClick {
+				let ip = NSIndexPath(forItem: 0, inSection: 0)
+				self.collectionView.scrollToItemAtIndexPath(ip, atScrollPosition: .CenteredHorizontally, animated: true)
+			}
+		}
 			.addDisposableTo(rx_disposeBag)
 
 		registerForPreviewingWithDelegate(self, sourceView: collectionView)
-        
-        navigationItem.leftBarButtonItem?.rx_tap
-            .subscribeNext { [unowned self] in
-            let alert = UIAlertController(title: nil, message: nil, preferredStyle: .ActionSheet)
-            let action1 = UIAlertAction(title: "全部显示", style: .Default, handler: nil)
-            let action2 = UIAlertAction(title: "显示未读完", style: .Default, handler: nil)
-            let action3 = UIAlertAction(title: "取消", style: .Cancel, handler: nil)
-            
-            alert.addAction(action1)
-            alert.addAction(action2)
-            alert.addAction(action3)
-                
-            self.presentViewController(alert, animated: true, completion: nil)
-        }.addDisposableTo(rx_disposeBag)
-        
-        
+
+		navigationItem.leftBarButtonItem?.rx_tap
+			.subscribeNext { [unowned self] in
+				let alert = UIAlertController(title: nil, message: nil, preferredStyle: .ActionSheet)
+				let action1 = UIAlertAction(title: "全部显示", style: .Default, handler: nil)
+				let action2 = UIAlertAction(title: "显示未读完", style: .Default, handler: nil)
+				let action3 = UIAlertAction(title: "取消", style: .Cancel, handler: nil)
+
+				alert.addAction(action1)
+				alert.addAction(action2)
+				alert.addAction(action3)
+
+				self.presentViewController(alert, animated: true, completion: nil)
+		}.addDisposableTo(rx_disposeBag)
 	}
 
 	override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-
 		switch segueIdentifierForSegue(segue) {
 		case .ShowArticle:
-			let articleDetailViewController = segue.destinationViewController.gg_castOrFatalError(ArticleViewController.self)
+			let articleManagerViewController = segue.destinationViewController.gg_castOrFatalError(ArticleManagerViewController.self)
 			let articleInfo: ArticleInfoObject = castOrFatalError(sender)
-			articleDetailViewController.articleInfo = articleInfo
+			articleManagerViewController.articleInfo = articleInfo
+            break
 		case .ShowSearch:
 			let searchViewController = segue.destinationViewController.gg_castOrFatalError(SearchViewController.self)
 			searchViewController.snapshotView = tabBarController?.view.snapshotViewAfterScreenUpdates(false)
@@ -124,18 +119,17 @@ final class HomeViewController: UIViewController, SegueHandlerType {
 				.addDisposableTo(rx_disposeBag)
 		}
 	}
-    
-    override func viewWillAppear(animated: Bool) {
-        navigationController?.setNavigationBarHidden(false, animated: true)
-    }
+
+	override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+		navigationController?.setNavigationBarHidden(false, animated: true)
+	}
 }
 
 // MARK: - UIViewControllerPreviewingDelegate
 
 extension HomeViewController: UIViewControllerPreviewingDelegate {
-
 	func previewingContext(previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
-
 		if let indexPath = collectionView.indexPathForItemAtPoint(location),
 			cellAttributes = collectionView.layoutAttributesForItemAtIndexPath(indexPath) {
 				do {
@@ -160,7 +154,6 @@ extension HomeViewController: UIViewControllerPreviewingDelegate {
 // MARK: - UIScrollViewDelegate
 
 extension HomeViewController: UIScrollViewDelegate {
-
 	func collectionView(collectionView: UICollectionView, willDisplayCell cell: UICollectionViewCell, forItemAtIndexPath indexPath: NSIndexPath) {
 		if let cell = cell as? HomeLoadMoreCollectionViewCell {
 			if !cell.activityIndicatorView.isAnimating() {

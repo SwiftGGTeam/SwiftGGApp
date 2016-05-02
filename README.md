@@ -1,6 +1,8 @@
 # GGQ
 
-> 这是一份 SwiftGG 客户端的 Rx 实现。（黑化版）
+> 这是一份 SwiftGG 客户端的 Rx 实现。
+
+## Install
 
 ## 基本规范
 
@@ -26,4 +28,15 @@
 
 1. 尽量将输入放到初始化中
 2. 暴露属性做状态提供给 ViewController 或者其他人使用
-3. 
+
+> 有什么意见建议尽管提^^。
+
+## Target
+
+### GGQ-Release
+
+Release 打包，不多说。
+
+### GGQ-Dev
+
+开发 Target 。

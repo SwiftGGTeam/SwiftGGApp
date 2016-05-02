@@ -93,8 +93,8 @@ final class SearchViewController: UIViewController, SegueHandlerType {
 
 		switch segueIdentifierForSegue(segue) {
 		case .ShowArticle:
-			let articleDetailViewController = segue.destinationViewController.gg_castOrFatalError(ArticleViewController.self)
-			articleDetailViewController.articleInfo = castOrFatalError(sender)
+			let articleManagerViewController = segue.destinationViewController.gg_castOrFatalError(ArticleManagerViewController.self)
+			articleManagerViewController.articleInfo = castOrFatalError(sender)
 		}
 	}
 }
