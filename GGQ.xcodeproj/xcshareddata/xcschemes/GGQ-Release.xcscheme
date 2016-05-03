@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-<<<<<<< HEAD:SwiftGG.xcodeproj/xcshareddata/xcschemes/SwiftGG.xcscheme
-   LastUpgradeVersion = "0710"
-=======
    LastUpgradeVersion = "0730"
->>>>>>> 4718e4cda4da616f1e2ca18964041047ef41c6e8:GGQ.xcodeproj/xcshareddata/xcschemes/GGQ-Release.xcscheme
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
