@@ -30,7 +30,7 @@ final class CategorysViewModel {
 				.addDisposableTo(disposeBag)
 		}
         
-        let updated = SyncService.sharedInstance.articlesUpdated
+        let updated = SyncService.sharedInstance.categoriesUpdated
             .filter { $0 }.map { _ in }
 
 		let refreshResult = [refreshTrigger.asObservable(), updated].toObservable()

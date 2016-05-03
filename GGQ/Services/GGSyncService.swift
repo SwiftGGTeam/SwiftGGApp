@@ -65,11 +65,11 @@ class SyncService {
         let app = realm.objects(ServerInfoModel).sorted("appVersion").asObservable()
             .map { $0.first }.filterNil()
         let latest = provider.request(GGAPI.ServerInfo).retry(3).gg_mapJSON()
-        
+                /// FIXME: - == 写错了
         let com = Observable.combineLatest(app, latest) { Compare(app: $0, json: $1) }.shareReplay(1)
         
         com.flatMap(compare("categoriesVersion"))
-            .bindTo(_articlesUpdated)
+            .bindTo(_categoriesUpdated)
             .addDisposableTo(disposeBag)
         
         com.flatMap(compare("articlesVersion"))
