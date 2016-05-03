@@ -1,4 +1,5 @@
 PODS:
+<<<<<<< HEAD
   - Alamofire (3.3.0)
   - Gloss (0.6.2)
   - JGProgressHUD (1.3.1)
@@ -72,3 +73,56 @@ SPEC CHECKSUMS:
 PODFILE CHECKSUM: d1269932d6cf26c0ab91001382a9d98af0ca6ac1
 
 COCOAPODS: 1.0.0.beta.6
+=======
+  - NSObject+Rx (1.2.1):
+    - RxSwift (~> 2.1)
+  - R.swift (2.1.0):
+    - R.swift.Library (~> 2.0.0)
+  - R.swift.Library (2.0.0)
+  - RxBlocking (2.4):
+    - RxSwift (~> 2.4)
+  - RxCocoa (2.4):
+    - RxSwift (~> 2.4)
+  - RxDataSources (0.7):
+    - RxCocoa (~> 2.2)
+    - RxSwift (~> 2.2)
+  - RxGesture (0.1.2):
+    - RxCocoa
+    - RxSwift
+  - RxOptional (2.0.0):
+    - RxCocoa (~> 2.0)
+    - RxSwift (~> 2.0)
+  - RxSwift (2.4)
+  - RxTests (2.4):
+    - RxSwift (~> 2.4)
+  - XCGLogger (3.3)
+
+DEPENDENCIES:
+  - NSObject+Rx
+  - R.swift
+  - RxBlocking (~> 2.4)
+  - RxCocoa (~> 2.4)
+  - RxDataSources
+  - RxGesture
+  - RxOptional
+  - RxSwift (~> 2.4)
+  - RxTests (~> 2.4)
+  - XCGLogger (~> 3.3)
+
+SPEC CHECKSUMS:
+  NSObject+Rx: 5d032a7f161602dec6b82dcf12731e91ce15b8da
+  R.swift: efff131531b5cf142e28fd94957806ff71ccbcf2
+  R.swift.Library: 9f4b2d12040daa1ffe336d8f7e1574f73721fd01
+  RxBlocking: 1226c1fa0ca1e0ca5f964d4330ca3649f2128680
+  RxCocoa: 7d6cd877de99f5640306b3d6cf87f580c1d91b61
+  RxDataSources: 99a8527f4de066d3f10522c1977e571efec034c3
+  RxGesture: 5a5d7ee565fb24b1dbede801e7a98d4169ac5818
+  RxOptional: b77fb47a0190213cf8a37c7a2b7fda28160b4563
+  RxSwift: 67b9ef4e8b34fb394e200e754c6a09cc16559f94
+  RxTests: 8b9691e6476dfa6025fae9a69f449bf4cb5e5cfc
+  XCGLogger: d6e196e78940ff6daab17d6917107876f973fa31
+
+PODFILE CHECKSUM: 3d4eef12fe6ee5ba2c82b6ee5fb66ddd1773c3cd
+
+COCOAPODS: 1.0.0.rc.1
+>>>>>>> 4718e4cda4da616f1e2ca18964041047ef41c6e8

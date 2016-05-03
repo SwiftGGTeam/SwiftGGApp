@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="q0j-Nx-78X">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="1Db-jJ-po2">
+            <objects>
+                <navigationController id="q0j-Nx-78X" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="qSv-WZ-vWR">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="dMY-e9-Tnq" kind="relationship" relationship="rootViewController" id="pel-zy-O1k"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0kX-XT-hVo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-50" y="146"/>
+        </scene>
+        <!--登录-->
+        <scene sceneID="gS8-3s-iQV">
+            <objects>
+                <viewController id="dMY-e9-Tnq" customClass="LoginViewController" customModule="GGQ" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ROh-yn-1XD"/>
+                        <viewControllerLayoutGuide type="bottom" id="8cC-j6-0p5"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="N6V-mJ-g5A">
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="hhb-eD-mFv">
+                                <rect key="frame" x="188" y="356" width="225" height="35"/>
+                                <subviews>
+                                    <button contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MpP-AO-JRq">
+                                        <rect key="frame" x="0.0" y="0.0" width="35" height="35"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <state key="normal" image="icon_weibo"/>
+                                    </button>
+                                    <button contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dG3-gd-5Df">
+                                        <rect key="frame" x="95" y="0.0" width="35" height="35"/>
+                                        <color key="backgroundColor" red="0.99215686270000003" green="0.99215686270000003" blue="0.99215686270000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" image="icon_wechat"/>
+                                    </button>
+                                    <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TjY-Rt-fhI">
+                                        <rect key="frame" x="190" y="0.0" width="35" height="35"/>
+                                        <color key="backgroundColor" red="0.99215686270000003" green="0.99215686270000003" blue="0.99215686270000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" image="icon_github"/>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <imageView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="icon_logo" translatesAutoresizingMaskIntoConstraints="NO" id="b9M-eF-LdS">
+                                <rect key="frame" x="237" y="60" width="126" height="130"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </imageView>
+                            <label userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="您可以使用以下三种姿势登录：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kAs-sn-vmu">
+                                <rect key="frame" x="181" y="312" width="238" height="24"/>
+                                <color key="backgroundColor" red="0.99215686270000003" green="0.99215686270000003" blue="0.99215686270000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="17"/>
+                                <color key="textColor" red="0.1764705882" green="0.1764705882" blue="0.1764705882" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="优质 Swift 翻译资源" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NJX-pa-Poj">
+                                <rect key="frame" x="237" y="486" width="127" height="20"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="14"/>
+                                <color key="textColor" red="0.3921568627" green="0.3921568627" blue="0.3921568627" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.99215686274509807" green="0.99215686274509807" blue="0.99215686274509807" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="NJX-pa-Poj" firstAttribute="centerX" secondItem="N6V-mJ-g5A" secondAttribute="centerX" id="61c-Zb-R8z"/>
+                            <constraint firstItem="kAs-sn-vmu" firstAttribute="centerX" secondItem="N6V-mJ-g5A" secondAttribute="centerX" id="8E0-Sf-A0m"/>
+                            <constraint firstItem="hhb-eD-mFv" firstAttribute="centerX" secondItem="N6V-mJ-g5A" secondAttribute="centerX" id="9dW-ou-mzy"/>
+                            <constraint firstItem="b9M-eF-LdS" firstAttribute="centerX" secondItem="N6V-mJ-g5A" secondAttribute="centerX" id="M2U-GV-hmd"/>
+                            <constraint firstItem="8cC-j6-0p5" firstAttribute="top" secondItem="kAs-sn-vmu" secondAttribute="bottom" constant="200" id="WEX-7I-mbZ"/>
+                            <constraint firstItem="hhb-eD-mFv" firstAttribute="top" secondItem="kAs-sn-vmu" secondAttribute="bottom" constant="20" id="gvn-SI-dYN"/>
+                            <constraint firstItem="8cC-j6-0p5" firstAttribute="top" secondItem="NJX-pa-Poj" secondAttribute="bottom" constant="30" id="jHa-bj-Swp"/>
+                            <constraint firstItem="b9M-eF-LdS" firstAttribute="top" secondItem="ROh-yn-1XD" secondAttribute="bottom" constant="60" id="kSf-bw-EWv"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="登录" id="gfY-ep-tGp">
+                        <barButtonItem key="leftBarButtonItem" image="btn_back" id="u77-SH-hvq">
+                            <color key="tintColor" red="0.1764705882" green="0.1764705882" blue="0.1764705882" alpha="1" colorSpace="calibratedRGB"/>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <connections>
+                        <outlet property="githubButton" destination="TjY-Rt-fhI" id="uWK-IS-MbF"/>
+                        <outlet property="wechatButton" destination="dG3-gd-5Df" id="rIj-du-cgb"/>
+                        <outlet property="weiboButton" destination="MpP-AO-JRq" id="0Om-YS-S32"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tnY-WH-DYW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="673" y="146"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="btn_back" width="14" height="24"/>
+        <image name="icon_github" width="35" height="35"/>
+        <image name="icon_logo" width="126" height="130"/>
+        <image name="icon_wechat" width="35" height="29"/>
+        <image name="icon_weibo" width="35" height="29"/>
+    </resources>
+</document>

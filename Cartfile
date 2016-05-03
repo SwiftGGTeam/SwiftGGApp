@@ -1,0 +1,12 @@
+github "onevcat/Kingfisher" ~> 2.3
+github "realm/realm-cocoa"
+github "pkluz/PKHUD"
+github "Alamofire/Alamofire"
+github "jasl/MoyaX"
+github "malcommac/SwiftDate"
+github "SwiftyJSON/SwiftyJSON"
+github "jasl/RouterX"
+github "matthewpalmer/Locksmith"
+github "ReactiveX/RxSwift" ~> 2.4
+github "RxSwiftCommunity/RxDataSources"
+github "indragiek/CocoaMarkdown" "master"
