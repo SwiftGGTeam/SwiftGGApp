@@ -1,6 +1,10 @@
 language: objective-c
-osx_image: xcode7.2
+osx_image: xcode7.3
 before_install:
   - gem install cocoapods --pre
+
+before_script:
+  - carthage bootstrap
+
 script:
   - xctool -workspace SwiftGG.xcworkspace -scheme SwiftGG -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
