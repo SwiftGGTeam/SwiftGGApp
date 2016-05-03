@@ -4,7 +4,7 @@ github "pkluz/PKHUD"
 github "Alamofire/Alamofire"
 github "jasl/MoyaX"
 github "malcommac/SwiftDate"
-github "SwiftyJSON/SwiftyJSON"
+github "SwiftyJSON/SwiftyJSON" "master"
 github "jasl/RouterX"
 github "matthewpalmer/Locksmith"
 github "ReactiveX/RxSwift" ~> 2.4
