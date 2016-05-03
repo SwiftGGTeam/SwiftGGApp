@@ -12,4 +12,4 @@ before_script:
   - carthage bootstrap
 
 script:
-  - xctool -workspace GGQ.xcworkspace -scheme SwiftGG -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
+  - xctool -workspace GGQ.xcworkspace -scheme GGQ-Release -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
