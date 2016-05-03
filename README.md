@@ -1,18 +1,42 @@
-# SwiftGG App 相关说明
+# GGQ
 
-[![Build Status](https://travis-ci.org/SwiftGGTeam/SwiftGGApp.svg?branch=master)](https://travis-ci.org/SwiftGGTeam/SwiftGGApp)
+> 这是一份 SwiftGG 客户端的 Rx 实现。
 
-### 目录结构说明
+## Install
 
-1. 如果使用的第三方库不需要修改源文件，就放到 Podfile 里面，用 cocoapods 进行自动管理。
-2. Library 目录下存放其他需要修改源代码的第三方库。
-3. Models 目录下存放所有模型相关的类。
-4. Modules 目录下是按业务模块进行划分的目录，目前建立了 Home（首页）和 UserCenter（个人中心）。业务模块下建立了三个子目录，分别是 Views，ViewControllers 和 Cells。Cells 用于存放 Cell 相关的子类， Views 用于存放非 Cell 相关的 View 子类, ViewControllers 用于存放 ViewController 相关类。
-5. Utility 目录下存放一些常用的工具类。
-6. 所有的图片资源都存放到 Assets 下。
-7. 和界面展示的相关类，必须全部使用 AutoLayout。
+## 基本规范
 
-### 代码规范说明
+> 这里不再约束代码格式，主要谈一下如何写 View 和 ViewModel 层。
 
-1. 我们所有新增的类都以 SG 作为前缀。
-2. Swift 的相关 Coding Style 可以参考[这里](https://github.com/github/swift-style-guide)。
+### View 层
+
+#### 推荐
+
+1. 尽量将子视图私有化
+2. 尽量通过 `extension` 暴露变量
+3. 减少直接通过 Model 设置 UI ，如果一定需要，加上因为无妨
+
+#### 绝对禁止的
+
+1. 不可以知道 ViewModel 和 ViewController 的存在
+  > 也就是说不得以任何形式在 View 中主动关联其他层
+2. 如果需要建立自管理的 View ，务必确保该业务与其他业务都不相关
+
+### ViewModel 层
+
+#### 推荐
+
+1. 尽量将输入放到初始化中
+2. 暴露属性做状态提供给 ViewController 或者其他人使用
+
+> 有什么意见建议尽管提^^。
+
+## Target
+
+### GGQ-Release
+
+Release 打包，不多说。
+
+### GGQ-Dev
+
+开发 Target 。
