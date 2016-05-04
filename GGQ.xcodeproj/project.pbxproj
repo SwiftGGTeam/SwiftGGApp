@@ -208,13 +208,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		2698E02C1CBFD3E500B7E8C7 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 2622325D1CB7DD37009133D7 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 262232641CB7DD37009133D7;
-			remoteInfo = GGQ;
-		};
 		2698E03A1CBFD3F300B7E8C7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 2622325D1CB7DD37009133D7 /* Project object */;
@@ -379,11 +372,7 @@
 		6F80B3059819FC43F66FF025 /* Pods_SwiftGGQing.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftGGQing.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BDB494BD2ED05E0759DCC2B /* Pods_GGQ_Lint.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GGQ_Lint.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		87F8853FE7B430AD79A2E1E1 /* Pods-GGQ.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GGQ.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GGQ/Pods-GGQ.debug.xcconfig"; sourceTree = "<group>"; };
-		90EA8694A881C1D65A36E0E6 /* Pods-GGQ-Lint.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GGQ-Lint.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GGQ-Lint/Pods-GGQ-Lint.debug.xcconfig"; sourceTree = "<group>"; };
 		95D8D9DC147ACEB41904F955 /* Pods-GGQ.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GGQ.release.xcconfig"; path = "Pods/Target Support Files/Pods-GGQ/Pods-GGQ.release.xcconfig"; sourceTree = "<group>"; };
-		9A49BAA1E15C2771CFB71A87 /* Pods-SwiftGGQing.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftGGQing.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftGGQing/Pods-SwiftGGQing.debug.xcconfig"; sourceTree = "<group>"; };
-		9CFE120A162F566097EF5F76 /* Pods-SwiftGGQing.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftGGQing.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftGGQing/Pods-SwiftGGQing.release.xcconfig"; sourceTree = "<group>"; };
-		AD9A7DA1D21F13A4FDAD3595 /* Pods-GGQ-Lint.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GGQ-Lint.release.xcconfig"; path = "Pods/Target Support Files/Pods-GGQ-Lint/Pods-GGQ-Lint.release.xcconfig"; sourceTree = "<group>"; };
 		B4C167B76DBBA1FD955C2C2F /* Pods-GGQ-Dev.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GGQ-Dev.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GGQ-Dev/Pods-GGQ-Dev.debug.xcconfig"; sourceTree = "<group>"; };
 		CFE9D0963FC0FFC452F2D89A /* Pods_GGQ_Dev.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GGQ_Dev.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D14312BDE509311F69A2E4A3 /* Pods_GGQ_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GGQ_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -456,12 +445,8 @@
 		20CE0825BCF9F715497DD393 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				9A49BAA1E15C2771CFB71A87 /* Pods-SwiftGGQing.debug.xcconfig */,
-				9CFE120A162F566097EF5F76 /* Pods-SwiftGGQing.release.xcconfig */,
 				87F8853FE7B430AD79A2E1E1 /* Pods-GGQ.debug.xcconfig */,
 				95D8D9DC147ACEB41904F955 /* Pods-GGQ.release.xcconfig */,
-				90EA8694A881C1D65A36E0E6 /* Pods-GGQ-Lint.debug.xcconfig */,
-				AD9A7DA1D21F13A4FDAD3595 /* Pods-GGQ-Lint.release.xcconfig */,
 				B4C167B76DBBA1FD955C2C2F /* Pods-GGQ-Dev.debug.xcconfig */,
 				1AAD2501C34F4F123F03B729 /* Pods-GGQ-Dev.release.xcconfig */,
 				D9A846250618D062F1C88D21 /* Pods-GGQ-Tests.debug.xcconfig */,
@@ -890,7 +875,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				2698E02D1CBFD3E500B7E8C7 /* PBXTargetDependency */,
 				2698E0531CC0762100B7E8C7 /* PBXTargetDependency */,
 			);
 			name = "GGQ-Tests";
@@ -1374,11 +1358,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		2698E02D1CBFD3E500B7E8C7 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 262232641CB7DD37009133D7 /* GGQ */;
-			targetProxy = 2698E02C1CBFD3E500B7E8C7 /* PBXContainerItemProxy */;
-		};
 		2698E03B1CBFD3F300B7E8C7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 262232641CB7DD37009133D7 /* GGQ */;
