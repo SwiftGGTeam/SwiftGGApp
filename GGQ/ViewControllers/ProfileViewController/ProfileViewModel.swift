@@ -33,11 +33,19 @@ class ProfileViewModel {
         
         let noUser = optionalUser.map { $0 == nil }
         
-        [updateToken.map { _ in TokenType.GitHub }, noUser.filter { $0 }.map { _ in TokenType.GitHub }].toObservable()
+        let requestUserInfo = [
+            updateToken.map { _ in TokenType.GitHub },
+            noUser.filter { $0 }.map { _ in TokenType.GitHub }
+            ]
+            .toObservable()
             .merge()
             .filter(KeychainService.exist)
-            .map { _ in }
-            .flatMapLatest { GGProvider.request(GitHubAPI.User).mapJSON() }
+            .map { _ in GitHubAPI.User }
+            .shareReplay(1)
+            
+        requestUserInfo
+            .flatMapLatest(GGProvider.request)
+            .mapJSON()
             .flatMapLatest { Realm.rx_create(UserModel.self, value: $0.object, update: true) }
             .subscribe()
             .addDisposableTo(disposeBag)
