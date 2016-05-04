@@ -138,17 +138,16 @@ final class ArticleManagerViewModel {
 
         let object = Realm.rx_objectForPrimaryKey(ArticleDetailModel.self, key: articleInfo.id)
 
-        Observable.combineLatest(json, object) { (json: $0, object: $1) }.flatMap { json, object -> Observable<Void> in
+        Observable.combineLatest(json, object) { (json: $0, object: $1) }.flatMap { json, object -> Observable<Bool> in
             if let object = object {
                 if json["updateDate"].doubleValue > Double(object.updateDate) {
-                    return Realm.rx_create(ArticleDetailModel.self, value: json.object, update: true)
+                    return Realm.rx_create(ArticleDetailModel.self, value: json.object, update: true).map { true }
                 }
                 return Observable.empty()
             } else {
-                return Realm.rx_create(ArticleDetailModel.self, value: json.object, update: false)
+                return Realm.rx_create(ArticleDetailModel.self, value: json.object, update: false).map { false }
             }
             }
-            .map { true }
             .bindTo(updated)
             .addDisposableTo(disposeBag)
     }
