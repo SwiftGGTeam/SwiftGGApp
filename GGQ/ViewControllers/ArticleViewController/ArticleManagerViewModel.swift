@@ -91,6 +91,7 @@ final class ArticleManagerViewModel {
 
             let count = Int(textViewHeight1 / textViewHeight2) + 1
             
+            /// 对总页数进行缓存
             if let realm = articleInfo.realm {
                 do {
                     try realm.write {
