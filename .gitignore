@@ -151,3 +151,6 @@ fastlane/screenshots
 .idea/
 
 R.generated.swift
+
+Crashlytics.framework
+Fabric.framework
