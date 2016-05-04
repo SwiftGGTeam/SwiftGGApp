@@ -61,6 +61,10 @@ final class HomeViewController: UIViewController, SegueHandlerType {
 					return cell
 				}
 		}.addDisposableTo(rx_disposeBag)
+        
+        viewModel.isRequestLatest.asDriver()
+            .drive(UIApplication.sharedApplication().rx_networkActivityIndicatorVisible)
+            .addDisposableTo(rx_disposeBag)
 
 		collectionView.rx_modelSelected(ModelType)
 			.subscribeNext { [unowned self] in
