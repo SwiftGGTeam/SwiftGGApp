@@ -19,6 +19,9 @@ final class ArticleManagerViewModel {
     let elements = Variable<[NSAttributedString]>([])
 
     let isLoading = Variable(true)
+    
+    /// 文章是否有更新
+    let updated = Variable(false)
 
     let pagerTotal = Variable(0)
 
@@ -129,9 +132,10 @@ final class ArticleManagerViewModel {
             } else {
                 return Realm.rx_create(ArticleDetailModel.self, value: json.object, update: false)
             }
-        }.subscribeNext {
-            log.info("文章已更新")
-        }.addDisposableTo(disposeBag)
+            }
+            .map { true }
+            .bindTo(updated)
+            .addDisposableTo(disposeBag)
     }
 
     func contentText(page page: Int) -> Observable<NSAttributedString> {
