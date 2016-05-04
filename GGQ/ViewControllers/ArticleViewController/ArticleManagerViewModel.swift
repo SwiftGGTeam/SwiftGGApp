@@ -24,8 +24,10 @@ final class ArticleManagerViewModel {
     let updated = Variable(false)
 
     let pagerTotal = Variable(0)
+    
 
-    let disposeBag = DisposeBag()
+    private let currentPage = PublishSubject<Int>()
+    private let disposeBag = DisposeBag()
 
     init(articleInfo: ArticleInfoObject, nextPageTrigger: Driver<Void>, contentSize: CGSize) {
 
@@ -33,7 +35,23 @@ final class ArticleManagerViewModel {
         let predicate = NSPredicate(format: "id = %@", argumentArray: [articleInfo.id])
 
         let articleShare = realm.objects(ArticleDetailModel).filter(predicate).asObservable()
-            .map { $0.first }.filterNil().shareReplay(1)
+            .map { $0.first }.filterNil().shareReplay(1).take(2)
+        
+        Observable.combineLatest(articleShare, currentPage.asObservable().observeOn(.Main)) { (article: $0, page: $1) }.subscribeNext { article, page in
+            if let currentPage = article.currentPage.value where currentPage >= page {
+                return
+            }
+            if let realm = article.realm {
+                do {
+                    try realm.write {
+                        log.info("currentPage: \(page)")
+                        article.currentPage.value = page
+                    }
+                } catch {
+                    log.error("Realm write currentPage \(articleInfo) : \(error)")
+                }
+            }
+        }.addDisposableTo(disposeBag)
 
         let attributedString = articleShare
         /// 获取 NSAttributedString ，如果有 Cache ，直接拿
@@ -152,9 +170,11 @@ final class ArticleManagerViewModel {
             }
             .bindTo(updated)
             .addDisposableTo(disposeBag)
+
     }
 
     func contentText(page page: Int) -> Observable<NSAttributedString> {
+        currentPage.onNext(page)
         return elements.asObservable().filter { $0.count >= page }.map { $0[page - 1] }
     }
 }
