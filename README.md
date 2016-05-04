@@ -4,6 +4,14 @@
 
 ## Install
 
+```
+sh bootstrap.sh
+```
+
+### 项目进度
+
+见 [Trello](https://trello.com/b/1eD37wyW) 。
+
 ## 基本规范
 
 > 这里不再约束代码格式，主要谈一下如何写 View 和 ViewModel 层。
