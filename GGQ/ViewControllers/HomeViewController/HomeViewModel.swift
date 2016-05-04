@@ -20,6 +20,8 @@ final class HomeViewModel {
     let currentPage = Variable(1)
 
     let isLoading = Variable(false)
+    
+    let isRequestLatest = Variable(false)
 
     let disposeBag = DisposeBag()
 
@@ -36,15 +38,28 @@ final class HomeViewModel {
 
         let loadMoreResult = loadMoreRequest
             .flatMapLatest { GGProvider.request(GGAPI.Articles(pageIndex: $0, pageSize: GGConfig.Home.pageSize)) }
-        // TODO: - 在这里加判断，是否需要更新 Model
             .gg_storeArray(ArticleInfoObject)
             .shareReplay(1)
+        
+        let requestLatest = SyncService.sharedInstance.articlesUpdated
+            .map { _ in }.shareReplay(1)
+            
+        let responseLatest = requestLatest
+            .flatMapLatest { GGProvider.request(GGAPI.Articles(pageIndex: 1, pageSize: GGConfig.Home.pageSize)).retry(3) }
+            .gg_storeArray(ArticleInfoObject)
 
         [loadMoreRequest.map { _ in true }, loadMoreResult.map { _ in false }]
             .toObservable()
             .merge()
             .bindTo(isLoading)
             .addDisposableTo(disposeBag)
+        
+        [requestLatest.map { _ in true }, responseLatest.map { _ in false }]
+            .toObservable()
+            .merge()
+            .bindTo(isRequestLatest)
+            .addDisposableTo(disposeBag)
+        
         
     }
 }
