@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		07AA2A59C17B2C462898BB02 /* Pods_GGQ.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9EAFE5C29FEB0790663FC9B /* Pods_GGQ.framework */; };
+		26035ECC1CDAC1DD00E31915 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26035ECA1CDAC1DD00E31915 /* Fabric.framework */; };
+		26035ECD1CDAC1DD00E31915 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26035ECA1CDAC1DD00E31915 /* Fabric.framework */; };
+		26035ECE1CDAC1DD00E31915 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26035ECB1CDAC1DD00E31915 /* Crashlytics.framework */; };
+		26035ECF1CDAC1DD00E31915 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26035ECB1CDAC1DD00E31915 /* Crashlytics.framework */; };
 		2605CD571CC8DF0400C31F55 /* GGOAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F967971CC8910200407593 /* GGOAuthService.swift */; };
 		261A279F1CC1E7AE00EF3A9C /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 261A279E1CC1E7AE00EF3A9C /* Config.swift */; };
 		261A27A11CC1E81300EF3A9C /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 261A279E1CC1E7AE00EF3A9C /* Config.swift */; };
@@ -274,6 +278,8 @@
 /* Begin PBXFileReference section */
 		1447B838750CC1C793CD2238 /* Pods-GGQ-Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GGQ-Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GGQ-Tests/Pods-GGQ-Tests.release.xcconfig"; sourceTree = "<group>"; };
 		1AAD2501C34F4F123F03B729 /* Pods-GGQ-Dev.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GGQ-Dev.release.xcconfig"; path = "Pods/Target Support Files/Pods-GGQ-Dev/Pods-GGQ-Dev.release.xcconfig"; sourceTree = "<group>"; };
+		26035ECA1CDAC1DD00E31915 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
+		26035ECB1CDAC1DD00E31915 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		261A279E1CC1E7AE00EF3A9C /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		261A27A21CC1ED3B00EF3A9C /* ArticleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleTableViewCell.swift; sourceTree = "<group>"; };
 		261A27A61CC1EF0B00EF3A9C /* ArticleLoadMoreTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleLoadMoreTableViewCell.swift; sourceTree = "<group>"; };
@@ -389,12 +395,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				265877C31CD7409E00E6B6A0 /* Kingfisher.framework in Frameworks */,
+				26035ECE1CDAC1DD00E31915 /* Crashlytics.framework in Frameworks */,
 				265877C11CD7409E00E6B6A0 /* Locksmith.framework in Frameworks */,
 				265877B31CD7409E00E6B6A0 /* SwiftyJSON.framework in Frameworks */,
 				26A33AEF1CD7A1AF004586C3 /* CocoaMarkdown.framework in Frameworks */,
 				265877BF1CD7409E00E6B6A0 /* MoyaX.framework in Frameworks */,
 				265877B51CD7409E00E6B6A0 /* SwiftDate.framework in Frameworks */,
 				265877BB1CD7409E00E6B6A0 /* RealmSwift.framework in Frameworks */,
+				26035ECC1CDAC1DD00E31915 /* Fabric.framework in Frameworks */,
 				265877B71CD7409E00E6B6A0 /* RouterX.framework in Frameworks */,
 				265877C51CD7409E00E6B6A0 /* Alamofire.framework in Frameworks */,
 				07AA2A59C17B2C462898BB02 /* Pods_GGQ.framework in Frameworks */,
@@ -409,12 +417,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				265877D81CD740AD00E6B6A0 /* Kingfisher.framework in Frameworks */,
+				26035ECF1CDAC1DD00E31915 /* Crashlytics.framework in Frameworks */,
 				265877D61CD740AD00E6B6A0 /* Locksmith.framework in Frameworks */,
 				265877C81CD740AC00E6B6A0 /* SwiftyJSON.framework in Frameworks */,
 				26A33AF11CD7A1C3004586C3 /* CocoaMarkdown.framework in Frameworks */,
 				265877D41CD740AD00E6B6A0 /* MoyaX.framework in Frameworks */,
 				265877CA1CD740AC00E6B6A0 /* SwiftDate.framework in Frameworks */,
 				265877D01CD740AD00E6B6A0 /* RealmSwift.framework in Frameworks */,
+				26035ECD1CDAC1DD00E31915 /* Fabric.framework in Frameworks */,
 				265877CC1CD740AD00E6B6A0 /* RouterX.framework in Frameworks */,
 				265877DA1CD740AD00E6B6A0 /* Alamofire.framework in Frameworks */,
 				EECC4AECDB395E1AC8B49B5E /* Pods_GGQ_Dev.framework in Frameworks */,
@@ -461,6 +471,8 @@
 		2622325C1CB7DD37009133D7 = {
 			isa = PBXGroup;
 			children = (
+				26035ECA1CDAC1DD00E31915 /* Fabric.framework */,
+				26035ECB1CDAC1DD00E31915 /* Crashlytics.framework */,
 				262232671CB7DD37009133D7 /* GGQ */,
 				265877DD1CD7421200E6B6A0 /* Frameworks */,
 				2698E0281CBFD3E500B7E8C7 /* GGQTests */,
@@ -832,6 +844,7 @@
 				CAA847BF9A9BC2553C5FCF36 /* 📦 Copy Pods Resources */,
 				265877C71CD7409E00E6B6A0 /* Embed Frameworks */,
 				265877E11CD753D200E6B6A0 /* Run Carthage */,
+				26035EC91CDAC13400E31915 /* Run Fabric */,
 			);
 			buildRules = (
 			);
@@ -1031,6 +1044,20 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
+		};
+		26035EC91CDAC13400E31915 /* Run Fabric */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Run Fabric";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Fabric.framework/run 0d237d4bff28c9227b8860d13bc6e43f79365f51 bb0078464b43d110d5cad188aac7f89dca12e624a77dabc92f136909bede27a9";
 		};
 		265877E11CD753D200E6B6A0 /* Run Carthage */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1487,6 +1514,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/GGQ/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1504,9 +1532,11 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/GGQ/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -DRELEASE";
 				PRODUCT_BUNDLE_IDENTIFIER = gg.swift.ggq;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -1521,6 +1551,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/GGQ/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1538,6 +1569,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/GGQ/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

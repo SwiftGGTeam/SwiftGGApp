@@ -10,6 +10,10 @@ import UIKit
 import RealmSwift
 import RouterX
 import SwiftyJSON
+#if RELEASE
+import Fabric
+import Crashlytics
+#endif
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -47,7 +51,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //            UITabBar.appearance().gg_addShadow(defaultPath: true)
 
 //            cleanRealmFile()
-
+        
+        #if RELEASE
+            log.info("RELEASE")
+            Fabric.with([Crashlytics.self])
+        #endif
+        
         SyncService.sharedInstance.sync()
         registerRoutingPattern()
 
