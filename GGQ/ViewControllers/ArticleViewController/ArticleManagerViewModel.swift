@@ -90,6 +90,17 @@ final class ArticleManagerViewModel {
             textLayout.removeTextContainerAtIndex(0)
 
             let count = Int(textViewHeight1 / textViewHeight2) + 1
+            
+            if let realm = articleInfo.realm {
+                do {
+                    try realm.write {
+                        article.pagerTotal.value = count
+                    }
+                } catch {
+                    log.error("Realm write \(articleInfo) : \(error)")
+                }
+            }
+            
             return count
         }
             .bindTo(pagerTotal)
