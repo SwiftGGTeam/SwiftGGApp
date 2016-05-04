@@ -25,6 +25,8 @@ final class CategoryViewModel {
 	let isLoading = Variable(true)
     
     let isRefreshing = Variable(true)
+    
+    let noNextPage = Variable(false)
 
 	private let disposeBag = DisposeBag()
 
@@ -32,14 +34,26 @@ final class CategoryViewModel {
         /// 事实上 == 这里不应该做 Cache
         let realm = try! Realm()
         let predicate = NSPredicate(format: "typeId == %@", argumentArray: [category.id])
-        realm.objects(ArticleInfoObject).filter(predicate).asObservable()
+        let objects = realm.objects(ArticleInfoObject).filter(predicate).asObservable().shareReplay(1)
+            
+            objects
             .subscribeNext { [unowned self] objects in
                 self.elements.value = objects.map { $0 }
                 self.isLoading.value = false
                 self.currentPage.value = self.elements.value.count / GGConfig.Home.pageSize + 1
+                if objects.count >= category.sum {
+                    self.noNextPage.value = true
+                }
             }.addDisposableTo(disposeBag)
         
-        let loadMoreRequest = loadMoreTrigger.withLatestFrom(currentPage.asObservable()).shareReplay(1)
+        let load = objects
+            .take(1)
+            .filter { $0.count < category.sum && $0.count < GGConfig.Home.pageSize }
+            .debounce(0.3, scheduler: MainScheduler.instance)
+            .map { _ in }
+        
+        let loadMoreRequest = [loadMoreTrigger, load].toObservable().merge()
+            .withLatestFrom(currentPage.asObservable()).shareReplay(1)
         
         let loadMoreResult = loadMoreRequest
             .map { GGAPI.ArticlesByCategory(categoryId: category.id, pageIndex: $0, pageSize: GGConfig.Category.pageSize) }
