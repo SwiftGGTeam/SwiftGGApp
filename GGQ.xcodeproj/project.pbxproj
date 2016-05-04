@@ -19,6 +19,8 @@
 		2622326E1CB7DD37009133D7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2622326C1CB7DD37009133D7 /* Main.storyboard */; };
 		262232701CB7DD37009133D7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2622326F1CB7DD37009133D7 /* Assets.xcassets */; };
 		262232731CB7DD37009133D7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 262232711CB7DD37009133D7 /* LaunchScreen.storyboard */; };
+		2638F7E81CD9020000F8DD7A /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2638F7E61CD9020000F8DD7A /* Quick.framework */; };
+		2638F7E91CD9020000F8DD7A /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2638F7E71CD9020000F8DD7A /* Nimble.framework */; };
 		263D3ADA1CD5F63500F8EF05 /* FlatMapEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263D3AD91CD5F63500F8EF05 /* FlatMapEx.swift */; };
 		263D3ADB1CD5F69300F8EF05 /* FlatMapEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263D3AD91CD5F63500F8EF05 /* FlatMapEx.swift */; };
 		263D3ADD1CD5F8C200F8EF05 /* UITextView+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263D3ADC1CD5F8C200F8EF05 /* UITextView+Rx.swift */; };
@@ -132,7 +134,6 @@
 		2698E04A1CC00A7E00B7E8C7 /* Category.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2698E0471CC00A7E00B7E8C7 /* Category.storyboard */; };
 		2698E04C1CC00E8B00B7E8C7 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2698E04B1CC00E8B00B7E8C7 /* CategoryViewController.swift */; };
 		2698E04E1CC00E8B00B7E8C7 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2698E04B1CC00E8B00B7E8C7 /* CategoryViewController.swift */; };
-		2698E0511CC0760F00B7E8C7 /* HomeViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2698E0501CC0760F00B7E8C7 /* HomeViewModelTests.swift */; };
 		269B55001CB954CC00375FEB /* TScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269B54FF1CB954CC00375FEB /* TScheduler.swift */; };
 		26A33AEF1CD7A1AF004586C3 /* CocoaMarkdown.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26A33AEE1CD7A1AF004586C3 /* CocoaMarkdown.framework */; };
 		26A33AF01CD7A1AF004586C3 /* CocoaMarkdown.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 26A33AEE1CD7A1AF004586C3 /* CocoaMarkdown.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -284,6 +285,8 @@
 		2622326F1CB7DD37009133D7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		262232721CB7DD37009133D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		262232741CB7DD37009133D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2638F7E61CD9020000F8DD7A /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
+		2638F7E71CD9020000F8DD7A /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
 		263D3AD91CD5F63500F8EF05 /* FlatMapEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlatMapEx.swift; sourceTree = "<group>"; };
 		263D3ADC1CD5F8C200F8EF05 /* UITextView+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextView+Rx.swift"; sourceTree = "<group>"; };
 		265395E71CC09B2800E6239C /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
@@ -319,7 +322,6 @@
 		2698E0401CBFDAF800B7E8C7 /* MoyaX+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MoyaX+Rx.swift"; sourceTree = "<group>"; };
 		2698E0471CC00A7E00B7E8C7 /* Category.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Category.storyboard; sourceTree = "<group>"; };
 		2698E04B1CC00E8B00B7E8C7 /* CategoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
-		2698E0501CC0760F00B7E8C7 /* HomeViewModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewModelTests.swift; sourceTree = "<group>"; };
 		269B54FF1CB954CC00375FEB /* TScheduler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TScheduler.swift; sourceTree = "<group>"; };
 		26A33AEE1CD7A1AF004586C3 /* CocoaMarkdown.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CocoaMarkdown.framework; path = Carthage/Build/iOS/CocoaMarkdown.framework; sourceTree = "<group>"; };
 		26BCE38E1CC93CBC00115D04 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
@@ -426,6 +428,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2638F7E81CD9020000F8DD7A /* Quick.framework in Frameworks */,
+				2638F7E91CD9020000F8DD7A /* Nimble.framework in Frameworks */,
 				2D4EF605DB251033F750D653 /* Pods_GGQ_Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -511,6 +515,8 @@
 		265877DD1CD7421200E6B6A0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2638F7E61CD9020000F8DD7A /* Quick.framework */,
+				2638F7E71CD9020000F8DD7A /* Nimble.framework */,
 				26A33AEE1CD7A1AF004586C3 /* CocoaMarkdown.framework */,
 				265877A91CD7409E00E6B6A0 /* SwiftyJSON.framework */,
 				265877AA1CD7409E00E6B6A0 /* SwiftDate.framework */,
@@ -576,7 +582,6 @@
 		2698E0281CBFD3E500B7E8C7 /* GGQTests */ = {
 			isa = PBXGroup;
 			children = (
-				2698E04F1CC075E700B7E8C7 /* ViewModelTests */,
 				2698E0291CBFD3E500B7E8C7 /* GGQTests.swift */,
 				2698E02B1CBFD3E500B7E8C7 /* Info.plist */,
 			);
@@ -616,14 +621,6 @@
 				26E872531CC107A2006C5A0F /* CategoryViewModel.swift */,
 			);
 			path = CategoryViewController;
-			sourceTree = "<group>";
-		};
-		2698E04F1CC075E700B7E8C7 /* ViewModelTests */ = {
-			isa = PBXGroup;
-			children = (
-				2698E0501CC0760F00B7E8C7 /* HomeViewModelTests.swift */,
-			);
-			path = ViewModelTests;
 			sourceTree = "<group>";
 		};
 		26BCE39A1CC9B3D100115D04 /* Router */ = {
@@ -1351,7 +1348,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				2698E02A1CBFD3E500B7E8C7 /* GGQTests.swift in Sources */,
-				2698E0511CC0760F00B7E8C7 /* HomeViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1558,6 +1554,10 @@
 			baseConfigurationReference = D9A846250618D062F1C88D21 /* Pods-GGQ-Tests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = GGQTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.dianqk.GGQTests;
@@ -1571,6 +1571,10 @@
 			baseConfigurationReference = 1447B838750CC1C793CD2238 /* Pods-GGQ-Tests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = GGQTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.dianqk.GGQTests;
