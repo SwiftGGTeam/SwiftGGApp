@@ -35,7 +35,9 @@ class ArticleManagerViewController: UIPageViewController {
             .addDisposableTo(rx_disposeBag)
 
         dataSource = self
-        setViewControllers([newArticleViewController()], direction: .Forward, animated: true, completion: nil)
+        let vc = newArticleViewController()
+        vc.rx_currentPage.value = viewModel.currentReadPage
+        setViewControllers([vc], direction: .Forward, animated: true, completion: nil)
         
         view.backgroundColor = UIColor.gg_backgroundColor()
         

@@ -25,6 +25,7 @@ final class ArticleManagerViewModel {
 
     let pagerTotal = Variable(0)
     
+    let currentReadPage: Int
 
     private let currentPage = PublishSubject<Int>()
     private let disposeBag = DisposeBag()
@@ -33,9 +34,18 @@ final class ArticleManagerViewModel {
 
         let realm = try! Realm()
         let predicate = NSPredicate(format: "id = %@", argumentArray: [articleInfo.id])
+        
+        let articleObject = realm.objects(ArticleDetailModel).filter(predicate)
+        
+        if let article = articleObject.first,
+            page = article.currentPage.value {
+            currentReadPage = page
+        } else {
+            currentReadPage = 1
+        }
 
-        let articleShare = realm.objects(ArticleDetailModel).filter(predicate).asObservable()
-            .map { $0.first }.filterNil().shareReplay(1).take(2)
+        let articleShare = articleObject.asObservable()
+            .map { $0.first }.filterNil().shareReplay(1).take(1)
         
         Observable.combineLatest(articleShare, currentPage.asObservable().observeOn(.Main)) { (article: $0, page: $1) }.subscribeNext { article, page in
             if let currentPage = article.currentPage.value where currentPage >= page {
@@ -44,8 +54,8 @@ final class ArticleManagerViewModel {
             if let realm = article.realm {
                 do {
                     try realm.write {
-                        log.info("currentPage: \(page)")
-                        article.currentPage.value = page
+                        log.info("currentPage: \(page - 1)")
+                        article.currentPage.value = page - 1
                     }
                 } catch {
                     log.error("Realm write currentPage \(articleInfo) : \(error)")
