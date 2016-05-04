@@ -38,8 +38,23 @@ final class ArticleManagerViewModel {
         let attributedString = articleShare
         /// 获取 NSAttributedString ，如果有 Cache ，直接拿
         .flatMapLatest { article -> Observable<NSAttributedString> in
+            let data: NSData
             if let cache = article.cacheData {
-                return Observable.just(cache)
+                data = cache
+            } else {
+                data = article.content.dataUsingEncoding(NSUTF8StringEncoding)!
+                if let realm = article.realm {
+                    do {
+                        try realm.write {
+                            article.cacheData = data
+                        }
+                    } catch {
+                        log.error("Realm write \(articleInfo) : \(error)")
+                    }
+                }
+            }
+            
+            return Observable.just(data)
                     .observeOn(.Serial(.Background))
                     .map { data in
                         let document = CMDocument(data: data, options: .Normalize)
@@ -49,19 +64,6 @@ final class ArticleManagerViewModel {
                         renderer.registerHTMLElementTransformer(CMHTMLUnderlineTransformer())
                         return renderer.render()
                 }
-            } else {
-                return Observable.just(article.content)
-                    .observeOn(.Serial(.Background))
-                    .map { str in
-                        let data = str.dataUsingEncoding(NSUTF8StringEncoding)!
-                        let document = CMDocument(data: data, options: .Normalize)
-                        let renderer = CMAttributedStringRenderer(document: document, attributes: CMTextAttributes())
-                        renderer.registerHTMLElementTransformer(CMHTMLStrikethroughTransformer())
-                        renderer.registerHTMLElementTransformer(CMHTMLSuperscriptTransformer())
-                        renderer.registerHTMLElementTransformer(CMHTMLUnderlineTransformer())
-                        return renderer.render()
-                }
-            }
         }.observeOn(.Main).shareReplay(1)
         
         Observable.combineLatest(articleShare, attributedString) { (article: $0, str: $1) }
