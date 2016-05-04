@@ -17,33 +17,16 @@ class ArticleManagerViewController: UIPageViewController {
     
     private var viewModel: ArticleManagerViewModel!
     
-    let vcs = [R.storyboard.article.articleViewController()!, R.storyboard.article.articleViewController()]
+    var vcs: [ArticleViewController] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        dataSource = self
-        setViewControllers([vcs[0]!], direction: .Forward, animated: true, completion: nil)
         
         let mainScreenSize = UIScreen.mainScreen().bounds.size
-        
         viewModel = ArticleManagerViewModel(articleInfo: articleInfo, nextPageTrigger: Driver.empty(), contentSize: CGSize(width: mainScreenSize.width - 40, height: mainScreenSize.height - 90))
-        
-        for vc in vcs.withoutNil() {
-            
-            vc.rx_articleTitle.value = articleInfo.title
-            
-            vc.rx_currentPage.asObservable()
-                .flatMap(viewModel.contentText)
-                .observeOn(.Main)
-                .bindTo(vc.rx_contentText)
-                .addDisposableTo(rx_disposeBag)
-            
-            viewModel.pagerTotal.asObservable()
-                .observeOn(.Main)
-                .bindTo(vc.rx_pagerTotal)
-                .addDisposableTo(rx_disposeBag)
-        }
+
+        dataSource = self
+        setViewControllers([newArticleViewController()], direction: .Forward, animated: true, completion: nil)
         
         view.backgroundColor = UIColor.gg_backgroundColor()
         
@@ -57,6 +40,29 @@ class ArticleManagerViewController: UIPageViewController {
     override func viewWillDisappear(animated: Bool) {
         navigationController?.hidesBarsOnTap = false
     }
+    
+    private func newArticleViewController() -> ArticleViewController {
+        let vc = R.storyboard.article.articleViewController()!
+        
+        vc.rx_articleTitle.value = articleInfo.title
+        
+        vc.rx_currentPage.asObservable()
+            .flatMap(viewModel.contentText)
+            .observeOn(.Main)
+            .bindTo(vc.rx_contentText)
+            .addDisposableTo(rx_disposeBag)
+        
+        viewModel.pagerTotal.asObservable()
+            .observeOn(.Main)
+            .bindTo(vc.rx_pagerTotal)
+            .addDisposableTo(rx_disposeBag)
+        
+        vcs.append(vc)
+        if vcs.count > 3 {
+            log.error("逗比你多加了一个")
+        }
+        return vc
+    }
 
 }
 
@@ -64,15 +70,34 @@ extension ArticleManagerViewController: UIPageViewControllerDataSource {
     
     func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {
         guard let viewController = viewController as? ArticleViewController where viewController.rx_currentPage.value > 1 else { return nil }
-        guard let nextViewController = viewController == vcs[0] ? vcs[1] : vcs[0] else { return nil }
+        var index = vcs.indexOf(viewController)!
+        if index == 0 {
+            index = 2
+        } else {
+            index -= 1
+        }
+        let nextViewController = vcs[index]
         nextViewController.rx_currentPage.value = viewController.rx_currentPage.value - 1
         return nextViewController
     }
     
     func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
+        log.info("\(pageViewController.viewControllers?.count)")
         // FIXME: - 异步变同步了
         guard let viewController = viewController as? ArticleViewController where viewController.rx_currentPage.value < viewController.rx_pagerTotal.value else { return nil }
-        guard let nextViewController = viewController == vcs[0] ? vcs[1] : vcs[0] else { return nil }
+        let nextViewController: ArticleViewController
+        if vcs.count < 3 {
+            nextViewController = newArticleViewController()
+        } else {
+            var index = vcs.indexOf(viewController)!
+            if index == 2 {
+                index = 0
+            } else {
+                index += 1
+            }
+            nextViewController = vcs[index]
+            log.info("Next: \(vcs.indexOf(nextViewController)), Current: \(vcs.indexOf(viewController))")
+        }
         nextViewController.rx_currentPage.value = viewController.rx_currentPage.value + 1
         return nextViewController
     }
