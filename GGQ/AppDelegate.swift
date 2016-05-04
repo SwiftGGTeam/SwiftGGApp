@@ -53,7 +53,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //            cleanRealmFile()
         
         #if RELEASE
-            log.info("RELEASE")
             Fabric.with([Crashlytics.self])
         #endif
         
