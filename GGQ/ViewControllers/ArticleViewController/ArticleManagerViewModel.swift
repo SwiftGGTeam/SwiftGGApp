@@ -32,8 +32,10 @@ final class ArticleManagerViewModel {
         let realm = try! Realm()
         let predicate = NSPredicate(format: "id = %@", argumentArray: [articleInfo.id])
 
-        let attributedString = realm.objects(ArticleDetailModel).filter(predicate).asObservable()
-            .map { $0.first }.filterNil()
+        let articleShare = realm.objects(ArticleDetailModel).filter(predicate).asObservable()
+            .map { $0.first }.filterNil().shareReplay(1)
+
+        let attributedString = articleShare
         /// 获取 NSAttributedString ，如果有 Cache ，直接拿
         .flatMapLatest { article -> Observable<NSAttributedString> in
             if let cache = article.cacheData {
@@ -63,10 +65,13 @@ final class ArticleManagerViewModel {
 //                    .observeOn(.Main)
             }
         }.shareReplay(1)
-
-        attributedString
+        
+        Observable.combineLatest(articleShare, attributedString) { (article: $0, str: $1) }
         /// 处理总页数
-        .map { str in
+        .map { article, str in
+            if let pagerTotal = article.pagerTotal.value {
+                return pagerTotal
+            }
             let textStorage = NSTextStorage(attributedString: str)
 
             let textLayout = NSLayoutManager()
