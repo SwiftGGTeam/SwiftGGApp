@@ -26,8 +26,8 @@ final class SearchViewModel {
 					let predicate = NSPredicate(format: "title CONTAINS %@", text)
 					let list = realm.objects(ArticleInfoObject.self).filter(predicate)
 					return Observable.just(list)
-				} catch let error as NSError {
-					print(error)
+				} catch {
+					log.error("\(error)")
 				}
 				return Observable.empty() }
 			.map { $0.map { $0 } }

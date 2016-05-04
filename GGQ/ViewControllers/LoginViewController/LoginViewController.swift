@@ -56,11 +56,9 @@ extension LoginViewController: Routerable {
     
     func post(url: NSURL, sender: JSON?) {
         dismissViewControllerAnimated(true, completion: nil)
-        print(url, sender)
         if let code = url.query?.componentsSeparatedByString("&").first?.componentsSeparatedByString("=")[1] {
             GGProvider.request(GitHubOAuthAPI.AccessToken(code: code)).mapJSON()
                 .subscribeNext { json in
-                print(json)
                     if let token = json["access_token"].string {
                         HUD.flash(.Label("请求成功"), delay: 0.6)
                         let url = NSURL(string: "swiftgg://swift.gg/profile/github/\(token)")!

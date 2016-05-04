@@ -157,7 +157,6 @@ extension AppDelegate {
             }
 
             let vc = UIApplication.findViewController(identifity: "oauth")
-            print(vc)
 
             vc?.post(url, sender: JSON(parameters))
         }
@@ -187,7 +186,6 @@ extension AppDelegate {
             }
             
             let vc = UIApplication.findViewController(identifity: "profile")
-            print(vc)
             
             vc?.post(url, sender: JSON(parameters))
         }
