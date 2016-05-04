@@ -30,10 +30,10 @@ final class CategorysViewModel {
             .bindTo(elements)
             .addDisposableTo(disposeBag)
         
-        let updated = SyncService.sharedInstance.categoriesUpdated
-            .filter { $0 }.map { _ in }
+//        let updated = SyncService.sharedInstance.categoriesUpdated
+//            .filter { $0 }.map { _ in }
 
-		let refreshResult = [refreshTrigger.asObservable(), updated].toObservable()
+		let refreshResult = [refreshTrigger.asObservable(), Observable.just(())].toObservable()
 		// TODO: - 换一个合适的位置
 		.merge()
 			.flatMapLatest { GGProvider.request(GGAPI.CategoryList)
