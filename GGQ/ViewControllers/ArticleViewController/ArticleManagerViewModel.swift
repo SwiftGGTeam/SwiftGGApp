@@ -61,10 +61,8 @@ final class ArticleManagerViewModel {
                         renderer.registerHTMLElementTransformer(CMHTMLUnderlineTransformer())
                         return renderer.render()
                 }
-                // TODO: - 在这里做 Cache 处理
-//                    .observeOn(.Main)
             }
-        }.shareReplay(1)
+        }.observeOn(.Main).shareReplay(1)
         
         Observable.combineLatest(articleShare, attributedString) { (article: $0, str: $1) }
         /// 处理总页数
