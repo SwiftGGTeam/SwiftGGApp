@@ -79,20 +79,23 @@ extension ArticleManagerViewController: UIPageViewControllerDataSource {
     
     func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {
         guard let viewController = viewController as? ArticleViewController where viewController.rx_currentPage.value > 1 else { return nil }
-        var index = vcs.indexOf(viewController)!
-        if index == 0 {
-            index = 2
+        let nextViewController: ArticleViewController
+        if vcs.count < 3 {
+            nextViewController = newArticleViewController()
         } else {
-            index -= 1
+            var index = vcs.indexOf(viewController)!
+            if index == 0 {
+                index = 2
+            } else {
+                index -= 1
+            }
+            nextViewController = vcs[index]
         }
-        let nextViewController = vcs[index]
         nextViewController.rx_currentPage.value = viewController.rx_currentPage.value - 1
         return nextViewController
     }
     
     func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
-        log.info("\(pageViewController.viewControllers?.count)")
-        // FIXME: - 异步变同步了
         guard let viewController = viewController as? ArticleViewController where viewController.rx_currentPage.value < viewController.rx_pagerTotal.value else { return nil }
         let nextViewController: ArticleViewController
         if vcs.count < 3 {
@@ -105,7 +108,6 @@ extension ArticleManagerViewController: UIPageViewControllerDataSource {
                 index += 1
             }
             nextViewController = vcs[index]
-            log.info("Next: \(vcs.indexOf(nextViewController)), Current: \(vcs.indexOf(viewController))")
         }
         nextViewController.rx_currentPage.value = viewController.rx_currentPage.value + 1
         return nextViewController
