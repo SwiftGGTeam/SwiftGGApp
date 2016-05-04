@@ -139,6 +139,8 @@
 		26A33AF01CD7A1AF004586C3 /* CocoaMarkdown.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 26A33AEE1CD7A1AF004586C3 /* CocoaMarkdown.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		26A33AF11CD7A1C3004586C3 /* CocoaMarkdown.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26A33AEE1CD7A1AF004586C3 /* CocoaMarkdown.framework */; };
 		26A33AF21CD7A1C3004586C3 /* CocoaMarkdown.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 26A33AEE1CD7A1AF004586C3 /* CocoaMarkdown.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		26B4048B1CDA404B0023F380 /* Logger+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B4048A1CDA404B0023F380 /* Logger+Rx.swift */; };
+		26B4048C1CDA404B0023F380 /* Logger+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B4048A1CDA404B0023F380 /* Logger+Rx.swift */; };
 		26BCE38F1CC93CBC00115D04 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26BCE38E1CC93CBC00115D04 /* Login.storyboard */; };
 		26BCE3901CC93CBC00115D04 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26BCE38E1CC93CBC00115D04 /* Login.storyboard */; };
 		26BCE3921CC93FD800115D04 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26BCE3911CC93FD800115D04 /* LoginViewController.swift */; };
@@ -320,6 +322,7 @@
 		2698E04B1CC00E8B00B7E8C7 /* CategoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 		269B54FF1CB954CC00375FEB /* TScheduler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TScheduler.swift; sourceTree = "<group>"; };
 		26A33AEE1CD7A1AF004586C3 /* CocoaMarkdown.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CocoaMarkdown.framework; path = Carthage/Build/iOS/CocoaMarkdown.framework; sourceTree = "<group>"; };
+		26B4048A1CDA404B0023F380 /* Logger+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Logger+Rx.swift"; sourceTree = "<group>"; };
 		26BCE38E1CC93CBC00115D04 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		26BCE3911CC93FD800115D04 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		26BCE39B1CC9B3F600115D04 /* UIViewController+Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Router.swift"; sourceTree = "<group>"; };
@@ -747,6 +750,7 @@
 				26F343CA1CC5386F00476533 /* RxDriver+GG.swift */,
 				263D3ADC1CD5F8C200F8EF05 /* UITextView+Rx.swift */,
 				265877E21CD759EC00E6B6A0 /* UIScrollView+Rx.swift */,
+				26B4048A1CDA404B0023F380 /* Logger+Rx.swift */,
 			);
 			path = Rx;
 			sourceTree = "<group>";
@@ -1242,6 +1246,7 @@
 				265877DF1CD74C7A00E6B6A0 /* Observable+Object.swift in Sources */,
 				261A279F1CC1E7AE00EF3A9C /* Config.swift in Sources */,
 				2673129B1CBEAA1400036DB9 /* MarkdownParser.swift in Sources */,
+				26B4048B1CDA404B0023F380 /* Logger+Rx.swift in Sources */,
 				261A27A71CC1EF0B00EF3A9C /* ArticleLoadMoreTableViewCell.swift in Sources */,
 				26F343CB1CC5386F00476533 /* RxDriver+GG.swift in Sources */,
 				26E4CDCD1CBA15860013AD29 /* ArticleViewController.swift in Sources */,
@@ -1310,6 +1315,7 @@
 				265877E01CD74C9100E6B6A0 /* Observable+Object.swift in Sources */,
 				261A27A11CC1E81300EF3A9C /* Config.swift in Sources */,
 				2698DFFF1CBFD25100B7E8C7 /* MarkdownParser.swift in Sources */,
+				26B4048C1CDA404B0023F380 /* Logger+Rx.swift in Sources */,
 				261A27A91CC1EF0B00EF3A9C /* ArticleLoadMoreTableViewCell.swift in Sources */,
 				26F343CC1CC5387300476533 /* RxDriver+GG.swift in Sources */,
 				2698E0021CBFD25100B7E8C7 /* ArticleViewController.swift in Sources */,
