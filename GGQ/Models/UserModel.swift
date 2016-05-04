@@ -15,8 +15,8 @@ class UserModel: Object {
     dynamic var login: String = ""
     dynamic var avatar_url: String = ""
     dynamic var url: String = ""
-    dynamic var blog: String = ""
-    dynamic var email: String = ""
+    dynamic var blog: String?
+    dynamic var email: String?
     dynamic var name: String = ""
     
     override static func primaryKey() -> String? {
