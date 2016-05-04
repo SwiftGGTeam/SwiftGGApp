@@ -10,6 +10,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 import RxGesture
+import PKHUD
 
 class ArticleManagerViewController: UIPageViewController {
     
@@ -24,6 +25,14 @@ class ArticleManagerViewController: UIPageViewController {
         
         let mainScreenSize = UIScreen.mainScreen().bounds.size
         viewModel = ArticleManagerViewModel(articleInfo: articleInfo, nextPageTrigger: Driver.empty(), contentSize: CGSize(width: mainScreenSize.width - 40, height: mainScreenSize.height - 90))
+        
+        viewModel.updated.asDriver()
+            .driveNext { updated in
+                if updated {
+                    HUD.flash(.Label("文章已更新"), delay: 0.6)
+                }
+            }
+            .addDisposableTo(rx_disposeBag)
 
         dataSource = self
         setViewControllers([newArticleViewController()], direction: .Forward, animated: true, completion: nil)
