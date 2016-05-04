@@ -92,6 +92,10 @@ final class CategoryViewController: UIViewController, SegueHandlerType {
         
 	}
     
+    override func viewWillAppear(animated: Bool) {
+        tableView.reloadData()
+    }
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         switch segueIdentifierForSegue(segue) {
         case .ShowArticle:
