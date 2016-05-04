@@ -86,6 +86,10 @@ final class CategoryViewController: UIViewController, SegueHandlerType {
             }
             .addDisposableTo(rx_disposeBag)
         
+        viewModel.isRefreshing.asDriver()
+            .drive(refresh.rx_refreshing)
+            .addDisposableTo(rx_disposeBag)
+        
 	}
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

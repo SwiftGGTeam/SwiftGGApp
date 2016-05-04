@@ -20,11 +20,11 @@ final class CategoryViewModel {
     
     let hasNextPage = Variable(true)
     
-    let currentPage = Variable(1)
+    private let currentPage = Variable(1)
 
-	let isLoading = Variable(true)
+	let isLoading = Variable(false)
     
-    let isRefreshing = Variable(true)
+    let isRefreshing = Variable(false)
 
 	private let disposeBag = DisposeBag()
 
@@ -60,10 +60,21 @@ final class CategoryViewModel {
             .gg_storeArray(ArticleInfoObject)
             .shareReplay(1)
         
-        [loadMoreRequest.map { _ in true }, loadMoreResult.map { _ in false }]
+        [loadMoreRequest.map { _ in true }, loadMoreResult.map { false }]
             .toObservable()
             .merge()
             .bindTo(isLoading)
+            .addDisposableTo(disposeBag)
+        
+        let refreshResult = refreshTrigger
+            .map { GGAPI.ArticlesByCategory(categoryId: category.id, pageIndex: 1, pageSize: GGConfig.Category.pageSize) }
+            .flatMapLatest(GGProvider.request)
+            .gg_storeArray(ArticleInfoObject)
+        
+        [refreshTrigger.map { true }, refreshResult.map { false }]
+            .toObservable()
+            .merge()
+            .bindTo(isRefreshing)
             .addDisposableTo(disposeBag)
 	}
 }
