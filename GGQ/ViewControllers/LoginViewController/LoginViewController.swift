@@ -63,6 +63,8 @@ extension LoginViewController: Routerable {
                         HUD.flash(.Label("请求成功"), delay: 0.6)
                         let url = NSURL(string: "swiftgg://swift.gg/profile/github/\(token)")!
                         UIApplication.sharedApplication().openURL(url)
+                    } else {
+                        HUD.flash(.Label("请求失败"), delay: 0.6)
                     }
                 }
                 .addDisposableTo(rx_disposeBag)
