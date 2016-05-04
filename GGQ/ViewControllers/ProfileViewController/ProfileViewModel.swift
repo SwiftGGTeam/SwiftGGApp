@@ -33,8 +33,8 @@ class ProfileViewModel {
         
         let noUser = optionalUser.map { $0 == nil }
         
-        [updateToken, noUser.filter { $0 }].toObservable()
-            .map { _ in TokenType.GitHub }
+        [updateToken.map { _ in TokenType.GitHub }, noUser.filter { $0 }.map { _ in TokenType.GitHub }].toObservable()
+            .merge()
             .filter(KeychainService.exist)
             .map { _ in }
             .flatMapLatest { GGProvider.request(GitHubAPI.User).mapJSON() }
