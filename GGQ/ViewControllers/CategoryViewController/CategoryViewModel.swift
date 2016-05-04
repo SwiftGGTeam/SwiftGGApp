@@ -25,8 +25,6 @@ final class CategoryViewModel {
 	let isLoading = Variable(true)
     
     let isRefreshing = Variable(true)
-    
-    let noNextPage = Variable(false)
 
 	private let disposeBag = DisposeBag()
 
@@ -42,7 +40,7 @@ final class CategoryViewModel {
                 self.isLoading.value = false
                 self.currentPage.value = self.elements.value.count / GGConfig.Home.pageSize + 1
                 if objects.count >= category.sum {
-                    self.noNextPage.value = true
+                    self.hasNextPage.value = false
                 }
             }.addDisposableTo(disposeBag)
         

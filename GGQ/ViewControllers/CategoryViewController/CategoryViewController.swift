@@ -65,6 +65,14 @@ final class CategoryViewController: UIViewController, SegueHandlerType {
             .subscribeNext(performSegueWithIdentifier(.ShowArticle))
             .addDisposableTo(rx_disposeBag)
         
+        viewModel.hasNextPage.asDriver()
+            .driveNext { [unowned self] hasNextPage in
+                if !hasNextPage {
+                    self.tableView.tableFooterView?.removeFromSuperview()
+                }
+            }
+            .addDisposableTo(rx_disposeBag)
+        
 	}
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
