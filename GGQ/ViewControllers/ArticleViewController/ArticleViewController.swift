@@ -34,7 +34,7 @@ final class ArticleViewController: UIViewController {
         
         Observable.combineLatest(rx_currentPage.asObservable(), rx_pagerTotal.asObservable()) { "\($0)/\($1)" }.observeOn(.Main).bindTo(pageInfoLabel.rx_text).addDisposableTo(rx_disposeBag)
         
-        rx_contentText.asObservable().observeOn(.Main).debug("ContentText").bindTo(contentTextView.rx_attributedText).addDisposableTo(rx_disposeBag)
+        rx_contentText.asObservable().observeOn(.Main).bindTo(contentTextView.rx_attributedText).addDisposableTo(rx_disposeBag)
         
     }
     
