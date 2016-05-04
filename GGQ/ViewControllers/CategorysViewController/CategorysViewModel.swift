@@ -22,13 +22,13 @@ final class CategorysViewModel {
 	private let disposeBag = DisposeBag()
 
 	init(refreshTrigger: Driver<Void>) {
-		if let realm = try? Realm() {
-			realm.objects(CategoryObject.self)
-                .asObservable()
-				.map { $0.map { $0 } }
-				.bindTo(elements)
-				.addDisposableTo(disposeBag)
-		}
+        
+        let realm = try! Realm()
+        realm.objects(CategoryObject.self)
+            .asObservable()
+            .map { $0.map { $0 } }
+            .bindTo(elements)
+            .addDisposableTo(disposeBag)
         
         let updated = SyncService.sharedInstance.categoriesUpdated
             .filter { $0 }.map { _ in }
