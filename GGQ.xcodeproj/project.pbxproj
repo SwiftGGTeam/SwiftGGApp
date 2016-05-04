@@ -1491,7 +1491,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/GGQ/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -DDEBUG";
-				PRODUCT_BUNDLE_IDENTIFIER = org.dianqk.SwiftGGQing;
+				PRODUCT_BUNDLE_IDENTIFIER = gg.swift.ggq;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -1507,7 +1507,7 @@
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/GGQ/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = org.dianqk.SwiftGGQing;
+				PRODUCT_BUNDLE_IDENTIFIER = gg.swift.ggq;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 			};
@@ -1525,7 +1525,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/GGQ/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -DDEBUG -DDEV";
-				PRODUCT_BUNDLE_IDENTIFIER = org.dianqk.SwiftGGQing;
+				PRODUCT_BUNDLE_IDENTIFIER = "gg.swift.ggq-dev";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -1541,7 +1541,7 @@
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/GGQ/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = org.dianqk.SwiftGGQing;
+				PRODUCT_BUNDLE_IDENTIFIER = "gg.swift.ggq-dev";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
