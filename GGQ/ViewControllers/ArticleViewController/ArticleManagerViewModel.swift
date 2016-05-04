@@ -69,7 +69,7 @@ final class ArticleManagerViewModel {
             let textLayout = NSLayoutManager()
             textStorage.addLayoutManager(textLayout)
 
-            let atextContainer1 = NSTextContainer(size: CGSize(width: contentSize.width, height: 9000))
+            let atextContainer1 = NSTextContainer(size: CGSize(width: contentSize.width, height: CGFloat.max))
             textLayout.addTextContainer(atextContainer1)
 
             let textViewHeight1 = textLayout.boundingRectForGlyphRange(NSRange(location: 0, length: str.length), inTextContainer: atextContainer1).size.height
