@@ -201,6 +201,9 @@
 		26FB5D2F1CD63BD800790942 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26FB5D2E1CD63BD800790942 /* UserModel.swift */; };
 		26FB5D301CD63BDA00790942 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26FB5D2E1CD63BD800790942 /* UserModel.swift */; };
 		2D4EF605DB251033F750D653 /* Pods_GGQ_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59CFD679D60907F10BEB6C4C /* Pods_GGQ_Tests.framework */; };
+		54FFEBD9B04DA319281FEF37 /* Pods_GGQ.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6349F5B9495D9B6E829C5229 /* Pods_GGQ.framework */; };
+		96B1B49B578DB7EA9B132028 /* Pods_GGQ_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D14312BDE509311F69A2E4A3 /* Pods_GGQ_Tests.framework */; };
+		CA416669BCEA38EE43A52EA0 /* Pods_GGQ_Dev.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFE9D0963FC0FFC452F2D89A /* Pods_GGQ_Dev.framework */; };
 		EECC4AECDB395E1AC8B49B5E /* Pods_GGQ_Dev.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CCF96009375EFC5C02DA86E /* Pods_GGQ_Dev.framework */; };
 /* End PBXBuildFile section */
 
@@ -372,6 +375,7 @@
 		26FB5D2E1CD63BD800790942 /* UserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		59CFD679D60907F10BEB6C4C /* Pods_GGQ_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GGQ_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CCF96009375EFC5C02DA86E /* Pods_GGQ_Dev.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GGQ_Dev.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6349F5B9495D9B6E829C5229 /* Pods_GGQ.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GGQ.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F80B3059819FC43F66FF025 /* Pods_SwiftGGQing.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftGGQing.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BDB494BD2ED05E0759DCC2B /* Pods_GGQ_Lint.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GGQ_Lint.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		87F8853FE7B430AD79A2E1E1 /* Pods-GGQ.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GGQ.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GGQ/Pods-GGQ.debug.xcconfig"; sourceTree = "<group>"; };
@@ -381,6 +385,8 @@
 		9CFE120A162F566097EF5F76 /* Pods-SwiftGGQing.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftGGQing.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftGGQing/Pods-SwiftGGQing.release.xcconfig"; sourceTree = "<group>"; };
 		AD9A7DA1D21F13A4FDAD3595 /* Pods-GGQ-Lint.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GGQ-Lint.release.xcconfig"; path = "Pods/Target Support Files/Pods-GGQ-Lint/Pods-GGQ-Lint.release.xcconfig"; sourceTree = "<group>"; };
 		B4C167B76DBBA1FD955C2C2F /* Pods-GGQ-Dev.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GGQ-Dev.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GGQ-Dev/Pods-GGQ-Dev.debug.xcconfig"; sourceTree = "<group>"; };
+		CFE9D0963FC0FFC452F2D89A /* Pods_GGQ_Dev.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GGQ_Dev.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D14312BDE509311F69A2E4A3 /* Pods_GGQ_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GGQ_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9A846250618D062F1C88D21 /* Pods-GGQ-Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GGQ-Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GGQ-Tests/Pods-GGQ-Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		F9EAFE5C29FEB0790663FC9B /* Pods_GGQ.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GGQ.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -402,6 +408,7 @@
 				07AA2A59C17B2C462898BB02 /* Pods_GGQ.framework in Frameworks */,
 				265877B91CD7409E00E6B6A0 /* Realm.framework in Frameworks */,
 				265877BD1CD7409E00E6B6A0 /* PKHUD.framework in Frameworks */,
+				54FFEBD9B04DA319281FEF37 /* Pods_GGQ.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -421,6 +428,7 @@
 				EECC4AECDB395E1AC8B49B5E /* Pods_GGQ_Dev.framework in Frameworks */,
 				265877CE1CD740AD00E6B6A0 /* Realm.framework in Frameworks */,
 				265877D21CD740AD00E6B6A0 /* PKHUD.framework in Frameworks */,
+				CA416669BCEA38EE43A52EA0 /* Pods_GGQ_Dev.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -431,6 +439,7 @@
 				2638F7E81CD9020000F8DD7A /* Quick.framework in Frameworks */,
 				2638F7E91CD9020000F8DD7A /* Nimble.framework in Frameworks */,
 				2D4EF605DB251033F750D653 /* Pods_GGQ_Tests.framework in Frameworks */,
+				96B1B49B578DB7EA9B132028 /* Pods_GGQ_Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -528,6 +537,9 @@
 				265877B01CD7409E00E6B6A0 /* Locksmith.framework */,
 				265877B11CD7409E00E6B6A0 /* Kingfisher.framework */,
 				265877B21CD7409E00E6B6A0 /* Alamofire.framework */,
+				6349F5B9495D9B6E829C5229 /* Pods_GGQ.framework */,
+				CFE9D0963FC0FFC452F2D89A /* Pods_GGQ_Dev.framework */,
+				D14312BDE509311F69A2E4A3 /* Pods_GGQ_Tests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
