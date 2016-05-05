@@ -12,7 +12,7 @@ import RxSwift
 extension UIScrollView {
     var rx_reachedBottom: Observable<Void> {
         return rx_contentOffset
-            .flatMap { [weak self] contentOffset -> Observable<Void> in
+            .flatMap { [weak self] contentOffset -> Observable<Bool> in
                 guard let scrollView = self else {
                     return Observable.empty()
                 }
@@ -21,7 +21,8 @@ extension UIScrollView {
                 let y = contentOffset.y + scrollView.contentInset.top
                 let threshold = max(0.0, scrollView.contentSize.height - visibleHeight)
                 
-                return y > threshold ? Observable.just() : Observable.empty()
-        }
+                return y >= threshold ? Observable.just(true) : Observable.just(false)
+            }.distinctUntilChanged()
+            .map { _ in }
     }
 }

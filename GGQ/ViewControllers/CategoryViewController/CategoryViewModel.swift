@@ -51,7 +51,9 @@ final class CategoryViewModel {
             .map { _ in }
         
         let loadMoreRequest = [loadMoreTrigger, load].toObservable().merge()
-            .withLatestFrom(currentPage.asObservable()).shareReplay(1)
+            .withLatestFrom(currentPage.asObservable())
+            .takeUntil(hasNextPage.asObservable().filter { !$0 })
+            .shareReplay(1)
         
         let loadMoreResult = loadMoreRequest
             .map { GGAPI.ArticlesByCategory(categoryId: category.id, pageIndex: $0, pageSize: GGConfig.Category.pageSize) }
