@@ -51,6 +51,7 @@ final class ArticleManagerViewModel {
             if let currentPage = article.currentPage.value where currentPage >= page {
                 return
             }
+            guard page > 1 else { return }
             if let realm = article.realm {
                 do {
                     try realm.write {
