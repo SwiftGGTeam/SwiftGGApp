@@ -1,0 +1,7 @@
+app_identifier "gg.swift.ggq" # The bundle identifier of your app
+apple_id "dev@swift.gg" # Your Apple email address
+
+team_id "9Y9KG3KBHJ"  # Developer Portal Team ID
+
+# you can even provide different app identifiers, Apple IDs and team names per lane:
+# More information: https://github.com/fastlane/fastlane/blob/master/fastlane/docs/Appfile.md
