@@ -91,10 +91,7 @@ final class ArticleManagerViewModel {
                     .observeOn(.Serial(.Background))
                     .map { data in
                         let document = CMDocument(data: data, options: .Normalize)
-                        let renderer = CMAttributedStringRenderer(document: document, attributes: CMTextAttributes())
-                        renderer.registerHTMLElementTransformer(CMHTMLStrikethroughTransformer())
-                        renderer.registerHTMLElementTransformer(CMHTMLSuperscriptTransformer())
-                        renderer.registerHTMLElementTransformer(CMHTMLUnderlineTransformer())
+                        let renderer = CMAttributedStringRenderer(document: document, attributes: GGConfig.Article.textAttributes)
                         return renderer.render()
                 }
         }.observeOn(.Main).shareReplay(1)
