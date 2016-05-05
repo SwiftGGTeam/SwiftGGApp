@@ -80,7 +80,7 @@ final class CategoryViewController: UIViewController, SegueHandlerType {
         viewModel.hasNextPage.asDriver()
             .driveNext { [unowned self] hasNextPage in
                 if !hasNextPage {
-                    self.tableView.tableFooterView?.removeFromSuperview()
+                    self.tableView.tableFooterView = nil
                 }
             }
             .addDisposableTo(rx_disposeBag)
