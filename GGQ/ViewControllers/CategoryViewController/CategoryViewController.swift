@@ -73,8 +73,7 @@ final class CategoryViewController: UIViewController, SegueHandlerType {
             .drive(indicatorView.rx_animating)
             .addDisposableTo(rx_disposeBag)
         
-        tableView.rx_modelSelected(IdentifiableValue<ArticleInfoObject>)
-            .map { $0.identity }
+        tableView.rx_modelSelected(ArticleInfoObject)
             .subscribeNext(performSegueWithIdentifier(.ShowArticle))
             .addDisposableTo(rx_disposeBag)
         
