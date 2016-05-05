@@ -32,12 +32,6 @@ class ArticleInfoObject: Object {
 	}
 }
 
-extension ArticleInfoObject: Hashable { }
-
-func == (lhs: ArticleInfoObject, rhs: ArticleInfoObject) -> Bool {
-	return lhs.id == rhs.id
-}
-
 extension ArticleInfoObject: IdentifiableType {
     var identity: Int {
         return id
