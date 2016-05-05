@@ -51,12 +51,17 @@ final class ArticleManagerViewModel {
             if let currentPage = article.currentPage.value where currentPage >= page {
                 return
             }
-            guard page > 1 else { return }
+            /// FIXME: - 然而这里的逻辑也要改 tip: viewDidAppear
+            guard page >= 1 else { return }
             if let realm = article.realm {
                 do {
                     try realm.write {
                         log.info("currentPage: \(page - 1)")
-                        article.currentPage.value = page - 1
+                        if page == 1 {
+                            article.currentPage.value = page
+                        } else {
+                            article.currentPage.value = page - 1
+                        }
                     }
                 } catch {
                     log.error("Realm write currentPage \(articleInfo) : \(error)")
