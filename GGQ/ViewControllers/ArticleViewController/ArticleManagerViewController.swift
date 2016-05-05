@@ -11,6 +11,8 @@ import RxSwift
 import RxCocoa
 import RxGesture
 import PKHUD
+import SwiftyJSON
+import RealmSwift
 
 class ArticleManagerViewController: UIPageViewController {
     
@@ -127,4 +129,26 @@ extension ArticleManagerViewController {
 	override func preferredStatusBarUpdateAnimation() -> UIStatusBarAnimation {
 		return .Slide
 	}
+}
+
+// MARK: - Routerable
+
+extension ArticleManagerViewController: Routerable {
+    
+    var routerIdentifier: String {
+        return "article"
+    }
+    
+    func get(url: NSURL, sender: JSON?) {
+        
+        if let urlStr = url.path,
+            realm = try? Realm() {
+            log.info(urlStr)
+            let predicate = NSPredicate(format: "contentUrl CONTAINS %@", urlStr)
+            if let article = realm.objects(ArticleInfoObject).filter(predicate).first {
+                articleInfo = article
+                UIApplication.topViewController()?.showViewController(self, sender: nil)
+            }
+        }
+    }
 }

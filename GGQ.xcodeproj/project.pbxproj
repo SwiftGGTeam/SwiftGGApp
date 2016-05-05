@@ -289,6 +289,8 @@
 		2622326F1CB7DD37009133D7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		262232721CB7DD37009133D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		262232741CB7DD37009133D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2631BEA11CDB0AFA00735D3E /* GGQ.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = GGQ.entitlements; sourceTree = "<group>"; };
+		2631BEA21CDB0B5900735D3E /* GGQ-Dev.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "GGQ-Dev.entitlements"; sourceTree = "<group>"; };
 		2638F7E61CD9020000F8DD7A /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
 		2638F7E71CD9020000F8DD7A /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
 		263D3AD91CD5F63500F8EF05 /* FlatMapEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlatMapEx.swift; sourceTree = "<group>"; };
@@ -470,6 +472,7 @@
 		2622325C1CB7DD37009133D7 = {
 			isa = PBXGroup;
 			children = (
+				2631BEA21CDB0B5900735D3E /* GGQ-Dev.entitlements */,
 				26035ED01CDACF1200E31915 /* Appsee.framework */,
 				26035ECA1CDAC1DD00E31915 /* Fabric.framework */,
 				26035ECB1CDAC1DD00E31915 /* Crashlytics.framework */,
@@ -497,6 +500,7 @@
 		262232671CB7DD37009133D7 /* GGQ */ = {
 			isa = PBXGroup;
 			children = (
+				2631BEA11CDB0AFA00735D3E /* GGQ.entitlements */,
 				26F343D01CC54A1B00476533 /* Services */,
 				267312961CBEAA1400036DB9 /* Tools */,
 				26E4CDAF1CB8B0680013AD29 /* Configs */,
@@ -930,6 +934,19 @@
 					262232641CB7DD37009133D7 = {
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = 9Y9KG3KBHJ;
+						SystemCapabilities = {
+							com.apple.SafariKeychain = {
+								enabled = 1;
+							};
+						};
+					};
+					2698DFE21CBFD25100B7E8C7 = {
+						DevelopmentTeam = 9Y9KG3KBHJ;
+						SystemCapabilities = {
+							com.apple.SafariKeychain = {
+								enabled = 1;
+							};
+						};
 					};
 					2698E0261CBFD3E500B7E8C7 = {
 						CreatedOnToolsVersion = 7.3;
@@ -1512,6 +1529,7 @@
 			baseConfigurationReference = 87F8853FE7B430AD79A2E1E1 /* Pods-GGQ.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = GGQ/GGQ.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Song Xutao (MQKW72R2U6)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1533,6 +1551,7 @@
 			baseConfigurationReference = 95D8D9DC147ACEB41904F955 /* Pods-GGQ.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = GGQ/GGQ.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Song Xutao (MQKW72R2U6)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1555,6 +1574,7 @@
 			baseConfigurationReference = B4C167B76DBBA1FD955C2C2F /* Pods-GGQ-Dev.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "GGQ-Dev.entitlements";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -1573,6 +1593,7 @@
 			baseConfigurationReference = 1AAD2501C34F4F123F03B729 /* Pods-GGQ-Dev.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "GGQ-Dev.entitlements";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",

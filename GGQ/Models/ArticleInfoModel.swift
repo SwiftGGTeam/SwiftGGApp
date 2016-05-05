@@ -18,6 +18,7 @@ class ArticleInfoObject: Object {
 	dynamic var authoerImageUrl: String = ""
 	dynamic var submitDate: String = ""
 	dynamic var title: String = ""
+    dynamic var contentUrl: String = ""
 	dynamic var articleUrl: String = ""
 	dynamic var translator: String = ""
 	dynamic var articleDescription: String = ""

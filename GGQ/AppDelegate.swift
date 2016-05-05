@@ -160,30 +160,20 @@ extension AppDelegate {
         let patternOAuth = "/oauth/:type"
         router.registerRoutingPattern(patternOAuth) { (url, parameters, context) in
 
-            var string = "URL is \(url), parameter is \(parameters)"
-            if let context = context as? String {
-                string += " Context is \"\(context)\""
-            }
-
             let vc = UIApplication.findViewController(identifity: "oauth")
 
             vc?.post(url, sender: JSON(parameters))
         }
 
-//        let patternArticle = "/:year/:month/:day/:pattern"
-//        // http://swift.gg/2016/04/08/recap-of-swift-porting-efforts-2/
-//        router.registerRoutingPattern(patternArticle) { (url, parameters, context) in
-//
-//            var string = "URL is \(url), parameter is \(parameters)"
-//            if let context = context as? String {
-//                string += " Context is \"\(context)\""
-//            }
-//
-//            let vc = UIApplication.findViewController(identifity: "oauth")
-//            print(vc)
-//
-//            vc?.post(url, sender: nil)
-//        }
+        let patternArticle = "/:year/:month/:day/:pattern"
+        // http://swift.gg/2016/04/08/recap-of-swift-porting-efforts-2/
+        router.registerRoutingPattern(patternArticle) { (url, parameters, context) in
+
+            
+            let vc = R.storyboard.article.articleManagerViewController()!
+            vc.get(url, sender: JSON(parameters))
+            
+        }
         
         let patternProfile = "/profile/:type/:token"
         

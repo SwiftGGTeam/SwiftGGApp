@@ -13,4 +13,16 @@ protocol Routerable {
     var routerIdentifier: String{get}
     
     func post(url: NSURL, sender: JSON?)
+    
+    func get(url: NSURL, sender: JSON?)
+}
+
+extension Routerable {
+    func post(url: NSURL, sender: JSON?) {
+        log.warning("未实现 POST")
+    }
+    
+    func get(url: NSURL, sender: JSON?) {
+        log.warning("未实现 GET")
+    }
 }
