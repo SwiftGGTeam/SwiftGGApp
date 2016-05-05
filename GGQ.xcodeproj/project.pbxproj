@@ -9,9 +9,7 @@
 /* Begin PBXBuildFile section */
 		07AA2A59C17B2C462898BB02 /* Pods_GGQ.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9EAFE5C29FEB0790663FC9B /* Pods_GGQ.framework */; };
 		26035ECC1CDAC1DD00E31915 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26035ECA1CDAC1DD00E31915 /* Fabric.framework */; };
-		26035ECD1CDAC1DD00E31915 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26035ECA1CDAC1DD00E31915 /* Fabric.framework */; };
 		26035ECE1CDAC1DD00E31915 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26035ECB1CDAC1DD00E31915 /* Crashlytics.framework */; };
-		26035ECF1CDAC1DD00E31915 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26035ECB1CDAC1DD00E31915 /* Crashlytics.framework */; };
 		26035ED11CDACF1200E31915 /* Appsee.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26035ED01CDACF1200E31915 /* Appsee.framework */; };
 		2605CD571CC8DF0400C31F55 /* GGOAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F967971CC8910200407593 /* GGOAuthService.swift */; };
 		261A279F1CC1E7AE00EF3A9C /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 261A279E1CC1E7AE00EF3A9C /* Config.swift */; };
@@ -420,14 +418,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				265877D81CD740AD00E6B6A0 /* Kingfisher.framework in Frameworks */,
-				26035ECF1CDAC1DD00E31915 /* Crashlytics.framework in Frameworks */,
 				265877D61CD740AD00E6B6A0 /* Locksmith.framework in Frameworks */,
 				265877C81CD740AC00E6B6A0 /* SwiftyJSON.framework in Frameworks */,
 				26A33AF11CD7A1C3004586C3 /* CocoaMarkdown.framework in Frameworks */,
 				265877D41CD740AD00E6B6A0 /* MoyaX.framework in Frameworks */,
 				265877CA1CD740AC00E6B6A0 /* SwiftDate.framework in Frameworks */,
 				265877D01CD740AD00E6B6A0 /* RealmSwift.framework in Frameworks */,
-				26035ECD1CDAC1DD00E31915 /* Fabric.framework in Frameworks */,
 				265877CC1CD740AD00E6B6A0 /* RouterX.framework in Frameworks */,
 				265877DA1CD740AD00E6B6A0 /* Alamofire.framework in Frameworks */,
 				EECC4AECDB395E1AC8B49B5E /* Pods_GGQ_Dev.framework in Frameworks */,
