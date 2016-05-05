@@ -10,6 +10,9 @@ import Foundation
 import CocoaMarkdown
 
 class GGConfig {
+    
+    static let appGroupID = "group.app.swift.gg"
+    
 	struct Nerworking {
 		#if DEV
 			static let host = NSURL(string: "http://debug.api.swift.gg")!

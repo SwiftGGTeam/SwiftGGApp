@@ -5,6 +5,11 @@
 	<key>com.apple.developer.associated-domains</key>
 	<array>
 		<string>webcredentials:swift.gg</string>
+		<string>applinks:app.swift.gg</string>
+	</array>
+	<key>com.apple.security.application-groups</key>
+	<array>
+		<string>group.app.swift.gg</string>
 	</array>
 </dict>
 </plist>

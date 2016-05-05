@@ -151,6 +151,8 @@
 		26BDBF4C1CD591E9000C601F /* ArticleManagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26BDBF4B1CD591E9000C601F /* ArticleManagerViewController.swift */; };
 		26BDBF4D1CD59291000C601F /* ArticleManagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26BDBF4B1CD591E9000C601F /* ArticleManagerViewController.swift */; };
 		26BF77641CBF8A8400117854 /* Cast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26BF77631CBF8A8400117854 /* Cast.swift */; };
+		26CC45D61CDC13DD00DDDE0A /* RealmConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CC45D51CDC13DD00DDDE0A /* RealmConfig.swift */; };
+		26CC45D71CDC13DD00DDDE0A /* RealmConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CC45D51CDC13DD00DDDE0A /* RealmConfig.swift */; };
 		26E261071CBC90EA00B34645 /* CategorysViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E261061CBC90EA00B34645 /* CategorysViewController.swift */; };
 		26E261091CBC910E00B34645 /* CategorysViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E261081CBC910E00B34645 /* CategorysViewModel.swift */; };
 		26E2610B1CBC912C00B34645 /* Categorys.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26E2610A1CBC912C00B34645 /* Categorys.storyboard */; };
@@ -328,6 +330,7 @@
 		26BCE3A11CCA4DBE00115D04 /* GGNetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GGNetworkService.swift; sourceTree = "<group>"; };
 		26BDBF4B1CD591E9000C601F /* ArticleManagerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleManagerViewController.swift; sourceTree = "<group>"; };
 		26BF77631CBF8A8400117854 /* Cast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cast.swift; sourceTree = "<group>"; };
+		26CC45D51CDC13DD00DDDE0A /* RealmConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmConfig.swift; sourceTree = "<group>"; };
 		26E261061CBC90EA00B34645 /* CategorysViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategorysViewController.swift; sourceTree = "<group>"; };
 		26E261081CBC910E00B34645 /* CategorysViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategorysViewModel.swift; sourceTree = "<group>"; };
 		26E2610A1CBC912C00B34645 /* Categorys.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Categorys.storyboard; sourceTree = "<group>"; };
@@ -728,6 +731,7 @@
 				26E4CDB01CB8B0740013AD29 /* UIColor+GG.swift */,
 				26E4CDB21CB8B2400013AD29 /* UIFont+GG.swift */,
 				261A279E1CC1E7AE00EF3A9C /* Config.swift */,
+				26CC45D51CDC13DD00DDDE0A /* RealmConfig.swift */,
 			);
 			path = Configs;
 			sourceTree = "<group>";
@@ -913,6 +917,9 @@
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = 9Y9KG3KBHJ;
 						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
 							com.apple.SafariKeychain = {
 								enabled = 1;
 							};
@@ -1258,6 +1265,7 @@
 				26E4CDB31CB8B2400013AD29 /* UIFont+GG.swift in Sources */,
 				26E261111CBC916A00B34645 /* ProfileViewModel.swift in Sources */,
 				26E4CDE41CBB6AB80013AD29 /* SearchTableViewCell.swift in Sources */,
+				26CC45D61CDC13DD00DDDE0A /* RealmConfig.swift in Sources */,
 				26E4CDDF1CBB4E5E0013AD29 /* ArticleCollectionViewCell.swift in Sources */,
 				26E4CDAE1CB8AFAB0013AD29 /* HomeViewModel.swift in Sources */,
 				26BCE39C1CC9B3F600115D04 /* UIViewController+Router.swift in Sources */,
@@ -1326,6 +1334,7 @@
 				2698DFF51CBFD25100B7E8C7 /* ProfileViewController.swift in Sources */,
 				2698DFF61CBFD25100B7E8C7 /* UIFont+GG.swift in Sources */,
 				2698DFF71CBFD25100B7E8C7 /* ProfileViewModel.swift in Sources */,
+				26CC45D71CDC13DD00DDDE0A /* RealmConfig.swift in Sources */,
 				2698DFF81CBFD25100B7E8C7 /* SearchTableViewCell.swift in Sources */,
 				2698DFF91CBFD25100B7E8C7 /* ArticleCollectionViewCell.swift in Sources */,
 				2698DFFA1CBFD25100B7E8C7 /* HomeViewModel.swift in Sources */,

@@ -26,6 +26,7 @@ class ArticleInfoObject: Object {
 	dynamic var starsNumber: Int = 0
 	dynamic var commentsNumber: Int = 0
 	dynamic var updateDate: String = ""
+    let readItLater = RealmOptional<Bool>()
 
 	override static func primaryKey() -> String? {
 		return "id"
