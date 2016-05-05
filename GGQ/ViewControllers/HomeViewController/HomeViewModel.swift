@@ -23,7 +23,7 @@ final class HomeViewModel {
     
     let isRequestLatest = Variable(false)
 
-    let disposeBag = DisposeBag()
+    private let disposeBag = DisposeBag()
 
     init(loadMoreTrigger: Observable<Void>) {
 
