@@ -10,6 +10,7 @@ def release_pods
     pod 'NSObject+Rx'
     pod 'R.swift'
     pod 'RxGesture'#, '~>0.1.6'
+    pod 'SwiftyJSON', :git => 'https://github.com/SwiftyJSON/SwiftyJSON.git', :branch => 'master'
 #    pod 'SwiftyDown'
     # pod 'RxRealm'
 end

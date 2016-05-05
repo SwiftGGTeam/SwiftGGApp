@@ -47,10 +47,10 @@ final class CategoryViewController: UIViewController, SegueHandlerType {
         let datasource = RxTableViewSectionedReloadDataSource<CategoryList>()
         datasource.configureCell = { ds, tb, ip, v in
             let cell = tb.dequeueReusableCellWithIdentifier(R.reuseIdentifier.articleTableViewCell, forIndexPath: ip)!
-            cell.title = v.identity.title
+            cell.title = v.title
             if let realm = realm {
                 
-                if let article = realm.objectForPrimaryKey(ArticleDetailModel.self, key: v.identity.id),
+                if let article = realm.objectForPrimaryKey(ArticleDetailModel.self, key: v.id),
                     pagerTotal = article.pagerTotal.value,
                     currentPage = article.currentPage.value {
                     cell.readPageInfo = "\(currentPage)/\(pagerTotal)"

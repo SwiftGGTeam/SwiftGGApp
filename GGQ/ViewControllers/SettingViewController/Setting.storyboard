@@ -20,7 +20,7 @@
                             <color key="backgroundColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
                         </view>
                         <view key="tableFooterView" contentMode="scaleToFill" id="NXo-z6-m2p">
-                            <rect key="frame" x="0.0" y="211" width="600" height="0.0"/>
+                            <rect key="frame" x="0.0" y="255" width="600" height="0.0"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </view>
@@ -93,6 +93,35 @@
                                             <segue destination="chU-Xz-lOo" kind="show" id="dAo-0d-5Wf"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" shouldIndentWhileEditing="NO" id="8Uc-MZ-gOE">
+                                        <rect key="frame" x="0.0" y="211" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8Uc-MZ-gOE" id="wbT-lN-uNH">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="akR-2G-w1d">
+                                                    <rect key="frame" x="17" y="8" width="115" height="26"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="icon_offline" translatesAutoresizingMaskIntoConstraints="NO" id="TrW-cY-Ped">
+                                                            <rect key="frame" x="0.0" y="0.0" width="32" height="26"/>
+                                                        </imageView>
+                                                        <label userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="离线文章" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dxn-oD-zpm">
+                                                            <rect key="frame" x="47" y="0.0" width="68" height="26"/>
+                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="17"/>
+                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="akR-2G-w1d" firstAttribute="centerY" secondItem="wbT-lN-uNH" secondAttribute="centerY" id="Gcn-1v-EF1"/>
+                                                <constraint firstItem="akR-2G-w1d" firstAttribute="leading" secondItem="wbT-lN-uNH" secondAttribute="leadingMargin" constant="9" id="egK-2C-aXR"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
@@ -117,4 +146,7 @@
             <point key="canvasLocation" x="853.5" y="364"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="icon_offline" width="32" height="26"/>
+    </resources>
 </document>

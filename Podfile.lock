@@ -1,14 +1,14 @@
 PODS:
   - NSObject+Rx (1.2.1):
     - RxSwift (~> 2.1)
-  - R.swift (2.1.0):
-    - R.swift.Library (~> 2.0.0)
-  - R.swift.Library (2.0.0)
+  - R.swift (2.2.0):
+    - R.swift.Library (~> 2.1.0)
+  - R.swift.Library (2.1.0)
   - RxBlocking (2.4):
     - RxSwift (~> 2.4)
   - RxCocoa (2.4):
     - RxSwift (~> 2.4)
-  - RxDataSources (0.7):
+  - RxDataSources (0.8):
     - RxCocoa (~> 2.2)
     - RxSwift (~> 2.2)
   - RxGesture (0.1.2):
@@ -20,6 +20,7 @@ PODS:
   - RxSwift (2.4)
   - RxTests (2.4):
     - RxSwift (~> 2.4)
+  - SwiftyJSON (2.3.2)
   - XCGLogger (3.3)
 
 DEPENDENCIES:
@@ -32,21 +33,33 @@ DEPENDENCIES:
   - RxOptional
   - RxSwift (~> 2.4)
   - RxTests (~> 2.4)
+  - SwiftyJSON (from `https://github.com/SwiftyJSON/SwiftyJSON.git`, branch `master`)
   - XCGLogger (~> 3.3)
+
+EXTERNAL SOURCES:
+  SwiftyJSON:
+    :branch: master
+    :git: https://github.com/SwiftyJSON/SwiftyJSON.git
+
+CHECKOUT OPTIONS:
+  SwiftyJSON:
+    :commit: 2a5b70f06001316d4fb54501edc70b4084705da0
+    :git: https://github.com/SwiftyJSON/SwiftyJSON.git
 
 SPEC CHECKSUMS:
   NSObject+Rx: 5d032a7f161602dec6b82dcf12731e91ce15b8da
-  R.swift: efff131531b5cf142e28fd94957806ff71ccbcf2
-  R.swift.Library: 9f4b2d12040daa1ffe336d8f7e1574f73721fd01
+  R.swift: 93333ff6e5da17ec1f38463671d5ea306197cf96
+  R.swift.Library: e5e077ed04f6867a95676af491650091b23518e9
   RxBlocking: 1226c1fa0ca1e0ca5f964d4330ca3649f2128680
   RxCocoa: 7d6cd877de99f5640306b3d6cf87f580c1d91b61
-  RxDataSources: 99a8527f4de066d3f10522c1977e571efec034c3
+  RxDataSources: 8755a221c065930a75cf24020f6f2c63713c486e
   RxGesture: 5a5d7ee565fb24b1dbede801e7a98d4169ac5818
   RxOptional: b77fb47a0190213cf8a37c7a2b7fda28160b4563
   RxSwift: 67b9ef4e8b34fb394e200e754c6a09cc16559f94
   RxTests: 8b9691e6476dfa6025fae9a69f449bf4cb5e5cfc
+  SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
   XCGLogger: d6e196e78940ff6daab17d6917107876f973fa31
 
-PODFILE CHECKSUM: a4a56643324183b9a5cc82985a6215af1ee785e4
+PODFILE CHECKSUM: 7287c743e48f0d4fff88a3944d3d7b646d3e8767
 
-COCOAPODS: 1.0.0.rc.1
+COCOAPODS: 1.0.0.rc.2

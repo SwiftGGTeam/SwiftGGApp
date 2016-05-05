@@ -22,6 +22,8 @@
 		2622326E1CB7DD37009133D7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2622326C1CB7DD37009133D7 /* Main.storyboard */; };
 		262232701CB7DD37009133D7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2622326F1CB7DD37009133D7 /* Assets.xcassets */; };
 		262232731CB7DD37009133D7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 262232711CB7DD37009133D7 /* LaunchScreen.storyboard */; };
+		2631BEAF1CDB4F8700735D3E /* RxDataSourceExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2631BEAE1CDB4F8700735D3E /* RxDataSourceExt.swift */; };
+		2631BEB01CDB4F8900735D3E /* RxDataSourceExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2631BEAE1CDB4F8700735D3E /* RxDataSourceExt.swift */; };
 		2638F7E81CD9020000F8DD7A /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2638F7E61CD9020000F8DD7A /* Quick.framework */; };
 		2638F7E91CD9020000F8DD7A /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2638F7E71CD9020000F8DD7A /* Nimble.framework */; };
 		263D3ADA1CD5F63500F8EF05 /* FlatMapEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263D3AD91CD5F63500F8EF05 /* FlatMapEx.swift */; };
@@ -32,8 +34,6 @@
 		265395EA1CC09B2800E6239C /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265395E71CC09B2800E6239C /* R.generated.swift */; };
 		265395EC1CC0D3EF00E6239C /* Version.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265395EB1CC0D3EF00E6239C /* Version.swift */; };
 		265395ED1CC0D3EF00E6239C /* Version.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265395EB1CC0D3EF00E6239C /* Version.swift */; };
-		265877B31CD7409E00E6B6A0 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 265877A91CD7409E00E6B6A0 /* SwiftyJSON.framework */; };
-		265877B41CD7409E00E6B6A0 /* SwiftyJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 265877A91CD7409E00E6B6A0 /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		265877B51CD7409E00E6B6A0 /* SwiftDate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 265877AA1CD7409E00E6B6A0 /* SwiftDate.framework */; };
 		265877B61CD7409E00E6B6A0 /* SwiftDate.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 265877AA1CD7409E00E6B6A0 /* SwiftDate.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		265877B71CD7409E00E6B6A0 /* RouterX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 265877AB1CD7409E00E6B6A0 /* RouterX.framework */; };
@@ -52,8 +52,6 @@
 		265877C41CD7409E00E6B6A0 /* Kingfisher.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 265877B11CD7409E00E6B6A0 /* Kingfisher.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		265877C51CD7409E00E6B6A0 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 265877B21CD7409E00E6B6A0 /* Alamofire.framework */; };
 		265877C61CD7409E00E6B6A0 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 265877B21CD7409E00E6B6A0 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		265877C81CD740AC00E6B6A0 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 265877A91CD7409E00E6B6A0 /* SwiftyJSON.framework */; };
-		265877C91CD740AC00E6B6A0 /* SwiftyJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 265877A91CD7409E00E6B6A0 /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		265877CA1CD740AC00E6B6A0 /* SwiftDate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 265877AA1CD7409E00E6B6A0 /* SwiftDate.framework */; };
 		265877CB1CD740AC00E6B6A0 /* SwiftDate.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 265877AA1CD7409E00E6B6A0 /* SwiftDate.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		265877CC1CD740AD00E6B6A0 /* RouterX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 265877AB1CD7409E00E6B6A0 /* RouterX.framework */; };
@@ -246,7 +244,6 @@
 				265877C21CD7409E00E6B6A0 /* Locksmith.framework in Embed Frameworks */,
 				265877B61CD7409E00E6B6A0 /* SwiftDate.framework in Embed Frameworks */,
 				26A33AF01CD7A1AF004586C3 /* CocoaMarkdown.framework in Embed Frameworks */,
-				265877B41CD7409E00E6B6A0 /* SwiftyJSON.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -267,7 +264,6 @@
 				265877D71CD740AD00E6B6A0 /* Locksmith.framework in Embed Frameworks */,
 				265877CB1CD740AC00E6B6A0 /* SwiftDate.framework in Embed Frameworks */,
 				26A33AF21CD7A1C3004586C3 /* CocoaMarkdown.framework in Embed Frameworks */,
-				265877C91CD740AC00E6B6A0 /* SwiftyJSON.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -291,13 +287,13 @@
 		262232741CB7DD37009133D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2631BEA11CDB0AFA00735D3E /* GGQ.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = GGQ.entitlements; sourceTree = "<group>"; };
 		2631BEA21CDB0B5900735D3E /* GGQ-Dev.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "GGQ-Dev.entitlements"; sourceTree = "<group>"; };
+		2631BEAE1CDB4F8700735D3E /* RxDataSourceExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxDataSourceExt.swift; sourceTree = "<group>"; };
 		2638F7E61CD9020000F8DD7A /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
 		2638F7E71CD9020000F8DD7A /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
 		263D3AD91CD5F63500F8EF05 /* FlatMapEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlatMapEx.swift; sourceTree = "<group>"; };
 		263D3ADC1CD5F8C200F8EF05 /* UITextView+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextView+Rx.swift"; sourceTree = "<group>"; };
 		265395E71CC09B2800E6239C /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		265395EB1CC0D3EF00E6239C /* Version.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Version.swift; sourceTree = "<group>"; };
-		265877A91CD7409E00E6B6A0 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
 		265877AA1CD7409E00E6B6A0 /* SwiftDate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftDate.framework; path = Carthage/Build/iOS/SwiftDate.framework; sourceTree = "<group>"; };
 		265877AB1CD7409E00E6B6A0 /* RouterX.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RouterX.framework; path = Carthage/Build/iOS/RouterX.framework; sourceTree = "<group>"; };
 		265877AC1CD7409E00E6B6A0 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
@@ -399,7 +395,6 @@
 				265877C31CD7409E00E6B6A0 /* Kingfisher.framework in Frameworks */,
 				26035ECE1CDAC1DD00E31915 /* Crashlytics.framework in Frameworks */,
 				265877C11CD7409E00E6B6A0 /* Locksmith.framework in Frameworks */,
-				265877B31CD7409E00E6B6A0 /* SwiftyJSON.framework in Frameworks */,
 				26A33AEF1CD7A1AF004586C3 /* CocoaMarkdown.framework in Frameworks */,
 				265877BF1CD7409E00E6B6A0 /* MoyaX.framework in Frameworks */,
 				265877B51CD7409E00E6B6A0 /* SwiftDate.framework in Frameworks */,
@@ -421,7 +416,6 @@
 			files = (
 				265877D81CD740AD00E6B6A0 /* Kingfisher.framework in Frameworks */,
 				265877D61CD740AD00E6B6A0 /* Locksmith.framework in Frameworks */,
-				265877C81CD740AC00E6B6A0 /* SwiftyJSON.framework in Frameworks */,
 				26A33AF11CD7A1C3004586C3 /* CocoaMarkdown.framework in Frameworks */,
 				265877D41CD740AD00E6B6A0 /* MoyaX.framework in Frameworks */,
 				265877CA1CD740AC00E6B6A0 /* SwiftDate.framework in Frameworks */,
@@ -531,7 +525,6 @@
 				2638F7E61CD9020000F8DD7A /* Quick.framework */,
 				2638F7E71CD9020000F8DD7A /* Nimble.framework */,
 				26A33AEE1CD7A1AF004586C3 /* CocoaMarkdown.framework */,
-				265877A91CD7409E00E6B6A0 /* SwiftyJSON.framework */,
 				265877AA1CD7409E00E6B6A0 /* SwiftDate.framework */,
 				265877AB1CD7409E00E6B6A0 /* RouterX.framework */,
 				265877AC1CD7409E00E6B6A0 /* Realm.framework */,
@@ -767,6 +760,7 @@
 				263D3ADC1CD5F8C200F8EF05 /* UITextView+Rx.swift */,
 				265877E21CD759EC00E6B6A0 /* UIScrollView+Rx.swift */,
 				26B4048A1CDA404B0023F380 /* Logger+Rx.swift */,
+				2631BEAE1CDB4F8700735D3E /* RxDataSourceExt.swift */,
 			);
 			path = Rx;
 			sourceTree = "<group>";
@@ -1088,7 +1082,6 @@
 				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Kingfisher.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/MoyaX.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/SwiftyJSON.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/SwiftDate.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RouterX.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/PKHUD.framework",
@@ -1287,6 +1280,7 @@
 				26E261091CBC910E00B34645 /* CategorysViewModel.swift in Sources */,
 				26E4CDC11CB8E47C0013AD29 /* HomeCollectionViewFlowLayout.swift in Sources */,
 				267312841CBE8DB900036DB9 /* CategoryCollectionViewCell.swift in Sources */,
+				2631BEAF1CDB4F8700735D3E /* RxDataSourceExt.swift in Sources */,
 				26E4CDC81CBA0D890013AD29 /* RxUITabBarDelegateProxy.swift in Sources */,
 				265877DF1CD74C7A00E6B6A0 /* Observable+Object.swift in Sources */,
 				261A279F1CC1E7AE00EF3A9C /* Config.swift in Sources */,
@@ -1356,6 +1350,7 @@
 				2698DFFB1CBFD25100B7E8C7 /* CategorysViewModel.swift in Sources */,
 				2698DFFC1CBFD25100B7E8C7 /* HomeCollectionViewFlowLayout.swift in Sources */,
 				2698DFFD1CBFD25100B7E8C7 /* CategoryCollectionViewCell.swift in Sources */,
+				2631BEB01CDB4F8900735D3E /* RxDataSourceExt.swift in Sources */,
 				2698DFFE1CBFD25100B7E8C7 /* RxUITabBarDelegateProxy.swift in Sources */,
 				265877E01CD74C9100E6B6A0 /* Observable+Object.swift in Sources */,
 				261A27A11CC1E81300EF3A9C /* Config.swift in Sources */,
