@@ -11,8 +11,9 @@ import RealmSwift
 import RouterX
 import SwiftyJSON
 #if RELEASE
-import Fabric
-import Crashlytics
+    import Fabric
+    import Crashlytics
+    import Appsee
 #endif
 
 @UIApplicationMain
@@ -53,7 +54,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //            cleanRealmFile()
         
         #if RELEASE
-            Fabric.with([Crashlytics.self])
+            Fabric.with([Crashlytics.self, Appsee.self])
         #endif
         
         SyncService.sharedInstance.sync()
