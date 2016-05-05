@@ -11,7 +11,6 @@ import RxCocoa
 import RealmSwift
 //import RxRealm
 import SwiftyJSON
-//import SwiftyDown
 import CocoaMarkdown
 
 final class ArticleManagerViewModel {
