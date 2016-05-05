@@ -13,6 +13,7 @@ import RxDataSources
 import RxOptional
 import NSObject_Rx
 import SwiftDate
+import CocoaMarkdown
 
 final class HomeViewController: UIViewController, SegueHandlerType {
     
@@ -42,7 +43,7 @@ final class HomeViewController: UIViewController, SegueHandlerType {
 		}
 
 		viewModel = HomeViewModel(loadMoreTrigger: loadMore)
-
+        
 		viewModel.elements.asObservable()
 			.map { $0.map { ModelType.Element($0) } + [ModelType.LoadMore] }
 			.bindTo(collectionView.rx_itemsWithCellFactory) { cv, i, v in
@@ -53,7 +54,10 @@ final class HomeViewController: UIViewController, SegueHandlerType {
 					cell.title = e.title
 					cell.time = e.submitDate.toDateFromISO8601()
 					cell.info = e.typeName + " " + e.translator
-					cell.preview = e.articleDescription
+                    let data = e.articleDescription.dataUsingEncoding(NSUTF8StringEncoding)!
+                    let document = CMDocument(data: data, options: .Normalize)
+                    let renderer = CMAttributedStringRenderer(document: document, attributes: CMTextAttributes())
+					cell.preview = renderer.render().string
 					cell.layoutIfNeeded()
 					return cell
 				case .LoadMore:
