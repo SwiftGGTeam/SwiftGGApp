@@ -43,10 +43,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
 //            UIView.appearance().tintColor = UIColor.blackColor()
-//            UINavigationBar.appearance().barTintColor = UIColor.whiteColor()
-//            UINavigationBar.appearance().shadowImage = UIImage()
+            UINavigationBar.appearance().tintColor = UIColor.gg_blackColor()
+            UINavigationBar.appearance().barTintColor = UIColor.whiteColor()
+            UINavigationBar.appearance().shadowImage = UIImage()
 //            UINavigationBar.appearance().setBackgroundImage(UIImage(), forBarMetrics: .Default)
 //            UINavigationBar.appearance().gg_addShadow(defaultPath: true)
+        UITabBar.appearance().tintColor = UIColor.gg_blackColor()
 //            UITabBar.appearance().shadowImage = UIImage()
 //            UITabBar.appearance().backgroundImage = UIImage()
 //            UITabBar.appearance().gg_addShadow(defaultPath: true)
