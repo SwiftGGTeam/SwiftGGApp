@@ -76,5 +76,9 @@ class SyncService {
             .bindTo(_articlesUpdated)
             .addDisposableTo(disposeBag)
         
+        app.map { $0.articlesSum }
+            .bindTo(_articleNumber)
+            .addDisposableTo(disposeBag)
+        
     }
 }

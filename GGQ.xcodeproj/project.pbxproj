@@ -153,6 +153,8 @@
 		26CC45D71CDC13DD00DDDE0A /* RealmConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CC45D51CDC13DD00DDDE0A /* RealmConfig.swift */; };
 		26CC45D91CDC155F00DDDE0A /* TScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CC45D81CDC155F00DDDE0A /* TScheduler.swift */; };
 		26CC45DA1CDC155F00DDDE0A /* TScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CC45D81CDC155F00DDDE0A /* TScheduler.swift */; };
+		26CC45DC1CDC1F8800DDDE0A /* SettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CC45DB1CDC1F8800DDDE0A /* SettingViewModel.swift */; };
+		26CC45DD1CDC1F8800DDDE0A /* SettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CC45DB1CDC1F8800DDDE0A /* SettingViewModel.swift */; };
 		26E261071CBC90EA00B34645 /* CategorysViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E261061CBC90EA00B34645 /* CategorysViewController.swift */; };
 		26E261091CBC910E00B34645 /* CategorysViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E261081CBC910E00B34645 /* CategorysViewModel.swift */; };
 		26E2610B1CBC912C00B34645 /* Categorys.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26E2610A1CBC912C00B34645 /* Categorys.storyboard */; };
@@ -331,6 +333,7 @@
 		26BF77631CBF8A8400117854 /* Cast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cast.swift; sourceTree = "<group>"; };
 		26CC45D51CDC13DD00DDDE0A /* RealmConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmConfig.swift; sourceTree = "<group>"; };
 		26CC45D81CDC155F00DDDE0A /* TScheduler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TScheduler.swift; sourceTree = "<group>"; };
+		26CC45DB1CDC1F8800DDDE0A /* SettingViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewModel.swift; sourceTree = "<group>"; };
 		26E261061CBC90EA00B34645 /* CategorysViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategorysViewController.swift; sourceTree = "<group>"; };
 		26E261081CBC910E00B34645 /* CategorysViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategorysViewModel.swift; sourceTree = "<group>"; };
 		26E2610A1CBC912C00B34645 /* Categorys.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Categorys.storyboard; sourceTree = "<group>"; };
@@ -552,6 +555,7 @@
 			children = (
 				2673127D1CBE890E00036DB9 /* Setting.storyboard */,
 				26F343D41CC554D600476533 /* SettingViewController.swift */,
+				26CC45DB1CDC1F8800DDDE0A /* SettingViewModel.swift */,
 			);
 			path = SettingViewController;
 			sourceTree = "<group>";
@@ -928,6 +932,9 @@
 					2698DFE21CBFD25100B7E8C7 = {
 						DevelopmentTeam = 9Y9KG3KBHJ;
 						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
 							com.apple.SafariKeychain = {
 								enabled = 1;
 							};
@@ -1283,6 +1290,7 @@
 				26E4CDCD1CBA15860013AD29 /* ArticleViewController.swift in Sources */,
 				267312821CBE8AC200036DB9 /* AboutViewController.swift in Sources */,
 				26E4CDD51CBA26FF0013AD29 /* SearchViewController.swift in Sources */,
+				26CC45DC1CDC1F8800DDDE0A /* SettingViewModel.swift in Sources */,
 				263D3ADD1CD5F8C200F8EF05 /* UITextView+Rx.swift in Sources */,
 				26E4CDC51CBA08970013AD29 /* UIView+GG.swift in Sources */,
 				26E8725D1CC11677006C5A0F /* ServerInfoModel.swift in Sources */,
@@ -1352,6 +1360,7 @@
 				2698E0021CBFD25100B7E8C7 /* ArticleViewController.swift in Sources */,
 				2698E0031CBFD25100B7E8C7 /* AboutViewController.swift in Sources */,
 				2698E0041CBFD25100B7E8C7 /* SearchViewController.swift in Sources */,
+				26CC45DD1CDC1F8800DDDE0A /* SettingViewModel.swift in Sources */,
 				263D3ADE1CD5F8CF00F8EF05 /* UITextView+Rx.swift in Sources */,
 				2698E0051CBFD25100B7E8C7 /* UIView+GG.swift in Sources */,
 				26E8725F1CC11677006C5A0F /* ServerInfoModel.swift in Sources */,
