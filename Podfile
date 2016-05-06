@@ -8,7 +8,7 @@ def release_pods
     pod 'RxDataSources'
     pod 'RxOptional'
     pod 'NSObject+Rx'
-    pod 'R.swift', :git => 'https://github.com/mac-cain13/R.swift', :branch => 'master'
+    pod 'R.swift'#, :git => 'https://github.com/mac-cain13/R.swift', :branch => 'master'
     pod 'RxGesture'#, '~>0.1.6'
     pod 'SwiftyJSON', :git => 'https://github.com/SwiftyJSON/SwiftyJSON.git', :branch => 'master'
 #    pod 'SwiftyDown'

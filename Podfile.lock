@@ -25,7 +25,7 @@ PODS:
 
 DEPENDENCIES:
   - NSObject+Rx
-  - R.swift (from `https://github.com/mac-cain13/R.swift`, branch `master`)
+  - R.swift
   - RxBlocking (~> 2.4)
   - RxCocoa (~> 2.4)
   - RxDataSources
@@ -37,17 +37,11 @@ DEPENDENCIES:
   - XCGLogger (~> 3.3)
 
 EXTERNAL SOURCES:
-  R.swift:
-    :branch: master
-    :git: https://github.com/mac-cain13/R.swift
   SwiftyJSON:
     :branch: master
     :git: https://github.com/SwiftyJSON/SwiftyJSON.git
 
 CHECKOUT OPTIONS:
-  R.swift:
-    :commit: 8fc6e38abd923219b2b40c38192eddcdb60db050
-    :git: https://github.com/mac-cain13/R.swift
   SwiftyJSON:
     :commit: 2a5b70f06001316d4fb54501edc70b4084705da0
     :git: https://github.com/SwiftyJSON/SwiftyJSON.git
@@ -66,6 +60,6 @@ SPEC CHECKSUMS:
   SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
   XCGLogger: d6e196e78940ff6daab17d6917107876f973fa31
 
-PODFILE CHECKSUM: a0f57c0322eba6c7a0b6b8b0d8df63ac47f39bf7
+PODFILE CHECKSUM: 410c7acef2c3c4a788e725fa80fbe491f1d062d8
 
 COCOAPODS: 1.0.0.rc.2
