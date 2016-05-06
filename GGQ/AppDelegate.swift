@@ -52,7 +52,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //            UITabBar.appearance().shadowImage = UIImage()
 //            UITabBar.appearance().backgroundImage = UIImage()
 //            UITabBar.appearance().gg_addShadow(defaultPath: true)
-        
+        Realm.prepareMigration()
         Realm.Configuration.defaultConfiguration = Realm.gg_configuration
         
 //            cleanRealmFile()

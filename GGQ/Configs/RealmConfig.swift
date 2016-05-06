@@ -17,10 +17,7 @@ extension Realm {
     }
     #else
     static var gg_configuration: Realm.Configuration {
-        let directory: NSURL = NSFileManager.defaultManager().containerURLForSecurityApplicationGroupIdentifier(GGConfig.appGroupID)!
-        let realmURL = directory.URLByAppendingPathComponent("db.realm")
-        
-        return Realm.Configuration(fileURL: realmURL, schemaVersion: gg_schemaVersion, migrationBlock: { migration, oldSchemaVersion in
+        return Realm.Configuration(fileURL: gg_realmURL, schemaVersion: gg_schemaVersion, migrationBlock: { migration, oldSchemaVersion in
             
             if (oldSchemaVersion < 1) {
                 migration.enumerate(ArticleInfoObject.className()) { oldObject, newObject in
@@ -31,4 +28,18 @@ extension Realm {
             })
     }
     #endif
+    
+    static var gg_realmURL: NSURL {
+        let directory = NSFileManager.defaultManager().containerURLForSecurityApplicationGroupIdentifier(GGConfig.appGroupID)!
+        return directory.URLByAppendingPathComponent("db.realm")
+    }
+    
+    static func prepareMigration() {
+        if let fileURL = Realm.Configuration.defaultConfiguration.fileURL {
+            do {
+                try NSFileManager.defaultManager().removeItemAtURL(gg_realmURL)
+                try NSFileManager.defaultManager().copyItemAtURL(fileURL, toURL: gg_realmURL)
+            } catch {}
+        }
+    }
 }
