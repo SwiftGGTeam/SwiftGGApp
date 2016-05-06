@@ -7,10 +7,8 @@
 //
 
 import Foundation
-
 import RxSwift
 import RxCocoa
-import Realm
 import RealmSwift
 import RxOptional
 
@@ -29,14 +27,14 @@ final class CategoryViewModel {
 	private let disposeBag = DisposeBag()
 
 	init(refreshTrigger: Observable<Void>, loadMoreTrigger: Observable<Void>, category: CategoryObject) {
-        /// 事实上 == 这里不应该做 Cache
+        
         let realm = try! Realm()
         let predicate = NSPredicate(format: "typeId == %@", argumentArray: [category.id])
-        let objects = realm.objects(ArticleInfoObject).filter(predicate).asObservable().shareReplay(1)
+        let objects = realm.objects(ArticleInfoObject).filter(predicate).asObservableArray().shareReplay(1)
             
             objects
             .subscribeNext { [unowned self] objects in
-                self.elements.value = objects.map { $0 }
+                self.elements.value = objects
                 self.isLoading.value = false
                 self.currentPage.value = self.elements.value.count / GGConfig.Home.pageSize + 1
                 if objects.count >= category.sum {
@@ -58,7 +56,6 @@ final class CategoryViewModel {
         let loadMoreResult = loadMoreRequest
             .map { GGAPI.ArticlesByCategory(categoryId: category.id, pageIndex: $0, pageSize: GGConfig.Category.pageSize) }
             .flatMapLatest(GGProvider.request)
-            // TODO: - 在这里加判断，是否需要更新 Model
             .gg_storeArray(ArticleInfoObject)
             .shareReplay(1)
         

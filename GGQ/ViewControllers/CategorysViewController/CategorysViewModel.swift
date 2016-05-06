@@ -25,8 +25,7 @@ final class CategorysViewModel {
         
         let realm = try! Realm()
         realm.objects(CategoryObject.self)
-            .asObservable()
-            .map { $0.map { $0 } }
+            .asObservableArray()
             .bindTo(elements)
             .addDisposableTo(disposeBag)
         
