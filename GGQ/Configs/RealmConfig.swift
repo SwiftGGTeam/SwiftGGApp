@@ -11,11 +11,11 @@ import RealmSwift
 
 extension Realm {
     static var gg_schemaVersion: UInt64 = 1000
-    #if DEV
-    static var gg_configuration: Realm.Configuration {
-        return Realm.Configuration.defaultConfiguration
-    }
-    #else
+//    #if DEV
+//    static var gg_configuration: Realm.Configuration {
+//        return Realm.Configuration.defaultConfiguration
+//    }
+//    #else
     static var gg_configuration: Realm.Configuration {
         return Realm.Configuration(fileURL: gg_realmURL, schemaVersion: gg_schemaVersion, migrationBlock: { migration, oldSchemaVersion in
             
@@ -27,7 +27,7 @@ extension Realm {
             
             })
     }
-    #endif
+//    #endif
     
     static var gg_realmURL: NSURL {
         let directory = NSFileManager.defaultManager().containerURLForSecurityApplicationGroupIdentifier(GGConfig.appGroupID)!
