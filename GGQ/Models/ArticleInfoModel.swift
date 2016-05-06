@@ -27,6 +27,7 @@ class ArticleInfoObject: Object {
 	dynamic var commentsNumber: Int = 0 // Version 0
 	dynamic var updateDate: String = "" // Version 0
     let readItLater = RealmOptional<Bool>() // Version 1000
+    let loadFromHome = RealmOptional<Bool>() // Version 1000
 
 	override static func primaryKey() -> String? {
 		return "id"
