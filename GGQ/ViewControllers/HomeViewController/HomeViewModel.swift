@@ -8,6 +8,7 @@
 
 import RxSwift
 import RxCocoa
+import Realm
 import RealmSwift
 import SwiftyJSON
 
@@ -29,13 +30,16 @@ final class HomeViewModel {
 
         let realm = try! Realm()
         let predicate = NSPredicate(format: "loadFromHome == %@", true)
-        realm.objects(ArticleInfoObject).filter(predicate).asObservableArray()
-            .subscribeNext { [unowned self] objects in
-                self.elements.value = objects
+        realm.objects(ArticleInfoObject).filter(predicate)
+            .asObservableChangeset()
+            .subscribeNext { objects, changeset in
+                if let changeset = changeset where changeset.inserted.count < GGConfig.Home.pageSize {
+                    self.hasNextPage.value = false
+                }
+                self.elements.value = objects.map { $0 }
                 self.isLoading.value = false
                 self.currentPage.value = self.elements.value.count / GGConfig.Home.pageSize + 1
-            }
-            .addDisposableTo(disposeBag)
+        }.addDisposableTo(disposeBag)
         
         func convert(json: JSON) -> [AnyObject] {
             return json.arrayValue
