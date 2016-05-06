@@ -11,30 +11,30 @@ import RealmSwift
 /// 文章详情 *。*
 class ArticleDetailModel: Object {
 
-    dynamic var id: Int = 0
-    dynamic var typeId: Int = 0
-    dynamic var typeName: String = ""
+    dynamic var id: Int = 0 // Version 0
+    dynamic var typeId: Int = 0 // Version 0
+    dynamic var typeName: String = "" // Version 0
 //    dynamic var tags: RLMArray = RLMArray(objectClassName: "String")
-    dynamic var coverUrl: String = ""
-    dynamic var contentUrl: String = ""
-    dynamic var translator: String = ""
-    dynamic var proofreader: String = ""
-    dynamic var finalization: String = ""
-    dynamic var author: String = ""
-    dynamic var authorImageUrl: String = ""
-    dynamic var originalDate: String = ""
-    dynamic var originalUrl: String = ""
+    dynamic var coverUrl: String = "" // Version 0
+    dynamic var contentUrl: String = "" // Version 0
+    dynamic var translator: String = "" // Version 0
+    dynamic var proofreader: String = "" // Version 0
+    dynamic var finalization: String = "" // Version 0
+    dynamic var author: String = "" // Version 0
+    dynamic var authorImageUrl: String = "" // Version 0
+    dynamic var originalDate: String = "" // Version 0
+    dynamic var originalUrl: String = "" // Version 0
 //    dynamic var description: String = ""
-    dynamic var clickedNumber: Int = 0
-    dynamic var submitDate: String = ""
-    dynamic var starsNumber: Int = 0
-    dynamic var commentsNumber: Int = 0
-    dynamic var content: String = ""
+    dynamic var clickedNumber: Int = 0 // Version 0
+    dynamic var submitDate: String = "" // Version 0
+    dynamic var starsNumber: Int = 0 // Version 0
+    dynamic var commentsNumber: Int = 0 // Version 0
+    dynamic var content: String = "" // Version 0
 //    dynamic var comments: RLMArray = RLMArray(objectClassName: "String")
-    dynamic var updateDate: String = "" // 通过 updateDate 判断是否是最新版本文章
-    dynamic var cacheData: NSData?
-    let pagerTotal = RealmOptional<Int>()
-    let currentPage = RealmOptional<Int>()
+    dynamic var updateDate: String = "" // Version 0
+    dynamic var cacheData: NSData? // Version 0
+    let pagerTotal = RealmOptional<Int>() // Version 0
+    let currentPage = RealmOptional<Int>() // Version 0
 //    dynamic var 
 
     override static func primaryKey() -> String? {

@@ -22,6 +22,12 @@ extension Realm {
         
         return Realm.Configuration(fileURL: realmURL, schemaVersion: gg_schemaVersion, migrationBlock: { migration, oldSchemaVersion in
             
+            if (oldSchemaVersion < 1) {
+                migration.enumerate(ArticleInfoObject.className()) { oldObject, newObject in
+                    newObject!["contentUrl"] = ""
+                }
+            }
+            
             })
     }
     #endif

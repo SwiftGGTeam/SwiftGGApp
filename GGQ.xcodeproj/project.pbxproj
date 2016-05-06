@@ -113,7 +113,6 @@
 		2698E00A1CBFD25100B7E8C7 /* SegueHandlerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E4CDD11CBA18EA0013AD29 /* SegueHandlerType.swift */; };
 		2698E00B1CBFD25100B7E8C7 /* CategorysViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E261061CBC90EA00B34645 /* CategorysViewController.swift */; };
 		2698E00C1CBFD25100B7E8C7 /* ArticleDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267312711CBA96BC00036DB9 /* ArticleDetailModel.swift */; };
-		2698E00D1CBFD25100B7E8C7 /* TScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269B54FF1CB954CC00375FEB /* TScheduler.swift */; };
 		2698E0121CBFD25100B7E8C7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 262232711CB7DD37009133D7 /* LaunchScreen.storyboard */; };
 		2698E0131CBFD25100B7E8C7 /* Article.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26E4CDCE1CBA16630013AD29 /* Article.storyboard */; };
 		2698E0141CBFD25100B7E8C7 /* Categorys.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26E2610A1CBC912C00B34645 /* Categorys.storyboard */; };
@@ -131,7 +130,6 @@
 		2698E04A1CC00A7E00B7E8C7 /* Category.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2698E0471CC00A7E00B7E8C7 /* Category.storyboard */; };
 		2698E04C1CC00E8B00B7E8C7 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2698E04B1CC00E8B00B7E8C7 /* CategoryViewController.swift */; };
 		2698E04E1CC00E8B00B7E8C7 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2698E04B1CC00E8B00B7E8C7 /* CategoryViewController.swift */; };
-		269B55001CB954CC00375FEB /* TScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269B54FF1CB954CC00375FEB /* TScheduler.swift */; };
 		26A33AEF1CD7A1AF004586C3 /* CocoaMarkdown.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26A33AEE1CD7A1AF004586C3 /* CocoaMarkdown.framework */; };
 		26A33AF01CD7A1AF004586C3 /* CocoaMarkdown.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 26A33AEE1CD7A1AF004586C3 /* CocoaMarkdown.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		26A33AF11CD7A1C3004586C3 /* CocoaMarkdown.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26A33AEE1CD7A1AF004586C3 /* CocoaMarkdown.framework */; };
@@ -153,6 +151,8 @@
 		26BF77641CBF8A8400117854 /* Cast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26BF77631CBF8A8400117854 /* Cast.swift */; };
 		26CC45D61CDC13DD00DDDE0A /* RealmConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CC45D51CDC13DD00DDDE0A /* RealmConfig.swift */; };
 		26CC45D71CDC13DD00DDDE0A /* RealmConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CC45D51CDC13DD00DDDE0A /* RealmConfig.swift */; };
+		26CC45D91CDC155F00DDDE0A /* TScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CC45D81CDC155F00DDDE0A /* TScheduler.swift */; };
+		26CC45DA1CDC155F00DDDE0A /* TScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CC45D81CDC155F00DDDE0A /* TScheduler.swift */; };
 		26E261071CBC90EA00B34645 /* CategorysViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E261061CBC90EA00B34645 /* CategorysViewController.swift */; };
 		26E261091CBC910E00B34645 /* CategorysViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E261081CBC910E00B34645 /* CategorysViewModel.swift */; };
 		26E2610B1CBC912C00B34645 /* Categorys.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26E2610A1CBC912C00B34645 /* Categorys.storyboard */; };
@@ -320,7 +320,6 @@
 		2698E0401CBFDAF800B7E8C7 /* MoyaX+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MoyaX+Rx.swift"; sourceTree = "<group>"; };
 		2698E0471CC00A7E00B7E8C7 /* Category.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Category.storyboard; sourceTree = "<group>"; };
 		2698E04B1CC00E8B00B7E8C7 /* CategoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
-		269B54FF1CB954CC00375FEB /* TScheduler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TScheduler.swift; sourceTree = "<group>"; };
 		26A33AEE1CD7A1AF004586C3 /* CocoaMarkdown.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CocoaMarkdown.framework; path = Carthage/Build/iOS/CocoaMarkdown.framework; sourceTree = "<group>"; };
 		26B4048A1CDA404B0023F380 /* Logger+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Logger+Rx.swift"; sourceTree = "<group>"; };
 		26BCE38E1CC93CBC00115D04 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
@@ -331,6 +330,7 @@
 		26BDBF4B1CD591E9000C601F /* ArticleManagerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleManagerViewController.swift; sourceTree = "<group>"; };
 		26BF77631CBF8A8400117854 /* Cast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cast.swift; sourceTree = "<group>"; };
 		26CC45D51CDC13DD00DDDE0A /* RealmConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmConfig.swift; sourceTree = "<group>"; };
+		26CC45D81CDC155F00DDDE0A /* TScheduler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TScheduler.swift; sourceTree = "<group>"; };
 		26E261061CBC90EA00B34645 /* CategorysViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategorysViewController.swift; sourceTree = "<group>"; };
 		26E261081CBC910E00B34645 /* CategorysViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategorysViewModel.swift; sourceTree = "<group>"; };
 		26E2610A1CBC912C00B34645 /* Categorys.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Categorys.storyboard; sourceTree = "<group>"; };
@@ -631,7 +631,6 @@
 		26E4CD9E1CB8A35D0013AD29 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				269B54FF1CB954CC00375FEB /* TScheduler.swift */,
 				26E4CDB81CB8C05E0013AD29 /* ArticleInfoModel.swift */,
 				267312711CBA96BC00036DB9 /* ArticleDetailModel.swift */,
 				26F734901CBF480300CEA2DE /* CategoryModel.swift */,
@@ -749,6 +748,7 @@
 				265877E21CD759EC00E6B6A0 /* UIScrollView+Rx.swift */,
 				26B4048A1CDA404B0023F380 /* Logger+Rx.swift */,
 				2631BEAE1CDB4F8700735D3E /* RxDataSourceExt.swift */,
+				26CC45D81CDC155F00DDDE0A /* TScheduler.swift */,
 			);
 			path = Rx;
 			sourceTree = "<group>";
@@ -1250,6 +1250,7 @@
 				26BDBF4C1CD591E9000C601F /* ArticleManagerViewController.swift in Sources */,
 				26E872541CC107A2006C5A0F /* CategoryViewModel.swift in Sources */,
 				2698E0411CBFDAF800B7E8C7 /* MoyaX+Rx.swift in Sources */,
+				26CC45D91CDC155F00DDDE0A /* TScheduler.swift in Sources */,
 				26E4CDCA1CBA0E190013AD29 /* UITabBar+Rx.swift in Sources */,
 				263D3ADA1CD5F63500F8EF05 /* FlatMapEx.swift in Sources */,
 				26E4CDB11CB8B0740013AD29 /* UIColor+GG.swift in Sources */,
@@ -1299,7 +1300,6 @@
 				26E261071CBC90EA00B34645 /* CategorysViewController.swift in Sources */,
 				267312721CBA96BC00036DB9 /* ArticleDetailModel.swift in Sources */,
 				26F343D21CC54A2C00476533 /* GGSyncService.swift in Sources */,
-				269B55001CB954CC00375FEB /* TScheduler.swift in Sources */,
 				26FB5D2F1CD63BD800790942 /* UserModel.swift in Sources */,
 				26F967981CC8910200407593 /* GGOAuthService.swift in Sources */,
 			);
@@ -1319,6 +1319,7 @@
 				26BDBF4D1CD59291000C601F /* ArticleManagerViewController.swift in Sources */,
 				26E872561CC107A6006C5A0F /* CategoryViewModel.swift in Sources */,
 				2698E0431CBFDBAE00B7E8C7 /* MoyaX+Rx.swift in Sources */,
+				26CC45DA1CDC155F00DDDE0A /* TScheduler.swift in Sources */,
 				2698DFED1CBFD25100B7E8C7 /* UITabBar+Rx.swift in Sources */,
 				263D3ADB1CD5F69300F8EF05 /* FlatMapEx.swift in Sources */,
 				2698DFEE1CBFD25100B7E8C7 /* UIColor+GG.swift in Sources */,
@@ -1368,7 +1369,6 @@
 				2698E00B1CBFD25100B7E8C7 /* CategorysViewController.swift in Sources */,
 				2698E00C1CBFD25100B7E8C7 /* ArticleDetailModel.swift in Sources */,
 				26F343D31CC54A2C00476533 /* GGSyncService.swift in Sources */,
-				2698E00D1CBFD25100B7E8C7 /* TScheduler.swift in Sources */,
 				26FB5D301CD63BDA00790942 /* UserModel.swift in Sources */,
 				2605CD571CC8DF0400C31F55 /* GGOAuthService.swift in Sources */,
 			);

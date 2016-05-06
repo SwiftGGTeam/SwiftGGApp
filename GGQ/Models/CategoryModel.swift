@@ -12,10 +12,10 @@ import RealmSwift
 /// 真实的分类 Model
 class CategoryObject: Object {
 
-	dynamic var id = 0
-	dynamic var name = ""
-	dynamic var coverUrl = ""
-	dynamic var sum = 0
+	dynamic var id = 0 // Version 0
+	dynamic var name = "" // Version 0
+	dynamic var coverUrl = "" // Version 0
+	dynamic var sum = 0 // Version 0
 
 	override static func primaryKey() -> String? {
 		return "id"

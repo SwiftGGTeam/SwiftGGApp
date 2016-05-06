@@ -11,11 +11,11 @@ import RealmSwift
 
 class ServerInfoModel: Object {
 
-    dynamic var appVersion: String = ""
-    dynamic var categoriesVersion: String = ""
-    dynamic var articlesVersion: String = ""
-    dynamic var articlesSum: Int = 0
-    dynamic var message: String = ""
+    dynamic var appVersion: String = "" // Version 0
+    dynamic var categoriesVersion: String = "" // Version 0
+    dynamic var articlesVersion: String = "" // Version 0
+    dynamic var articlesSum: Int = 0 // Version 0
+    dynamic var message: String = "" // Version 0
 
     override static func primaryKey() -> String? {
         return "appVersion"

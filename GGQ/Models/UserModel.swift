@@ -11,13 +11,13 @@ import RealmSwift
 
 class UserModel: Object {
     
-    dynamic var id: Int = 0
-    dynamic var login: String = ""
-    dynamic var avatar_url: String = ""
-    dynamic var url: String = ""
-    dynamic var blog: String?
-    dynamic var email: String?
-    dynamic var name: String = ""
+    dynamic var id: Int = 0 // Version 0
+    dynamic var login: String = "" // Version 0
+    dynamic var avatar_url: String = "" // Version 0
+    dynamic var url: String = "" // Version 0
+    dynamic var blog: String? // Version 0
+    dynamic var email: String? // Version 0
+    dynamic var name: String = "" // Version 0
     
     override static func primaryKey() -> String? {
         return "id"
