@@ -32,6 +32,9 @@ final class SearchViewController: UIViewController, SegueHandlerType {
 	}
 
 	override func viewDidLoad() {
+        
+        searchResultTableView.estimatedRowHeight = 44
+        searchResultTableView.rowHeight = UITableViewAutomaticDimension
 
 		searchBar
 			.rx_searchBarCancelButtonClicked
