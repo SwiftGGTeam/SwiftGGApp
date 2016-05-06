@@ -28,7 +28,8 @@ final class HomeViewModel {
     init(loadMoreTrigger: Observable<Void>) {
 
         let realm = try! Realm()
-        realm.objects(ArticleInfoObject).asObservableArray()
+        let predicate = NSPredicate(format: "loadFromHome == %@", true)
+        realm.objects(ArticleInfoObject).filter(predicate).asObservableArray()
             .subscribeNext { [unowned self] objects in
                 self.elements.value = objects
                 self.isLoading.value = false
