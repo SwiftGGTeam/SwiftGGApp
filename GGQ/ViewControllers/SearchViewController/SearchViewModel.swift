@@ -27,7 +27,7 @@ final class SearchViewModel {
 					let list = realm.objects(ArticleInfoObject.self).filter(predicate)
 					return Observable.just(list)
 				} catch {
-					log.error("\(error)")
+					Error("\(error)")
 				}
 				return Observable.empty() }
 			.map { $0.map { $0 } }

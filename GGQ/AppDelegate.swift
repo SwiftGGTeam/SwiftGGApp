@@ -70,7 +70,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func application(app: UIApplication, openURL url: NSURL, options: [String: AnyObject]) -> Bool {
-        log.info("Open: \(url)")
+        Info("Open: \(url)")
         router.matchURLAndDoHandler(url)
         return true
     }

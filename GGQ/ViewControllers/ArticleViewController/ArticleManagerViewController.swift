@@ -72,7 +72,7 @@ class ArticleManagerViewController: UIPageViewController {
         
         vcs.append(vc)
         if vcs.count > 3 {
-            log.error("逗比你多加了一个")
+            Error("逗比你多加了一个")
         }
         return vc
     }
@@ -143,7 +143,7 @@ extension ArticleManagerViewController: Routerable {
         
         if let urlStr = url.path,
             realm = try? Realm() {
-            log.info(urlStr)
+            Info(urlStr)
             let predicate = NSPredicate(format: "contentUrl CONTAINS %@", urlStr)
             if let article = realm.objects(ArticleInfoObject).filter(predicate).first {
                 articleInfo = article

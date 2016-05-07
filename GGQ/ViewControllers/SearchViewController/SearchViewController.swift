@@ -37,7 +37,7 @@ final class SearchViewController: UIViewController, SegueHandlerType {
         searchResultTableView.rowHeight = UITableViewAutomaticDimension
 
 		searchBar
-			.rx_searchBarCancelButtonClicked
+            .rx_cancelButtonClicked
 			.subscribeNext { [unowned self] in
 				self.dismissViewControllerAnimated(true, completion: nil) }
 			.addDisposableTo(rx_disposeBag)

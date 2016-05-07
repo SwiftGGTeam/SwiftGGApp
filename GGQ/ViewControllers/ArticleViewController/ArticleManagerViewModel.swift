@@ -6,10 +6,10 @@
 //  Copyright © 2016年 org.dianqk. All rights reserved.
 //
 
+import UIKit
 import RxSwift
 import RxCocoa
 import RealmSwift
-//import RxRealm
 import SwiftyJSON
 //import CocoaMarkdown
 
@@ -55,7 +55,7 @@ final class ArticleManagerViewModel {
             if let realm = article.realm {
                 do {
                     try realm.write {
-                        log.info("currentPage: \(page - 1)")
+                        Info("currentPage: \(page - 1)")
                         if page == 1 {
                             article.currentPage.value = page
                         } else {
@@ -63,7 +63,7 @@ final class ArticleManagerViewModel {
                         }
                     }
                 } catch {
-                    log.error("Realm write currentPage \(articleInfo) : \(error)")
+                    Error("Realm write currentPage \(articleInfo) : \(error)")
                 }
             }
         }.addDisposableTo(disposeBag)
@@ -132,7 +132,7 @@ final class ArticleManagerViewModel {
                         article.pagerTotal.value = count
                     }
                 } catch {
-                    log.error("Realm write \(articleInfo) : \(error)")
+                    Error("Realm write \(articleInfo) : \(error)")
                 }
             }
             
@@ -147,7 +147,7 @@ final class ArticleManagerViewModel {
 
                 let textLayout = NSLayoutManager()
                 textStorage.addLayoutManager(textLayout)
-                log.info("\(str)")
+                Info("\(str)")
                 return (textStorage: textStorage, textLayout: textLayout, str: str)
         }.shareReplay(1)
 

@@ -6,7 +6,7 @@
 //  Copyright © 2016 org.dianqk. All rights reserved.
 //
 
-import Foundation
+import UIKit
 import RxSwift
 
 #if DEV

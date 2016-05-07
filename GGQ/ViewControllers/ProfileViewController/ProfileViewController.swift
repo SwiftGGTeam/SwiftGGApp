@@ -53,7 +53,7 @@ extension ProfileViewController: Routerable {
     }
     
     func post(url: NSURL, sender: JSON?) {
-        log.info("\(sender)")
+        Info("\(sender)")
         if let token = sender?["token"].string {
             viewModel.save(.GitHub, token: token)
         }

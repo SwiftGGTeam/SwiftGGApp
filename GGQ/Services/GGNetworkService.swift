@@ -27,21 +27,21 @@ enum SGError: CustomStringConvertible {
 class LoggerMiddleware: Middleware {
 	// 这个方法会在请求发送前被调用
 	func willSendRequest(target: Target, endpoint: Endpoint) {
-		log.info("Sending request: \(endpoint.URL.absoluteString)\nParameters: \(endpoint.parameters)")
+		Info("Sending request: \(endpoint.URL.absoluteString)\nParameters: \(endpoint.parameters)")
 	}
 
 	// 这个方法会在处理响应的回调闭包前被调用
 	func didReceiveResponse(target: Target, response: Result<Response, Error>) {
 		switch response {
 		case let .Response(response):
-			log.info("Received response(\(response.statusCode ?? 0)) from \(response.response!.URL?.absoluteString ?? String()).")
+			Info("Received response(\(response.statusCode ?? 0)) from \(response.response!.URL?.absoluteString ?? String()).")
 			if let json = try? NSJSONSerialization.JSONObjectWithData(response.data, options: .AllowFragments) {
-				log.info("JSON: \(json)")
+				Info("JSON: \(json)")
 			} else if let string = NSString(data: response.data, encoding: NSUTF8StringEncoding) {
-				log.info("String: \(string)")
+				Info("String: \(string)")
 			}
 		case .Incomplete(let error):
-			log.error("Got error: \(error)")
+			Error("Got error: \(error)")
 		}
 	}
 }

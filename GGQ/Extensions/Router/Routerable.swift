@@ -19,10 +19,10 @@ protocol Routerable {
 
 extension Routerable {
     func post(url: NSURL, sender: JSON?) {
-        log.warning("未实现 POST")
+        Warning("未实现 POST")
     }
     
     func get(url: NSURL, sender: JSON?) {
-        log.warning("未实现 GET")
+        Warning("未实现 GET")
     }
 }

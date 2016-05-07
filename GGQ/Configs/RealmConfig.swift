@@ -31,7 +31,7 @@ extension Realm {
     
     static var gg_realmURL: NSURL {
         let directory = NSFileManager.defaultManager().containerURLForSecurityApplicationGroupIdentifier(GGConfig.appGroupID)!
-        log.info("\(directory)")
+        Info("\(directory)")
         return directory.URLByAppendingPathComponent("db.realm")
     }
     
