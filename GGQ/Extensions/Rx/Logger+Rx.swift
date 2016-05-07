@@ -161,7 +161,7 @@ import RxSwift
          - returns: An observable sequence whose events are printed to standard output.
          */
         @warn_unused_result(message = "http://git.io/rxs.uo")
-        func log(identifier: String? = nil, file: String = #file, line: UInt = #line, function: String = #function)
+        func log(@autoclosure identifier: () -> String?)
             -> Observable<E> {
                 return self.asObservable()
         }
