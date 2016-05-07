@@ -10,6 +10,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 import NSObject_Rx
+import PKHUD
 
 class SettingViewController: UITableViewController {
     
@@ -17,13 +18,39 @@ class SettingViewController: UITableViewController {
     
     var viewModel: SettingViewModel!
     
+    var homeViewModel: HomeViewModel!
+    
+    private let loadMoreTrigger = PublishSubject<Void>()
+    
     override func viewDidLoad() {
         viewModel = SettingViewModel()
         
-        Observable.combineLatest(viewModel.offlineArticlesNumber, viewModel.articlesNumber) { "\($0)/\($1)" }
-            .observeOn(.Main)
-            .bindTo(offlineInfoLabel.rx_text)
+        homeViewModel = HomeViewModel(loadMoreTrigger: loadMoreTrigger.asObservable())
+        
+        homeViewModel.isLoading.asObservable()
+//            .skip(1)
+            .filter { !$0 }
+            .map { _ in }
+            .subscribeNext(loadMoreTrigger.onNext)
             .addDisposableTo(rx_disposeBag)
+        
+        loadMoreTrigger.onNext()
+        
+        HUD.show(.Label("加载文章中..."))
+        
+        homeViewModel.hasNextPage.asObservable()
+            .log("hasNextPage")
+            .filter { !$0 }
+            .map { _ in }
+            .doOnNext { HUD.hide(afterDelay: 0.3) }
+            .subscribeNext(loadMoreTrigger.onCompleted)
+            .addDisposableTo(rx_disposeBag)
+        
+        loadMoreTrigger.asObservable()
+            .log("Offline")
+            .subscribe()
+            .addDisposableTo(rx_disposeBag)
+        
     }
 
     override func viewWillAppear(animated: Bool) {

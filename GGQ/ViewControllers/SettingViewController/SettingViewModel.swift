@@ -12,7 +12,7 @@ import RealmSwift
 
 class SettingViewModel {
     
-    let articlesNumber: Observable<Int>
+//    let articlesNumber: Observable<Int>
     
     let offlineArticlesNumber: Observable<Int>
     
@@ -24,9 +24,8 @@ class SettingViewModel {
         
         offlineArticlesNumber = info.map { $0.count }
         
-        articlesNumber = SyncService.sharedInstance.articleNumber
         
-        SyncService.sharedInstance.sync()
+    
     }
     
 }

@@ -40,8 +40,8 @@ class LoggerMiddleware: Middleware {
 			} else if let string = NSString(data: response.data, encoding: NSUTF8StringEncoding) {
 				log.info("String: \(string)")
 			}
-		case .Incomplete(_):
-			log.error("Got error")
+		case .Incomplete(let error):
+			log.error("Got error: \(error)")
 		}
 	}
 }

@@ -13,7 +13,7 @@ import RxDataSources
 import RxOptional
 import NSObject_Rx
 import SwiftDate
-import CocoaMarkdown
+//import CocoaMarkdown
 
 final class HomeViewController: UIViewController, SegueHandlerType {
     
@@ -54,10 +54,7 @@ final class HomeViewController: UIViewController, SegueHandlerType {
 					cell.title = e.title
 					cell.time = e.submitDate.toDateFromISO8601()
 					cell.info = e.typeName + " " + e.translator
-                    let data = e.articleDescription.dataUsingEncoding(NSUTF8StringEncoding)!
-                    let document = CMDocument(data: data, options: .Normalize)
-                    let renderer = CMAttributedStringRenderer(document: document, attributes: CMTextAttributes())
-					cell.preview = renderer.render().string
+					cell.preview = mdRender(e.articleDescription).string
 					cell.layoutIfNeeded()
 					return cell
 				case .LoadMore:

@@ -53,7 +53,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //            UITabBar.appearance().backgroundImage = UIImage()
 //            UITabBar.appearance().gg_addShadow(defaultPath: true)
 //        #if RELEASE
-        Realm.prepareMigration()
+//        Realm.prepareMigration()
 //        #endif
         Realm.Configuration.defaultConfiguration = Realm.gg_configuration
         
@@ -63,7 +63,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             Fabric.with([Crashlytics.self, Appsee.self])
         #endif
         
-        SyncService.sharedInstance.sync()
+//        SyncService.sync()
         registerRoutingPattern()
 
         return true

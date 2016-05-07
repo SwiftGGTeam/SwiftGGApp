@@ -30,13 +30,14 @@ final class HomeViewModel {
 
         let realm = try! Realm()
         let predicate = NSPredicate(format: "loadFromHome == %@", true)
-        realm.objects(ArticleInfoObject).filter(predicate)
-            .asObservableChangeset()
-            .subscribeNext { objects, changeset in
-                if let changeset = changeset where changeset.inserted.count < GGConfig.Home.pageSize {
-                    self.hasNextPage.value = false
-                }
-                self.elements.value = objects.map { $0 }
+        let articlesShare = realm.objects(ArticleInfoObject).filter(predicate)
+            .asObservableArray()
+            .shareReplay(1)
+        
+        articlesShare
+            .subscribeNext { objects in
+                log.info("Count: \(objects.count)")
+                self.elements.value = objects
                 self.isLoading.value = false
                 self.currentPage.value = self.elements.value.count / GGConfig.Home.pageSize + 1
         }.addDisposableTo(disposeBag)
@@ -53,21 +54,20 @@ final class HomeViewModel {
         let loadMoreRequest = loadMoreTrigger.withLatestFrom(currentPage.asObservable()).shareReplay(1)
 
         let loadMoreResult = loadMoreRequest
-            .flatMapLatest { GGProvider.request(GGAPI.Articles(pageIndex: $0, pageSize: GGConfig.Home.pageSize)) }
+            .flatMap { GGProvider.request(GGAPI.Articles(pageIndex: $0, pageSize: GGConfig.Home.pageSize)) }
             .gg_mapJSON()
             .map(convert)
-            .flatMapLatest { Realm.rx_create(ArticleInfoObject.self, values: $0, update: true) }
+            .flatMap { Realm.rx_create(ArticleInfoObject.self, values: $0, update: true) }
             .shareReplay(1)
-        
-        let requestLatest = SyncService.sharedInstance.articlesUpdated
-            .map { _ in 1 }.shareReplay(1)
             
-        let responseLatest = requestLatest
-            .flatMapLatest { GGProvider.request(GGAPI.Articles(pageIndex: $0, pageSize: GGConfig.Home.pageSize)).retry(3) }
+//        let responseLatest =
+            GGProvider
+            .request(GGAPI.Articles(pageIndex: 1, pageSize: GGConfig.Home.pageSize))
+            .retry(3)
             .gg_mapJSON()
             .map(convert)
-            .flatMapLatest { Realm.rx_create(ArticleInfoObject.self, values: $0, update: true) }
-            .shareReplay(1)
+            .flatMap { Realm.rx_create(ArticleInfoObject.self, values: $0, update: true) }
+            .shareReplay(1).subscribe().addDisposableTo(disposeBag)
 
         [loadMoreRequest.map { _ in true }, loadMoreResult.map { _ in false }]
             .toObservable()
@@ -75,10 +75,31 @@ final class HomeViewModel {
             .bindTo(isLoading)
             .addDisposableTo(disposeBag)
         
-        [requestLatest.map { _ in true }, responseLatest.map { _ in false }]
-            .toObservable()
-            .merge()
-            .bindTo(isRequestLatest)
+//        loadMoreResult
+//            .subscribeError { error in
+//                log.warning("\(error)")
+//                self.hasNextPage.value = false
+//            }
+//            .addDisposableTo(disposeBag)
+        
+//        [requestLatest.map { _ in true }, responseLatest.map { _ in false }]
+//            .toObservable()
+//            .merge()
+//            .bindTo(isRequestLatest)
+//            .addDisposableTo(disposeBag)
+        
+        Observable.combineLatest(articlesShare, SyncService.articlesNumber(realm)) { $0.count < $1 - 1 }
+            .distinctUntilChanged()
+            .bindTo(hasNextPage)
+            .addDisposableTo(disposeBag)
+        
+        realm.objects(ServerInfoModel).asObservable().subscribeNext {
+            log.warning("\($0)")
+        }.addDisposableTo(disposeBag)
+        
+        GGProvider.request(GGAPI.ServerInfo)
+            .gg_storeObject(ServerInfoModel)
+            .subscribe()
             .addDisposableTo(disposeBag)
         
     }

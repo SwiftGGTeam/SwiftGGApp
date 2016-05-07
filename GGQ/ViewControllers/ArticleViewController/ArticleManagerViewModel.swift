@@ -11,7 +11,7 @@ import RxCocoa
 import RealmSwift
 //import RxRealm
 import SwiftyJSON
-import CocoaMarkdown
+//import CocoaMarkdown
 
 final class ArticleManagerViewModel {
 
@@ -71,29 +71,31 @@ final class ArticleManagerViewModel {
         let attributedString = articleShare
         /// 获取 NSAttributedString ，如果有 Cache ，直接拿
         .flatMapLatest { article -> Observable<NSAttributedString> in
-            let data: NSData
-            if let cache = article.cacheData {
-                data = cache
-            } else {
-                data = article.content.dataUsingEncoding(NSUTF8StringEncoding)!
-                if let realm = article.realm {
-                    do {
-                        try realm.write {
-                            article.cacheData = data
-                        }
-                    } catch {
-                        log.error("Realm write \(articleInfo) : \(error)")
-                    }
-                }
-            }
-            
-            return Observable.just(data)
-                    .observeOn(.Serial(.Background))
-                    .map { data in
-                        let document = CMDocument(data: data, options: .Normalize)
-                        let renderer = CMAttributedStringRenderer(document: document, attributes: GGConfig.Article.textAttributes)
-                        return renderer.render()
-                }
+//            let data: NSData
+//            if let cache = article.cacheData {
+//                data = cache
+//            } else {
+//                data = article.content.dataUsingEncoding(NSUTF8StringEncoding)!
+//                if let realm = article.realm {
+//                    do {
+//                        try realm.write {
+//                            article.cacheData = data
+//                        }
+//                    } catch {
+//                        log.error("Realm write \(articleInfo) : \(error)")
+//                    }
+//                }
+//            }
+//            
+//            return Observable.just(data)
+//                    .observeOn(.Serial(.Background))
+//                    .map { data in
+//                        let node = Node(markdown: str as String)!
+//                        let document = CMDocument(data: data, options: .Normalize)
+//                        let renderer = CMAttributedStringRenderer(document: document, attributes: GGConfig.Article.textAttributes)
+//                        return renderer.render()
+//                }
+            return Observable.just(article.content).observeOn(.Serial(.Background)).map(mdRender)
         }.observeOn(.Main).shareReplay(1)
         
         Observable.combineLatest(articleShare, attributedString) { (article: $0, str: $1) }
