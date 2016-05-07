@@ -2,17 +2,14 @@ PODS:
   - R.swift (2.2.1):
     - R.swift.Library (~> 2.1.0)
   - R.swift.Library (2.1.0)
-  - XCGLogger (3.3)
 
 DEPENDENCIES:
   - R.swift (~> 2.2.1)
-  - XCGLogger (~> 3.3)
 
 SPEC CHECKSUMS:
   R.swift: 0bcf57999bd402196072e86fa702bb5620b16f9a
   R.swift.Library: e5e077ed04f6867a95676af491650091b23518e9
-  XCGLogger: d6e196e78940ff6daab17d6917107876f973fa31
 
-PODFILE CHECKSUM: ca6faba2ca48c91dc6930277442c7ae7e5b5cdb0
+PODFILE CHECKSUM: 7716742b9243443ebd7d0b64395923332f27eac4
 
 COCOAPODS: 1.0.0.rc.2
