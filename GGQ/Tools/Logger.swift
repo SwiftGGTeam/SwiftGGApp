@@ -6,16 +6,16 @@
 //  Copyright © 2016年 org.dianqk. All rights reserved.
 //
 
-#if DEV
+#if DEBUG
     import XCGLogger
 
-    let log: XCGLogger = {
+    private let log: XCGLogger = {
         let log = XCGLogger.defaultInstance()
         let logPath: NSURL = cacheDirectory.URLByAppendingPathComponent("XCGLogger.Log")
-        #if DEBUG
-            log.setup(.Debug, showThreadName: true, showLogLevel: true, showFileNames: true, showLineNumbers: true, writeToFile: nil)
-        #else
+        #if DEV
             log.setup(.Verbose, showThreadName: true, showLogLevel: true, showFileNames: true, showLineNumbers: true, writeToFile: nil)
+        #else
+            log.setup(.Debug, showThreadName: true, showLogLevel: true, showFileNames: true, showLineNumbers: true, writeToFile: nil)
         #endif
         log.xcodeColorsEnabled = true
         log.xcodeColors = [
@@ -39,15 +39,30 @@
         return urls[urls.endIndex - 1]
     }
 
-#else
-    class Logger {
-        func verbose(@autoclosure closure: () -> String?) { }
-        func debug(@autoclosure closure: () -> String?) { }
-        func info(@autoclosure closure: () -> String?) { }
-        func warning(@autoclosure closure: () -> String?) { }
-        func error(@autoclosure closure: () -> String?) { }
-        func severe(@autoclosure closure: () -> String?) { }
+    func Verbose(@autoclosure closure: () -> String?, functionName: String = #function, fileName: String = #file, lineNumber: Int = #line) {
+        log.verbose(closure(), functionName: functionName, fileName: fileName, lineNumber: lineNumber)
+    }
+    func Debug(@autoclosure closure: () -> String?, functionName: String = #function, fileName: String = #file, lineNumber: Int = #line) {
+        log.debug(closure(), functionName: functionName, fileName: fileName, lineNumber: lineNumber)
+    }
+    func Info(@autoclosure closure: () -> String?, functionName: String = #function, fileName: String = #file, lineNumber: Int = #line) {
+        log.info(closure(), functionName: functionName, fileName: fileName, lineNumber: lineNumber)
+    }
+    func Warning(@autoclosure closure: () -> String?, functionName: String = #function, fileName: String = #file, lineNumber: Int = #line) {
+        log.warning(closure(), functionName: functionName, fileName: fileName, lineNumber: lineNumber)
+    }
+    func Error(@autoclosure closure: () -> String?, functionName: String = #function, fileName: String = #file, lineNumber: Int = #line) {
+        log.error(closure(), functionName: functionName, fileName: fileName, lineNumber: lineNumber)
+    }
+    func Severe(@autoclosure closure: () -> String?, functionName: String = #function, fileName: String = #file, lineNumber: Int = #line) {
+        log.severe(closure(), functionName: functionName, fileName: fileName, lineNumber: lineNumber)
     }
 
-    let log = Logger()
+#else
+    func Verbose(@autoclosure closure: () -> String?) { }
+    func Debug(@autoclosure closure: () -> String?) { }
+    func Info(@autoclosure closure: () -> String?) { }
+    func Warning(@autoclosure closure: () -> String?) { }
+    func Error(@autoclosure closure: () -> String?) { }
+    func Severe(@autoclosure closure: () -> String?) { }
 #endif
