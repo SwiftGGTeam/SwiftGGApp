@@ -86,6 +86,15 @@
 		267312821CBE8AC200036DB9 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267312811CBE8AC200036DB9 /* AboutViewController.swift */; };
 		267312841CBE8DB900036DB9 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267312831CBE8DB900036DB9 /* CategoryCollectionViewCell.swift */; };
 		267312861CBE8DD600036DB9 /* CategorysCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267312851CBE8DD600036DB9 /* CategorysCollectionViewFlowLayout.swift */; };
+		267ABD4C1CDDF448009CE298 /* FBMemoryProfiler.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 267ABD491CDDF448009CE298 /* FBMemoryProfiler.framework */; };
+		267ABD4D1CDDF448009CE298 /* FBMemoryProfiler.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 267ABD491CDDF448009CE298 /* FBMemoryProfiler.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		267ABD4E1CDDF448009CE298 /* FBRetainCycleDetector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 267ABD4A1CDDF448009CE298 /* FBRetainCycleDetector.framework */; };
+		267ABD4F1CDDF448009CE298 /* FBRetainCycleDetector.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 267ABD4A1CDDF448009CE298 /* FBRetainCycleDetector.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		267ABD501CDDF448009CE298 /* FBAllocationTracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 267ABD4B1CDDF448009CE298 /* FBAllocationTracker.framework */; };
+		267ABD511CDDF448009CE298 /* FBAllocationTracker.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 267ABD4B1CDDF448009CE298 /* FBAllocationTracker.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		267ABD871CDE3944009CE298 /* GGImageAttachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267ABD861CDE3944009CE298 /* GGImageAttachment.swift */; };
+		267ABD8A1CDE40F6009CE298 /* GGImageAttachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267ABD861CDE3944009CE298 /* GGImageAttachment.swift */; };
+		267ABD8B1CDE40F7009CE298 /* GGImageAttachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267ABD861CDE3944009CE298 /* GGImageAttachment.swift */; };
 		2685B0901CDDE1CE0021F433 /* RxOptional.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2685B08F1CDDE1CE0021F433 /* RxOptional.framework */; };
 		2685B0911CDDE1CE0021F433 /* RxOptional.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2685B08F1CDDE1CE0021F433 /* RxOptional.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2685B0921CDDE1E60021F433 /* RxOptional.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2685B08F1CDDE1CE0021F433 /* RxOptional.framework */; };
@@ -407,10 +416,12 @@
 			files = (
 				265877CF1CD740AD00E6B6A0 /* Realm.framework in Embed Frameworks */,
 				265877D11CD740AD00E6B6A0 /* RealmSwift.framework in Embed Frameworks */,
+				267ABD4D1CDDF448009CE298 /* FBMemoryProfiler.framework in Embed Frameworks */,
 				26B1B3BB1CDDCE4C00A3A2BE /* RxCocoa.framework in Embed Frameworks */,
 				26B1B3BD1CDDCE4C00A3A2BE /* RxDataSources.framework in Embed Frameworks */,
 				26B1B3C11CDDCE4C00A3A2BE /* RxSwift.framework in Embed Frameworks */,
 				26B1B3B71CDDCE4B00A3A2BE /* CommonMark.framework in Embed Frameworks */,
+				267ABD511CDDF448009CE298 /* FBAllocationTracker.framework in Embed Frameworks */,
 				265877CD1CD740AD00E6B6A0 /* RouterX.framework in Embed Frameworks */,
 				26B1B3B51CDDCE4B00A3A2BE /* cmark.framework in Embed Frameworks */,
 				265877DB1CD740AD00E6B6A0 /* Alamofire.framework in Embed Frameworks */,
@@ -418,6 +429,7 @@
 				265877D31CD740AD00E6B6A0 /* PKHUD.framework in Embed Frameworks */,
 				2685B0931CDDE1E60021F433 /* RxOptional.framework in Embed Frameworks */,
 				265877D91CD740AD00E6B6A0 /* Kingfisher.framework in Embed Frameworks */,
+				267ABD4F1CDDF448009CE298 /* FBRetainCycleDetector.framework in Embed Frameworks */,
 				265877D51CD740AD00E6B6A0 /* MoyaX.framework in Embed Frameworks */,
 				26B1B3BF1CDDCE4C00A3A2BE /* RxGesture.framework in Embed Frameworks */,
 				265877D71CD740AD00E6B6A0 /* Locksmith.framework in Embed Frameworks */,
@@ -503,6 +515,10 @@
 		267312811CBE8AC200036DB9 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		267312831CBE8DB900036DB9 /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		267312851CBE8DD600036DB9 /* CategorysCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategorysCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
+		267ABD491CDDF448009CE298 /* FBMemoryProfiler.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBMemoryProfiler.framework; path = Carthage/Build/iOS/FBMemoryProfiler.framework; sourceTree = "<group>"; };
+		267ABD4A1CDDF448009CE298 /* FBRetainCycleDetector.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBRetainCycleDetector.framework; path = Carthage/Build/iOS/FBRetainCycleDetector.framework; sourceTree = "<group>"; };
+		267ABD4B1CDDF448009CE298 /* FBAllocationTracker.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBAllocationTracker.framework; path = Carthage/Build/iOS/FBAllocationTracker.framework; sourceTree = "<group>"; };
+		267ABD861CDE3944009CE298 /* GGImageAttachment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GGImageAttachment.swift; sourceTree = "<group>"; };
 		2685B08F1CDDE1CE0021F433 /* RxOptional.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxOptional.framework; path = Carthage/Build/iOS/RxOptional.framework; sourceTree = "<group>"; };
 		2685B1101CDDED290021F433 /* GGQ-Debug.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GGQ-Debug.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2685B1121CDDEDA10021F433 /* XCGLogger.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCGLogger.framework; path = Carthage/Build/iOS/XCGLogger.framework; sourceTree = "<group>"; };
@@ -651,16 +667,19 @@
 				26B1B3B81CDDCE4B00A3A2BE /* NSObject_Rx.framework in Frameworks */,
 				26B1B3B61CDDCE4B00A3A2BE /* CommonMark.framework in Frameworks */,
 				26B1B3C21CDDCE4C00A3A2BE /* SwiftyJSON.framework in Frameworks */,
+				267ABD501CDDF448009CE298 /* FBAllocationTracker.framework in Frameworks */,
 				2685B0921CDDE1E60021F433 /* RxOptional.framework in Frameworks */,
 				26B1B3BA1CDDCE4C00A3A2BE /* RxCocoa.framework in Frameworks */,
 				2685B1151CDDEDA60021F433 /* XCGLogger.framework in Frameworks */,
 				265877D81CD740AD00E6B6A0 /* Kingfisher.framework in Frameworks */,
 				265877D61CD740AD00E6B6A0 /* Locksmith.framework in Frameworks */,
+				267ABD4C1CDDF448009CE298 /* FBMemoryProfiler.framework in Frameworks */,
 				265877D41CD740AD00E6B6A0 /* MoyaX.framework in Frameworks */,
 				265877CA1CD740AC00E6B6A0 /* SwiftDate.framework in Frameworks */,
 				26B1B3C01CDDCE4C00A3A2BE /* RxSwift.framework in Frameworks */,
 				265877D01CD740AD00E6B6A0 /* RealmSwift.framework in Frameworks */,
 				26B1B3BE1CDDCE4C00A3A2BE /* RxGesture.framework in Frameworks */,
+				267ABD4E1CDDF448009CE298 /* FBRetainCycleDetector.framework in Frameworks */,
 				265877CC1CD740AD00E6B6A0 /* RouterX.framework in Frameworks */,
 				265877DA1CD740AD00E6B6A0 /* Alamofire.framework in Frameworks */,
 				265877CE1CD740AD00E6B6A0 /* Realm.framework in Frameworks */,
@@ -757,6 +776,7 @@
 			isa = PBXGroup;
 			children = (
 				2685B1171CDDEF970021F433 /* Release */,
+				267ABD521CDDF450009CE298 /* Dev */,
 				26035ED01CDACF1200E31915 /* Appsee.framework */,
 				26035ECA1CDAC1DD00E31915 /* Fabric.framework */,
 				26035ECB1CDAC1DD00E31915 /* Crashlytics.framework */,
@@ -802,12 +822,23 @@
 		267312961CBEAA1400036DB9 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				267ABD861CDE3944009CE298 /* GGImageAttachment.swift */,
 				262BB1D51CDD847A00740EF6 /* Render.swift */,
 				26BF77631CBF8A8400117854 /* Cast.swift */,
 				265395EB1CC0D3EF00E6239C /* Version.swift */,
 				26E872601CC12A55006C5A0F /* Logger.swift */,
 			);
 			path = Tools;
+			sourceTree = "<group>";
+		};
+		267ABD521CDDF450009CE298 /* Dev */ = {
+			isa = PBXGroup;
+			children = (
+				267ABD491CDDF448009CE298 /* FBMemoryProfiler.framework */,
+				267ABD4A1CDDF448009CE298 /* FBRetainCycleDetector.framework */,
+				267ABD4B1CDDF448009CE298 /* FBAllocationTracker.framework */,
+			);
+			name = Dev;
 			sourceTree = "<group>";
 		};
 		2685B1171CDDEF970021F433 /* Release */ = {
@@ -1636,6 +1667,7 @@
 				267312821CBE8AC200036DB9 /* AboutViewController.swift in Sources */,
 				26E4CDD51CBA26FF0013AD29 /* SearchViewController.swift in Sources */,
 				26CC45DC1CDC1F8800DDDE0A /* SettingViewModel.swift in Sources */,
+				267ABD871CDE3944009CE298 /* GGImageAttachment.swift in Sources */,
 				263D3ADD1CD5F8C200F8EF05 /* UITextView+Rx.swift in Sources */,
 				26E4CDC51CBA08970013AD29 /* UIView+GG.swift in Sources */,
 				26E8725D1CC11677006C5A0F /* ServerInfoModel.swift in Sources */,
@@ -1706,6 +1738,7 @@
 				2685B0C11CDDED290021F433 /* AboutViewController.swift in Sources */,
 				2685B0C21CDDED290021F433 /* SearchViewController.swift in Sources */,
 				2685B0C31CDDED290021F433 /* SettingViewModel.swift in Sources */,
+				267ABD8A1CDE40F6009CE298 /* GGImageAttachment.swift in Sources */,
 				2685B0C41CDDED290021F433 /* UITextView+Rx.swift in Sources */,
 				2685B0C51CDDED290021F433 /* UIView+GG.swift in Sources */,
 				2685B0C61CDDED290021F433 /* ServerInfoModel.swift in Sources */,
@@ -1776,6 +1809,7 @@
 				2698E0031CBFD25100B7E8C7 /* AboutViewController.swift in Sources */,
 				2698E0041CBFD25100B7E8C7 /* SearchViewController.swift in Sources */,
 				26CC45DD1CDC1F8800DDDE0A /* SettingViewModel.swift in Sources */,
+				267ABD8B1CDE40F7009CE298 /* GGImageAttachment.swift in Sources */,
 				263D3ADE1CD5F8CF00F8EF05 /* UITextView+Rx.swift in Sources */,
 				2698E0051CBFD25100B7E8C7 /* UIView+GG.swift in Sources */,
 				26E8725F1CC11677006C5A0F /* ServerInfoModel.swift in Sources */,
