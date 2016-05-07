@@ -8,3 +8,10 @@ github "jasl/RouterX"
 github "matthewpalmer/Locksmith"
 github "Quick/Nimble"
 github "Quick/Quick"
+github "DianQK/commonmark-swift" "master"
+github "SwiftyJSON/SwiftyJSON" "master"
+github "ReactiveX/RxSwift" ~> 2.4
+github "RxSwiftCommunity/RxDataSources" ~> 0.8
+github "RxSwiftCommunity/NSObject-Rx" "master"
+github "RxSwiftCommunity/RxGesture" "master"
+github "DianQK/RxOptional" "master"

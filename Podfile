@@ -3,17 +3,18 @@ platform :ios, "9.0"
 use_frameworks!
 
 def release_pods
-    pod 'RxSwift', '~>2.4'
-    pod 'RxCocoa', '~>2.4'
-    pod 'RxDataSources'
-    pod 'RxOptional'
-    pod 'NSObject+Rx'
+#    pod 'RxSwift', '~>2.4'
+#    pod 'RxCocoa', '~>2.4'
+#    pod 'RxDataSources'
+#    pod 'RxOptional'
+#    pod 'NSObject+Rx'
     pod 'R.swift', '~>2.2.1'
-    pod 'RxGesture'#, '~>0.1.6'
-    pod 'SwiftyJSON', :git => 'https://github.com/SwiftyJSON/SwiftyJSON.git', :branch => 'master'
-    pod 'CommonMark'
+#    pod 'RxGesture'#, '~>0.1.6'
+    # pod 'SwiftyJSON', :git => 'https://github.com/SwiftyJSON/SwiftyJSON.git', :branch => 'master'
+    # pod 'CommonMark'
 #    pod 'SwiftyDown'
     # pod 'RxRealm'
+#     pod 'cmark'
 end
 
 def dev_pods
@@ -24,10 +25,10 @@ def dev_pods
 end
 
 def test_pods
-    pod 'RxSwift', '~>2.4'
-    pod 'RxCocoa', '~>2.4'
-    pod 'RxBlocking', '~>2.4'
-    pod 'RxTests', '~>2.4'
+#    pod 'RxSwift', '~>2.4'
+#    pod 'RxCocoa', '~>2.4'
+#    pod 'RxBlocking', '~>2.4'
+#    pod 'RxTests', '~>2.4'
 end
 
 target 'GGQ' do

@@ -1,71 +1,18 @@
 PODS:
-  - cmark (0.24.1)
-  - CommonMark (0.24.1):
-    - cmark (= 0.24.1)
-  - NSObject+Rx (1.2.1):
-    - RxSwift (~> 2.1)
   - R.swift (2.2.1):
     - R.swift.Library (~> 2.1.0)
   - R.swift.Library (2.1.0)
-  - RxBlocking (2.4):
-    - RxSwift (~> 2.4)
-  - RxCocoa (2.4):
-    - RxSwift (~> 2.4)
-  - RxDataSources (0.8):
-    - RxCocoa (~> 2.2)
-    - RxSwift (~> 2.2)
-  - RxGesture (0.1.2):
-    - RxCocoa
-    - RxSwift
-  - RxOptional (2.0.0):
-    - RxCocoa (~> 2.0)
-    - RxSwift (~> 2.0)
-  - RxSwift (2.4)
-  - RxTests (2.4):
-    - RxSwift (~> 2.4)
-  - SwiftyJSON (2.3.2)
   - XCGLogger (3.3)
 
 DEPENDENCIES:
-  - CommonMark
-  - NSObject+Rx
   - R.swift (~> 2.2.1)
-  - RxBlocking (~> 2.4)
-  - RxCocoa (~> 2.4)
-  - RxDataSources
-  - RxGesture
-  - RxOptional
-  - RxSwift (~> 2.4)
-  - RxTests (~> 2.4)
-  - SwiftyJSON (from `https://github.com/SwiftyJSON/SwiftyJSON.git`, branch `master`)
   - XCGLogger (~> 3.3)
 
-EXTERNAL SOURCES:
-  SwiftyJSON:
-    :branch: master
-    :git: https://github.com/SwiftyJSON/SwiftyJSON.git
-
-CHECKOUT OPTIONS:
-  SwiftyJSON:
-    :commit: 2a5b70f06001316d4fb54501edc70b4084705da0
-    :git: https://github.com/SwiftyJSON/SwiftyJSON.git
-
 SPEC CHECKSUMS:
-  cmark: ec0275215b504780287b6fca360224e384368af8
-  CommonMark: 7c45cc931022d9a59b01f66d849d74e5a92091ab
-  NSObject+Rx: 5d032a7f161602dec6b82dcf12731e91ce15b8da
   R.swift: 0bcf57999bd402196072e86fa702bb5620b16f9a
   R.swift.Library: e5e077ed04f6867a95676af491650091b23518e9
-  RxBlocking: 1226c1fa0ca1e0ca5f964d4330ca3649f2128680
-  RxCocoa: 7d6cd877de99f5640306b3d6cf87f580c1d91b61
-  RxDataSources: 8755a221c065930a75cf24020f6f2c63713c486e
-  RxGesture: 5a5d7ee565fb24b1dbede801e7a98d4169ac5818
-  RxOptional: b77fb47a0190213cf8a37c7a2b7fda28160b4563
-  RxSwift: 67b9ef4e8b34fb394e200e754c6a09cc16559f94
-  RxTests: 8b9691e6476dfa6025fae9a69f449bf4cb5e5cfc
-  SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
   XCGLogger: d6e196e78940ff6daab17d6917107876f973fa31
 
-PODFILE CHECKSUM: 79417d2bdad413810254558121a9a1a2eb320aad
+PODFILE CHECKSUM: ca6faba2ca48c91dc6930277442c7ae7e5b5cdb0
 
 COCOAPODS: 1.0.0.rc.2
