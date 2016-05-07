@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		01C4B018503945828257053E /* Pods_GGQ_Dev.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DEE2A708D53067F90635118 /* Pods_GGQ_Dev.framework */; };
-		07AA2A59C17B2C462898BB02 /* Pods_GGQ.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9EAFE5C29FEB0790663FC9B /* Pods_GGQ.framework */; };
 		17512BC6C525C3338806F2E9 /* Pods_GGQ_Debug.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C33E554FCB4B32AB01D55648 /* Pods_GGQ_Debug.framework */; };
 		2464FA4B7464FC9C71A9BEA5 /* Pods_GGQ_Release.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C760DF8DCC63375B8FC0556 /* Pods_GGQ_Release.framework */; };
 		26035ECC1CDAC1DD00E31915 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26035ECA1CDAC1DD00E31915 /* Fabric.framework */; };
@@ -172,7 +171,6 @@
 		2685B0E71CDDED290021F433 /* PKHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 265877AE1CD7409E00E6B6A0 /* PKHUD.framework */; };
 		2685B0E81CDDED290021F433 /* RxDataSources.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26B1B3A01CDDCE4100A3A2BE /* RxDataSources.framework */; };
 		2685B0E91CDDED290021F433 /* cmark.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26B1B39C1CDDCE4100A3A2BE /* cmark.framework */; };
-		2685B0EA1CDDED290021F433 /* Pods_GGQ_Dev.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DEE2A708D53067F90635118 /* Pods_GGQ_Dev.framework */; };
 		2685B0EC1CDDED290021F433 /* Category.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2698E0471CC00A7E00B7E8C7 /* Category.storyboard */; };
 		2685B0ED1CDDED290021F433 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 262232711CB7DD37009133D7 /* LaunchScreen.storyboard */; };
 		2685B0EE1CDDED290021F433 /* Article.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26E4CDCE1CBA16630013AD29 /* Article.storyboard */; };
@@ -613,7 +611,6 @@
 				265877B71CD7409E00E6B6A0 /* RouterX.framework in Frameworks */,
 				26035ED11CDACF1200E31915 /* Appsee.framework in Frameworks */,
 				265877C51CD7409E00E6B6A0 /* Alamofire.framework in Frameworks */,
-				07AA2A59C17B2C462898BB02 /* Pods_GGQ.framework in Frameworks */,
 				26B1B3AE1CDDCE4100A3A2BE /* RxGesture.framework in Frameworks */,
 				265877B91CD7409E00E6B6A0 /* Realm.framework in Frameworks */,
 				265877BD1CD7409E00E6B6A0 /* PKHUD.framework in Frameworks */,
@@ -646,7 +643,6 @@
 				2685B0E71CDDED290021F433 /* PKHUD.framework in Frameworks */,
 				2685B0E81CDDED290021F433 /* RxDataSources.framework in Frameworks */,
 				2685B0E91CDDED290021F433 /* cmark.framework in Frameworks */,
-				2685B0EA1CDDED290021F433 /* Pods_GGQ_Dev.framework in Frameworks */,
 				17512BC6C525C3338806F2E9 /* Pods_GGQ_Debug.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
