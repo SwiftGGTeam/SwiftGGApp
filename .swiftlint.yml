@@ -1,0 +1,28 @@
+disabled_rules: # rule identifiers to exclude from running
+  - colon
+  - comma
+  - control_statement
+  - force_cast
+  - ...
+  # Find all the available rules by running:
+  # swiftlint rules
+included: # paths to include during linting. `--path` is ignored if present.
+  - GGQ
+excluded: # paths to ignore during linting.
+  - Carthage
+  - Pods
+# parameterized rules can be customized from this configuration file
+line_length: 100
+# parameterized rules are first parameterized as a warning level, then error level.
+type_body_length:
+  - 300 # warning
+  - 400 # error
+# parameterized rules are first parameterized as a warning level, then error level.
+variable_name_max_length:
+  - 40 # warning
+  - 60 # error
+# parameterized rules are first parameterized as a warning level, then error level.
+variable_name_min_length:
+  - 3 # warning
+  - 2 # error
+reporter: "csv" # reporter type (xcode, json, csv)
