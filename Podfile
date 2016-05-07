@@ -1,5 +1,5 @@
-platform:ios, "9.0"
-
+source 'https://github.com/CocoaPods/Specs.git'
+platform :ios, "9.0"
 use_frameworks!
 
 def release_pods
@@ -8,9 +8,10 @@ def release_pods
     pod 'RxDataSources'
     pod 'RxOptional'
     pod 'NSObject+Rx'
-    pod 'R.swift'#, :git => 'https://github.com/mac-cain13/R.swift', :branch => 'master'
+    pod 'R.swift', '~>2.2.1'
     pod 'RxGesture'#, '~>0.1.6'
     pod 'SwiftyJSON', :git => 'https://github.com/SwiftyJSON/SwiftyJSON.git', :branch => 'master'
+    pod 'CommonMark'
 #    pod 'SwiftyDown'
     # pod 'RxRealm'
 end

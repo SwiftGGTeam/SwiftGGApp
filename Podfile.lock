@@ -1,7 +1,10 @@
 PODS:
+  - cmark (0.24.1)
+  - CommonMark (0.24.1):
+    - cmark (= 0.24.1)
   - NSObject+Rx (1.2.1):
     - RxSwift (~> 2.1)
-  - R.swift (2.2.0):
+  - R.swift (2.2.1):
     - R.swift.Library (~> 2.1.0)
   - R.swift.Library (2.1.0)
   - RxBlocking (2.4):
@@ -24,8 +27,9 @@ PODS:
   - XCGLogger (3.3)
 
 DEPENDENCIES:
+  - CommonMark
   - NSObject+Rx
-  - R.swift
+  - R.swift (~> 2.2.1)
   - RxBlocking (~> 2.4)
   - RxCocoa (~> 2.4)
   - RxDataSources
@@ -47,8 +51,10 @@ CHECKOUT OPTIONS:
     :git: https://github.com/SwiftyJSON/SwiftyJSON.git
 
 SPEC CHECKSUMS:
+  cmark: ec0275215b504780287b6fca360224e384368af8
+  CommonMark: 7c45cc931022d9a59b01f66d849d74e5a92091ab
   NSObject+Rx: 5d032a7f161602dec6b82dcf12731e91ce15b8da
-  R.swift: 93333ff6e5da17ec1f38463671d5ea306197cf96
+  R.swift: 0bcf57999bd402196072e86fa702bb5620b16f9a
   R.swift.Library: e5e077ed04f6867a95676af491650091b23518e9
   RxBlocking: 1226c1fa0ca1e0ca5f964d4330ca3649f2128680
   RxCocoa: 7d6cd877de99f5640306b3d6cf87f580c1d91b61
@@ -60,6 +66,6 @@ SPEC CHECKSUMS:
   SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
   XCGLogger: d6e196e78940ff6daab17d6917107876f973fa31
 
-PODFILE CHECKSUM: 410c7acef2c3c4a788e725fa80fbe491f1d062d8
+PODFILE CHECKSUM: 79417d2bdad413810254558121a9a1a2eb320aad
 
 COCOAPODS: 1.0.0.rc.2
