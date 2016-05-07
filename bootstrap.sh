@@ -17,6 +17,7 @@ fi
 
 if ! which carthage >/dev/null; then
   echo "installing carthage..."
+  brew update
   brew install carthage
 fi
 
@@ -26,6 +27,6 @@ if which carthage >/dev/null; then
 fi
 
 if which pod >/dev/null; then
-  eche "installing cocoapods dependence..."
-  pod install
+  echo "installing cocoapods dependence..."
+  pod install --verbose
 fi
