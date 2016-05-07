@@ -89,37 +89,37 @@ func render(inlineElements: [InlineElement], level: Int) -> NSMutableAttributedS
 func render(block: Block) -> NSMutableAttributedString {
     switch block {
     case .BlockQuote(let items):
-        print("Block: \(items)")
+        Info("Block: \(items)")
         return render(items)
     case let .CodeBlock(text, _):
-        print("CodeBlock: \(text)")
+        Info("CodeBlock: \(text)")
         let attributes = [
             NSFontAttributeName: UIFont(name: "Menlo-Regular", size: 14)!
         ]
         return NSMutableAttributedString(string: text, attributes: attributes)
     case .Custom(let literal):
-        print("Custom: \(literal)")
+        Info("Custom: \(literal)")
         let attributes = [
             NSFontAttributeName: UIFont(name: "PingFangSC-Medium", size: 17)!
         ]
-        print("Custom: \(literal)")
+        Info("Custom: \(literal)")
         return NSMutableAttributedString(string: literal, attributes: attributes)
     case let .Heading(texts, level):
-        print("Heading: \(texts)")
+        Info("Heading: \(texts)")
         // TODO: - level
         return render(texts, level: level)
     case let .Html(text):
-        print("Html: \(text)")
+        Info("Html: \(text)")
         let attributes = [
             NSFontAttributeName: UIFont(name: "Menlo-Regular", size: 14)!
         ]
         return NSMutableAttributedString(string: text, attributes: attributes)
     case let .List(items, type):
-        print("List: \(type)")
+        Info("List: \(type)")
         // TODO: - type
         return render(items, type: type)
     case let .Paragraph(text):
-        print("Paragraph: \(text)")
+        Info("Paragraph: \(text)")
         return render(text, level: 4)
     case .ThematicBreak: // 标题的换行， Section
         // TODO: - type
@@ -140,7 +140,7 @@ func render(inlineElement: InlineElement, level: Int) -> NSMutableAttributedStri
         let attributes = [
             NSFontAttributeName: UIFont(name: "PingFangSC-Medium", size: size)!
         ]
-        print("Custom: \(literal)")
+        Info("Custom: \(literal)")
         return NSMutableAttributedString(string: literal, attributes: attributes)
     case let .Emphasis(children): // *加强 斜体*
         return render(children, level: 4)
@@ -148,20 +148,20 @@ func render(inlineElement: InlineElement, level: Int) -> NSMutableAttributedStri
         let attributes = [
             NSFontAttributeName: UIFont(name: "Menlo-Regular", size: size)!
         ]
-        print("Html: \(text)")
+        Info("Html: \(text)")
         return NSMutableAttributedString(string: text, attributes: attributes)
     case let .Image(children, title, url):
         let attributes = [
             NSFontAttributeName: UIFont(name: "Menlo-Regular", size: size)!
         ]
-        print("Image: \(url)")
+        Info("Image: \(url)")
         return NSMutableAttributedString(string: url!, attributes: attributes)
     case .LineBreak:
         return NSMutableAttributedString(string: "\n ")
     case let .Link(children, title, url):
         // TODO: - children
         // TTTTTDODO: -
-        print("Children: \(children)")
+        Info("Children: \(children)")
         let attributes = [
             NSFontAttributeName: UIFont(name: "PingFangSC-Regular", size: size)!,
             NSForegroundColorAttributeName: UIColor.blueColor(),

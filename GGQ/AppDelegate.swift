@@ -22,24 +22,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     let router = Router(defaultUnmatchHandler: { (url: NSURL, context: AnyObject?) in
         // Do something here, e.g: give some tips or show a default UI
-        print("\(url) is unmatched.")
+        Warning("\(url) is unmatched.")
 
         // context can be provided on matching patterns
         if let context = context as? String {
-            print("Context is \"\(context)\"")
+            Warning("Context is \"\(context)\"")
         }
     })
-
-//    // This is the handler that would be performed after no pattern match
-//    let defaultUnmatchHandler = { (url: NSURL, context: AnyObject?) in
-//        // Do something here, e.g: give some tips or show a default UI
-//        print("\(url) is unmatched.")
-//
-//        // context can be provided on matching patterns
-//        if let context = context as? String {
-//            print("Context is \"\(context)\"")
-//        }
-//    }
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
 //            UIView.appearance().tintColor = UIColor.blackColor()
