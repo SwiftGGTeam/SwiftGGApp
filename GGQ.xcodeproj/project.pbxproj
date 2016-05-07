@@ -351,7 +351,6 @@
 		26F967981CC8910200407593 /* GGOAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F967971CC8910200407593 /* GGOAuthService.swift */; };
 		26FB5D2F1CD63BD800790942 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26FB5D2E1CD63BD800790942 /* UserModel.swift */; };
 		26FB5D301CD63BDA00790942 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26FB5D2E1CD63BD800790942 /* UserModel.swift */; };
-		C931A10E4CA5631A143503E5 /* Pods_GGQ.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B3143429D989FF3EEDB24E6 /* Pods_GGQ.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -464,7 +463,6 @@
 		0A205BEECC3940007116927B /* Pods-GGQ-Debug.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GGQ-Debug.release.xcconfig"; path = "Pods/Target Support Files/Pods-GGQ-Debug/Pods-GGQ-Debug.release.xcconfig"; sourceTree = "<group>"; };
 		0C760DF8DCC63375B8FC0556 /* Pods_GGQ_Release.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GGQ_Release.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AAD2501C34F4F123F03B729 /* Pods-GGQ-Dev.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GGQ-Dev.release.xcconfig"; path = "Pods/Target Support Files/Pods-GGQ-Dev/Pods-GGQ-Dev.release.xcconfig"; sourceTree = "<group>"; };
-		1B3143429D989FF3EEDB24E6 /* Pods_GGQ.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GGQ.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		26035ECA1CDAC1DD00E31915 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		26035ECB1CDAC1DD00E31915 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		26035ED01CDACF1200E31915 /* Appsee.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Appsee.framework; sourceTree = "<group>"; };
@@ -615,7 +613,6 @@
 				265877B91CD7409E00E6B6A0 /* Realm.framework in Frameworks */,
 				265877BD1CD7409E00E6B6A0 /* PKHUD.framework in Frameworks */,
 				2685B0901CDDE1CE0021F433 /* RxOptional.framework in Frameworks */,
-				C931A10E4CA5631A143503E5 /* Pods_GGQ.framework in Frameworks */,
 				2464FA4B7464FC9C71A9BEA5 /* Pods_GGQ_Release.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -766,7 +763,6 @@
 				2685B1121CDDEDA10021F433 /* XCGLogger.framework */,
 				2638F7E61CD9020000F8DD7A /* Quick.framework */,
 				2638F7E71CD9020000F8DD7A /* Nimble.framework */,
-				1B3143429D989FF3EEDB24E6 /* Pods_GGQ.framework */,
 				7DEE2A708D53067F90635118 /* Pods_GGQ_Dev.framework */,
 				DAD90954AA3A159E1093F380 /* Pods_GGQ_Tests.framework */,
 				C33E554FCB4B32AB01D55648 /* Pods_GGQ_Debug.framework */,
