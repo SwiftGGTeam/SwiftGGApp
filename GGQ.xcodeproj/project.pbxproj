@@ -22,6 +22,8 @@
 		2622326E1CB7DD37009133D7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2622326C1CB7DD37009133D7 /* Main.storyboard */; };
 		262232701CB7DD37009133D7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2622326F1CB7DD37009133D7 /* Assets.xcassets */; };
 		262232731CB7DD37009133D7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 262232711CB7DD37009133D7 /* LaunchScreen.storyboard */; };
+		262BB1D61CDD847A00740EF6 /* Render.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262BB1D51CDD847A00740EF6 /* Render.swift */; };
+		262BB1D71CDD85AA00740EF6 /* Render.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262BB1D51CDD847A00740EF6 /* Render.swift */; };
 		2631BEAF1CDB4F8700735D3E /* RxDataSourceExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2631BEAE1CDB4F8700735D3E /* RxDataSourceExt.swift */; };
 		2631BEB01CDB4F8900735D3E /* RxDataSourceExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2631BEAE1CDB4F8700735D3E /* RxDataSourceExt.swift */; };
 		2638F7E81CD9020000F8DD7A /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2638F7E61CD9020000F8DD7A /* Quick.framework */; };
@@ -130,10 +132,6 @@
 		2698E04A1CC00A7E00B7E8C7 /* Category.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2698E0471CC00A7E00B7E8C7 /* Category.storyboard */; };
 		2698E04C1CC00E8B00B7E8C7 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2698E04B1CC00E8B00B7E8C7 /* CategoryViewController.swift */; };
 		2698E04E1CC00E8B00B7E8C7 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2698E04B1CC00E8B00B7E8C7 /* CategoryViewController.swift */; };
-		26A33AEF1CD7A1AF004586C3 /* CocoaMarkdown.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26A33AEE1CD7A1AF004586C3 /* CocoaMarkdown.framework */; };
-		26A33AF01CD7A1AF004586C3 /* CocoaMarkdown.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 26A33AEE1CD7A1AF004586C3 /* CocoaMarkdown.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		26A33AF11CD7A1C3004586C3 /* CocoaMarkdown.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26A33AEE1CD7A1AF004586C3 /* CocoaMarkdown.framework */; };
-		26A33AF21CD7A1C3004586C3 /* CocoaMarkdown.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 26A33AEE1CD7A1AF004586C3 /* CocoaMarkdown.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		26B4048B1CDA404B0023F380 /* Logger+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B4048A1CDA404B0023F380 /* Logger+Rx.swift */; };
 		26B4048C1CDA404B0023F380 /* Logger+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B4048A1CDA404B0023F380 /* Logger+Rx.swift */; };
 		26BCE38F1CC93CBC00115D04 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26BCE38E1CC93CBC00115D04 /* Login.storyboard */; };
@@ -206,8 +204,7 @@
 		2D4EF605DB251033F750D653 /* Pods_GGQ_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59CFD679D60907F10BEB6C4C /* Pods_GGQ_Tests.framework */; };
 		54FFEBD9B04DA319281FEF37 /* Pods_GGQ.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6349F5B9495D9B6E829C5229 /* Pods_GGQ.framework */; };
 		96B1B49B578DB7EA9B132028 /* Pods_GGQ_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D14312BDE509311F69A2E4A3 /* Pods_GGQ_Tests.framework */; };
-		CA416669BCEA38EE43A52EA0 /* Pods_GGQ_Dev.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFE9D0963FC0FFC452F2D89A /* Pods_GGQ_Dev.framework */; };
-		EECC4AECDB395E1AC8B49B5E /* Pods_GGQ_Dev.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CCF96009375EFC5C02DA86E /* Pods_GGQ_Dev.framework */; };
+		FF8C70B4F07286DD7E22787C /* Pods_GGQ_Dev.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFE9D0963FC0FFC452F2D89A /* Pods_GGQ_Dev.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -243,7 +240,6 @@
 				265877C01CD7409E00E6B6A0 /* MoyaX.framework in Embed Frameworks */,
 				265877C21CD7409E00E6B6A0 /* Locksmith.framework in Embed Frameworks */,
 				265877B61CD7409E00E6B6A0 /* SwiftDate.framework in Embed Frameworks */,
-				26A33AF01CD7A1AF004586C3 /* CocoaMarkdown.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -263,7 +259,6 @@
 				265877D51CD740AD00E6B6A0 /* MoyaX.framework in Embed Frameworks */,
 				265877D71CD740AD00E6B6A0 /* Locksmith.framework in Embed Frameworks */,
 				265877CB1CD740AC00E6B6A0 /* SwiftDate.framework in Embed Frameworks */,
-				26A33AF21CD7A1C3004586C3 /* CocoaMarkdown.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -285,6 +280,7 @@
 		2622326F1CB7DD37009133D7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		262232721CB7DD37009133D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		262232741CB7DD37009133D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		262BB1D51CDD847A00740EF6 /* Render.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Render.swift; sourceTree = "<group>"; };
 		2631BEA11CDB0AFA00735D3E /* GGQ.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = GGQ.entitlements; sourceTree = "<group>"; };
 		2631BEA21CDB0B5900735D3E /* GGQ-Dev.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "GGQ-Dev.entitlements"; sourceTree = "<group>"; };
 		2631BEAE1CDB4F8700735D3E /* RxDataSourceExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxDataSourceExt.swift; sourceTree = "<group>"; };
@@ -322,7 +318,6 @@
 		2698E0401CBFDAF800B7E8C7 /* MoyaX+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MoyaX+Rx.swift"; sourceTree = "<group>"; };
 		2698E0471CC00A7E00B7E8C7 /* Category.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Category.storyboard; sourceTree = "<group>"; };
 		2698E04B1CC00E8B00B7E8C7 /* CategoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
-		26A33AEE1CD7A1AF004586C3 /* CocoaMarkdown.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CocoaMarkdown.framework; path = Carthage/Build/iOS/CocoaMarkdown.framework; sourceTree = "<group>"; };
 		26B4048A1CDA404B0023F380 /* Logger+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Logger+Rx.swift"; sourceTree = "<group>"; };
 		26BCE38E1CC93CBC00115D04 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		26BCE3911CC93FD800115D04 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -395,7 +390,6 @@
 				265877C31CD7409E00E6B6A0 /* Kingfisher.framework in Frameworks */,
 				26035ECE1CDAC1DD00E31915 /* Crashlytics.framework in Frameworks */,
 				265877C11CD7409E00E6B6A0 /* Locksmith.framework in Frameworks */,
-				26A33AEF1CD7A1AF004586C3 /* CocoaMarkdown.framework in Frameworks */,
 				265877BF1CD7409E00E6B6A0 /* MoyaX.framework in Frameworks */,
 				265877B51CD7409E00E6B6A0 /* SwiftDate.framework in Frameworks */,
 				265877BB1CD7409E00E6B6A0 /* RealmSwift.framework in Frameworks */,
@@ -416,16 +410,14 @@
 			files = (
 				265877D81CD740AD00E6B6A0 /* Kingfisher.framework in Frameworks */,
 				265877D61CD740AD00E6B6A0 /* Locksmith.framework in Frameworks */,
-				26A33AF11CD7A1C3004586C3 /* CocoaMarkdown.framework in Frameworks */,
 				265877D41CD740AD00E6B6A0 /* MoyaX.framework in Frameworks */,
 				265877CA1CD740AC00E6B6A0 /* SwiftDate.framework in Frameworks */,
 				265877D01CD740AD00E6B6A0 /* RealmSwift.framework in Frameworks */,
 				265877CC1CD740AD00E6B6A0 /* RouterX.framework in Frameworks */,
 				265877DA1CD740AD00E6B6A0 /* Alamofire.framework in Frameworks */,
-				EECC4AECDB395E1AC8B49B5E /* Pods_GGQ_Dev.framework in Frameworks */,
 				265877CE1CD740AD00E6B6A0 /* Realm.framework in Frameworks */,
 				265877D21CD740AD00E6B6A0 /* PKHUD.framework in Frameworks */,
-				CA416669BCEA38EE43A52EA0 /* Pods_GGQ_Dev.framework in Frameworks */,
+				FF8C70B4F07286DD7E22787C /* Pods_GGQ_Dev.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -524,7 +516,6 @@
 			children = (
 				2638F7E61CD9020000F8DD7A /* Quick.framework */,
 				2638F7E71CD9020000F8DD7A /* Nimble.framework */,
-				26A33AEE1CD7A1AF004586C3 /* CocoaMarkdown.framework */,
 				265877AA1CD7409E00E6B6A0 /* SwiftDate.framework */,
 				265877AB1CD7409E00E6B6A0 /* RouterX.framework */,
 				265877AC1CD7409E00E6B6A0 /* Realm.framework */,
@@ -572,6 +563,7 @@
 		267312961CBEAA1400036DB9 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				262BB1D51CDD847A00740EF6 /* Render.swift */,
 				26BF77631CBF8A8400117854 /* Cast.swift */,
 				265395EB1CC0D3EF00E6239C /* Version.swift */,
 				26E872601CC12A55006C5A0F /* Logger.swift */,
@@ -1084,7 +1076,6 @@
 				"$(SRCROOT)/Carthage/Build/iOS/RouterX.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/PKHUD.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Locksmith.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/CocoaMarkdown.framework",
 			);
 			name = "Run Carthage";
 			outputPaths = (
@@ -1254,6 +1245,7 @@
 				261A27A31CC1ED3B00EF3A9C /* ArticleTableViewCell.swift in Sources */,
 				26E4CDA71CB8A93D0013AD29 /* UITabBar+IB.swift in Sources */,
 				26F734911CBF480300CEA2DE /* CategoryModel.swift in Sources */,
+				262BB1D61CDD847A00740EF6 /* Render.swift in Sources */,
 				26BDBF4C1CD591E9000C601F /* ArticleManagerViewController.swift in Sources */,
 				26E872541CC107A2006C5A0F /* CategoryViewModel.swift in Sources */,
 				2698E0411CBFDAF800B7E8C7 /* MoyaX+Rx.swift in Sources */,
@@ -1324,6 +1316,7 @@
 				261A27A51CC1ED3B00EF3A9C /* ArticleTableViewCell.swift in Sources */,
 				2698DFEB1CBFD25100B7E8C7 /* UITabBar+IB.swift in Sources */,
 				2698DFEC1CBFD25100B7E8C7 /* CategoryModel.swift in Sources */,
+				262BB1D71CDD85AA00740EF6 /* Render.swift in Sources */,
 				26BDBF4D1CD59291000C601F /* ArticleManagerViewController.swift in Sources */,
 				26E872561CC107A6006C5A0F /* CategoryViewModel.swift in Sources */,
 				2698E0431CBFDBAE00B7E8C7 /* MoyaX+Rx.swift in Sources */,
