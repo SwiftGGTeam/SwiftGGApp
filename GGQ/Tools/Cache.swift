@@ -11,6 +11,7 @@ import Foundation
 let articleCache: NSCache = {
     let cache = NSCache()
     cache.name = "gg.swift.articleCache"
+    cache.countLimit = 20
     return cache
 }()
 
