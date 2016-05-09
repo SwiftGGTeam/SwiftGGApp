@@ -170,3 +170,25 @@ extension ArticleManagerViewController: Routerable {
         }
     }
 }
+
+// MARK: - Preview Action
+
+extension ArticleManagerViewController {
+    override func previewActionItems() -> [UIPreviewActionItem] {
+        let afterPreviewAction = UIPreviewAction(title: "稍后阅读", style: .Default) { previewAction, viewController in
+            if let viewController = viewController as? ArticleManagerViewController,
+                articleInfo = viewController.articleInfo,
+                realm = articleInfo.realm {
+                do {
+                    try realm.write {
+                        articleInfo.readItLater.value = true
+                    }
+                } catch {
+                    Error("\(error)")
+                }
+            }
+        }
+        
+        return [afterPreviewAction]
+    }
+}

@@ -63,14 +63,3 @@ final class ArticleViewController: UIViewController {
     }
     
 }
-
-// MARK: - Preview Action
-
-extension ArticleViewController {
-	override func previewActionItems() -> [UIPreviewActionItem] {
-		let afterPreviewAction = UIPreviewAction(title: "稍后阅读", style: .Default) { previewAction, viewController in
-		}
-
-		return [afterPreviewAction]
-	}
-}
