@@ -6,11 +6,13 @@
 //  Copyright © 2016年 org.dianqk. All rights reserved.
 //
 
-import Foundation
+import UIKit
 import SwiftyJSON
 
 protocol Routerable {
-    var routerIdentifier: String{get}
+    var routingIdentifier: String?{get}
+    
+    var routingPattern: String{get}
     
     func post(url: NSURL, sender: JSON?)
     
@@ -24,5 +26,9 @@ extension Routerable {
     
     func get(url: NSURL, sender: JSON?) {
         Warning("未实现 GET")
+    }
+    
+    var routingIdentifier: String? {
+        return nil
     }
 }

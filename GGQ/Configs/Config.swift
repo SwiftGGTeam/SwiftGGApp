@@ -39,5 +39,11 @@ class GGConfig {
             static let accessToken_url = "https://github.com/login/oauth/access_token"
         }
     }
+    
+    struct Router {
+        static let oauth = "/oauth/:type"
+        static let profile = "/profile/:type/:token"
+        static let article = "/:year/:month/:day/:pattern"
+    }
 
 }

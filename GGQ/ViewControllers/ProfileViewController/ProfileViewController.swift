@@ -48,8 +48,9 @@ final class ProfileViewController: UIViewController {
 }
 
 extension ProfileViewController: Routerable {
-    var routerIdentifier: String {
-        return "profile"
+    
+    var routingPattern: String {
+        return GGConfig.Router.profile
     }
     
     func post(url: NSURL, sender: JSON?) {

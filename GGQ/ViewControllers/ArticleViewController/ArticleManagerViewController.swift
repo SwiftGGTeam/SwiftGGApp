@@ -100,7 +100,9 @@ extension ArticleManagerViewController: UIPageViewControllerDataSource {
     }
     
     func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
-        guard let viewController = viewController as? ArticleViewController where viewController.rx_currentPage.value < viewController.rx_pagerTotal.value else { return nil }
+        guard let viewController = viewController as? ArticleViewController where viewController.rx_currentPage.value < viewController.rx_pagerTotal.value else {
+            viewModel.contentText(page: viewModel.pagerTotal.value)
+            return nil }
         let nextViewController: ArticleViewController
         if vcs.count < 3 {
             nextViewController = newArticleViewController()
@@ -135,8 +137,15 @@ extension ArticleManagerViewController {
 
 extension ArticleManagerViewController: Routerable {
     
-    var routerIdentifier: String {
+    var routingPattern: String {
         return "article"
+    }
+    
+    var routingIdentifier: String? {
+        if let id = articleInfo?.id {
+            return String(id)
+        }
+        return nil
     }
     
     func get(url: NSURL, sender: JSON?) {
@@ -146,6 +155,11 @@ extension ArticleManagerViewController: Routerable {
             Info(urlStr)
             let predicate = NSPredicate(format: "contentUrl CONTAINS %@", urlStr)
             if let article = realm.objects(ArticleInfoObject).filter(predicate).first {
+
+                if let topRouterable = RouterManager.topRouterable() where topRouterable.routingIdentifier == String(article.id) {
+                    return
+                }
+                
                 articleInfo = article
                 UIApplication.topViewController()?.showViewController(self, sender: nil)
             }

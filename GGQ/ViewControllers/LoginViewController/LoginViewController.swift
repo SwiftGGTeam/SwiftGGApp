@@ -27,8 +27,16 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        enum Erro: ErrorType {
+            case KKK
+        }
+        
+        Erro.KKK
+        
         githubButton.rx_tap.doOnNext { HUD.show(.Label("请求 GitHub 认证…")) }
-            .flatMap { GGProvider.request(GitHubOAuthAPI.Authorize) }.doOnNext { _ in HUD.hide(afterDelay: 0.3) }
+            .flatMap { GGProvider.request(GitHubOAuthAPI.Authorize) }
+            .doOnError { HUD.flash(.LabeledError(title: "\($0._code)", subtitle: nil), delay: 0.3) }
+            .doOnNext { _ in HUD.hide(afterDelay: 0.3) }
             .subscribeNext { [unowned self] in
                 if let url = $0.response?.URL {
                     let sf = SFSafariViewController(URL: url)
@@ -50,8 +58,9 @@ class LoginViewController: UIViewController {
 
 
 extension LoginViewController: Routerable {
-    var routerIdentifier: String {
-        return "oauth"
+    
+    var routingPattern: String {
+        return GGConfig.Router.oauth
     }
     
     func post(url: NSURL, sender: JSON?) {
