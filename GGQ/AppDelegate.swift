@@ -35,12 +35,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
 //            UIView.appearance().tintColor = UIColor.blackColor()
-            UINavigationBar.appearance().tintColor = UIColor.gg_blackColor()
+            UINavigationBar.appearance().tintColor = R.color.gg.black()
             UINavigationBar.appearance().barTintColor = UIColor.whiteColor()
             UINavigationBar.appearance().shadowImage = UIImage()
 //            UINavigationBar.appearance().setBackgroundImage(UIImage(), forBarMetrics: .Default)
 //            UINavigationBar.appearance().gg_addShadow(defaultPath: true)
-        UITabBar.appearance().tintColor = UIColor.gg_blackColor()
+        UITabBar.appearance().tintColor = R.color.gg.black()
 //            UITabBar.appearance().shadowImage = UIImage()
 //            UITabBar.appearance().backgroundImage = UIImage()
 //            UITabBar.appearance().gg_addShadow(defaultPath: true)
@@ -80,27 +80,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
 
-    func cleanRealmFile() {
-        #if DEV
-            let realmURL = Realm.Configuration.defaultConfiguration.fileURL!
-            let realmURLs = [
-                realmURL,
-                realmURL.URLByAppendingPathExtension("lock"),
-                realmURL.URLByAppendingPathExtension("log_a"),
-                realmURL.URLByAppendingPathExtension("log_b"),
-                realmURL.URLByAppendingPathExtension("note")
-            ]
-            let manager = NSFileManager.defaultManager()
-            for URL in realmURLs {
-                do {
-                    try manager.removeItemAtURL(URL)
-                } catch {
-                    // handle error
-                }
-            }
-
-        #endif
-    }
 }
 
 extension AppDelegate {

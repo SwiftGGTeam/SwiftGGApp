@@ -11,7 +11,7 @@ import UIKit
 extension UIView {
 
     func gg_addShadow(defaultPath defaultPath: Bool = false) {
-        layer.shadowColor = UIColor.gg_shadowsColor().CGColor
+        layer.shadowColor = R.color.gg.shadows().CGColor
         layer.shadowOffset = CGSize(width: 0, height: 2)
         layer.shadowRadius = 4
         layer.shadowOpacity = 1
