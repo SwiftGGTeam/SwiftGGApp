@@ -66,23 +66,11 @@ final class ArticleViewController: UIViewController {
 
 // MARK: - Preview Action
 
-//extension ArticleViewController {
-//	override func previewActionItems() -> [UIPreviewActionItem] {
-//		let afterPreviewAction = UIPreviewAction(title: "稍后阅读", style: .Default) { previewAction, viewController in
-//		}
-//
-//		return [afterPreviewAction]
-//	}
-//}
+extension ArticleViewController {
+	override func previewActionItems() -> [UIPreviewActionItem] {
+		let afterPreviewAction = UIPreviewAction(title: "稍后阅读", style: .Default) { previewAction, viewController in
+		}
 
-// MARK: - Status Bar
-
-//extension ArticleViewController {
-//	override func prefersStatusBarHidden() -> Bool {
-//		return navigationController?.navigationBarHidden ?? true
-//	}
-//
-//	override func preferredStatusBarUpdateAnimation() -> UIStatusBarAnimation {
-//		return .None
-//	}
-//}
+		return [afterPreviewAction]
+	}
+}

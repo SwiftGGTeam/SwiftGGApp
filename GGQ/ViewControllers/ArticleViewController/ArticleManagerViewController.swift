@@ -142,7 +142,7 @@ extension ArticleManagerViewController {
 extension ArticleManagerViewController: Routerable {
     
     var routingPattern: String {
-        return "article"
+        return GGConfig.Router.article
     }
     
     var routingIdentifier: String? {
