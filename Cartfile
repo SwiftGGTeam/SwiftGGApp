@@ -18,3 +18,4 @@ github "DianQK/RxOptional" "master"
 github "DaveWoodCom/XCGLogger" ~> 3.3
 github "facebook/FBMemoryProfiler"
 github "facebook/FBRetainCycleDetector"
+github "mac-cain13/R.swift.Library"
