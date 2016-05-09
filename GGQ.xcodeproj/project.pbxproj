@@ -101,6 +101,9 @@
 		267ABD951CDF0079009CE298 /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267ABD941CDF0079009CE298 /* Cache.swift */; };
 		267ABD961CDF0079009CE298 /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267ABD941CDF0079009CE298 /* Cache.swift */; };
 		267ABD971CDF0079009CE298 /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267ABD941CDF0079009CE298 /* Cache.swift */; };
+		267ABDB01CE0E58D009CE298 /* gg.clr in Resources */ = {isa = PBXBuildFile; fileRef = 267ABDAF1CE0E58D009CE298 /* gg.clr */; };
+		267ABDB11CE0E592009CE298 /* gg.clr in Resources */ = {isa = PBXBuildFile; fileRef = 267ABDAF1CE0E58D009CE298 /* gg.clr */; };
+		267ABDB21CE0E592009CE298 /* gg.clr in Resources */ = {isa = PBXBuildFile; fileRef = 267ABDAF1CE0E58D009CE298 /* gg.clr */; };
 		2685B0901CDDE1CE0021F433 /* RxOptional.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2685B08F1CDDE1CE0021F433 /* RxOptional.framework */; };
 		2685B0911CDDE1CE0021F433 /* RxOptional.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2685B08F1CDDE1CE0021F433 /* RxOptional.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2685B0921CDDE1E60021F433 /* RxOptional.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2685B08F1CDDE1CE0021F433 /* RxOptional.framework */; };
@@ -119,7 +122,6 @@
 		2685B0A31CDDED290021F433 /* TScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CC45D81CDC155F00DDDE0A /* TScheduler.swift */; };
 		2685B0A41CDDED290021F433 /* UITabBar+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E4CDC91CBA0E190013AD29 /* UITabBar+Rx.swift */; };
 		2685B0A51CDDED290021F433 /* FlatMapEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263D3AD91CD5F63500F8EF05 /* FlatMapEx.swift */; };
-		2685B0A61CDDED290021F433 /* UIColor+GG.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E4CDB01CB8B0740013AD29 /* UIColor+GG.swift */; };
 		2685B0A71CDDED290021F433 /* GGSwiftWeeklyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F7C5811CCB10B600D6AC8E /* GGSwiftWeeklyService.swift */; };
 		2685B0A81CDDED290021F433 /* Version.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265395EB1CC0D3EF00E6239C /* Version.swift */; };
 		2685B0A91CDDED290021F433 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262232681CB7DD37009133D7 /* AppDelegate.swift */; };
@@ -225,7 +227,6 @@
 		2698DFEB1CBFD25100B7E8C7 /* UITabBar+IB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E4CDA61CB8A93D0013AD29 /* UITabBar+IB.swift */; };
 		2698DFEC1CBFD25100B7E8C7 /* CategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F734901CBF480300CEA2DE /* CategoryModel.swift */; };
 		2698DFED1CBFD25100B7E8C7 /* UITabBar+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E4CDC91CBA0E190013AD29 /* UITabBar+Rx.swift */; };
-		2698DFEE1CBFD25100B7E8C7 /* UIColor+GG.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E4CDB01CB8B0740013AD29 /* UIColor+GG.swift */; };
 		2698DFF01CBFD25100B7E8C7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262232681CB7DD37009133D7 /* AppDelegate.swift */; };
 		2698DFF21CBFD25100B7E8C7 /* ArticleManagerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E4CDDC1CBA33760013AD29 /* ArticleManagerViewModel.swift */; };
 		2698DFF31CBFD25100B7E8C7 /* ArticleInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E4CDB81CB8C05E0013AD29 /* ArticleInfoModel.swift */; };
@@ -328,7 +329,6 @@
 		26E4CDA71CB8A93D0013AD29 /* UITabBar+IB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E4CDA61CB8A93D0013AD29 /* UITabBar+IB.swift */; };
 		26E4CDAC1CB8AF960013AD29 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E4CDAB1CB8AF960013AD29 /* HomeViewController.swift */; };
 		26E4CDAE1CB8AFAB0013AD29 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E4CDAD1CB8AFAB0013AD29 /* HomeViewModel.swift */; };
-		26E4CDB11CB8B0740013AD29 /* UIColor+GG.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E4CDB01CB8B0740013AD29 /* UIColor+GG.swift */; };
 		26E4CDB31CB8B2400013AD29 /* UIFont+GG.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E4CDB21CB8B2400013AD29 /* UIFont+GG.swift */; };
 		26E4CDB51CB8B4530013AD29 /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E4CDB41CB8B4530013AD29 /* HomeCollectionViewCell.swift */; };
 		26E4CDB91CB8C05E0013AD29 /* ArticleInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E4CDB81CB8C05E0013AD29 /* ArticleInfoModel.swift */; };
@@ -527,6 +527,7 @@
 		267ABD861CDE3944009CE298 /* GGImageAttachment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GGImageAttachment.swift; sourceTree = "<group>"; };
 		267ABD8C1CDEF088009CE298 /* GGRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GGRouter.swift; sourceTree = "<group>"; };
 		267ABD941CDF0079009CE298 /* Cache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
+		267ABDAF1CE0E58D009CE298 /* gg.clr */ = {isa = PBXFileReference; lastKnownFileType = file; name = gg.clr; path = Colors/gg.clr; sourceTree = SOURCE_ROOT; };
 		2685B08F1CDDE1CE0021F433 /* RxOptional.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxOptional.framework; path = Carthage/Build/iOS/RxOptional.framework; sourceTree = "<group>"; };
 		2685B1101CDDED290021F433 /* GGQ-Debug.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GGQ-Debug.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2685B1121CDDEDA10021F433 /* XCGLogger.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCGLogger.framework; path = Carthage/Build/iOS/XCGLogger.framework; sourceTree = "<group>"; };
@@ -568,7 +569,6 @@
 		26E4CDA61CB8A93D0013AD29 /* UITabBar+IB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITabBar+IB.swift"; sourceTree = "<group>"; };
 		26E4CDAB1CB8AF960013AD29 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		26E4CDAD1CB8AFAB0013AD29 /* HomeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
-		26E4CDB01CB8B0740013AD29 /* UIColor+GG.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+GG.swift"; sourceTree = "<group>"; };
 		26E4CDB21CB8B2400013AD29 /* UIFont+GG.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+GG.swift"; sourceTree = "<group>"; };
 		26E4CDB41CB8B4530013AD29 /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
 		26E4CDB81CB8C05E0013AD29 /* ArticleInfoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleInfoModel.swift; sourceTree = "<group>"; };
@@ -878,6 +878,7 @@
 		2685B1191CDDEFC80021F433 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				267ABDAF1CE0E58D009CE298 /* gg.clr */,
 				2622326F1CB7DD37009133D7 /* Assets.xcassets */,
 				262232711CB7DD37009133D7 /* LaunchScreen.storyboard */,
 				262232741CB7DD37009133D7 /* Info.plist */,
@@ -1040,7 +1041,6 @@
 			isa = PBXGroup;
 			children = (
 				265395E71CC09B2800E6239C /* R.generated.swift */,
-				26E4CDB01CB8B0740013AD29 /* UIColor+GG.swift */,
 				26E4CDB21CB8B2400013AD29 /* UIFont+GG.swift */,
 				261A279E1CC1E7AE00EF3A9C /* Config.swift */,
 				26CC45D51CDC13DD00DDDE0A /* RealmConfig.swift */,
@@ -1317,6 +1317,7 @@
 				267312801CBE8AAC00036DB9 /* About.storyboard in Resources */,
 				26E2610D1CBC913B00B34645 /* Profile.storyboard in Resources */,
 				26E4CDD91CBA27410013AD29 /* Search.storyboard in Resources */,
+				267ABDB01CE0E58D009CE298 /* gg.clr in Resources */,
 				2673127E1CBE890E00036DB9 /* Setting.storyboard in Resources */,
 				26BCE38F1CC93CBC00115D04 /* Login.storyboard in Resources */,
 			);
@@ -1335,6 +1336,7 @@
 				2685B0F21CDDED290021F433 /* About.storyboard in Resources */,
 				2685B0F31CDDED290021F433 /* Profile.storyboard in Resources */,
 				2685B0F41CDDED290021F433 /* Search.storyboard in Resources */,
+				267ABDB11CE0E592009CE298 /* gg.clr in Resources */,
 				2685B0F51CDDED290021F433 /* Setting.storyboard in Resources */,
 				2685B0F61CDDED290021F433 /* Login.storyboard in Resources */,
 			);
@@ -1353,6 +1355,7 @@
 				2698E0171CBFD25100B7E8C7 /* About.storyboard in Resources */,
 				2698E0181CBFD25100B7E8C7 /* Profile.storyboard in Resources */,
 				2698E0191CBFD25100B7E8C7 /* Search.storyboard in Resources */,
+				267ABDB21CE0E592009CE298 /* gg.clr in Resources */,
 				2698E01A1CBFD25100B7E8C7 /* Setting.storyboard in Resources */,
 				26BCE3901CC93CBC00115D04 /* Login.storyboard in Resources */,
 			);
@@ -1648,7 +1651,6 @@
 				26CC45D91CDC155F00DDDE0A /* TScheduler.swift in Sources */,
 				26E4CDCA1CBA0E190013AD29 /* UITabBar+Rx.swift in Sources */,
 				263D3ADA1CD5F63500F8EF05 /* FlatMapEx.swift in Sources */,
-				26E4CDB11CB8B0740013AD29 /* UIColor+GG.swift in Sources */,
 				26F7C5821CCB10B600D6AC8E /* GGSwiftWeeklyService.swift in Sources */,
 				265395EC1CC0D3EF00E6239C /* Version.swift in Sources */,
 				262232691CB7DD37009133D7 /* AppDelegate.swift in Sources */,
@@ -1721,7 +1723,6 @@
 				2685B0A31CDDED290021F433 /* TScheduler.swift in Sources */,
 				2685B0A41CDDED290021F433 /* UITabBar+Rx.swift in Sources */,
 				2685B0A51CDDED290021F433 /* FlatMapEx.swift in Sources */,
-				2685B0A61CDDED290021F433 /* UIColor+GG.swift in Sources */,
 				2685B0A71CDDED290021F433 /* GGSwiftWeeklyService.swift in Sources */,
 				2685B0A81CDDED290021F433 /* Version.swift in Sources */,
 				2685B0A91CDDED290021F433 /* AppDelegate.swift in Sources */,
@@ -1794,7 +1795,6 @@
 				26CC45DA1CDC155F00DDDE0A /* TScheduler.swift in Sources */,
 				2698DFED1CBFD25100B7E8C7 /* UITabBar+Rx.swift in Sources */,
 				263D3ADB1CD5F69300F8EF05 /* FlatMapEx.swift in Sources */,
-				2698DFEE1CBFD25100B7E8C7 /* UIColor+GG.swift in Sources */,
 				26F7C5831CCB10B600D6AC8E /* GGSwiftWeeklyService.swift in Sources */,
 				265395ED1CC0D3EF00E6239C /* Version.swift in Sources */,
 				2698DFF01CBFD25100B7E8C7 /* AppDelegate.swift in Sources */,

@@ -41,7 +41,7 @@ class ArticleManagerViewController: UIPageViewController {
         vc.rx_currentPage.value = viewModel.currentReadPage
         setViewControllers([vc], direction: .Forward, animated: true, completion: nil)
         
-        view.backgroundColor = UIColor.gg_backgroundColor()
+        view.backgroundColor = R.color.gg.background()
         
     }
     
@@ -63,6 +63,10 @@ class ArticleManagerViewController: UIPageViewController {
             .flatMap(viewModel.contentText)
             .observeOn(.Main)
             .bindTo(vc.rx_contentText)
+            .addDisposableTo(rx_disposeBag)
+        
+        vc.rx_currentReadPage.asObservable()
+            .bindTo(viewModel.currentPage)
             .addDisposableTo(rx_disposeBag)
         
         viewModel.pagerTotal.asObservable()

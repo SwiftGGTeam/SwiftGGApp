@@ -18,15 +18,15 @@ final class ArticleManagerViewModel {
     let elements = Variable<[NSAttributedString]>([])
 
     let isLoading = Variable(true)
-    
     /// 文章是否有更新
     let updated = Variable(false)
-
-    let pagerTotal = Variable(0)
     
+    let pagerTotal = Variable(0)
+    /// 上一次啊的最大阅读页
     let currentReadPage: Int
-
-    private let currentPage = PublishSubject<Int>()
+    /// 当前阅读页
+    let currentPage = PublishSubject<Int>()
+    
     private let disposeBag = DisposeBag()
 
     init(articleInfo: ArticleInfoObject, nextPageTrigger: Driver<Void>, contentSize: CGSize) {
@@ -46,27 +46,24 @@ final class ArticleManagerViewModel {
         let articleShare = articleObject.asObservable()
             .map { $0.first }.filterNil().shareReplay(1).take(1)
         
-        Observable.combineLatest(articleShare, currentPage.asObservable().observeOn(.Main)) { (article: $0, page: $1) }.subscribeNext { article, page in
-            if let currentPage = article.currentPage.value where currentPage >= page {
-                return
-            }
-            /// FIXME: - 然而这里的逻辑也要改 tip: viewDidAppear
-            guard page >= 1 else { return }
-            if let realm = article.realm {
-                do {
-                    try realm.write {
-                        Info("currentPage: \(page - 1)")
-                        if page == 1 {
+        Observable.combineLatest(articleShare, currentPage.asObservable().observeOn(.Main)) { (article: $0, page: $1) }
+            .subscribeNext { article, page in
+                if let currentPage = article.currentPage.value where currentPage >= page {
+                    return
+                }
+                guard page >= 1 else { return }
+                if let realm = article.realm {
+                    do {
+                        try realm.write {
+                            Info("currentPage: \(page)")
                             article.currentPage.value = page
-                        } else {
-                            article.currentPage.value = page - 1
                         }
+                    } catch {
+                        Error("Realm write currentPage \(articleInfo) : \(error)")
                     }
-                } catch {
-                    Error("Realm write currentPage \(articleInfo) : \(error)")
                 }
             }
-        }.addDisposableTo(disposeBag)
+            .addDisposableTo(disposeBag)
         
         if let cacheAttributedStrings = articleCache[articleInfo.id] as? [NSAttributedString] {
             elements.value = cacheAttributedStrings
@@ -191,7 +188,7 @@ final class ArticleManagerViewModel {
     }
 
     func contentText(page page: Int) -> Observable<NSAttributedString> {
-        currentPage.onNext(page)
+//        currentPage.onNext(page)
         return elements.asObservable().filter { $0.count >= page }.map { $0[page - 1] }
     }
 }
