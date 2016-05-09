@@ -54,7 +54,7 @@ final class HomeViewController: UIViewController, SegueHandlerType {
 					cell.title = e.title
 					cell.time = e.submitDate.toDateFromISO8601()
 					cell.info = e.typeName + " " + e.translator
-					cell.preview = mdRender(e.articleDescription).string
+                    cell.preview = mdRender(markdown: e.articleDescription).string
 					cell.layoutIfNeeded()
 					return cell
 				case .LoadMore:

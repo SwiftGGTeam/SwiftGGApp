@@ -95,6 +95,12 @@
 		267ABD871CDE3944009CE298 /* GGImageAttachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267ABD861CDE3944009CE298 /* GGImageAttachment.swift */; };
 		267ABD8A1CDE40F6009CE298 /* GGImageAttachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267ABD861CDE3944009CE298 /* GGImageAttachment.swift */; };
 		267ABD8B1CDE40F7009CE298 /* GGImageAttachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267ABD861CDE3944009CE298 /* GGImageAttachment.swift */; };
+		267ABD8D1CDEF088009CE298 /* GGRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267ABD8C1CDEF088009CE298 /* GGRouter.swift */; };
+		267ABD8E1CDEF088009CE298 /* GGRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267ABD8C1CDEF088009CE298 /* GGRouter.swift */; };
+		267ABD8F1CDEF088009CE298 /* GGRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267ABD8C1CDEF088009CE298 /* GGRouter.swift */; };
+		267ABD951CDF0079009CE298 /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267ABD941CDF0079009CE298 /* Cache.swift */; };
+		267ABD961CDF0079009CE298 /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267ABD941CDF0079009CE298 /* Cache.swift */; };
+		267ABD971CDF0079009CE298 /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267ABD941CDF0079009CE298 /* Cache.swift */; };
 		2685B0901CDDE1CE0021F433 /* RxOptional.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2685B08F1CDDE1CE0021F433 /* RxOptional.framework */; };
 		2685B0911CDDE1CE0021F433 /* RxOptional.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2685B08F1CDDE1CE0021F433 /* RxOptional.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2685B0921CDDE1E60021F433 /* RxOptional.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2685B08F1CDDE1CE0021F433 /* RxOptional.framework */; };
@@ -519,6 +525,8 @@
 		267ABD4A1CDDF448009CE298 /* FBRetainCycleDetector.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBRetainCycleDetector.framework; path = Carthage/Build/iOS/FBRetainCycleDetector.framework; sourceTree = "<group>"; };
 		267ABD4B1CDDF448009CE298 /* FBAllocationTracker.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBAllocationTracker.framework; path = Carthage/Build/iOS/FBAllocationTracker.framework; sourceTree = "<group>"; };
 		267ABD861CDE3944009CE298 /* GGImageAttachment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GGImageAttachment.swift; sourceTree = "<group>"; };
+		267ABD8C1CDEF088009CE298 /* GGRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GGRouter.swift; sourceTree = "<group>"; };
+		267ABD941CDF0079009CE298 /* Cache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
 		2685B08F1CDDE1CE0021F433 /* RxOptional.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxOptional.framework; path = Carthage/Build/iOS/RxOptional.framework; sourceTree = "<group>"; };
 		2685B1101CDDED290021F433 /* GGQ-Debug.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GGQ-Debug.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2685B1121CDDEDA10021F433 /* XCGLogger.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCGLogger.framework; path = Carthage/Build/iOS/XCGLogger.framework; sourceTree = "<group>"; };
@@ -827,6 +835,7 @@
 				26BF77631CBF8A8400117854 /* Cast.swift */,
 				265395EB1CC0D3EF00E6239C /* Version.swift */,
 				26E872601CC12A55006C5A0F /* Logger.swift */,
+				267ABD941CDF0079009CE298 /* Cache.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -927,6 +936,7 @@
 			children = (
 				26BCE39B1CC9B3F600115D04 /* UIViewController+Router.swift */,
 				26BCE39D1CC9B44E00115D04 /* Routerable.swift */,
+				267ABD8C1CDEF088009CE298 /* GGRouter.swift */,
 			);
 			path = Router;
 			sourceTree = "<group>";
@@ -1526,7 +1536,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"$PODS_ROOT/R.swift/rswift\" \"$SRCROOT\"";
+			shellScript = "\"$PODS_ROOT/R.swift/rswift\" \"$SRCROOT\" > \"$SRCROOT/rswift.log\"";
 		};
 		2698E01B1CBFD25100B7E8C7 /* 📦 Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1626,6 +1636,7 @@
 				26E4CDD71CBA270E0013AD29 /* SearchViewModel.swift in Sources */,
 				26E4CDC31CB8ECA40013AD29 /* HomeLoadMoreCollectionViewCell.swift in Sources */,
 				267312861CBE8DD600036DB9 /* CategorysCollectionViewFlowLayout.swift in Sources */,
+				267ABD8D1CDEF088009CE298 /* GGRouter.swift in Sources */,
 				26E872611CC12A55006C5A0F /* Logger.swift in Sources */,
 				261A27A31CC1ED3B00EF3A9C /* ArticleTableViewCell.swift in Sources */,
 				26E4CDA71CB8A93D0013AD29 /* UITabBar+IB.swift in Sources */,
@@ -1677,6 +1688,7 @@
 				26F343D51CC554D600476533 /* SettingViewController.swift in Sources */,
 				26BCE3921CC93FD800115D04 /* LoginViewController.swift in Sources */,
 				26E4CDAC1CB8AF960013AD29 /* HomeViewController.swift in Sources */,
+				267ABD951CDF0079009CE298 /* Cache.swift in Sources */,
 				26E4CDB51CB8B4530013AD29 /* HomeCollectionViewCell.swift in Sources */,
 				26E872591CC109D8006C5A0F /* RxRealm.swift in Sources */,
 				26BCE39E1CC9B44E00115D04 /* Routerable.swift in Sources */,
@@ -1697,6 +1709,7 @@
 				2685B0981CDDED290021F433 /* SearchViewModel.swift in Sources */,
 				2685B0991CDDED290021F433 /* HomeLoadMoreCollectionViewCell.swift in Sources */,
 				2685B09A1CDDED290021F433 /* CategorysCollectionViewFlowLayout.swift in Sources */,
+				267ABD8E1CDEF088009CE298 /* GGRouter.swift in Sources */,
 				2685B09B1CDDED290021F433 /* Logger.swift in Sources */,
 				2685B09C1CDDED290021F433 /* ArticleTableViewCell.swift in Sources */,
 				2685B09D1CDDED290021F433 /* UITabBar+IB.swift in Sources */,
@@ -1748,6 +1761,7 @@
 				2685B0CA1CDDED290021F433 /* SettingViewController.swift in Sources */,
 				2685B0CB1CDDED290021F433 /* LoginViewController.swift in Sources */,
 				2685B0CC1CDDED290021F433 /* HomeViewController.swift in Sources */,
+				267ABD961CDF0079009CE298 /* Cache.swift in Sources */,
 				2685B0CD1CDDED290021F433 /* HomeCollectionViewCell.swift in Sources */,
 				2685B0CE1CDDED290021F433 /* RxRealm.swift in Sources */,
 				2685B0CF1CDDED290021F433 /* Routerable.swift in Sources */,
@@ -1768,6 +1782,7 @@
 				2698DFE61CBFD25100B7E8C7 /* SearchViewModel.swift in Sources */,
 				2698DFE71CBFD25100B7E8C7 /* HomeLoadMoreCollectionViewCell.swift in Sources */,
 				2698DFE91CBFD25100B7E8C7 /* CategorysCollectionViewFlowLayout.swift in Sources */,
+				267ABD8F1CDEF088009CE298 /* GGRouter.swift in Sources */,
 				26E872631CC12B34006C5A0F /* Logger.swift in Sources */,
 				261A27A51CC1ED3B00EF3A9C /* ArticleTableViewCell.swift in Sources */,
 				2698DFEB1CBFD25100B7E8C7 /* UITabBar+IB.swift in Sources */,
@@ -1819,6 +1834,7 @@
 				26F343D61CC554D600476533 /* SettingViewController.swift in Sources */,
 				26BCE3931CC93FD800115D04 /* LoginViewController.swift in Sources */,
 				2698E0071CBFD25100B7E8C7 /* HomeViewController.swift in Sources */,
+				267ABD971CDF0079009CE298 /* Cache.swift in Sources */,
 				2698E0081CBFD25100B7E8C7 /* HomeCollectionViewCell.swift in Sources */,
 				26E8725B1CC109D8006C5A0F /* RxRealm.swift in Sources */,
 				26BCE39F1CC9B4AA00115D04 /* Routerable.swift in Sources */,
@@ -1920,7 +1936,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -1959,7 +1975,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
