@@ -11,6 +11,8 @@ import RxCocoa
 import Realm
 import RealmSwift
 import SwiftyJSON
+import CoreSpotlight
+import MobileCoreServices
 
 final class HomeViewModel {
 
@@ -99,6 +101,29 @@ final class HomeViewModel {
             .gg_storeObject(ServerInfoModel)
             .subscribe()
             .addDisposableTo(disposeBag)
+        
+        articlesShare.map { articles -> [CSSearchableItem] in
+            return articles.map {
+                let searchableItemAttributeSet = CSSearchableItemAttributeSet(itemContentType: kUTTypeText as String)
+                searchableItemAttributeSet.title = $0.title
+                searchableItemAttributeSet.contentDescription = $0.articleDescription
+                let searchableItem = CSSearchableItem(uniqueIdentifier: $0.contentUrl, domainIdentifier: "article", attributeSet: searchableItemAttributeSet)
+                return searchableItem
+            }
+            }.subscribeNext {
+                
+                let searchableItemAttributeSet = CSSearchableItemAttributeSet(itemContentType: kUTTypeText as String)
+                searchableItemAttributeSet.title = "GGGGGGGGGGGGGGGG"
+                searchableItemAttributeSet.contentDescription = "GGGGGGGGGGGGGGGG"
+                
+                let searchableItem = CSSearchableItem(uniqueIdentifier: "nil", domainIdentifier: "article", attributeSet: searchableItemAttributeSet)
+                
+                CSSearchableIndex.defaultSearchableIndex().indexSearchableItems($0 + [searchableItem]) { error in
+                    if let error = error {
+                        Error("\(error)")
+                    }
+                }
+        }.addDisposableTo(disposeBag)
 
     }
 }
