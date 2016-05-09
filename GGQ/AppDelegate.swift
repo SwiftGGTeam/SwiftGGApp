@@ -16,6 +16,9 @@ import SwiftyJSON
     import Appsee
 #endif
 
+import CoreSpotlight
+import MobileCoreServices
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
@@ -63,6 +66,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         router.matchURLAndDoHandler(url)
         return true
     }
+    
+    func application(application: UIApplication, continueUserActivity userActivity: NSUserActivity, restorationHandler: ([AnyObject]?) -> Void) -> Bool {
+        
+        Info("\(userActivity)")
+        
+        if let urlStr = userActivity.userInfo?[CSSearchableItemActivityIdentifier] as? String,
+            url = NSURL(string: urlStr)
+            where userActivity.activityType == CSSearchableItemActionType {
+            router.matchURLAndDoHandler(url)
+        }
+        
+        return true
+    }
 
     func cleanRealmFile() {
         #if DEV
@@ -87,100 +103,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 }
 
-extension UIApplication {
-    class func topViewController(base: UIViewController? = UIApplication.sharedApplication().keyWindow?.rootViewController) -> UIViewController? {
-        if let nav = base as? UINavigationController {
-            return topViewController(nav.visibleViewController)
-        }
-        if let tab = base as? UITabBarController {
-            if let selected = tab.selectedViewController {
-                return topViewController(selected)
-            }
-        }
-        if let presented = base?.presentedViewController {
-            return topViewController(presented)
-        }
-        return base
-    }
-
-    class func findViewController(base: UIViewController? = UIApplication.sharedApplication().windows.first?.rootViewController, identifity: String) -> Routerable? {
-        if let vc = base as? Routerable where vc.routerIdentifier == identifity {
-            return vc
-        }
-        if let nav = base as? UINavigationController {
-            if let vc = findViewController(nav.viewControllers, identifity: identifity) {
-                return vc
-            }
-        }
-        if let tab = base as? UITabBarController, let vcs = tab.viewControllers {
-            if let vc = findViewController(vcs, identifity: identifity) {
-                return vc
-            }
-        }
-        if let presented = base?.presentedViewController {
-            if let vc = findViewController(presented, identifity: identifity) {
-                return vc
-            }
-        }
-        return nil
-    }
-
-    class func findViewController(bases: [UIViewController], identifity: String) -> Routerable? {
-        for base in bases {
-            if let vc = base as? Routerable where vc.routerIdentifier == identifity {
-                return vc
-            }
-            if let nav = base as? UINavigationController {
-                if let vc = findViewController(nav.viewControllers, identifity: identifity) {
-                    return vc
-                }
-            }
-            if let tab = base as? UITabBarController, let vcs = tab.viewControllers {
-                if let vc = findViewController(vcs, identifity: identifity) {
-                    return vc
-                }
-            }
-            if let presented = base.presentedViewController {
-                if let vc = findViewController(presented, identifity: identifity) {
-                    return vc
-                }
-            }
-        }
-        return nil
-    }
-}
-
 extension AppDelegate {
     func registerRoutingPattern() {
-        let patternOAuth = "/oauth/:type"
-        router.registerRoutingPattern(patternOAuth) { (url, parameters, context) in
-
-            let vc = UIApplication.findViewController(identifity: "oauth")
-
-            vc?.post(url, sender: JSON(parameters))
+        
+        router.registerRoutingPattern(GGConfig.Router.oauth) { (url, parameters, context) in
+            let vc = RouterManager.findRouterable(routingPattern: GGConfig.Router.oauth)
+            vc!.post(url, sender: JSON(parameters))
         }
 
-        let patternArticle = "/:year/:month/:day/:pattern"
-        // http://swift.gg/2016/04/08/recap-of-swift-porting-efforts-2/
-        router.registerRoutingPattern(patternArticle) { (url, parameters, context) in
-
-            
+        router.registerRoutingPattern(GGConfig.Router.article) { (url, parameters, context) in
             let vc = R.storyboard.article.articleManagerViewController()!
             vc.get(url, sender: JSON(parameters))
-            
         }
         
-        let patternProfile = "/profile/:type/:token"
-        
-        router.registerRoutingPattern(patternProfile) { (url, parameters, context) in
-            
-            var string = "URL is \(url), parameter is \(parameters)"
-            if let context = context as? String {
-                string += " Context is \"\(context)\""
-            }
-            
-            let vc = UIApplication.findViewController(identifity: "profile")
-            
+        router.registerRoutingPattern(GGConfig.Router.profile) { (url, parameters, context) in
+            let vc = RouterManager.findRouterable(routingPattern: GGConfig.Router.profile)
             vc?.post(url, sender: JSON(parameters))
         }
     }
