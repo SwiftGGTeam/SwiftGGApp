@@ -31,18 +31,16 @@ class GGImageAttachment: NSTextAttachment {
     
     override func attachmentBoundsForTextContainer(textContainer: NSTextContainer?, proposedLineFragment lineFrag: CGRect, glyphPosition position: CGPoint, characterIndex charIndex: Int) -> CGRect {
         
-        if let _ = image {
-            return super.attachmentBoundsForTextContainer(textContainer, proposedLineFragment: lineFrag, glyphPosition: position, characterIndex: charIndex)
+        if let image = image {
+            let width = lineFrag.size.width
+            let imageSize = image.size
+            
+            let scale = width / imageSize.width
+            
+            return CGRect(x: 0, y: 0, width: width, height: imageSize.height * scale)
+
         } else {
-            let height = lineFrag.size.height
-            var scale: CGFloat = 1.0;
-            let imageSize = CGSize(width: 300, height: 300)//image!.size
-            
-            if (height < imageSize.height) {
-                scale = height / imageSize.height
-            }
-            
-            return CGRect(x: 0, y: 20, width: imageSize.width * scale, height: imageSize.height * scale)
+            return super.attachmentBoundsForTextContainer(textContainer, proposedLineFragment: lineFrag, glyphPosition: position, characterIndex: charIndex)
         }
         
     }
