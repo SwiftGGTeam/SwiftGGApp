@@ -104,6 +104,9 @@
 		267ABDB01CE0E58D009CE298 /* gg.clr in Resources */ = {isa = PBXBuildFile; fileRef = 267ABDAF1CE0E58D009CE298 /* gg.clr */; };
 		267ABDB11CE0E592009CE298 /* gg.clr in Resources */ = {isa = PBXBuildFile; fileRef = 267ABDAF1CE0E58D009CE298 /* gg.clr */; };
 		267ABDB21CE0E592009CE298 /* gg.clr in Resources */ = {isa = PBXBuildFile; fileRef = 267ABDAF1CE0E58D009CE298 /* gg.clr */; };
+		267ABDB41CE22B8C009CE298 /* AfterReadTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267ABDB31CE22B8C009CE298 /* AfterReadTableViewCell.swift */; };
+		267ABDB51CE22B8C009CE298 /* AfterReadTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267ABDB31CE22B8C009CE298 /* AfterReadTableViewCell.swift */; };
+		267ABDB61CE22B8C009CE298 /* AfterReadTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267ABDB31CE22B8C009CE298 /* AfterReadTableViewCell.swift */; };
 		2685B0901CDDE1CE0021F433 /* RxOptional.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2685B08F1CDDE1CE0021F433 /* RxOptional.framework */; };
 		2685B0911CDDE1CE0021F433 /* RxOptional.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2685B08F1CDDE1CE0021F433 /* RxOptional.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2685B0921CDDE1E60021F433 /* RxOptional.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2685B08F1CDDE1CE0021F433 /* RxOptional.framework */; };
@@ -320,6 +323,12 @@
 		26CC45DA1CDC155F00DDDE0A /* TScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CC45D81CDC155F00DDDE0A /* TScheduler.swift */; };
 		26CC45DC1CDC1F8800DDDE0A /* SettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CC45DB1CDC1F8800DDDE0A /* SettingViewModel.swift */; };
 		26CC45DD1CDC1F8800DDDE0A /* SettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CC45DB1CDC1F8800DDDE0A /* SettingViewModel.swift */; };
+		26D6E5A91CE2316B004C0742 /* ReadStatusViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D6E5A81CE2316B004C0742 /* ReadStatusViewModel.swift */; };
+		26D6E5AA1CE2316B004C0742 /* ReadStatusViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D6E5A81CE2316B004C0742 /* ReadStatusViewModel.swift */; };
+		26D6E5AB1CE2316B004C0742 /* ReadStatusViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D6E5A81CE2316B004C0742 /* ReadStatusViewModel.swift */; };
+		26D6E5B11CE232F2004C0742 /* UIImageView+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D6E5B01CE232F2004C0742 /* UIImageView+Rx.swift */; };
+		26D6E5B21CE232F2004C0742 /* UIImageView+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D6E5B01CE232F2004C0742 /* UIImageView+Rx.swift */; };
+		26D6E5B31CE232F2004C0742 /* UIImageView+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D6E5B01CE232F2004C0742 /* UIImageView+Rx.swift */; };
 		26E261071CBC90EA00B34645 /* CategorysViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E261061CBC90EA00B34645 /* CategorysViewController.swift */; };
 		26E261091CBC910E00B34645 /* CategorysViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E261081CBC910E00B34645 /* CategorysViewModel.swift */; };
 		26E2610B1CBC912C00B34645 /* Categorys.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26E2610A1CBC912C00B34645 /* Categorys.storyboard */; };
@@ -528,6 +537,7 @@
 		267ABD8C1CDEF088009CE298 /* GGRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GGRouter.swift; sourceTree = "<group>"; };
 		267ABD941CDF0079009CE298 /* Cache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
 		267ABDAF1CE0E58D009CE298 /* gg.clr */ = {isa = PBXFileReference; lastKnownFileType = file; name = gg.clr; path = Colors/gg.clr; sourceTree = SOURCE_ROOT; };
+		267ABDB31CE22B8C009CE298 /* AfterReadTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AfterReadTableViewCell.swift; sourceTree = "<group>"; };
 		2685B08F1CDDE1CE0021F433 /* RxOptional.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxOptional.framework; path = Carthage/Build/iOS/RxOptional.framework; sourceTree = "<group>"; };
 		2685B1101CDDED290021F433 /* GGQ-Debug.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GGQ-Debug.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2685B1121CDDEDA10021F433 /* XCGLogger.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCGLogger.framework; path = Carthage/Build/iOS/XCGLogger.framework; sourceTree = "<group>"; };
@@ -560,6 +570,8 @@
 		26CC45D51CDC13DD00DDDE0A /* RealmConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmConfig.swift; sourceTree = "<group>"; };
 		26CC45D81CDC155F00DDDE0A /* TScheduler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TScheduler.swift; sourceTree = "<group>"; };
 		26CC45DB1CDC1F8800DDDE0A /* SettingViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewModel.swift; sourceTree = "<group>"; };
+		26D6E5A81CE2316B004C0742 /* ReadStatusViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReadStatusViewModel.swift; sourceTree = "<group>"; };
+		26D6E5B01CE232F2004C0742 /* UIImageView+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Rx.swift"; sourceTree = "<group>"; };
 		26E261061CBC90EA00B34645 /* CategorysViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategorysViewController.swift; sourceTree = "<group>"; };
 		26E261081CBC910E00B34645 /* CategorysViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategorysViewModel.swift; sourceTree = "<group>"; };
 		26E2610A1CBC912C00B34645 /* Categorys.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Categorys.storyboard; sourceTree = "<group>"; };
@@ -980,6 +992,7 @@
 				267312831CBE8DB900036DB9 /* CategoryCollectionViewCell.swift */,
 				261A27A21CC1ED3B00EF3A9C /* ArticleTableViewCell.swift */,
 				261A27A61CC1EF0B00EF3A9C /* ArticleLoadMoreTableViewCell.swift */,
+				267ABDB31CE22B8C009CE298 /* AfterReadTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1033,6 +1046,7 @@
 				26E2610C1CBC913B00B34645 /* Profile.storyboard */,
 				26E2610E1CBC914800B34645 /* ProfileViewController.swift */,
 				26E261101CBC916A00B34645 /* ProfileViewModel.swift */,
+				26D6E5A81CE2316B004C0742 /* ReadStatusViewModel.swift */,
 			);
 			path = ProfileViewController;
 			sourceTree = "<group>";
@@ -1061,6 +1075,7 @@
 				26B4048A1CDA404B0023F380 /* Logger+Rx.swift */,
 				2631BEAE1CDB4F8700735D3E /* RxDataSourceExt.swift */,
 				26CC45D81CDC155F00DDDE0A /* TScheduler.swift */,
+				26D6E5B01CE232F2004C0742 /* UIImageView+Rx.swift */,
 			);
 			path = Rx;
 			sourceTree = "<group>";
@@ -1658,11 +1673,13 @@
 				26E4CDB91CB8C05E0013AD29 /* ArticleInfoModel.swift in Sources */,
 				2698E04C1CC00E8B00B7E8C7 /* CategoryViewController.swift in Sources */,
 				26BCE3A21CCA4DBE00115D04 /* GGNetworkService.swift in Sources */,
+				267ABDB41CE22B8C009CE298 /* AfterReadTableViewCell.swift in Sources */,
 				26E2610F1CBC914800B34645 /* ProfileViewController.swift in Sources */,
 				26E4CDB31CB8B2400013AD29 /* UIFont+GG.swift in Sources */,
 				26E261111CBC916A00B34645 /* ProfileViewModel.swift in Sources */,
 				26E4CDE41CBB6AB80013AD29 /* SearchTableViewCell.swift in Sources */,
 				26CC45D61CDC13DD00DDDE0A /* RealmConfig.swift in Sources */,
+				26D6E5A91CE2316B004C0742 /* ReadStatusViewModel.swift in Sources */,
 				26E4CDDF1CBB4E5E0013AD29 /* ArticleCollectionViewCell.swift in Sources */,
 				26E4CDAE1CB8AFAB0013AD29 /* HomeViewModel.swift in Sources */,
 				26BCE39C1CC9B3F600115D04 /* UIViewController+Router.swift in Sources */,
@@ -1690,6 +1707,7 @@
 				26F343D51CC554D600476533 /* SettingViewController.swift in Sources */,
 				26BCE3921CC93FD800115D04 /* LoginViewController.swift in Sources */,
 				26E4CDAC1CB8AF960013AD29 /* HomeViewController.swift in Sources */,
+				26D6E5B11CE232F2004C0742 /* UIImageView+Rx.swift in Sources */,
 				267ABD951CDF0079009CE298 /* Cache.swift in Sources */,
 				26E4CDB51CB8B4530013AD29 /* HomeCollectionViewCell.swift in Sources */,
 				26E872591CC109D8006C5A0F /* RxRealm.swift in Sources */,
@@ -1730,11 +1748,13 @@
 				2685B0AB1CDDED290021F433 /* ArticleInfoModel.swift in Sources */,
 				2685B0AC1CDDED290021F433 /* CategoryViewController.swift in Sources */,
 				2685B0AD1CDDED290021F433 /* GGNetworkService.swift in Sources */,
+				267ABDB51CE22B8C009CE298 /* AfterReadTableViewCell.swift in Sources */,
 				2685B0AE1CDDED290021F433 /* UIViewController+Router.swift in Sources */,
 				2685B0AF1CDDED290021F433 /* ProfileViewController.swift in Sources */,
 				2685B0B01CDDED290021F433 /* UIFont+GG.swift in Sources */,
 				2685B0B11CDDED290021F433 /* ProfileViewModel.swift in Sources */,
 				2685B0B21CDDED290021F433 /* RealmConfig.swift in Sources */,
+				26D6E5AA1CE2316B004C0742 /* ReadStatusViewModel.swift in Sources */,
 				2685B0B31CDDED290021F433 /* SearchTableViewCell.swift in Sources */,
 				2685B0B41CDDED290021F433 /* ArticleCollectionViewCell.swift in Sources */,
 				2685B0B51CDDED290021F433 /* HomeViewModel.swift in Sources */,
@@ -1762,6 +1782,7 @@
 				2685B0CA1CDDED290021F433 /* SettingViewController.swift in Sources */,
 				2685B0CB1CDDED290021F433 /* LoginViewController.swift in Sources */,
 				2685B0CC1CDDED290021F433 /* HomeViewController.swift in Sources */,
+				26D6E5B21CE232F2004C0742 /* UIImageView+Rx.swift in Sources */,
 				267ABD961CDF0079009CE298 /* Cache.swift in Sources */,
 				2685B0CD1CDDED290021F433 /* HomeCollectionViewCell.swift in Sources */,
 				2685B0CE1CDDED290021F433 /* RxRealm.swift in Sources */,
@@ -1802,11 +1823,13 @@
 				2698DFF31CBFD25100B7E8C7 /* ArticleInfoModel.swift in Sources */,
 				2698E04E1CC00E8B00B7E8C7 /* CategoryViewController.swift in Sources */,
 				26BCE3A31CCA4DC400115D04 /* GGNetworkService.swift in Sources */,
+				267ABDB61CE22B8C009CE298 /* AfterReadTableViewCell.swift in Sources */,
 				26BCE3A01CC9B55E00115D04 /* UIViewController+Router.swift in Sources */,
 				2698DFF51CBFD25100B7E8C7 /* ProfileViewController.swift in Sources */,
 				2698DFF61CBFD25100B7E8C7 /* UIFont+GG.swift in Sources */,
 				2698DFF71CBFD25100B7E8C7 /* ProfileViewModel.swift in Sources */,
 				26CC45D71CDC13DD00DDDE0A /* RealmConfig.swift in Sources */,
+				26D6E5AB1CE2316B004C0742 /* ReadStatusViewModel.swift in Sources */,
 				2698DFF81CBFD25100B7E8C7 /* SearchTableViewCell.swift in Sources */,
 				2698DFF91CBFD25100B7E8C7 /* ArticleCollectionViewCell.swift in Sources */,
 				2698DFFA1CBFD25100B7E8C7 /* HomeViewModel.swift in Sources */,
@@ -1834,6 +1857,7 @@
 				26F343D61CC554D600476533 /* SettingViewController.swift in Sources */,
 				26BCE3931CC93FD800115D04 /* LoginViewController.swift in Sources */,
 				2698E0071CBFD25100B7E8C7 /* HomeViewController.swift in Sources */,
+				26D6E5B31CE232F2004C0742 /* UIImageView+Rx.swift in Sources */,
 				267ABD971CDF0079009CE298 /* Cache.swift in Sources */,
 				2698E0081CBFD25100B7E8C7 /* HomeCollectionViewCell.swift in Sources */,
 				26E8725B1CC109D8006C5A0F /* RxRealm.swift in Sources */,
