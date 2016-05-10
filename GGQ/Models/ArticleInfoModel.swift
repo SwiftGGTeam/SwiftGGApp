@@ -26,12 +26,27 @@ class ArticleInfoObject: Object {
 	dynamic var starsNumber: Int = 0 // Version 0
 	dynamic var commentsNumber: Int = 0 // Version 0
 	dynamic var updateDate: String = "" // Version 0
+    /// 稍后阅读
     let readItLater = RealmOptional<Bool>() // Version 1000
+    /// 是否从首页加载
     let loadFromHome = RealmOptional<Bool>() // Version 1000
-
+    /// 是否已经读完
+    let hasBeenRead = RealmOptional<Bool>() // Version 1000
+    /// 已收藏
+    let isFavorite = RealmOptional<Bool>() // Version 1000
+    /// 是否在读
+    let isReading = RealmOptional<Bool>() // Version 1000
+    
 	override static func primaryKey() -> String? {
 		return "id"
 	}
+}
+
+extension ArticleInfoObject {
+    func convertURL() -> NSURL {
+        let urlStr = contentUrl.stringByReplacingOccurrencesOfString("http://", withString: "swiftgg://")
+        return NSURL(string: urlStr)!
+    }
 }
 
 extension ArticleInfoObject: IdentifiableType {
