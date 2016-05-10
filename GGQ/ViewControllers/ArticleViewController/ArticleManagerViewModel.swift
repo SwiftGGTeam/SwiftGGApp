@@ -57,6 +57,12 @@ final class ArticleManagerViewModel {
                         try realm.write {
                             Info("currentPage: \(page)")
                             article.currentPage.value = page
+                            if page == article.pagerTotal.value {
+                                articleInfo.hasBeenRead.value = true
+                                articleInfo.isReading.value = false
+                            } else {
+                                articleInfo.isReading.value = true
+                            }
                         }
                     } catch {
                         Error("Realm write currentPage \(articleInfo) : \(error)")
