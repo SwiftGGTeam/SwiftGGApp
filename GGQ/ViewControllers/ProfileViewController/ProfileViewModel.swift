@@ -50,7 +50,7 @@ class ProfileViewModel {
             .subscribe()
             .addDisposableTo(disposeBag)
         
-        logined = noUser.map { !$0 }
+        logined = noUser.map { !$0 }.shareReplay(1)
         
         let user = optionalUser.filterNil().shareReplay(1)
             

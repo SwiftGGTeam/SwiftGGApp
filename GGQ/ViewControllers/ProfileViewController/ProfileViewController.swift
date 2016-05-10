@@ -13,33 +13,82 @@ import RxOptional
 import NSObject_Rx
 import SwiftyJSON
 import Kingfisher
+import RxDataSources
+import RxOptional
+
+private typealias ReadStatusSectionModel = AnimatableSectionModel<String, ArticleInfoObject>
 
 final class ProfileViewController: UIViewController {
     
-    @IBOutlet weak var avatarImageView: UIImageView!
+    @IBOutlet private weak var avatarImageView: UIImageView!
+    @IBOutlet private weak var userNameLabel: UILabel!
+    @IBOutlet private weak var articleStatusTableView: UITableView!
+    @IBOutlet weak var loginButton: UIButton!
     
-    @IBOutlet weak var userNameLabel: UILabel!
+    private var profileViewModel: ProfileViewModel!
+    private var readStatusViewModel: ReadStatusViewModel!
     
-    var viewModel: ProfileViewModel!
     
     override func viewDidLoad() {
         
-        viewModel = ProfileViewModel()
+        articleStatusTableView.estimatedRowHeight = 44
+        articleStatusTableView.rowHeight = UITableViewAutomaticDimension
         
-        viewModel.avatarURL
-            .subscribeNext { [unowned self] in
-                self.avatarImageView.kf_setImageWithURL($0)
-            }
+        profileViewModel = ProfileViewModel()
+        readStatusViewModel = ReadStatusViewModel()
+        
+        profileViewModel.avatarURL
+            .bindTo(avatarImageView.rx_imageURL)
             .addDisposableTo(rx_disposeBag)
         
-        viewModel.userName
+        profileViewModel.userName
             .bindTo(userNameLabel.rx_text)
             .addDisposableTo(rx_disposeBag)
         
-        viewModel.logined.filter { !$0 }
+        profileViewModel.logined
+            .filter { !$0 }
             .map { _ in "未登录" }
             .bindTo(userNameLabel.rx_text)
             .addDisposableTo(rx_disposeBag)
+        
+        profileViewModel.logined
+            .bindTo(loginButton.rx_hidden)
+            .addDisposableTo(rx_disposeBag)
+        
+        let dataSource = RxTableViewSectionedReloadDataSource<ReadStatusSectionModel>()
+        dataSource.configureCell = { ds, tv, ip, v in
+            let cell = tv.dequeueReusableCellWithIdentifier(R.reuseIdentifier.afterReadTableViewCell, forIndexPath: ip)!
+            cell.title = v.title
+            cell.category = v.typeName
+            return cell
+        }
+        dataSource.titleForHeaderInSection = { ds, s in
+            return ds.sectionAtIndex(s).identity
+        }
+        
+        let afterReadSection = readStatusViewModel.afterReadElements
+            .asObservable()
+            .map { ReadStatusSectionModel(model: "稍后阅读", items: $0) }
+        
+        let readingSection = readStatusViewModel.readingElements
+            .asObservable()
+            .map { ReadStatusSectionModel(model: "正在阅读", items: $0) }
+        
+        let favoriteSection = readStatusViewModel.favoriteElements
+            .asObservable()
+            .map { ReadStatusSectionModel(model: "收藏", items: $0) }
+        
+        Observable.combineLatest(afterReadSection, readingSection, favoriteSection) { [$0, $1, $2] }
+            .bindTo(articleStatusTableView.rx_itemsWithDataSource(dataSource))
+            .addDisposableTo(rx_disposeBag)
+        
+        articleStatusTableView
+            .rx_modelSelected(ArticleInfoObject)
+            .subscribeNext { article in
+                UIApplication.sharedApplication().openURL(article.convertURL())
+            }
+            .addDisposableTo(rx_disposeBag)
+        
     }
 
 	override func viewWillAppear(animated: Bool) {
@@ -56,7 +105,7 @@ extension ProfileViewController: Routerable {
     func post(url: NSURL, sender: JSON?) {
         Info("\(sender)")
         if let token = sender?["token"].string {
-            viewModel.save(.GitHub, token: token)
+            profileViewModel.save(.GitHub, token: token)
         }
         dismissViewControllerAnimated(true, completion: nil)
     }
