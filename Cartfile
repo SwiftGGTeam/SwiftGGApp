@@ -1,5 +1,5 @@
-github "onevcat/Kingfisher" ~> 2.3
-github "realm/realm-cocoa" ~> 0.101
+github "onevcat/Kingfisher" ~> 2.4
+github "realm/realm-cocoa" ~> 0.102
 github "pkluz/PKHUD"
 github "Alamofire/Alamofire"
 github "jasl/MoyaX"
