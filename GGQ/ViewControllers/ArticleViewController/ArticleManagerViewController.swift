@@ -189,6 +189,20 @@ extension ArticleManagerViewController {
             }
         }
         
-        return [afterPreviewAction]
+        let favoritePreviewAction = UIPreviewAction(title: "收藏", style: .Default) { previewAction, viewController in
+            if let viewController = viewController as? ArticleManagerViewController,
+                articleInfo = viewController.articleInfo,
+                realm = articleInfo.realm {
+                do {
+                    try realm.write {
+                        articleInfo.isFavorite.value = true
+                    }
+                } catch {
+                    Error("\(error)")
+                }
+            }
+        }
+        
+        return [afterPreviewAction, favoritePreviewAction]
     }
 }
