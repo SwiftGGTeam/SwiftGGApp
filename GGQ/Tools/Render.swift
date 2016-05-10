@@ -35,13 +35,13 @@ extension InlineElement {
 
 func mdRender(markdown markdown: String) -> NSAttributedString {
     let node = Node(markdown: markdown)
-    print(node)
+    Info("\(node)")
     return node?.nrender() ?? NSAttributedString()
 }
 
 func mdRender(filename filename: String) -> NSAttributedString {
     let node = Node(filename: filename)
-    print(node)
+    Info("\(node)")
     return node?.nrender() ?? NSAttributedString()
 }
 
@@ -89,9 +89,9 @@ func render(block: Block, type: ListType, index: Int, subIndex: Int) -> NSMutabl
     }
     let result = render(block)
     attributeString.appendAttributedString(result)
-//    print(attributeString)
+//    Info(attributeString)
 //    attributeString.addAttributes(attributes, range: NSRange(location: 0, length: attributeString.length))
-//    print(attributeString)
+//    Info(attributeString)
     return attributeString
 }
 
@@ -114,25 +114,25 @@ func renderBlockQuote(blocks: [Block]) -> NSMutableAttributedString {
 func renderBlockQuote(block: Block) -> NSMutableAttributedString {
     switch block {
     case .BlockQuote(let items): // 注释
-        print("Block: \(items)")
+        Info("Block: \(items)")
         return renderBlockQuote(items)
     case let .CodeBlock(text, _): // 已到底
-        print("CodeBlock: \(text)")
+        Info("CodeBlock: \(text)")
         let attributes = [
             NSFontAttributeName: UIFont(name: "Menlo-Regular", size: 14)!,
             NSForegroundColorAttributeName: UIColor.grayColor()
         ]
         return NSMutableAttributedString(string: text, attributes: attributes)
     case let .List(items, type): // 暂时不考虑
-        print("Warning List: \(type)")
+        Info("Warning List: \(type)")
         // TODO: - type
         return render(items, type: type)
     case let .Paragraph(text): // 普通的段落
-        print("Paragraph: \(text)")
+        Info("Paragraph: \(text)")
         return renderParagraph(text)
     case .ThematicBreak: // 标题的换行， Section
         // TODO: - type
-        print("ThematicBreak")
+        Info("ThematicBreak")
         return NSMutableAttributedString(string: "-----------\n ")
     default:
         return NSMutableAttributedString()
@@ -165,7 +165,7 @@ func renderEmphasis(inlineElements: InlineElement) -> NSMutableAttributedString 
         ]
         return NSMutableAttributedString(string: text, attributes: attribute)
     default:
-        print("Warning Emphasis miss.")
+        Info("Warning Emphasis miss.")
         return NSMutableAttributedString()
     }
 }
@@ -196,7 +196,7 @@ func renderStrong(inlineElements: InlineElement) -> NSMutableAttributedString {
         ]
         return NSMutableAttributedString(string: children.text ?? url ?? "", attributes: attributes)
     default:
-        print("Warning Emphasis miss.")
+        Info("Warning Emphasis miss.")
         return NSMutableAttributedString()
     }
 }
@@ -261,17 +261,17 @@ func render(inlineElements: [InlineElement], level: Int) -> NSMutableAttributedS
                 ]
                 attributedString.appendAttributedString(NSMutableAttributedString(string: children.text ?? "", attributes: attributes))
             case .Strong(let children):
-                print("Warning Strong: \(children))")
+                Info("Warning Strong: \(children))")
 //                return render(children, level: level)
             case let .Custom(literal):
-                print("Warning Custom: \(literal)")
+                Info("Warning Custom: \(literal)")
             case let .Emphasis(children): // *加强 斜体*
                 //                return render(children, level: 4)
-                print("Warning Emphasis: \(children)")
+                Info("Warning Emphasis: \(children)")
             case .Html:
-                print("Warning Html")
+                Info("Warning Html")
             case .Image:
-                print("Warning Image")
+                Info("Warning Image")
             }
     }
     attributedString.appendAttributedString(NSAttributedString(string: "\n "))
@@ -281,10 +281,10 @@ func render(inlineElements: [InlineElement], level: Int) -> NSMutableAttributedS
 func render(block: Block) -> NSMutableAttributedString {
     switch block {
     case .BlockQuote(let items): // 注释
-        print("Block: \(items)")
+        Info("Block: \(items)")
         return renderBlockQuote(items)
     case let .CodeBlock(text, _): // 已到底
-        print("CodeBlock: \(text)")
+        Info("CodeBlock: \(text)")
         
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.firstLineHeadIndent = 20 // 首行缩进
@@ -298,31 +298,31 @@ func render(block: Block) -> NSMutableAttributedString {
         attributedString.appendAttributedString(NSAttributedString(string: "\n "))
         return attributedString
     case .Custom(let literal):
-        print("Custom: \(literal)")
+        Info("Custom: \(literal)")
         let attributes = [
             NSFontAttributeName: UIFont(name: "PingFangSC-Medium", size: 17)!
         ]
-        print("Custom: \(literal)")
+        Info("Custom: \(literal)")
         return NSMutableAttributedString(string: literal, attributes: attributes)
     case let .Heading(texts, level):
-        print("Heading: \(texts)")
+        Info("Heading: \(texts)")
         return render(texts, level: level)
     case let .Html(text):
-        print("Html: \(text)")
+        Info("Html: \(text)")
         let attributes = [
             NSFontAttributeName: UIFont(name: "Menlo-Regular", size: 14)!
         ]
         return NSMutableAttributedString(string: text, attributes: attributes)
     case let .List(items, type):
-        print("List: \(type)")
+        Info("List: \(type)")
         // TODO: - type
         return render(items, type: type)
     case let .Paragraph(text): // 普通的段落
-        print("Paragraph: \(text)")
+        Info("Paragraph: \(text)")
         return renderParagraph(text)
     case .ThematicBreak: // 标题的换行， Section
         // TODO: - type
-        print("ThematicBreak")
+        Info("ThematicBreak")
         return NSMutableAttributedString(string: "-----------\n ")
     }
 }
@@ -339,12 +339,12 @@ func render(inlineElement: InlineElement) -> NSMutableAttributedString {
         ]
         return NSMutableAttributedString(string: text, attributes: attributes)
     case let .Custom(literal):
-        print("Warning Custom: \(literal)")
+        Info("Warning Custom: \(literal)")
         return NSMutableAttributedString()
     case let .Emphasis(children): // *加强 斜体*
         return renderEmphasis(children)
     case .Html:
-        print("Warning Html")
+        Info("Warning Html")
         return NSMutableAttributedString()
     case let .Image(_, _, url):
 //        let attributeString = NSMutableAttributedString()
@@ -353,7 +353,7 @@ func render(inlineElement: InlineElement) -> NSMutableAttributedString {
 //        paragraphStyle.headIndent = 38
         
         // TODO: - 处理图片的 title
-        print("2 Image")
+        Info("2 Image")
         let mutableAttributedString = NSMutableAttributedString()
         let attach = GGImageAttachment()
         let image = UIImage(named: "img_placeholder")//R.image.img_placeholder()!
@@ -405,15 +405,15 @@ func renderBlockQuote(inlineElement: InlineElement) -> NSMutableAttributedString
         ]
         return NSMutableAttributedString(string: text, attributes: attributes)
     case let .Custom(literal):
-        print("Warning Custom: \(literal)")
+        Info("Warning Custom: \(literal)")
         return NSMutableAttributedString()
     case let .Emphasis(children): // *加强 斜体*
         return renderEmphasis(children)
     case .Html:
-        print("Warning Html")
+        Info("Warning Html")
         return NSMutableAttributedString()
     case .Image:
-        print("Warning Image")
+        Info("Warning Image")
         return NSMutableAttributedString()
     case .LineBreak:
         return NSMutableAttributedString(string: "\n ")
