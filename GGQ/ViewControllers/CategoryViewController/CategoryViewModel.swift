@@ -30,7 +30,7 @@ final class CategoryViewModel {
         
         let realm = try! Realm()
         let predicate = NSPredicate(format: "typeId == %@", argumentArray: [category.id])
-        let objects = realm.objects(ArticleInfoObject).filter(predicate).asObservableArray().shareReplay(1)
+        let objects = realm.objects(ArticleInfoObject).filter(predicate).sorted("submitDate", ascending: false).asObservableArray().shareReplay(1)
             
             objects
             .subscribeNext { [unowned self] objects in

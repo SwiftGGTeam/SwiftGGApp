@@ -32,7 +32,7 @@ final class HomeViewModel {
 
         let realm = try! Realm()
         let predicate = NSPredicate(format: "loadFromHome == %@", true)
-        let articlesShare = realm.objects(ArticleInfoObject).filter(predicate)
+        let articlesShare = realm.objects(ArticleInfoObject).filter(predicate).sorted("submitDate", ascending: false)
             .asObservableArray()
             .shareReplay(1)
 
