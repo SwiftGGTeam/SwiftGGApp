@@ -166,3 +166,9 @@ extension HomeViewController: UIScrollViewDelegate {
 		}
 	}
 }
+
+extension HomeViewController: Routerable {
+    var routingPattern: String {
+        return "Home"
+    }
+}

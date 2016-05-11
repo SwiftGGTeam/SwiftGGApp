@@ -43,6 +43,11 @@ class ArticleInfoObject: Object {
 }
 
 extension ArticleInfoObject {
+    
+    func convertStr() -> String {
+        return contentUrl.stringByReplacingOccurrencesOfString("http://", withString: "swiftgg://")
+    }
+    
     func convertURL() -> NSURL {
         let urlStr = contentUrl.stringByReplacingOccurrencesOfString("http://", withString: "swiftgg://")
         return NSURL(string: urlStr)!

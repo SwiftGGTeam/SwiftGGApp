@@ -31,6 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if let context = context as? String {
             Warning("Context is \"\(context)\"")
         }
+        
     })
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
@@ -59,6 +60,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         registerRoutingPattern()
 
         return true
+    }
+    
+    func application(application: UIApplication, performActionForShortcutItem shortcutItem: UIApplicationShortcutItem, completionHandler: (Bool) -> Void) {
+        
+//        let handledShortCutItem = handleShortCutItem(shortcutItem)
+//        completionHandler(handledShortCutItem)
+        
+        if let urlStr = shortcutItem.userInfo?["URL"] as? String,
+            url = NSURL(string: urlStr)
+        {
+            router.matchURLAndDoHandler(url)
+        }
+        
     }
 
     func application(app: UIApplication, openURL url: NSURL, options: [String: AnyObject]) -> Bool {

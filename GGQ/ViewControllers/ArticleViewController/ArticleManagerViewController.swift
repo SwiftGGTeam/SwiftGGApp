@@ -186,6 +186,12 @@ extension ArticleManagerViewController {
                 } catch {
                     Error("\(error)")
                 }
+                if #available(iOS 9.1, *) {
+                    let icon = UIApplicationShortcutIcon(type: .Bookmark)
+                    let shortCut = UIApplicationShortcutItem(type: "1", localizedTitle: articleInfo.title, localizedSubtitle: nil, icon: icon, userInfo: ["URL": articleInfo.convertStr()])
+                    
+                    UIApplication.sharedApplication().shortcutItems = [shortCut]
+                }
             }
         }
         
