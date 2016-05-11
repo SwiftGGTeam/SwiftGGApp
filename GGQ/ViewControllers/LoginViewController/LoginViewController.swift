@@ -66,14 +66,22 @@ extension LoginViewController: Routerable {
     func post(url: NSURL, sender: JSON?) {
         dismissViewControllerAnimated(true, completion: nil)
         if let code = url.query?.componentsSeparatedByString("&").first?.componentsSeparatedByString("=")[1] {
+            HUD.show(.Progress)
             GGProvider.request(GitHubOAuthAPI.AccessToken(code: code)).mapJSON()
-                .subscribeNext { json in
-                    if let token = json["access_token"].string {
-                        HUD.flash(.Label("请求成功"), delay: 0.6)
-                        let url = NSURL(string: "swiftgg://swift.gg/profile/github/\(token)")!
-                        UIApplication.sharedApplication().openURL(url)
-                    } else {
+                .subscribe { event in
+                    switch event {
+                    case .Next(let json):
+                        if let token = json["access_token"].string {
+                            HUD.flash(.Label("请求成功"), delay: 0.6)
+                            let url = NSURL(string: "swiftgg://swift.gg/profile/github/\(token)")!
+                            UIApplication.sharedApplication().openURL(url)
+                        } else {
+                            HUD.flash(.Label("请求失败"), delay: 0.6)
+                        }
+                    case .Error:
                         HUD.flash(.Label("请求失败"), delay: 0.6)
+                    case .Completed:
+                        HUD.hide()
                     }
                 }
                 .addDisposableTo(rx_disposeBag)
