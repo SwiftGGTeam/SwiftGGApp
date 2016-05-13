@@ -42,7 +42,12 @@ final class SearchViewController: UIViewController, SegueHandlerType {
 				self.dismissViewControllerAnimated(true, completion: nil) }
 			.addDisposableTo(rx_disposeBag)
 
-		viewModel = SearchViewModel(searchText: searchBar.rx_text.debounce(0.3, scheduler: MainScheduler.instance))
+        viewModel = SearchViewModel(
+            searchText:
+            searchBar.rx_text
+                .asDriver()
+                .map { Easy(result: EasyResult.Success($0)) }
+        )
 
 		viewModel.elements.asObservable()
 			.bindTo(searchResultTableView.rx_itemsWithCellFactory) { tv, i, v in

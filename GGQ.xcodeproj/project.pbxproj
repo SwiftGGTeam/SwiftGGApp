@@ -270,6 +270,9 @@
 		2698E04A1CC00A7E00B7E8C7 /* Category.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2698E0471CC00A7E00B7E8C7 /* Category.storyboard */; };
 		2698E04C1CC00E8B00B7E8C7 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2698E04B1CC00E8B00B7E8C7 /* CategoryViewController.swift */; };
 		2698E04E1CC00E8B00B7E8C7 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2698E04B1CC00E8B00B7E8C7 /* CategoryViewController.swift */; };
+		269AC0021CE4E3C000133FD3 /* Easy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269AC0011CE4E3C000133FD3 /* Easy.swift */; };
+		269AC0031CE4E3C000133FD3 /* Easy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269AC0011CE4E3C000133FD3 /* Easy.swift */; };
+		269AC0041CE4E3C000133FD3 /* Easy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269AC0011CE4E3C000133FD3 /* Easy.swift */; };
 		26B1B3A41CDDCE4100A3A2BE /* cmark.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26B1B39C1CDDCE4100A3A2BE /* cmark.framework */; };
 		26B1B3A51CDDCE4100A3A2BE /* cmark.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 26B1B39C1CDDCE4100A3A2BE /* cmark.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		26B1B3A61CDDCE4100A3A2BE /* CommonMark.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26B1B39D1CDDCE4100A3A2BE /* CommonMark.framework */; };
@@ -551,6 +554,7 @@
 		2698E0401CBFDAF800B7E8C7 /* MoyaX+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MoyaX+Rx.swift"; sourceTree = "<group>"; };
 		2698E0471CC00A7E00B7E8C7 /* Category.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Category.storyboard; sourceTree = "<group>"; };
 		2698E04B1CC00E8B00B7E8C7 /* CategoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
+		269AC0011CE4E3C000133FD3 /* Easy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Easy.swift; sourceTree = "<group>"; };
 		26B1B39C1CDDCE4100A3A2BE /* cmark.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = cmark.framework; path = Carthage/Build/iOS/cmark.framework; sourceTree = "<group>"; };
 		26B1B39D1CDDCE4100A3A2BE /* CommonMark.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CommonMark.framework; path = Carthage/Build/iOS/CommonMark.framework; sourceTree = "<group>"; };
 		26B1B39E1CDDCE4100A3A2BE /* NSObject_Rx.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NSObject_Rx.framework; path = Carthage/Build/iOS/NSObject_Rx.framework; sourceTree = "<group>"; };
@@ -944,6 +948,14 @@
 			path = CategoryViewController;
 			sourceTree = "<group>";
 		};
+		269ABFFF1CE4E33700133FD3 /* RxEasy */ = {
+			isa = PBXGroup;
+			children = (
+				269AC0011CE4E3C000133FD3 /* Easy.swift */,
+			);
+			path = RxEasy;
+			sourceTree = "<group>";
+		};
 		26BCE39A1CC9B3D100115D04 /* Router */ = {
 			isa = PBXGroup;
 			children = (
@@ -1065,6 +1077,7 @@
 		26E4CDC61CBA0D780013AD29 /* Rx */ = {
 			isa = PBXGroup;
 			children = (
+				269ABFFF1CE4E33700133FD3 /* RxEasy */,
 				26E872571CC109CB006C5A0F /* RxRealm */,
 				2698E03F1CBFDAD200B7E8C7 /* RxMoyaX */,
 				26E4CDC71CBA0D890013AD29 /* RxUITabBarDelegateProxy.swift */,
@@ -1668,6 +1681,7 @@
 				263D3ADA1CD5F63500F8EF05 /* FlatMapEx.swift in Sources */,
 				26F7C5821CCB10B600D6AC8E /* GGSwiftWeeklyService.swift in Sources */,
 				265395EC1CC0D3EF00E6239C /* Version.swift in Sources */,
+				269AC0021CE4E3C000133FD3 /* Easy.swift in Sources */,
 				262232691CB7DD37009133D7 /* AppDelegate.swift in Sources */,
 				26E4CDDD1CBA33760013AD29 /* ArticleManagerViewModel.swift in Sources */,
 				26E4CDB91CB8C05E0013AD29 /* ArticleInfoModel.swift in Sources */,
@@ -1743,6 +1757,7 @@
 				2685B0A51CDDED290021F433 /* FlatMapEx.swift in Sources */,
 				2685B0A71CDDED290021F433 /* GGSwiftWeeklyService.swift in Sources */,
 				2685B0A81CDDED290021F433 /* Version.swift in Sources */,
+				269AC0031CE4E3C000133FD3 /* Easy.swift in Sources */,
 				2685B0A91CDDED290021F433 /* AppDelegate.swift in Sources */,
 				2685B0AA1CDDED290021F433 /* ArticleManagerViewModel.swift in Sources */,
 				2685B0AB1CDDED290021F433 /* ArticleInfoModel.swift in Sources */,
@@ -1818,6 +1833,7 @@
 				263D3ADB1CD5F69300F8EF05 /* FlatMapEx.swift in Sources */,
 				26F7C5831CCB10B600D6AC8E /* GGSwiftWeeklyService.swift in Sources */,
 				265395ED1CC0D3EF00E6239C /* Version.swift in Sources */,
+				269AC0041CE4E3C000133FD3 /* Easy.swift in Sources */,
 				2698DFF01CBFD25100B7E8C7 /* AppDelegate.swift in Sources */,
 				2698DFF21CBFD25100B7E8C7 /* ArticleManagerViewModel.swift in Sources */,
 				2698DFF31CBFD25100B7E8C7 /* ArticleInfoModel.swift in Sources */,
