@@ -23,6 +23,8 @@ extension InlineElement {
         case .Html(let text):
             Warning(text)
             return text
+        case .Strong(let elements):
+            return elements.first?.text
         default:
             #if DEV
             fatalError("\(self)")
