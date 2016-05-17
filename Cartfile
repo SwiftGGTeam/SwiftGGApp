@@ -10,7 +10,7 @@ github "Quick/Nimble"
 github "Quick/Quick"
 github "DianQK/commonmark-swift" "master"
 github "SwiftyJSON/SwiftyJSON" "master"
-github "ReactiveX/RxSwift" ~> 2.4
+github "ReactiveX/RxSwift" ~> 2.5
 github "RxSwiftCommunity/RxDataSources" ~> 0.8
 github "RxSwiftCommunity/NSObject-Rx" "master"
 github "RxSwiftCommunity/RxGesture" "master"
@@ -19,3 +19,4 @@ github "DaveWoodCom/XCGLogger" ~> 3.3
 github "facebook/FBMemoryProfiler"
 github "facebook/FBRetainCycleDetector"
 github "mac-cain13/R.swift.Library"
+github "DianQK/RxEasy" "master"
