@@ -13,7 +13,8 @@ import RxCocoa
 extension UITabBarController {
 
     var rx_delegate: DelegateProxy {
-        return proxyForObject(RxTabBarControllerDelegateProxy.self, self)
+        return RxTabBarControllerDelegateProxy.proxyForObject(self)
+//        return proxyForObject(RxTabBarControllerDelegateProxy.self, self) Rx 2.4
     }
 
     var rx_didSelectViewController: ControlEvent<UIViewController> {
