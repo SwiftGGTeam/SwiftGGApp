@@ -17,23 +17,21 @@ final class SearchViewModel {
 
 	private let disposeBag = DisposeBag()
 
-	init(searchText: Driver<Easy<String>>) {
+	init(searchText: Observable<String>) {
 
 		searchText
-			.gg_flatMap { text -> Driver<Easy<Results<ArticleInfoObject>>> in
+			.flatMap { text -> Observable<[ArticleInfoObject]> in
 				do {
 					let realm = try Realm()
 					let predicate = NSPredicate(format: "title CONTAINS %@", text)
-					let list = realm.objects(ArticleInfoObject.self).filter(predicate)
-//					return Driver.gg_just(EasyResult.Success(list))
-                    return Driver.just(Easy(result: EasyResult.Success(list)))
+                    let list = realm.objects(ArticleInfoObject.self).filter(predicate).map { $0 }
+                    return Observable.just(list)
 				} catch {
-//					Error("\(error)")
-                    return Driver.just(Easy(result: EasyResult.Failure(error)))
+//                    return Driver.just(Easy(result: EasyResult.Failure(error)))
+                    fatalError()
 				}
             }
-			.gg_map { EasyResult.Success($0.map { $0 }) }
-            .gg_drive(elements)
+            .bindTo(elements)
             .addDisposableTo(disposeBag)
 	}
 }

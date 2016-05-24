@@ -20,12 +20,7 @@ extension RouterManager {
         if let topRouterable = topViewController() as? Routerable {
             return topRouterable
         } else {
-            #if DEBUG
-                Warning("\(topViewController()) not conform Routerable")
-            #endif
-            #if DEV
-                fatalError("\(topViewController()) not conform Routerable")
-            #endif
+            Warning("\(topViewController()) not conform Routerable")
         }
         return nil
     }

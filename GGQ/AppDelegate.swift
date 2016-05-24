@@ -10,7 +10,7 @@ import UIKit
 import RealmSwift
 import RouterX
 import SwiftyJSON
-#if RELEASE
+#if !DEV
     import Fabric
     import Crashlytics
     import Appsee
@@ -45,14 +45,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //            UITabBar.appearance().shadowImage = UIImage()
 //            UITabBar.appearance().backgroundImage = UIImage()
 //            UITabBar.appearance().gg_addShadow(defaultPath: true)
-//        #if RELEASE
 //        Realm.prepareMigration()
-//        #endif
         Realm.Configuration.defaultConfiguration = Realm.gg_configuration
         
 //            cleanRealmFile()
         
-        #if RELEASE
+        #if !DEV
             Fabric.with([Crashlytics.self, Appsee.self])
         #endif
         

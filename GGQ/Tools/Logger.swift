@@ -6,7 +6,7 @@
 //  Copyright © 2016年 org.dianqk. All rights reserved.
 //
 
-#if DEBUG
+#if DEV
     import XCGLogger
 
     private let log: XCGLogger = {

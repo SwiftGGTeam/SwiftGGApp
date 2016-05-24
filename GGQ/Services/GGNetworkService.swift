@@ -46,7 +46,7 @@ class LoggerMiddleware: Middleware {
 	}
 }
 
-#if DEBUG
+#if DEV
 	let GGProvider = RxMoyaXProvider(middlewares: [LoggerMiddleware()])
 #else
 	let GGProvider = RxMoyaXProvider()

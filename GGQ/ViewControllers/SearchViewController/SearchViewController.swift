@@ -44,9 +44,7 @@ final class SearchViewController: UIViewController, SegueHandlerType {
 
         viewModel = SearchViewModel(
             searchText:
-            searchBar.rx_text
-                .asDriver()
-                .map { Easy(result: EasyResult.Success($0)) }
+            searchBar.rx_text.asObservable()
         )
 
 		viewModel.elements.asObservable()

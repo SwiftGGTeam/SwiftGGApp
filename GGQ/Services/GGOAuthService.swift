@@ -33,13 +33,6 @@ class OAuthService {
     
 }
 
-
-#if DEBUG
-//let GGProvider = RxMoyaXProvider(middlewares: [LoggerMiddleware()])
-#else
-//let GGProvider = RxMoyaXProvider()
-#endif
-
 enum GitHubOAuthAPI {
     case Authorize
     case AccessToken(code: String)
