@@ -191,14 +191,14 @@
 		26110AAF1CF4A69D004F303A /* GGQ-Dev.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "GGQ-Dev.entitlements"; sourceTree = "<group>"; };
 		26110AB01CF4A69D004F303A /* GGQ-Dev.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GGQ-Dev.plist"; sourceTree = "<group>"; };
 		26110AB11CF4A69D004F303A /* GGQ.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = GGQ.entitlements; sourceTree = "<group>"; };
-		26110AB21CF4A69D004F303A /* GGQ.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = GGQ.plist; sourceTree = "<group>"; };
+		26110AB21CF4A69D004F303A /* GGQ.temp_caseinsensitive_rename.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = GGQ.temp_caseinsensitive_rename.plist; sourceTree = "<group>"; };
 		26110AC21CF4A6E2004F303A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		26110AC41CF4A6E2004F303A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		26110AC71CF4A762004F303A /* gg.clr */ = {isa = PBXFileReference; lastKnownFileType = file; path = gg.clr; sourceTree = "<group>"; };
 		261A279E1CC1E7AE00EF3A9C /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		261A27A21CC1ED3B00EF3A9C /* ArticleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleTableViewCell.swift; sourceTree = "<group>"; };
 		261A27A61CC1EF0B00EF3A9C /* ArticleLoadMoreTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleLoadMoreTableViewCell.swift; sourceTree = "<group>"; };
-		262232651CB7DD37009133D7 /* GGQ.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GGQ.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		262232651CB7DD37009133D7 /* GGQ.temp_caseinsensitive_rename.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GGQ.temp_caseinsensitive_rename.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		262232681CB7DD37009133D7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		262BB1D51CDD847A00740EF6 /* Render.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Render.swift; sourceTree = "<group>"; };
 		2631BEAE1CDB4F8700735D3E /* RxDataSourceExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxDataSourceExt.swift; sourceTree = "<group>"; };
@@ -235,10 +235,10 @@
 		267ABDB31CE22B8C009CE298 /* AfterReadTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AfterReadTableViewCell.swift; sourceTree = "<group>"; };
 		2685B08F1CDDE1CE0021F433 /* RxOptional.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxOptional.framework; path = Carthage/Build/iOS/RxOptional.framework; sourceTree = "<group>"; };
 		2685B1121CDDEDA10021F433 /* XCGLogger.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCGLogger.framework; path = Carthage/Build/iOS/XCGLogger.framework; sourceTree = "<group>"; };
-		2698E0271CBFD3E500B7E8C7 /* GGQ-Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "GGQ-Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2698E0271CBFD3E500B7E8C7 /* GGQ.temp_caseinsensitive_rename.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GGQ.temp_caseinsensitive_rename.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2698E0291CBFD3E500B7E8C7 /* GGQTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GGQTests.swift; sourceTree = "<group>"; };
 		2698E02B1CBFD3E500B7E8C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2698E0351CBFD3F300B7E8C7 /* GGQ-UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "GGQ-UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2698E0351CBFD3F300B7E8C7 /* GGQ.temp_caseinsensitive_rename.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GGQ.temp_caseinsensitive_rename.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2698E0371CBFD3F300B7E8C7 /* GGQUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GGQUITests.swift; sourceTree = "<group>"; };
 		2698E0391CBFD3F300B7E8C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2698E0401CBFDAF800B7E8C7 /* MoyaX+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MoyaX+Rx.swift"; sourceTree = "<group>"; };
@@ -361,7 +361,7 @@
 				26110AAF1CF4A69D004F303A /* GGQ-Dev.entitlements */,
 				26110AB01CF4A69D004F303A /* GGQ-Dev.plist */,
 				26110AB11CF4A69D004F303A /* GGQ.entitlements */,
-				26110AB21CF4A69D004F303A /* GGQ.plist */,
+				26110AB21CF4A69D004F303A /* GGQ.temp_caseinsensitive_rename.plist */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -380,9 +380,9 @@
 		262232661CB7DD37009133D7 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				262232651CB7DD37009133D7 /* GGQ.app */,
-				2698E0271CBFD3E500B7E8C7 /* GGQ-Tests.xctest */,
-				2698E0351CBFD3F300B7E8C7 /* GGQ-UITests.xctest */,
+				262232651CB7DD37009133D7 /* GGQ.temp_caseinsensitive_rename.app */,
+				2698E0271CBFD3E500B7E8C7 /* GGQ.temp_caseinsensitive_rename.xctest */,
+				2698E0351CBFD3F300B7E8C7 /* GGQ.temp_caseinsensitive_rename.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -763,7 +763,7 @@
 			);
 			name = GGQ;
 			productName = SwiftGGQing;
-			productReference = 262232651CB7DD37009133D7 /* GGQ.app */;
+			productReference = 262232651CB7DD37009133D7 /* GGQ.temp_caseinsensitive_rename.app */;
 			productType = "com.apple.product-type.application";
 		};
 		2698E0261CBFD3E500B7E8C7 /* GGQ-Tests */ = {
@@ -781,7 +781,7 @@
 			);
 			name = "GGQ-Tests";
 			productName = GGQTests;
-			productReference = 2698E0271CBFD3E500B7E8C7 /* GGQ-Tests.xctest */;
+			productReference = 2698E0271CBFD3E500B7E8C7 /* GGQ.temp_caseinsensitive_rename.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		2698E0341CBFD3F300B7E8C7 /* GGQ-UITests */ = {
@@ -799,7 +799,7 @@
 			);
 			name = "GGQ-UITests";
 			productName = GGQUITests;
-			productReference = 2698E0351CBFD3F300B7E8C7 /* GGQ-UITests.xctest */;
+			productReference = 2698E0351CBFD3F300B7E8C7 /* GGQ.temp_caseinsensitive_rename.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -1180,12 +1180,12 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 					"$(PROJECT_DIR)",
 				);
-				INFOPLIST_FILE = "$(SRCROOT)/GGQ/Resources/GGQ.plist";
+				INFOPLIST_FILE = GGQ/Resources/GGQ.temp_caseinsensitive_rename.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "$(inherited) -DDEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = gg.swift.ggq;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = GGQ.temp_caseinsensitive_rename;
 				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
@@ -1202,12 +1202,12 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 					"$(PROJECT_DIR)",
 				);
-				INFOPLIST_FILE = "$(SRCROOT)/GGQ/Resources/GGQ.plist";
+				INFOPLIST_FILE = GGQ/Resources/GGQ.temp_caseinsensitive_rename.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = gg.swift.ggq;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = GGQ.temp_caseinsensitive_rename;
 				PROVISIONING_PROFILE = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 			};
@@ -1224,8 +1224,8 @@
 				INFOPLIST_FILE = GGQTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.dianqk.GGQTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GGQ.app/GGQ";
+				PRODUCT_NAME = GGQ.temp_caseinsensitive_rename;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GGQ.temp_caseinsensitive_rename.app/GGQ.temp_caseinsensitive_rename";
 			};
 			name = Debug;
 		};
@@ -1240,8 +1240,8 @@
 				INFOPLIST_FILE = GGQTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.dianqk.GGQTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GGQ.app/GGQ";
+				PRODUCT_NAME = GGQ.temp_caseinsensitive_rename;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GGQ.temp_caseinsensitive_rename.app/GGQ.temp_caseinsensitive_rename";
 			};
 			name = Release;
 		};
@@ -1251,7 +1251,7 @@
 				INFOPLIST_FILE = GGQUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.dianqk.GGQUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = GGQ.temp_caseinsensitive_rename;
 				TEST_TARGET_NAME = GGQ;
 			};
 			name = Debug;
@@ -1262,7 +1262,7 @@
 				INFOPLIST_FILE = GGQUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.dianqk.GGQUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = GGQ.temp_caseinsensitive_rename;
 				TEST_TARGET_NAME = GGQ;
 			};
 			name = Release;
