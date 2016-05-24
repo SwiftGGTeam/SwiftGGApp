@@ -25,6 +25,8 @@ extension InlineElement {
             return text
         case .Strong(let elements):
             return elements.first?.text
+        case .Emphasis(let children):
+            return children.first?.text
         default:
             #if DEV
             fatalError("\(self)")

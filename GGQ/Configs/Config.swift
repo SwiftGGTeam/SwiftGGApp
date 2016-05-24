@@ -7,7 +7,6 @@
 //
 
 import Foundation
-//import CocoaMarkdown
 
 class GGConfig {
     

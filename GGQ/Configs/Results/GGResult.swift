@@ -12,3 +12,39 @@ enum GGResult<T> {
     case Success(T)
     case Failure(ErrorType)
 }
+
+extension GGResult {
+    
+    var isSuccess: Bool {
+        switch self {
+        case .Success:
+            return true
+        case .Failure:
+            return false
+        }
+    }
+    
+    func success(@noescape callback: T -> Void) {
+        switch self {
+        case .Success(let data):
+            callback(data)
+        case .Failure(let error):
+            Error("\(error)")
+        }
+    }
+}
+
+
+enum JSONError: ErrorType {
+    case Null
+    case NoData
+    
+    var _code: Int {
+        switch self {
+        case .Null:
+            return 10100
+        case .NoData:
+            return 10101
+        }
+    }
+}

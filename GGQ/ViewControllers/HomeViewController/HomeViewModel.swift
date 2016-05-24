@@ -28,89 +28,104 @@ final class HomeViewModel {
 
     private let disposeBag = DisposeBag()
 
-    init(loadMoreTrigger: Observable<Void>) {
+    init(loadMoreTrigger: Observable<Void>, provider: RxMoyaXProvider = GGProvider) {
 
         let realm = try! Realm()
         let predicate = NSPredicate(format: "loadFromHome == %@", true)
-        let articlesShare = realm.objects(ArticleInfoObject).filter(predicate).sorted("submitDate", ascending: false)
+        let articlesShare = realm.objects(ArticleInfoObject)
+            .filter(predicate).sorted("submitDate", ascending: false)
             .asObservableArray()
             .shareReplay(1)
 
         articlesShare
-            .subscribeNext { objects in
+            .subscribeNext { [unowned self] objects in
                 Info("Count: \(objects.count)")
                 self.elements.value = objects
                 self.isLoading.value = false
                 self.currentPage.value = self.elements.value.count / GGConfig.Home.pageSize + 1
-        }.addDisposableTo(disposeBag)
-
-        func convert(json: JSON) -> [AnyObject] {
-            return json.arrayValue
-                .map { (j: JSON) -> AnyObject in
-                    var nj = j
-                    nj["loadFromHome"].bool = true
-                    return nj.object
             }
-        }
+            .addDisposableTo(disposeBag)
 
         let loadMoreRequest = loadMoreTrigger.withLatestFrom(currentPage.asObservable()).shareReplay(1)
 
-        let loadMoreResult = loadMoreRequest
-            .flatMap { GGProvider.request(GGAPI.Articles(pageIndex: $0, pageSize: GGConfig.Home.pageSize)) }
-            .gg_mapJSON()
-            .map(convert)
-            .flatMap { Realm.rx_create(ArticleInfoObject.self, values: $0, update: true) }
-            .shareReplay(1)
+        let loadMoreResponse = loadMoreRequest
+            .flatMap { provider.v2_requestGGJSON(GGAPI.Articles(pageIndex: $0, pageSize: GGConfig.Home.pageSize)) }
+            .share()
+        
+        loadMoreResponse
+            .observeOn(TScheduler.Serial(.Background))
+            .subscribeNext { result in
+                switch result {
+                case .Success(let jsons):
+                    let realm = try! Realm()
+                    try! realm.write {
+                        for json in jsons.arrayValue {
+                            var object = json.dictionaryObject!
+                            object["loadFromHome"] = true
+                            realm.create(ArticleInfoObject.self, value: object, update: true)
+                        }
+                    }
+                case .Failure(let error):
+                    // TODO: -
+                    Error("\(error)")
+                }
+            }
+            .addDisposableTo(disposeBag)
 
-        GGProvider
-            .request(GGAPI.Articles(pageIndex: 1, pageSize: GGConfig.Home.pageSize))
-            .retry(3)
-            .gg_mapJSON()
-            .map(convert)
-            .flatMap { Realm.rx_create(ArticleInfoObject.self, values: $0, update: true) }
-            .shareReplay(1).subscribe().addDisposableTo(disposeBag)
-        [loadMoreRequest.map { _ in true }, loadMoreResult.map { _ in false }]
+        provider
+            .v2_requestGGJSON(GGAPI.Articles(pageIndex: 1, pageSize: GGConfig.Home.pageSize))
+            .observeOn(.Serial(.Background))
+            .subscribeNext { result in
+                switch result {
+                case .Success(let json):
+                    let realm = try! Realm()
+                    try! realm.write {
+                        for object in json.arrayObject! {
+                            realm.create(ArticleInfoObject.self, value: object, update: true)
+                        }
+                    }
+                case .Failure(let error):
+                    // TODO: -
+                    Error("\(error)")
+                }
+            }
+            .addDisposableTo(disposeBag)
+        
+        [loadMoreRequest.map { _ in true }, loadMoreResponse.map { _ in false }]
             .toObservable()
             .merge()
             .bindTo(isLoading)
             .addDisposableTo(disposeBag)
 
-//        loadMoreResult
-//            .subscribeError { error in
-//                log.warning("\(error)")
-//                self.hasNextPage.value = false
-//            }
-//            .addDisposableTo(disposeBag)
-
-//        [requestLatest.map { _ in true }, responseLatest.map { _ in false }]
-//            .toObservable()
-//            .merge()
-//            .bindTo(isRequestLatest)
-//            .addDisposableTo(disposeBag)
-
         Observable.combineLatest(articlesShare, SyncService.articlesNumber(realm)) { $0.count < $1 - 1 }
             .distinctUntilChanged()
             .bindTo(hasNextPage)
             .addDisposableTo(disposeBag)
-
-        realm.objects(ServerInfoModel).asObservable().subscribeNext {
-            Warning("\($0)")
-        }.addDisposableTo(disposeBag)
-
-        GGProvider.request(GGAPI.ServerInfo)
-            .gg_storeObject(ServerInfoModel)
-            .subscribe()
+        
+        provider
+            .v2_requestGGJSON(GGAPI.ServerInfo)
+            .observeOn(TScheduler.Serial(.Background))
+            .subscribeNext { result in
+                let realm = try! Realm()
+                try! realm.write {
+                    result
+                        .success { realm.create(ServerInfoModel.self, value: $0.object, update: true) }
+                }
+            }
             .addDisposableTo(disposeBag)
         
-        articlesShare.map { articles -> [CSSearchableItem] in
-            return articles.map {
-                let searchableItemAttributeSet = CSSearchableItemAttributeSet(itemContentType: kUTTypeText as String)
-                searchableItemAttributeSet.title = $0.title
-                searchableItemAttributeSet.contentDescription = $0.articleDescription
-                let searchableItem = CSSearchableItem(uniqueIdentifier: $0.contentUrl, domainIdentifier: "article", attributeSet: searchableItemAttributeSet)
-                return searchableItem
+        articlesShare
+            .map { articles -> [CSSearchableItem] in
+                return articles.map {
+                    let searchableItemAttributeSet = CSSearchableItemAttributeSet(itemContentType: kUTTypeText as String)
+                    searchableItemAttributeSet.title = $0.title
+                    searchableItemAttributeSet.contentDescription = $0.articleDescription
+                    let searchableItem = CSSearchableItem(uniqueIdentifier: $0.contentUrl, domainIdentifier: "article", attributeSet: searchableItemAttributeSet)
+                    return searchableItem
+                }
             }
-            }.subscribeNext {
+            .observeOn(TScheduler.Serial(.Utility))
+            .subscribeNext {
                 
                 let searchableItemAttributeSet = CSSearchableItemAttributeSet(itemContentType: kUTTypeText as String)
                 searchableItemAttributeSet.title = "GGGGGGGGGGGGGGGG"
@@ -118,12 +133,14 @@ final class HomeViewModel {
                 
                 let searchableItem = CSSearchableItem(uniqueIdentifier: "nil", domainIdentifier: "article", attributeSet: searchableItemAttributeSet)
                 
-                CSSearchableIndex.defaultSearchableIndex().indexSearchableItems($0 + [searchableItem]) { error in
+                CSSearchableIndex.defaultSearchableIndex()
+                    .indexSearchableItems($0 + [searchableItem]) { error in
                     if let error = error {
                         Error("\(error)")
                     }
                 }
-        }.addDisposableTo(disposeBag)
+            }
+            .addDisposableTo(disposeBag)
 
     }
 }
