@@ -184,8 +184,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		0A205BEECC3940007116927B /* Pods-GGQ-Debug.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GGQ-Debug.release.xcconfig"; path = "Pods/Target Support Files/Pods-GGQ-Debug/Pods-GGQ-Debug.release.xcconfig"; sourceTree = "<group>"; };
-		1AAD2501C34F4F123F03B729 /* Pods-GGQ-Dev.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GGQ-Dev.release.xcconfig"; path = "Pods/Target Support Files/Pods-GGQ-Dev/Pods-GGQ-Dev.release.xcconfig"; sourceTree = "<group>"; };
 		26035ECA1CDAC1DD00E31915 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		26035ECB1CDAC1DD00E31915 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		26035ED01CDACF1200E31915 /* Appsee.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Appsee.framework; sourceTree = "<group>"; };
@@ -305,15 +303,6 @@
 		26F7C5811CCB10B600D6AC8E /* GGSwiftWeeklyService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GGSwiftWeeklyService.swift; sourceTree = "<group>"; };
 		26F967971CC8910200407593 /* GGOAuthService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GGOAuthService.swift; sourceTree = "<group>"; };
 		26FB5D2E1CD63BD800790942 /* UserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
-		59CFD679D60907F10BEB6C4C /* Pods_GGQ_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GGQ_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5CCF96009375EFC5C02DA86E /* Pods_GGQ_Dev.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GGQ_Dev.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5D0DCC23097A70C51C9B3785 /* Pods-GGQ-Debug.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GGQ-Debug.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GGQ-Debug/Pods-GGQ-Debug.debug.xcconfig"; sourceTree = "<group>"; };
-		6F80B3059819FC43F66FF025 /* Pods_SwiftGGQing.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftGGQing.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		7A12E88E09CD54E0021BC0C3 /* Pods-GGQ-Release.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GGQ-Release.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GGQ-Release/Pods-GGQ-Release.debug.xcconfig"; sourceTree = "<group>"; };
-		7BDB494BD2ED05E0759DCC2B /* Pods_GGQ_Lint.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GGQ_Lint.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B4C167B76DBBA1FD955C2C2F /* Pods-GGQ-Dev.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GGQ-Dev.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GGQ-Dev/Pods-GGQ-Dev.debug.xcconfig"; sourceTree = "<group>"; };
-		C53B91C9A696DA9BA262546A /* Pods-GGQ-Release.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GGQ-Release.release.xcconfig"; path = "Pods/Target Support Files/Pods-GGQ-Release/Pods-GGQ-Release.release.xcconfig"; sourceTree = "<group>"; };
-		F9EAFE5C29FEB0790663FC9B /* Pods_GGQ.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GGQ.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -364,19 +353,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		20CE0825BCF9F715497DD393 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				B4C167B76DBBA1FD955C2C2F /* Pods-GGQ-Dev.debug.xcconfig */,
-				1AAD2501C34F4F123F03B729 /* Pods-GGQ-Dev.release.xcconfig */,
-				5D0DCC23097A70C51C9B3785 /* Pods-GGQ-Debug.debug.xcconfig */,
-				0A205BEECC3940007116927B /* Pods-GGQ-Debug.release.xcconfig */,
-				7A12E88E09CD54E0021BC0C3 /* Pods-GGQ-Release.debug.xcconfig */,
-				C53B91C9A696DA9BA262546A /* Pods-GGQ-Release.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		26110AA91CF4A69D004F303A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -398,8 +374,6 @@
 				2698E0281CBFD3E500B7E8C7 /* GGQTests */,
 				2698E0361CBFD3F300B7E8C7 /* GGQUITests */,
 				262232661CB7DD37009133D7 /* Products */,
-				20CE0825BCF9F715497DD393 /* Pods */,
-				D7FB5010C8E9386140854E57 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -766,18 +740,6 @@
 				265877E71CD7668A00E6B6A0 /* GGKeychainService.swift */,
 			);
 			path = Services;
-			sourceTree = "<group>";
-		};
-		D7FB5010C8E9386140854E57 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				6F80B3059819FC43F66FF025 /* Pods_SwiftGGQing.framework */,
-				F9EAFE5C29FEB0790663FC9B /* Pods_GGQ.framework */,
-				7BDB494BD2ED05E0759DCC2B /* Pods_GGQ_Lint.framework */,
-				5CCF96009375EFC5C02DA86E /* Pods_GGQ_Dev.framework */,
-				59CFD679D60907F10BEB6C4C /* Pods_GGQ_Tests.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1220,7 +1182,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/GGQ/Resources/GGQ.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -DDEBUG";
+				OTHER_SWIFT_FLAGS = "$(inherited) -DDEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = gg.swift.ggq;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -1242,7 +1204,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/GGQ/Resources/GGQ.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\"";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = gg.swift.ggq;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
