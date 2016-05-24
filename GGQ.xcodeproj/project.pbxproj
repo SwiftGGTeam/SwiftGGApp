@@ -1174,6 +1174,7 @@
 				CODE_SIGN_ENTITLEMENTS = GGQ/Resources/GGQ.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Song Xutao (MQKW72R2U6)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
