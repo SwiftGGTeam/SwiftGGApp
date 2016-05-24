@@ -16,7 +16,5 @@ github "RxSwiftCommunity/NSObject-Rx" "master"
 github "RxSwiftCommunity/RxGesture" "master"
 github "DianQK/RxOptional" "master"
 github "DaveWoodCom/XCGLogger" ~> 3.3
-github "facebook/FBMemoryProfiler"
-github "facebook/FBRetainCycleDetector"
 github "mac-cain13/R.swift.Library"
-github "DianQK/RxEasy" "master"
+github "mac-cain13/R.swift"
