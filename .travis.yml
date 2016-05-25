@@ -12,7 +12,7 @@ before_install:
   - wget https://github.com/mac-cain13/R.swift/releases/download/v2.3.0/rswift-2.3.0.zip
   - unzip -n rswift-2.3.0.zip -d ./
   - brew update
-  - brew outdated carthage || brew upgrade carthage
+  - brew install carthage
 
 before_script:
   - carthage bootstrap --verbose --platform ios --color auto --no-use-binaries
