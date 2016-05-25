@@ -5,16 +5,6 @@ if ! which xcodebuild >/dev/null; then
   exit 1
 fi
 
-if ! which gem >/dev/null; then
-  echo "rubygem is not available. Install it from https://rubygems.org/pages/download"
-  exit 1
-fi
-
-if ! which pod >/dev/null; then
-  echo "installing cocoapods..."
-  gem install cocoapods --pre
-fi
-
 if ! which carthage >/dev/null; then
   echo "installing carthage..."
   brew update
@@ -26,7 +16,10 @@ if which carthage >/dev/null; then
   carthage bootstrap --verbose --platform ios --color auto --no-use-binaries
 fi
 
-if which pod >/dev/null; then
-  echo "installing cocoapods dependence..."
-  pod install --verbose
+if which wget >/dev/null; then
+  echo "installing wget..."
+  brew install wget
 fi
+
+wget https://github.com/mac-cain13/R.swift/releases/download/v2.3.0/rswift-2.3.0.zip
+unzip -n rswift-2.3.0.zip -d ./

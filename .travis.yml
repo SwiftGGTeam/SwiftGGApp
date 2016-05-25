@@ -1,17 +1,18 @@
 language: objective-c
-osx_image: xcode7.3
+osx_image: xcode7.3.1
+xcode_project: GGQ
+xcode_scheme: GGQ
+xcode_sdk: iphonesimulator9.3
 
 notifications:
   slack: swiftgg:GTctPDWV5h8pPzaagds051WS
   email: false
 
 before_install:
-  - gem install cocoapods --pre
+  - wget https://github.com/mac-cain13/R.swift/releases/download/v2.3.0/rswift-2.3.0.zip
+  - unzip -n rswift-2.3.0.zip -d ./
   - brew update
-  - brew install carthage
+  - brew outdated carthage || brew upgrade carthage
 
 before_script:
   - carthage bootstrap --verbose --platform ios --color auto --no-use-binaries
-
-script:
-  - xctool -workspace GGQ.xcworkspace -scheme GGQ-Release -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
