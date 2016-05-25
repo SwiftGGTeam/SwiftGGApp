@@ -9,7 +9,6 @@
 import UIKit
 import RxSwift
 import RxCocoa
-import NSObject_Rx
 import PKHUD
 
 class SettingViewController: UITableViewController {

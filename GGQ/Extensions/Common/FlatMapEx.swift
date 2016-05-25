@@ -6,7 +6,7 @@
 //  Copyright © 2016 org.dianqk. All rights reserved.
 //
 
-import RxOptional
+
 
 //public protocol OptionalType {
 //    associatedtype Wrapped
@@ -20,15 +20,15 @@ import RxOptional
 //    }
 //}
 
-extension SequenceType where Generator.Element: OptionalType {
-    
-    @warn_unused_result
-    public func filterNil() -> [Generator.Element.Wrapped] {
-        return self.flatMap { $0.value }
-    }
-    
-    @warn_unused_result
-    public func withoutNil() -> [Generator.Element.Wrapped] {
-        return self.flatMap { $0.value }
-    }
-}
+//extension SequenceType where Generator.Element: OptionalType {
+//    
+//    @warn_unused_result
+//    public func filterNil() -> [Generator.Element.Wrapped] {
+//        return self.flatMap { $0.value }
+//    }
+//    
+//    @warn_unused_result
+//    public func withoutNil() -> [Generator.Element.Wrapped] {
+//        return self.flatMap { $0.value }
+//    }
+//}

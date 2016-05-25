@@ -9,12 +9,9 @@
 import UIKit
 import RxSwift
 import RxCocoa
-import RxOptional
-import NSObject_Rx
 import SwiftyJSON
 import Kingfisher
 import RxDataSources
-import RxOptional
 
 private typealias ReadStatusSectionModel = AnimatableSectionModel<String, ArticleInfoObject>
 

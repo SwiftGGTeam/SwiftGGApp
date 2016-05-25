@@ -9,8 +9,6 @@
 import UIKit
 import RxSwift
 import RxCocoa
-import NSObject_Rx
-import RxOptional
 
 final class SearchViewController: UIViewController, SegueHandlerType {
 

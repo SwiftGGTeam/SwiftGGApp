@@ -10,7 +10,6 @@ import Foundation
 import RxSwift
 import RxCocoa
 import RealmSwift
-import RxOptional
 
 final class CategoryViewModel {
 

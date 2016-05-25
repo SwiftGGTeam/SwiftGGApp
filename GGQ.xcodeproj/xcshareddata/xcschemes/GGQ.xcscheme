@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "262232641CB7DD37009133D7"
-               BuildableName = "GGQ.temp_caseinsensitive_rename.app"
+               BuildableName = "GGQ.app"
                BlueprintName = "GGQ"
                ReferencedContainer = "container:GGQ.xcodeproj">
             </BuildableReference>
@@ -33,7 +33,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2698E0261CBFD3E500B7E8C7"
-               BuildableName = "GGQ.temp_caseinsensitive_rename.xctest"
+               BuildableName = "GGQ.xctest"
                BlueprintName = "GGQ-Tests"
                ReferencedContainer = "container:GGQ.xcodeproj">
             </BuildableReference>
@@ -43,7 +43,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2698E0341CBFD3F300B7E8C7"
-               BuildableName = "GGQ.temp_caseinsensitive_rename.xctest"
+               BuildableName = "GGQ.xctest"
                BlueprintName = "GGQ-UITests"
                ReferencedContainer = "container:GGQ.xcodeproj">
             </BuildableReference>
@@ -53,7 +53,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "262232641CB7DD37009133D7"
-            BuildableName = "GGQ.temp_caseinsensitive_rename.app"
+            BuildableName = "GGQ.app"
             BlueprintName = "GGQ"
             ReferencedContainer = "container:GGQ.xcodeproj">
          </BuildableReference>
@@ -76,7 +76,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "262232641CB7DD37009133D7"
-            BuildableName = "GGQ.temp_caseinsensitive_rename.app"
+            BuildableName = "GGQ.app"
             BlueprintName = "GGQ"
             ReferencedContainer = "container:GGQ.xcodeproj">
          </BuildableReference>
@@ -95,7 +95,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "262232641CB7DD37009133D7"
-            BuildableName = "GGQ.temp_caseinsensitive_rename.app"
+            BuildableName = "GGQ.app"
             BlueprintName = "GGQ"
             ReferencedContainer = "container:GGQ.xcodeproj">
          </BuildableReference>

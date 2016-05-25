@@ -10,10 +10,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 import RxDataSources
-import RxOptional
-import NSObject_Rx
 import SwiftDate
-//import CocoaMarkdown
 
 final class HomeViewController: UIViewController, SegueHandlerType {
     

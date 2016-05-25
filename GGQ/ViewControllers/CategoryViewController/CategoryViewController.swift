@@ -12,8 +12,6 @@ import RealmSwift
 import RxSwift
 import RxCocoa
 import RxDataSources
-import NSObject_Rx
-import RxOptional
 
 private typealias CategoryList = AnimatableSectionModel<String, ArticleInfoObject>
 

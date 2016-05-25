@@ -9,9 +9,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
-import RxOptional
 import RxDataSources
-import NSObject_Rx
 import RxGesture
 
 private typealias ArticleSectionModel = AnimatableSectionModel<Int, NSAttributedString>
