@@ -15,4 +15,4 @@ before_install:
   - brew install carthage
 
 before_script:
-  - carthage bootstrap --verbose --platform ios --color auto --no-use-binaries
+  - carthage bootstrap --platform ios
