@@ -1,6 +1,6 @@
 language: objective-c
 osx_image: xcode7.3
-xcode_project: GGQ
+xcode_project: GGQ.xcodeproj
 xcode_scheme: GGQ
 xcode_sdk: iphonesimulator9.3
 
@@ -8,11 +8,10 @@ notifications:
   slack: swiftgg:GTctPDWV5h8pPzaagds051WS
   email: false
 
-before_install:
+before_script:
   - wget https://github.com/mac-cain13/R.swift/releases/download/v2.3.0/rswift-2.3.0.zip
   - unzip -n rswift-2.3.0.zip -d ./
-  - brew update
-  - brew install carthage
-
-before_script:
-  - carthage bootstrap --platform ios
+  - brew uninstall carthage
+  - brew install https://raw.githubusercontent.com/Homebrew/homebrew-core/d70c21cbd277de9ac16497618f15a88ce03690b8/Formula/carthage.rb
+  - carthage checkout
+  - travis_retry carthage build --platform iOS
