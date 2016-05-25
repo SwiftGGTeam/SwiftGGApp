@@ -1,5 +1,5 @@
 github "onevcat/Kingfisher" ~> 2.4
-github "realm/realm-cocoa" ~> 0.103
+github "realm/realm-cocoa" ~> 1.0
 github "pkluz/PKHUD"
 github "Alamofire/Alamofire"
 github "jasl/MoyaX"
@@ -12,8 +12,6 @@ github "DianQK/commonmark-swift" "master"
 github "SwiftyJSON/SwiftyJSON" "master"
 github "ReactiveX/RxSwift" ~> 2.5
 github "RxSwiftCommunity/RxDataSources" ~> 0.8
-github "RxSwiftCommunity/NSObject-Rx" "master"
 github "RxSwiftCommunity/RxGesture" "master"
-github "DianQK/RxOptional" "master"
 github "DaveWoodCom/XCGLogger" ~> 3.3
 github "mac-cain13/R.swift.Library"
