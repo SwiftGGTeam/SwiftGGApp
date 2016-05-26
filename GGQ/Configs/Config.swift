@@ -12,6 +12,10 @@ class GGConfig {
     
     static let appGroupID = "group.app.swift.gg"
     
+    static let scheme = "swiftgg"
+    
+    static let host = "swift.gg"
+    
 	struct Nerworking {
 		#if DEV
 			static let host = NSURL(string: "http://debug.api.swift.gg")!

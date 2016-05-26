@@ -75,6 +75,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(app: UIApplication, openURL url: NSURL, options: [String: AnyObject]) -> Bool {
         Info("Open: \(url)")
+        guard url.scheme == GGConfig.scheme && url.host == GGConfig.host else { return false }
         return router.matchURLAndDoHandler(url)
     }
     
