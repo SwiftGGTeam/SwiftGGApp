@@ -86,7 +86,6 @@
 		261189641CF4ACD4008697F4 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26B1B39F1CDDCE4100A3A2BE /* RxCocoa.framework */; };
 		261189651CF4ACD4008697F4 /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 265877B11CD7409E00E6B6A0 /* Kingfisher.framework */; };
 		261189661CF4ACD4008697F4 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26B1B3A21CDDCE4100A3A2BE /* RxSwift.framework */; };
-		261189671CF4ACD4008697F4 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26035ECB1CDAC1DD00E31915 /* Crashlytics.framework */; };
 		261189681CF4ACD4008697F4 /* Locksmith.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 265877B01CD7409E00E6B6A0 /* Locksmith.framework */; };
 		261189691CF4ACD4008697F4 /* cmark.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26B1B39C1CDDCE4100A3A2BE /* cmark.framework */; };
 		2611896A1CF4ACD4008697F4 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26B1B3A31CDDCE4100A3A2BE /* SwiftyJSON.framework */; };
@@ -95,9 +94,7 @@
 		2611896D1CF4ACD4008697F4 /* SwiftDate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 265877AA1CD7409E00E6B6A0 /* SwiftDate.framework */; };
 		2611896E1CF4ACD4008697F4 /* RxDataSources.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26B1B3A01CDDCE4100A3A2BE /* RxDataSources.framework */; };
 		261189701CF4ACD4008697F4 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 265877AD1CD7409E00E6B6A0 /* RealmSwift.framework */; };
-		261189711CF4ACD4008697F4 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26035ECA1CDAC1DD00E31915 /* Fabric.framework */; };
 		261189721CF4ACD4008697F4 /* RouterX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 265877AB1CD7409E00E6B6A0 /* RouterX.framework */; };
-		261189731CF4ACD4008697F4 /* Appsee.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26035ED01CDACF1200E31915 /* Appsee.framework */; };
 		261189741CF4ACD4008697F4 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 265877B21CD7409E00E6B6A0 /* Alamofire.framework */; };
 		261189751CF4ACD4008697F4 /* RxGesture.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26B1B3A11CDDCE4100A3A2BE /* RxGesture.framework */; };
 		261189761CF4ACD4008697F4 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 265877AC1CD7409E00E6B6A0 /* Realm.framework */; };
@@ -480,7 +477,6 @@
 				261189641CF4ACD4008697F4 /* RxCocoa.framework in Frameworks */,
 				261189651CF4ACD4008697F4 /* Kingfisher.framework in Frameworks */,
 				261189661CF4ACD4008697F4 /* RxSwift.framework in Frameworks */,
-				261189671CF4ACD4008697F4 /* Crashlytics.framework in Frameworks */,
 				261189681CF4ACD4008697F4 /* Locksmith.framework in Frameworks */,
 				261189691CF4ACD4008697F4 /* cmark.framework in Frameworks */,
 				2611896A1CF4ACD4008697F4 /* SwiftyJSON.framework in Frameworks */,
@@ -489,9 +485,7 @@
 				2611896D1CF4ACD4008697F4 /* SwiftDate.framework in Frameworks */,
 				2611896E1CF4ACD4008697F4 /* RxDataSources.framework in Frameworks */,
 				261189701CF4ACD4008697F4 /* RealmSwift.framework in Frameworks */,
-				261189711CF4ACD4008697F4 /* Fabric.framework in Frameworks */,
 				261189721CF4ACD4008697F4 /* RouterX.framework in Frameworks */,
-				261189731CF4ACD4008697F4 /* Appsee.framework in Frameworks */,
 				261189741CF4ACD4008697F4 /* Alamofire.framework in Frameworks */,
 				261189751CF4ACD4008697F4 /* RxGesture.framework in Frameworks */,
 				261189761CF4ACD4008697F4 /* Realm.framework in Frameworks */,
@@ -968,7 +962,6 @@
 				261189791CF4ACD4008697F4 /* Resources */,
 				261189881CF4ACD4008697F4 /* Embed Frameworks */,
 				2611899B1CF4ACD4008697F4 /* Run Carthage */,
-				2611899C1CF4ACD4008697F4 /* Run Fabric */,
 			);
 			buildRules = (
 			);
@@ -1046,6 +1039,9 @@
 				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = org.dianqk;
 				TargetAttributes = {
+					2611891B1CF4ACD4008697F4 = {
+						DevelopmentTeam = 9Y9KG3KBHJ;
+					};
 					262232641CB7DD37009133D7 = {
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = 9Y9KG3KBHJ;
@@ -1210,20 +1206,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "/usr/local/bin/carthage copy-frameworks";
-		};
-		2611899C1CF4ACD4008697F4 /* Run Fabric */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Run Fabric";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "./Fabric.framework/run 0d237d4bff28c9227b8860d13bc6e43f79365f51 bb0078464b43d110d5cad188aac7f89dca12e624a77dabc92f136909bede27a9";
 		};
 		265877E11CD753D200E6B6A0 /* Run Carthage */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1494,9 +1476,9 @@
 		2611899E1CF4ACD4008697F4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-Dev";
 				CODE_SIGN_ENTITLEMENTS = GGQ/Resources/GGQ.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Song Xutao (MQKW72R2U6)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1508,7 +1490,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "$(inherited) -DDEV";
-				PRODUCT_BUNDLE_IDENTIFIER = gg.swift.ggq;
+				PRODUCT_BUNDLE_IDENTIFIER = "gg.swift.ggq-dev";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -1517,9 +1499,9 @@
 		2611899F1CF4ACD4008697F4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-Dev";
 				CODE_SIGN_ENTITLEMENTS = GGQ/Resources/GGQ.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Song Xutao (MQKW72R2U6)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1530,7 +1512,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = gg.swift.ggq;
+				PRODUCT_BUNDLE_IDENTIFIER = "gg.swift.ggq-dev";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-O";

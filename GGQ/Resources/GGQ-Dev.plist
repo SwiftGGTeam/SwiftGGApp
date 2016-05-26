@@ -11,7 +11,7 @@
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
-	<string>GGQ</string>
+	<string>GGQ-Dev</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
@@ -40,32 +40,29 @@
 				<string>gg</string>
 			</array>
 		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Viewer</string>
+			<key>CFBundleURLName</key>
+			<string>dev.gg.swift</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>dev-gg</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Viewer</string>
+			<key>CFBundleURLName</key>
+			<string>dev.gg.swift</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>dev-swiftgg</string>
+			</array>
+		</dict>
 	</array>
 	<key>CFBundleVersion</key>
 	<string>106</string>
-	<key>Fabric</key>
-	<dict>
-		<key>APIKey</key>
-		<string>0d237d4bff28c9227b8860d13bc6e43f79365f51</string>
-		<key>Kits</key>
-		<array>
-			<dict>
-				<key>KitInfo</key>
-				<dict/>
-				<key>KitName</key>
-				<string>Crashlytics</string>
-			</dict>
-			<dict>
-				<key>KitInfo</key>
-				<dict>
-					<key>apikey</key>
-					<string>011db8b457e241599c523026bb47e415</string>
-				</dict>
-				<key>KitName</key>
-				<string>Appsee</string>
-			</dict>
-		</array>
-	</dict>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSAppTransportSecurity</key>
