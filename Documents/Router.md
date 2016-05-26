@@ -16,3 +16,11 @@
 - [x] 搜索 `/search/:content`
 - [x] 设置 `/setting`
 - [ ] 归档 `archives/:year/:month`
+
+## 例子
+
+- 文章**[2016 版] 常见操作性能对比** swiftgg://swift.gg/2016/05/25/friday-qa-2016-04-15-performance-comparisons-of-common-operations-2016-edition/
+- 分类 AppCoda swiftgg://swift.gg/categories/AppCoda/
+- 关于 swiftgg://swift.gg/about
+- 搜索 Swift swiftgg://swift.gg/search/Swift
+- 设置 swiftgg://swift.gg/setting
