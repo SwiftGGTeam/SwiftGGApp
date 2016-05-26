@@ -11,6 +11,7 @@ import RxSwift
 import RxCocoa
 import RxDataSources
 import SwiftDate
+import SwiftyJSON
 
 final class HomeViewController: UIViewController, SegueHandlerType {
     
@@ -113,7 +114,6 @@ final class HomeViewController: UIViewController, SegueHandlerType {
 			articleManagerViewController.articleInfo = articleInfo
 		case .ShowSearch:
 			let searchViewController = segue.destinationViewController.gg_castOrFatalError(SearchViewController.self)
-			searchViewController.snapshotView = tabBarController?.view.snapshotViewAfterScreenUpdates(false)
 			searchViewController.dismissResult.asObservable()
 				.filterNil()
 				.subscribeNext { [unowned self] article in
@@ -165,7 +165,17 @@ extension HomeViewController: UIScrollViewDelegate {
 }
 
 extension HomeViewController: Routerable {
+    
     var routingPattern: String {
-        return "Home"
+        return GGConfig.Router.home
+    }
+    
+    var routingIdentifier: String? {
+        return GGConfig.Router.home
+    }
+
+    func get(url: NSURL, sender: JSON?) {
+        Info("\(sender)")
+        Info("\(url)")
     }
 }

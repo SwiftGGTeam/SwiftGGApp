@@ -7,11 +7,11 @@
 //
 
 import UIKit
-import Realm
 import RealmSwift
 import RxSwift
 import RxCocoa
 import RxDataSources
+import SwiftyJSON
 
 private typealias CategoryList = AnimatableSectionModel<String, ArticleInfoObject>
 
@@ -100,5 +100,27 @@ final class CategoryViewController: UIViewController, SegueHandlerType {
             let articleInfo: ArticleInfoObject = castOrFatalError(sender)
             articleManagerViewController.articleInfo = articleInfo
         }
+    }
+}
+
+extension CategoryViewController: Routerable {
+    
+    var routingPattern: String {
+        return GGConfig.Router.categotie
+    }
+    
+    var routingIdentifier: String? {
+        return category?.name
+    }
+    
+    func get(url: NSURL, sender: JSON?) {
+        guard let categoryName = sender?["category_name"].string,
+            realm = try? Realm(),
+            object = realm.objects(CategoryObject.self).filter(NSPredicate(format: "name = %@", categoryName)).first where object.name != routingIdentifier else {
+                return
+        }
+        category = object
+        RouterManager.topViewController()?.showViewController(self, sender: nil)
+        
     }
 }

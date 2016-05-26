@@ -34,17 +34,33 @@ extension GGResult {
     }
 }
 
-
-enum JSONError: ErrorType {
-    case Null
-    case NoData
+struct GGError {
+    enum JSON: ErrorType {
+        case Null
+        case NoData
+        
+        var _code: Int {
+            switch self {
+            case .Null:
+                return 10100
+            case .NoData:
+                return 10101
+            }
+        }
+    }
     
-    var _code: Int {
-        switch self {
-        case .Null:
-            return 10100
-        case .NoData:
-            return 10101
+    enum Authorize: ErrorType {
+        case Unknown
+        
+        var _code: Int {
+            switch self {
+            case .Unknown:
+                return 10200
+            }
         }
     }
 }
+
+
+
+

@@ -10,6 +10,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 import PKHUD
+import SwiftyJSON
 
 class SettingViewController: UITableViewController {
     
@@ -56,4 +57,19 @@ class SettingViewController: UITableViewController {
         navigationController?.setNavigationBarHidden(false, animated: true)
     }
 
+}
+
+extension SettingViewController: Routerable {
+    var routingPattern: String {
+        return GGConfig.Router.setting
+    }
+    
+    var routingIdentifier: String? {
+        return GGConfig.Router.setting
+    }
+    
+    func get(url: NSURL, sender: JSON?) {
+        guard let topRoutable = RouterManager.topRouterable() where topRoutable.routingIdentifier != routingIdentifier else { return }
+        RouterManager.topViewController()?.showViewController(self, sender: nil)
+    }
 }

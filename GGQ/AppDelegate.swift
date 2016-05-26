@@ -75,8 +75,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(app: UIApplication, openURL url: NSURL, options: [String: AnyObject]) -> Bool {
         Info("Open: \(url)")
-        router.matchURLAndDoHandler(url)
-        return true
+        return router.matchURLAndDoHandler(url)
     }
     
     func application(application: UIApplication, continueUserActivity userActivity: NSUserActivity, restorationHandler: ([AnyObject]?) -> Void) -> Bool {
@@ -99,7 +98,7 @@ extension AppDelegate {
         
         router.registerRoutingPattern(GGConfig.Router.oauth) { (url, parameters, context) in
             let vc = RouterManager.findRouterable(routingPattern: GGConfig.Router.oauth)
-            vc!.post(url, sender: JSON(parameters))
+            vc?.post(url, sender: JSON(parameters))
         }
 
         router.registerRoutingPattern(GGConfig.Router.article) { (url, parameters, context) in
@@ -110,6 +109,31 @@ extension AppDelegate {
         router.registerRoutingPattern(GGConfig.Router.profile) { (url, parameters, context) in
             let vc = RouterManager.findRouterable(routingPattern: GGConfig.Router.profile)
             vc?.post(url, sender: JSON(parameters))
+        }
+        
+        router.registerRoutingPattern(GGConfig.Router.categotie)  { (url, parameters, context) in
+            let vc = R.storyboard.category.initialViewController()
+            vc?.get(url, sender: JSON(parameters))
+        }
+        
+        router.registerRoutingPattern(GGConfig.Router.about) { (url, parameters, context) in
+            let vc = R.storyboard.about.initialViewController()
+            vc?.get(url, sender: JSON(parameters))
+        }
+        
+        router.registerRoutingPattern(GGConfig.Router.search) { (url, parameters, context) in
+            let vc = R.storyboard.search.initialViewController()
+            vc?.get(url, sender: JSON(parameters))
+        }
+        
+        router.registerRoutingPattern(GGConfig.Router.setting) { (url, parameters, context) in
+            let vc = R.storyboard.setting.initialViewController()
+            vc?.get(url, sender: JSON(parameters))
+        }
+        
+        router.registerRoutingPattern(GGConfig.Router.home) { (url, parameters, context) in
+            let vc = R.storyboard.main.homeViewController()
+            vc?.get(url, sender: JSON(parameters))
         }
     }
 }

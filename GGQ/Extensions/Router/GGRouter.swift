@@ -72,6 +72,20 @@ extension RouterManager {
     }
 }
 
+#if DEBUG
+extension UIViewController: Routerable {
+    
+    var routingPattern: String {
+        return "404"
+    }
+    
+    var routingIdentifier: String? {
+        return nil
+    }
+
+}
+#endif
+
 extension UIApplication {
     class func topViewController(base: UIViewController? = UIApplication.sharedApplication().keyWindow?.rootViewController) -> UIViewController? {
         if let nav = base as? UINavigationController {

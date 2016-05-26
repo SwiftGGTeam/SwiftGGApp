@@ -62,7 +62,7 @@ class RxMoyaXProvider: MoyaXProvider {
                     if let error = json.error {
                         observer.onNext(.Failure(error))
                     } else if json.type == .Null {
-                        observer.onNext(.Failure(JSONError.Null))
+                        observer.onNext(.Failure(GGError.JSON.Null))
                     } else {
                         observer.onNext(GGResult.Success(json))
                     }
@@ -88,7 +88,7 @@ class RxMoyaXProvider: MoyaXProvider {
                     if let error = json.error {
                         observer.onNext(.Failure(error))
                     } else if json.type == .Null {
-                        observer.onNext(.Failure(JSONError.Null))
+                        observer.onNext(.Failure(GGError.JSON.Null))
                     } else {
                         observer.onNext(GGResult.Success(json))
                     }

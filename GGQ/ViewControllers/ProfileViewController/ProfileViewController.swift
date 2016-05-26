@@ -81,8 +81,9 @@ final class ProfileViewController: UIViewController {
         
         articleStatusTableView
             .rx_modelSelected(ArticleInfoObject)
-            .subscribeNext { article in
-                UIApplication.sharedApplication().openURL(article.convertURL())
+            .map { $0.convertURL() }
+            .subscribeNext { url in
+                RouterManager.sharedRouterManager().openURL(url)
             }
             .addDisposableTo(rx_disposeBag)
         

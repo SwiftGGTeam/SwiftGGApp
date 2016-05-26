@@ -9,6 +9,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import SwiftyJSON
 
 final class SearchViewController: UIViewController, SegueHandlerType {
 
@@ -21,8 +22,8 @@ final class SearchViewController: UIViewController, SegueHandlerType {
 	private var viewModel: SearchViewModel!
 
 	let dismissResult = Variable<ArticleInfoObject?>(nil)
-
-	var snapshotView: UIView?
+    
+    var searchText: String?
 
 	enum SegueIdentifier: String {
 		case ShowArticle
@@ -30,6 +31,8 @@ final class SearchViewController: UIViewController, SegueHandlerType {
 	}
 
 	override func viewDidLoad() {
+        
+        searchBar.text = searchText
         
         searchResultTableView.estimatedRowHeight = 44
         searchResultTableView.rowHeight = UITableViewAutomaticDimension
@@ -61,28 +64,6 @@ final class SearchViewController: UIViewController, SegueHandlerType {
 		} }
 			.addDisposableTo(rx_disposeBag)
 
-//        if (!UIAccessibilityIsReduceTransparencyEnabled()) {
-//            searchResultTableView.backgroundColor = UIColor.clearColor()
-////            let blurEffect = UIBlurEffect(style: .Light)
-////            let blurEffectView = UIVisualEffectView(effect: blurEffect)
-////            searchResultTableView.backgroundView = blurEffectView
-//
-//            // if inside a popover
-//            if let popover = navigationController?.popoverPresentationController {
-//                popover.backgroundColor = UIColor.clearColor()
-//            }
-//
-//            // if you want translucent vibrant table view separator lines
-//            searchResultTableView.separatorEffect = UIVibrancyEffect(forBlurEffect: blurEffect)
-//        }
-
-		if let snapshotView = snapshotView {
-			view.insertSubview(snapshotView, atIndex: 0)
-			snapshotView.topAnchor.constraintEqualToAnchor(view.topAnchor).active = true
-			snapshotView.bottomAnchor.constraintEqualToAnchor(view.bottomAnchor).active = true
-			snapshotView.trailingAnchor.constraintEqualToAnchor(view.trailingAnchor).active = true
-			snapshotView.leadingAnchor.constraintEqualToAnchor(view.leadingAnchor).active = true
-		}
 	}
 
 	override func viewWillDisappear(animated: Bool) {
@@ -101,4 +82,34 @@ final class SearchViewController: UIViewController, SegueHandlerType {
 			articleManagerViewController.articleInfo = castOrFatalError(sender)
 		}
 	}
+}
+
+extension SearchViewController: Routerable {
+    var routingPattern: String {
+        return GGConfig.Router.search
+    }
+    
+    var routingIdentifier: String? {
+        if let searchText = searchBar?.text {
+            return GGConfig.Router.search + "/" + searchText
+        } else {
+            return GGConfig.Router.search
+        }
+    }
+    
+    func get(url: NSURL, sender: JSON?) {
+        guard let topRoutable = RouterManager.topRouterable() where topRoutable.routingIdentifier != routingIdentifier else { return }
+        if topRoutable.routingPattern == routingPattern {
+            topRoutable.post(url, sender: sender)
+            return
+        }
+        searchText = sender?["content"].string
+        RouterManager.topViewController()?.showDetailViewController(self, sender: nil)
+    }
+    
+    func post(url: NSURL, sender: JSON?) {
+        searchBar.text = sender?["content"].string
+    }
+    
+    
 }

@@ -22,10 +22,22 @@
 	<array>
 		<dict>
 			<key>CFBundleTypeRole</key>
-			<string>Editor</string>
+			<string>Viewer</string>
+			<key>CFBundleURLName</key>
+			<string>gg.swift</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
 				<string>swiftgg</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Viewer</string>
+			<key>CFBundleURLName</key>
+			<string>gg.swift</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>gg</string>
 			</array>
 		</dict>
 	</array>

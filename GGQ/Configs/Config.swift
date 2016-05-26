@@ -40,9 +40,15 @@ class GGConfig {
     }
     
     struct Router {
+        static let home = "/:page" // 未完成
         static let oauth = "/oauth/:type"
         static let profile = "/profile/:type/:token"
         static let article = "/:year/:month/:day/:pattern"
+        static let categotie = "/categories/:category_name"
+        static let about = "/about"
+        static let search = "/search/:content"
+        static let setting = "/setting"
+        static let archives = "/archives/:year/:month"
     }
 
 }

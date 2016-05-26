@@ -21,17 +21,10 @@ class LoginViewController: UIViewController {
     
     @IBOutlet weak var githubButton: UIButton!
     
-    
     override func viewDidLoad() {
-        super.viewDidLoad()
         
-        enum Erro: ErrorType {
-            case KKK
-        }
-        
-        Erro.KKK
-        
-        githubButton.rx_tap.doOnNext { HUD.show(.Label("请求 GitHub 认证…")) }
+        githubButton.rx_tap
+            .doOnNext { HUD.show(.Label("请求 GitHub 认证…")) }
             .flatMap { GGProvider.request(GitHubOAuthAPI.Authorize) }
             .doOnError { HUD.flash(.LabeledError(title: "\($0._code)", subtitle: nil), delay: 0.3) }
             .doOnNext { _ in HUD.hide(afterDelay: 0.3) }
@@ -72,7 +65,7 @@ extension LoginViewController: Routerable {
                         if let token = json["access_token"].string {
                             HUD.flash(.Label("请求成功"), delay: 0.6)
                             let url = NSURL(string: "swiftgg://swift.gg/profile/github/\(token)")!
-                            UIApplication.sharedApplication().openURL(url)
+                            RouterManager.sharedRouterManager().openURL(url)
                         } else {
                             HUD.flash(.Label("请求失败"), delay: 0.6)
                         }

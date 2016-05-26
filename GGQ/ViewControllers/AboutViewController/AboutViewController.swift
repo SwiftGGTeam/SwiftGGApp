@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 final class AboutViewController: UIViewController {
 
@@ -14,5 +15,22 @@ final class AboutViewController: UIViewController {
         didSet {
             versionInfoLabel.text = "v" + Version.currentVersion + "(" + Version.buildVersion + ")"
         }
+    }
+}
+
+
+extension AboutViewController: Routerable {
+    
+    var routingPattern: String {
+        return GGConfig.Router.about
+    }
+    
+    var routingIdentifier: String? {
+        return GGConfig.Router.about
+    }
+    
+    func get(url: NSURL, sender: JSON?) {
+        guard let topRouterable = RouterManager.topRouterable() where routingIdentifier != topRouterable.routingIdentifier else { return }
+        RouterManager.topViewController()?.showViewController(self, sender: nil)
     }
 }
