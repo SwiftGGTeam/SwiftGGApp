@@ -36,6 +36,8 @@ class ViewController: UIViewController {
         
         textView.attributedText = mdRender(markdown: string)
         
+        Info("\(textView.attributedText)")
+        
     }
 
 }

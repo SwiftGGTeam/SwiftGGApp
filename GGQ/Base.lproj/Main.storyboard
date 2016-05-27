@@ -214,35 +214,16 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="btn_search" id="3Gg-KW-Tdx">
                             <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                            <connections>
-                                <segue destination="qyx-sf-vgK" kind="presentation" identifier="ShowSearch" id="kas-ur-gLB"/>
-                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="A33-Nq-7fC" id="Mud-mW-FEm"/>
-                        <segue destination="bZI-Fk-Qlj" kind="show" identifier="ShowArticle" id="lh6-8c-wka"/>
+                        <outlet property="searchButtonItem" destination="3Gg-KW-Tdx" id="8w6-zf-McG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BFJ-PX-ttQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1677" y="22"/>
-        </scene>
-        <!--Search-->
-        <scene sceneID="PSH-e3-PH2">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Search" id="qyx-sf-vgK" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="NlK-11-1P5" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2257.5" y="-388"/>
-        </scene>
-        <!--Article-->
-        <scene sceneID="gQm-ia-swa">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Article" id="bZI-Fk-Qlj" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="jbW-Oo-CWe" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2305.5" y="-252"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="xce-SY-APw">

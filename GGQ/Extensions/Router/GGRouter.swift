@@ -70,6 +70,10 @@ extension RouterManager {
         }
         return nil
     }
+    
+    func neverCareResultOpenURL(url: NSURL) {
+        openURL(url)
+    }
 }
 
 #if DEBUG

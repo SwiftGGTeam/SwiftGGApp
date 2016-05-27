@@ -62,6 +62,10 @@ class GGLayoutManager: NSLayoutManager {
     
     override func drawUnderlineForGlyphRange(glyphRange: NSRange, underlineType underlineVal: NSUnderlineStyle, baselineOffset: CGFloat, lineFragmentRect lineRect: CGRect, lineFragmentGlyphRange lineGlyphRange: NSRange, containerOrigin: CGPoint) {
         let firstPosition = locationForGlyphAtIndex(glyphRange.location).x
+        guard firstPosition == 25 else { return }
+//        if lineRect.origin.x != 0 {
+            Info("\(firstPosition)")
+//        }
         let rect = CGRect(x: lineRect.origin.x + containerOrigin.x + firstPosition - 10, y: lineRect.origin.y + containerOrigin.y, width: 3, height: lineRect.size.height)
         UIColor(red: 96.0/255.0, green: 201.0/255.0, blue: 248.0/255.0, alpha: 1).setFill()
         UIBezierPath(rect: rect).fill()

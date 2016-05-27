@@ -15,7 +15,9 @@ import SwiftyJSON
 
 final class HomeViewController: UIViewController, SegueHandlerType {
     
-	@IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet private weak var searchButtonItem: UIBarButtonItem!
+
+	@IBOutlet private weak var collectionView: UICollectionView!
 
 	var viewModel: HomeViewModel!
 
@@ -30,6 +32,12 @@ final class HomeViewController: UIViewController, SegueHandlerType {
 	}
 
 	override func viewDidLoad() {
+        
+        searchButtonItem.rx_tap
+            .map { NSURL(string: "swiftgg://swift.gg/search/k")! }
+            .subscribeNext(RouterManager.sharedRouterManager().neverCareResultOpenURL)
+            .addDisposableTo(rx_disposeBag)
+        
 		let loadMore = rx_sentMessage(#selector(HomeViewController.collectionView(_: willDisplayCell: forItemAtIndexPath:)))
 			.flatMapLatest { objects -> Observable<Void> in
 				let objects = objects as [AnyObject]
