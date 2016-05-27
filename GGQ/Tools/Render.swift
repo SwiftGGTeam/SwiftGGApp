@@ -37,6 +37,23 @@ extension InlineElement {
     }
 }
 
+extension Block {
+    var text: String? {
+        switch self {
+        case let .CodeBlock(text, _):
+            return text
+        case let .Paragraph(texts):
+            return texts.first?.text
+        default:
+            #if DEV
+                fatalError("\(self)")
+            #else
+                return nil
+            #endif
+        }
+    }
+}
+
 func mdRender(markdown markdown: String) -> NSAttributedString {
     let node = Node(markdown: markdown)
     Info("\(node)")
@@ -70,11 +87,11 @@ func render(blocks: [Block], type: ListType, index: Int) -> NSMutableAttributedS
     }
     return attributedString
 }
-
+// TODO: - 限制后面的 Render
 func render(block: Block, type: ListType, index: Int, subIndex: Int) -> NSMutableAttributedString {
     let attributeString = NSMutableAttributedString()
     let paragraphStyle = NSMutableParagraphStyle()
-//    paragraphStyle.firstLineHeadIndent = 20 // 首行缩进
+    paragraphStyle.firstLineHeadIndent = 20 // 首行缩进
     paragraphStyle.headIndent = 38
     // TODO: -
 //    let attributeString = render(block).attributesAtIndex(0, effectiveRange: NSRangePointer)
@@ -85,10 +102,10 @@ func render(block: Block, type: ListType, index: Int, subIndex: Int) -> NSMutabl
     ]
     switch type {
     case .Unordered:
-        let unordered = NSMutableAttributedString(string: "  \u{2022} ", attributes: attributes)
+        let unordered = NSMutableAttributedString(string: "\u{2022} ", attributes: attributes)
         attributeString.appendAttributedString(unordered)
     case .Ordered:
-        let ordered = NSMutableAttributedString(string: "  \(index). ", attributes: attributes)
+        let ordered = NSMutableAttributedString(string: "\(index). ", attributes: attributes)
         attributeString.appendAttributedString(ordered)
     }
     let result = render(block)
@@ -119,12 +136,27 @@ func renderBlockQuote(block: Block) -> NSMutableAttributedString {
     switch block {
     case .BlockQuote(let items): // 注释
         Info("Block: \(items)")
-        return renderBlockQuote(items)
+        
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.firstLineHeadIndent = 20 // 首行缩进
+        paragraphStyle.headIndent = 200
+        
+        let attributes = [
+            NSParagraphStyleAttributeName: paragraphStyle,
+            NSForegroundColorAttributeName: UIColor.grayColor()
+        ]
+        
+        let attributedString = NSMutableAttributedString(string: items.first?.text ?? "", attributes: attributes)
+        return attributedString
+        
+        
+//        return renderBlockQuote(items)
     case let .CodeBlock(text, _): // 已到底
         Info("CodeBlock: \(text)")
         let attributes = [
             NSFontAttributeName: UIFont(name: "Menlo-Regular", size: 14)!,
-            NSForegroundColorAttributeName: UIColor.grayColor()
+            NSForegroundColorAttributeName: UIColor.grayColor(),
+            NSBackgroundColorAttributeName: UIColor.blueColor()
         ]
         return NSMutableAttributedString(string: text, attributes: attributes)
     case let .List(items, type): // 暂时不考虑
@@ -286,20 +318,38 @@ func render(block: Block) -> NSMutableAttributedString {
     switch block {
     case .BlockQuote(let items): // 注释
         Info("Block: \(items)")
-        return renderBlockQuote(items)
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.firstLineHeadIndent = 20 // 首行缩进
+        paragraphStyle.headIndent = 20
+//        paragraphStyle.lineSpacing = 20
+        
+        let attributes = [
+            NSParagraphStyleAttributeName: paragraphStyle,
+            NSForegroundColorAttributeName: UIColor.grayColor(),
+            NSUnderlineStyleAttributeName: NSUnderlineStyle.StyleSingle.rawValue
+        ]
+        let text = items.first?.text ?? ""
+        let attributedString = NSMutableAttributedString(string: "\n" + text, attributes: attributes)
+        attributedString.appendAttributedString(NSAttributedString(string: "\n \n"))
+        return attributedString
+        
+        //        return renderBlockQuote(items)
     case let .CodeBlock(text, _): // 已到底
         Info("CodeBlock: \(text)")
         
         let paragraphStyle = NSMutableParagraphStyle()
-        paragraphStyle.firstLineHeadIndent = 20 // 首行缩进
-        paragraphStyle.headIndent = 20
+//        paragraphStyle.firstLineHeadIndent = 20 // 首行缩进
+//        paragraphStyle.headIndent = 200
+        paragraphStyle.paragraphSpacing = 3
         
         let attributes = [
             NSFontAttributeName: UIFont(name: "Menlo-Regular", size: 14)!,
-            NSParagraphStyleAttributeName: paragraphStyle
+            NSParagraphStyleAttributeName: paragraphStyle,
+            NSBackgroundColorAttributeName: UIColor(red: 238.0/255.0, green: 238.0/255.0, blue: 238.0/255.0, alpha: 1) // TODO: 
         ]
-        let attributedString = NSMutableAttributedString(string: "\n " + text, attributes: attributes)
-        attributedString.appendAttributedString(NSAttributedString(string: "\n "))
+        
+        let attributedString = NSMutableAttributedString(string: text, attributes: attributes)
+
         return attributedString
     case .Custom(let literal):
         Info("Custom: \(literal)")
@@ -383,8 +433,8 @@ func render(inlineElement: InlineElement) -> NSMutableAttributedString {
         guard let children = childrens.first else { fatalError("没有名字") }
         let attributes = [
             NSFontAttributeName: UIFont(name: "PingFangSC-Regular", size: 17)!,
-            NSForegroundColorAttributeName: UIColor.blueColor(),
-            NSUnderlineStyleAttributeName: NSUnderlineStyle.StyleSingle.rawValue,
+            NSForegroundColorAttributeName: UIColor(red: 96.0/255.0, green: 201.0/255.0, blue: 248.0/255.0, alpha: 1),
+//            NSUnderlineStyleAttributeName: NSUnderlineStyle.StyleSingle.rawValue,
             NSLinkAttributeName: url ?? ""
         ]
         return NSMutableAttributedString(string: children.text ?? url ?? "", attributes: attributes)

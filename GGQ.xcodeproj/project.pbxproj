@@ -282,6 +282,10 @@
 		7319D87C1CF56361003E8FB8 /* Occupiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7319D8741CF56361003E8FB8 /* Occupiable.swift */; };
 		7319D87D1CF56361003E8FB8 /* OptionalType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7319D8751CF56361003E8FB8 /* OptionalType.swift */; };
 		7319D87E1CF56361003E8FB8 /* RxOptionalError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7319D8761CF56361003E8FB8 /* RxOptionalError.swift */; };
+		73E896BC1CF80B1B0034941F /* GGLayoutManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E896BB1CF80B1B0034941F /* GGLayoutManager.swift */; };
+		73E896BE1CF80B430034941F /* GGTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E896BD1CF80B430034941F /* GGTextView.swift */; };
+		73E896C01CF868AB0034941F /* GGLayoutManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E896BB1CF80B1B0034941F /* GGLayoutManager.swift */; };
+		73E896C11CF868AB0034941F /* GGLayoutManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E896BB1CF80B1B0034941F /* GGLayoutManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -511,6 +515,8 @@
 		7319D8741CF56361003E8FB8 /* Occupiable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Occupiable.swift; sourceTree = "<group>"; };
 		7319D8751CF56361003E8FB8 /* OptionalType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionalType.swift; sourceTree = "<group>"; };
 		7319D8761CF56361003E8FB8 /* RxOptionalError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxOptionalError.swift; sourceTree = "<group>"; };
+		73E896BB1CF80B1B0034941F /* GGLayoutManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GGLayoutManager.swift; sourceTree = "<group>"; };
+		73E896BD1CF80B430034941F /* GGTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GGTextView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -817,6 +823,8 @@
 				26AC2FBD1CF74692006A4E88 /* Assets.xcassets */,
 				26AC2FBF1CF74692006A4E88 /* LaunchScreen.storyboard */,
 				26AC2FC21CF74692006A4E88 /* Info.plist */,
+				73E896BB1CF80B1B0034941F /* GGLayoutManager.swift */,
+				73E896BD1CF80B430034941F /* GGTextView.swift */,
 			);
 			path = MDReader;
 			sourceTree = "<group>";
@@ -1298,13 +1306,11 @@
 				"$(SRCROOT)/Carthage/Build/iOS/Locksmith.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/cmark.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/CommonMark.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/NSObject_Rx.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxDataSources.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxGesture.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/SwiftyJSON.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/RxOptional.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Rswift.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/XCGLogger.framework",
 			);
@@ -1432,6 +1438,7 @@
 				2611893A1CF4ACD4008697F4 /* RealmConfig.swift in Sources */,
 				2611893B1CF4ACD4008697F4 /* ReadStatusViewModel.swift in Sources */,
 				2611893C1CF4ACD4008697F4 /* ArticleCollectionViewCell.swift in Sources */,
+				73E896C01CF868AB0034941F /* GGLayoutManager.swift in Sources */,
 				2611893D1CF4ACD4008697F4 /* HomeViewModel.swift in Sources */,
 				26AC2FAC1CF684B2006A4E88 /* Occupiable.swift in Sources */,
 				2611893E1CF4ACD4008697F4 /* UIViewController+Router.swift in Sources */,
@@ -1516,6 +1523,7 @@
 				26CC45D61CDC13DD00DDDE0A /* RealmConfig.swift in Sources */,
 				26D6E5A91CE2316B004C0742 /* ReadStatusViewModel.swift in Sources */,
 				26E4CDDF1CBB4E5E0013AD29 /* ArticleCollectionViewCell.swift in Sources */,
+				73E896C11CF868AB0034941F /* GGLayoutManager.swift in Sources */,
 				26E4CDAE1CB8AFAB0013AD29 /* HomeViewModel.swift in Sources */,
 				26BCE39C1CC9B3F600115D04 /* UIViewController+Router.swift in Sources */,
 				26E261091CBC910E00B34645 /* CategorysViewModel.swift in Sources */,
@@ -1581,8 +1589,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				26AC2FD61CF75001006A4E88 /* Render.swift in Sources */,
+				73E896BE1CF80B430034941F /* GGTextView.swift in Sources */,
 				26AC2FD91CF7502F006A4E88 /* Logger.swift in Sources */,
 				26AC2FB91CF74692006A4E88 /* ViewController.swift in Sources */,
+				73E896BC1CF80B1B0034941F /* GGLayoutManager.swift in Sources */,
 				26AC2FDC1CF75069006A4E88 /* GGImageAttachment.swift in Sources */,
 				26AC2FB71CF74692006A4E88 /* AppDelegate.swift in Sources */,
 				26AC2FD11CF74ED9006A4E88 /* R.generated.swift in Sources */,
@@ -1883,6 +1893,7 @@
 				);
 				INFOPLIST_FILE = MDReader/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "-DDEV";
 				PRODUCT_BUNDLE_IDENTIFIER = gg.swift.t.MDReader;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";

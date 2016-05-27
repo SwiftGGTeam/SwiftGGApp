@@ -36,6 +36,25 @@ final class ArticleViewController: UIViewController {
     @IBOutlet private weak var contentTextView: UITextView!
     @IBOutlet private weak var pageInfoLabel: UILabel!
     
+    lazy var textView: UITextView = {
+        let textStorage = NSTextStorage()
+        let layoutManager = GGLayoutManager()
+        textStorage.addLayoutManager(layoutManager)
+        let textContainer = NSTextContainer()
+        layoutManager.addTextContainer(textContainer)
+        let view = UITextView(frame: CGRect.zero, textContainer: textContainer)
+        view.editable = false
+        
+        view.translatesAutoresizingMaskIntoConstraints = false
+        self.view.addSubview(view)
+        view.topAnchor.constraintEqualToAnchor(self.view.topAnchor).active = true
+        view.bottomAnchor.constraintEqualToAnchor(self.view.bottomAnchor).active = true
+        view.trailingAnchor.constraintEqualToAnchor(self.view.trailingAnchor).active = true
+        view.leadingAnchor.constraintEqualToAnchor(self.view.leadingAnchor).active = true
+        
+        return view
+    }()
+    
     override func viewDidLoad() {
         
         rx_articleTitle.asObservable()
@@ -50,7 +69,7 @@ final class ArticleViewController: UIViewController {
         
         rx_contentText.asObservable()
             .observeOn(.Main)
-            .bindTo(contentTextView.rx_attributedText)
+            .bindTo(textView.rx_attributedText)
             .addDisposableTo(rx_disposeBag)
         
         rx_sentMessage(#selector(ArticleViewController.viewDidAppear(_:)))
