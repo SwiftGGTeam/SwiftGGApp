@@ -19,7 +19,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eUj-vb-Qct" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="761" y="484"/>
+            <point key="canvasLocation" x="739" y="740"/>
         </scene>
         <!--Categorys-->
         <scene sceneID="FrR-YY-87v">
@@ -81,7 +81,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z7g-mm-AOv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="761" y="-272"/>
+            <point key="canvasLocation" x="739" y="22"/>
         </scene>
         <!--首页-->
         <scene sceneID="bT6-mx-6vy">
@@ -226,7 +226,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BFJ-PX-ttQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1556" y="-272"/>
+            <point key="canvasLocation" x="1677" y="22"/>
         </scene>
         <!--Search-->
         <scene sceneID="PSH-e3-PH2">
