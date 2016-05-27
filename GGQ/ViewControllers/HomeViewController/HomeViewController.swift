@@ -66,9 +66,10 @@ final class HomeViewController: UIViewController, SegueHandlerType {
             .addDisposableTo(rx_disposeBag)
 
 		collectionView.rx_modelSelected(ModelType)
-			.subscribeNext { [unowned self] in
+			.subscribeNext {
 				if case .Element(let article) = $0 {
-					self.performSegueWithIdentifier(.ShowArticle, sender: article)
+                    let urlString = article.contentUrl.stringByReplacingOccurrencesOfString("http://", withString: "swiftgg://")
+                    RouterManager.sharedRouterManager().openURL(NSURL(string: urlString)!)
 				}
 		}
 			.addDisposableTo(rx_disposeBag)
