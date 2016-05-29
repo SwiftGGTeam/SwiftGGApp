@@ -740,7 +740,7 @@ Cg
         <!--Article Detail View Controller-->
         <scene sceneID="H6r-mN-5zS">
             <objects>
-                <viewController storyboardIdentifier="ArticleDetailViewController" hidesBottomBarWhenPushed="YES" id="XCB-1U-8z6" customClass="ArticleDetailViewController" customModule="GGQ" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ArticleDetailViewController" automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" id="XCB-1U-8z6" customClass="ArticleDetailViewController" customModule="GGQ" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="IUK-sR-73k"/>
                         <viewControllerLayoutGuide type="bottom" id="maw-eo-VCh"/>
@@ -748,7 +748,7 @@ Cg
                     <view key="view" contentMode="scaleToFill" id="wm9-mK-JQ1">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ssC-WV-pcN" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -72,7 +72,9 @@ final class CategoryViewController: UIViewController, SegueHandlerType {
             .addDisposableTo(rx_disposeBag)
         
         tableView.rx_modelSelected(ArticleInfoObject)
-            .subscribeNext(performSegueWithIdentifier(.ShowArticle))
+            .map { $0.contentUrl.stringByReplacingOccurrencesOfString("http://", withString: "swiftgg://") }
+            .map { NSURL(string: $0)! }
+            .subscribeNext(RouterManager.sharedRouterManager().neverCareResultOpenURL)
             .addDisposableTo(rx_disposeBag)
         
         viewModel.hasNextPage.asDriver()
@@ -92,15 +94,7 @@ final class CategoryViewController: UIViewController, SegueHandlerType {
     override func viewWillAppear(animated: Bool) {
         tableView.reloadData()
     }
-    
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        switch segueIdentifierForSegue(segue) {
-        case .ShowArticle:
-            let articleManagerViewController = segue.destinationViewController.gg_castOrFatalError(ArticleManagerViewController.self)
-            let articleInfo: ArticleInfoObject = castOrFatalError(sender)
-            articleManagerViewController.articleInfo = articleInfo
-        }
-    }
+
 }
 
 extension CategoryViewController: Routerable {

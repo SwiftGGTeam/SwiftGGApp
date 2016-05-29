@@ -12,12 +12,13 @@ class ViewController: UIViewController {
     
     
     lazy var textView: UITextView = {
-        let textStorage = NSTextStorage()
+        let textStorage = NSTextStorage()//JLTextStorage(documentScope: SwiftLang().documentScope)
         let layoutManager = GGLayoutManager()
         textStorage.addLayoutManager(layoutManager)
         let textContainer = NSTextContainer()
         layoutManager.addTextContainer(textContainer)
         let view = UITextView(frame: CGRect.zero, textContainer: textContainer)
+//        let view = JLTextView(language: .Swift, theme: .Dusk)
         
         view.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(view)
@@ -35,6 +36,7 @@ class ViewController: UIViewController {
         let string = try! NSString(contentsOfURL: fileURL, encoding: NSUTF8StringEncoding) as String
         
         textView.attributedText = mdRender(markdown: string)
+//        textView.text = string
         
         Info("\(textView.attributedText)")
         

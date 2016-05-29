@@ -76,10 +76,9 @@ final class HomeViewController: UIViewController, SegueHandlerType {
 		collectionView.rx_modelSelected(ModelType)
 			.subscribeNext {
 				if case .Element(let article) = $0 {
-                    let urlString = article.contentUrl.stringByReplacingOccurrencesOfString("http://", withString: "swiftgg://")
-                    RouterManager.sharedRouterManager().openURL(NSURL(string: urlString)!)
+                    RouterManager.sharedRouterManager().openURL(article.convertURL())
 				}
-		}
+            }
 			.addDisposableTo(rx_disposeBag)
 
 		collectionView.rx_setDelegate(self)
@@ -113,22 +112,6 @@ final class HomeViewController: UIViewController, SegueHandlerType {
 
 				self.presentViewController(alert, animated: true, completion: nil)
 		}.addDisposableTo(rx_disposeBag)
-	}
-
-	override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-		switch segueIdentifierForSegue(segue) {
-		case .ShowArticle:
-			let articleManagerViewController = segue.destinationViewController.gg_castOrFatalError(ArticleManagerViewController.self)
-			let articleInfo: ArticleInfoObject = castOrFatalError(sender)
-			articleManagerViewController.articleInfo = articleInfo
-		case .ShowSearch:
-			let searchViewController = segue.destinationViewController.gg_castOrFatalError(SearchViewController.self)
-			searchViewController.dismissResult.asObservable()
-				.filterNil()
-				.subscribeNext { [unowned self] article in
-					self.performSegueWithIdentifier(.ShowArticle, sender: article) }
-				.addDisposableTo(rx_disposeBag)
-		}
 	}
 
 	override func viewWillAppear(animated: Bool) {

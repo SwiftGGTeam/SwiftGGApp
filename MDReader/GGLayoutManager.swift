@@ -80,4 +80,3 @@ class GGLayoutManager: NSLayoutManager {
     }
     
 }
-//(8.33398, 286.6, 754.666, 13.8) 2 (116,77) UIDeviceWhiteColorSpace 0.666667 1

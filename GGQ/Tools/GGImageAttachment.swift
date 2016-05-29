@@ -30,9 +30,9 @@ class GGImageAttachment: NSTextAttachment {
     }
     
     override func attachmentBoundsForTextContainer(textContainer: NSTextContainer?, proposedLineFragment lineFrag: CGRect, glyphPosition position: CGPoint, characterIndex charIndex: Int) -> CGRect {
-        
-        if let image = image {
-            let width = lineFrag.size.width
+        textContainer?.layoutManager?.invalidateDisplayForCharacterRange(NSRange(location: charIndex, length: 1))
+        if let image = image where image.size.width * UIScreen.mainScreen().scale >= UIScreen.mainScreen().bounds.width - 20 {
+            let width = lineFrag.size.width - 16
             let imageSize = image.size
             
             let scale = width / imageSize.width
@@ -43,6 +43,20 @@ class GGImageAttachment: NSTextAttachment {
             return super.attachmentBoundsForTextContainer(textContainer, proposedLineFragment: lineFrag, glyphPosition: position, characterIndex: charIndex)
         }
         
+    }
+    
+    override init(data contentData: NSData?, ofType uti: String?) {
+        super.init(data: contentData, ofType: uti)
+    }
+    
+    override func encodeWithCoder(aCoder: NSCoder) {
+        aCoder.encodeObject(imageURL, forKey: "imageURL")
+        super.encodeWithCoder(aCoder)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        imageURL = aDecoder.decodeObjectForKey("imageURL") as? NSURL
+        super.init(coder: aDecoder)
     }
 
 }

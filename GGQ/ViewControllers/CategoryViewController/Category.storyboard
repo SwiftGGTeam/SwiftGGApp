@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="yzV-Dx-U7S">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="yzV-Dx-U7S">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
@@ -96,20 +96,11 @@
                         <outlet property="headerImageView" destination="X3T-Ig-wh9" id="NlF-lh-VXL"/>
                         <outlet property="indicatorView" destination="8Nd-cv-wl0" id="f1k-Pm-5dt"/>
                         <outlet property="tableView" destination="1Xx-6m-PLx" id="Xad-gU-f7i"/>
-                        <segue destination="qJ6-Dw-Npw" kind="show" identifier="ShowArticle" id="Cpl-WD-xAa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CI4-mo-Mtc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="282" y="274"/>
-        </scene>
-        <!--Article-->
-        <scene sceneID="gom-M5-e2p">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Article" id="qJ6-Dw-Npw" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="vDd-GK-TUZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="759.5" y="274"/>
         </scene>
     </scenes>
     <resources>

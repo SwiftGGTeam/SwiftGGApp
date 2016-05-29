@@ -20,8 +20,6 @@ final class SearchViewController: UIViewController, SegueHandlerType {
 	@IBOutlet private weak var visualEffectView: UIVisualEffectView!
 
 	private var viewModel: SearchViewModel!
-
-	let dismissResult = Variable<ArticleInfoObject?>(nil)
     
     var searchText: String?
 
@@ -60,8 +58,9 @@ final class SearchViewController: UIViewController, SegueHandlerType {
 			.rx_modelSelected(ArticleInfoObject)
 			.subscribeNext { [unowned self] article in
 				self.dismissViewControllerAnimated(true) {
-					self.dismissResult.value = article
-		} }
+					RouterManager.sharedRouterManager().openURL(article.convertURL())
+                }
+            }
 			.addDisposableTo(rx_disposeBag)
 
 	}

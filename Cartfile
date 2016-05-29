@@ -15,3 +15,4 @@ github "RxSwiftCommunity/RxDataSources" ~> 0.8
 github "RxSwiftCommunity/RxGesture" "master"
 github "DaveWoodCom/XCGLogger" ~> 3.3
 github "mac-cain13/R.swift.Library"
+github "Anviking/Chromatism"

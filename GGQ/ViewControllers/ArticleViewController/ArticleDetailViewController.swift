@@ -11,6 +11,8 @@ import RxSwift
 import RxCocoa
 import SwiftyJSON
 import RealmSwift
+import PKHUD
+import SafariServices
 
 class ArticleDetailViewController: UIViewController {
     
@@ -26,20 +28,47 @@ class ArticleDetailViewController: UIViewController {
         layoutManager.addTextContainer(textContainer)
         let view = UITextView(frame: CGRect.zero, textContainer: textContainer)
         view.editable = false
-        
+        view.layer.masksToBounds = true
+        view.backgroundColor = R.color.gg.background()
         view.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(view)
-        view.topAnchor.constraintEqualToAnchor(self.view.topAnchor).active = true
-        view.bottomAnchor.constraintEqualToAnchor(self.view.bottomAnchor).active = true
+        view.topAnchor.constraintEqualToAnchor(self.view.topAnchor, constant: 20).active = true
+        view.bottomAnchor.constraintEqualToAnchor(self.view.bottomAnchor, constant: -5).active = true
         view.trailingAnchor.constraintEqualToAnchor(self.view.trailingAnchor, constant: -5).active = true
-        view.leadingAnchor.constraintEqualToAnchor(self.view.leadingAnchor, constant: 5).active = true
-        
+        view.leadingAnchor.constraintEqualToAnchor(self.view.leadingAnchor, constant: 10).active = true
+        view.delegate = self
         return view
+    }()
+    
+    lazy var contentImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        self.view.insertSubview(imageView, aboveSubview: self.backgroundContentView)
+        imageView.contentMode = .ScaleAspectFit
+        imageView.topAnchor.constraintEqualToAnchor(self.view.topAnchor).active = true
+        imageView.bottomAnchor.constraintEqualToAnchor(self.view.bottomAnchor).active = true
+        imageView.trailingAnchor.constraintEqualToAnchor(self.view.trailingAnchor).active = true
+        imageView.leadingAnchor.constraintEqualToAnchor(self.view.leadingAnchor).active = true
+        return imageView
+    }()
+    
+    lazy var backgroundContentView: UIView = {
+        let backgroundView = UIView()
+        backgroundView.hidden = true
+        backgroundView.translatesAutoresizingMaskIntoConstraints = false
+        backgroundView.backgroundColor = R.color.gg.lightBlack()
+        backgroundView.alpha = 0.5
+        self.view.addSubview(backgroundView)
+        backgroundView.topAnchor.constraintEqualToAnchor(self.view.topAnchor).active = true
+        backgroundView.bottomAnchor.constraintEqualToAnchor(self.view.bottomAnchor).active = true
+        backgroundView.trailingAnchor.constraintEqualToAnchor(self.view.trailingAnchor).active = true
+        backgroundView.leadingAnchor.constraintEqualToAnchor(self.view.leadingAnchor).active = true
+        return backgroundView
     }()
     
     override func viewDidLoad() {
         articleDetailViewModel = ArticleDetailViewModel(articleInfo: articleInfo)
-        
+
         articleDetailViewModel.contentAttributeText.asDriver()
             .drive(textView.rx_attributedText)
             .addDisposableTo(rx_disposeBag)
@@ -50,11 +79,66 @@ class ArticleDetailViewController: UIViewController {
             .merge()
             .subscribeNext { [unowned self] in
                 self.navigationController?.hidesBarsOnSwipe = $0
+                self.navigationController?.hidesBarsOnTap = $0
+            }
+            .addDisposableTo(rx_disposeBag)
+        
+        textView.hidden = true
+        textView.alpha = 0
+        
+        articleDetailViewModel.isLoading.asDriver()
+            .driveNext { [unowned self] in
+                switch $0 {
+                case true:
+                    HUD.show(.SystemActivity)
+                case false:
+                    HUD.hide(afterDelay: 0.15)
+                    self.textView.hidden = false
+                    UIView.animateWithDuration(0.3) {
+                        self.textView.alpha = 1
+                    }
+                }
             }
             .addDisposableTo(rx_disposeBag)
         
     }
+    
+    override func viewWillAppear(animated: Bool) {
+        navigationController?.setNavigationBarHidden(true, animated: true)
+    }
 
+}
+
+extension ArticleDetailViewController: UITextViewDelegate {
+    func textView(textView: UITextView, shouldInteractWithTextAttachment textAttachment: NSTextAttachment, inRange characterRange: NSRange) -> Bool {
+        if let image = textAttachment.image {
+            Info("\(textAttachment)")
+
+            let closeButtonAssets = CloseButtonAssets(normal: R.image.btn_close_write()!, highlighted: R.image.btn_close_write())
+            let configuration = ImageViewerConfiguration(imageSize: image.size, closeButtonAssets: closeButtonAssets)
+            let imageViewer = ImageViewer(configuration: configuration)
+            imageViewer.image = image
+
+            showDetailViewController(imageViewer, sender: nil)
+        }
+
+        return false
+    }
+    
+    func textView(textView: UITextView, shouldInteractWithURL URL: NSURL, inRange characterRange: NSRange) -> Bool {
+        switch URL.scheme {
+        case "swiftgg":
+           RouterManager.sharedRouterManager().openURL(URL)
+        case "http":
+            fallthrough
+        case "https":
+            let sf = SFSafariViewController(URL: URL)
+            showDetailViewController(sf, sender: nil)
+        default:
+            break
+        }
+        return false
+    }
 }
 
 // MARK: - Routerable

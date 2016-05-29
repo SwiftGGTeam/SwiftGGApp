@@ -12,7 +12,6 @@ import Kingfisher
 
 typealias Render = NSMutableAttributedString -> NSMutableAttributedString
 
-
 // TODO: - 换成函数式。。。
 
 extension InlineElement {
@@ -83,7 +82,7 @@ func render(items: [[Block]], type: ListType) -> NSMutableAttributedString {
 func render(blocks: [Block], type: ListType, index: Int) -> NSMutableAttributedString {
     let attributedString = NSMutableAttributedString()
     for (subIndex, block) in blocks.enumerate() {
-        attributedString.appendAttributedString(render(block, type: type, index: index, subIndex: subIndex))
+        attributedString.appendAttributedString(render(block, type: type, index: index + 1, subIndex: subIndex))
     }
     return attributedString
 }
@@ -92,7 +91,7 @@ func render(block: Block, type: ListType, index: Int, subIndex: Int) -> NSMutabl
     let attributeString = NSMutableAttributedString()
     let paragraphStyle = NSMutableParagraphStyle()
     paragraphStyle.firstLineHeadIndent = 20 // 首行缩进
-    paragraphStyle.headIndent = 38
+    paragraphStyle.headIndent = 35
     // TODO: -
 //    let attributeString = render(block).attributesAtIndex(0, effectiveRange: NSRangePointer)
     
@@ -110,18 +109,7 @@ func render(block: Block, type: ListType, index: Int, subIndex: Int) -> NSMutabl
     }
     let result = render(block)
     attributeString.appendAttributedString(result)
-//    Info(attributeString)
-//    attributeString.addAttributes(attributes, range: NSRange(location: 0, length: attributeString.length))
-//    Info(attributeString)
     return attributeString
-}
-
-func render(items: [[Block]]) -> NSMutableAttributedString {
-    let attributedString = NSMutableAttributedString()
-    for item in items {
-        attributedString.appendAttributedString(render(item))
-    }
-    return attributedString
 }
 
 // MARK: - 渲染 Block Quote
@@ -132,7 +120,6 @@ func renderBlockQuote(block: Block) -> NSMutableAttributedString {
         Info("Paragraph: \(text)")
         let attributedString = NSMutableAttributedString()
         attributedString.appendAttributedString(NSAttributedString(string: " \n"))
-//        let attributedString = renderBlockQuote(text)
         attributedString.appendAttributedString(renderBlockQuote(text))
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.firstLineHeadIndent = 20 // 首行缩进
@@ -159,6 +146,8 @@ func renderBlockQuote(inlineElements: [InlineElement]) -> NSMutableAttributedStr
     return attributedString
 }
 
+// MARK: Block Quote 渲染结束
+
 func renderBlockQuote(inlineElement: InlineElement) -> NSMutableAttributedString {
     switch inlineElement {
     case let .Code(text):
@@ -171,27 +160,38 @@ func renderBlockQuote(inlineElement: InlineElement) -> NSMutableAttributedString
         Info("Warning Custom: \(literal)")
         return NSMutableAttributedString()
     case let .Emphasis(children): // *加强 斜体*
-        return renderEmphasis(children)
+        assert(children.count == 1, "Emphasis 的 children 不为 1")
+        let attribute: [String: AnyObject] = [
+            NSFontAttributeName: UIFont(name: "PingFangSC-Regular", size: 17)!,
+            NSObliquenessAttributeName: NSNumber(float: 0.2)
+        ]
+        return NSMutableAttributedString(string: children.first?.text ?? "", attributes: attribute)
     case .Html:
         Info("Warning Html")
+        assert(false, "不渲染 Html")
         return NSMutableAttributedString()
     case .Image:
         Info("Warning Image")
+        assert(false, "暂时 不渲染 Image")
         return NSMutableAttributedString()
     case .LineBreak:
         return NSMutableAttributedString(string: "\n")
-    case let .Link(childrens, _, url): // 遇到链接不继续向下处理
-        guard let children = childrens.first else { fatalError("没有名字") }
+    case let .Link(children, _, url): // 遇到链接不继续向下处理
+        guard let element = children.first else { fatalError("没有名字") }
         let attributes = [
             NSFontAttributeName: UIFont(name: "PingFangSC-Regular", size: 17)!,
             NSForegroundColorAttributeName: UIColor.blueColor(),
             NSLinkAttributeName: url ?? ""
         ]
-        return NSMutableAttributedString(string: children.text ?? url ?? "", attributes: attributes)
+        return NSMutableAttributedString(string: element.text ?? url ?? "", attributes: attributes)
     case .SoftBreak:
         return NSMutableAttributedString(string: " ")
     case .Strong(let children):
-        return renderStrong(children)
+        assert(children.count == 1, "Strong 的 children 不为 1")
+        let attribute: [String: AnyObject] = [
+            NSFontAttributeName: UIFont(name: "PingFangSC-Medium", size: 17)!,
+        ]
+        return NSMutableAttributedString(string: children.first?.text ?? "", attributes: attribute)
     case .Text(let text):
         let attributes = [
             NSFontAttributeName: UIFont(name: "PingFangSC-Regular", size: 17)!,
@@ -284,6 +284,7 @@ func renderParagraph(inlineElements: [InlineElement]) -> NSMutableAttributedStri
 func render(inlineElements: [InlineElement], level: Int) -> NSMutableAttributedString {
     guard let _ = inlineElements.first else { fatalError("不必要的执行") }
     let attributedString = NSMutableAttributedString()
+    attributedString.appendAttributedString(NSAttributedString(string: "\n"))
     for inlineElement in inlineElements {
         
             let size = CGFloat(25 - level * 2)
@@ -334,44 +335,68 @@ func render(inlineElements: [InlineElement], level: Int) -> NSMutableAttributedS
 // MARK: - 这个当做最外层， 从这里找下一个 case
 func render(block: Block) -> NSMutableAttributedString {
     switch block {
-    case .BlockQuote(let items): // 注释
-        
-        assert(items.count == 1, "Block 数量有误")
+    case .BlockQuote(let items): // 注释 搞定
+//        assert(items.count == 1, "Block 数量有误")
         Info("Block: \(items)")
-        let paragraphStyle = NSMutableParagraphStyle()
-        paragraphStyle.firstLineHeadIndent = 20 // 首行缩进
-        paragraphStyle.headIndent = 20
-//        paragraphStyle.lineSpacing = 20
-        
-        let attributes = [
-            NSFontAttributeName: UIFont(name: "PingFangSC-Regular", size: 15)!,
-            NSParagraphStyleAttributeName: paragraphStyle,
-            NSForegroundColorAttributeName: UIColor.grayColor(),
-            NSUnderlineStyleAttributeName: NSUnderlineStyle.StyleSingle.rawValue
-        ]
-        let text = items.first?.text ?? ""
-//        let attributedString = NSMutableAttributedString(string: "\n" + text, attributes: attributes)
-//        attributedString.appendAttributedString(NSAttributedString(string: "\n\n"))
+        return items.map(renderBlockQuote).reduce(NSMutableAttributedString(), combine: { (a, b) -> NSMutableAttributedString in
+            a.appendAttributedString(b)
+            return a
+        })
+//        let attributedString = renderBlockQuote(items.first!)
 //        return attributedString
-        let attributedString = renderBlockQuote(items.first!)
-//        return renderBlockQuote(items.first!)
-        return attributedString
-    case let .CodeBlock(text, _): // 已到底
+    case let .CodeBlock(text, language): // 已到底
         Info("CodeBlock: \(text)")
         
         let paragraphStyle = NSMutableParagraphStyle()
-//        paragraphStyle.firstLineHeadIndent = 20 // 首行缩进
-//        paragraphStyle.headIndent = 200
-        paragraphStyle.paragraphSpacing = 3
+//        paragraphStyle.lineHeightMultiple = 0.7
         
         let attributes = [
-            NSFontAttributeName: UIFont(name: "Menlo-Regular", size: 14)!,
+            NSFontAttributeName: UIFont(name: "Menlo-Regular", size: 10)!,
             NSParagraphStyleAttributeName: paragraphStyle,
             NSBackgroundColorAttributeName: UIColor(red: 238.0/255.0, green: 238.0/255.0, blue: 238.0/255.0, alpha: 1) // TODO: 
         ]
         
-        let attributedString = NSMutableAttributedString(string: text, attributes: attributes)
+        let paragraphContentStyle = NSMutableParagraphStyle()
+        paragraphContentStyle.firstLineHeadIndent = 10 // 首行缩进
+        paragraphContentStyle.headIndent = 10
+        paragraphContentStyle.tailIndent -= 5
+//        paragraphContentStyle.paragraphSpacing = 3
+        
+        let contentAttributes = [
+            NSFontAttributeName: UIFont(name: "Menlo-Regular", size: 14)!,
+            NSParagraphStyleAttributeName: paragraphContentStyle,
+            NSBackgroundColorAttributeName: UIColor(red: 238.0/255.0, green: 238.0/255.0, blue: 238.0/255.0, alpha: 1) // TODO:
 
+        ]
+
+        let codeAttributedString = NSMutableAttributedString(string: text, attributes: contentAttributes)
+        
+        if let language = language {
+            switch language.lowercaseString {
+            case "swift":
+                let langScope = SwiftLang().documentScope
+                langScope.theme = JLColorTheme.Default
+                langScope.cascadeAttributedString(codeAttributedString)
+                langScope.perform()
+                case "c":
+                    let langScope = SwiftLang().documentScope
+                    langScope.theme = JLColorTheme.Default
+                    langScope.cascadeAttributedString(codeAttributedString)
+                    langScope.perform()
+                case "objective-c":
+                    let langScope = SwiftLang().documentScope
+                    langScope.theme = JLColorTheme.Default
+                    langScope.cascadeAttributedString(codeAttributedString)
+                    langScope.perform()
+            default:
+                break
+            }
+            
+        }
+
+        let attributedString = NSMutableAttributedString(string: "\n", attributes: attributes)
+        attributedString.appendAttributedString(codeAttributedString)
+        attributedString.appendAttributedString(NSMutableAttributedString(string: "\n", attributes: attributes))
         return attributedString
     case .Custom(let literal):
         Info("Custom: \(literal)")
@@ -410,8 +435,8 @@ func render(inlineElement: InlineElement) -> NSMutableAttributedString {
     switch inlineElement {
     case let .Code(text):
         let attributes = [
-            NSFontAttributeName: UIFont(name: "Menlo-Regular", size: 17)!,
-            NSForegroundColorAttributeName: UIColor.redColor()
+            NSFontAttributeName: UIFont(name: "Menlo-Regular", size: 16)!,
+            NSForegroundColorAttributeName: R.color.swiftCode.keywords()
         ]
         return NSMutableAttributedString(string: text, attributes: attributes)
     case let .Custom(literal):
@@ -432,8 +457,8 @@ func render(inlineElement: InlineElement) -> NSMutableAttributedString {
         Info("2 Image")
         let mutableAttributedString = NSMutableAttributedString()
         let attach = GGImageAttachment()
-        let image = UIImage(named: "img_placeholder")//R.image.img_placeholder()!
-        attach.image = image
+//        let image = UIImage(named: "img_placeholder")//R.image.img_placeholder()!
+//        attach.image = image
         attach.imageURL = NSURL(string: url!)
 //        attach.bounds = CGRect(origin: CGPoint(x: 20, y: 200), size: image.size)
         let attributedString = NSAttributedString(attachment: attach) as! NSMutableAttributedString
@@ -455,7 +480,7 @@ func render(inlineElement: InlineElement) -> NSMutableAttributedString {
         guard let children = childrens.first else { fatalError("没有名字") }
         let attributes = [
             NSFontAttributeName: UIFont(name: "PingFangSC-Regular", size: 17)!,
-            NSForegroundColorAttributeName: UIColor(red: 96.0/255.0, green: 201.0/255.0, blue: 248.0/255.0, alpha: 1),
+            NSForegroundColorAttributeName: R.color.gg.blue(),
 //            NSUnderlineStyleAttributeName: NSUnderlineStyle.StyleSingle.rawValue,
             NSLinkAttributeName: url ?? ""
         ]
@@ -472,3 +497,6 @@ func render(inlineElement: InlineElement) -> NSMutableAttributedString {
     }
 }
 
+//func render(code: String, language: String) -> NSMutableAttributedString {
+////    return
+//}

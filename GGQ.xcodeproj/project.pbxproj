@@ -64,6 +64,77 @@
 		267312821CBE8AC200036DB9 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267312811CBE8AC200036DB9 /* AboutViewController.swift */; };
 		267312841CBE8DB900036DB9 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267312831CBE8DB900036DB9 /* CategoryCollectionViewCell.swift */; };
 		267312861CBE8DD600036DB9 /* CategorysCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267312851CBE8DD600036DB9 /* CategorysCollectionViewFlowLayout.swift */; };
+		267515171CFA78130064FDAA /* swiftCode.clr in Resources */ = {isa = PBXBuildFile; fileRef = 267515161CFA78130064FDAA /* swiftCode.clr */; };
+		267515181CFA78160064FDAA /* swiftCode.clr in Resources */ = {isa = PBXBuildFile; fileRef = 267515161CFA78130064FDAA /* swiftCode.clr */; };
+		267515281CFA80050064FDAA /* JLColorTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2675151A1CFA80050064FDAA /* JLColorTheme.swift */; };
+		267515291CFA80050064FDAA /* JLColorTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2675151A1CFA80050064FDAA /* JLColorTheme.swift */; };
+		2675152A1CFA80050064FDAA /* JLColorTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2675151A1CFA80050064FDAA /* JLColorTheme.swift */; };
+		2675152B1CFA80050064FDAA /* JLDocumentScope.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2675151B1CFA80050064FDAA /* JLDocumentScope.swift */; };
+		2675152C1CFA80050064FDAA /* JLDocumentScope.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2675151B1CFA80050064FDAA /* JLDocumentScope.swift */; };
+		2675152D1CFA80050064FDAA /* JLDocumentScope.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2675151B1CFA80050064FDAA /* JLDocumentScope.swift */; };
+		2675152E1CFA80050064FDAA /* JLIndentator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2675151C1CFA80050064FDAA /* JLIndentator.swift */; };
+		2675152F1CFA80050064FDAA /* JLIndentator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2675151C1CFA80050064FDAA /* JLIndentator.swift */; };
+		267515301CFA80050064FDAA /* JLIndentator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2675151C1CFA80050064FDAA /* JLIndentator.swift */; };
+		267515311CFA80050064FDAA /* JLKeywordScope.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2675151D1CFA80050064FDAA /* JLKeywordScope.swift */; };
+		267515321CFA80050064FDAA /* JLKeywordScope.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2675151D1CFA80050064FDAA /* JLKeywordScope.swift */; };
+		267515331CFA80050064FDAA /* JLKeywordScope.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2675151D1CFA80050064FDAA /* JLKeywordScope.swift */; };
+		267515341CFA80050064FDAA /* JLLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2675151E1CFA80050064FDAA /* JLLanguage.swift */; };
+		267515351CFA80050064FDAA /* JLLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2675151E1CFA80050064FDAA /* JLLanguage.swift */; };
+		267515361CFA80050064FDAA /* JLLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2675151E1CFA80050064FDAA /* JLLanguage.swift */; };
+		267515371CFA80050064FDAA /* JLNestedScope.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2675151F1CFA80050064FDAA /* JLNestedScope.swift */; };
+		267515381CFA80050064FDAA /* JLNestedScope.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2675151F1CFA80050064FDAA /* JLNestedScope.swift */; };
+		267515391CFA80050064FDAA /* JLNestedScope.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2675151F1CFA80050064FDAA /* JLNestedScope.swift */; };
+		2675153A1CFA80050064FDAA /* JLRegexScope.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267515201CFA80050064FDAA /* JLRegexScope.swift */; };
+		2675153B1CFA80050064FDAA /* JLRegexScope.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267515201CFA80050064FDAA /* JLRegexScope.swift */; };
+		2675153C1CFA80050064FDAA /* JLRegexScope.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267515201CFA80050064FDAA /* JLRegexScope.swift */; };
+		2675153D1CFA80050064FDAA /* JLScope.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267515211CFA80050064FDAA /* JLScope.swift */; };
+		2675153E1CFA80050064FDAA /* JLScope.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267515211CFA80050064FDAA /* JLScope.swift */; };
+		2675153F1CFA80050064FDAA /* JLScope.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267515211CFA80050064FDAA /* JLScope.swift */; };
+		267515491CFA80050064FDAA /* JLTokenizingScope.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267515251CFA80050064FDAA /* JLTokenizingScope.swift */; };
+		2675154A1CFA80050064FDAA /* JLTokenizingScope.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267515251CFA80050064FDAA /* JLTokenizingScope.swift */; };
+		2675154B1CFA80050064FDAA /* JLTokenizingScope.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267515251CFA80050064FDAA /* JLTokenizingScope.swift */; };
+		2675154C1CFA80050064FDAA /* JLTokenType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267515261CFA80050064FDAA /* JLTokenType.swift */; };
+		2675154D1CFA80050064FDAA /* JLTokenType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267515261CFA80050064FDAA /* JLTokenType.swift */; };
+		2675154E1CFA80050064FDAA /* JLTokenType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267515261CFA80050064FDAA /* JLTokenType.swift */; };
+		2675154F1CFA80050064FDAA /* NSIndexSet+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267515271CFA80050064FDAA /* NSIndexSet+Additions.swift */; };
+		267515501CFA80050064FDAA /* NSIndexSet+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267515271CFA80050064FDAA /* NSIndexSet+Additions.swift */; };
+		267515511CFA80050064FDAA /* NSIndexSet+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267515271CFA80050064FDAA /* NSIndexSet+Additions.swift */; };
+		267515531CFA80F80064FDAA /* demo.txt in Resources */ = {isa = PBXBuildFile; fileRef = 267515521CFA80F80064FDAA /* demo.txt */; };
+		267515751CFA99000064FDAA /* CGPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2675155E1CFA99000064FDAA /* CGPoint.swift */; };
+		267515761CFA99000064FDAA /* CGPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2675155E1CFA99000064FDAA /* CGPoint.swift */; };
+		267515771CFA99000064FDAA /* CGPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2675155E1CFA99000064FDAA /* CGPoint.swift */; };
+		267515781CFA99000064FDAA /* CGSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2675155F1CFA99000064FDAA /* CGSize.swift */; };
+		267515791CFA99000064FDAA /* CGSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2675155F1CFA99000064FDAA /* CGSize.swift */; };
+		2675157A1CFA99000064FDAA /* CGSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2675155F1CFA99000064FDAA /* CGSize.swift */; };
+		2675157B1CFA99000064FDAA /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267515601CFA99000064FDAA /* UIView.swift */; };
+		2675157C1CFA99000064FDAA /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267515601CFA99000064FDAA /* UIView.swift */; };
+		2675157D1CFA99000064FDAA /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267515601CFA99000064FDAA /* UIView.swift */; };
+		267515901CFA99000064FDAA /* HeaderFooterLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267515671CFA99000064FDAA /* HeaderFooterLayout.swift */; };
+		267515911CFA99000064FDAA /* HeaderFooterLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267515671CFA99000064FDAA /* HeaderFooterLayout.swift */; };
+		267515921CFA99000064FDAA /* HeaderFooterLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267515671CFA99000064FDAA /* HeaderFooterLayout.swift */; };
+		267515931CFA99000064FDAA /* ImageFadeInHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267515681CFA99000064FDAA /* ImageFadeInHandler.swift */; };
+		267515941CFA99000064FDAA /* ImageFadeInHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267515681CFA99000064FDAA /* ImageFadeInHandler.swift */; };
+		267515951CFA99000064FDAA /* ImageFadeInHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267515681CFA99000064FDAA /* ImageFadeInHandler.swift */; };
+		267515A51CFA99000064FDAA /* ImageViewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2675156F1CFA99000064FDAA /* ImageViewer.swift */; };
+		267515A61CFA99000064FDAA /* ImageViewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2675156F1CFA99000064FDAA /* ImageViewer.swift */; };
+		267515A71CFA99000064FDAA /* ImageViewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2675156F1CFA99000064FDAA /* ImageViewer.swift */; };
+		267515A81CFA99000064FDAA /* ImageViewerConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267515701CFA99000064FDAA /* ImageViewerConfiguration.swift */; };
+		267515A91CFA99000064FDAA /* ImageViewerConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267515701CFA99000064FDAA /* ImageViewerConfiguration.swift */; };
+		267515AA1CFA99000064FDAA /* ImageViewerConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267515701CFA99000064FDAA /* ImageViewerConfiguration.swift */; };
+		267515AB1CFA99000064FDAA /* ImageViewerDismissTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267515711CFA99000064FDAA /* ImageViewerDismissTransition.swift */; };
+		267515AC1CFA99000064FDAA /* ImageViewerDismissTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267515711CFA99000064FDAA /* ImageViewerDismissTransition.swift */; };
+		267515AD1CFA99000064FDAA /* ImageViewerDismissTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267515711CFA99000064FDAA /* ImageViewerDismissTransition.swift */; };
+		267515AE1CFA99000064FDAA /* ImageViewerPresentTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267515721CFA99000064FDAA /* ImageViewerPresentTransition.swift */; };
+		267515AF1CFA99000064FDAA /* ImageViewerPresentTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267515721CFA99000064FDAA /* ImageViewerPresentTransition.swift */; };
+		267515B01CFA99000064FDAA /* ImageViewerPresentTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267515721CFA99000064FDAA /* ImageViewerPresentTransition.swift */; };
+		267515B11CFA99000064FDAA /* ImageViewerSwipeToDismissTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267515731CFA99000064FDAA /* ImageViewerSwipeToDismissTransition.swift */; };
+		267515B21CFA99000064FDAA /* ImageViewerSwipeToDismissTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267515731CFA99000064FDAA /* ImageViewerSwipeToDismissTransition.swift */; };
+		267515B31CFA99000064FDAA /* ImageViewerSwipeToDismissTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267515731CFA99000064FDAA /* ImageViewerSwipeToDismissTransition.swift */; };
+		267515B41CFA99000064FDAA /* UtilityFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267515741CFA99000064FDAA /* UtilityFunctions.swift */; };
+		267515B51CFA99000064FDAA /* UtilityFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267515741CFA99000064FDAA /* UtilityFunctions.swift */; };
+		267515B61CFA99000064FDAA /* UtilityFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267515741CFA99000064FDAA /* UtilityFunctions.swift */; };
+		267515B81CFAA9CC0064FDAA /* GGStoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267515B71CFAA9CC0064FDAA /* GGStoreService.swift */; };
+		267515B91CFAA9CC0064FDAA /* GGStoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267515B71CFAA9CC0064FDAA /* GGStoreService.swift */; };
 		267ABD871CDE3944009CE298 /* GGImageAttachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267ABD861CDE3944009CE298 /* GGImageAttachment.swift */; };
 		267ABD8D1CDEF088009CE298 /* GGRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267ABD8C1CDEF088009CE298 /* GGRouter.swift */; };
 		267ABD951CDF0079009CE298 /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267ABD941CDF0079009CE298 /* Cache.swift */; };
@@ -173,7 +244,6 @@
 		26AC302F1CF88A74006A4E88 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26B1B39F1CDDCE4100A3A2BE /* RxCocoa.framework */; };
 		26AC30301CF88A74006A4E88 /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 265877B11CD7409E00E6B6A0 /* Kingfisher.framework */; };
 		26AC30311CF88A74006A4E88 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26B1B3A21CDDCE4100A3A2BE /* RxSwift.framework */; };
-		26AC30321CF88A74006A4E88 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26035ECB1CDAC1DD00E31915 /* Crashlytics.framework */; };
 		26AC30331CF88A74006A4E88 /* Locksmith.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 265877B01CD7409E00E6B6A0 /* Locksmith.framework */; };
 		26AC30341CF88A74006A4E88 /* cmark.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26B1B39C1CDDCE4100A3A2BE /* cmark.framework */; };
 		26AC30351CF88A74006A4E88 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26B1B3A31CDDCE4100A3A2BE /* SwiftyJSON.framework */; };
@@ -182,7 +252,6 @@
 		26AC30381CF88A74006A4E88 /* SwiftDate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 265877AA1CD7409E00E6B6A0 /* SwiftDate.framework */; };
 		26AC30391CF88A74006A4E88 /* RxDataSources.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26B1B3A01CDDCE4100A3A2BE /* RxDataSources.framework */; };
 		26AC303A1CF88A74006A4E88 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 265877AD1CD7409E00E6B6A0 /* RealmSwift.framework */; };
-		26AC303B1CF88A74006A4E88 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26035ECA1CDAC1DD00E31915 /* Fabric.framework */; };
 		26AC303C1CF88A74006A4E88 /* RouterX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 265877AB1CD7409E00E6B6A0 /* RouterX.framework */; };
 		26AC303D1CF88A74006A4E88 /* Appsee.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26035ED01CDACF1200E31915 /* Appsee.framework */; };
 		26AC303E1CF88A74006A4E88 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 265877B21CD7409E00E6B6A0 /* Alamofire.framework */; };
@@ -434,6 +503,31 @@
 		267312811CBE8AC200036DB9 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		267312831CBE8DB900036DB9 /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		267312851CBE8DD600036DB9 /* CategorysCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategorysCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
+		267515161CFA78130064FDAA /* swiftCode.clr */ = {isa = PBXFileReference; lastKnownFileType = file; path = swiftCode.clr; sourceTree = "<group>"; };
+		2675151A1CFA80050064FDAA /* JLColorTheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JLColorTheme.swift; sourceTree = "<group>"; };
+		2675151B1CFA80050064FDAA /* JLDocumentScope.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JLDocumentScope.swift; sourceTree = "<group>"; };
+		2675151C1CFA80050064FDAA /* JLIndentator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JLIndentator.swift; sourceTree = "<group>"; };
+		2675151D1CFA80050064FDAA /* JLKeywordScope.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JLKeywordScope.swift; sourceTree = "<group>"; };
+		2675151E1CFA80050064FDAA /* JLLanguage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JLLanguage.swift; sourceTree = "<group>"; };
+		2675151F1CFA80050064FDAA /* JLNestedScope.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JLNestedScope.swift; sourceTree = "<group>"; };
+		267515201CFA80050064FDAA /* JLRegexScope.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JLRegexScope.swift; sourceTree = "<group>"; };
+		267515211CFA80050064FDAA /* JLScope.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JLScope.swift; sourceTree = "<group>"; };
+		267515251CFA80050064FDAA /* JLTokenizingScope.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JLTokenizingScope.swift; sourceTree = "<group>"; };
+		267515261CFA80050064FDAA /* JLTokenType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JLTokenType.swift; sourceTree = "<group>"; };
+		267515271CFA80050064FDAA /* NSIndexSet+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSIndexSet+Additions.swift"; sourceTree = "<group>"; };
+		267515521CFA80F80064FDAA /* demo.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = demo.txt; sourceTree = "<group>"; };
+		2675155E1CFA99000064FDAA /* CGPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGPoint.swift; sourceTree = "<group>"; };
+		2675155F1CFA99000064FDAA /* CGSize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGSize.swift; sourceTree = "<group>"; };
+		267515601CFA99000064FDAA /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		267515671CFA99000064FDAA /* HeaderFooterLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderFooterLayout.swift; sourceTree = "<group>"; };
+		267515681CFA99000064FDAA /* ImageFadeInHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageFadeInHandler.swift; sourceTree = "<group>"; };
+		2675156F1CFA99000064FDAA /* ImageViewer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewer.swift; sourceTree = "<group>"; };
+		267515701CFA99000064FDAA /* ImageViewerConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewerConfiguration.swift; sourceTree = "<group>"; };
+		267515711CFA99000064FDAA /* ImageViewerDismissTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewerDismissTransition.swift; sourceTree = "<group>"; };
+		267515721CFA99000064FDAA /* ImageViewerPresentTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewerPresentTransition.swift; sourceTree = "<group>"; };
+		267515731CFA99000064FDAA /* ImageViewerSwipeToDismissTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewerSwipeToDismissTransition.swift; sourceTree = "<group>"; };
+		267515741CFA99000064FDAA /* UtilityFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UtilityFunctions.swift; sourceTree = "<group>"; };
+		267515B71CFAA9CC0064FDAA /* GGStoreService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GGStoreService.swift; sourceTree = "<group>"; };
 		267ABD491CDDF448009CE298 /* FBMemoryProfiler.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBMemoryProfiler.framework; path = Carthage/Build/iOS/FBMemoryProfiler.framework; sourceTree = "<group>"; };
 		267ABD4A1CDDF448009CE298 /* FBRetainCycleDetector.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBRetainCycleDetector.framework; path = Carthage/Build/iOS/FBRetainCycleDetector.framework; sourceTree = "<group>"; };
 		267ABD4B1CDDF448009CE298 /* FBAllocationTracker.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBAllocationTracker.framework; path = Carthage/Build/iOS/FBAllocationTracker.framework; sourceTree = "<group>"; };
@@ -597,7 +691,6 @@
 				26AC302F1CF88A74006A4E88 /* RxCocoa.framework in Frameworks */,
 				26AC30301CF88A74006A4E88 /* Kingfisher.framework in Frameworks */,
 				26AC30311CF88A74006A4E88 /* RxSwift.framework in Frameworks */,
-				26AC30321CF88A74006A4E88 /* Crashlytics.framework in Frameworks */,
 				26AC30331CF88A74006A4E88 /* Locksmith.framework in Frameworks */,
 				26AC30681CF88AB8006A4E88 /* XCGLogger.framework in Frameworks */,
 				26AC30341CF88A74006A4E88 /* cmark.framework in Frameworks */,
@@ -607,7 +700,6 @@
 				26AC30381CF88A74006A4E88 /* SwiftDate.framework in Frameworks */,
 				26AC30391CF88A74006A4E88 /* RxDataSources.framework in Frameworks */,
 				26AC303A1CF88A74006A4E88 /* RealmSwift.framework in Frameworks */,
-				26AC303B1CF88A74006A4E88 /* Fabric.framework in Frameworks */,
 				26AC303C1CF88A74006A4E88 /* RouterX.framework in Frameworks */,
 				26AC303D1CF88A74006A4E88 /* Appsee.framework in Frameworks */,
 				26AC303E1CF88A74006A4E88 /* Alamofire.framework in Frameworks */,
@@ -623,6 +715,7 @@
 		26110AA91CF4A69D004F303A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				267515161CFA78130064FDAA /* swiftCode.clr */,
 				26110AC71CF4A762004F303A /* gg.clr */,
 				26110AAA1CF4A69D004F303A /* Assets.xcassets */,
 				26110AAF1CF4A69D004F303A /* GGQ-Dev.entitlements */,
@@ -742,6 +835,8 @@
 		267312961CBEAA1400036DB9 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				2675155C1CFA99000064FDAA /* ImageViewer */,
+				267515191CFA80050064FDAA /* Chromatism */,
 				267ABD861CDE3944009CE298 /* GGImageAttachment.swift */,
 				262BB1D51CDD847A00740EF6 /* Render.swift */,
 				26BF77631CBF8A8400117854 /* Cast.swift */,
@@ -750,6 +845,58 @@
 				267ABD941CDF0079009CE298 /* Cache.swift */,
 			);
 			path = Tools;
+			sourceTree = "<group>";
+		};
+		267515191CFA80050064FDAA /* Chromatism */ = {
+			isa = PBXGroup;
+			children = (
+				2675151A1CFA80050064FDAA /* JLColorTheme.swift */,
+				2675151B1CFA80050064FDAA /* JLDocumentScope.swift */,
+				2675151C1CFA80050064FDAA /* JLIndentator.swift */,
+				2675151D1CFA80050064FDAA /* JLKeywordScope.swift */,
+				2675151E1CFA80050064FDAA /* JLLanguage.swift */,
+				2675151F1CFA80050064FDAA /* JLNestedScope.swift */,
+				267515201CFA80050064FDAA /* JLRegexScope.swift */,
+				267515211CFA80050064FDAA /* JLScope.swift */,
+				267515251CFA80050064FDAA /* JLTokenizingScope.swift */,
+				267515261CFA80050064FDAA /* JLTokenType.swift */,
+				267515271CFA80050064FDAA /* NSIndexSet+Additions.swift */,
+			);
+			path = Chromatism;
+			sourceTree = "<group>";
+		};
+		2675155C1CFA99000064FDAA /* ImageViewer */ = {
+			isa = PBXGroup;
+			children = (
+				2675155D1CFA99000064FDAA /* Extensions */,
+				267515671CFA99000064FDAA /* HeaderFooterLayout.swift */,
+				267515681CFA99000064FDAA /* ImageFadeInHandler.swift */,
+				2675156D1CFA99000064FDAA /* ImageViewer */,
+				267515741CFA99000064FDAA /* UtilityFunctions.swift */,
+			);
+			path = ImageViewer;
+			sourceTree = "<group>";
+		};
+		2675155D1CFA99000064FDAA /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				2675155E1CFA99000064FDAA /* CGPoint.swift */,
+				2675155F1CFA99000064FDAA /* CGSize.swift */,
+				267515601CFA99000064FDAA /* UIView.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		2675156D1CFA99000064FDAA /* ImageViewer */ = {
+			isa = PBXGroup;
+			children = (
+				2675156F1CFA99000064FDAA /* ImageViewer.swift */,
+				267515701CFA99000064FDAA /* ImageViewerConfiguration.swift */,
+				267515711CFA99000064FDAA /* ImageViewerDismissTransition.swift */,
+				267515721CFA99000064FDAA /* ImageViewerPresentTransition.swift */,
+				267515731CFA99000064FDAA /* ImageViewerSwipeToDismissTransition.swift */,
+			);
+			path = ImageViewer;
 			sourceTree = "<group>";
 		};
 		267ABD521CDDF450009CE298 /* Dev */ = {
@@ -833,6 +980,7 @@
 			isa = PBXGroup;
 			children = (
 				26AC2FD01CF74ED9006A4E88 /* R.generated.swift */,
+				267515521CFA80F80064FDAA /* demo.txt */,
 				26AC2FCB1CF74DCF006A4E88 /* Content.md */,
 				26AC2FB61CF74692006A4E88 /* AppDelegate.swift */,
 				26AC2FB81CF74692006A4E88 /* ViewController.swift */,
@@ -1032,6 +1180,7 @@
 				26F967971CC8910200407593 /* GGOAuthService.swift */,
 				26F7C5811CCB10B600D6AC8E /* GGSwiftWeeklyService.swift */,
 				265877E71CD7668A00E6B6A0 /* GGKeychainService.swift */,
+				267515B71CFAA9CC0064FDAA /* GGStoreService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -1140,7 +1289,6 @@
 				26AC30421CF88A74006A4E88 /* Resources */,
 				26AC30501CF88A74006A4E88 /* Embed Frameworks */,
 				26AC30611CF88A74006A4E88 /* Run Carthage */,
-				26AC30621CF88A74006A4E88 /* Run Fabric */,
 			);
 			buildRules = (
 			);
@@ -1224,6 +1372,7 @@
 				267312801CBE8AAC00036DB9 /* About.storyboard in Resources */,
 				26110AC51CF4A6E2004F303A /* Main.storyboard in Resources */,
 				26E2610D1CBC913B00B34645 /* Profile.storyboard in Resources */,
+				267515171CFA78130064FDAA /* swiftCode.clr in Resources */,
 				26E4CDD91CBA27410013AD29 /* Search.storyboard in Resources */,
 				2673127E1CBE890E00036DB9 /* Setting.storyboard in Resources */,
 				26BCE38F1CC93CBC00115D04 /* Login.storyboard in Resources */,
@@ -1252,6 +1401,7 @@
 				26AC2FC11CF74692006A4E88 /* LaunchScreen.storyboard in Resources */,
 				26AC2FBE1CF74692006A4E88 /* Assets.xcassets in Resources */,
 				26AC2FBC1CF74692006A4E88 /* Main.storyboard in Resources */,
+				267515531CFA80F80064FDAA /* demo.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1269,6 +1419,7 @@
 				26AC304A1CF88A74006A4E88 /* About.storyboard in Resources */,
 				26AC304B1CF88A74006A4E88 /* Main.storyboard in Resources */,
 				26AC304C1CF88A74006A4E88 /* Profile.storyboard in Resources */,
+				267515181CFA78160064FDAA /* swiftCode.clr in Resources */,
 				26AC304D1CF88A74006A4E88 /* Search.storyboard in Resources */,
 				26AC304E1CF88A74006A4E88 /* Setting.storyboard in Resources */,
 				26AC304F1CF88A74006A4E88 /* Login.storyboard in Resources */,
@@ -1399,20 +1550,6 @@
 			shellPath = /bin/sh;
 			shellScript = "/usr/local/bin/carthage copy-frameworks";
 		};
-		26AC30621CF88A74006A4E88 /* Run Fabric */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Run Fabric";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "./Fabric.framework/run 0d237d4bff28c9227b8860d13bc6e43f79365f51 bb0078464b43d110d5cad188aac7f89dca12e624a77dabc92f136909bede27a9";
-		};
 		26BF77661CBF959100117854 /* R.Swift */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1438,17 +1575,29 @@
 				26E4CDC31CB8ECA40013AD29 /* HomeLoadMoreCollectionViewCell.swift in Sources */,
 				267312861CBE8DD600036DB9 /* CategorysCollectionViewFlowLayout.swift in Sources */,
 				267ABD8D1CDEF088009CE298 /* GGRouter.swift in Sources */,
+				267515491CFA80050064FDAA /* JLTokenizingScope.swift in Sources */,
+				267515901CFA99000064FDAA /* HeaderFooterLayout.swift in Sources */,
 				26E872611CC12A55006C5A0F /* Logger.swift in Sources */,
 				261A27A31CC1ED3B00EF3A9C /* ArticleTableViewCell.swift in Sources */,
+				2675154C1CFA80050064FDAA /* JLTokenType.swift in Sources */,
 				26E4CDA71CB8A93D0013AD29 /* UITabBar+IB.swift in Sources */,
+				267515AB1CFA99000064FDAA /* ImageViewerDismissTransition.swift in Sources */,
+				267515371CFA80050064FDAA /* JLNestedScope.swift in Sources */,
 				26F734911CBF480300CEA2DE /* CategoryModel.swift in Sources */,
 				7319D87C1CF56361003E8FB8 /* Occupiable.swift in Sources */,
 				262BB1D61CDD847A00740EF6 /* Render.swift in Sources */,
+				2675153A1CFA80050064FDAA /* JLRegexScope.swift in Sources */,
+				267515B81CFAA9CC0064FDAA /* GGStoreService.swift in Sources */,
+				267515A81CFA99000064FDAA /* ImageViewerConfiguration.swift in Sources */,
 				26BDBF4C1CD591E9000C601F /* ArticleManagerViewController.swift in Sources */,
 				7319D8781CF56361003E8FB8 /* Driver+Occupiable.swift in Sources */,
+				267515B41CFA99000064FDAA /* UtilityFunctions.swift in Sources */,
+				267515751CFA99000064FDAA /* CGPoint.swift in Sources */,
 				7319D87D1CF56361003E8FB8 /* OptionalType.swift in Sources */,
 				261189D01CF5F936008697F4 /* LoginViewModel.swift in Sources */,
 				26E872541CC107A2006C5A0F /* CategoryViewModel.swift in Sources */,
+				2675152B1CFA80050064FDAA /* JLDocumentScope.swift in Sources */,
+				267515B11CFA99000064FDAA /* ImageViewerSwipeToDismissTransition.swift in Sources */,
 				2698E0411CBFDAF800B7E8C7 /* MoyaX+Rx.swift in Sources */,
 				26CC45D91CDC155F00DDDE0A /* TScheduler.swift in Sources */,
 				7319D8791CF56361003E8FB8 /* Driver+Optional.swift in Sources */,
@@ -1457,6 +1606,8 @@
 				26F7C5821CCB10B600D6AC8E /* GGSwiftWeeklyService.swift in Sources */,
 				265395EC1CC0D3EF00E6239C /* Version.swift in Sources */,
 				262232691CB7DD37009133D7 /* AppDelegate.swift in Sources */,
+				267515A51CFA99000064FDAA /* ImageViewer.swift in Sources */,
+				267515931CFA99000064FDAA /* ImageFadeInHandler.swift in Sources */,
 				26E4CDDD1CBA33760013AD29 /* ArticleManagerViewModel.swift in Sources */,
 				26E4CDB91CB8C05E0013AD29 /* ArticleInfoModel.swift in Sources */,
 				2698E04C1CC00E8B00B7E8C7 /* CategoryViewController.swift in Sources */,
@@ -1466,6 +1617,7 @@
 				26E4CDB31CB8B2400013AD29 /* UIFont+GG.swift in Sources */,
 				26E261111CBC916A00B34645 /* ProfileViewModel.swift in Sources */,
 				26E4CDE41CBB6AB80013AD29 /* SearchTableViewCell.swift in Sources */,
+				2675152E1CFA80050064FDAA /* JLIndentator.swift in Sources */,
 				26CC45D61CDC13DD00DDDE0A /* RealmConfig.swift in Sources */,
 				26D6E5A91CE2316B004C0742 /* ReadStatusViewModel.swift in Sources */,
 				26E4CDDF1CBB4E5E0013AD29 /* ArticleCollectionViewCell.swift in Sources */,
@@ -1479,12 +1631,17 @@
 				2631BEAF1CDB4F8700735D3E /* RxDataSourceExt.swift in Sources */,
 				26E4CDC81CBA0D890013AD29 /* RxUITabBarDelegateProxy.swift in Sources */,
 				265877DF1CD74C7A00E6B6A0 /* Observable+Object.swift in Sources */,
+				267515781CFA99000064FDAA /* CGSize.swift in Sources */,
 				261A279F1CC1E7AE00EF3A9C /* Config.swift in Sources */,
+				267515311CFA80050064FDAA /* JLKeywordScope.swift in Sources */,
+				267515AE1CFA99000064FDAA /* ImageViewerPresentTransition.swift in Sources */,
 				26B4048B1CDA404B0023F380 /* Logger+Rx.swift in Sources */,
+				2675154F1CFA80050064FDAA /* NSIndexSet+Additions.swift in Sources */,
 				261A27A71CC1EF0B00EF3A9C /* ArticleLoadMoreTableViewCell.swift in Sources */,
 				26E4CDCD1CBA15860013AD29 /* ArticleViewController.swift in Sources */,
 				267312821CBE8AC200036DB9 /* AboutViewController.swift in Sources */,
 				7319D87A1CF56361003E8FB8 /* Observable+Occupiable.swift in Sources */,
+				2675153D1CFA80050064FDAA /* JLScope.swift in Sources */,
 				26E4CDD51CBA26FF0013AD29 /* SearchViewController.swift in Sources */,
 				26CC45DC1CDC1F8800DDDE0A /* SettingViewModel.swift in Sources */,
 				267ABD871CDE3944009CE298 /* GGImageAttachment.swift in Sources */,
@@ -1497,9 +1654,11 @@
 				265877E81CD7668A00E6B6A0 /* GGKeychainService.swift in Sources */,
 				261189AC1CF4B1B7008697F4 /* GGResult.swift in Sources */,
 				265877E31CD759EC00E6B6A0 /* UIScrollView+Rx.swift in Sources */,
+				2675157B1CFA99000064FDAA /* UIView.swift in Sources */,
 				26F343D51CC554D600476533 /* SettingViewController.swift in Sources */,
 				26BCE3921CC93FD800115D04 /* LoginViewController.swift in Sources */,
 				26E4CDAC1CB8AF960013AD29 /* HomeViewController.swift in Sources */,
+				267515341CFA80050064FDAA /* JLLanguage.swift in Sources */,
 				7319D87E1CF56361003E8FB8 /* RxOptionalError.swift in Sources */,
 				26D6E5B11CE232F2004C0742 /* UIImageView+Rx.swift in Sources */,
 				267ABD951CDF0079009CE298 /* Cache.swift in Sources */,
@@ -1512,6 +1671,7 @@
 				267312721CBA96BC00036DB9 /* ArticleDetailModel.swift in Sources */,
 				26F343D21CC54A2C00476533 /* GGSyncService.swift in Sources */,
 				26FB5D2F1CD63BD800790942 /* UserModel.swift in Sources */,
+				267515281CFA80050064FDAA /* JLColorTheme.swift in Sources */,
 				26F967981CC8910200407593 /* GGOAuthService.swift in Sources */,
 				7319D87B1CF56361003E8FB8 /* Observable+Optional.swift in Sources */,
 			);
@@ -1536,14 +1696,36 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				267515331CFA80050064FDAA /* JLKeywordScope.swift in Sources */,
 				26AC2FD61CF75001006A4E88 /* Render.swift in Sources */,
+				2675157D1CFA99000064FDAA /* UIView.swift in Sources */,
 				73E896BE1CF80B430034941F /* GGTextView.swift in Sources */,
 				26AC2FD91CF7502F006A4E88 /* Logger.swift in Sources */,
+				2675154E1CFA80050064FDAA /* JLTokenType.swift in Sources */,
+				267515951CFA99000064FDAA /* ImageFadeInHandler.swift in Sources */,
+				267515921CFA99000064FDAA /* HeaderFooterLayout.swift in Sources */,
+				2675154B1CFA80050064FDAA /* JLTokenizingScope.swift in Sources */,
+				267515AD1CFA99000064FDAA /* ImageViewerDismissTransition.swift in Sources */,
 				26AC2FB91CF74692006A4E88 /* ViewController.swift in Sources */,
+				2675153C1CFA80050064FDAA /* JLRegexScope.swift in Sources */,
+				267515771CFA99000064FDAA /* CGPoint.swift in Sources */,
 				73E896BC1CF80B1B0034941F /* GGLayoutManager.swift in Sources */,
+				2675157A1CFA99000064FDAA /* CGSize.swift in Sources */,
+				267515361CFA80050064FDAA /* JLLanguage.swift in Sources */,
+				267515AA1CFA99000064FDAA /* ImageViewerConfiguration.swift in Sources */,
+				2675153F1CFA80050064FDAA /* JLScope.swift in Sources */,
+				267515B61CFA99000064FDAA /* UtilityFunctions.swift in Sources */,
+				267515391CFA80050064FDAA /* JLNestedScope.swift in Sources */,
 				26AC2FDC1CF75069006A4E88 /* GGImageAttachment.swift in Sources */,
+				2675152A1CFA80050064FDAA /* JLColorTheme.swift in Sources */,
+				267515301CFA80050064FDAA /* JLIndentator.swift in Sources */,
 				26AC2FB71CF74692006A4E88 /* AppDelegate.swift in Sources */,
 				26AC2FD11CF74ED9006A4E88 /* R.generated.swift in Sources */,
+				267515B31CFA99000064FDAA /* ImageViewerSwipeToDismissTransition.swift in Sources */,
+				267515B01CFA99000064FDAA /* ImageViewerPresentTransition.swift in Sources */,
+				267515A71CFA99000064FDAA /* ImageViewer.swift in Sources */,
+				2675152D1CFA80050064FDAA /* JLDocumentScope.swift in Sources */,
+				267515511CFA80050064FDAA /* NSIndexSet+Additions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1555,17 +1737,29 @@
 				26AC2FE11CF88A74006A4E88 /* HomeLoadMoreCollectionViewCell.swift in Sources */,
 				26AC2FE21CF88A74006A4E88 /* CategorysCollectionViewFlowLayout.swift in Sources */,
 				26AC2FE31CF88A74006A4E88 /* GGRouter.swift in Sources */,
+				2675154A1CFA80050064FDAA /* JLTokenizingScope.swift in Sources */,
+				267515911CFA99000064FDAA /* HeaderFooterLayout.swift in Sources */,
 				26AC2FE41CF88A74006A4E88 /* Logger.swift in Sources */,
 				26AC2FE51CF88A74006A4E88 /* ArticleTableViewCell.swift in Sources */,
+				2675154D1CFA80050064FDAA /* JLTokenType.swift in Sources */,
 				26AC2FE61CF88A74006A4E88 /* UITabBar+IB.swift in Sources */,
+				267515AC1CFA99000064FDAA /* ImageViewerDismissTransition.swift in Sources */,
+				267515381CFA80050064FDAA /* JLNestedScope.swift in Sources */,
 				26AC2FE71CF88A74006A4E88 /* CategoryModel.swift in Sources */,
 				26AC2FE81CF88A74006A4E88 /* Occupiable.swift in Sources */,
 				26AC2FE91CF88A74006A4E88 /* Render.swift in Sources */,
+				2675153B1CFA80050064FDAA /* JLRegexScope.swift in Sources */,
+				267515B91CFAA9CC0064FDAA /* GGStoreService.swift in Sources */,
+				267515A91CFA99000064FDAA /* ImageViewerConfiguration.swift in Sources */,
 				26AC2FEA1CF88A74006A4E88 /* ArticleManagerViewController.swift in Sources */,
 				26AC2FEB1CF88A74006A4E88 /* Driver+Occupiable.swift in Sources */,
+				267515B51CFA99000064FDAA /* UtilityFunctions.swift in Sources */,
+				267515761CFA99000064FDAA /* CGPoint.swift in Sources */,
 				26AC2FEC1CF88A74006A4E88 /* OptionalType.swift in Sources */,
 				26AC2FED1CF88A74006A4E88 /* LoginViewModel.swift in Sources */,
 				26AC2FEE1CF88A74006A4E88 /* CategoryViewModel.swift in Sources */,
+				2675152C1CFA80050064FDAA /* JLDocumentScope.swift in Sources */,
+				267515B21CFA99000064FDAA /* ImageViewerSwipeToDismissTransition.swift in Sources */,
 				26AC2FEF1CF88A74006A4E88 /* MoyaX+Rx.swift in Sources */,
 				26AC2FF01CF88A74006A4E88 /* TScheduler.swift in Sources */,
 				26AC2FF11CF88A74006A4E88 /* Driver+Optional.swift in Sources */,
@@ -1574,6 +1768,8 @@
 				26AC2FF41CF88A74006A4E88 /* GGSwiftWeeklyService.swift in Sources */,
 				26AC2FF51CF88A74006A4E88 /* Version.swift in Sources */,
 				26AC2FF61CF88A74006A4E88 /* AppDelegate.swift in Sources */,
+				267515A61CFA99000064FDAA /* ImageViewer.swift in Sources */,
+				267515941CFA99000064FDAA /* ImageFadeInHandler.swift in Sources */,
 				26AC2FF71CF88A74006A4E88 /* ArticleManagerViewModel.swift in Sources */,
 				26AC2FF81CF88A74006A4E88 /* ArticleInfoModel.swift in Sources */,
 				26AC2FF91CF88A74006A4E88 /* CategoryViewController.swift in Sources */,
@@ -1583,6 +1779,7 @@
 				26AC2FFD1CF88A74006A4E88 /* UIFont+GG.swift in Sources */,
 				26AC2FFE1CF88A74006A4E88 /* ProfileViewModel.swift in Sources */,
 				26AC2FFF1CF88A74006A4E88 /* SearchTableViewCell.swift in Sources */,
+				2675152F1CFA80050064FDAA /* JLIndentator.swift in Sources */,
 				26AC30001CF88A74006A4E88 /* RealmConfig.swift in Sources */,
 				26AC30011CF88A74006A4E88 /* ReadStatusViewModel.swift in Sources */,
 				26AC30021CF88A74006A4E88 /* ArticleCollectionViewCell.swift in Sources */,
@@ -1596,12 +1793,17 @@
 				26AC30091CF88A74006A4E88 /* RxDataSourceExt.swift in Sources */,
 				26AC300A1CF88A74006A4E88 /* RxUITabBarDelegateProxy.swift in Sources */,
 				26AC300B1CF88A74006A4E88 /* Observable+Object.swift in Sources */,
+				267515791CFA99000064FDAA /* CGSize.swift in Sources */,
 				26AC300C1CF88A74006A4E88 /* Config.swift in Sources */,
+				267515321CFA80050064FDAA /* JLKeywordScope.swift in Sources */,
+				267515AF1CFA99000064FDAA /* ImageViewerPresentTransition.swift in Sources */,
 				26AC300D1CF88A74006A4E88 /* Logger+Rx.swift in Sources */,
+				267515501CFA80050064FDAA /* NSIndexSet+Additions.swift in Sources */,
 				26AC300E1CF88A74006A4E88 /* ArticleLoadMoreTableViewCell.swift in Sources */,
 				26AC300F1CF88A74006A4E88 /* ArticleViewController.swift in Sources */,
 				26AC30101CF88A74006A4E88 /* AboutViewController.swift in Sources */,
 				26AC30111CF88A74006A4E88 /* Observable+Occupiable.swift in Sources */,
+				2675153E1CFA80050064FDAA /* JLScope.swift in Sources */,
 				26AC30121CF88A74006A4E88 /* SearchViewController.swift in Sources */,
 				26AC30131CF88A74006A4E88 /* SettingViewModel.swift in Sources */,
 				26AC30141CF88A74006A4E88 /* GGImageAttachment.swift in Sources */,
@@ -1614,9 +1816,11 @@
 				26AC301A1CF88A74006A4E88 /* GGKeychainService.swift in Sources */,
 				26AC301B1CF88A74006A4E88 /* GGResult.swift in Sources */,
 				26AC301C1CF88A74006A4E88 /* UIScrollView+Rx.swift in Sources */,
+				2675157C1CFA99000064FDAA /* UIView.swift in Sources */,
 				26AC301D1CF88A74006A4E88 /* SettingViewController.swift in Sources */,
 				26AC301E1CF88A74006A4E88 /* LoginViewController.swift in Sources */,
 				26AC301F1CF88A74006A4E88 /* HomeViewController.swift in Sources */,
+				267515351CFA80050064FDAA /* JLLanguage.swift in Sources */,
 				26AC30201CF88A74006A4E88 /* RxOptionalError.swift in Sources */,
 				26AC30211CF88A74006A4E88 /* UIImageView+Rx.swift in Sources */,
 				26AC30221CF88A74006A4E88 /* Cache.swift in Sources */,
@@ -1629,6 +1833,7 @@
 				26AC30291CF88A74006A4E88 /* ArticleDetailModel.swift in Sources */,
 				26AC302A1CF88A74006A4E88 /* GGSyncService.swift in Sources */,
 				26AC302B1CF88A74006A4E88 /* UserModel.swift in Sources */,
+				267515291CFA80050064FDAA /* JLColorTheme.swift in Sources */,
 				26AC302C1CF88A74006A4E88 /* GGOAuthService.swift in Sources */,
 				26AC302D1CF88A74006A4E88 /* Observable+Optional.swift in Sources */,
 			);
@@ -1789,7 +1994,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = gg.swift.ggq;
 				PRODUCT_NAME = GGQ;
 				PROVISIONING_PROFILE = "2d1f1384-4c1d-4eb6-96b6-ec53e26559bb";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -1814,7 +2019,7 @@
 				PRODUCT_NAME = GGQ;
 				PROVISIONING_PROFILE = "2d1f1384-4c1d-4eb6-96b6-ec53e26559bb";
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
