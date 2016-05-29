@@ -750,10 +750,23 @@ Cg
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="rCf-4R-uoU">
+                        <barButtonItem key="rightBarButtonItem" image="btn_share" id="rJ5-xW-myZ">
+                            <color key="tintColor" red="0.094117647060000004" green="0.094117647060000004" blue="0.094117647060000004" alpha="1" colorSpace="calibratedRGB"/>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="shareBarButtonItem" destination="rJ5-xW-myZ" id="lJk-Ba-EkR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ssC-WV-pcN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1564" y="306"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="btn_share" width="24" height="26"/>
+    </resources>
 </document>

@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="暂只支持本地搜索" showsCancelButton="YES" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="56p-pJ-Weh">
+                            <searchBar contentMode="redraw" searchBarStyle="minimal" text="" placeholder="暂只支持本地搜索" showsCancelButton="YES" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="56p-pJ-Weh">
                                 <rect key="frame" x="0.0" y="20" width="600" height="44"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -28,18 +28,23 @@
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Bql-zt-5P0">
-                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <rect key="frame" x="0.0" y="107" width="600" height="493"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <color key="separatorColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="separatorColor" red="0.7843137255" green="0.78039215689999997" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <view key="tableFooterView" contentMode="scaleToFill" id="7RY-AW-tgA" userLabel="Footer">
+                                    <rect key="frame" x="0.0" y="162" width="600" height="0.0"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </view>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SearchTableViewCell" id="cAV-Xl-KZF" customClass="SearchTableViewCell" customModule="GGQ" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SearchTitleTableViewCell" id="cAV-Xl-KZF" customClass="SearchTitleTableViewCell" customModule="GGQ" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cAV-Xl-KZF" id="a0l-UN-xCs">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D4r-yL-UFV">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="标题" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D4r-yL-UFV">
                                                     <rect key="frame" x="28" y="12" width="552" height="20"/>
                                                     <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="14"/>
                                                     <color key="textColor" red="0.094117647060000004" green="0.094117647060000004" blue="0.094117647060000004" alpha="1" colorSpace="calibratedRGB"/>
@@ -57,23 +62,72 @@
                                             <outlet property="contentTitleLabel" destination="D4r-yL-UFV" id="83n-w6-ZTi"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SearchContentTableViewCell" rowHeight="90" id="PFh-Qw-wAW" customClass="SearchContentTableViewCell" customModule="GGQ" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="72" width="600" height="90"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PFh-Qw-wAW" id="XPS-Mb-bfJ">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="89.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="标题" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mko-Qn-aeS">
+                                                    <rect key="frame" x="28" y="12" width="552" height="20"/>
+                                                    <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="14"/>
+                                                    <color key="textColor" red="0.094117647060000004" green="0.094117647060000004" blue="0.094117647060000004" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="内容" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oXa-4y-y1U">
+                                                    <rect key="frame" x="28" y="37" width="544" height="40"/>
+                                                    <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="12"/>
+                                                    <color key="textColor" red="0.41176470590000003" green="0.41176470590000003" blue="0.41176470590000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="Mko-Qn-aeS" secondAttribute="trailing" constant="20" id="6SH-aJ-wr9"/>
+                                                <constraint firstItem="oXa-4y-y1U" firstAttribute="leading" secondItem="XPS-Mb-bfJ" secondAttribute="leadingMargin" constant="20" id="Cj7-Yl-cF2"/>
+                                                <constraint firstItem="oXa-4y-y1U" firstAttribute="top" secondItem="Mko-Qn-aeS" secondAttribute="bottom" constant="5" id="bhR-Df-GRt"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="oXa-4y-y1U" secondAttribute="trailing" constant="20" id="hge-cZ-rWj"/>
+                                                <constraint firstItem="Mko-Qn-aeS" firstAttribute="leading" secondItem="XPS-Mb-bfJ" secondAttribute="leadingMargin" constant="20" id="m7K-Ed-lqI"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="oXa-4y-y1U" secondAttribute="bottom" constant="5" id="qUh-KJ-3mC"/>
+                                                <constraint firstItem="Mko-Qn-aeS" firstAttribute="top" secondItem="XPS-Mb-bfJ" secondAttribute="top" constant="12" id="vTP-NY-jeB"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="contentLabel" destination="oXa-4y-y1U" id="9tS-Yl-4UW"/>
+                                            <outlet property="contentTitleLabel" destination="Mko-Qn-aeS" id="iVg-03-k9S"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <segmentedControl contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="R88-cc-FWz">
+                                <rect key="frame" x="208.5" y="69" width="182" height="29"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <segments>
+                                    <segment title="全部" width="60"/>
+                                    <segment title="标题" width="60"/>
+                                    <segment title="内容" width="60" enabled="NO"/>
+                                </segments>
+                                <color key="tintColor" red="0.094117647060000004" green="0.094117647060000004" blue="0.094117647060000004" alpha="1" colorSpace="calibratedRGB"/>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="R88-cc-FWz" firstAttribute="centerX" secondItem="vdn-o5-9zY" secondAttribute="centerX" id="4t2-TZ-x3B"/>
                             <constraint firstItem="5id-es-NpO" firstAttribute="top" secondItem="Bql-zt-5P0" secondAttribute="bottom" id="9sW-z9-Lsx"/>
-                            <constraint firstItem="Bql-zt-5P0" firstAttribute="top" secondItem="56p-pJ-Weh" secondAttribute="bottom" id="Dh0-1u-M2l"/>
                             <constraint firstItem="56p-pJ-Weh" firstAttribute="leading" secondItem="vdn-o5-9zY" secondAttribute="leading" id="RAd-ch-VTg"/>
                             <constraint firstItem="Bql-zt-5P0" firstAttribute="leading" secondItem="vdn-o5-9zY" secondAttribute="leading" id="SS5-Ov-vZ6"/>
+                            <constraint firstItem="Bql-zt-5P0" firstAttribute="top" secondItem="R88-cc-FWz" secondAttribute="bottom" constant="10" id="SwT-fA-bGb"/>
                             <constraint firstItem="56p-pJ-Weh" firstAttribute="top" secondItem="LI2-FF-jLz" secondAttribute="bottom" id="T34-Fj-d3R"/>
+                            <constraint firstItem="R88-cc-FWz" firstAttribute="top" secondItem="56p-pJ-Weh" secondAttribute="bottom" constant="5" id="UJ8-hF-hNM"/>
                             <constraint firstAttribute="trailing" secondItem="Bql-zt-5P0" secondAttribute="trailing" id="YJN-BH-s5M"/>
                             <constraint firstAttribute="trailing" secondItem="56p-pJ-Weh" secondAttribute="trailing" id="Yft-sa-hcI"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="bottomLayoutConstraint" destination="9sW-z9-Lsx" id="3IO-m9-fEm"/>
                         <outlet property="searchBar" destination="56p-pJ-Weh" id="K82-LS-vk4"/>
                         <outlet property="searchResultTableView" destination="Bql-zt-5P0" id="Ggy-LY-Yty"/>
+                        <outlet property="searchTypeSegmentedControl" destination="R88-cc-FWz" id="muw-CS-huE"/>
                         <segue destination="Ezy-Gu-fAk" kind="show" identifier="ShowArticle" id="6ap-hQ-3B7"/>
                     </connections>
                 </viewController>

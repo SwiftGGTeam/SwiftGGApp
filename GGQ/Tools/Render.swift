@@ -10,6 +10,17 @@ import UIKit
 import CommonMark
 import Kingfisher
 
+private func handleImage(imageURL: NSURL, title: String?) -> NSMutableAttributedString {
+    // TODO: - 处理图片的 title
+    Info("Image URL: \(imageURL)")
+    let mutableAttributedString = NSMutableAttributedString()
+    let attach = GGImageAttachment()
+    attach.imageURL = imageURL
+    let attributedString = NSAttributedString(attachment: attach) as! NSMutableAttributedString
+    mutableAttributedString.appendAttributedString(attributedString)
+    return mutableAttributedString
+}
+
 typealias Render = NSMutableAttributedString -> NSMutableAttributedString
 
 // TODO: - 换成函数式。。。
@@ -170,10 +181,8 @@ func renderBlockQuote(inlineElement: InlineElement) -> NSMutableAttributedString
         Info("Warning Html")
         assert(false, "不渲染 Html")
         return NSMutableAttributedString()
-    case .Image:
-        Info("Warning Image")
-        assert(false, "暂时 不渲染 Image")
-        return NSMutableAttributedString()
+    case let .Image(children, _, url):
+        return handleImage(NSURL(string: url!)!, title: children.first?.text)
     case .LineBreak:
         return NSMutableAttributedString(string: "\n")
     case let .Link(children, _, url): // 遇到链接不继续向下处理
@@ -187,11 +196,17 @@ func renderBlockQuote(inlineElement: InlineElement) -> NSMutableAttributedString
     case .SoftBreak:
         return NSMutableAttributedString(string: " ")
     case .Strong(let children):
-        assert(children.count == 1, "Strong 的 children 不为 1")
+        if children.count > 1 {
+            Warning("\(children)")
+        }
+        let renderChildren = renderBlockQuote(children)
         let attribute: [String: AnyObject] = [
             NSFontAttributeName: UIFont(name: "PingFangSC-Medium", size: 17)!,
         ]
-        return NSMutableAttributedString(string: children.first?.text ?? "", attributes: attribute)
+        
+        let range = NSRange(location: 0, length: renderChildren.length)
+        renderChildren.setAttributes(attribute, range: range)
+        return renderChildren
     case .Text(let text):
         let attributes = [
             NSFontAttributeName: UIFont(name: "PingFangSC-Regular", size: 17)!,
@@ -447,33 +462,8 @@ func render(inlineElement: InlineElement) -> NSMutableAttributedString {
     case .Html:
         Info("Warning Html")
         return NSMutableAttributedString()
-    case let .Image(_, _, url):
-//        let attributeString = NSMutableAttributedString()
-//        let paragraphStyle = NSMutableParagraphStyle()
-//        paragraphStyle.firstLineHeadIndent = 20 // 首行缩进
-//        paragraphStyle.headIndent = 38
-        
-        // TODO: - 处理图片的 title
-        Info("2 Image")
-        let mutableAttributedString = NSMutableAttributedString()
-        let attach = GGImageAttachment()
-//        let image = UIImage(named: "img_placeholder")//R.image.img_placeholder()!
-//        attach.image = image
-        attach.imageURL = NSURL(string: url!)
-//        attach.bounds = CGRect(origin: CGPoint(x: 20, y: 200), size: image.size)
-        let attributedString = NSAttributedString(attachment: attach) as! NSMutableAttributedString
-//        let paragraphStyle = NSMutableParagraphStyle()
-//        paragraphStyle.alignment = .Center
-//        let attribute = [
-//            NSParagraphStyleAttributeName: paragraphStyle
-//        ]
-//        let range = NSRange(location: 0, length: attributedString.length)
-//        attributedString.setAttributes(attribute, range: range)
-        
-        mutableAttributedString.appendAttributedString(attributedString)
-//        let lineBreak = NSAttributedString(string: "\n")
-//        mutableAttributedString.appendAttributedString(lineBreak)
-        return mutableAttributedString
+    case let .Image(children, _, url):
+        return handleImage(NSURL(string: url!)!, title: children.first?.text)
     case .LineBreak:
         return NSMutableAttributedString(string: "\n")
     case let .Link(childrens, _, url): // 遇到链接不继续向下处理

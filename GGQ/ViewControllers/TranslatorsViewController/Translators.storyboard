@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Gvi-7Y-taJ">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--Translators View Controller-->
+        <scene sceneID="mYr-1h-ftA">
+            <objects>
+                <viewController storyboardIdentifier="TranslatorsViewController" automaticallyAdjustsScrollViewInsets="NO" id="Gvi-7Y-taJ" customClass="TranslatorsViewController" customModule="GGQ" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="hot-Pa-HmP"/>
+                        <viewControllerLayoutGuide type="bottom" id="DYt-Er-NoJ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="w32-RE-cw5">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zrs-Md-X1t">
+                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="TranslatorTableViewCell" textLabel="oto-TT-62Y" style="IBUITableViewCellStyleDefault" id="f8Q-Az-M4Q">
+                                        <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="f8Q-Az-M4Q" id="FWh-Hi-1bT">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="oto-TT-62Y">
+                                                    <rect key="frame" x="15" y="0.0" width="570" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="DYt-Er-NoJ" firstAttribute="top" secondItem="zrs-Md-X1t" secondAttribute="bottom" id="AmJ-AS-PNY"/>
+                            <constraint firstAttribute="trailing" secondItem="zrs-Md-X1t" secondAttribute="trailing" id="Tfb-UB-U6s"/>
+                            <constraint firstItem="zrs-Md-X1t" firstAttribute="top" secondItem="hot-Pa-HmP" secondAttribute="bottom" id="nk7-1X-NOI"/>
+                            <constraint firstItem="zrs-Md-X1t" firstAttribute="leading" secondItem="w32-RE-cw5" secondAttribute="leading" id="zu5-OR-bVo"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="zrs-Md-X1t" id="ihH-vv-yZw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FXK-1v-Wln" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="531" y="-49"/>
+        </scene>
+    </scenes>
+</document>

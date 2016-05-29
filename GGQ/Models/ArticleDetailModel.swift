@@ -32,7 +32,7 @@ class ArticleDetailModel: Object {
     dynamic var content: String = "" // Version 0
 //    dynamic var comments: RLMArray = RLMArray(objectClassName: "String")
     dynamic var updateDate: String = "" // Version 0
-    dynamic var cacheData: NSData? // Version 0
+//    dynamic var cacheData: NSData? // Version 0
     let pagerTotal = RealmOptional<Int>() // Version 0
     let currentPage = RealmOptional<Int>() // Version 0
 //    dynamic var 
@@ -41,4 +41,16 @@ class ArticleDetailModel: Object {
         return "id"
     }
     
+}
+
+extension ArticleDetailModel {
+    
+    func convertStr() -> String {
+        return contentUrl.stringByReplacingOccurrencesOfString("http://", withString: "swiftgg://")
+    }
+    
+    func convertURL() -> NSURL {
+        let urlStr = contentUrl.stringByReplacingOccurrencesOfString("http://", withString: "swiftgg://")
+        return NSURL(string: urlStr)!
+    }
 }

@@ -15,6 +15,8 @@ import PKHUD
 import SafariServices
 
 class ArticleDetailViewController: UIViewController {
+
+    @IBOutlet weak var shareBarButtonItem: UIBarButtonItem!
     
     var articleInfo: ArticleInfoObject!
     
@@ -67,6 +69,9 @@ class ArticleDetailViewController: UIViewController {
     }()
     
     override func viewDidLoad() {
+        
+        title = articleInfo.title
+        
         articleDetailViewModel = ArticleDetailViewModel(articleInfo: articleInfo)
 
         articleDetailViewModel.contentAttributeText.asDriver()
@@ -99,6 +104,12 @@ class ArticleDetailViewController: UIViewController {
                     }
                 }
             }
+            .addDisposableTo(rx_disposeBag)
+        
+        shareBarButtonItem.rx_tap
+            .map { self.articleInfo.id }
+            .map(GGConfig.Router.Share.article)
+            .subscribeNext(RouterManager.sharedRouterManager().neverCareResultOpenURL)
             .addDisposableTo(rx_disposeBag)
         
     }

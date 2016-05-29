@@ -11,11 +11,7 @@ import Foundation
 class GGConfig {
     
     static let appGroupID = "group.app.swift.gg"
-    
-    static let scheme = "swiftgg"
-    
-    static let host = "swift.gg"
-    
+
 	struct Nerworking {
 		#if DEV
 			static let host = NSURL(string: "http://debug.api.swift.gg")!
@@ -44,15 +40,83 @@ class GGConfig {
     }
     
     struct Router {
+        
+        static let scheme = "swiftgg"
+        static let host = "swift.gg"
+        
+        static let baseURL = NSURL(string: scheme + "://" + host)!
+        
         static let home = "/:page" // 未完成
         static let oauth = "/oauth/:type"
         static let profile = "/profile/:type/:token"
         static let article = "/:year/:month/:day/:pattern"
-        static let categotie = "/categories/:category_name"
-        static let about = "/about"
-        static let search = "/search/:content"
+
         static let setting = "/setting"
         static let archives = "/archives/:year/:month"
+        
+        struct About {
+            static let index = "/about"
+            
+            struct Licences {
+                static let index = About.index + "/licences"
+                static let name = index + "/:name"
+                
+                static func index(_: Void) -> NSURL {
+                    return Router.baseURL.URLByAppendingPathComponent(index)
+                }
+                
+                static func name(name: String) -> NSURL {
+                    return Router.baseURL.URLByAppendingPathComponent(index + "/\(name)")
+                }
+                
+            }
+            
+            // Router 嵌套多层 ==
+            struct Translators {
+                static let index = About.index + "/translators"
+                static let name = index + "/:name"
+                
+                static func index(_: Void) -> NSURL {
+                    return Router.baseURL.URLByAppendingPathComponent(index)
+                }
+                
+                static func name(name: String) -> NSURL {
+                    return Router.baseURL.URLByAppendingPathComponent(index + "/\(name)")
+                }
+            }
+            
+        }
+        
+        struct Categoties {
+            static let index = "/categories"
+            static let id = index + "/id/:id"
+            static let name = index + "/:name"
+        }
+        
+        struct Search {
+            static let index = "/search"
+            
+            static let content = index + "/:content"
+            
+            static func index(_: Void) -> NSURL {
+                return Router.baseURL.URLByAppendingPathComponent(index)
+            }
+            
+            static func content(content: String) -> NSURL {
+                return Router.baseURL.URLByAppendingPathComponent(index + "/\(content)")
+            }
+        }
+        
+        struct Share {
+            
+            private static let index = "/share"
+            
+            static let article = index + "/:article_id"
+            
+            static func article(id: Int) -> NSURL {
+                return Router.baseURL.URLByAppendingPathComponent(index + "/\(id)")
+            }
+        }
     }
 
 }

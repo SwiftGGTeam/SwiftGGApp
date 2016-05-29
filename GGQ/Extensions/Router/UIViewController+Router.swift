@@ -8,6 +8,7 @@
 
 import UIKit
 import SwiftyJSON
+import SafariServices
 
 //extension UIViewController: Routerable {
 //    var routerIdentifier: String {
@@ -18,3 +19,11 @@ import SwiftyJSON
 //        print("WARNING")
 //    }
 //}
+
+extension UIViewController {
+    func openSafari(url: NSURL) {
+        let sf = SFSafariViewController(URL: url)
+        sf.view.tintColor = R.color.gg.black()
+        showDetailViewController(sf, sender: nil)
+    }
+}

@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension SearchTableViewCell {
+extension SearchTitleTableViewCell {
     var title: String? {
         get {
             return contentTitleLabel.text
@@ -19,8 +19,37 @@ extension SearchTableViewCell {
     }
 }
 
-class SearchTableViewCell: UITableViewCell {
+class SearchTitleTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var contentTitleLabel: UILabel!
+    @IBOutlet private weak var contentTitleLabel: UILabel!
 
+}
+
+
+extension SearchContentTableViewCell {
+    var title: String? {
+        get {
+            return contentTitleLabel.text
+        }
+        set {
+            contentTitleLabel.text = newValue
+        }
+    }
+    
+    var contentAttribute: NSAttributedString? {
+        get {
+            return contentLabel.attributedText
+        }
+        set {
+            contentLabel.attributedText = newValue
+        }
+    }
+}
+
+class SearchContentTableViewCell: UITableViewCell {
+    
+    @IBOutlet private weak var contentTitleLabel: UILabel!
+    
+    @IBOutlet private weak var contentLabel: UILabel!
+    
 }

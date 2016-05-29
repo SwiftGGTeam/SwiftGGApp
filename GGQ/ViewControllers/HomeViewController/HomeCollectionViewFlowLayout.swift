@@ -13,4 +13,5 @@ final class HomeCollectionViewFlowLayout: UICollectionViewFlowLayout {
     override func prepareLayout() {
         itemSize = CGSize(width: collectionView!.bounds.width - 40, height: collectionView!.bounds.height - 60)
     }
+
 }

@@ -13,7 +13,7 @@ import RxDataSources
 import SwiftDate
 import SwiftyJSON
 
-final class HomeViewController: UIViewController, SegueHandlerType {
+final class HomeViewController: UIViewController {
     
     @IBOutlet private weak var searchButtonItem: UIBarButtonItem!
 
@@ -21,23 +21,13 @@ final class HomeViewController: UIViewController, SegueHandlerType {
 
 	var viewModel: HomeViewModel!
 
-	enum SegueIdentifier: String {
-		case ShowArticle
-		case ShowSearch
-	}
-
 	private enum ModelType {
 		case Element(ArticleInfoObject)
 		case LoadMore
 	}
 
 	override func viewDidLoad() {
-        
-        searchButtonItem.rx_tap
-            .map { NSURL(string: "swiftgg://swift.gg/search/k")! }
-            .subscribeNext(RouterManager.sharedRouterManager().neverCareResultOpenURL)
-            .addDisposableTo(rx_disposeBag)
-        
+
 		let loadMore = rx_sentMessage(#selector(HomeViewController.collectionView(_: willDisplayCell: forItemAtIndexPath:)))
 			.flatMapLatest { objects -> Observable<Void> in
 				let objects = objects as [AnyObject]
@@ -112,6 +102,11 @@ final class HomeViewController: UIViewController, SegueHandlerType {
 
 				self.presentViewController(alert, animated: true, completion: nil)
 		}.addDisposableTo(rx_disposeBag)
+        
+        searchButtonItem.rx_tap
+            .map { GGConfig.Router.Search.index() }
+            .subscribeNext(RouterManager.sharedRouterManager().neverCareResultOpenURL)
+            .addDisposableTo(rx_disposeBag)
 	}
 
 	override func viewWillAppear(animated: Bool) {

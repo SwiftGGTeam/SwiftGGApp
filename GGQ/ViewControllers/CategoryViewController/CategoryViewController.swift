@@ -15,15 +15,11 @@ import SwiftyJSON
 
 private typealias CategoryList = AnimatableSectionModel<String, ArticleInfoObject>
 
-final class CategoryViewController: UIViewController, SegueHandlerType {
+final class CategoryViewController: UIViewController {
     
 	var category: CategoryObject!
 
 	var viewModel: CategoryViewModel!
-
-    enum SegueIdentifier: String {
-        case ShowArticle
-    }
 
 	@IBOutlet private weak var tableView: UITableView!
 	@IBOutlet private weak var headerImageView: UIImageView!
@@ -100,21 +96,36 @@ final class CategoryViewController: UIViewController, SegueHandlerType {
 extension CategoryViewController: Routerable {
     
     var routingPattern: String {
-        return GGConfig.Router.categotie
+        return GGConfig.Router.Categoties.index
     }
     
     var routingIdentifier: String? {
-        return category?.name
+        if let id = category?.id {
+            return GGConfig.Router.Categoties.index + "\(id)"
+        } else {
+            return GGConfig.Router.Categoties.index
+        }
     }
     
     func get(url: NSURL, sender: JSON?) {
-        guard let categoryName = sender?["category_name"].string,
-            realm = try? Realm(),
-            object = realm.objects(CategoryObject.self).filter(NSPredicate(format: "name = %@", categoryName)).first where object.name != routingIdentifier else {
-                return
+        
+        guard let realm = try? Realm() else {
+            Warning("Realm 挂了")
+            return
         }
-        category = object
-        RouterManager.topViewController()?.showViewController(self, sender: nil)
+
+        if let name = sender?["name"].string,
+            object = realm.objects(CategoryObject.self).filter(NSPredicate(format: "name = %@", name)).first where GGConfig.Router.Categoties.index + "\(object.id)" != routingIdentifier {
+            category = object
+        } else if let idString = sender?["id"].string,
+            id = Int(idString),
+            object = realm.objectForPrimaryKey(CategoryObject.self, key: id) where GGConfig.Router.Categoties.index + "\(object.id)" != routingIdentifier{
+            category = object
+        }
+        
+        if let _ = category {
+            RouterManager.topViewController()?.showViewController(self, sender: nil)
+        }
         
     }
 }

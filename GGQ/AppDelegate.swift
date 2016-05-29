@@ -75,7 +75,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(app: UIApplication, openURL url: NSURL, options: [String: AnyObject]) -> Bool {
         Info("Open: \(url)")
-        guard url.scheme == GGConfig.scheme && url.host == GGConfig.host else { return false }
+        guard url.scheme == GGConfig.Router.scheme && url.host == GGConfig.Router.host else { return false }
         return router.matchURLAndDoHandler(url)
     }
     
@@ -113,17 +113,37 @@ extension AppDelegate {
             vc?.post(url, sender: JSON(parameters))
         }
         
-        router.registerRoutingPattern(GGConfig.Router.categotie)  { (url, parameters, context) in
+        router.registerRoutingPattern(GGConfig.Router.Categoties.name)  { (url, parameters, context) in
             let vc = R.storyboard.category.initialViewController()
             vc?.get(url, sender: JSON(parameters))
         }
         
-        router.registerRoutingPattern(GGConfig.Router.about) { (url, parameters, context) in
+        router.registerRoutingPattern(GGConfig.Router.Categoties.id)  { (url, parameters, context) in
+            let vc = R.storyboard.category.initialViewController()
+            vc?.get(url, sender: JSON(parameters))
+        }
+        
+        router.registerRoutingPattern(GGConfig.Router.About.index) { (url, parameters, context) in
             let vc = R.storyboard.about.initialViewController()
             vc?.get(url, sender: JSON(parameters))
         }
         
-        router.registerRoutingPattern(GGConfig.Router.search) { (url, parameters, context) in
+        router.registerRoutingPattern(GGConfig.Router.About.Licences.index) { (url, parameters, context) in
+            let vc = R.storyboard.licences.licencesViewController()
+            vc?.get(url, sender: JSON(parameters))
+        }
+        
+        router.registerRoutingPattern(GGConfig.Router.About.Translators.index) { (url, parameters, context) in
+            let vc = R.storyboard.translators.initialViewController()
+            vc?.get(url, sender: JSON(parameters))
+        }
+
+        router.registerRoutingPattern(GGConfig.Router.Search.index) { (url, parameters, context) in
+            let vc = R.storyboard.search.initialViewController()
+            vc?.get(url, sender: JSON(parameters))
+        }
+        
+        router.registerRoutingPattern(GGConfig.Router.Search.content) { (url, parameters, context) in
             let vc = R.storyboard.search.initialViewController()
             vc?.get(url, sender: JSON(parameters))
         }
@@ -136,6 +156,11 @@ extension AppDelegate {
         router.registerRoutingPattern(GGConfig.Router.home) { (url, parameters, context) in
             let vc = R.storyboard.main.homeViewController()
             vc?.get(url, sender: JSON(parameters))
+        }
+        
+        router.registerRoutingPattern(GGConfig.Router.Share.article) { (url, parameters, context) in
+            let vc = ShareController()
+            vc.get(url, sender: JSON(parameters))
         }
     }
 }

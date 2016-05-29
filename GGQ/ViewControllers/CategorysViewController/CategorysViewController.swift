@@ -10,12 +10,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-final class CategorysViewController: UIViewController, SegueHandlerType {
-
-    enum SegueIdentifier: String {
-        case ShowCategory
-//        case ShowSearch
-    }
+final class CategorysViewController: UIViewController {
 
     @IBOutlet private weak var categorysCollectionView: UICollectionView!
 
@@ -45,8 +40,9 @@ final class CategorysViewController: UIViewController, SegueHandlerType {
 
         categorysCollectionView
             .rx_modelSelected(CategoryObject)
-            .subscribeNext { [unowned self] category in
-                self.performSegueWithIdentifier(.ShowCategory, sender: category) }
+            .map { $0.id }
+            .map { NSURL(string: "swiftgg://swift.gg/categories/id/\($0)")! }
+            .subscribeNext(RouterManager.sharedRouterManager().neverCareResultOpenURL)
             .addDisposableTo(rx_disposeBag)
 
         tabBarController?
@@ -64,12 +60,4 @@ final class CategorysViewController: UIViewController, SegueHandlerType {
             .addDisposableTo(rx_disposeBag)
     }
 
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        switch segueIdentifierForSegue(segue) {
-        case .ShowCategory:
-            let categoryViewController = segue.destinationViewController.gg_castOrFatalError(CategoryViewController)
-            let category: CategoryObject = castOrFatalError(sender)
-            categoryViewController.category = category
-        }
-    }
 }

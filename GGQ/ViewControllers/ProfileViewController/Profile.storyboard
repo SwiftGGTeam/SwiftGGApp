@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BWh-1b-I9o">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BWh-1b-I9o">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -8,7 +8,7 @@
         <!--我-->
         <scene sceneID="HbY-ci-4Vw">
             <objects>
-                <viewController storyboardIdentifier="ProfileViewController" id="BWh-1b-I9o" customClass="ProfileViewController" customModule="GGQ_Debug" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProfileViewController" id="BWh-1b-I9o" customClass="ProfileViewController" customModule="GGQ" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="6gh-YS-d70"/>
                         <viewControllerLayoutGuide type="bottom" id="PDs-cx-Sjb"/>
@@ -56,25 +56,31 @@
                                             <constraint firstItem="cOA-if-aLr" firstAttribute="top" secondItem="Cxg-sm-3C8" secondAttribute="top" constant="60" id="to7-AT-pyx"/>
                                             <constraint firstItem="cOA-if-aLr" firstAttribute="centerX" secondItem="Cxg-sm-3C8" secondAttribute="centerX" id="zVM-6i-aVe"/>
                                         </constraints>
+                                        <variation key="heightClass=compact" misplaced="YES">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="200"/>
+                                        </variation>
                                     </view>
-                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mWW-CH-BlV">
-                                        <rect key="frame" x="0.0" y="200" width="600" height="0.0"/>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mWW-CH-BlV">
+                                        <rect key="frame" x="0.0" y="200" width="600" height="44"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="5ik-d7-Dgv"/>
                                         </constraints>
                                         <state key="normal" title="登录">
                                             <color key="titleColor" red="0.1764705882" green="0.1764705882" blue="0.1764705882" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <variation key="heightClass=compact" misplaced="YES">
+                                            <rect key="frame" x="0.0" y="200" width="600" height="44"/>
+                                        </variation>
                                         <connections>
                                             <segue destination="WUE-yb-0Se" kind="presentation" identifier="PresentLogin" id="5ZG-ao-4gs"/>
                                         </connections>
                                     </button>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="VQu-4A-2qb" userLabel="Read Table View">
-                                        <rect key="frame" x="0.0" y="200" width="600" height="400"/>
+                                        <rect key="frame" x="0.0" y="244" width="600" height="356"/>
                                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <color key="sectionIndexBackgroundColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="AfterReadTableViewCell" id="drI-yo-7Wl" customClass="AfterReadTableViewCell" customModule="GGQ_Debug" customModuleProvider="target">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="AfterReadTableViewCell" id="drI-yo-7Wl" customClass="AfterReadTableViewCell" customModule="GGQ" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="49.5" width="600" height="44"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="drI-yo-7Wl" id="5Mw-t0-IuQ">
@@ -110,6 +116,9 @@
                                                 </connections>
                                             </tableViewCell>
                                         </prototypes>
+                                        <variation key="heightClass=compact" misplaced="YES">
+                                            <rect key="frame" x="0.0" y="244" width="600" height="156"/>
+                                        </variation>
                                     </tableView>
                                 </subviews>
                             </stackView>
