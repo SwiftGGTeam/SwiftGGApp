@@ -476,7 +476,6 @@
 		260DE4731CFB648E008EE03A /* Licences.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Licences.storyboard; sourceTree = "<group>"; };
 		260DE4761CFB64A2008EE03A /* LicencesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LicencesViewController.swift; sourceTree = "<group>"; };
 		26110AAA1CF4A69D004F303A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		26110AAF1CF4A69D004F303A /* GGQ-Dev.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "GGQ-Dev.entitlements"; sourceTree = "<group>"; };
 		26110AB01CF4A69D004F303A /* GGQ-Dev.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GGQ-Dev.plist"; sourceTree = "<group>"; };
 		26110AB11CF4A69D004F303A /* GGQ.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = GGQ.entitlements; sourceTree = "<group>"; };
 		26110AB21CF4A69D004F303A /* GGQ.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = GGQ.plist; sourceTree = "<group>"; };
@@ -578,7 +577,6 @@
 		26AC2FD01CF74ED9006A4E88 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		26AC2FD31CF74F78006A4E88 /* Rswift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Rswift.framework; path = Carthage/Build/iOS/Rswift.framework; sourceTree = "<group>"; };
 		26AC30661CF88A74006A4E88 /* GGQ-Dev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GGQ-Dev.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		26AC30671CF88A74006A4E88 /* GGQ copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "GGQ copy-Info.plist"; path = "/Users/Qing/Documents/GitHub/SwiftGGApp/GGQ copy-Info.plist"; sourceTree = "<absolute>"; };
 		26B1B39C1CDDCE4100A3A2BE /* cmark.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = cmark.framework; path = Carthage/Build/iOS/cmark.framework; sourceTree = "<group>"; };
 		26B1B39D1CDDCE4100A3A2BE /* CommonMark.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CommonMark.framework; path = Carthage/Build/iOS/CommonMark.framework; sourceTree = "<group>"; };
 		26B1B39F1CDDCE4100A3A2BE /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
@@ -757,7 +755,6 @@
 				267515161CFA78130064FDAA /* swiftCode.clr */,
 				26110AC71CF4A762004F303A /* gg.clr */,
 				26110AAA1CF4A69D004F303A /* Assets.xcassets */,
-				26110AAF1CF4A69D004F303A /* GGQ-Dev.entitlements */,
 				26110AB01CF4A69D004F303A /* GGQ-Dev.plist */,
 				26110AB11CF4A69D004F303A /* GGQ.entitlements */,
 				26110AB21CF4A69D004F303A /* GGQ.plist */,
@@ -785,7 +782,6 @@
 				2698E0281CBFD3E500B7E8C7 /* GGQTests */,
 				2698E0361CBFD3F300B7E8C7 /* GGQUITests */,
 				262232661CB7DD37009133D7 /* Products */,
-				26AC30671CF88A74006A4E88 /* GGQ copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
