@@ -128,20 +128,11 @@
                         <outlet property="searchBar" destination="56p-pJ-Weh" id="K82-LS-vk4"/>
                         <outlet property="searchResultTableView" destination="Bql-zt-5P0" id="Ggy-LY-Yty"/>
                         <outlet property="searchTypeSegmentedControl" destination="R88-cc-FWz" id="muw-CS-huE"/>
-                        <segue destination="Ezy-Gu-fAk" kind="show" identifier="ShowArticle" id="6ap-hQ-3B7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PQq-me-ghH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="852" y="-32"/>
-        </scene>
-        <!--Article-->
-        <scene sceneID="22E-xa-c4E">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Article" id="Ezy-Gu-fAk" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Art-JF-Yr2" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1404.5" y="-32"/>
         </scene>
     </scenes>
 </document>

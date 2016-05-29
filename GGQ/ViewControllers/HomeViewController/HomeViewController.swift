@@ -27,8 +27,13 @@ final class HomeViewController: UIViewController {
 	}
 
 	override func viewDidLoad() {
+        
+        let refresh = UIRefreshControl()
+        collectionView.addSubview(refresh)
+        
+        let refreshTrigger = refresh.rx_controlEvent(.ValueChanged).asObservable()
 
-		let loadMore = rx_sentMessage(#selector(HomeViewController.collectionView(_: willDisplayCell: forItemAtIndexPath:)))
+		let loadMoreTrigger = rx_sentMessage(#selector(HomeViewController.collectionView(_: willDisplayCell: forItemAtIndexPath:)))
 			.flatMapLatest { objects -> Observable<Void> in
 				let objects = objects as [AnyObject]
 				if let _ = objects[1] as? HomeLoadMoreCollectionViewCell {
@@ -38,7 +43,10 @@ final class HomeViewController: UIViewController {
 				}
 		}
 
-		viewModel = HomeViewModel(loadMoreTrigger: loadMore)
+		viewModel = HomeViewModel(input: (
+            loadMoreTrigger: loadMoreTrigger,
+            refreshTrigger: refreshTrigger)
+        )
         
 		viewModel.elements.asObservable()
 			.map { $0.map { ModelType.Element($0) } + [ModelType.LoadMore] }
@@ -61,6 +69,10 @@ final class HomeViewController: UIViewController {
         
         viewModel.isRequestLatest.asDriver()
             .drive(UIApplication.sharedApplication().rx_networkActivityIndicatorVisible)
+            .addDisposableTo(rx_disposeBag)
+        
+        viewModel.isRefreshing.asDriver()
+            .drive(refresh.rx_refreshing)
             .addDisposableTo(rx_disposeBag)
 
 		collectionView.rx_modelSelected(ModelType)

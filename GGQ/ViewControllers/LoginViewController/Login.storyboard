@@ -32,21 +32,21 @@
                         <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="hhb-eD-mFv">
-                                <rect key="frame" x="188" y="356" width="225" height="35"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="hhb-eD-mFv">
+                                <rect key="frame" x="188" y="356" width="316" height="130"/>
                                 <subviews>
-                                    <button contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MpP-AO-JRq">
-                                        <rect key="frame" x="0.0" y="0.0" width="35" height="35"/>
+                                    <button contentMode="scaleToFill" misplaced="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MpP-AO-JRq">
+                                        <rect key="frame" x="0.0" y="0.0" width="126" height="130"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <state key="normal" image="icon_weibo"/>
                                     </button>
-                                    <button contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dG3-gd-5Df">
-                                        <rect key="frame" x="95" y="0.0" width="35" height="35"/>
+                                    <button contentMode="scaleToFill" misplaced="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dG3-gd-5Df">
+                                        <rect key="frame" x="186" y="0.0" width="35" height="130"/>
                                         <color key="backgroundColor" red="0.99215686270000003" green="0.99215686270000003" blue="0.99215686270000003" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" image="icon_wechat"/>
                                     </button>
-                                    <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TjY-Rt-fhI">
-                                        <rect key="frame" x="190" y="0.0" width="35" height="35"/>
+                                    <button contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TjY-Rt-fhI">
+                                        <rect key="frame" x="281" y="0.0" width="35" height="130"/>
                                         <color key="backgroundColor" red="0.99215686270000003" green="0.99215686270000003" blue="0.99215686270000003" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" image="icon_github"/>
                                     </button>

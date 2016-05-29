@@ -25,10 +25,12 @@ final class HomeViewModel {
     let isLoading = Variable(false)
 
     let isRequestLatest = Variable(false)
+    
+    let isRefreshing = Variable(false)
 
     private let disposeBag = DisposeBag()
 
-    init(loadMoreTrigger: Observable<Void>, provider: RxMoyaXProvider = GGProvider) {
+    init(input: (loadMoreTrigger: Observable<Void>, refreshTrigger: Observable<Void>), provider: RxMoyaXProvider = GGProvider) {
 
         let realm = try! Realm()
         let predicate = NSPredicate(format: "loadFromHome == %@", true)
@@ -45,14 +47,20 @@ final class HomeViewModel {
                 self.currentPage.value = self.elements.value.count / GGConfig.Home.pageSize + 1
             }
             .addDisposableTo(disposeBag)
+        
+        let refreshRequest = input.refreshTrigger.map { 1 }.shareReplay(1)
 
-        let loadMoreRequest = loadMoreTrigger.withLatestFrom(currentPage.asObservable()).shareReplay(1)
+        let loadMoreRequest = input.loadMoreTrigger.withLatestFrom(currentPage.asObservable()).shareReplay(1)
+        
+        let refreshResponse = refreshRequest
+            .flatMapLatest { provider.v2_requestGGJSON(GGAPI.Articles(pageIndex: $0, pageSize: GGConfig.Home.pageSize)) }
+            .shareReplay(1)
 
         let loadMoreResponse = loadMoreRequest
             .flatMap { provider.v2_requestGGJSON(GGAPI.Articles(pageIndex: $0, pageSize: GGConfig.Home.pageSize)) }
-            .share()
+            .shareReplay(1)
         
-        loadMoreResponse
+        [loadMoreResponse, refreshResponse].toObservable().merge()
             .observeOn(TScheduler.Serial(.Background))
             .subscribeNext { result in
                 switch result {
@@ -95,6 +103,12 @@ final class HomeViewModel {
             .toObservable()
             .merge()
             .bindTo(isLoading)
+            .addDisposableTo(disposeBag)
+        
+        [refreshRequest.map { _ in true }, refreshResponse.map { _ in false }]
+            .toObservable()
+            .merge()
+            .bindTo(isRefreshing)
             .addDisposableTo(disposeBag)
 
         Observable.combineLatest(articlesShare, SyncService.articlesNumber(realm)) { $0.count < $1 - 1 }
