@@ -22,6 +22,8 @@ import MobileCoreServices
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
+    
+    var feedbackController: FeedbackController?
 
     let router = Router(defaultUnmatchHandler: { (url: NSURL, context: AnyObject?) in
         // Do something here, e.g: give some tips or show a default UI
@@ -151,6 +153,12 @@ extension AppDelegate {
         router.registerRoutingPattern(GGConfig.Router.setting) { (url, parameters, context) in
             let vc = R.storyboard.setting.initialViewController()
             vc?.get(url, sender: JSON(parameters))
+        }
+        
+        router.registerRoutingPattern(GGConfig.Router.feedback) { (url, parameters, context) in
+            let vc = FeedbackController()
+            vc.get(url, sender: JSON(parameters))
+            self.feedbackController = vc
         }
         
         router.registerRoutingPattern(GGConfig.Router.home) { (url, parameters, context) in

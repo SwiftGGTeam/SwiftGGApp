@@ -19,6 +19,13 @@ class GGConfig {
 			static let host = NSURL(string: "http://api.swift.gg")!
 		#endif
 	}
+    
+    struct Feedback {
+        static let mail = "dev@swift.gg"
+        static let theme = "GG 阅读反馈"
+        static let footer = ""
+    }
+
 	/// 主页的配置
 	struct Home {
 		/// 每次加载多少个
@@ -54,8 +61,18 @@ class GGConfig {
         static let setting = "/setting"
         static let archives = "/archives/:year/:month"
         
+        
+        static let feedback = "/feedback"
+        static func feedback(_: Void) -> NSURL {
+            return Router.baseURL.URLByAppendingPathComponent(feedback)
+        }
+        
         struct About {
             static let index = "/about"
+            
+            static func index(_: Void) -> NSURL {
+                return Router.baseURL.URLByAppendingPathComponent(index)
+            }
             
             struct Licences {
                 static let index = About.index + "/licences"

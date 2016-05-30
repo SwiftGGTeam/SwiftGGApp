@@ -12,46 +12,37 @@ import RxCocoa
 import PKHUD
 import SwiftyJSON
 
-class SettingViewController: UITableViewController {
+private typealias SettingItem = (title: String, url: NSURL)
+
+class SettingViewController: UIViewController {
+
+    @IBOutlet private weak var tableView: UITableView!
     
-    @IBOutlet private weak var offlineInfoLabel: UILabel!
-    
-//    var viewModel: SettingViewModel!
-//    
-//    var homeViewModel: HomeViewModel!
-//    
-//    private let loadMoreTrigger = PublishSubject<Void>()
-//    
-//    override func viewDidLoad() {
-//        viewModel = SettingViewModel()
-//        
-//        homeViewModel = HomeViewModel(loadMoreTrigger: loadMoreTrigger.asObservable())
-//        
-//        homeViewModel.isLoading.asObservable()
-////            .skip(1)
-//            .filter { !$0 }
-//            .map { _ in }
-//            .subscribeNext(loadMoreTrigger.onNext)
-//            .addDisposableTo(rx_disposeBag)
-//        
-//        loadMoreTrigger.onNext()
-//        
-//        HUD.show(.Label("加载文章中..."))
-//        
-//        homeViewModel.hasNextPage.asObservable()
-//            .log("hasNextPage")
-//            .filter { !$0 }
-//            .map { _ in }
-//            .doOnNext { HUD.hide(afterDelay: 0.3) }
-//            .subscribeNext(loadMoreTrigger.onCompleted)
-//            .addDisposableTo(rx_disposeBag)
-//        
-//        loadMoreTrigger.asObservable()
-//            .log("Offline")
-//            .subscribe()
-//            .addDisposableTo(rx_disposeBag)
-//        
-//    }
+    override func viewDidLoad() {
+        
+        
+        title = "设置"
+        
+        let settingItems: [SettingItem] = [
+//            SettingItem(title: "清理缓存", url: NSURL(string: "")),
+            SettingItem(title: "反馈问题", url: GGConfig.Router.feedback()),
+            SettingItem(title: "关于我们", url: GGConfig.Router.About.index())
+        ]
+        
+        tableView.rx_modelSelected(SettingItem)
+            .map { $0.url }
+            .subscribeNext(RouterManager.sharedRouterManager().neverCareResultOpenURL)
+            .addDisposableTo(rx_disposeBag)
+        
+        Observable.just(settingItems)
+            .bindTo(tableView.rx_itemsWithCellFactory) { cv, i, v in
+                let indexPath = NSIndexPath(forItem: i, inSection: 0)
+                let cell = cv.dequeueReusableCellWithIdentifier(R.reuseIdentifier.settingTableViewCell, forIndexPath: indexPath)!
+                cell.textLabel?.text = v.title
+                return cell
+            }
+            .addDisposableTo(rx_disposeBag)
+    }
 
     override func viewWillAppear(animated: Bool) {
         navigationController?.setNavigationBarHidden(false, animated: true)
