@@ -107,7 +107,7 @@ class ArticleDetailViewController: UIViewController {
             .addDisposableTo(rx_disposeBag)
         
         shareBarButtonItem.rx_tap
-            .map { self.articleInfo.id }
+            .withLatestFrom(Observable.just(articleInfo.id))
             .map(GGConfig.Router.Share.article)
             .subscribeNext(RouterManager.sharedRouterManager().neverCareResultOpenURL)
             .addDisposableTo(rx_disposeBag)
