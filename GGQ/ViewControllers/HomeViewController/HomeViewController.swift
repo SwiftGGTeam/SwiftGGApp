@@ -190,7 +190,7 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
             return CGSize(width: size.width, height: titleHeight + descriptionHeight + 3 * 15 + 2 * 17 + 30 * 2)
             
         case .LoadMore:
-            return CGSize(width: collectionView.bounds.width - 30, height: 200)
+            return CGSize(width: collectionView.bounds.width - 30, height: 300)
         }
 
     }

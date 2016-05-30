@@ -470,7 +470,7 @@ class MonkeyKingX {
     }
 }
 
-private extension NSBundle {
+extension NSBundle {
     
     var monkeyking_displayName: String? {
         

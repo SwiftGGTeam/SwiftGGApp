@@ -40,9 +40,17 @@ class GGConfig {
         struct GitHub {
             static let client_id = "742321c546e7cc39e53c"
             static let client_secret = "dfc142761f571be5abd0368dfd6e7864fd56c943"
-            static let callback_url = "swiftgg://oauth/github"
-            static let authorize_url = "https://github.com/login/oauth/authorize"
-            static let accessToken_url = "https://github.com/login/oauth/access_token"
+            static let callback_url = "swiftgg://swift.gg/oauth/github"
+//            static let authorize_url = "https://github.com/login/oauth/authorize"
+//            static let accessToken_url = "https://github.com/login/oauth/access_token"
+        }
+        
+        struct Weibo {
+            static let client_id = "1544042551"
+            static let client_secret = "2d9d75cac265dece17d97e531090599e"
+            static let callback_url = "swiftgg://swift.gg/oauth/weibo"
+//            static let authorize_url = "https://github.com/login/oauth/authorize"
+//            static let accessToken_url = "https://github.com/login/oauth/access_token"
         }
     }
     

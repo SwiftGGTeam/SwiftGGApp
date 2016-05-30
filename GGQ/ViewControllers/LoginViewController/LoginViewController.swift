@@ -36,6 +36,26 @@ class LoginViewController: UIViewController {
             }
             .addDisposableTo(rx_disposeBag)
         
+//        weiboButton.rx_tap
+//            .doOnNext { HUD.show(.Label("请求微博认证…")) }
+//            .flatMap { GGProvider.request(WeiboWeiOAuthAPI.Authorize) }
+//            .doOnError { HUD.flash(.LabeledError(title: "\($0._code)", subtitle: nil), delay: 0.3) }
+//            .doOnNext { _ in HUD.hide(afterDelay: 0.3) }
+//            .subscribeNext { [unowned self] response in
+//                Info("\(response)")
+//                if let url = response.response?.URL {
+//                    let sf = SFSafariViewController(URL: url)
+//                    self.showDetailViewController(sf, sender: nil)
+//                }
+//            }
+//            .addDisposableTo(rx_disposeBag)
+
+        weiboButton.rx_tap
+            .map { GGOAuthService.OAuthType.Weibo(appID: GGConfig.OAuth.Weibo.client_id, appKey: GGConfig.OAuth.Weibo.client_secret, redirectURL: GGConfig.OAuth.Weibo.callback_url) }
+            .subscribeNext { type in
+                GGOAuthService.oauth(type)
+        }.addDisposableTo(rx_disposeBag)
+        
         navigationItem.leftBarButtonItem?.rx_tap
             .subscribeNext { [unowned self] in
                 self.dismissViewControllerAnimated(true, completion: nil)

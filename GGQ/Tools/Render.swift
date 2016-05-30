@@ -133,8 +133,8 @@ func renderBlockQuote(block: Block) -> NSMutableAttributedString {
         attributedString.appendAttributedString(NSAttributedString(string: " \n"))
         attributedString.appendAttributedString(renderBlockQuote(text))
         let paragraphStyle = NSMutableParagraphStyle()
-        paragraphStyle.firstLineHeadIndent = 20 // 首行缩进
-        paragraphStyle.headIndent = 20
+        paragraphStyle.firstLineHeadIndent += 20 // 首行缩进
+        paragraphStyle.headIndent += 20
         let attributes = [
             NSParagraphStyleAttributeName: paragraphStyle,
             NSUnderlineStyleAttributeName: NSUnderlineStyle.StyleSingle.rawValue

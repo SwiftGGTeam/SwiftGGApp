@@ -6,16 +6,34 @@
 //  Copyright © 2016年 org.dianqk. All rights reserved.
 //
 
+import UIKit
 import MoyaX
 
-protocol OAuthServiceType {
+class GGOAuthService {
     
-    static var client_id: String{get}
-    static var client_secret: String{get}
-    static var callback_url: String{get}
-    static var authorize_url: String{get}
-    static var accessToken_url: String{get}
+    enum OAuthType {
+        case Weibo(appID: String, appKey: String, redirectURL: String)
+    }
+    
+    class func oauth(type: OAuthType, scope: String? = nil) {
 
+        switch type {
+        case let .Weibo(appID, appKey, redirectURL):
+            let scope = scope ?? "all"
+            let uuIDString = CFUUIDCreateString(nil, CFUUIDCreate(nil))
+            let authData = [
+                ["transferObject": NSKeyedArchiver.archivedDataWithRootObject(["__class": "WBAuthorizeRequest", "redirectURI": redirectURL, "requestID":uuIDString, "scope": scope])
+                ],
+                ["userInfo": NSKeyedArchiver.archivedDataWithRootObject(["mykey": "as you like", "SSO_From": "SendMessageToWeiboViewController"])],
+                ["app": NSKeyedArchiver.archivedDataWithRootObject(["appKey": appID, "bundleID": NSBundle.mainBundle().monkeyking_bundleID ?? "", "name": NSBundle.mainBundle().monkeyking_displayName ?? ""])]
+            ]
+            
+            UIPasteboard.generalPasteboard().items = authData
+            let url = NSURL(string: "weibosdk://request?id=\(uuIDString)&sdkversion=003013000")!
+            UIApplication.sharedApplication().openURL(url)
+        }
+    }
+    
 }
 
 func generateStateWithLength (len : Int) -> String {
@@ -29,21 +47,17 @@ func generateStateWithLength (len : Int) -> String {
     return randomString as String
 }
 
-class OAuthService {
-    
-}
-
 enum GitHubOAuthAPI {
     case Authorize
     case AccessToken(code: String)
 }
 
 extension GitHubOAuthAPI: Target {
-    private static let client_id = "742321c546e7cc39e53c"
-    private static let client_secret = "dfc142761f571be5abd0368dfd6e7864fd56c943"
-    private static let redirect_uri = "swiftgg://swift.gg/oauth/github"
-    private static let authorize_path = "https://github.com/login/oauth/authorize"
-    private static let accessToken_path = "https://github.com/login/oauth/access_token"
+    private static let client_id = GGConfig.OAuth.GitHub.client_id
+    private static let client_secret = GGConfig.OAuth.GitHub.client_secret
+    private static let redirect_uri = GGConfig.OAuth.GitHub.callback_url
+//    private static let authorize_path = GGConfig.OAuth.GitHub.authorize_url
+//    private static let accessToken_path = GGConfig.OAuth.GitHub.accessToken_url
     private static let scope = "user,repo"
     private static let response_type = "code"
     private static let grant_type = "authorization_code"
@@ -132,6 +146,71 @@ extension GitHubAPI: Target {
         switch self {
         case .User:
             return .GET
+        }
+    }
+    
+    var parameterEncoding: ParameterEncoding {
+        return .URL // GET
+    }
+    
+    var sampleData: NSData {
+        fatalError("都比你忘了写 Mock")
+    }
+}
+
+enum WeiboWeiOAuthAPI {
+    case Authorize
+    case AccessToken(code: String)
+}
+
+extension WeiboWeiOAuthAPI: Target {
+    private static let client_id = GGConfig.OAuth.Weibo.client_id
+    private static let client_secret = GGConfig.OAuth.Weibo.client_secret
+    private static let redirect_uri = GGConfig.OAuth.Weibo.callback_url
+    private static let scope = "user,repo"
+    private static let response_type = "code"
+    private static let grant_type = "authorization_code"
+    
+    var baseURL: NSURL { return NSURL(string: "https://open.weibo.cn")! }
+    
+    var path: String {
+        switch self {
+        case .Authorize:
+            return "/oauth2/authorize"
+        case .AccessToken:
+            return "/login/oauth/access_token"
+        }
+    }
+    
+    var headerFields: [String: String] {
+        return ["Accept": "application/json"]
+    }
+    
+    
+    var parameters: [String: AnyObject] {
+        switch self {
+        case .Authorize:
+            return ["client_id": WeiboWeiOAuthAPI.client_id,
+                    "redirect_uri": WeiboWeiOAuthAPI.redirect_uri,
+                    "scope": WeiboWeiOAuthAPI.scope,
+                    "response_type": WeiboWeiOAuthAPI.response_type,
+                    "state": generateStateWithLength(20)]
+            
+        case .AccessToken(let code):
+            return ["client_id": WeiboWeiOAuthAPI.client_id,
+                    "client_secret": WeiboWeiOAuthAPI.client_secret,
+                    "grant_type": WeiboWeiOAuthAPI.grant_type,
+                    "redirect_uri": WeiboWeiOAuthAPI.redirect_uri,
+                    "code": code]
+        }
+    }
+    
+    var method: HTTPMethod {
+        switch self {
+        case .Authorize:
+            return .GET
+        case .AccessToken:
+            return .POST
         }
     }
     

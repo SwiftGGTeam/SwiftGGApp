@@ -20,7 +20,7 @@ final class ProfileViewController: UIViewController {
     @IBOutlet private weak var avatarImageView: UIImageView!
     @IBOutlet private weak var userNameLabel: UILabel!
     @IBOutlet private weak var articleStatusTableView: UITableView!
-    @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet private weak var loginButton: UIButton!
     
     private var profileViewModel: ProfileViewModel!
     private var readStatusViewModel: ReadStatusViewModel!
@@ -48,9 +48,11 @@ final class ProfileViewController: UIViewController {
             .bindTo(userNameLabel.rx_text)
             .addDisposableTo(rx_disposeBag)
         
+        #if !DEV
         profileViewModel.logined
             .bindTo(loginButton.rx_hidden)
             .addDisposableTo(rx_disposeBag)
+        #endif
         
         let dataSource = RxTableViewSectionedReloadDataSource<ReadStatusSectionModel>()
         dataSource.configureCell = { ds, tv, ip, v in
