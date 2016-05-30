@@ -105,7 +105,7 @@
                                 <segments>
                                     <segment title="全部" width="60"/>
                                     <segment title="标题" width="60"/>
-                                    <segment title="内容" width="60" enabled="NO"/>
+                                    <segment title="Web" width="60"/>
                                 </segments>
                                 <color key="tintColor" red="0.094117647060000004" green="0.094117647060000004" blue="0.094117647060000004" alpha="1" colorSpace="calibratedRGB"/>
                             </segmentedControl>

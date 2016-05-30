@@ -33,7 +33,7 @@ final class SearchViewController: UIViewController {
         searchResultTableView.estimatedRowHeight = 44
         searchResultTableView.rowHeight = UITableViewAutomaticDimension
         
-        let search = (text: searchBar.rx_text.asObservable(), type: searchTypeSegmentedControl.rx_value.map { SearchType(rawValue: $0)! } )
+        let search = (text: searchBar.rx_text.asObservable(), type: searchTypeSegmentedControl.rx_value.filter { $0 != 2 }.map { SearchType(rawValue: $0)! } )
 
         viewModel = SearchViewModel(search: search)
         
@@ -82,6 +82,13 @@ final class SearchViewController: UIViewController {
             .subscribeNext { [unowned self] in
                 self.dismissViewControllerAnimated(true, completion: nil) }
             .addDisposableTo(rx_disposeBag)
+        
+        let webSeg = searchTypeSegmentedControl.rx_value.filter { $0 == 2 }
+        webSeg
+            .withLatestFrom(searchBar.rx_text)
+            .map { NSURL(string: "http://search.swift.gg/cse/search?s=4873498141517765035&q=" + $0)! }
+            .subscribeNext(openSafari)
+            .addDisposableTo(rx_disposeBag)
 
 	}
 
@@ -92,6 +99,7 @@ final class SearchViewController: UIViewController {
 
 	override func viewDidAppear(animated: Bool) {
 		searchBar.becomeFirstResponder()
+        searchTypeSegmentedControl.selectedSegmentIndex = 0
 	}
 
 }
