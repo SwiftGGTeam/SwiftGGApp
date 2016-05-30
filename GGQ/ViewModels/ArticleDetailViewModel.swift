@@ -46,7 +46,7 @@ class ArticleDetailViewModel {
             .shareReplay(1)
         
         articleObject
-            .map { $0.content }
+            .map { "# " + articleInfo.title + "\n" + $0.content }
             .observeOn(.Serial(.Background))
             .map { $0
                 .stringByReplacingOccurrencesOfString("<center>", withString: "")
@@ -87,5 +87,5 @@ class ArticleDetailViewModel {
 //            .merge()
         
     }
-    
+
 }
