@@ -99,13 +99,15 @@ final class ProfileViewController: UIViewController {
 extension ProfileViewController: Routerable {
     
     var routingPattern: String {
-        return GGConfig.Router.profile
+        return GGConfig.Router.Profile.index
     }
     
     func post(url: NSURL, sender: JSON?) {
         Info("\(sender)")
         if let token = sender?["token"].string {
             profileViewModel.save(.GitHub, token: token)
+        } else if url.path == GGConfig.Router.Profile.logout {
+            avatarImageView.image = nil
         }
         dismissViewControllerAnimated(true, completion: nil)
     }

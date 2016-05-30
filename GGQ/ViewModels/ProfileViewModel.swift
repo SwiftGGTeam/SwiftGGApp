@@ -56,7 +56,7 @@ class ProfileViewModel {
             
         avatarURL = user
             /// 只有拿到 User 才发出 avatar_url
-            .map { NSURL(string: $0.avatar_url) }
+            .map { $0.avatarURL }
             .filterNil()
             .shareReplay(1)
         

@@ -74,7 +74,21 @@ class GGConfig {
         
         static let home = "/:page" // 未完成
         static let oauth = "/oauth/:type"
-        static let profile = "/profile/:type/:token"
+        
+        struct Profile {
+            static let index = "/profile"
+            static let token = index + "/:type/:token"
+            static let logout = index + "/logout"
+            
+            static func token(type type: String, token: String) -> NSURL {
+                return Router.baseURL.URLByAppendingPathComponent(index + "/" + type + "/" + token)
+            }
+            
+            static func logout(_: Void) -> NSURL {
+                return Router.baseURL.URLByAppendingPathComponent(logout)
+            }
+        }
+        
         static let article = "/:year/:month/:day/:pattern"
 
         static let setting = "/setting"
@@ -84,6 +98,11 @@ class GGConfig {
         static let feedback = "/feedback"
         static func feedback(_: Void) -> NSURL {
             return Router.baseURL.URLByAppendingPathComponent(feedback)
+        }
+        
+        struct Weibo {
+            static let scheme = "wb1544042551"
+            static let host = "response"
         }
         
         struct About {

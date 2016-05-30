@@ -77,6 +77,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(app: UIApplication, openURL url: NSURL, options: [String: AnyObject]) -> Bool {
         Info("Open: \(url)")
+        
+        if url.scheme == GGConfig.Router.Weibo.scheme && url.host == GGConfig.Router.Weibo.host {
+            let vc = RouterManager.findRouterable(routingPattern: GGConfig.Router.oauth)
+            vc?.post(url, sender: nil)
+            return true
+        }
+        
         guard url.scheme == GGConfig.Router.scheme && url.host == GGConfig.Router.host else { return false }
         return router.matchURLAndDoHandler(url)
     }
@@ -109,8 +116,13 @@ extension AppDelegate {
             vc?.get(url, sender: JSON(parameters))
         }
         
-        router.registerRoutingPattern(GGConfig.Router.profile) { (url, parameters, context) in
-            let vc = RouterManager.findRouterable(routingPattern: GGConfig.Router.profile)
+        router.registerRoutingPattern(GGConfig.Router.Profile.token) { (url, parameters, context) in
+            let vc = RouterManager.findRouterable(routingPattern: GGConfig.Router.Profile.index)
+            vc?.post(url, sender: JSON(parameters))
+        }
+        
+        router.registerRoutingPattern(GGConfig.Router.Profile.logout) { (url, parameters, context) in
+            let vc = RouterManager.findRouterable(routingPattern: GGConfig.Router.Profile.index)
             vc?.post(url, sender: JSON(parameters))
         }
         
@@ -169,5 +181,7 @@ extension AppDelegate {
             let vc = ShareController()
             vc.get(url, sender: JSON(parameters))
         }
+        
+//        router.registerRoutingPattern("response", handler: <#T##MatchRouteHandler##MatchRouteHandler##(NSURL, parameters: [String : String], context: AnyObject?) -> Void#>)
     }
 }

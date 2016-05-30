@@ -7,6 +7,24 @@
 //
 
 import UIKit
+import SwiftyJSON
+
+func handleURL(url: NSURL) -> JSON {
+    guard let query = url.query else {
+        return JSON([:])
+    }
+    return handleQuery(query)
+}
+
+func handleQuery(query: String) -> JSON {
+    let querys = query.componentsSeparatedByString("&")
+    var parameters: [String: String] = [:]
+    for query in querys {
+        let parameter = query.componentsSeparatedByString("=")
+        parameters[parameter[0]] = parameter[1]
+    }
+    return JSON(parameters)
+}
 
 class MonkeyKingX {
     

@@ -11,6 +11,7 @@ import RxSwift
 import RxCocoa
 import PKHUD
 import SwiftyJSON
+import RealmSwift
 
 private typealias SettingItem = (title: String, url: NSURL)
 
@@ -18,9 +19,10 @@ class SettingViewController: UIViewController {
 
     @IBOutlet private weak var tableView: UITableView!
     
+    @IBOutlet private weak var logoutButton: UIButton!
+    
     override func viewDidLoad() {
-        
-        
+    
         title = "设置"
         
         let settingItems: [SettingItem] = [
@@ -40,6 +42,26 @@ class SettingViewController: UIViewController {
                 let cell = cv.dequeueReusableCellWithIdentifier(R.reuseIdentifier.settingTableViewCell, forIndexPath: indexPath)!
                 cell.textLabel?.text = v.title
                 return cell
+            }
+            .addDisposableTo(rx_disposeBag)
+        
+        logoutButton
+            .rx_tap
+            .subscribeNext {
+                do {
+                    let realm = try Realm()
+//                    RouterManager.sharedRouterManager().openURL(GGConfig.Router.Profile.logout())
+                    guard let object = realm.objects(UserModel).first else {
+                        return
+                    }
+                    try! realm.write {
+                        realm.delete(object)
+                    }
+                    try KeychainService.delete(.GitHub)
+                    try KeychainService.delete(.Weibo)
+                    RouterManager.sharedRouterManager().openURL(GGConfig.Router.Profile.logout())
+                    HUD.flash(.LabeledSuccess(title: "已注销", subtitle: nil), delay: 0.6)
+                } catch { }
             }
             .addDisposableTo(rx_disposeBag)
     }

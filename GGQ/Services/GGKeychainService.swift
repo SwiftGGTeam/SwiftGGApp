@@ -13,6 +13,7 @@ typealias Token = String
 
 enum TokenType {
     case GitHub
+    case Weibo
 }
 
 extension TokenType {
@@ -20,6 +21,8 @@ extension TokenType {
         switch self {
         case .GitHub:
             return "gg.swift.github"
+        case .Weibo:
+            return "gg.swift.weibo"
         }
     }
 }
@@ -37,6 +40,10 @@ class KeychainService {
     
     static func exist(type: TokenType) -> Bool {
         return Locksmith.loadDataForUserAccount(type.userAccount) != nil
+    }
+    
+    static func delete(type: TokenType) throws {
+         try Locksmith.deleteDataForUserAccount(type.userAccount)
     }
     
 }

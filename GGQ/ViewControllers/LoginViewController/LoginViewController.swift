@@ -12,6 +12,7 @@ import RxCocoa
 import SafariServices
 import SwiftyJSON
 import PKHUD
+import RealmSwift
 
 class LoginViewController: UIViewController {
     
@@ -54,7 +55,8 @@ class LoginViewController: UIViewController {
             .map { GGOAuthService.OAuthType.Weibo(appID: GGConfig.OAuth.Weibo.client_id, appKey: GGConfig.OAuth.Weibo.client_secret, redirectURL: GGConfig.OAuth.Weibo.callback_url) }
             .subscribeNext { type in
                 GGOAuthService.oauth(type)
-        }.addDisposableTo(rx_disposeBag)
+            }
+            .addDisposableTo(rx_disposeBag)
         
         navigationItem.leftBarButtonItem?.rx_tap
             .subscribeNext { [unowned self] in
@@ -75,8 +77,11 @@ extension LoginViewController: Routerable {
     }
     
     func post(url: NSURL, sender: JSON?) {
-        dismissViewControllerAnimated(true, completion: nil)
-        if let code = url.query?.componentsSeparatedByString("&").first?.componentsSeparatedByString("=")[1] {
+        
+        let json = handleURL(url)
+        
+        if let code = json["code"].string { // GitHub
+            dismissViewControllerAnimated(true, completion: nil)
             HUD.show(.Progress)
             GGProvider.request(GitHubOAuthAPI.AccessToken(code: code)).mapJSON()
                 .subscribe { event in
@@ -84,7 +89,7 @@ extension LoginViewController: Routerable {
                     case .Next(let json):
                         if let token = json["access_token"].string {
                             HUD.flash(.Label("请求成功"), delay: 0.6)
-                            let url = NSURL(string: "swiftgg://swift.gg/profile/github/\(token)")!
+                            let url = GGConfig.Router.Profile.token(type: "github", token: token)
                             RouterManager.sharedRouterManager().openURL(url)
                         } else {
                             HUD.flash(.Label("请求失败"), delay: 0.6)
@@ -96,6 +101,54 @@ extension LoginViewController: Routerable {
                     }
                 }
                 .addDisposableTo(rx_disposeBag)
+        } else if let id = json["id"].string { // Weibo
+
+            guard let items = UIPasteboard.generalPasteboard().items as? [[String: AnyObject]] else {
+                return
+            }
+
+            var results = [String: AnyObject]()
+
+            for item in items {
+                for (key, value) in item {
+                    if let valueData = value as? NSData where key == "transferObject" {
+                        results[key] = NSKeyedUnarchiver.unarchiveObjectWithData(valueData)
+                    }
+                }
+            }
+
+            guard let responseData = results["transferObject"] as? [String: AnyObject],
+                let type = responseData["__class"] as? String else {
+                    return
+            }
+            
+            guard let statusCode = responseData["statusCode"] as? Int else {
+                return
+            }
+
+            guard let accessToken = responseData["accessToken"] as? String else {
+                return
+            }
+            
+            guard let userID = responseData["userID"] as? String else {
+                return
+            }
+            
+            KeychainService.save(.Weibo, token: accessToken)
+            
+            GGProvider
+                .request(WeiboAPI.Show(userID: userID))
+                .mapJSON()
+                .subscribeNext { [unowned self] userInfo in
+                    Info("Weibo: \(userInfo)")
+                    let realm = try! Realm()
+                    try! realm.write {
+                        realm.create(UserModel.self, value: userInfo.object, update: true)
+                    }
+                    self.dismissViewControllerAnimated(true, completion: nil)
+                }
+                .addDisposableTo(rx_disposeBag)
         }
+        
     }
 }

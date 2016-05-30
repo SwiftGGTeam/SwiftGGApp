@@ -158,12 +158,13 @@ extension GitHubAPI: Target {
     }
 }
 
-enum WeiboWeiOAuthAPI {
+enum WeiboAPI {
     case Authorize
     case AccessToken(code: String)
+    case Show(userID: String)
 }
 
-extension WeiboWeiOAuthAPI: Target {
+extension WeiboAPI: Target {
     private static let client_id = GGConfig.OAuth.Weibo.client_id
     private static let client_secret = GGConfig.OAuth.Weibo.client_secret
     private static let redirect_uri = GGConfig.OAuth.Weibo.callback_url
@@ -171,14 +172,16 @@ extension WeiboWeiOAuthAPI: Target {
     private static let response_type = "code"
     private static let grant_type = "authorization_code"
     
-    var baseURL: NSURL { return NSURL(string: "https://open.weibo.cn")! }
+    var baseURL: NSURL { return NSURL(string: "https://api.weibo.com")! }
     
     var path: String {
         switch self {
         case .Authorize:
             return "/oauth2/authorize"
         case .AccessToken:
-            return "/login/oauth/access_token"
+            return "/oauth2/access_token"
+        case .Show:
+            return "/2/users/show.json"
         }
     }
     
@@ -190,18 +193,24 @@ extension WeiboWeiOAuthAPI: Target {
     var parameters: [String: AnyObject] {
         switch self {
         case .Authorize:
-            return ["client_id": WeiboWeiOAuthAPI.client_id,
-                    "redirect_uri": WeiboWeiOAuthAPI.redirect_uri,
-                    "scope": WeiboWeiOAuthAPI.scope,
-                    "response_type": WeiboWeiOAuthAPI.response_type,
+            return ["client_id": WeiboAPI.client_id,
+                    "redirect_uri": WeiboAPI.redirect_uri,
+                    "scope": WeiboAPI.scope,
+                    "response_type": WeiboAPI.response_type,
                     "state": generateStateWithLength(20)]
             
         case .AccessToken(let code):
-            return ["client_id": WeiboWeiOAuthAPI.client_id,
-                    "client_secret": WeiboWeiOAuthAPI.client_secret,
-                    "grant_type": WeiboWeiOAuthAPI.grant_type,
-                    "redirect_uri": WeiboWeiOAuthAPI.redirect_uri,
+            return ["client_id": WeiboAPI.client_id,
+                    "client_secret": WeiboAPI.client_secret,
+                    "grant_type": WeiboAPI.grant_type,
+                    "redirect_uri": WeiboAPI.redirect_uri,
                     "code": code]
+        case .Show(let userID):
+            var parameters = ["uid": userID]
+            if let token = KeychainService.read(.Weibo) {
+                parameters["access_token"] = token
+            }
+            return parameters
         }
     }
     
@@ -211,6 +220,8 @@ extension WeiboWeiOAuthAPI: Target {
             return .GET
         case .AccessToken:
             return .POST
+        case .Show:
+            return .GET
         }
     }
     
