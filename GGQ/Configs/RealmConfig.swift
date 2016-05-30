@@ -11,7 +11,7 @@ import RealmSwift
 
 extension Realm {
     
-    static var gg_schemaVersion: UInt64 = 1002
+    static var gg_schemaVersion: UInt64 = 1003
 
     static var gg_configuration: Realm.Configuration {
         return Realm.Configuration(fileURL: gg_realmURL, schemaVersion: gg_schemaVersion, migrationBlock: { migration, oldSchemaVersion in

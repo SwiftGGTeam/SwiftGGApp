@@ -37,7 +37,7 @@ class ReadStatusViewModel {
             .bindTo(afterReadElements)
             .addDisposableTo(disposeBag)
         
-        let readingPredicate = NSPredicate(format: "isReading == %@", true)
+        let readingPredicate = NSPredicate(format: "isReading == %@ && hasBeenRead != %@", true, true)
         realm.objects(ArticleInfoObject)
             .filter(readingPredicate)
             .asObservableArray()

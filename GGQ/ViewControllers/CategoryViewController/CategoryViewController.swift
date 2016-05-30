@@ -38,29 +38,24 @@ final class CategoryViewController: UIViewController {
         
         let realm = try? Realm()
         
-        let datasource = RxTableViewSectionedReloadDataSource<CategoryList>()
-        datasource.configureCell = { ds, tb, ip, v in
+        let dataSource = RxTableViewSectionedReloadDataSource<CategoryList>()
+        dataSource.configureCell = { ds, tb, ip, v in
             let cell = tb.dequeueReusableCellWithIdentifier(R.reuseIdentifier.articleTableViewCell, forIndexPath: ip)!
             cell.title = v.title
             if let realm = realm {
-                
-                if let article = realm.objectForPrimaryKey(ArticleDetailModel.self, key: v.id),
-                    pagerTotal = article.pagerTotal.value,
-                    currentPage = article.currentPage.value {
-                    cell.readPageInfo = "\(currentPage)/\(pagerTotal)"
-                } else {
                     cell.readPageInfo = "未读"
-                }
-                
             }
             return cell
+        }
+        dataSource.canEditRowAtIndexPath = { ds, ip in
+            return false
         }
         
 		viewModel = CategoryViewModel(refreshTrigger: refreshTrigger, loadMoreTrigger: tableView.rx_reachedBottom, category: category)
 
 		viewModel.elements.asDriver()
             .map { [CategoryList(model: "", items: $0)] }
-            .drive(tableView.rx_itemsWithDataSource(datasource))
+            .drive(tableView.rx_itemsWithDataSource(dataSource))
             .addDisposableTo(rx_disposeBag)
         
         viewModel.isLoading.asDriver()

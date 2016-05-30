@@ -112,6 +112,28 @@ class ArticleDetailViewController: UIViewController {
             .subscribeNext(RouterManager.sharedRouterManager().neverCareResultOpenURL)
             .addDisposableTo(rx_disposeBag)
         
+        textView
+            .rx_reachedBottom
+            .filter { [unowned self] in
+                self.textView.contentSize.height > 0
+            }
+            .debounce(0.3, scheduler: MainScheduler.instance)
+            .subscribeNext { [unowned self] in
+                if let realm = self.articleInfo.realm {
+                    try! realm.write {
+                        self.articleInfo.hasBeenRead.value = true
+                    }
+                }
+            }.addDisposableTo(rx_disposeBag)
+        
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        if let realm = articleInfo.realm {
+            try! realm.write {
+                articleInfo.isReading.value = true
+            }
+        }
     }
     
     override func viewWillAppear(animated: Bool) {

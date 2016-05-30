@@ -37,6 +37,8 @@ class ArticleInfoObject: Object {
     /// 是否在读
     let isReading = RealmOptional<Bool>() // Version 1000
     
+    let readOffset = RealmOptional<Float>() // Version 1003
+    
 	override static func primaryKey() -> String? {
 		return "id"
 	}

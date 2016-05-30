@@ -33,9 +33,9 @@ class ArticleDetailModel: Object {
 //    dynamic var comments: RLMArray = RLMArray(objectClassName: "String")
     dynamic var updateDate: String = "" // Version 0
 //    dynamic var cacheData: NSData? // Version 0
-    let pagerTotal = RealmOptional<Int>() // Version 0
-    let currentPage = RealmOptional<Int>() // Version 0
-//    dynamic var 
+//    let pagerTotal = RealmOptional<Int>() // Version 0
+//    let currentPage = RealmOptional<Int>() // Version 0
+//    dynamic var
 
     override static func primaryKey() -> String? {
         return "id"

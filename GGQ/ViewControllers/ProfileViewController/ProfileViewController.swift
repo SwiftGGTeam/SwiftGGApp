@@ -64,7 +64,9 @@ final class ProfileViewController: UIViewController {
         dataSource.titleForHeaderInSection = { ds, s in
             return ds.sectionAtIndex(s).identity
         }
-        
+        dataSource.canEditRowAtIndexPath = { ds, ip in
+            return false
+        }
         let afterReadSection = readStatusViewModel.afterReadElements
             .asObservable()
             .map { ReadStatusSectionModel(model: "稍后阅读", items: $0) }
@@ -88,6 +90,12 @@ final class ProfileViewController: UIViewController {
                 RouterManager.sharedRouterManager().openURL(url)
             }
             .addDisposableTo(rx_disposeBag)
+        
+        articleStatusTableView.rx_itemDeleted.subscribeNext {
+            Info("\($0)")
+        }.addDisposableTo(rx_disposeBag)
+        
+        
         
     }
 
