@@ -11,12 +11,12 @@ import SwiftDate
 
 extension HomeCollectionViewCell {
 
-    var title: String? {
+    var title: NSAttributedString? {
         get {
-            return contentTitleLabel.text
+            return contentTitleLabel.attributedText
         }
         set {
-            contentTitleLabel.text = newValue
+            contentTitleLabel.attributedText = newValue
         }
     }
 
@@ -47,12 +47,12 @@ extension HomeCollectionViewCell {
         }
     }
 
-    var preview: String? {
+    var preview: NSAttributedString? {
         get {
-            return contentPreviewLabel.text
+            return contentPreviewLabel.attributedText
         }
         set {
-            contentPreviewLabel.text = newValue
+            contentPreviewLabel.attributedText = newValue
         }
     }
 }
@@ -66,5 +66,6 @@ class HomeCollectionViewCell: UICollectionViewCell {
 
     override func awakeFromNib() {
         gg_addShadow()
+        
     }
 }

@@ -56,11 +56,8 @@
                                             <constraint firstItem="cOA-if-aLr" firstAttribute="top" secondItem="Cxg-sm-3C8" secondAttribute="top" constant="60" id="to7-AT-pyx"/>
                                             <constraint firstItem="cOA-if-aLr" firstAttribute="centerX" secondItem="Cxg-sm-3C8" secondAttribute="centerX" id="zVM-6i-aVe"/>
                                         </constraints>
-                                        <variation key="heightClass=compact" misplaced="YES">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="200"/>
-                                        </variation>
                                     </view>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mWW-CH-BlV">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mWW-CH-BlV">
                                         <rect key="frame" x="0.0" y="200" width="600" height="44"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="5ik-d7-Dgv"/>
@@ -68,14 +65,11 @@
                                         <state key="normal" title="登录">
                                             <color key="titleColor" red="0.1764705882" green="0.1764705882" blue="0.1764705882" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
-                                        <variation key="heightClass=compact" misplaced="YES">
-                                            <rect key="frame" x="0.0" y="200" width="600" height="44"/>
-                                        </variation>
                                         <connections>
                                             <segue destination="WUE-yb-0Se" kind="presentation" identifier="PresentLogin" id="5ZG-ao-4gs"/>
                                         </connections>
                                     </button>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="VQu-4A-2qb" userLabel="Read Table View">
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="VQu-4A-2qb" userLabel="Read Table View">
                                         <rect key="frame" x="0.0" y="244" width="600" height="356"/>
                                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <color key="sectionIndexBackgroundColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
@@ -116,9 +110,6 @@
                                                 </connections>
                                             </tableViewCell>
                                         </prototypes>
-                                        <variation key="heightClass=compact" misplaced="YES">
-                                            <rect key="frame" x="0.0" y="244" width="600" height="156"/>
-                                        </variation>
                                     </tableView>
                                 </subviews>
                             </stackView>

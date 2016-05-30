@@ -145,7 +145,10 @@ func renderBlockQuote(block: Block) -> NSMutableAttributedString {
         attributedString.appendAttributedString(NSAttributedString(string: "\n \n"))
         return attributedString
     default:
-        fatalError()
+        #if DEV
+//        fatalError()
+        #endif
+        return NSMutableAttributedString()
     }
 }
 
@@ -171,15 +174,21 @@ func renderBlockQuote(inlineElement: InlineElement) -> NSMutableAttributedString
         Info("Warning Custom: \(literal)")
         return NSMutableAttributedString()
     case let .Emphasis(children): // *加强 斜体*
-        assert(children.count == 1, "Emphasis 的 children 不为 1")
+        
+        if children.count > 1 {
+            Warning("\(children)")
+        }
+        let renderChildren = renderBlockQuote(children)
         let attribute: [String: AnyObject] = [
             NSFontAttributeName: UIFont(name: "PingFangSC-Regular", size: 17)!,
             NSObliquenessAttributeName: NSNumber(float: 0.2)
         ]
-        return NSMutableAttributedString(string: children.first?.text ?? "", attributes: attribute)
+        let range = NSRange(location: 0, length: renderChildren.length)
+        renderChildren.setAttributes(attribute, range: range)
+        return renderChildren
     case .Html:
         Info("Warning Html")
-        assert(false, "不渲染 Html")
+//        assert(false, "不渲染 Html")
         return NSMutableAttributedString()
     case let .Image(children, _, url):
         return handleImage(NSURL(string: url!)!, title: children.first?.text)
@@ -203,7 +212,6 @@ func renderBlockQuote(inlineElement: InlineElement) -> NSMutableAttributedString
         let attribute: [String: AnyObject] = [
             NSFontAttributeName: UIFont(name: "PingFangSC-Medium", size: 17)!,
         ]
-        
         let range = NSRange(location: 0, length: renderChildren.length)
         renderChildren.setAttributes(attribute, range: range)
         return renderChildren
@@ -283,7 +291,7 @@ func renderParagraph(inlineElements: [InlineElement]) -> NSMutableAttributedStri
     for inlineElement in inlineElements {
         attributedString.appendAttributedString(render(inlineElement))
     }
-    attributedString.appendAttributedString(NSAttributedString(string: "\n"))
+    attributedString.appendAttributedString(NSAttributedString(string: "\n \n"))
 //    attributedString.appendAttributedString(NSAttributedString(string: "\n"))
     return attributedString
 }

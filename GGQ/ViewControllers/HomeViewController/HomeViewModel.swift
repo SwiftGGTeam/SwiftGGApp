@@ -6,6 +6,7 @@
 //  Copyright © 2016年 org.dianqk. All rights reserved.
 //
 
+import UIKit
 import RxSwift
 import RxCocoa
 import Realm
@@ -14,9 +15,11 @@ import SwiftyJSON
 import CoreSpotlight
 import MobileCoreServices
 
+typealias HomeArticleInfoItem = (id: Int, title: NSAttributedString, time: NSDate, info: String, description: NSAttributedString, url: NSURL)
+
 final class HomeViewModel {
 
-    let elements = Variable<[ArticleInfoObject]>([])
+    let elements = Variable<[HomeArticleInfoItem]>([])
 
     let hasNextPage = Variable(true)
 
@@ -38,8 +41,35 @@ final class HomeViewModel {
             .filter(predicate).sorted("submitDate", ascending: false)
             .asObservableArray()
             .shareReplay(1)
+        
+        
+        articlesShare.map { articles -> [HomeArticleInfoItem] in
+            articles.map { article in
+                
+                let paragraphContentStyle = NSMutableParagraphStyle()
+                paragraphContentStyle.paragraphSpacing = 3
 
-        articlesShare
+                let titleAttributes: [String: AnyObject] = [
+                    NSFontAttributeName: UIFont.systemFontOfSize(21),
+                    NSParagraphStyleAttributeName: paragraphContentStyle
+                ]
+                
+                let title = NSAttributedString(string: article.title, attributes: titleAttributes)
+                
+                let articleDescriptionAttributes: [String: AnyObject] = [
+                    NSFontAttributeName: UIFont.systemFontOfSize(17),
+                    NSParagraphStyleAttributeName: paragraphContentStyle
+                ]
+                
+                let articleDescription = NSAttributedString(string: mdRender(markdown: article.articleDescription).string, attributes: articleDescriptionAttributes)
+                
+                let time = article.submitDate.toDateFromISO8601()!
+                
+                let info = article.typeName + " " + article.translator
+                
+                return HomeArticleInfoItem(id: article.id, title: title, time: time, info: info, description: articleDescription, url: article.convertURL())
+                }
+            }
             .subscribeNext { [unowned self] objects in
                 Info("Count: \(objects.count)")
                 self.elements.value = objects

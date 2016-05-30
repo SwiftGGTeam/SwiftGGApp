@@ -18,11 +18,14 @@ final class HomeViewController: UIViewController {
     @IBOutlet private weak var searchButtonItem: UIBarButtonItem!
 
 	@IBOutlet private weak var collectionView: UICollectionView!
+    
+    @IBOutlet weak var homeCollectionViewFlowLayout: HomeCollectionViewFlowLayout!
+    
 
 	var viewModel: HomeViewModel!
 
 	private enum ModelType {
-		case Element(ArticleInfoObject)
+		case Element(HomeArticleInfoItem)
 		case LoadMore
 	}
 
@@ -56,9 +59,10 @@ final class HomeViewController: UIViewController {
 				case .Element(let e):
 					let cell = cv.dequeueReusableCellWithReuseIdentifier(R.reuseIdentifier.homeCollectionViewCell, forIndexPath: indexPath)!
 					cell.title = e.title
-					cell.time = e.submitDate.toDateFromISO8601()
-					cell.info = e.typeName + " " + e.translator
-                    cell.preview = mdRender(markdown: e.articleDescription).string
+					cell.time = e.time//submitDate.toDateFromISO8601()
+					cell.info = e.info//typeName + " " + e.translator
+                    cell.preview = e.description//mdRender(markdown: e.articleDescription).string
+                    cell.setNeedsLayout()
 					cell.layoutIfNeeded()
 					return cell
 				case .LoadMore:
@@ -78,7 +82,7 @@ final class HomeViewController: UIViewController {
 		collectionView.rx_modelSelected(ModelType)
 			.subscribeNext {
 				if case .Element(let article) = $0 {
-                    RouterManager.sharedRouterManager().openURL(article.convertURL())
+                    RouterManager.sharedRouterManager().openURL(article.url)
 				}
             }
 			.addDisposableTo(rx_disposeBag)
@@ -88,15 +92,15 @@ final class HomeViewController: UIViewController {
 		tabBarController?
 			.rx_didSelectViewController
 			.map { [unowned self] in $0 == self.navigationController } // 选择了"自己"
-		.buffer(timeSpan: 0.6, count: 2, scheduler: MainScheduler.instance) // buffer 两个
-		.filter { $0.count >= 2 } // 确保是在 0.6s 内点击两次
-		.map { $0[0] == $0[1] } // 两次都是点击"自己"
-		.subscribeNext { [unowned self] doubleClick in
-			if doubleClick {
-				let ip = NSIndexPath(forItem: 0, inSection: 0)
-				self.collectionView.scrollToItemAtIndexPath(ip, atScrollPosition: .CenteredHorizontally, animated: true)
-			}
-		}
+            .buffer(timeSpan: 0.6, count: 2, scheduler: MainScheduler.instance) // buffer 两个
+            .filter { $0.count >= 2 } // 确保是在 0.6s 内点击两次
+            .map { $0[0] == $0[1] } // 两次都是点击"自己"
+            .subscribeNext { [unowned self] doubleClick in
+                if doubleClick {
+                    let ip = NSIndexPath(forItem: 0, inSection: 0)
+                    self.collectionView.scrollToItemAtIndexPath(ip, atScrollPosition: .CenteredVertically, animated: true)
+                }
+            }
 			.addDisposableTo(rx_disposeBag)
 
 		registerForPreviewingWithDelegate(self, sourceView: collectionView)
@@ -119,6 +123,11 @@ final class HomeViewController: UIViewController {
             .map { GGConfig.Router.Search.index() }
             .subscribeNext(RouterManager.sharedRouterManager().neverCareResultOpenURL)
             .addDisposableTo(rx_disposeBag)
+
+        NSNotificationCenter.defaultCenter().rx_notification(UIDeviceOrientationDidChangeNotification)
+            .map { _ in }
+            .subscribeNext(collectionView.reloadData)
+            .addDisposableTo(rx_disposeBag)
 	}
 
 	override func viewWillAppear(animated: Bool) {
@@ -130,19 +139,19 @@ final class HomeViewController: UIViewController {
 
 extension HomeViewController: UIViewControllerPreviewingDelegate {
 	func previewingContext(previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
-		if let indexPath = collectionView.indexPathForItemAtPoint(location),
-			cellAttributes = collectionView.layoutAttributesForItemAtIndexPath(indexPath) {
-				do {
-					if case .Element(let articleInfo) = try collectionView.rx_modelAtIndexPath(indexPath) as ModelType {
-						previewingContext.sourceRect = cellAttributes.frame
-						let articleViewController = R.storyboard.article.initialViewController()
-						articleViewController?.articleInfo = articleInfo
-						return articleViewController
-					}
-				} catch let error {
-					fatalError("\(error)")
-				}
-		}
+//		if let indexPath = collectionView.indexPathForItemAtPoint(location),
+//			cellAttributes = collectionView.layoutAttributesForItemAtIndexPath(indexPath) {
+//				do {
+//					if case .Element(let articleInfo) = try collectionView.rx_modelAtIndexPath(indexPath) as ModelType {
+//						previewingContext.sourceRect = cellAttributes.frame
+//						let articleViewController = R.storyboard.article.initialViewController()
+//						articleViewController?.articleInfo = articleInfo
+//						return articleViewController
+//					}
+//				} catch let error {
+//					fatalError("\(error)")
+//				}
+//		}
 		return nil
 	}
 
@@ -161,6 +170,31 @@ extension HomeViewController: UIScrollViewDelegate {
 			}
 		}
 	}
+}
+
+extension HomeViewController: UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+        
+        let modeType: ModelType = try! collectionView.rx_modelAtIndexPath(indexPath)
+        
+        switch modeType {
+        case .Element(let articleInfo):
+            
+            let size = CGSize(width: collectionView.bounds.width - 40, height: collectionView.bounds.height)
+            
+            let titleHeight = articleInfo.title.boundingRectWithSize(size, options: [.TruncatesLastVisibleLine, .UsesFontLeading, .UsesLineFragmentOrigin], context: nil).height
+            
+            let descriptionHeight = articleInfo.description.boundingRectWithSize(size, options: [.TruncatesLastVisibleLine, .UsesFontLeading, .UsesLineFragmentOrigin], context: nil).height
+
+            return CGSize(width: size.width, height: titleHeight + descriptionHeight + 3 * 15 + 2 * 17 + 30 * 2)
+            
+        case .LoadMore:
+            return CGSize(width: collectionView.bounds.width - 30, height: 200)
+        }
+
+    }
+    
 }
 
 extension HomeViewController: Routerable {
