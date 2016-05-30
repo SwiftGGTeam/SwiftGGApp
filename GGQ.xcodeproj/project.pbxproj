@@ -83,6 +83,10 @@
 		2670597C1CFBEEB000ABB723 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2670596E1CFBEE9F00ABB723 /* LoginViewModel.swift */; };
 		2670597D1CFBEEB000ABB723 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2670596F1CFBEE9F00ABB723 /* ProfileViewModel.swift */; };
 		2670597E1CFBEEB000ABB723 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267059701CFBEE9F00ABB723 /* SearchViewModel.swift */; };
+		267059801CFC419300ABB723 /* ShareActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2670597F1CFC419300ABB723 /* ShareActivity.swift */; };
+		267059811CFC419300ABB723 /* ShareActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2670597F1CFC419300ABB723 /* ShareActivity.swift */; };
+		267059831CFC47D400ABB723 /* MonkeyKingX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267059821CFC47D400ABB723 /* MonkeyKingX.swift */; };
+		267059841CFC47D400ABB723 /* MonkeyKingX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267059821CFC47D400ABB723 /* MonkeyKingX.swift */; };
 		267312721CBA96BC00036DB9 /* ArticleDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267312711CBA96BC00036DB9 /* ArticleDetailModel.swift */; };
 		2673127E1CBE890E00036DB9 /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2673127D1CBE890E00036DB9 /* Setting.storyboard */; };
 		267312801CBE8AAC00036DB9 /* About.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2673127F1CBE8AAC00036DB9 /* About.storyboard */; };
@@ -520,6 +524,8 @@
 		2670596E1CFBEE9F00ABB723 /* LoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		2670596F1CFBEE9F00ABB723 /* ProfileViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		267059701CFBEE9F00ABB723 /* SearchViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		2670597F1CFC419300ABB723 /* ShareActivity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareActivity.swift; sourceTree = "<group>"; };
+		267059821CFC47D400ABB723 /* MonkeyKingX.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonkeyKingX.swift; sourceTree = "<group>"; };
 		267312711CBA96BC00036DB9 /* ArticleDetailModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleDetailModel.swift; sourceTree = "<group>"; };
 		2673127D1CBE890E00036DB9 /* Setting.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
 		2673127F1CBE8AAC00036DB9 /* About.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = About.storyboard; sourceTree = "<group>"; };
@@ -902,6 +908,8 @@
 				26E872601CC12A55006C5A0F /* Logger.swift */,
 				267ABD941CDF0079009CE298 /* Cache.swift */,
 				267515C61CFB33E50064FDAA /* SafariActivity.swift */,
+				2670597F1CFC419300ABB723 /* ShareActivity.swift */,
+				267059821CFC47D400ABB723 /* MonkeyKingX.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -1638,6 +1646,7 @@
 			files = (
 				26E4CDC31CB8ECA40013AD29 /* HomeLoadMoreCollectionViewCell.swift in Sources */,
 				260DE47E1CFBE342008EE03A /* FeedbackController.swift in Sources */,
+				267059801CFC419300ABB723 /* ShareActivity.swift in Sources */,
 				267312861CBE8DD600036DB9 /* CategorysCollectionViewFlowLayout.swift in Sources */,
 				267059761CFBEE9F00ABB723 /* ProfileViewModel.swift in Sources */,
 				267ABD8D1CDEF088009CE298 /* GGRouter.swift in Sources */,
@@ -1735,6 +1744,7 @@
 				267059731CFBEE9F00ABB723 /* CategoryViewModel.swift in Sources */,
 				26E261071CBC90EA00B34645 /* CategorysViewController.swift in Sources */,
 				267312721CBA96BC00036DB9 /* ArticleDetailModel.swift in Sources */,
+				267059831CFC47D400ABB723 /* MonkeyKingX.swift in Sources */,
 				26F343D21CC54A2C00476533 /* GGSyncService.swift in Sources */,
 				26FB5D2F1CD63BD800790942 /* UserModel.swift in Sources */,
 				267515281CFA80050064FDAA /* JLColorTheme.swift in Sources */,
@@ -1801,6 +1811,7 @@
 			files = (
 				26AC2FE11CF88A74006A4E88 /* HomeLoadMoreCollectionViewCell.swift in Sources */,
 				260DE47F1CFBE342008EE03A /* FeedbackController.swift in Sources */,
+				267059811CFC419300ABB723 /* ShareActivity.swift in Sources */,
 				26AC2FE21CF88A74006A4E88 /* CategorysCollectionViewFlowLayout.swift in Sources */,
 				2670597D1CFBEEB000ABB723 /* ProfileViewModel.swift in Sources */,
 				26AC2FE31CF88A74006A4E88 /* GGRouter.swift in Sources */,
@@ -1898,6 +1909,7 @@
 				2670597A1CFBEEB000ABB723 /* CategoryViewModel.swift in Sources */,
 				26AC30281CF88A74006A4E88 /* CategorysViewController.swift in Sources */,
 				26AC30291CF88A74006A4E88 /* ArticleDetailModel.swift in Sources */,
+				267059841CFC47D400ABB723 /* MonkeyKingX.swift in Sources */,
 				26AC302A1CF88A74006A4E88 /* GGSyncService.swift in Sources */,
 				26AC302B1CF88A74006A4E88 /* UserModel.swift in Sources */,
 				267515291CFA80050064FDAA /* JLColorTheme.swift in Sources */,

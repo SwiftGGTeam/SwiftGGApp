@@ -46,6 +46,17 @@ class GGConfig {
         }
     }
     
+    struct Share {
+
+        struct Weichat {
+            static let appID = "wxa0e5907c3dad46c8"
+            static let appSecret = "3e9e5722930891539c1e3e2c8e72da9b"
+        }
+        
+        static let footerMessage = " | 优质 Swift 翻译资源"
+
+    }
+    
     struct Router {
         
         static let scheme = "swiftgg"

@@ -52,6 +52,10 @@ extension ArticleInfoObject {
         let urlStr = contentUrl.stringByReplacingOccurrencesOfString("http://", withString: "swiftgg://")
         return NSURL(string: urlStr)!
     }
+    
+    func praseMDArticleDescription() -> String {
+        return mdRender(markdown: articleDescription).string
+    }
 }
 
 extension ArticleInfoObject: IdentifiableType {
