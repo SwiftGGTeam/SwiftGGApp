@@ -105,7 +105,6 @@ extension AppDelegate {
         }
 
         router.registerRoutingPattern(GGConfig.Router.article) { (url, parameters, context) in
-//            let vc = R.storyboard.article.articleManagerViewController()!
             let vc = R.storyboard.article.articleDetailViewController()
             vc?.get(url, sender: JSON(parameters))
         }

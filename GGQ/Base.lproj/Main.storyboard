@@ -98,7 +98,7 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="A33-Nq-7fC">
                                 <rect key="frame" x="0.0" y="64" width="600" height="487"/>
                                 <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="pkb-kv-jiy" customClass="HomeCollectionViewFlowLayout" customModule="GGQ" customModuleProvider="target">
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="15" minimumInteritemSpacing="15" id="pkb-kv-jiy" customClass="HomeCollectionViewFlowLayout" customModule="GGQ" customModuleProvider="target">
                                     <size key="itemSize" width="500" height="400"/>
                                     <size key="headerReferenceSize" width="0.0" height="30"/>
                                     <size key="footerReferenceSize" width="0.0" height="30"/>
@@ -189,7 +189,7 @@
                                         </connections>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="HomeLoadMoreCollectionViewCell" id="Exj-22-700" customClass="HomeLoadMoreCollectionViewCell" customModule="GGQ" customModuleProvider="target">
-                                        <rect key="frame" x="50" y="440" width="500" height="400"/>
+                                        <rect key="frame" x="50" y="445" width="500" height="400"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="500" height="400"/>
@@ -218,7 +218,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </collectionReusableView>
                                 <collectionReusableView key="sectionFooterView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="6QC-w9-v1F">
-                                    <rect key="frame" x="0.0" y="840" width="600" height="30"/>
+                                    <rect key="frame" x="0.0" y="845" width="600" height="30"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </collectionReusableView>
                             </collectionView>
