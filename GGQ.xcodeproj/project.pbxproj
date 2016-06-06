@@ -182,6 +182,10 @@
 		2698E0411CBFDAF800B7E8C7 /* MoyaX+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2698E0401CBFDAF800B7E8C7 /* MoyaX+Rx.swift */; };
 		2698E0481CC00A7E00B7E8C7 /* Category.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2698E0471CC00A7E00B7E8C7 /* Category.storyboard */; };
 		2698E04C1CC00E8B00B7E8C7 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2698E04B1CC00E8B00B7E8C7 /* CategoryViewController.swift */; };
+		269F1B771D05C81200E3DAFE /* swiftCode.clr in Resources */ = {isa = PBXBuildFile; fileRef = 267515161CFA78130064FDAA /* swiftCode.clr */; };
+		269F1B781D05C81200E3DAFE /* gg.clr in Resources */ = {isa = PBXBuildFile; fileRef = 26110AC71CF4A762004F303A /* gg.clr */; };
+		269F1B7A1D05D7CB00E3DAFE /* ArticleActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269F1B791D05D7CB00E3DAFE /* ArticleActivity.swift */; };
+		269F1B7B1D05D7CB00E3DAFE /* ArticleActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269F1B791D05D7CB00E3DAFE /* ArticleActivity.swift */; };
 		26AC2FB71CF74692006A4E88 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AC2FB61CF74692006A4E88 /* AppDelegate.swift */; };
 		26AC2FB91CF74692006A4E88 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AC2FB81CF74692006A4E88 /* ViewController.swift */; };
 		26AC2FBC1CF74692006A4E88 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26AC2FBA1CF74692006A4E88 /* Main.storyboard */; };
@@ -577,6 +581,7 @@
 		2698E0401CBFDAF800B7E8C7 /* MoyaX+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MoyaX+Rx.swift"; sourceTree = "<group>"; };
 		2698E0471CC00A7E00B7E8C7 /* Category.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Category.storyboard; sourceTree = "<group>"; };
 		2698E04B1CC00E8B00B7E8C7 /* CategoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
+		269F1B791D05D7CB00E3DAFE /* ArticleActivity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleActivity.swift; sourceTree = "<group>"; };
 		26AC2FAF1CF68B6F006A4E88 /* Documents */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Documents; sourceTree = "<group>"; };
 		26AC2FB41CF74692006A4E88 /* MDReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MDReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		26AC2FB61CF74692006A4E88 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -910,6 +915,7 @@
 				267515C61CFB33E50064FDAA /* SafariActivity.swift */,
 				2670597F1CFC419300ABB723 /* ShareActivity.swift */,
 				267059821CFC47D400ABB723 /* MonkeyKingX.swift */,
+				269F1B791D05D7CB00E3DAFE /* ArticleActivity.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -1466,6 +1472,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				269F1B771D05C81200E3DAFE /* swiftCode.clr in Resources */,
+				269F1B781D05C81200E3DAFE /* gg.clr in Resources */,
 				26AC2FCE1CF74E24006A4E88 /* Content.md in Resources */,
 				26AC2FC11CF74692006A4E88 /* LaunchScreen.storyboard in Resources */,
 				26AC2FBE1CF74692006A4E88 /* Assets.xcassets in Resources */,
@@ -1701,6 +1709,7 @@
 				26BCE39C1CC9B3F600115D04 /* UIViewController+Router.swift in Sources */,
 				26E4CDC11CB8E47C0013AD29 /* HomeCollectionViewFlowLayout.swift in Sources */,
 				267312841CBE8DB900036DB9 /* CategoryCollectionViewCell.swift in Sources */,
+				269F1B7A1D05D7CB00E3DAFE /* ArticleActivity.swift in Sources */,
 				2654723C1CF88BD800514E7F /* ArticleDetailViewController.swift in Sources */,
 				2631BEAF1CDB4F8700735D3E /* RxDataSourceExt.swift in Sources */,
 				26E4CDC81CBA0D890013AD29 /* RxUITabBarDelegateProxy.swift in Sources */,
@@ -1866,6 +1875,7 @@
 				26AC30051CF88A74006A4E88 /* UIViewController+Router.swift in Sources */,
 				26AC30071CF88A74006A4E88 /* HomeCollectionViewFlowLayout.swift in Sources */,
 				26AC30081CF88A74006A4E88 /* CategoryCollectionViewCell.swift in Sources */,
+				269F1B7B1D05D7CB00E3DAFE /* ArticleActivity.swift in Sources */,
 				2654723D1CF88BD800514E7F /* ArticleDetailViewController.swift in Sources */,
 				26AC30091CF88A74006A4E88 /* RxDataSourceExt.swift in Sources */,
 				26AC300A1CF88A74006A4E88 /* RxUITabBarDelegateProxy.swift in Sources */,
@@ -2216,7 +2226,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = gg.swift.ggq;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "2d1f1384-4c1d-4eb6-96b6-ec53e26559bb";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
@@ -2241,7 +2251,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "2d1f1384-4c1d-4eb6-96b6-ec53e26559bb";
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
 		};

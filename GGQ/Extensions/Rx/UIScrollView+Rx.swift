@@ -13,16 +13,18 @@ extension UIScrollView {
     var rx_reachedBottom: Observable<Void> {
         return rx_contentOffset
             .flatMap { [weak self] contentOffset -> Observable<Bool> in
-                guard let scrollView = self else {
+                guard let `self` = self else {
                     return Observable.empty()
                 }
                 
-                let visibleHeight = scrollView.frame.height - scrollView.contentInset.top - scrollView.contentInset.bottom
-                let y = contentOffset.y + scrollView.contentInset.top
-                let threshold = max(0.0, scrollView.contentSize.height - visibleHeight)
-                
+                let visibleHeight = self.frame.height - self.contentInset.top - self.contentInset.bottom
+                let y = contentOffset.y + self.contentInset.top
+                let threshold = max(0.0, self.contentSize.height - visibleHeight)
+                Info("Offset: \(contentOffset), Size: \(self.contentSize)")
+                Info("Y: \(y), threshold: \(threshold)")
                 return y >= threshold ? Observable.just(true) : Observable.just(false)
             }.distinctUntilChanged()
+            .filter { $0 }
             .map { _ in }
     }
 }

@@ -21,7 +21,6 @@ class LicencesViewController: UIViewController {
         
         guard let rawLicenceItems = NSArray(contentsOfURL: R.file.licencesPlist()!) as? Array<Dictionary<String, String>> else { return }
         
-        
         let licenceItems = rawLicenceItems
             .flatMap { rawTranslatorItem -> LicenceItem? in
                 guard let name = rawTranslatorItem["name"] else {

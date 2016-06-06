@@ -101,8 +101,8 @@ func render(blocks: [Block], type: ListType, index: Int) -> NSMutableAttributedS
 func render(block: Block, type: ListType, index: Int, subIndex: Int) -> NSMutableAttributedString {
     let attributeString = NSMutableAttributedString()
     let paragraphStyle = NSMutableParagraphStyle()
-    paragraphStyle.firstLineHeadIndent = 20 // 首行缩进
-    paragraphStyle.headIndent = 35
+    paragraphStyle.firstLineHeadIndent += 20 // 首行缩进
+    paragraphStyle.headIndent += 35
     // TODO: -
 //    let attributeString = render(block).attributesAtIndex(0, effectiveRange: NSRangePointer)
     
@@ -166,8 +166,8 @@ func renderBlockQuote(inlineElement: InlineElement) -> NSMutableAttributedString
     switch inlineElement {
     case let .Code(text):
         let attributes = [
-            NSFontAttributeName: UIFont(name: "Menlo-Regular", size: 17)!,
-            NSForegroundColorAttributeName: UIColor.redColor()
+            NSFontAttributeName: UIFont(name: "PingFangSC-Regular", size: 17)!,
+            NSForegroundColorAttributeName: R.color.gg.red()
         ]
         return NSMutableAttributedString(string: text, attributes: attributes)
     case let .Custom(literal):
@@ -181,7 +181,8 @@ func renderBlockQuote(inlineElement: InlineElement) -> NSMutableAttributedString
         let renderChildren = renderBlockQuote(children)
         let attribute: [String: AnyObject] = [
             NSFontAttributeName: UIFont(name: "PingFangSC-Regular", size: 17)!,
-            NSObliquenessAttributeName: NSNumber(float: 0.2)
+            NSObliquenessAttributeName: NSNumber(float: 0.2),
+            NSForegroundColorAttributeName: R.color.gg.lightBlack()
         ]
         let range = NSRange(location: 0, length: renderChildren.length)
         renderChildren.setAttributes(attribute, range: range)
@@ -198,7 +199,7 @@ func renderBlockQuote(inlineElement: InlineElement) -> NSMutableAttributedString
         guard let element = children.first else { fatalError("没有名字") }
         let attributes = [
             NSFontAttributeName: UIFont(name: "PingFangSC-Regular", size: 17)!,
-            NSForegroundColorAttributeName: UIColor.blueColor(),
+            NSForegroundColorAttributeName: R.color.gg.blue(),
             NSLinkAttributeName: url ?? ""
         ]
         return NSMutableAttributedString(string: element.text ?? url ?? "", attributes: attributes)
@@ -211,6 +212,7 @@ func renderBlockQuote(inlineElement: InlineElement) -> NSMutableAttributedString
         let renderChildren = renderBlockQuote(children)
         let attribute: [String: AnyObject] = [
             NSFontAttributeName: UIFont(name: "PingFangSC-Medium", size: 17)!,
+            NSForegroundColorAttributeName: R.color.gg.lightBlack()
         ]
         let range = NSRange(location: 0, length: renderChildren.length)
         renderChildren.setAttributes(attribute, range: range)
@@ -218,7 +220,7 @@ func renderBlockQuote(inlineElement: InlineElement) -> NSMutableAttributedString
     case .Text(let text):
         let attributes = [
             NSFontAttributeName: UIFont(name: "PingFangSC-Regular", size: 17)!,
-            NSForegroundColorAttributeName: UIColor.grayColor()
+            NSForegroundColorAttributeName: R.color.gg.lightBlack()
         ]
         return NSMutableAttributedString(string: text, attributes: attributes)
     }
@@ -275,7 +277,7 @@ func renderStrong(inlineElements: InlineElement) -> NSMutableAttributedString {
         guard let children = childrens.first else { fatalError("没有名字") }
         let attributes = [
             NSFontAttributeName: UIFont(name: "PingFangSC-Medium", size: 17)!,
-            NSForegroundColorAttributeName: UIColor.blueColor(),
+            NSForegroundColorAttributeName: R.color.gg.blue(),
             NSUnderlineStyleAttributeName: NSUnderlineStyle.StyleSingle.rawValue,
             NSLinkAttributeName: url ?? ""
         ]
@@ -315,6 +317,7 @@ func render(inlineElements: [InlineElement], level: Int) -> NSMutableAttributedS
             case .Text(let text):
                 let attributes = [
                     NSFontAttributeName: UIFont(name: "PingFangSC-Medium", size: size)!,
+                    NSForegroundColorAttributeName: R.color.gg.black()
                     ]
                 attributedString.appendAttributedString(NSMutableAttributedString(string: text, attributes: attributes))
             case .SoftBreak:
@@ -324,8 +327,8 @@ func render(inlineElements: [InlineElement], level: Int) -> NSMutableAttributedS
                 attributedString.appendAttributedString(NSMutableAttributedString(string: "\n"))
             case let .Code(text):
                 let attributes = [
-                    NSFontAttributeName: UIFont(name: "Menlo-Regular", size: size)!,
-                    NSForegroundColorAttributeName: UIColor.redColor()
+                    NSFontAttributeName: UIFont(name: "PingFangSC-Regular", size: size)!,
+                    NSForegroundColorAttributeName: R.color.gg.red()
                 ]
                 let attributedString = NSMutableAttributedString(string: text, attributes: attributes)
                 attributedString.appendAttributedString(attributedString)
@@ -333,7 +336,7 @@ func render(inlineElements: [InlineElement], level: Int) -> NSMutableAttributedS
                 guard let children = childrens.first else { fatalError("没有名字") }
                 let attributes = [
                     NSFontAttributeName: UIFont(name: "PingFangSC-Medium", size: size)!,
-                    NSForegroundColorAttributeName: UIColor.blueColor(),
+                    NSForegroundColorAttributeName: R.color.gg.blue(),
                     NSUnderlineStyleAttributeName: NSUnderlineStyle.StyleSingle.rawValue,
                     NSLinkAttributeName: url ?? ""
                 ]
@@ -380,8 +383,8 @@ func render(block: Block) -> NSMutableAttributedString {
         ]
         
         let paragraphContentStyle = NSMutableParagraphStyle()
-        paragraphContentStyle.firstLineHeadIndent = 10 // 首行缩进
-        paragraphContentStyle.headIndent = 10
+        paragraphContentStyle.firstLineHeadIndent += 10 // 首行缩进
+        paragraphContentStyle.headIndent += 10
         paragraphContentStyle.tailIndent -= 5
 //        paragraphContentStyle.paragraphSpacing = 3
         
@@ -424,7 +427,8 @@ func render(block: Block) -> NSMutableAttributedString {
     case .Custom(let literal):
         Info("Custom: \(literal)")
         let attributes = [
-            NSFontAttributeName: UIFont(name: "PingFangSC-Medium", size: 17)!
+            NSFontAttributeName: UIFont(name: "PingFangSC-Medium", size: 17)!,
+            NSForegroundColorAttributeName: R.color.gg.black()
         ]
         Info("Custom: \(literal)")
         return NSMutableAttributedString(string: literal, attributes: attributes)
@@ -434,7 +438,8 @@ func render(block: Block) -> NSMutableAttributedString {
     case let .Html(text):
         Info("Html: \(text)")
         let attributes = [
-            NSFontAttributeName: UIFont(name: "Menlo-Regular", size: 14)!
+            NSFontAttributeName: UIFont(name: "Menlo-Regular", size: 14)!,
+            NSForegroundColorAttributeName: R.color.gg.black()
         ]
         return NSMutableAttributedString(string: text, attributes: attributes)
     case let .List(items, type):
@@ -458,8 +463,8 @@ func render(inlineElement: InlineElement) -> NSMutableAttributedString {
     switch inlineElement {
     case let .Code(text):
         let attributes = [
-            NSFontAttributeName: UIFont(name: "Menlo-Regular", size: 16)!,
-            NSForegroundColorAttributeName: R.color.swiftCode.keywords()
+            NSFontAttributeName: UIFont(name: "PingFangSC-Regular", size: 16)!,
+            NSForegroundColorAttributeName: R.color.gg.red()
         ]
         return NSMutableAttributedString(string: text, attributes: attributes)
     case let .Custom(literal):
@@ -490,6 +495,7 @@ func render(inlineElement: InlineElement) -> NSMutableAttributedString {
     case .Text(let text):
         let attributes = [
             NSFontAttributeName: UIFont(name: "PingFangSC-Regular", size: 17)!,
+            NSForegroundColorAttributeName: R.color.gg.black()
             ]
         return NSMutableAttributedString(string: text, attributes: attributes)
     }

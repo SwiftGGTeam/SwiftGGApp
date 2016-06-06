@@ -129,7 +129,7 @@ public class SwiftLang: JLLanguage {
     
     var blockComments = JLTokenizingScope(incrementingPattern: "/\\*", decrementingPattern: "\\*/", tokenType: .Comment, hollow: false)
     var lineComments = JLRegexScope(pattern: "//(.*)", tokenTypes: .Comment)
-    var keywords = JLKeywordScope(keywords: "class protocol init required public internal import private nil super var let func override deinit return true false self didSet willSet get set guard if else extension weak unowned struct enum case where do catch throws in switch dynamic convenience for", tokenType: .Keyword)
+    var keywords = JLKeywordScope(keywords: "class protocol init required public internal import private nil super var let func override deinit return true false self didSet willSet get set guard if else extension weak unowned struct enum case where do catch throws in switch dynamic convenience for while", tokenType: .Keyword)
     var atKeywords = JLKeywordScope(keywords: ["optional", "UIApplicationMain", "IBAction", "IBOutlet", "autoclosure"], prefix: "@", suffix: "\\b", tokenType: .Keyword)
     var projectClassNames = JLRegexScope(pattern: "\\b[A-Z]{3}[a-zA-Z]+\\b", tokenTypes: .ProjectClassNames)
     var NSUIClassNames = JLRegexScope(pattern: "\\b(NS|UI)[A-Z][a-zA-Z]+\\b", tokenTypes: .OtherClassNames)

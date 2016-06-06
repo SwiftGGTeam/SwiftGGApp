@@ -60,6 +60,18 @@ extension ArticleInfoObject {
     }
 }
 
+extension ArticleInfoObject {
+    var readStatus: String {
+        if hasBeenRead.value == true {
+            return "已读完"
+        } else if isReading.value == true {
+            return "在阅读"
+        } else {
+            return "未阅读"
+        }
+    }
+}
+
 extension ArticleInfoObject: IdentifiableType {
     var identity: Int {
         return id

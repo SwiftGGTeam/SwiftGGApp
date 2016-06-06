@@ -313,66 +313,66 @@ class MonkeyKingX {
             
         case .Weibo(let type):
             
-//            guard !canOpenURL(URLString: "weibosdk://request") else {
-//                
-//                // App Share
-//                
-//                var messageInfo: [String: AnyObject] = ["__class": "WBMessageObject"]
-//                let info = type.info
-//                
-//                if let description = info.description {
-//                    messageInfo["text"] = description
-//                }
-//                
-//                if let media = info.media {
-//                    switch media {
-//                    case .URL(let URL):
-//                        
-//                        var mediaObject: [String: AnyObject] = [
-//                            "__class": "WBWebpageObject",
-//                            "objectID": "identifier1"
-//                        ]
-//                        
-//                        if let title = info.title {
-//                            mediaObject["title"] = title
-//                        }
-//                        
-//                        if let thumbnailImage = info.thumbnail,
-//                            let thumbnailData = UIImageJPEGRepresentation(thumbnailImage, 0.7) {
-//                            mediaObject["thumbnailData"] = thumbnailData
-//                        }
-//                        
-//                        mediaObject["webpageUrl"] = URL.absoluteString
-//                        
-//                        messageInfo["mediaObject"] = mediaObject
-//                        
-//                    case .Image(let image):
-//                        
-//                        if let imageData = UIImageJPEGRepresentation(image, 1.0) {
-//                            messageInfo["imageObject"] = ["imageData": imageData]
-//                        }
-//                        
-//                    case .Audio:
-//                        fatalError("Weibo not supports Audio type")
-//                    case .Video:
-//                        fatalError("Weibo not supports Video type")
-//                    case .File:
-//                        fatalError("Weibo not supports File type")
-//                    }
-//                }
-//                
-//                let uuIDString = CFUUIDCreateString(nil, CFUUIDCreate(nil))
-//                let dict = ["__class" : "WBSendMessageToWeiboRequest", "message": messageInfo, "requestID" :uuIDString]
-//                
-//                let messageData: [AnyObject] = [
-//                    ["transferObject": NSKeyedArchiver.archivedDataWithRootObject(dict)],
-//                    ["app": NSKeyedArchiver.archivedDataWithRootObject(["appKey": appID, "bundleID": NSBundle.mainBundle().monkeyking_bundleID ?? ""])]
-//                ]
-//                
-//                UIPasteboard.generalPasteboard().items = messageData
-//
-//                return openURL(URLString: "weibosdk://request?id=\(uuIDString)&sdkversion=003013000")
-//            }
+            guard !UIApplication.sharedApplication().canOpenURL(NSURL(string: "weibosdk://request")!) else {
+                
+                // App Share
+                
+                var messageInfo: [String: AnyObject] = ["__class": "WBMessageObject"]
+                let info = type.info
+                
+                if let description = info.description {
+                    messageInfo["text"] = description
+                }
+                
+                if let media = info.media {
+                    switch media {
+                    case .URL(let URL):
+                        
+                        var mediaObject: [String: AnyObject] = [
+                            "__class": "WBWebpageObject",
+                            "objectID": "identifier1"
+                        ]
+                        
+                        if let title = info.title {
+                            mediaObject["title"] = title
+                        }
+                        
+                        if let thumbnailImage = info.thumbnail,
+                            let thumbnailData = UIImageJPEGRepresentation(thumbnailImage, 0.7) {
+                            mediaObject["thumbnailData"] = thumbnailData
+                        }
+                        
+                        mediaObject["webpageUrl"] = URL.absoluteString
+                        
+                        messageInfo["mediaObject"] = mediaObject
+                        
+                    case .Image(let image):
+                        
+                        if let imageData = UIImageJPEGRepresentation(image, 1.0) {
+                            messageInfo["imageObject"] = ["imageData": imageData]
+                        }
+                        
+                    case .Audio:
+                        fatalError("Weibo not supports Audio type")
+                    case .Video:
+                        fatalError("Weibo not supports Video type")
+                    case .File:
+                        fatalError("Weibo not supports File type")
+                    }
+                }
+                
+                let uuIDString = CFUUIDCreateString(nil, CFUUIDCreate(nil))
+                let dict = ["__class" : "WBSendMessageToWeiboRequest", "message": messageInfo, "requestID" :uuIDString]
+                
+                let messageData: [AnyObject] = [
+                    ["transferObject": NSKeyedArchiver.archivedDataWithRootObject(dict)],
+                    ["app": NSKeyedArchiver.archivedDataWithRootObject(["appKey": appID, "bundleID": NSBundle.mainBundle().monkeyking_bundleID ?? ""])]
+                ]
+                
+                UIPasteboard.generalPasteboard().items = messageData
+
+                return openURL(URLString: "weibosdk://request?id=\(uuIDString)&sdkversion=003013000")
+            }
             
             // Weibo Web Share
             

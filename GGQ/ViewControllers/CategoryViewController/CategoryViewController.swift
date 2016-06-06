@@ -36,22 +36,18 @@ final class CategoryViewController: UIViewController {
 
         let refreshTrigger = refresh.rx_controlEvent(.ValueChanged).asObservable()
         
-        let realm = try? Realm()
-        
         let dataSource = RxTableViewSectionedReloadDataSource<CategoryList>()
         dataSource.configureCell = { ds, tb, ip, v in
             let cell = tb.dequeueReusableCellWithIdentifier(R.reuseIdentifier.articleTableViewCell, forIndexPath: ip)!
             cell.title = v.title
-            if let realm = realm {
-                    cell.readPageInfo = "未读"
-            }
+            cell.readPageInfo = v.readStatus
             return cell
         }
         dataSource.canEditRowAtIndexPath = { ds, ip in
             return false
         }
         
-		viewModel = CategoryViewModel(refreshTrigger: refreshTrigger, loadMoreTrigger: tableView.rx_reachedBottom, category: category)
+        viewModel = CategoryViewModel(refreshTrigger: refreshTrigger, loadMoreTrigger: tableView.rx_reachedBottom, category: category)
 
 		viewModel.elements.asDriver()
             .map { [CategoryList(model: "", items: $0)] }

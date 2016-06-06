@@ -61,6 +61,16 @@ class GGConfig {
             static let appSecret = "3e9e5722930891539c1e3e2c8e72da9b"
         }
         
+        struct Weibo {
+            static let appID = "1544042551"
+            static let appSecret = "2d9d75cac265dece17d97e531090599e"
+        }
+        
+        struct QQ {
+            static let appID = "1105071901"
+            static let appSecret = "F2eaA3YcbFePJdOp"
+        }
+        
         static let footerMessage = " | 优质 Swift 翻译资源"
 
     }
