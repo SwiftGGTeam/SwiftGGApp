@@ -155,7 +155,7 @@ extension AppDelegate {
             let vc = R.storyboard.search.initialViewController()
             vc?.get(url, sender: JSON(parameters))
         }
-        
+
         router.registerRoutingPattern(GGConfig.Router.Search.content) { (url, parameters, context) in
             let vc = R.storyboard.search.initialViewController()
             vc?.get(url, sender: JSON(parameters))
@@ -165,7 +165,7 @@ extension AppDelegate {
             let vc = R.storyboard.setting.initialViewController()
             vc?.get(url, sender: JSON(parameters))
         }
-        
+
         router.registerRoutingPattern(GGConfig.Router.feedback) { (url, parameters, context) in
             let vc = FeedbackController()
             vc.get(url, sender: JSON(parameters))
@@ -181,7 +181,6 @@ extension AppDelegate {
             let vc = ShareController()
             vc.get(url, sender: JSON(parameters))
         }
-        
-//        router.registerRoutingPattern("response", handler: <#T##MatchRouteHandler##MatchRouteHandler##(NSURL, parameters: [String : String], context: AnyObject?) -> Void#>)
+
     }
 }
